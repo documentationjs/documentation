@@ -15,10 +15,17 @@ var fs = require('fs'),
 module.exports = function(index) {
   var md = mdeps();
   md.end({ file: index });
-  return md.pipe(through(function(data) {
-    var code = fs.readFileSync(data.file);
-    var ast = esprima.parse(code, { attachComment: true });
-    var docs = [];
+
+  /**
+   * Documentation stream parser: this receives a module-dep item,
+   * reads the file, parses the JavaScript, parses the JSDoc, and
+   * emits parsed comments.
+   * @param {Object} data
+   */
+  function docParserStream(data) {
+    var code = fs.readFileSync(data.file),
+        ast = esprima.parse(code, { attachComment: true }),
+        docs = [];
     types.visit(ast, {
       visitMemberExpression: function(path) {
         var node = path.value;
@@ -33,5 +40,7 @@ module.exports = function(index) {
       }
     });
     docs.forEach(this.push);
-  }));
+  }
+
+  return md.pipe(through(docParserStream));
 };
