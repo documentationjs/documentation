@@ -1,0 +1,26 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "a documentation generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.js"
+  },
+  "keywords": [
+    "documentation",
+    "jsdoc",
+    "jsdoc3",
+    "parser",
+    "website",
+    "formatter"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC",
+  "dependencies": {
+    "doctrine": "^0.6.4",
+    "minimist": "^1.1.0"
+  },
+  "devDependencies": {
+    "tape": "^3.5.0"
+  }
+}
