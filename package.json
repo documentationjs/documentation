@@ -6,6 +6,9 @@
   "scripts": {
     "test": "tape test/test.js"
   },
+  "bin": {
+     "documentation": "./bin/documentation.js"
+  },
   "keywords": [
     "documentation",
     "jsdoc",

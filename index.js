@@ -5,6 +5,13 @@ var fs = require('fs'),
   types = require('ast-types'),
   mdeps = require('module-deps');
 
+/**
+ * Generate JavaScript documentation as a list of parsed JSDoc
+ * comments, given a root file as a path.
+ *
+ * @param {String} index the file to start from
+ * @return {Object} stream of output
+ */
 module.exports = function(index) {
   var md = mdeps();
   md.end({ file: index });
