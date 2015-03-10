@@ -1,10 +1,12 @@
 var test = require('tape'),
     documentation = require('../'),
     path = require('path'),
-    fs = require('fs');
+    concat = require('concat-stream');
 
 test('documentation', function(t) {
-    var input = fs.readFileSync(path.join(__dirname, 'fixture/simple.js'));
-    t.ok(input);
-    t.end();
+    documentation(path.join(__dirname, 'fixture/simple.js')).pipe(concat(function(data) {
+        console.log(data);
+        t.equal(data.length, 1, 'simple has no dependencies');
+        t.end();
+    }));
 });
