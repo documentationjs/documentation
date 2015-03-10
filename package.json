@@ -7,7 +7,7 @@
     "test": "tape test/test.js"
   },
   "bin": {
-     "documentation": "./bin/documentation.js"
+    "documentation": "./bin/documentation.js"
   },
   "keywords": [
     "documentation",
@@ -32,6 +32,7 @@
     "traverse": "^0.6.6"
   },
   "devDependencies": {
+    "chdir": "0.0.0",
     "concat-stream": "^1.4.7",
     "tape": "^3.5.0"
   }

@@ -3,7 +3,8 @@ var fs = require('fs'),
   esprima = require('esprima'),
   through = require('through'),
   types = require('ast-types'),
-  mdeps = require('module-deps');
+  mdeps = require('module-deps')
+  path = require('path');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -14,7 +15,7 @@ var fs = require('fs'),
  */
 module.exports = function(index) {
   var md = mdeps();
-  md.end({ file: index });
+  md.end({ file: path.resolve(index) });
 
   /**
    * Documentation stream parser: this receives a module-dep item,
