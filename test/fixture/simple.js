@@ -2,7 +2,7 @@
  * This function returns the number one.
  * @return {Number} numberone
  */
-module.exports = function() {
-    // this returns 1
-    return 1;
+module.exports = function () {
+  // this returns 1
+  return 1;
 };

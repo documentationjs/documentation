@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 var documentation = require('../'),
-    JSONStream = require('JSONStream'),
-    argv = require('minimist')(process.argv.slice(2));
+  JSONStream = require('JSONStream'),
+  argv = require('minimist')(process.argv.slice(2));
 
 /**
  * A CLI utility that accepts a file path as input and emits a JSON
@@ -12,5 +12,5 @@ var documentation = require('../'),
 if (!argv._.length) throw new Error('usage: documentation [entry files]');
 
 documentation(argv._[0])
-    .pipe(JSONStream.stringify())
-    .pipe(process.stdout);
+  .pipe(JSONStream.stringify())
+  .pipe(process.stdout);
