@@ -10,6 +10,17 @@
           "name": "Number"
         }
       }
-    ]
+    ],
+    "loc": {
+      "start": {
+        "line": 5,
+        "column": 0
+      },
+      "end": {
+        "line": 5,
+        "column": 14
+      },
+      "file": "fixture/simple.input.js"
+    }
   }
 ]

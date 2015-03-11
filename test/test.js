@@ -10,9 +10,16 @@ var test = require('tape'),
 
 var UPDATE = !!process.env.UPDATE;
 
+function normalize(result) {
+  result.forEach(function (item) {
+    item.loc.file = path.relative(__dirname, item.loc.file);
+  });
+}
+
 glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
   test(path.basename(file), function (t) {
     documentation(file).pipe(concat(function (result) {
+      normalize(result);
       var outputfile = file.replace('.input.js', '.output.json');
       if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
       var expect = require(outputfile);

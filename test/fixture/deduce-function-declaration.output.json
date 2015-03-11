@@ -14,6 +14,17 @@
         "title": "name",
         "name": "returnOne"
       }
-    ]
+    ],
+    "loc": {
+      "start": {
+        "line": 5,
+        "column": 9
+      },
+      "end": {
+        "line": 5,
+        "column": 18
+      },
+      "file": "fixture/deduce-function-declaration.input.js"
+    }
   }
 ]

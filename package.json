@@ -25,6 +25,7 @@
     "babel-core": "^4.7.8",
     "doctrine": "^0.6.4",
     "esprima": "^2.1.0",
+    "extend": "^2.0.0",
     "minimist": "^1.1.0",
     "module-deps": "^3.7.2",
     "through": "^2.3.6",
