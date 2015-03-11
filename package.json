@@ -4,7 +4,7 @@
   "description": "a documentation generator",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/test.js"
+    "test": "tape test/*.js"
   },
   "bin": {
     "documentation": "./bin/documentation.js"
