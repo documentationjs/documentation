@@ -66,20 +66,23 @@ module.exports = function (index) {
       ast = esprima.parse(code, { attachComment: true }),
       docs = [];
 
-    types.visit(ast, {
-      visitMemberExpression: function (path) {
-        var node = path.value;
-        if (node.leadingComments) {
-          node.leadingComments.filter(function (c) {
-            return c.type === 'Block';
-          }).map(function (comment) {
-            if (isJSDocComment(comment.value)) {
-              docs.push(doctrine.parse(comment.value, { unwrap: true }));
-            }
-          });
-        }
-        this.traverse(path);
+    function visit(path) {
+      var node = path.value;
+      if (node.leadingComments) {
+        node.leadingComments.filter(function (c) {
+          return c.type === 'Block';
+        }).map(function (comment) {
+          if (isJSDocComment(comment.value)) {
+            docs.push(doctrine.parse(comment.value, { unwrap: true }));
+          }
+        });
       }
+      this.traverse(path);
+    }
+
+    types.visit(ast, {
+      visitMemberExpression: visit,
+      visitIdentifier: visit
     });
 
     docs.forEach(this.push);
