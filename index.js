@@ -39,6 +39,23 @@ function commentShebang(code) {
 }
 
 /**
+ * Add a new tag as a default value if the tag isn't explicitly set by
+ * a JSDoc comment.
+ * @param {Object} parseComment
+ * @param {Object} newTag
+ * @return {Object} parsedComment
+ */
+function addTagDefault(parsedComment, newTag) {
+  var hasTagAlready = parsedComment.tags.some(function (tag) {
+    return tag.title === newTag.title;
+  });
+  if (!hasTagAlready) {
+    parsedComment.tags.push(newTag);
+  }
+  return parsedComment;
+}
+
+/**
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
@@ -73,7 +90,17 @@ module.exports = function (index) {
           return c.type === 'Block';
         }).map(function (comment) {
           if (isJSDocComment(comment.value)) {
-            docs.push(doctrine.parse(comment.value, { unwrap: true }));
+            var parsedComment = doctrine.parse(comment.value, { unwrap: true });
+
+            // Infer the function's name from its surroundings, if possible.
+            if (node.name) {
+              parsedComment = addTagDefault(parsedComment, {
+                title: 'name',
+                name: node.name
+              });
+            }
+
+            docs.push(parsedComment);
           }
         });
       }

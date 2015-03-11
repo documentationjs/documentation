@@ -3,16 +3,17 @@
     "description": "This function returns the number one.",
     "tags": [
       {
+        "title": "name",
+        "description": null,
+        "name": "noReturn"
+      },
+      {
         "title": "return",
         "description": "numberone",
         "type": {
           "type": "NameExpression",
           "name": "Number"
         }
-      },
-      {
-        "title": "name",
-        "name": "one"
       }
     ]
   }
