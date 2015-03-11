@@ -14,6 +14,16 @@ var externalModuleRegexp = process.platform === 'win32' ?
   /^[\/.]/;
 
 /**
+ * Comment-out a shebang line that may sit at the top of a file,
+ * making it executable on linux-like systems.
+ * @param {String} code
+ * @return code
+ */
+function commentShebang(code) {
+  return (code[ 0 ] === '#' && code[ 1 ] === '!') ? '//' + code : code;
+}
+
+/**
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
@@ -37,7 +47,7 @@ module.exports = function (index) {
    */
   function docParserStream(data) {
 
-    var code = fs.readFileSync(data.file),
+    var code = commentShebang(fs.readFileSync(data.file, 'utf8')),
       ast = esprima.parse(code, { attachComment: true }),
       docs = [];
 

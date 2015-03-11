@@ -13,6 +13,13 @@ test('documentation', function (t) {
   }));
 });
 
+test('documentation - hashbang', function (t) {
+  documentation(path.join(__dirname, 'fixture/simple-hashbang.js')).pipe(concat(function (data) {
+    t.equal(data.length, 1, 'simple has no dependencies');
+    t.end();
+  }));
+});
+
 test('skips external dependencies', function (t) {
   documentation(path.join(__dirname, 'fixture/external.js')).pipe(concat(function (data) {
     t.equal(data.length, 0);
