@@ -2,15 +2,9 @@
 
 var documentation = require('../'),
   JSONStream = require('JSONStream'),
-  argv = require('minimist')(process.argv.slice(2));
+  argv = require('minimist')(process.argv.slice(2)),
+  path = require('path');
 
-/**
- * A CLI utility that accepts a file path as input and emits a JSON
- * array of parsed documentation headers
- */
-
-if (!argv._.length) throw new Error('usage: documentation [entry files]');
-
-documentation(argv._[0])
+documentation(argv._[0] || require(path.resolve('package.json')).main)
   .pipe(JSONStream.stringify())
   .pipe(process.stdout);
