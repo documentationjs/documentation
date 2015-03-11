@@ -14,10 +14,25 @@ var externalModuleRegexp = process.platform === 'win32' ?
   /^[\/.]/;
 
 /**
+ * Detect whether a comment is a JSDoc comment: it should start with
+ * two asterisks, not any other number of asterisks.
+ *
+ * The code parser automatically strips out the first asterisk that's
+ * required for the comment to be a comment at all, so we count the remaining
+ * comments.
+ * @param {String} comment
+ * @return {boolean} whether it is valid
+ */
+function isJSDocComment(code) {
+  var asterisks = code.match(/^(\*+)/);
+  return asterisks && asterisks[ 1 ].length === 1;
+}
+
+/**
  * Comment-out a shebang line that may sit at the top of a file,
  * making it executable on linux-like systems.
  * @param {String} code
- * @return code
+ * @return {String} code
  */
 function commentShebang(code) {
   return (code[ 0 ] === '#' && code[ 1 ] === '!') ? '//' + code : code;
@@ -58,7 +73,9 @@ module.exports = function (index) {
           node.leadingComments.filter(function (c) {
             return c.type === 'Block';
           }).map(function (comment) {
-            docs.push(doctrine.parse(comment.value, { unwrap: true }));
+            if (isJSDocComment(comment.value)) {
+              docs.push(doctrine.parse(comment.value, { unwrap: true }));
+            }
           });
         }
         this.traverse(path);

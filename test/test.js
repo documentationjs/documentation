@@ -13,6 +13,20 @@ test('documentation', function (t) {
   }));
 });
 
+test('documentation - single star', function (t) {
+  documentation(path.join(__dirname, 'fixture/simple-singlestar.js')).pipe(concat(function (data) {
+    t.equal(data.length, 0, 'simple has no dependencies');
+    t.end();
+  }));
+});
+
+test('documentation - triple star', function (t) {
+  documentation(path.join(__dirname, 'fixture/simple-triplestar.js')).pipe(concat(function (data) {
+    t.equal(data.length, 0, 'simple has no dependencies');
+    t.end();
+  }));
+});
+
 test('documentation - hashbang', function (t) {
   documentation(path.join(__dirname, 'fixture/simple-hashbang.js')).pipe(concat(function (data) {
     t.equal(data.length, 1, 'simple has no dependencies');
