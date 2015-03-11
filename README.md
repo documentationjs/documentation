@@ -2,7 +2,13 @@
 
 This would be a big one, we would need the whole town to pitch in.
 
-## [Goals](GOALS.md)
+The mission is to create a **documentation generation system** that's
+_beautiful_ by default, _flexible_ across formats and styles, and
+_powerful_ enough to support JSDoc's advanced syntax.
+
+_We also have a list of specific [goals](GOALS.md), and plenty of
+[issues](https://github.com/documentationjs/documentation/issues) that we'd
+love help with._
 
 ## [Contributing](CONTRIBUTING.md)
 
