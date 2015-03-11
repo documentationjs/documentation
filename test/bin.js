@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape'),
   path = require('path'),
   exec = require('child_process').exec;
@@ -14,14 +16,14 @@ function documentation(args, options, callback) {
 
   args.unshift(path.join(__dirname, '../bin/documentation.js'));
 
-  exec(args.join(' '), options, function(err, stdout, stderr) {
+  exec(args.join(' '), options, function (err, stdout, stderr) {
     if (err) return callback(err, stdout, stderr);
     callback(err, JSON.parse(stdout), stderr);
   });
 }
 
 test('documentation binary', function (t) {
-  documentation(['fixture/simple.js'], function(err, data) {
+  documentation(['fixture/simple.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 1, 'simple has no dependencies');
     t.end();
@@ -29,7 +31,7 @@ test('documentation binary', function (t) {
 });
 
 test('defaults to parsing package.json main', function (t) {
-  documentation([], {cwd: path.join(__dirname, '..')}, function(err, data) {
+  documentation([], { cwd: path.join(__dirname, '..') }, function (err, data) {
     t.error(err);
     t.ok(data.length, 'we document ourself');
     t.end();

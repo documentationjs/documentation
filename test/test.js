@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape'),
   documentation = require('../'),
   path = require('path'),
@@ -19,7 +21,7 @@ test('skips external dependencies', function (t) {
 });
 
 test('accepts simple relative paths', function (t) {
-  chdir(__dirname, function() {
+  chdir(__dirname, function () {
     documentation('fixture/simple.js').pipe(concat(function (data) {
       t.equal(data.length, 1, 'simple has no dependencies');
       t.end();

@@ -1,9 +1,11 @@
+'use strict';
+
 var fs = require('fs'),
   doctrine = require('doctrine'),
   esprima = require('esprima'),
   through = require('through'),
   types = require('ast-types'),
-  mdeps = require('module-deps')
+  mdeps = require('module-deps'),
   path = require('path');
 
 // Skip external modules. Based on http://git.io/pzPO.
@@ -18,9 +20,9 @@ var externalModuleRegexp = process.platform === 'win32' ?
  * @param {String} index the file to start from
  * @return {Object} stream of output
  */
-module.exports = function(index) {
+module.exports = function (index) {
   var md = mdeps({
-    filter: function(id) {
+    filter: function (id) {
       return externalModuleRegexp.test(id);
     }
   });
@@ -34,22 +36,25 @@ module.exports = function(index) {
    * @param {Object} data
    */
   function docParserStream(data) {
+
     var code = fs.readFileSync(data.file),
       ast = esprima.parse(code, { attachComment: true }),
       docs = [];
+
     types.visit(ast, {
-      visitMemberExpression: function(path) {
+      visitMemberExpression: function (path) {
         var node = path.value;
         if (node.leadingComments) {
-          node.leadingComments.filter(function(c) {
+          node.leadingComments.filter(function (c) {
             return c.type === 'Block';
-          }).map(function(comment) {
+          }).map(function (comment) {
             docs.push(doctrine.parse(comment.value, { unwrap: true }));
           });
         }
         this.traverse(path);
       }
     });
+
     docs.forEach(this.push);
   }
 

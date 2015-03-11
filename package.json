@@ -4,7 +4,7 @@
   "description": "a documentation generator",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "eslint index.js test/*.js && tape test/*.js"
   },
   "bin": {
     "documentation": "./bin/documentation.js"
