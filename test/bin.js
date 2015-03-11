@@ -23,7 +23,7 @@ function documentation(args, options, callback) {
 }
 
 test('documentation binary', function (t) {
-  documentation(['fixture/simple.js'], function (err, data) {
+  documentation(['fixture/simple.input.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 1, 'simple has no dependencies');
     t.end();
