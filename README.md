@@ -1,5 +1,7 @@
 # documentation
 
+[![build status](https://secure.travis-ci.org/documentationjs/documentation.png)](http://travis-ci.org/documentationjs/documentation)
+
 This would be a big one, we would need the whole town to pitch in.
 
 The mission is to create a **documentation generation system** that's
