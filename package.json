@@ -34,6 +34,7 @@
   "devDependencies": {
     "chdir": "0.0.0",
     "concat-stream": "^1.4.7",
+    "eslint": "^0.16.2",
     "tape": "^3.5.0"
   }
 }
