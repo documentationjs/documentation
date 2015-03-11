@@ -1,6 +1,6 @@
 # documentation
 
-[![build status](https://secure.travis-ci.org/documentationjs/documentation.png)](http://travis-ci.org/documentationjs/documentation)
+[![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation)
 
 This would be a big one, we would need the whole town to pitch in.
 
