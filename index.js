@@ -6,6 +6,11 @@ var fs = require('fs'),
   mdeps = require('module-deps')
   path = require('path');
 
+// Skip external modules. Based on http://git.io/pzPO.
+var externalModuleRegexp = process.platform === 'win32' ?
+  /^(\.|\w:)/ :
+  /^[\/.]/;
+
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
@@ -14,7 +19,12 @@ var fs = require('fs'),
  * @return {Object} stream of output
  */
 module.exports = function(index) {
-  var md = mdeps();
+  var md = mdeps({
+    filter: function(id) {
+      return externalModuleRegexp.test(id);
+    }
+  });
+
   md.end({ file: path.resolve(index) });
 
   /**

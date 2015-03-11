@@ -11,6 +11,13 @@ test('documentation', function (t) {
   }));
 });
 
+test('skips external dependencies', function (t) {
+  documentation(path.join(__dirname, 'fixture/external.js')).pipe(concat(function (data) {
+    t.equal(data.length, 0);
+    t.end();
+  }));
+});
+
 test('accepts simple relative paths', function (t) {
   chdir(__dirname, function() {
     documentation('fixture/simple.js').pipe(concat(function (data) {
