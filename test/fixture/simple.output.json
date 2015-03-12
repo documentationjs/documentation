@@ -9,6 +9,10 @@
           "type": "NameExpression",
           "name": "Number"
         }
+      },
+      {
+        "title": "name",
+        "name": "exports"
       }
     ]
   }

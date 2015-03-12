@@ -14,18 +14,18 @@ var externalModuleRegexp = process.platform === 'win32' ?
   /^[\/.]/;
 
 /**
- * Detect whether a comment is a JSDoc comment: it should start with
- * two asterisks, not any other number of asterisks.
+ * Detect whether a comment is a JSDoc comment: it must be a block
+ * comment which starts with two asterisks, not any other number of asterisks.
  *
  * The code parser automatically strips out the first asterisk that's
  * required for the comment to be a comment at all, so we count the remaining
  * comments.
- * @param {String} comment
+ * @param {Object} comment
  * @return {boolean} whether it is valid
  */
-function isJSDocComment(code) {
-  var asterisks = code.match(/^(\*+)/);
-  return asterisks && asterisks[ 1 ].length === 1;
+function isJSDocComment(comment) {
+  var asterisks = comment.value.match(/^(\*+)/);
+  return comment.type === 'Block' && asterisks && asterisks[ 1 ].length === 1;
 }
 
 /**
@@ -83,33 +83,48 @@ module.exports = function (index) {
       ast = esprima.parse(code, { attachComment: true }),
       docs = [];
 
-    function visit(path) {
-      var node = path.value;
-      if (node.leadingComments) {
-        node.leadingComments.filter(function (c) {
-          return c.type === 'Block';
-        }).map(function (comment) {
-          if (isJSDocComment(comment.value)) {
-            var parsedComment = doctrine.parse(comment.value, { unwrap: true });
+    function makeVisitor(callback) {
+      return function (path) {
+        var node = path.value;
 
-            // Infer the function's name from its surroundings, if possible.
-            if (node.name) {
-              parsedComment = addTagDefault(parsedComment, {
-                title: 'name',
-                name: node.name
-              });
-            }
+        function parseComment(comment) {
+          comment = doctrine.parse(comment.value, { unwrap: true });
+          callback(comment, node);
+          docs.push(comment);
+        }
 
-            docs.push(parsedComment);
-          }
+        (node.leadingComments || [])
+          .filter(isJSDocComment)
+          .forEach(parseComment);
+
+        this.traverse(path);
+      };
+    }
+
+    /**
+     * Infer the function's name from the context, if possible.
+     * If `inferredName` is present and `comment` does not already
+     * have a `name` tag, `inferredName` is tagged as the name.
+     * @param {Object} comment
+     * @param {string} inferredName
+     */
+    function inferName(comment, inferredName) {
+      if (inferredName) {
+        addTagDefault(comment, {
+          title: 'name',
+          name: inferredName
         });
       }
-      this.traverse(path);
     }
 
     types.visit(ast, {
-      visitMemberExpression: visit,
-      visitIdentifier: visit
+      visitMemberExpression: makeVisitor(function (comment, node) {
+        inferName(comment, node.property.name);
+      }),
+
+      visitIdentifier: makeVisitor(function (comment, node) {
+        inferName(comment, node.name);
+      })
     });
 
     docs.forEach(this.push);

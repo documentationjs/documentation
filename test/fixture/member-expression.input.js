@@ -1,0 +1,4 @@
+/**
+ * Test
+ */
+exports.test = function() {};
