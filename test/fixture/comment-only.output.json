@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 0
+        }
+      },
+      "file": "fixture/comment-only.input.js"
+    }
+  }
+]

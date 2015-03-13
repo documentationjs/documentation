@@ -146,13 +146,17 @@ module.exports = function (indexes) {
         file: data.file
       };
 
-      if (path.parent.node) {
+      if (path.parent && path.parent.node) {
         comment.context.code = code.substring
           .apply(code, path.parent.node.range);
       }
     }
 
     types.visit(ast, {
+      visitProgram: makeVisitor(function (comment, node, path) {
+        addContext(comment, path);
+      }),
+
       visitMemberExpression: makeVisitor(function (comment, node, path) {
         inferName(comment, node.property.name);
         addContext(comment, path);
