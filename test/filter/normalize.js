@@ -9,10 +9,10 @@ test('normalizes tags', function (t) {
 
   stream.pipe(concat(function (data) {
     t.deepEqual(data, [{
-      tags: [ { title: 'returns' }, { title: 'augments' } ]
+      tags: [ { title: 'returns' }, { title: 'augments' }, { title: 'name' } ]
     }]);
     t.end();
   }));
 
-  stream.end({ tags: [ { title: 'return' }, { title: 'extends' } ] });
+  stream.end({ tags: [ { title: 'return' }, { title: 'extends' }, { title: 'name' } ] });
 });
