@@ -10,3 +10,12 @@ is less structured and more focused on understanding internal code structure.
 
 * http://nevir.github.io/groc/ (unmaintained)
 * http://jashkenas.github.io/docco/
+
+## Standalone JSDoc Parsers
+
+* https://github.com/75lb/jsdoc-parse
+
+## JSDoc to Markdown
+
+* https://github.com/75lb/dmd
+* https://github.com/tmcw/doxme
