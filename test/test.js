@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tape'),
+var test = require('prova'),
   documentation = require('../'),
   glob = require('glob'),
   path = require('path'),

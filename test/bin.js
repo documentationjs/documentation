@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tape'),
+var test = require('prova'),
   path = require('path'),
   exec = require('child_process').exec;
 
