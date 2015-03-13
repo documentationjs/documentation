@@ -107,6 +107,11 @@ module.exports = function (index) {
             parsedComment.loc = extend({}, path.value.loc);
             parsedComment.loc.file = data.file;
 
+            if (path.parent.node) {
+              parsedComment.loc.code = code.substring
+                .apply(code, path.parent.node.range);
+            }
+
             docs.push(parsedComment);
           }
         });
