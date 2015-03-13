@@ -4,7 +4,8 @@
   "description": "a documentation generator",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js test/*.js && tape test/*.js"
+    "test": "eslint index.js test/*.js && tape test/*.js",
+    "cover": "istanbul cover tape test/*.js --dir $CIRCLE_ARTIFACTS"
   },
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -37,6 +38,7 @@
     "concat-stream": "^1.4.7",
     "eslint": "^0.16.2",
     "glob": "^5.0.2",
+    "istanbul": "^0.3.7",
     "tape": "^3.5.0"
   }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "description": "Test",
+    "tags": [
+      {
+        "title": "name",
+        "name": "test"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 4,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 12
+      },
+      "file": "fixture/member-expression.input.js",
+      "code": "exports.test = function() {}"
+    }
+  }
+]

@@ -15,24 +15,24 @@ var externalModuleRegexp = process.platform === 'win32' ?
   /^[\/.]/;
 
 /**
- * Detect whether a comment is a JSDoc comment: it should start with
- * two asterisks, not any other number of asterisks.
+ * Detect whether a comment is a JSDoc comment: it must be a block
+ * comment which starts with two asterisks, not any other number of asterisks.
  *
  * The code parser automatically strips out the first asterisk that's
  * required for the comment to be a comment at all, so we count the remaining
  * comments.
- * @param {String} comment
+ * @param {Object} comment an ast-types node of the comment
  * @return {boolean} whether it is valid
  */
-function isJSDocComment(code) {
-  var asterisks = code.match(/^(\*+)/);
-  return asterisks && asterisks[ 1 ].length === 1;
+function isJSDocComment(comment) {
+  var asterisks = comment.value.match(/^(\*+)/);
+  return comment.type === 'Block' && asterisks && asterisks[ 1 ].length === 1;
 }
 
 /**
  * Comment-out a shebang line that may sit at the top of a file,
  * making it executable on linux-like systems.
- * @param {String} code
+ * @param {String} code the source code in full
  * @return {String} code
  */
 function commentShebang(code) {
@@ -42,8 +42,8 @@ function commentShebang(code) {
 /**
  * Add a new tag as a default value if the tag isn't explicitly set by
  * a JSDoc comment.
- * @param {Object} parseComment
- * @param {Object} newTag
+ * @param {Object} parsedComment the current state of the parsed comment
+ * @param {Object} newTag a tag to add to the comment
  * @return {Object} parsedComment
  */
 function addTagDefault(parsedComment, newTag) {
@@ -76,7 +76,8 @@ module.exports = function (index) {
    * Documentation stream parser: this receives a module-dep item,
    * reads the file, parses the JavaScript, parses the JSDoc, and
    * emits parsed comments.
-   * @param {Object} data
+   * @param {Object} data a chunk of data provided by module-deps
+   * @return {undefined} this emits data
    */
   function docParserStream(data) {
 
@@ -87,41 +88,70 @@ module.exports = function (index) {
       }),
       docs = [];
 
-    function visit(path) {
-      var node = path.value;
-      if (node.leadingComments) {
-        node.leadingComments.filter(function (c) {
-          return c.type === 'Block';
-        }).map(function (comment) {
-          if (isJSDocComment(comment.value)) {
-            var parsedComment = doctrine.parse(comment.value, { unwrap: true });
+    function makeVisitor(callback) {
+      return function (path) {
+        var node = path.value;
 
-            // Infer the function's name from its surroundings, if possible.
-            if (node.name) {
-              parsedComment = addTagDefault(parsedComment, {
-                title: 'name',
-                name: node.name
-              });
-            }
+        function parseComment(comment) {
+          comment = doctrine.parse(comment.value, { unwrap: true });
+          callback(comment, node, path);
+          docs.push(comment);
+        }
 
-            parsedComment.loc = extend({}, path.value.loc);
-            parsedComment.loc.file = data.file;
+        (node.leadingComments || [])
+          .filter(isJSDocComment)
+          .forEach(parseComment);
 
-            if (path.parent.node) {
-              parsedComment.loc.code = code.substring
-                .apply(code, path.parent.node.range);
-            }
+        this.traverse(path);
+      };
+    }
 
-            docs.push(parsedComment);
-          }
+    /**
+     * Infer the function's name from the context, if possible.
+     * If `inferredName` is present and `comment` does not already
+     * have a `name` tag, `inferredName` is tagged as the name.
+     * @param {Object} comment the current state of the parsed JSDoc comment
+     * @param {string} inferredName a name inferred by the nearest function
+     * or variable in the AST
+     * @return {undefined} nothing: this changes its input
+     */
+    function inferName(comment, inferredName) {
+      if (inferredName) {
+        addTagDefault(comment, {
+          title: 'name',
+          name: inferredName
         });
       }
-      this.traverse(path);
+    }
+
+    /**
+     * Add position and code context to this comment by finding the nearest
+     * function block.
+     * @param {Object} comment the current state of the parsed JSDoc comment
+     * @param {Object} path the path of the comment node as provided
+     * by ast-types
+     * @return {undefined} nothing: this changes its input
+     */
+    function addContext(comment, path) {
+      comment.loc = extend({}, path.value.loc);
+      comment.loc.file = data.file;
+
+      if (path.parent.node) {
+        comment.loc.code = code.substring
+          .apply(code, path.parent.node.range);
+      }
     }
 
     types.visit(ast, {
-      visitMemberExpression: visit,
-      visitIdentifier: visit
+      visitMemberExpression: makeVisitor(function (comment, node, path) {
+        inferName(comment, node.property.name);
+        addContext(comment, path);
+      }),
+
+      visitIdentifier: makeVisitor(function (comment, node, path) {
+        inferName(comment, node.name);
+        addContext(comment, path);
+      })
     });
 
     docs.forEach(this.push);
