@@ -23,13 +23,11 @@ module.exports = function () {
   function markdownGeneratorStream(data) {
 
     var title = tagByTypes(data, [ 'name', 'alias', 'function', 'func', 'method' ]);
-
     if (title) {
       this.push('## ' + title.name + '\n\n');
     }
 
     var parameters = tagsByType(data, 'param');
-
     if (parameters.length) {
       this.push(table([[ 'name', 'description' ]]
         .concat(parameters.map(function (parameter) {
@@ -38,6 +36,11 @@ module.exports = function () {
             removeNewlines(parameter.description)
           ];
         }))));
+    }
+
+    var example = tagByTypes(data, ['example']);
+    if (example) {
+      this.push('```js\n' + example.description + '\n```');
     }
 
     this.push('\n\n' + data.description + '\n\n');

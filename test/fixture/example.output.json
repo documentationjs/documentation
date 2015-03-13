@@ -1,0 +1,37 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "example",
+        "description": "var hopeitisone = getOne();\nhopeitisone++;"
+      },
+      {
+        "title": "name",
+        "name": "getOne"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 9
+        },
+        "end": {
+          "line": 8,
+          "column": 15
+        }
+      },
+      "file": "fixture/example.input.js",
+      "code": "function getOne() {\n  // this returns 1\n  return 1;\n}"
+    }
+  }
+]
