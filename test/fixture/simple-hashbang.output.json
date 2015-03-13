@@ -14,6 +14,20 @@
         "title": "name",
         "name": "exports"
       }
-    ]
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 14
+        }
+      },
+      "file": "fixture/simple-hashbang.input.js",
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n}"
+    }
   }
 ]

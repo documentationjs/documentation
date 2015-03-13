@@ -14,6 +14,20 @@
         "title": "name",
         "name": "returnOne"
       }
-    ]
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 9
+        },
+        "end": {
+          "line": 5,
+          "column": 18
+        }
+      },
+      "file": "fixture/deduce-function-declaration.input.js",
+      "code": "function returnOne() {\n  // this returns 1\n  return 1;\n}"
+    }
   }
 ]
