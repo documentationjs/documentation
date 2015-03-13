@@ -98,15 +98,13 @@ module.exports = function (indexes) {
 
     function makeVisitor(callback) {
       return function (path) {
-        var node = path.value;
-
         function parseComment(comment) {
           comment = doctrine.parse(comment.value, { unwrap: true });
-          callback(comment, node, path);
+          callback(comment, path);
           docs.push(comment);
         }
 
-        (node.leadingComments || [])
+        (path.value.leadingComments || [])
           .filter(isJSDocComment)
           .forEach(parseComment);
 
@@ -153,17 +151,17 @@ module.exports = function (indexes) {
     }
 
     types.visit(ast, {
-      visitProgram: makeVisitor(function (comment, node, path) {
+      visitProgram: makeVisitor(function (comment, path) {
         addContext(comment, path);
       }),
 
-      visitMemberExpression: makeVisitor(function (comment, node, path) {
-        inferName(comment, node.property.name);
+      visitMemberExpression: makeVisitor(function (comment, path) {
+        inferName(comment, path.value.property.name);
         addContext(comment, path);
       }),
 
-      visitIdentifier: makeVisitor(function (comment, node, path) {
-        inferName(comment, node.name);
+      visitIdentifier: makeVisitor(function (comment, path) {
+        inferName(comment, path.value.name);
         addContext(comment, path);
       })
     });
