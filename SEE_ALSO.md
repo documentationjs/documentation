@@ -1,0 +1,12 @@
+# Documentation Generators
+
+`documentationjs` is a documentation generator for API documentation.
+It uses a code scanner and supports structured documentation, so it follows
+in the tradition of tools like JavaDoc, Natural Docs, and JSDoc. There are
+other camps of documentation generation, like literate documentation, which
+is less structured and more focused on understanding internal code structure.
+
+## Literate Style
+
+* http://nevir.github.io/groc/ (unmaintained)
+* http://jashkenas.github.io/docco/
