@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require('fs'),
-  doctrine = require('doctrine'),
+var doctrine = require('doctrine'),
   esprima = require('esprima'),
   through = require('through'),
   types = require('ast-types'),
@@ -89,7 +88,7 @@ module.exports = function (indexes) {
    */
   function docParserStream(data) {
 
-    var code = commentShebang(fs.readFileSync(data.file, 'utf8')),
+    var code = commentShebang(data.source),
       ast = esprima.parse(code, {
         loc: true,
         attachComment: true
