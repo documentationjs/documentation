@@ -133,11 +133,13 @@ module.exports = function (index) {
      * @return {undefined} nothing: this changes its input
      */
     function addContext(comment, path) {
-      comment.loc = extend({}, path.value.loc);
-      comment.loc.file = data.file;
+      comment.context = {
+        loc: extend({}, path.value.loc),
+        file: data.file
+      };
 
       if (path.parent.node) {
-        comment.loc.code = code.substring
+        comment.context.code = code.substring
           .apply(code, path.parent.node.range);
       }
     }

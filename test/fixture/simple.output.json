@@ -15,14 +15,16 @@
         "name": "exports"
       }
     ],
-    "loc": {
-      "start": {
-        "line": 5,
-        "column": 0
-      },
-      "end": {
-        "line": 5,
-        "column": 14
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 14
+        }
       },
       "file": "fixture/simple.input.js",
       "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n}"

@@ -12,7 +12,7 @@ var UPDATE = !!process.env.UPDATE;
 
 function normalize(result) {
   result.forEach(function (item) {
-    item.loc.file = path.relative(__dirname, item.loc.file);
+    item.context.file = path.relative(__dirname, item.context.file);
   });
 }
 

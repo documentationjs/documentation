@@ -16,14 +16,16 @@
         }
       }
     ],
-    "loc": {
-      "start": {
-        "line": 6,
-        "column": 9
-      },
-      "end": {
-        "line": 6,
-        "column": 18
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 9
+        },
+        "end": {
+          "line": 6,
+          "column": 18
+        }
       },
       "file": "fixture/deduce-function-declaration-override.input.js",
       "code": "function returnOne() {\n  // this returns 1\n  return 1;\n}"
