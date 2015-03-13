@@ -1,0 +1,33 @@
+[
+  {
+    "description": "This function returns the number two.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numbertwo",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "returnTwo"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 9
+        },
+        "end": {
+          "line": 5,
+          "column": 18
+        }
+      },
+      "file": "fixture/simple-two.input.js",
+      "code": "function returnTwo() {\n  // this returns 2\n  return 2;\n}"
+    }
+  }
+]

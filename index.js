@@ -60,17 +60,25 @@ function addTagDefault(parsedComment, newTag) {
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
- * @param {String} index the file to start from
+ * @param {Array<String>|String} indexes files to process
  * @return {Object} stream of output
  */
-module.exports = function (index) {
+module.exports = function (indexes) {
   var md = mdeps({
     filter: function (id) {
       return externalModuleRegexp.test(id);
     }
   });
 
-  md.end({ file: path.resolve(index) });
+  if (typeof indexes === 'string') {
+    indexes = [indexes];
+  }
+
+  indexes.forEach(function (index) {
+    md.write(path.resolve(index));
+  });
+
+  md.end();
 
   /**
    * Documentation stream parser: this receives a module-dep item,

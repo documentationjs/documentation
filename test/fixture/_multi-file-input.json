@@ -1,0 +1,64 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "exports"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 14
+        }
+      },
+      "file": "fixture/simple.input.js",
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n}"
+    }
+  },
+  {
+    "description": "This function returns the number two.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numbertwo",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "returnTwo"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 9
+        },
+        "end": {
+          "line": 5,
+          "column": 18
+        }
+      },
+      "file": "fixture/simple-two.input.js",
+      "code": "function returnTwo() {\n  // this returns 2\n  return 2;\n}"
+    }
+  }
+]
