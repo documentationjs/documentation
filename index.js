@@ -154,6 +154,11 @@ module.exports = function (indexes) {
         addContext(comment, path);
       }),
 
+      visitExpressionStatement: makeVisitor(function (comment, path) {
+        inferName(comment, path.value.expression.left.name);
+        addContext(comment, path);
+      }),
+
       visitMemberExpression: makeVisitor(function (comment, path) {
         inferName(comment, path.value.property.name);
         addContext(comment, path);

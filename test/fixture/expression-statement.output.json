@@ -1,0 +1,20 @@
+[
+  {
+    "description": "Test",
+    "tags": [],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 22
+        }
+      },
+      "file": "fixture/expression-statement.input.js",
+      "code": "module.exports = Test;"
+    }
+  }
+]

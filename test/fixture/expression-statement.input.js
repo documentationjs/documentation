@@ -1,0 +1,4 @@
+/**
+ * Test
+ */
+module.exports = Test;
