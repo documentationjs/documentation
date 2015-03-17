@@ -19,3 +19,7 @@ is less structured and more focused on understanding internal code structure.
 
 * https://github.com/75lb/dmd
 * https://github.com/tmcw/doxme
+
+## React
+
+* https://github.com/reactjs/react-docgen
