@@ -1,4 +1,0 @@
-/**
- * Test
- */
-module.exports = Test;
