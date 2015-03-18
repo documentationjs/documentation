@@ -45,7 +45,7 @@ module.exports = function () {
         loc: true,
         attachComment: true
       }),
-      docs = [];
+      stream = this;
 
     types.visit(ast, {
       visitNode: function (path) {
@@ -53,7 +53,7 @@ module.exports = function () {
          * Parse a comment with doctrine and decorate the result with file position and code context.
          *
          * @param {Object} comment the current state of the parsed JSDoc comment
-         * @return {undefined} nothing: this changes its input
+         * @return {undefined} this emits data
          */
         function parseComment(comment) {
           var parsedComment = doctrine.parse(comment.value, { unwrap: true });
@@ -75,7 +75,7 @@ module.exports = function () {
               .apply(code, path.parent.node.range);
           }
 
-          docs.push(parsedComment);
+          stream.push(parsedComment);
         }
 
         (path.value.leadingComments || [])
@@ -85,7 +85,5 @@ module.exports = function () {
         this.traverse(path);
       }
     });
-
-    docs.forEach(this.push);
   });
 }
