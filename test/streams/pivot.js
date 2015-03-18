@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-  pivot = require('../../filter/pivot'),
+  pivot = require('../../streams/pivot'),
   concat = require('concat-stream');
 
 test('pivots singular tags', function (t) {

@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-  normalize = require('../../filter/normalize'),
+  normalize = require('../../streams/normalize'),
   concat = require('concat-stream');
 
 test('normalizes tags', function (t) {
