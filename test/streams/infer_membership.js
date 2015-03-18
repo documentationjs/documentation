@@ -81,3 +81,54 @@ test('inferMembership - unknown', function (t) {
     t.end();
   });
 });
+
+test('inferMembership - static object assignment', function (t) {
+  evaluate(function () {
+    Foo.bar = {
+      /** Test */
+      baz: 0
+    };
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo.bar');
+    t.equal(result[ 0 ].tags.static.length, 1);
+    t.end();
+  });
+});
+
+test('inferMembership - instance object assignment', function (t) {
+  evaluate(function () {
+    Foo.prototype = {
+      /** Test */
+      bar: 0
+    };
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
+    t.equal(result[ 0 ].tags.instance.length, 1);
+    t.end();
+  });
+});
+
+test('inferMembership - variable object assignment', function (t) {
+  evaluate(function () {
+    var Foo = {
+      /** Test */
+      baz: 0
+    };
+    return Foo;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
+    t.equal(result[ 0 ].tags.static.length, 1);
+    t.end();
+  });
+});
+
+test('inferMembership - simple', function (t) {
+  evaluate(function () {
+    /** Test */
+    module.exports = function () {};
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'module');
+    t.equal(result[ 0 ].tags.static.length, 1);
+    t.end();
+  });
+});
