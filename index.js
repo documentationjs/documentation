@@ -3,7 +3,8 @@
 var mdeps = require('module-deps'),
   path = require('path'),
   parse = require('./streams/parse'),
-  inferName = require('./streams/infer_name');
+  inferName = require('./streams/infer_name'),
+  inferMembership = require('./streams/infer_membership');
 
 // Skip external modules. Based on http://git.io/pzPO.
 var externalModuleRegexp = process.platform === 'win32' ?
@@ -36,5 +37,6 @@ module.exports = function (indexes) {
 
   return md
     .pipe(parse())
-    .pipe(inferName());
+    .pipe(inferName())
+    .pipe(inferMembership());
 };
