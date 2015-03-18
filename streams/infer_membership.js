@@ -76,65 +76,59 @@ module.exports = function () {
     var path = comment.context.ast;
 
     /*
-     * Attempt to infer membership by traversing down the AST, looking for
-     * expressions of the forms:
-     *
-     *   Foo.bar = baz;
-     *   Foo.prototype.bar = baz;
-     *   Foo.bar.baz = quux;
-     *
+     * Deal with an oddity of esprima: the jsdoc comment is attached to a different
+     * node in the two expressions `a.b = c` vs `a.b = function () {}`.
      */
-    types.visit(path, {
-      visitNode: function() {
-        return false;
-      },
-
-      visitExpressionStatement: function (path) {
-        this.traverse(path);
-      },
-
-      visitAssignmentExpression: function(path) {
-        this.traverse(path);
-      },
-
-      visitMemberExpression: function (path) {
-        var identifiers = extractIdentifiers(path);
-
-        if (identifiers.length >= 2) {
-          inferMembership(identifiers.slice(0, -1));
-        }
-
-        return false;
-      },
-
-    });
+    if (n.ExpressionStatement.check(path.node) &&
+        n.AssignmentExpression.check(path.node.expression) &&
+        n.MemberExpression.check(path.node.expression.left)) {
+      path = path.get('expression').get('left');
+    }
 
     /*
-     * Attempt to infer membership by traversing up the AST, looking for
-     * expressions of the forms:
-     *
-     *   Foo = { ... };
-     *   Foo.prototype = { ... };
-     *   Foo.bar = { ... };
-     *
+     * Same as above but for `b: c` vs `b: function () {}`.
      */
     if (n.Property.check(path.node) &&
-      n.ObjectExpression.check(path.parent.node) &&
-      n.AssignmentExpression.check(path.parent.parent.node)) {
-      var identifiers = extractIdentifiers(path.parent.parent);
+        n.Identifier.check(path.node.key)) {
+      path = path.get('key');
+    }
 
+    /*
+     * Foo.bar = ...;
+     * Foo.prototype.bar = ...;
+     * Foo.bar.baz = ...;
+     */
+    if (n.MemberExpression.check(path.node)) {
+      var identifiers = extractIdentifiers(path);
+      if (identifiers.length >= 2) {
+        inferMembership(identifiers.slice(0, -1));
+      }
+    }
+
+    /*
+     * Foo = { bar: ... };
+     * Foo.prototype = { bar: ... };
+     * Foo.bar = { baz: ... };
+     */
+    if (n.Identifier.check(path.node) &&
+        n.Property.check(path.parent.node) &&
+        n.ObjectExpression.check(path.parent.parent.node) &&
+        n.AssignmentExpression.check(path.parent.parent.parent.node)) {
+      var identifiers = extractIdentifiers(path.parent.parent.parent);
       if (identifiers.length >= 1) {
         inferMembership(identifiers);
       }
     }
 
     /*
-     * Handle expressions of the form `var Foo = { ... }`.
+     * var Foo = { bar: ... }
      */
-    if (n.Property.check(path.node) &&
-      n.ObjectExpression.check(path.parent.node) &&
-      n.VariableDeclarator.check(path.parent.parent.node)) {
-      inferMembership([path.parent.parent.node.id.name]);
+    if (n.Identifier.check(path.node) &&
+        n.Property.check(path.parent.node) &&
+        n.ObjectExpression.check(path.parent.parent.node) &&
+        n.VariableDeclarator.check(path.parent.parent.parent.node)) {
+      var identifiers = [path.parent.parent.parent.node.id.name];
+      inferMembership(identifiers);
     }
 
     this.push(comment);

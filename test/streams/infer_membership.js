@@ -108,11 +108,38 @@ test('inferMembership - instance object assignment', function (t) {
   });
 });
 
+test('inferMembership - instance object assignment, function', function (t) {
+  evaluate(function () {
+    Foo.prototype = {
+      /** Test */
+      bar: function () {}
+    };
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
+    t.equal(result[ 0 ].tags.instance.length, 1);
+    t.end();
+  });
+});
+
 test('inferMembership - variable object assignment', function (t) {
   evaluate(function () {
     var Foo = {
       /** Test */
       baz: 0
+    };
+    return Foo;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
+    t.equal(result[ 0 ].tags.static.length, 1);
+    t.end();
+  });
+});
+
+test('inferMembership - variable object assignment, function', function (t) {
+  evaluate(function () {
+    var Foo = {
+      /** Test */
+      baz: function () {}
     };
     return Foo;
   }, function (result) {
