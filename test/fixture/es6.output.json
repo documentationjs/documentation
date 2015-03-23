@@ -1,0 +1,33 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "return",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "multiply"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 4
+        },
+        "end": {
+          "line": 5,
+          "column": 12
+        }
+      },
+      "file": "fixture/es6.input.js",
+      "code": "multiply = (a, b) => a * b"
+    }
+  }
+]
