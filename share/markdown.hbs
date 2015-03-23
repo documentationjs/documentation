@@ -1,0 +1,18 @@
+# `{{tags.name.0.name}}`
+
+{{#description}}
+{{.}}
+{{/description}}
+
+{{#if tags.param}}
+| name | description |
+| ---- | ----------- |
+{{#tags.param}}
+| `{{name}}` | {{description}} |
+{{/tags.param}}
+{{/if}}
+
+{{#tags.return}}
+Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}
+{{/tags.return}}
+

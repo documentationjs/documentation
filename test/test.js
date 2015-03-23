@@ -2,6 +2,8 @@
 
 var test = require('prova'),
   documentation = require('../'),
+  markdown = require('../streams/markdown.js'),
+  pivot = require('../streams/pivot.js'),
   glob = require('glob'),
   path = require('path'),
   concat = require('concat-stream'),
@@ -16,16 +18,35 @@ function normalize(result) {
   });
 }
 
-glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-  test(path.basename(file), function (t) {
-    documentation([file]).pipe(concat(function (result) {
-      normalize(result);
-      var outputfile = file.replace('.input.js', '.output.json');
-      if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
-      var expect = require(outputfile);
-      t.deepEqual(result, expect);
-      t.end();
-    }));
+test('parse', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
+    tt.test(path.basename(file), function (t) {
+      documentation([file]).pipe(concat(function (result) {
+        normalize(result);
+        var outputfile = file.replace('.input.js', '.output.json');
+        if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+        var expect = require(outputfile);
+        t.deepEqual(result, expect);
+        t.end();
+      }));
+    });
+  });
+});
+
+test('markdown', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
+    tt.test(path.basename(file), function (t) {
+      documentation([file])
+        .pipe(pivot())
+        .pipe(markdown())
+        .pipe(concat(function (result) {
+        var outputfile = file.replace('.input.js', '.output.md');
+        if (UPDATE) fs.writeFileSync(outputfile, result, 'utf8');
+        var expect = fs.readFileSync(outputfile, 'utf8');
+        t.equal(result.toString(), expect);
+        t.end();
+      }));
+    });
   });
 });
 
