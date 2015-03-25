@@ -28,17 +28,18 @@ module.exports = function () {
             title: 'name',
             name: value.name
           });
-          return false;
+          this.abort();
+        } else {
+          this.traverse(path);
         }
-        this.traverse(path);
       },
 
       visitNode: function (path) {
-        return this.inferName(path, path.value);
+        this.inferName(path, path.value);
       },
 
       visitMemberExpression: function (path) {
-        return this.inferName(path, path.value.property);
+        this.inferName(path, path.value.property);
       }
     });
 
