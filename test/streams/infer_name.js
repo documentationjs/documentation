@@ -1,81 +1,123 @@
 'use strict';
 
 var test = require('prova'),
-  through = require('through'),
-  fs = require('fs'),
+  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
   pivot = require('../../streams/pivot'),
   inferName = require('../../streams/infer_name');
 
+function evaluate(fn, callback) {
+  var stream = parse();
 
-// ---- Begin test cases ----
-/* eslint-disable */
+  stream
+    .pipe(inferName())
+    .pipe(pivot())
+    .pipe(concat(callback));
 
-// Each test case is a jsdoc comment plus some example code. The test expectation
-// for each test case is that the jsdoc description is equal to the inferred name.
-
-// ExpressionStatement (comment attached here)
-//   AssignmentExpression
-//     MemberExpression
-//     Identifier
-/** expressionStatement1 */
-exports.expressionStatement1 = test;
-
-// ExpressionStatement
-//   AssignmentExpression
-//     MemberExpression (comment attached here)
-//     FunctionExpression
-/** expressionStatement2 */
-exports.expressionStatement2 = function () {};
-
-exports = {
-  // Property (comment attached here)
-  //   Identifier
-  //   FunctionExpression
-  /** property1 */
-  property1: test,
-
-  // Property
-  //   Identifier (comment attached here)
-  //   FunctionExpression
-  /** property2 */
-  property2: function () {}
-};
-
-/** function1 */
-function function1() {}
-
-/** function2 */
-var function2 = function () {};
-
-/**
-* explicitName
-* @name explicitName
-*/
-function implicitName() {}
-
-/* eslint-enable */
-// ---- End test cases ----
-
-
-function check(comment) {
-  var expected = comment.description,
-    actual = comment.tags.name && comment.tags.name[ 0 ].name;
-
-  test('inferName - ' + expected, function (t) {
-    t.equal(actual, expected);
-    t.end();
+  stream.end({
+    file: __filename,
+    source: '(' + fn.toString() + ')'
   });
 }
 
-var stream = parse();
+test('inferName - expression statement', function (t) {
+  evaluate(function () {
+    // ExpressionStatement (comment attached here)
+    //   AssignmentExpression
+    //     MemberExpression
+    //     Identifier
+    /** Test */
+    exports.name = test;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
 
-stream
-  .pipe(inferName())
-  .pipe(pivot())
-  .pipe(through(check));
+test('inferName - expression statement, function', function (t) {
+  evaluate(function () {
+    // ExpressionStatement
+    //   AssignmentExpression
+    //     MemberExpression (comment attached here)
+    //     FunctionExpression
+    /** Test */
+    exports.name = function () {};
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
 
-stream.end({
-  file: __filename,
-  source: fs.readFileSync(__filename, 'utf8')
+test('inferName - property', function (t) {
+  evaluate(function () {
+    exports = {
+      // Property (comment attached here)
+      //   Identifier
+      //   FunctionExpression
+      /** Test */
+      name: test
+    };
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
+
+test('inferName - property, function', function (t) {
+  evaluate(function () {
+    exports = {
+      // Property
+      //   Identifier (comment attached here)
+      //   FunctionExpression
+      /** Test */
+      name: function () {}
+    };
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
+
+test('inferName - function declaration', function (t) {
+  evaluate(function () {
+    /** Test */
+    function name() {}
+    return name;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
+
+test('inferName - anonymous function expression', function (t) {
+  evaluate(function () {
+    /** Test */
+    var name = function () {};
+    return name;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
+
+test('inferName - named function expression', function (t) {
+  evaluate(function () {
+    /** Test */
+    var name = function name2() {};
+    return name;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.end();
+  });
+});
+
+test('inferName - explicit name', function (t) {
+  evaluate(function () {
+    /** @name explicitName */
+    function implicitName() {}
+    return implicitName;
+  }, function (result) {
+    t.equal(result[ 0 ].tags.name[ 0 ].name, 'explicitName');
+    t.end();
+  });
 });
