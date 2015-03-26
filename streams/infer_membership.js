@@ -76,7 +76,7 @@ module.exports = function () {
     var path = comment.context.ast;
 
     /*
-     * Deal with an oddity of esprima: the jsdoc comment is attached to a different
+     * Deal with an oddity of espree: the jsdoc comment is attached to a different
      * node in the two expressions `a.b = c` vs `a.b = function () {}`.
      */
     if (n.ExpressionStatement.check(path.node) &&

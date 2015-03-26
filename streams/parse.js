@@ -1,7 +1,7 @@
 'use strict';
 
 var doctrine = require('doctrine'),
-  esprima = require('esprima'),
+  espree = require('espree'),
   through = require('through'),
   types = require('ast-types'),
   extend = require('extend');
@@ -41,7 +41,7 @@ function commentShebang(code) {
 module.exports = function () {
   return through(function (data) {
     var code = commentShebang(data.source),
-      ast = esprima.parse(code, {
+      ast = espree.parse(code, {
         loc: true,
         attachComment: true
       }),
