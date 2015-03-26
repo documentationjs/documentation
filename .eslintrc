@@ -7,7 +7,6 @@
     "space-after-keywords": 2,
     "space-unary-ops": 2,
     "space-before-function-parentheses": [2, {"anonymous": "always", "named": "never"}],
-    "space-in-brackets": [2, "always", {"singleValue": false}],
     "no-use-before-define": [2, "nofunc"],
     "camelcase": 2,
     "comma-style": 2,

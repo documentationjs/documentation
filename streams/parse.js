@@ -28,7 +28,7 @@ function isJSDocComment(comment) {
  * @return {String} code
  */
 function commentShebang(code) {
-  return (code[ 0 ] === '#' && code[ 1 ] === '!') ? '//' + code : code;
+  return (code[0] === '#' && code[1] === '!') ? '//' + code : code;
 }
 
 var espreeConfig = {
@@ -140,4 +140,4 @@ module.exports = function () {
       }
     });
   });
-}
+};
