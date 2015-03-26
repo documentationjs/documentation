@@ -22,23 +22,21 @@
   "license": "ISC",
   "dependencies": {
     "JSONStream": "^0.10.0",
-    "ast-types": "^0.7.0",
-    "babel-core": "^4.7.8",
+    "ast-types": "^0.7.2",
     "doctrine": "^0.6.4",
     "espree": "^1.12.2",
     "extend": "^2.0.0",
     "handlebars": "^3.0.0",
-    "module-deps": "^3.7.2",
+    "module-deps": "^3.7.3",
     "stream-combiner": "^0.2.1",
     "through": "^2.3.6",
-    "through2": "^0.6.3",
     "traverse": "^0.6.6",
     "yargs": "^3.5.4"
   },
   "devDependencies": {
     "chdir": "0.0.0",
     "concat-stream": "^1.4.7",
-    "eslint": "^0.16.2",
+    "eslint": "^0.17.1",
     "glob": "^5.0.2",
     "istanbul": "^0.3.7",
     "prova": "^2.1.1"

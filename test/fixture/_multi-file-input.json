@@ -29,12 +29,12 @@
           "column": 0
         },
         "end": {
-          "line": 5,
-          "column": 14
+          "line": 8,
+          "column": 2
         }
       },
       "file": "fixture/simple.input.js",
-      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n}"
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};"
     }
   },
   {
@@ -57,11 +57,11 @@
       "loc": {
         "start": {
           "line": 5,
-          "column": 9
+          "column": 0
         },
         "end": {
-          "line": 5,
-          "column": 18
+          "line": 8,
+          "column": 1
         }
       },
       "file": "fixture/simple-two.input.js",
