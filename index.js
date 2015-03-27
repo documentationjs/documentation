@@ -2,6 +2,7 @@
 
 var mdeps = require('module-deps'),
   path = require('path'),
+  PassThrough = require('stream').PassThrough,
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
   inferMembership = require('./streams/infer_membership');
@@ -34,8 +35,18 @@ module.exports = function (indexes) {
   });
   md.end();
 
+  var end = new PassThrough({ objectMode: true });
+
+  function deferErrors(stream) {
+    return stream.on('error', function (a, b, c) {
+      end.emit('error', a, b, c);
+      end.emit('end');
+    });
+  }
+
   return md
-    .pipe(parse())
-    .pipe(inferName())
-    .pipe(inferMembership());
+    .pipe(deferErrors(parse()))
+    .pipe(deferErrors(inferName()))
+    .pipe(deferErrors(inferMembership()))
+    .pipe(end);
 };

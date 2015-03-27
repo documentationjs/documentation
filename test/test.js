@@ -41,11 +41,10 @@ test('bad input', function (tt) {
           t.fail('bad input should not yield data');
         })
         .on('error', function (error) {
-          console.log('got error', error);
-          // var outputfile = file.replace('.input.js', '.output.json');
-          // if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
-          // var expect = require(outputfile);
-          // t.deepEqual(error, expect);
+          var outputfile = file.replace('.input.js', '.output.json');
+          if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
+          var expect = require(outputfile);
+          t.deepEqual(error, expect);
         })
         .on('end', function () {
           t.end();
