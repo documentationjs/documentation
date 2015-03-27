@@ -20,8 +20,9 @@ var through = require('through'),
  *  * `@param` (to `params` property)
  *  * `@returns` (to `returns` property)
  *
- * The `@static` and `@instance` tags are flattened to a `scope` property
- * whose value is `"static"` or `"instance"`.
+ * The `@global`, `@static`, `@instance`, and `@inner` tags are flattened
+ * to a `scope` property whose value is `"global"`, `"static"`, `"instance"`,
+ * or `"inner"`.
  *
  * The `@access`, `@public`, `@protected`, and `@private` tags are flattened
  * to an `access` property whose value is `"protected"` or `"private"`.
@@ -68,11 +69,17 @@ var flatteners = {
     }
     result.returns.push(tag);
   },
+  'global': function (result, tag) {
+    result.scope = 'global';
+  },
   'static': function (result, tag) {
     result.scope = 'static';
   },
   'instance': function (result, tag) {
     result.scope = 'instance';
+  },
+  'inner': function (result, tag) {
+    result.scope = 'inner';
   },
   'access': function (result, tag) {
     if (tag.access === 'public') {

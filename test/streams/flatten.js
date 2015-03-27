@@ -80,6 +80,16 @@ test('flatten - returns', function (t) {
   });
 });
 
+test('flatten - global', function (t) {
+  evaluate(function () {
+    /** @global */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].scope, 'global');
+    t.end();
+  });
+});
+
 test('flatten - static', function (t) {
   evaluate(function () {
     /** @static */
@@ -96,6 +106,16 @@ test('flatten - instance', function (t) {
     return 0;
   }, function (result) {
     t.equal(result[0].scope, 'instance');
+    t.end();
+  });
+});
+
+test('flatten - inner', function (t) {
+  evaluate(function () {
+    /** @inner */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].scope, 'inner');
     t.end();
   });
 });
