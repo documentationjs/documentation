@@ -28,6 +28,7 @@
     "extend": "^2.0.0",
     "handlebars": "^3.0.0",
     "module-deps": "^3.7.3",
+    "remarkable": "^1.6.0",
     "through": "^2.3.6",
     "traverse": "^0.6.6",
     "yargs": "^3.5.4"
