@@ -33,6 +33,27 @@ test('parse', function (tt) {
   });
 });
 
+test('bad input', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
+    tt.test(path.basename(file), function (t) {
+      documentation([file])
+        .on('data', function () {
+          t.fail('bad input should not yield data');
+        })
+        .on('error', function (error) {
+          console.log('got error', error);
+          // var outputfile = file.replace('.input.js', '.output.json');
+          // if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
+          // var expect = require(outputfile);
+          // t.deepEqual(error, expect);
+        })
+        .on('end', function () {
+          t.end();
+        });
+    });
+  });
+});
+
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
@@ -49,6 +70,7 @@ test('markdown', function (tt) {
     });
   });
 });
+
 
 test('multi-file input', function (t) {
   documentation([

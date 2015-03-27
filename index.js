@@ -32,7 +32,6 @@ module.exports = function (indexes) {
   indexes.forEach(function (index) {
     md.write(path.resolve(index));
   });
-
   md.end();
 
   return md
