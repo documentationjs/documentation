@@ -12,6 +12,8 @@ var through = require('through'),
  *
  *  * `@name`
  *  * `@memberof`
+ *  * `@classdesc`
+ *  * `@kind`
  *
  * The following tags are flattened to a top-level array-valued property:
  *
@@ -20,6 +22,11 @@ var through = require('through'),
  *
  * The `@static` and `@instance` tags are flattened to a `scope` property
  * whose value is `"static"` or `"instance"`.
+ *
+ * The `@access`, `@public`, `@protected`, and `@private` tags are flattened
+ * to an `access` property whose value is `"protected"` or `"private"`.
+ * The assumed default value is `"public"`, so `@access public` or `@public`
+ * tags result in no `access` property.
  *
  * @name flatten
  * @return {stream.Transform}
@@ -43,6 +50,12 @@ var flatteners = {
   'memberof': function (result, tag) {
     result.memberof = tag.description;
   },
+  'classdesc': function (result, tag) {
+    result.classdesc = tag.description;
+  },
+  'kind': function (result, tag) {
+    result.kind = tag.kind;
+  },
   'param': function (result, tag) {
     if (!result.params) {
       result.params = [];
@@ -60,5 +73,21 @@ var flatteners = {
   },
   'instance': function (result, tag) {
     result.scope = 'instance';
+  },
+  'access': function (result, tag) {
+    if (tag.access === 'public') {
+      delete result.access;
+    } else {
+      result.access = tag.access;
+    }
+  },
+  'public': function (result, tag) {
+    delete result.access;
+  },
+  'protected': function (result, tag) {
+    result.access = 'protected';
+  },
+  'private': function (result, tag) {
+    result.access = 'private';
   }
 };
