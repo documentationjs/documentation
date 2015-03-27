@@ -1,18 +1,18 @@
-# `{{tags.name.0.name}}`
+# `{{name}}`
 
 {{#description}}
 {{.}}
 {{/description}}
 
-{{#if tags.param}}
+{{#if params}}
 | name | description |
 | ---- | ----------- |
-{{#tags.param}}
+{{#params}}
 | `{{name}}` | {{description}} |
-{{/tags.param}}
+{{/params}}
 {{/if}}
 
-{{#tags.return}}
+{{#returns}}
 Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}
-{{/tags.return}}
+{{/returns}}
 

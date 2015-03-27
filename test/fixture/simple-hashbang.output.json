@@ -3,7 +3,7 @@
     "description": "This function returns the number one.",
     "tags": [
       {
-        "title": "return",
+        "title": "returns",
         "description": "numberone",
         "type": {
           "type": "NameExpression",

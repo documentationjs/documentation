@@ -3,7 +3,7 @@
 var test = require('prova'),
   documentation = require('../'),
   markdown = require('../streams/markdown.js'),
-  pivot = require('../streams/pivot.js'),
+  flatten = require('../streams/flatten.js'),
   glob = require('glob'),
   path = require('path'),
   concat = require('concat-stream'),
@@ -37,7 +37,7 @@ test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
       documentation([file])
-        .pipe(pivot())
+        .pipe(flatten())
         .pipe(markdown())
         .pipe(concat(function (result) {
         var outputfile = file.replace('.input.js', '.output.md');

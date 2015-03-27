@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 var documentation = require('../'),
-  combine = require('stream-combiner'),
   markdown = require('../streams/markdown.js'),
-  pivot = require('../streams/pivot.js'),
+  normalize = require('../streams/normalize.js'),
+  flatten = require('../streams/flatten.js'),
   JSONStream = require('JSONStream'),
   path = require('path');
 
@@ -31,7 +31,7 @@ if (argv._.length > 0) {
 
 var formatter = {
   json: JSONStream.stringify(),
-  md: combine([ pivot(), markdown() ])
+  md: markdown()
 }[ argv.f ];
 
 if (!formatter) {
@@ -40,5 +40,7 @@ if (!formatter) {
 }
 
 documentation(inputs)
+  .pipe(normalize())
+  .pipe(flatten())
   .pipe(formatter)
   .pipe(process.stdout);

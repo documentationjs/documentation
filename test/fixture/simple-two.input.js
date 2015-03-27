@@ -1,6 +1,6 @@
 /**
  * This function returns the number two.
- * @return {Number} numbertwo
+ * @returns {Number} numbertwo
  */
 function returnTwo() {
   // this returns 2

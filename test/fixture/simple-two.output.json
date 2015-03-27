@@ -3,7 +3,7 @@
     "description": "This function returns the number two.",
     "tags": [
       {
-        "title": "return",
+        "title": "returns",
         "description": "numbertwo",
         "type": {
           "type": "NameExpression",

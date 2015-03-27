@@ -3,7 +3,7 @@
 var test = require('prova'),
   concat = require('concat-stream'),
   parse = require('../../streams/parse'),
-  pivot = require('../../streams/pivot'),
+  flatten = require('../../streams/flatten'),
   inferName = require('../../streams/infer_name');
 
 function evaluate(fn, callback) {
@@ -11,7 +11,7 @@ function evaluate(fn, callback) {
 
   stream
     .pipe(inferName())
-    .pipe(pivot())
+    .pipe(flatten())
     .pipe(concat(callback));
 
   stream.end({
@@ -29,7 +29,7 @@ test('inferName - expression statement', function (t) {
     /** Test */
     exports.name = test;
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -43,7 +43,7 @@ test('inferName - expression statement, function', function (t) {
     /** Test */
     exports.name = function () {};
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -58,7 +58,7 @@ test('inferName - property', function (t) {
       name: test
     };
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -73,7 +73,7 @@ test('inferName - property, function', function (t) {
       name: function () {}
     };
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -84,7 +84,7 @@ test('inferName - function declaration', function (t) {
     function name() {}
     return name;
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -95,7 +95,7 @@ test('inferName - anonymous function expression', function (t) {
     var name = function () {};
     return name;
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -106,7 +106,7 @@ test('inferName - named function expression', function (t) {
     var name = function name2() {};
     return name;
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'name');
+    t.equal(result[ 0 ].name, 'name');
     t.end();
   });
 });
@@ -117,7 +117,7 @@ test('inferName - explicit name', function (t) {
     function implicitName() {}
     return implicitName;
   }, function (result) {
-    t.equal(result[ 0 ].tags.name[ 0 ].name, 'explicitName');
+    t.equal(result[ 0 ].name, 'explicitName');
     t.end();
   });
 });

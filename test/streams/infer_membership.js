@@ -3,7 +3,7 @@
 var test = require('prova'),
   concat = require('concat-stream'),
   parse = require('../../streams/parse'),
-  pivot = require('../../streams/pivot'),
+  flatten = require('../../streams/flatten'),
   inferMembership = require('../../streams/infer_membership');
 
 function evaluate(fn, callback) {
@@ -11,7 +11,7 @@ function evaluate(fn, callback) {
 
   stream
     .pipe(inferMembership())
-    .pipe(pivot())
+    .pipe(flatten())
     .pipe(concat(callback));
 
   stream.end({
@@ -31,8 +31,8 @@ test('inferMembership - explicit', function (t) {
      */
     Foo.bar = 0;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Bar');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Bar');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -42,8 +42,8 @@ test('inferMembership - static', function (t) {
     /** Test */
     Foo.bar = 0;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -53,8 +53,8 @@ test('inferMembership - instance', function (t) {
     /** Test */
     Foo.prototype.bar = 0;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.instance.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'instance');
     t.end();
   });
 });
@@ -64,8 +64,8 @@ test('inferMembership - compound', function (t) {
     /** Test */
     Foo.bar.baz = 0;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo.bar');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo.bar');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -75,9 +75,8 @@ test('inferMembership - unknown', function (t) {
     /** Test */
     (0).baz = 0;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof, undefined);
-    t.equal(result[ 0 ].tags.static, undefined);
-    t.equal(result[ 0 ].tags.instance, undefined);
+    t.equal(result[ 0 ].memberof, undefined);
+    t.equal(result[ 0 ].scope, undefined);
     t.end();
   });
 });
@@ -89,8 +88,8 @@ test('inferMembership - static object assignment', function (t) {
       baz: 0
     };
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo.bar');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo.bar');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -102,8 +101,8 @@ test('inferMembership - instance object assignment', function (t) {
       bar: 0
     };
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.instance.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'instance');
     t.end();
   });
 });
@@ -115,8 +114,8 @@ test('inferMembership - instance object assignment, function', function (t) {
       bar: function () {}
     };
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.instance.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'instance');
     t.end();
   });
 });
@@ -129,8 +128,8 @@ test('inferMembership - variable object assignment', function (t) {
     };
     return Foo;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -143,8 +142,8 @@ test('inferMembership - variable object assignment, function', function (t) {
     };
     return Foo;
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'Foo');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
@@ -154,8 +153,8 @@ test('inferMembership - simple', function (t) {
     /** Test */
     module.exports = function () {};
   }, function (result) {
-    t.equal(result[ 0 ].tags.memberof[ 0 ].description, 'module');
-    t.equal(result[ 0 ].tags.static.length, 1);
+    t.equal(result[ 0 ].memberof, 'module');
+    t.equal(result[ 0 ].scope, 'static');
     t.end();
   });
 });
