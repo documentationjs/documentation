@@ -5,6 +5,7 @@ var mdeps = require('module-deps'),
   PassThrough = require('stream').PassThrough,
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
+  inferKind = require('./streams/infer_kind'),
   inferMembership = require('./streams/infer_membership');
 
 // Skip external modules. Based on http://git.io/pzPO.
@@ -47,6 +48,7 @@ module.exports = function (indexes) {
   return md
     .pipe(deferErrors(parse()))
     .pipe(deferErrors(inferName()))
+    .pipe(inferKind())
     .pipe(deferErrors(inferMembership()))
     .pipe(end);
 };
