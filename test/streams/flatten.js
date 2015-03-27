@@ -80,6 +80,17 @@ test('flatten - returns', function (t) {
   });
 });
 
+test('flatten - example', function (t) {
+  evaluate(function () {
+    /** @example test */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].examples.length, 1);
+    t.equal(result[0].examples[0], 'test');
+    t.end();
+  });
+});
+
 test('flatten - global', function (t) {
   evaluate(function () {
     /** @global */
