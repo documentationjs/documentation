@@ -19,7 +19,7 @@ var through = require('through'),
  */
 module.exports = function (opts) {
   var options = extend({}, opts, {
-    template: path.resolve(path.join(__dirname, '../share/markdown.hbs'))
+    template: path.resolve(path.join(__dirname, '../../share/markdown.hbs'))
   });
   var template = Handlebars
     .compile(

@@ -2,7 +2,7 @@
 
 var test = require('prova'),
   documentation = require('../'),
-  markdown = require('../streams/markdown.js'),
+  markdown = require('../streams/output/markdown.js'),
   flatten = require('../streams/flatten.js'),
   glob = require('glob'),
   path = require('path'),

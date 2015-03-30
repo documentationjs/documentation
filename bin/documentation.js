@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 var documentation = require('../'),
-  markdown = require('../streams/markdown.js'),
+  markdown = require('../streams/output/markdown.js'),
+  json = require('../streams/output/json.js'),
   normalize = require('../streams/normalize.js'),
   flatten = require('../streams/flatten.js'),
-  JSONStream = require('JSONStream'),
   path = require('path');
 
 var yargs = require('yargs')
@@ -30,7 +30,7 @@ if (argv._.length > 0) {
 }
 
 var formatter = {
-  json: JSONStream.stringify(),
+  json: json(),
   md: markdown()
 }[ argv.f ];
 
