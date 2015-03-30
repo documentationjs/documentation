@@ -45,7 +45,9 @@ var through = require('through'),
  */
 module.exports = function () {
   return through(function (comment) {
-    this.push(extend({}, comment, { tags: comment.tags.map(normalize) }));
+    this.push(extend({}, comment, {
+      tags: comment.tags.map(normalize)
+    }));
   });
 };
 
@@ -75,4 +77,4 @@ var synonyms = {
 function normalize(tag) {
   var canonical = synonyms[tag.title];
   return canonical ? extend({}, tag, { title: canonical }) : tag;
-};
+}

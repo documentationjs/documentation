@@ -4,6 +4,7 @@ var test = require('prova'),
   documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
   flatten = require('../streams/flatten.js'),
+  filterAccess = require('../streams/filter_access.js'),
   glob = require('glob'),
   path = require('path'),
   concat = require('concat-stream'),
@@ -58,6 +59,7 @@ test('markdown', function (tt) {
     tt.test(path.basename(file), function (t) {
       documentation([file])
         .pipe(flatten())
+        .pipe((filterAccess()))
         .pipe(markdown())
         .pipe(concat(function (result) {
         var outputfile = file.replace('.input.js', '.output.md');
@@ -70,6 +72,7 @@ test('markdown', function (tt) {
     tt.test(path.basename(file) + ' custom', function (t) {
       documentation([file])
         .pipe(flatten())
+        .pipe((filterAccess()))
         .pipe(markdown({
           template: path.join(__dirname, '/misc/custom.hbs')
         }))

@@ -136,7 +136,7 @@ test('flatten - access public', function (t) {
     /** @access public */
     return 0;
   }, function (result) {
-    t.notOk('access' in result[0]);
+    t.equal(result[0].access, 'public');
     t.end();
   });
 });
@@ -166,7 +166,7 @@ test('flatten - public', function (t) {
     /** @public */
     return 0;
   }, function (result) {
-    t.notOk('access' in result[0]);
+    t.equal(result[0].access, 'public');
     t.end();
   });
 });

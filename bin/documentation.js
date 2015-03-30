@@ -5,16 +5,25 @@ var documentation = require('../'),
   json = require('../streams/output/json.js'),
   normalize = require('../streams/normalize.js'),
   flatten = require('../streams/flatten.js'),
+  filterAccess = require('../streams/filter_access.js'),
   path = require('path');
 
 var yargs = require('yargs')
   .usage('Usage: $0 <command> [options]')
+
   .alias('f', 'format')
-  .describe('f', 'output format, of [json, md]')
   .default('f', 'json')
+  .describe('f', 'output format, of [json, md]')
+
   .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
+
+  .boolean('p')
+  .describe('p', 'generate documentation tagged as private')
+  .alias('p', 'private')
+
   .help('h')
   .alias('h', 'help')
+
   .example('$0 foo.js', 'parse documentation in a given file'),
   argv = yargs.argv;
 
@@ -45,5 +54,6 @@ if (!formatter) {
 documentation(inputs)
   .pipe(normalize())
   .pipe(flatten())
+  .pipe(filterAccess(argv.private ? [] : undefined))
   .pipe(formatter)
   .pipe(process.stdout);

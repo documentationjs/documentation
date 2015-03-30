@@ -14,6 +14,7 @@ var through = require('through'),
  *  * `@memberof`
  *  * `@classdesc`
  *  * `@kind`
+ *  * `@access`
  *
  * The following tags are flattened to a top-level array-valued property:
  *
@@ -33,8 +34,8 @@ var through = require('through'),
  * @name flatten
  * @return {stream.Transform}
  */
-module.exports = function() {
-  return through(function(comment) {
+module.exports = function () {
+  return through(function (comment) {
     var result = extend({}, comment);
 
     comment.tags.forEach(function (tag) {
@@ -89,14 +90,10 @@ var flatteners = {
     result.scope = 'inner';
   },
   'access': function (result, tag) {
-    if (tag.access === 'public') {
-      delete result.access;
-    } else {
-      result.access = tag.access;
-    }
+    result.access = tag.access;
   },
   'public': function (result, tag) {
-    delete result.access;
+    result.access = 'public';
   },
   'protected': function (result, tag) {
     result.access = 'protected';
