@@ -4,25 +4,36 @@ var through = require('through'),
   types = require('ast-types'),
   n = types.namedTypes;
 
+/**
+ * Create a transform stream that uses code structure to infer
+ * `memberof`, `instance`, and `static` tags from the placement of JSDoc
+ * annotations within a file
+ *
+ * @name inferMembership
+ * @returns {Stream.Transform} stream
+ */
 module.exports = function () {
   return through(function (comment) {
-    if (comment.tags.some(function (tag) { return tag.title === 'memberof'; })) {
+    if (comment.tags.some(function (tag) {
+      return tag.title === 'memberof';
+    })) {
       this.push(comment);
       return;
     }
 
-    /*
+    /**
      * Extract and return the chain of identifiers from the left hand side of expressions
      * of the forms `Foo = ...`, `Foo.bar = ...`, `Foo.bar.baz = ...`, etc.
      *
      * @param {NodePath} path AssignmentExpression, MemberExpression, or Identifier
      * @returns {Array<string>} identifiers
+     * @private
      */
     function extractIdentifiers(path) {
       var identifiers = [];
 
       types.visit(path, {
-        visitNode: function() {
+        visitNode: function () {
           return false;
         },
 
@@ -37,19 +48,20 @@ module.exports = function () {
         visitIdentifier: function (path) {
           identifiers.push(path.node.name);
           return false;
-        },
+        }
       });
 
       return identifiers;
     }
 
-    /*
+    /**
      * Set `memberof` and `instance`/`static` tags on `comment` based on the
      * array of `identifiers`. If the last element of the `identifiers` is
      * `"prototype"`, it is assumed to be an instance member; otherwise static.
      *
      * @param {Array<string>} identifiers
      * @returns {undefined} mutates `comment`
+     * @private
      */
     function inferMembership(identifiers) {
       if (identifiers[identifiers.length - 1] === 'prototype') {
@@ -74,6 +86,7 @@ module.exports = function () {
     }
 
     var path = comment.context.ast;
+    var identifiers;
 
     /*
      * Deal with an oddity of espree: the jsdoc comment is attached to a different
@@ -99,7 +112,7 @@ module.exports = function () {
      * Foo.bar.baz = ...;
      */
     if (n.MemberExpression.check(path.node)) {
-      var identifiers = extractIdentifiers(path);
+      identifiers = extractIdentifiers(path);
       if (identifiers.length >= 2) {
         inferMembership(identifiers.slice(0, -1));
       }
@@ -114,7 +127,7 @@ module.exports = function () {
         n.Property.check(path.parent.node) &&
         n.ObjectExpression.check(path.parent.parent.node) &&
         n.AssignmentExpression.check(path.parent.parent.parent.node)) {
-      var identifiers = extractIdentifiers(path.parent.parent.parent);
+      identifiers = extractIdentifiers(path.parent.parent.parent);
       if (identifiers.length >= 1) {
         inferMembership(identifiers);
       }
@@ -127,7 +140,7 @@ module.exports = function () {
         n.Property.check(path.parent.node) &&
         n.ObjectExpression.check(path.parent.parent.node) &&
         n.VariableDeclarator.check(path.parent.parent.parent.node)) {
-      var identifiers = [path.parent.parent.parent.node.id.name];
+      identifiers = [path.parent.parent.parent.node.id.name];
       inferMembership(identifiers);
     }
 
