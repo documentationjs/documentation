@@ -1,8 +1,10 @@
 /**
- * This function returns the number two.
+ * This function returns the number plus two.
+ *
+ * @param {Number} a the number
  * @returns {Number} numbertwo
  */
-function returnTwo() {
-  // this returns 2
-  return 2;
+function returnTwo(a) {
+  // this returns a + 2
+  return a + 2;
 }

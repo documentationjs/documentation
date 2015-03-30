@@ -67,6 +67,20 @@ test('markdown', function (tt) {
         t.end();
       }));
     });
+    tt.test(path.basename(file) + ' custom', function (t) {
+      documentation([file])
+        .pipe(flatten())
+        .pipe(markdown({
+          template: path.join(__dirname, '/misc/custom.hbs')
+        }))
+        .pipe(concat(function (result) {
+        var outputfile = file.replace('.input.js', '.output.custom.md');
+        if (UPDATE) fs.writeFileSync(outputfile, result, 'utf8');
+        var expect = fs.readFileSync(outputfile, 'utf8');
+        t.equal(result.toString(), expect);
+        t.end();
+      }));
+    });
   });
 });
 

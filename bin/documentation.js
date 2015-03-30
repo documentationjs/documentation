@@ -12,6 +12,7 @@ var yargs = require('yargs')
   .alias('f', 'format')
   .describe('f', 'output format, of [json, md]')
   .default('f', 'json')
+  .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
   .help('h')
   .alias('h', 'help')
   .example('$0 foo.js', 'parse documentation in a given file'),
@@ -31,8 +32,10 @@ if (argv._.length > 0) {
 
 var formatter = {
   json: json(),
-  md: markdown()
-}[ argv.f ];
+  md: markdown({
+    template: argv.mdtemplate
+  })
+}[argv.f];
 
 if (!formatter) {
   yargs.showHelp();
