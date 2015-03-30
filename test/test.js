@@ -5,6 +5,9 @@ var test = require('prova'),
   markdown = require('../streams/output/markdown.js'),
   flatten = require('../streams/flatten.js'),
   filterAccess = require('../streams/filter_access.js'),
+  html = require('../streams/html.js'),
+  hierarchy = require('../streams/hierarchy.js'),
+  outputHtml = require('../streams/output/html.js'),
   glob = require('glob'),
   path = require('path'),
   concat = require('concat-stream'),
@@ -53,6 +56,30 @@ test('bad input', function (tt) {
     });
   });
 });
+
+test('html', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
+    tt.test(path.basename(file), function (t) {
+      documentation([file])
+        .pipe(flatten())
+        .pipe(filterAccess())
+        .pipe(html())
+        .pipe(hierarchy())
+        .pipe(outputHtml())
+        .pipe(concat(function (result) {
+        var clean = result.map(function (r) {
+          return r.inspect();
+        }).join('\n');
+        var outputfile = file.replace('.input.js', '.output.files');
+        if (UPDATE) fs.writeFileSync(outputfile, clean, 'utf8');
+        var expect = fs.readFileSync(outputfile, 'utf8');
+        t.deepEqual(clean, expect);
+        t.end();
+      }));
+    });
+  });
+});
+
 
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {

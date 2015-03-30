@@ -3,6 +3,9 @@
 var documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
   json = require('../streams/output/json.js'),
+  htmlOutput = require('../streams/output/html.js'),
+  fs = require('fs'),
+  vfs = require('vinyl-fs'),
   normalize = require('../streams/normalize.js'),
   flatten = require('../streams/flatten.js'),
   filterAccess = require('../streams/filter_access.js'),
@@ -13,13 +16,17 @@ var yargs = require('yargs')
 
   .alias('f', 'format')
   .default('f', 'json')
-  .describe('f', 'output format, of [json, md]')
+  .describe('f', 'output format, of [json, md, html]')
 
   .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
 
   .boolean('p')
   .describe('p', 'generate documentation tagged as private')
   .alias('p', 'private')
+
+  .describe('o', 'output location. omit for stdout, otherwise is a filename for single-file outputs and a directory name for multi-file outputs like html')
+  .alias('o', 'output')
+  .default('o', 'stdout')
 
   .help('h')
   .alias('h', 'help')
@@ -43,8 +50,24 @@ var formatter = {
   json: json(),
   md: markdown({
     template: argv.mdtemplate
-  })
+  }),
+  html: htmlOutput()
 }[argv.f];
+
+var output = process.stdout;
+
+if (argv.o) {
+  if (argv.f === 'html') {
+    output = vfs.dest(argv.o);
+  } else {
+    output = fs.createWriteStream(argv.o);
+  }
+}
+
+if (argv.f === 'html' && argv.o === 'stdout') {
+  yargs.showHelp();
+  throw new Error('The HTML output mode requires a destination directory set with -o');
+}
 
 if (!formatter) {
   yargs.showHelp();
@@ -56,4 +79,4 @@ documentation(inputs)
   .pipe(flatten())
   .pipe(filterAccess(argv.private ? [] : undefined))
   .pipe(formatter)
-  .pipe(process.stdout);
+  .pipe(output);
