@@ -54,16 +54,6 @@ var formatter = {
   html: htmlOutput()
 }[argv.f];
 
-var output = process.stdout;
-
-if (argv.o) {
-  if (argv.f === 'html') {
-    output = vfs.dest(argv.o);
-  } else {
-    output = fs.createWriteStream(argv.o);
-  }
-}
-
 if (argv.f === 'html' && argv.o === 'stdout') {
   yargs.showHelp();
   throw new Error('The HTML output mode requires a destination directory set with -o');
@@ -74,9 +64,18 @@ if (!formatter) {
   throw new Error('Formatter not found');
 }
 
-documentation(inputs)
+var docStream = documentation(inputs)
   .pipe(normalize())
   .pipe(flatten())
   .pipe(filterAccess(argv.private ? [] : undefined))
-  .pipe(formatter)
-  .pipe(output);
+  .pipe(formatter);
+
+if (argv.o !== 'stdout') {
+  if (argv.f === 'html') {
+    docStream.pipe(vfs.dest(argv.o));
+  } else {
+    docStream.pipe(fs.createWriteStream(argv.o));
+  }
+} else {
+  docStream.pipe(process.stdout);
+}

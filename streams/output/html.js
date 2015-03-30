@@ -36,7 +36,7 @@ module.exports = function (opts) {
     }));
   }, function () {
     // push assets into the pipeline as well.
-    vfs.src([options.path + '/**', options.path + '/!**.hbs'])
+    vfs.src([options.path + '/**', '!' + options.path + '/**.hbs'])
       .on('data', function (file) {
         this.push(file);
       }.bind(this))
