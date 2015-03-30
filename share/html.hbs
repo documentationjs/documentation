@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Documentation</title>
+</head>
+<body>
+
+  <h1>{{name}}</h1>
+
+  {{#description}}
+  <p>{{.}}</p>
+  {{/description}}
+
+  {{#if params}}
+  <table>
+    <tr>
+      <th>name</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      {{#params}}
+      <td>
+        <code>{{name}}</code>
+      </td>
+      <td>
+        {{description}}
+      </td>
+      {{/params}}
+    </tr>
+  </table>
+  {{/if}}
+
+  {{#returns}}
+  <p>Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}</p>
+  {{/returns}}
+
+</body>
+</html>
