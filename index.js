@@ -48,7 +48,7 @@ module.exports = function (indexes) {
   return md
     .pipe(deferErrors(parse()))
     .pipe(deferErrors(inferName()))
-    .pipe(inferKind())
+    .pipe(deferErrors(inferKind()))
     .pipe(deferErrors(inferMembership()))
     .pipe(end);
 };
