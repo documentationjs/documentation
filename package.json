@@ -27,6 +27,7 @@
     "espree": "^1.12.2",
     "extend": "^2.0.0",
     "handlebars": "^3.0.0",
+    "highlight.js": "^8.4.0",
     "module-deps": "^3.7.3",
     "remarkable": "^1.6.0",
     "stream-combiner": "^0.2.1",

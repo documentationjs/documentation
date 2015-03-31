@@ -5,6 +5,7 @@ var documentation = require('../'),
   json = require('../streams/output/json.js'),
   combine = require('stream-combiner'),
   hierarchy = require('../streams/hierarchy.js'),
+  highlight = require('../streams/highlight.js'),
   html = require('../streams/html.js'),
   htmlOutput = require('../streams/output/html.js'),
   fs = require('fs'),
@@ -54,7 +55,7 @@ var formatter = {
   md: markdown({
     template: argv.mdtemplate
   }),
-  html: combine([html(), hierarchy(), htmlOutput()])
+  html: combine([html(), highlight(), hierarchy(), htmlOutput()])
 }[argv.f];
 
 if (argv.f === 'html' && argv.o === 'stdout') {
