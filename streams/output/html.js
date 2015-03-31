@@ -29,10 +29,12 @@ module.exports = function (opts) {
     .compile(
       fs.readFileSync(path.join(options.path, 'index.hbs'), 'utf8'));
 
-  return through(function (comment) {
+  return through(function (comments) {
     this.push(new File({
       path: 'index.html',
-      contents: new Buffer(template(comment), 'utf8')
+      contents: new Buffer(template({
+        docs: comments
+      }), 'utf8')
     }));
   }, function () {
     // push assets into the pipeline as well.

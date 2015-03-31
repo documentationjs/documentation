@@ -2,6 +2,7 @@
 <head>
   <title>Documentation</title>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
 </head>
 <body>
   <div class='px2'>
@@ -9,10 +10,29 @@
       <div class='relative top-0 bottom-0 right-0 px2 py2 sm-col-3 md-col-2 sm-show'>
         <div class='fixed sm-col-3 md-col-2 top-0 bottom-0 left-0 overflow-auto black bg-darken-1'>
           <a href="/" class="h5 caps mb3 button block button-transparent">documentation</a>
+          {{#each docs}}
+            <a class='button block button-transparent bg-darken-1'>
+              <code>{{name}}</code>
+            </a>
+          {{/each}}
         </div>
       </div>
       <div class='sm-col sm-col-9 md-col-10 flex flex-column'>
         <div class='flex-auto full-width container-small'>
+          {{#each docs}}
+            <h3><code>{{name}}</code></h3>
+            <p>{{{description}}}</p>
+              {{#if params}}
+              <table>
+                {{#params}}
+                <tr>
+                  <td><code>{{name}}</code></td>
+                  <td>{{{description}}}</td>
+                </tr>
+              {{/params}}
+              </table>
+              {{/if}}
+          {{/each}}
         </div>
       </div>
     </div>
