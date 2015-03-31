@@ -20,10 +20,15 @@
       <div class='sm-col sm-col-9 md-col-10 flex flex-column'>
         <div class='flex-auto full-width container-small'>
           {{#each docs}}
+          <div class='mt3 mb1'>
             <h3><code>{{name}}</code></h3>
             <p>{{{description}}}</p>
               {{#if params}}
-              <table>
+              <table class='table-light overflow-hidden bg-white border rounded'>
+                <thead class='bg-darken-1'>
+                  <th>parameter</th>
+                  <th>description</th>
+                </thead>
                 {{#params}}
                 <tr>
                   <td><code>{{name}}</code></td>
@@ -32,6 +37,14 @@
               {{/params}}
               </table>
               {{/if}}
+
+              {{#if examples}}
+                <h4>Examples</h4>
+                {{#each examples}}
+                  <pre>{{.}}</pre>
+                {{/each}}
+              {{/if}}
+          </div>
           {{/each}}
         </div>
       </div>

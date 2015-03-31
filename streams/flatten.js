@@ -77,28 +77,28 @@ var flatteners = {
     }
     result.examples.push(tag.description);
   },
-  'global': function (result, tag) {
+  'global': function (result) {
     result.scope = 'global';
   },
-  'static': function (result, tag) {
+  'static': function (result) {
     result.scope = 'static';
   },
-  'instance': function (result, tag) {
+  'instance': function (result) {
     result.scope = 'instance';
   },
-  'inner': function (result, tag) {
+  'inner': function (result) {
     result.scope = 'inner';
   },
   'access': function (result, tag) {
     result.access = tag.access;
   },
-  'public': function (result, tag) {
+  'public': function (result) {
     result.access = 'public';
   },
-  'protected': function (result, tag) {
+  'protected': function (result) {
     result.access = 'protected';
   },
-  'private': function (result, tag) {
+  'private': function (result) {
     result.access = 'private';
   }
 };

@@ -58,6 +58,10 @@
         }
       },
       {
+        "title": "example",
+        "description": "var result = returnTwo(4);\n// result is 6"
+      },
+      {
         "title": "name",
         "name": "returnTwo"
       }
@@ -65,11 +69,11 @@
     "context": {
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 13,
           "column": 1
         }
       },
