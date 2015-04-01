@@ -21,6 +21,7 @@ function evaluate(fn, callback) {
 }
 
 function Foo() {}
+function lend() {}
 
 test('inferMembership - explicit', function (t) {
   evaluate(function () {
@@ -155,6 +156,70 @@ test('inferMembership - simple', function (t) {
   }, function (result) {
     t.equal(result[ 0 ].memberof, 'module');
     t.equal(result[ 0 ].scope, 'static');
+    t.end();
+  });
+});
+
+test('inferMembership - lends, static', function (t) {
+  evaluate(function () {
+    lend(/** @lends Foo */{
+      /** Test */
+      bar: 0
+    });
+  }, function (result) {
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'static');
+    t.end();
+  });
+});
+
+test('inferMembership - lends, static, function', function (t) {
+  evaluate(function () {
+    lend(/** @lends Foo */{
+      /** Test */
+      bar: function () {}
+    });
+  }, function (result) {
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'static');
+    t.end();
+  });
+});
+
+test('inferMembership - lends, instance', function (t) {
+  evaluate(function () {
+    lend(/** @lends Foo.prototype */{
+      /** Test */
+      bar: 0
+    });
+  }, function (result) {
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'instance');
+    t.end();
+  });
+});
+
+test('inferMembership - lends, instance, function', function (t) {
+  evaluate(function () {
+    lend(/** @lends Foo.prototype */{
+      /** Test */
+      bar: function () {}
+    });
+  }, function (result) {
+    t.equal(result[ 0 ].memberof, 'Foo');
+    t.equal(result[ 0 ].scope, 'instance');
+    t.end();
+  });
+});
+
+test('inferMembership - lends applies only to following object', function (t) {
+  evaluate(function () {
+    lend(/** @lends Foo */{});
+    /** Test */
+    return 0;
+  }, function (result) {
+    t.equal(result.length, 1);
+    t.equal(result[ 0 ].memberof, undefined);
     t.end();
   });
 });
