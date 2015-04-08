@@ -5,7 +5,6 @@ var test = require('prova'),
   markdown = require('../streams/output/markdown.js'),
   flatten = require('../streams/flatten.js'),
   filterAccess = require('../streams/filter_access.js'),
-  html = require('../streams/html.js'),
   hierarchy = require('../streams/hierarchy.js'),
   outputHtml = require('../streams/output/html.js'),
   glob = require('glob'),
@@ -63,7 +62,6 @@ test('html', function (tt) {
       documentation([file])
         .pipe(flatten())
         .pipe(filterAccess())
-        .pipe(html())
         .pipe(hierarchy())
         .pipe(outputHtml())
         .pipe(concat(function (result) {
