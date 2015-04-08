@@ -22,6 +22,11 @@ Using [espree](https://github.com/eslint/espree), we have support for a wide ran
 
 Using [module-deps](https://github.com/substack/module-deps), `documentation` can crawl `require()` graphs - pointing it to your app's `main` file will find all referenced files and include all of their documentation.
 
+**GitHub Integration**
+
+The `--github` option automatically permalinks documentation to the exact
+sections of code it refers to in a GitHub repository.
+
 # Future Goals
 
 * Robust and complete `JSDoc` support, including typedefs.
