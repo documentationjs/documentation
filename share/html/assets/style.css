@@ -17,3 +17,11 @@
   padding-left: 1rem;
   border-left: 2px solid #eee;
 }
+
+.bg-cloudy {
+  background: rgba(230, 235, 237, 1);
+}
+
+.bg-cloudy-light {
+  background: rgba(230, 235, 237, 0.5);
+}

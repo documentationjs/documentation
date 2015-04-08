@@ -49,5 +49,27 @@ function inferHierarchy(comments) {
       comments.splice(i, 1);
     }
   }
+
+  /**
+   * Add paths to each comment, making it possible to generate permalinks
+   * that differentiate between instance functions with the same name but
+   * different `@memberof` values.
+   *
+   * @param {Object} comment the jsdoc comment
+   * @param {Array<String>} prefix an array of strings representing names
+   * @returns {undefined} changes its input by reference.
+   */
+  function addPath(comment, prefix) {
+    comment.path = prefix.concat([comment.name]);
+    comment.members.instance.forEach(function (member) {
+      addPath(member, comment.path);
+    });
+    comment.members.static.forEach(function (member) {
+      addPath(member, comment.path);
+    });
+  }
+
+  for (i = 0; i < comments.length; i++) addPath(comments[i], []);
+
   return comments;
 }

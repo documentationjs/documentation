@@ -78,11 +78,28 @@ module.exports = function (opts) {
     }
   }
 
+  /**
+   * Format a parameter name. This is used in formatParameters
+   * and just needs to be careful about differentiating optional
+   * parameters
+   *
+   * @param {Object} param
+   * @returns {String} formatted parameter representation.
+   */
+  function formatParameter(param) {
+    return (param.type && param.type.type === 'OptionalType') ?
+      '[' + param.name + ']' : param.name;
+  }
+
+  /**
+   * Format the parameters of a function into a quickly-readable
+   * summary that resembles how you would call the function
+   * initially.
+   */
   function formatParameters() {
-    console.log(this.kind);
     if (!this.params) return '';
     return '(' + this.params.map(function (param) {
-      return param.name;
+      return formatParameter(param);
     }).join(', ') + ')';
   }
 
@@ -91,18 +108,16 @@ module.exports = function (opts) {
   });
 
   Handlebars.registerHelper('permalink', function () {
-    return slugg(this.name);
+    return this.path.map(slugg).join('/');
   });
 
   Handlebars.registerHelper('format_params', formatParameters);
 
   var pageTemplate = Handlebars
-    .compile(
-      fs.readFileSync(path.join(options.path, 'index.hbs'), 'utf8'));
+    .compile(fs.readFileSync(path.join(options.path, 'index.hbs'), 'utf8'));
 
   var sectionTemplate = Handlebars
-    .compile(
-      fs.readFileSync(path.join(options.path, 'section.hbs'), 'utf8'));
+    .compile(fs.readFileSync(path.join(options.path, 'section.hbs'), 'utf8'));
 
   Handlebars.registerPartial('section', sectionTemplate);
 
