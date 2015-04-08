@@ -9,6 +9,7 @@ var documentation = require('../'),
   highlight = require('../streams/highlight.js'),
   htmlOutput = require('../streams/output/html.js'),
   lint = require('../streams/lint.js'),
+  github = require('../streams/github.js'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
   normalize = require('../streams/normalize.js'),
@@ -30,6 +31,10 @@ var yargs = require('yargs')
   .boolean('p')
   .describe('p', 'generate documentation tagged as private')
   .alias('p', 'private')
+
+  .boolean('g')
+  .describe('g', 'infer links to github in documentation')
+  .alias('g', 'github')
 
   .describe('o', 'output location. omit for stdout, otherwise is a filename for single-file outputs and a directory name for multi-file outputs like html')
   .alias('o', 'output')
@@ -74,6 +79,7 @@ if (!formatter) {
 var docStream = documentation(inputs)
   .pipe(normalize())
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
+  .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
   .pipe(flatten())
   .pipe(filterAccess(argv.private ? [] : undefined))
   .pipe(formatter);

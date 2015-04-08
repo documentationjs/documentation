@@ -1,4 +1,9 @@
 <div class='mt3 mb2 px3 keyline-top'>
+  {{#if context.github}}
+    <div class='right py2'>
+      <a class='fade font-smaller' href='{{{context.github}}}'><code>{{{context.path}}}</code></a>
+    </div>
+  {{/if}}
   <h3 class='regular'>
     <a class='black' id='{{permalink}}' href='#{{permalink}}'>
       <code>

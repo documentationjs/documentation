@@ -26,6 +26,7 @@
     "doctrine": "^0.6.4",
     "espree": "^1.12.2",
     "extend": "^2.0.0",
+    "github-url-from-git": "^1.4.0",
     "handlebars": "^3.0.0",
     "highlight.js": "^8.4.0",
     "module-deps": "^3.7.3",
