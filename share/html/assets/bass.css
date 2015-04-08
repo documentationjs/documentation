@@ -147,7 +147,7 @@ ol, ul {
 }
 
 pre, code, samp {
-  font-family: 'Source Code Pro', Consolas, monospace;
+  font-family: Consolas, 'Source Code Pro', monospace;
   font-size: inherit;
 }
 

@@ -1,0 +1,63 @@
+<div class='mt3 mb2 px3 keyline-top'>
+  <h3 class='regular'>
+    <a class='black' id='{{permalink}}' href='#{{permalink}}'>
+      <code>
+        {{name}}<span class='gray'>{{{format_params}}}</span>
+      </code>
+    </a>
+  </h3>
+  {{{md description}}}
+  {{#if params}}
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+        {{#params}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{{format_type type}}}</td>
+            <td>{{{md description}}}</td>
+          </tr>
+        {{/params}}
+      </table>
+    </p>
+  {{/if}}
+
+  {{#if returns}}
+    {{#returns}}
+      <h4>Returns</h4>
+      <code>{{{format_type type}}}</code>
+      {{#if description}}:{{/if}}
+      <span class='force-inline'>
+        {{{md description}}}
+      </span>
+    {{/returns}}
+  {{/if}}
+
+  {{#if examples}}
+    <h4>Examples</h4>
+    {{#each examples}}
+      <pre>{{{.}}}</pre>
+    {{/each}}
+  {{/if}}
+
+  {{#if members.instance}}
+    {{#each members.instance}}
+      <div class='section-indent'>
+        {{> section}}
+      </div>
+    {{/each}}
+  {{/if}}
+
+  {{#if members.static}}
+    {{#each members.static}}
+      <div class='section-indent'>
+        {{> section}}
+      </div>
+    {{/each}}
+  {{/if}}
+
+</div>
