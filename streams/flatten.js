@@ -71,6 +71,12 @@ var flatteners = {
     }
     result.returns.push(tag);
   },
+  'augments': function (result, tag) {
+    if (!result.augments) {
+      result.augments = [];
+    }
+    result.augments.push(tag);
+  },
   'example': function (result, tag) {
     if (!result.examples) {
       result.examples = [];

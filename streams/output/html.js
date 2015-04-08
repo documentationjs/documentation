@@ -10,6 +10,61 @@ var through = require('through'),
   Handlebars = require('handlebars'),
   extend = require('extend');
 
+var BUILTINS = [
+  'Array',
+  'ArrayBuffer',
+  'Boolean',
+  'DataView',
+  'Date',
+  'Error',
+  'EvalError',
+  'Float32Array',
+  'Float64Array',
+  'Function',
+  'Generator',
+  'GeneratorFunction',
+  'Infinity',
+  'Int16Array',
+  'Int32Array',
+  'Int8Array',
+  'InternalError',
+  'Intl',
+  'Intl.Collator',
+  'Intl.DateTimeFormat',
+  'Intl.NumberFormat',
+  'Iterator',
+  'JSON',
+  'Map',
+  'Math',
+  'NaN',
+  'Number',
+  'Object',
+  'ParallelArray',
+  'Promise',
+  'Proxy',
+  'RangeError',
+  'ReferenceError',
+  'Reflect',
+  'RegExp',
+  'Set',
+  'StopIteration',
+  'String',
+  'Symbol',
+  'SyntaxError',
+  'TypeError',
+  'TypedArray',
+  'URIError',
+  'Uint16Array',
+  'Uint32Array',
+  'Uint8Array',
+  'Uint8ClampedArray',
+  'WeakMap',
+  'WeakSet'
+].reduce(function(memo, name) {
+  memo[name.toLowerCase()] = name;
+  return memo;
+}, {});
+
 /**
  * Create a transform stream that formats documentation as HTML.
  * Receives parsed & pivoted stream of documentation data, and emits
@@ -30,10 +85,6 @@ module.exports = function (opts) {
   }, opts);
 
   /**
-   * Add helpers to make templating simpler.
-   */
-
-  /**
    * @name formatMarkdown
    *
    * This helper is exposed in templates as `md` and is useful for showing
@@ -49,34 +100,6 @@ module.exports = function (opts) {
   Handlebars.registerHelper('md', function formatMarkdown(string) {
     return md.render(string);
   });
-
-  /**
-   * @name formatType
-   *
-   * Helper used to format JSDoc-style type definitions into HTML.
-   * @param {Object} type
-   * @returns {String} string
-   * @example
-   * var x = { type: 'NameExpression', name: 'String' };
-   * // in template
-   * // {{ type x }}
-   * // generates String
-   */
-  function formatType(type, html) {
-    if (!type) return '';
-    if (type.type === 'NameExpression') {
-      return html ? '<code>' + type.name + '</code>' : type.name;
-    } else if (type.type === 'UnionType') {
-      return type.elements.map(formatType).join(' or ');
-    } else if (type.type === 'AllLiteral') {
-      return 'Any';
-    } else if (type.type === 'OptionalType') {
-      return '[' + formatType(type.expression) + ']';
-    } else if (type.type === 'TypeApplication') {
-      return formatType(type.expression) + '<' +
-        type.applications.map(formatType).join(', ') + '>';
-    }
-  }
 
   /**
    * Format a parameter name. This is used in formatParameters
@@ -103,14 +126,6 @@ module.exports = function (opts) {
     }).join(', ') + ')';
   }
 
-  Handlebars.registerHelper('format_type', function (string) {
-    return formatType(string, true);
-  });
-
-  Handlebars.registerHelper('permalink', function () {
-    return this.path.map(slugg).join('/');
-  });
-
   Handlebars.registerHelper('format_params', formatParameters);
 
   var pageTemplate = Handlebars
@@ -122,6 +137,65 @@ module.exports = function (opts) {
   Handlebars.registerPartial('section', sectionTemplate);
 
   return through(function (comments) {
+
+    /**
+     * @name formatType
+     *
+     * Helper used to format JSDoc-style type definitions into HTML.
+     * @param {Object} type
+     * @returns {String} string
+     * @example
+     * var x = { type: 'NameExpression', name: 'String' };
+     * // in template
+     * // {{ type x }}
+     * // generates String
+     */
+    function formatType(type, html) {
+      if (!type) return '';
+      if (type.type === 'NameExpression') {
+        return html ? '<code>' + autolink(type.name) + '</code>' : type.name;
+      } else if (type.type === 'UnionType') {
+        return type.elements.map(formatType).join(' or ');
+      } else if (type.type === 'AllLiteral') {
+        return 'Any';
+      } else if (type.type === 'OptionalType') {
+        return '<code>[' + formatType(type.expression) + ']</code>';
+      } else if (type.type === 'TypeApplication') {
+        return formatType(type.expression) + '<' +
+          type.applications.map(formatType).join(', ') + '>';
+      }
+    }
+
+    var paths = comments.map(function (comment) {
+      return comment.path.map(slugg).join('/');
+    }).filter(function (path) {
+      return path;
+    });
+
+    Handlebars.registerHelper('format_type', function (string) {
+      return formatType(string, true);
+    });
+
+    Handlebars.registerHelper('permalink', function () {
+      return this.path.map(slugg).join('/');
+    });
+
+    /**
+     * Link text to this page or to a central resource.
+     * @param {string} text
+     * @returns {string} potentially linked HTML
+     */
+    function autolink(text) {
+      if (paths.indexOf(slugg(text)) !== -1) {
+        return '<a href="#' + slugg(text) + '">' + text + '</a>';
+      } else if (BUILTINS[text.toLowerCase()]) {
+        return '<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + text + '">' + text + '</a>';
+      }
+      return text;
+    }
+
+    Handlebars.registerHelper('autolink', autolink);
+
     this.push(new File({
       path: 'index.html',
       contents: new Buffer(pageTemplate({

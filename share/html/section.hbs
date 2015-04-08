@@ -1,6 +1,14 @@
 <div class='mt3 mb2 px3 keyline-top'>
   {{#if context.github}}
     <div class='right py2'>
+      {{#if augments}}
+        <span class='font-smaller'>
+          Extends
+          {{#augments}}
+            {{{autolink name}}}
+          {{/augments}}
+        </span>
+      {{/if}}
       <a class='fade font-smaller' href='{{{context.github}}}'><code>{{{context.path}}}</code></a>
     </div>
   {{/if}}
@@ -12,6 +20,7 @@
     </a>
   </h3>
   {{{md description}}}
+  
   {{#if params}}
     <p>
       <table class='table-light overflow-hidden bg-cloudy-light'>

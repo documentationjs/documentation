@@ -10,6 +10,15 @@ in JavaScript. It exposes multiple interfaces for users:
 that runs in _any environment_: you can use it to document browser libraries,
 server libraries, or even things that use RequireJS or other module systems.
 
+## How do I use `documentation`?
+
+There are two main ways:
+
+* You use the `documentation` command on your command-line to generate docs
+  from your source code
+* You use one of the integrations with a build system like Gulp to generate
+  docs from source code.
+
 ## How does `documentation` differ from JSDoc?
 
 JSDoc is both a **standard syntax for documentating code** as well as a
