@@ -9,43 +9,35 @@
   <div class='px2'>
     <div class='clearfix flex flex-stretch mxn2'>
       <div class='relative top-0 bottom-0 right-0 px2 py2 sm-col-3 md-col-2 sm-show'>
-        <div class='fixed sm-col-3 md-col-2 top-0 bottom-0 left-0 overflow-auto black bg-darken-1'>
-          <a href="/" class="h5 caps mb3 button block button-transparent">documentation</a>
+        <div class='font-smaller fixed sm-col-3 md-col-2 top-0 bottom-0 left-0 overflow-auto black bg-darken-1'>
+          <a href="/" class="h5 caps button block button-transparent">documentation</a>
           {{#each docs}}
-            <a class='button block button-transparent bg-darken-1'>
-              <code>{{name}}</code>
+            <a
+              href='#{{permalink}}'
+              class='button regular block button-transparent'>
+              {{name}}{{format_params}}
             </a>
+            {{#each members.instance}}
+              <a
+                href='#{{permalink}}'
+                class='button button-indent regular block button-transparent'>
+                #{{name}}{{format_params}}
+              </a>
+            {{/each}}
+            {{#each members.static}}
+              <a
+                href='#{{permalink}}'
+                class='button button-indent regular block button-transparent'>
+                .{{name}}{{format_params}}
+              </a>
+            {{/each}}
           {{/each}}
         </div>
       </div>
       <div class='sm-col sm-col-9 md-col-10 flex flex-column'>
-        <div class='flex-auto full-width container-small'>
+        <div class='flex-auto full-width p3'>
           {{#each docs}}
-          <div class='mt3 mb1'>
-            <h3><code>{{name}}</code></h3>
-            <p>{{{description}}}</p>
-              {{#if params}}
-              <table class='table-light overflow-hidden bg-white border rounded'>
-                <thead class='bg-darken-1'>
-                  <th>parameter</th>
-                  <th>description</th>
-                </thead>
-                {{#params}}
-                <tr>
-                  <td><code>{{name}}</code></td>
-                  <td>{{{description}}}</td>
-                </tr>
-              {{/params}}
-              </table>
-              {{/if}}
-
-              {{#if examples}}
-                <h4>Examples</h4>
-                {{#each examples}}
-                  <pre>{{{.}}}</pre>
-                {{/each}}
-              {{/if}}
-          </div>
+            {{> section}}
           {{/each}}
         </div>
       </div>

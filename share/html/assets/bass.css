@@ -84,7 +84,7 @@ button,
   display: inline-block;
   box-sizing: border-box;
   line-height: 1.125rem;
-  padding: .5rem 1rem;
+  padding: .4rem 0.6rem;
   margin: 0;
   height: auto;
   border: 1px solid transparent;
@@ -692,12 +692,14 @@ hr {
   background-color: #0074d9 ;
   background-color: #0074d9;
   border-radius: 3px;
+  /*
   -webkit-transition-duration: .05s;
           transition-duration: .05s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-property: box-shadow, background-color;
           transition-property: box-shadow, background-color;
+          */
 }
 
 .button:hover {
@@ -1061,12 +1063,14 @@ input[type=range] {
   background-color: transparent;
   border-radius: 0;
   border: 1px solid transparent;
+  /*
   -webkit-transition-duration: .1s;
           transition-duration: .1s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   -webkit-transition-property: box-shadow;
           transition-property: box-shadow;
+          */
 }
 
 .button-transparent:before {
@@ -1213,6 +1217,7 @@ input[type=range] {
 .bg-purple  { background-color: #b10dc9 }
 .bg-maroon  { background-color: #85144b }
 
+.bg-darken-0 { background-color: rgba(0,0,0,.03125) }
 .bg-darken-1 { background-color: rgba(0,0,0,.0625) }
 .bg-darken-2 { background-color: rgba(0,0,0,.125) }
 .bg-darken-3 { background-color: rgba(0,0,0,.25) }
