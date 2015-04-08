@@ -4,22 +4,8 @@ var doctrine = require('doctrine'),
   espree = require('espree'),
   through = require('through'),
   types = require('ast-types'),
-  extend = require('extend');
-
-/**
- * Detect whether a comment is a JSDoc comment: it must be a block
- * comment which starts with two asterisks, not any other number of asterisks.
- *
- * The code parser automatically strips out the first asterisk that's
- * required for the comment to be a comment at all, so we count the remaining
- * comments.
- * @param {Object} comment an ast-types node of the comment
- * @return {boolean} whether it is valid
- */
-function isJSDocComment(comment) {
-  var asterisks = comment.value.match(/^(\*+)/);
-  return comment.type === 'Block' && asterisks && asterisks[ 1 ].length === 1;
-}
+  extend = require('extend'),
+  isJSDocComment = require('../lib/is_jsdoc_comment');
 
 /**
  * Comment-out a shebang line that may sit at the top of a file,
