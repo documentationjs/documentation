@@ -2,24 +2,37 @@
 
 var through = require('through');
 var exec = require('child_process').exec;
+var path = require('path');
+var fs = require('fs');
 var urlFromGit = require('github-url-from-git');
 
+function findGit(filename, relative) {
+  relative = relative || '.git';
+  var newPath = path.resolve(filename, relative);
+  if (fs.existsSync(newPath)) {
+    return newPath;
+  } else if (newPath === '/') {
+    return null;
+  }
+  return findGit(filename, '../' + relative);
+}
+
 function makeGetBase() {
-  var base;
-  return function (callback) {
-    if (base) return callback(base);
-    exec('git rev-parse HEAD', function (error, head, stderr) {
+  var base, root;
+  return function (file, callback) {
+    if (base && root) return callback(base, root);
+    root = path.dirname(findGit(file));
+    var cwd = { cwd: root };
+    exec('git rev-parse HEAD', cwd, function (error, head, stderr) {
       if (error || stderr) {
-        console.error(error, stderr);
-        return;
+        console.error(error, stderr); return;
       }
-      exec('git config --get remote.origin.url', function (error, remote, stderr) {
+      exec('git config --get remote.origin.url', cwd, function (error, remote, stderr) {
         if (error || stderr) {
-          console.error(error, stderr);
-          return;
+          console.error(error, stderr); return;
         }
-        base = urlFromGit(remote) + '/blob/' + head;
-        callback(base);
+        base = urlFromGit(remote.trim()) + '/blob/' + head.trim() + '/';
+        callback(base, root);
       });
     });
   };
@@ -35,7 +48,14 @@ function makeGetBase() {
 module.exports = function () {
   var getBase = makeGetBase();
   return through(function (comment) {
-    getBase(function (base) {
+    this.pause();
+    getBase(comment.context.file, function (base, root) {
+      comment.context.path = comment.context.file.replace(root + '/', '');
+      comment.context.github = base +
+        comment.context.file.replace(root + '/', '') +
+        '#L' + comment.context.loc.start.line + '-' +
+        'L' + comment.context.loc.end.line;
+      this.resume();
       this.push(comment);
     }.bind(this));
   });

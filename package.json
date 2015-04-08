@@ -30,7 +30,6 @@
     "handlebars": "^3.0.0",
     "highlight.js": "^8.4.0",
     "module-deps": "^3.7.3",
-    "queue-async": "^1.0.7",
     "remarkable": "^1.6.0",
     "slugg": "^0.1.2",
     "stream-combiner": "^0.2.1",

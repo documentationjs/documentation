@@ -8,6 +8,10 @@
   font-size:80%;
 }
 
+.fade {
+  opacity:0.50;
+}
+
 .button-indent {
   padding: .25rem 1.5rem;
   font-size: 90%;
