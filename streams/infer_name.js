@@ -11,7 +11,11 @@ var through = require('through'),
  */
 module.exports = function () {
   return through(function (comment) {
-    if (comment.tags.some(function (tag) { return tag.title === 'name'; })) {
+    // If this comment is already explicitly named, simply pass it
+    // through the stream without doing any inference.
+    if (comment.tags.some(function (tag) {
+      return tag.title === 'name';
+    })) {
       this.push(comment);
       return;
     }
@@ -22,8 +26,11 @@ module.exports = function () {
     // infer the named based on the `property` of the MemberExpression (`bar`)
     // rather than the `object` (`foo`).
     types.visit(comment.context.ast, {
-      inferName: function(path, value) {
+      inferName: function (path, value) {
         if (value && value.name) {
+          if (value.name === 'exports') {
+            console.error('unnamed function assigned to exports. use the @name tag to give it a better name.');
+          }
           comment.tags.push({
             title: 'name',
             name: value.name

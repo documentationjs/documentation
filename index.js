@@ -17,6 +17,7 @@ var externalModuleRegexp = process.platform === 'win32' ?
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
+ * @name documentation
  * @param {Array<String>|String} indexes files to process
  * @return {Object} stream of output
  */
