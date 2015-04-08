@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
 var documentation = require('../'),
+  PassThrough = require('stream').PassThrough,
   markdown = require('../streams/output/markdown.js'),
   json = require('../streams/output/json.js'),
   combine = require('stream-combiner'),
   hierarchy = require('../streams/hierarchy.js'),
   highlight = require('../streams/highlight.js'),
   htmlOutput = require('../streams/output/html.js'),
+  lint = require('../streams/lint.js'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
   normalize = require('../streams/normalize.js'),
@@ -20,6 +22,8 @@ var yargs = require('yargs')
   .alias('f', 'format')
   .default('f', 'json')
   .describe('f', 'output format, of [json, md, html]')
+
+  .describe('lint', 'check output for common style and uniformity mistakes')
 
   .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
 
@@ -69,6 +73,7 @@ if (!formatter) {
 
 var docStream = documentation(inputs)
   .pipe(normalize())
+  .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
   .pipe(flatten())
   .pipe(filterAccess(argv.private ? [] : undefined))
   .pipe(formatter);

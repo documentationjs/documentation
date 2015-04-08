@@ -28,9 +28,6 @@ module.exports = function () {
     types.visit(comment.context.ast, {
       inferName: function (path, value) {
         if (value && value.name) {
-          if (value.name === 'exports') {
-            console.error('unnamed function assigned to exports. use the @name tag to give it a better name.');
-          }
           comment.tags.push({
             title: 'name',
             name: value.name
