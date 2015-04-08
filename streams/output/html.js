@@ -155,14 +155,18 @@ module.exports = function (opts) {
       if (type.type === 'NameExpression') {
         return html ? '<code>' + autolink(type.name) + '</code>' : type.name;
       } else if (type.type === 'UnionType') {
-        return type.elements.map(formatType).join(' or ');
+        return type.elements.map(function (element) {
+          return formatType(element, html);
+        }).join(' or ');
       } else if (type.type === 'AllLiteral') {
         return 'Any';
       } else if (type.type === 'OptionalType') {
-        return '<code>[' + formatType(type.expression) + ']</code>';
+        return '<code>[' + formatType(type.expression, html) + ']</code>';
       } else if (type.type === 'TypeApplication') {
         return formatType(type.expression) + '<' +
-          type.applications.map(formatType).join(', ') + '>';
+          type.applications.map(function (application) {
+            return formatType(application, html);
+          }).join(', ') + '>';
       }
     }
 

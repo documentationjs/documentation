@@ -53,15 +53,13 @@
 
   {{#if examples}}
     <h4>Examples</h4>
-    {{#each examples}}
-      <pre>{{{.}}}</pre>
-    {{/each}}
+{{#each examples}}<pre>{{{.}}}</pre>{{/each}}
   {{/if}}
 
   {{#if members.instance}}
     {{#each members.instance}}
       <div class='section-indent'>
-        {{> section}}
+{{> section}}
       </div>
     {{/each}}
   {{/if}}
@@ -69,7 +67,7 @@
   {{#if members.static}}
     {{#each members.static}}
       <div class='section-indent'>
-        {{> section}}
+{{> section}}
       </div>
     {{/each}}
   {{/if}}
