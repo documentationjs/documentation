@@ -41,12 +41,16 @@ function inferHierarchy(comments) {
     nameIndex[comments[i].name] = comments[i];
     comments[i].members = { instance: [], static: [] };
   }
-  for (i = comments.length - 1; i > 0; i--) {
-    if (comments[i].memberof && nameIndex[comments[i].memberof]) {
-      nameIndex[comments[i].memberof].members[comments[i].scope].push(comments[i]);
-      // remove non-root nodes from the lowest level: these are reachable
-      // as members of other docs.
-      comments.splice(i, 1);
+  for (i = comments.length - 1; i >= 0; i--) {
+    if (comments[i].memberof) {
+      if (nameIndex[comments[i].memberof]) {
+        nameIndex[comments[i].memberof].members[comments[i].scope].push(comments[i]);
+        // remove non-root nodes from the lowest level: these are reachable
+        // as members of other docs.
+        comments.splice(i, 1);
+      } else {
+        console.error('memberof reference to %s not found', comments[i].memberof);
+      }
     }
   }
 
