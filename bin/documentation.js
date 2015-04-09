@@ -63,25 +63,33 @@ if (argv._.length > 0) {
   }
 }
 
-var formatter = {
-  json: json(),
-  docset: combine([highlight(), hierarchy(), htmlOutput({
-    hideSidebar: true
-  }), docset()]),
-  md: markdown({
-    template: argv.mdtemplate
-  }),
-  html: combine([highlight(), hierarchy(), htmlOutput()])
-}[argv.f];
+try {
+  var formatter = {
+    json: function () {
+      return json();
+    },
+    docset: function () {
+      return combine([highlight(), hierarchy(), htmlOutput({
+        hideSidebar: true
+      }), docset()]);
+    },
+    md: function () {
+      return markdown({
+        template: argv.mdtemplate
+      });
+    },
+    html: function () {
+      return combine([highlight(), hierarchy(), htmlOutput()]);
+    }
+  }[argv.f]();
+} catch(e) {
+  yargs.showHelp();
+  throw new Error('Formatter not found');
+}
 
 if (argv.f === 'html' && argv.o === 'stdout') {
   yargs.showHelp();
   throw new Error('The HTML output mode requires a destination directory set with -o');
-}
-
-if (!formatter) {
-  yargs.showHelp();
-  throw new Error('Formatter not found');
 }
 
 var docStream = documentation(inputs)
