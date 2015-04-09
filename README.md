@@ -27,6 +27,11 @@ Using [module-deps](https://github.com/substack/module-deps), `documentation` ca
 The `--github` option automatically permalinks documentation to the exact
 sections of code it refers to in a GitHub repository.
 
+**Dash Support**
+
+The `-f docset` output option creates documentation compatible with
+the excellent [Dash](https://kapeli.com/) documentation tool.
+
 # Future Goals
 
 * Robust and complete `JSDoc` support, including typedefs.
