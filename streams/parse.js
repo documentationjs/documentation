@@ -12,6 +12,9 @@ var doctrine = require('doctrine'),
  * making it executable on linux-like systems.
  * @param {String} code the source code in full
  * @return {String} code
+ * @example
+ * var foo = commentShebang('#!/usr/bin/env/node');
+ * foo === '//#!/usr/bin/env/node';
  */
 function commentShebang(code) {
   return (code[0] === '#' && code[1] === '!') ? '//' + code : code;

@@ -44,3 +44,11 @@
 .force-inline * {
   display:inline;
 }
+
+section:target {
+  background: #fcfbf2;
+}
+
+.documentation-sidebar a:active {
+  background: #fcfbf2;
+}

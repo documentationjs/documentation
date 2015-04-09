@@ -37,6 +37,9 @@ var yargs = require('yargs')
   .describe('p', 'generate documentation tagged as private')
   .alias('p', 'private')
 
+  .describe('name', 'project name. by default, inferred from package.json')
+  .describe('version', 'project version. by default, inferred from package.json')
+
   .boolean('g')
   .describe('g', 'infer links to github in documentation')
   .alias('g', 'github')
@@ -51,12 +54,15 @@ var yargs = require('yargs')
   .example('$0 foo.js', 'parse documentation in a given file'),
   argv = yargs.argv;
 
-var inputs;
+var inputs, name, version;
 if (argv._.length > 0) {
   inputs = argv._;
 } else {
   try {
-    inputs = [require(path.resolve('package.json')).main];
+    var p = require(path.resolve('package.json'));
+    inputs = [p.main];
+    name = argv.name || p.name;
+    version = argv.version || p.version;
   } catch(e) {
     yargs.showHelp();
     throw new Error('documentation was given no files and was not run in a module directory');
@@ -70,16 +76,26 @@ try {
     },
     docset: function () {
       return combine([highlight(), hierarchy(), htmlOutput({
-        hideSidebar: true
-      }), docset()]);
+        hideSidebar: true,
+        name: name,
+        version: version
+      }), docset({
+        name: name,
+        version: version
+      })]);
     },
     md: function () {
       return markdown({
-        template: argv.mdtemplate
+        template: argv.mdtemplate,
+        name: name,
+        version: version
       });
     },
     html: function () {
-      return combine([highlight(), hierarchy(), htmlOutput()]);
+      return combine([highlight(), hierarchy(), htmlOutput({
+        name: name,
+        version: version
+      })]);
     }
   }[argv.f]();
 } catch(e) {
