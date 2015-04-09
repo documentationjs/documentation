@@ -3,7 +3,6 @@
 var test = require('prova'),
   documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
-  hierarchy = require('../streams/hierarchy.js'),
   outputHtml = require('../streams/output/html.js'),
   glob = require('glob'),
   path = require('path'),
@@ -58,7 +57,6 @@ test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
       documentation([file])
-        .pipe(hierarchy())
         .pipe(outputHtml())
         .pipe(concat(function (result) {
         var clean = result.map(function (r) {
