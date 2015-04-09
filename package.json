@@ -36,6 +36,7 @@
     "sqlite3": "^3.0.5",
     "stream-combiner": "^0.2.1",
     "concat-stream": "^1.4.7",
+    "queue-async": "^1.0.7",
     "through": "^2.3.6",
     "traverse": "^0.6.6",
     "vinyl": "^0.4.6",
