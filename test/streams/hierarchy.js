@@ -65,3 +65,21 @@ test('hierarchy', function (t) {
     t.end();
   });
 });
+
+test('hierarchy - missing memberof', function (t) {
+  evaluate(function () {
+
+    /**
+     * Get foo
+     * @memberof DoesNotExist
+     * @returns {Number} foo
+     */
+    function getFoo () {
+      return this.foo;
+    }
+
+  }, function (result) {
+    t.equal(result.length, 1);
+    t.end();
+  });
+});

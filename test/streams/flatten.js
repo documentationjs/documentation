@@ -48,6 +48,21 @@ test('flatten - classdesc', function (t) {
   });
 });
 
+test('flatten - augments', function (t) {
+  evaluate(function () {
+    /** @augments Foo */
+    return 0;
+  }, function (result) {
+    t.deepEqual(result[0].augments, [{
+      'title': 'augments',
+      'description': null,
+      'type': null,
+      'name': 'Foo'
+    }]);
+    t.end();
+  });
+});
+
 test('flatten - kind', function (t) {
   evaluate(function () {
     /** @kind class */
