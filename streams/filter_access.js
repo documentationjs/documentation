@@ -7,9 +7,9 @@ var through = require('through');
  * users to write documentation for non-public members by using the
  * `@private` tag.
  *
+ * @name access
  * @public
  * @param {Array<String>} [levels=[private]] excluded access levels.
- * @name access
  * @return {stream.Transform}
  */
 module.exports = function (levels) {

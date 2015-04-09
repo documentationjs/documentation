@@ -3,7 +3,10 @@
 var mdeps = require('module-deps'),
   path = require('path'),
   PassThrough = require('stream').PassThrough,
+  flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
+  normalize = require('./streams/normalize.js'),
+  filterAccess = require('./streams/filter_access.js'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
   inferKind = require('./streams/infer_kind'),
@@ -20,9 +23,12 @@ var externalModuleRegexp = process.platform === 'win32' ?
  *
  * @name documentation
  * @param {Array<String>|String} indexes files to process
+ * @param {Object} options options
  * @return {Object} stream of output
  */
-module.exports = function (indexes) {
+module.exports = function (indexes, options) {
+  options = options || {};
+
   var md = mdeps({
     filter: function (id) {
       return externalModuleRegexp.test(id);
@@ -53,5 +59,8 @@ module.exports = function (indexes) {
     .pipe(sort())
     .pipe(deferErrors(inferKind()))
     .pipe(deferErrors(inferMembership()))
+    .pipe(normalize())
+    .pipe(flatten())
+    .pipe(filterAccess(options.private ? [] : undefined))
     .pipe(end);
 };

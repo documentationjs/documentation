@@ -10,6 +10,17 @@ var through = require('through'),
   Handlebars = require('handlebars'),
   extend = require('extend');
 
+/**
+ * Make slugg a unary so we can use it in functions
+ *
+ * @private
+ * @param {string} input text
+ * @returns {string} output
+ */
+function slug(p) {
+  return slugg(p);
+}
+
 var BUILTINS = [
   'Array',
   'ArrayBuffer',
@@ -171,7 +182,7 @@ module.exports = function (opts) {
     }
 
     var paths = comments.map(function (comment) {
-      return comment.path.map(slugg).join('/');
+      return comment.path.map(slug).join('/');
     }).filter(function (path) {
       return path;
     });
@@ -181,7 +192,7 @@ module.exports = function (opts) {
     });
 
     Handlebars.registerHelper('permalink', function () {
-      return this.path.map(slugg).join('/');
+      return this.path.map(slug).join('/');
     });
 
     /**
@@ -190,8 +201,8 @@ module.exports = function (opts) {
      * @returns {string} potentially linked HTML
      */
     function autolink(text) {
-      if (paths.indexOf(slugg(text)) !== -1) {
-        return '<a href="#' + slugg(text) + '">' + text + '</a>';
+      if (paths.indexOf(slug(text)) !== -1) {
+        return '<a href="#' + slug(text) + '">' + text + '</a>';
       } else if (BUILTINS[text.toLowerCase()]) {
         return '<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + text + '">' + text + '</a>';
       }

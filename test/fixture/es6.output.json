@@ -28,6 +28,17 @@
       },
       "file": "fixture/es6.input.js",
       "code": "var multiply = (a, b) => a * b;\nmodule.exports = multiply;"
-    }
+    },
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "multiply"
   }
 ]

@@ -17,10 +17,7 @@ var documentation = require('../'),
   docset = require('../streams/output/docset.js'),
 
   lint = require('../streams/lint.js'),
-  github = require('../streams/github.js'),
-  normalize = require('../streams/normalize.js'),
-  flatten = require('../streams/flatten.js'),
-  filterAccess = require('../streams/filter_access.js');
+  github = require('../streams/github.js');
 
 var yargs = require('yargs')
   .usage('Usage: $0 <command> [options]')
@@ -108,12 +105,11 @@ if (argv.f === 'html' && argv.o === 'stdout') {
   throw new Error('The HTML output mode requires a destination directory set with -o');
 }
 
-var docStream = documentation(inputs)
-  .pipe(normalize())
+var docStream = documentation(inputs, {
+    private: argv.private
+  })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
   .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
-  .pipe(flatten())
-  .pipe(filterAccess(argv.private ? [] : undefined))
   .pipe(formatter);
 
 if (argv.o !== 'stdout') {

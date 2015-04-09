@@ -41,6 +41,31 @@
       },
       "file": "fixture/simple-two.input.js",
       "code": "function returnTwo(a) {\n  // this returns a + 2\n  return a + 2;\n}"
-    }
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "the number",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        },
+        "name": "a"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numbertwo",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "examples": [
+      "var result = returnTwo(4);\n// result is 6"
+    ],
+    "name": "returnTwo"
   }
 ]
