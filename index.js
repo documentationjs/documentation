@@ -3,6 +3,7 @@
 var mdeps = require('module-deps'),
   path = require('path'),
   PassThrough = require('stream').PassThrough,
+  sort = require('./streams/sort'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
   inferKind = require('./streams/infer_kind'),
@@ -49,6 +50,7 @@ module.exports = function (indexes) {
   return md
     .pipe(deferErrors(parse()))
     .pipe(deferErrors(inferName()))
+    .pipe(sort())
     .pipe(deferErrors(inferKind()))
     .pipe(deferErrors(inferMembership()))
     .pipe(end);
