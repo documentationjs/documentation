@@ -74,9 +74,11 @@ test('hierarchy - missing memberof', function (t) {
      * @memberof DoesNotExist
      * @returns {Number} foo
      */
-    function getFoo () {
+    function getFoo() {
       return this.foo;
     }
+
+    getFoo();
 
   }, function (result) {
     t.equal(result.length, 1);
