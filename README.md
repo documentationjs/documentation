@@ -32,6 +32,38 @@ sections of code it refers to in a GitHub repository.
 The `-f docset` output option creates documentation compatible with
 the excellent [Dash](https://kapeli.com/) documentation tool.
 
+## User Guide
+
+Globally install `documentation` using the [npm](https://www.npmjs.com/) package manager:
+
+```sh
+$ npm install -g documentation
+```
+
+This installs a command called `documentation` in your path, that you can
+point at [JSDoc](http://usejsdoc.org/)-annotated source code to generate
+human-readable documentation. First run `documentation` with the `-h`
+option for help:
+
+```sh
+$ documentation.js -h
+Usage: documentation <command> [options]
+
+Options:
+  -f, --format   output format, of [json, md, html, docset]    [default: "json"]
+  --lint         check output for common style and uniformity mistakes
+  --mdtemplate   markdown template: should be a file with Handlebars syntax
+  -p, --private  generate documentation tagged as private
+  -g, --github   infer links to github in documentation
+  -o, --output   output location. omit for stdout, otherwise is a filename for
+                 single-file outputs and a directory name for multi-file
+                 outputs like html                           [default: "stdout"]
+  -h, --help     Show help
+
+Examples:
+  documentation foo.js    parse documentation in a given file
+```
+
 # Future Goals
 
 * Robust and complete `JSDoc` support, including typedefs.
