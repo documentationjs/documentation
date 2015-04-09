@@ -65,7 +65,7 @@ module.exports = function () {
      * array of `identifiers`. If the last element of the `identifiers` is
      * `"prototype"`, it is assumed to be an instance member; otherwise static.
      *
-     * @param {Array<string>} identifiers
+     * @param {Array<string>} identifiers array of identifier names
      * @returns {undefined} mutates `comment`
      * @private
      */
@@ -93,7 +93,7 @@ module.exports = function () {
 
     function findLendsTag(comment) {
       for (var i = 0; i < comment.tags.length; i++) {
-        if (comment.tags[i].title == 'lends') {
+        if (comment.tags[i].title === 'lends') {
           return comment.tags[i];
         }
       }

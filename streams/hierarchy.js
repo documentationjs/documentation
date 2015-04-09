@@ -28,7 +28,7 @@ module.exports = function () {
 };
 
 /**
- * @param {Array<Object>} comments
+ * @param {Array<Object>} comments an array of parsed comments
  * @returns {Array<Object>} nested comments, with only root comments
  * at the top level.
  */
