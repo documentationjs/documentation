@@ -8,7 +8,10 @@ var through = require('through'),
   fs = require('fs'),
   path = require('path'),
   Handlebars = require('handlebars'),
-  extend = require('extend');
+  extend = require('extend'),
+  combine = require('stream-combiner'),
+  hierarchy = require('../hierarchy.js'),
+  highlight = require('../highlight.js');
 
 /**
  * Make slugg a unary so we can use it in functions
@@ -147,7 +150,7 @@ module.exports = function (opts) {
 
   Handlebars.registerPartial('section', sectionTemplate);
 
-  return through(function (comments) {
+  var htmlStream = through(function (comments) {
 
     /**
      * @name formatType
@@ -233,4 +236,6 @@ module.exports = function (opts) {
         this.emit('end');
       }.bind(this));
   });
+
+  return combine([highlight(), hierarchy(), htmlStream]);
 };

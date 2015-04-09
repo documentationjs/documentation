@@ -3,18 +3,9 @@
 var documentation = require('../'),
   PassThrough = require('stream').PassThrough,
 
-  combine = require('stream-combiner'),
   path = require('path'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
-
-  hierarchy = require('../streams/hierarchy.js'),
-  highlight = require('../streams/highlight.js'),
-
-  json = require('../streams/output/json.js'),
-  markdown = require('../streams/output/markdown.js'),
-  htmlOutput = require('../streams/output/html.js'),
-  docset = require('../streams/output/docset.js'),
 
   lint = require('../streams/lint.js'),
   github = require('../streams/github.js');
@@ -67,34 +58,14 @@ if (argv._.length > 0) {
 }
 
 try {
-  var formatter = {
-    json: function () {
-      return json();
-    },
-    docset: function () {
-      return combine([highlight(), hierarchy(), htmlOutput({
-        hideSidebar: true,
-        name: name,
-        version: version
-      }), docset({
-        name: name,
-        version: version
-      })]);
-    },
-    md: function () {
-      return markdown({
-        template: argv.mdtemplate,
-        name: name,
-        version: version
-      });
-    },
-    html: function () {
-      return combine([highlight(), hierarchy(), htmlOutput({
-        name: name,
-        version: version
-      })]);
-    }
-  }[argv.f]();
+
+  var formatterOptions = {
+    name: name,
+    version: version,
+    mdtemplate: argv.mdtemplate
+  };
+
+  var formatter = documentation.formats[argv.f](formatterOptions);
 } catch(e) {
   yargs.showHelp();
   throw new Error('Formatter not found');
