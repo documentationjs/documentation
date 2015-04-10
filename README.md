@@ -34,6 +34,11 @@ sections of code it refers to in a GitHub repository.
 The `-f docset` output option creates documentation compatible with
 the excellent [Dash](https://kapeli.com/) documentation tool.
 
+[**Gulp integration**](https://github.com/documentationjs/gulp-documentation)
+
+The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
+lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
+
 ## User Guide
 
 Globally install `documentation` using the [npm](https://www.npmjs.com/) package manager:
@@ -70,8 +75,6 @@ Examples:
 
 * Robust and complete `JSDoc` support, including typedefs.
 * Strong support for HTML and Markdown output
-* Simple integration with build systems like [Makefiles](http://mrbook.org/blog/tutorials/make/),
-  [Gulp](http://gulpjs.com/), and [Grunt](http://gruntjs.com/)
 * Documentation coverage, statistics, and validation
 
 ## [Contributing](CONTRIBUTING.md)
