@@ -36,9 +36,18 @@ documentation.
 * Supports CommonJS `require()` syntax so that node modules can be documented
   by giving their `main` file
 * Expresses source transformations as chainable transform streams
+* Heavily documented internally: all public and private functions in `documentation`
+  are documented. [JSDoc is not well documented internally](https://github.com/jsdoc3/jsdoc/issues/839).
 * Robust ES6 support
+* [No Rhino cruft](https://github.com/jsdoc3/jsdoc/issues/942)
+* Uses JSON literal objects for data representation instead of the [abandoned](https://github.com/typicaljoe/taffydb/graphs/contributors)
+  and [untagged](https://github.com/jsdoc3/jsdoc/blob/master/package.json#L25) [TaffyDB](http://www.taffydb.com/) project.
 * Uses high-quality node modules for syntax parsing, argument parsing, and other
   tasks: separates concerns so that we can focus on a robust solution
+* Customization points like plugins & templates are heavily documented and
+  made to be flexible
+* Uses streams & [vinyl](https://github.com/wearefractal/vinyl) to make
+  output configurable and stdout-friendly.
 
 ## Why use `documentation` instead of writing a Markdown file by hand?
 
