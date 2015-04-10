@@ -53,7 +53,7 @@ human-readable documentation. First run `documentation` with the `-h`
 option for help:
 
 ```sh
-$ documentation.js -h
+$ documentation -h
 Usage: documentation <command> [options]
 
 Options:
