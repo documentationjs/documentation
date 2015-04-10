@@ -6,6 +6,11 @@ in the tradition of tools like JavaDoc, Natural Docs, and JSDoc. There are
 other camps of documentation generation, like literate documentation, which
 is less structured and more focused on understanding internal code structure.
 
+## Full-Fledged JSDoc
+
+* https://github.com/yui/yuidoc
+* https://github.com/senchalabs/jsduck
+
 ## Literate Style
 
 * http://nevir.github.io/groc/ (unmaintained)
