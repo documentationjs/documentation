@@ -64,6 +64,8 @@ test('html', function (tt) {
           return a.path > b.path;
         }).filter(function (r) {
           return (!r.path.match(/json$/));
+        }).map(function (r) {
+          return r.contents;
         }).join('\n');
         var outputfile = file.replace('.input.js', '.output.files');
         if (UPDATE) fs.writeFileSync(outputfile, clean, 'utf8');
