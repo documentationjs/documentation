@@ -77,6 +77,10 @@
       {
         "title": "name",
         "name": "returnTwo"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
       }
     ],
     "context": {
@@ -117,6 +121,7 @@
     "examples": [
       "var result = returnTwo(4);\n// result is 6"
     ],
-    "name": "returnTwo"
+    "name": "returnTwo",
+    "kind": "function"
   }
 ]
