@@ -21,14 +21,6 @@ module.exports = function () {
       });
     }
 
-    // The strategy here is to do a depth-first traversal of the AST,
-    // looking for nodes with a "name" property, with exceptions as needed.
-    // For example, name inference for a MemberExpression `foo.bar = baz` will
-    // infer the named based on the `property` of the MemberExpression (`bar`)
-    // rather than the `object` (`foo`).
-
-    var that = this;
-
     if (!hasTag('kind')) {
       for (var i = 0; i < kindShorthands.length; i++) {
         var kind = kindShorthands[i];
