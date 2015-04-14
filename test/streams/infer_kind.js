@@ -1,5 +1,5 @@
 'use strict';
-
+/*eslint-disable no-unused-vars*/
 var test = require('prova'),
   concat = require('concat-stream'),
   parse = require('../../streams/parse'),
@@ -17,6 +17,20 @@ function evaluate(fn, callback) {
   stream.end({
     file: __filename,
     source: '(' + fn.toString() + ')'
+  });
+}
+
+function evaluateString(string, callback) {
+  var stream = parse();
+
+  stream
+    .pipe(inferKind())
+    .pipe(flatten())
+    .pipe(concat(callback));
+
+  stream.end({
+    file: __filename,
+    source: string
   });
 }
 
@@ -146,6 +160,70 @@ test('inferKind - typedef', function (t) {
     return 0;
   }, function (result) {
     t.equal(result[0].kind, 'typedef');
+    t.end();
+  });
+});
+
+test('inferKind - context: function', function (t) {
+  evaluate(function () {
+    /**
+     * @returns {number} two
+     */
+    function foo() {
+    }
+
+    foo();
+  }, function (result) {
+    t.equal(result[0].kind, 'function');
+    t.end();
+  });
+});
+
+test('inferKind - context: var function', function (t) {
+  evaluate(function () {
+    /**
+     * @returns {number} two
+     */
+    var foo = function () {
+    };
+  }, function (result) {
+    t.equal(result[0].kind, 'function');
+    t.end();
+  });
+});
+
+test('inferKind - context: class (uppercase function)', function (t) {
+  evaluate(function () {
+    /**
+     * @returns {number} two
+     */
+    function Foo() {
+    }
+  }, function (result) {
+    t.equal(result[0].kind, 'class');
+    t.end();
+  });
+});
+
+test('inferKind - context: const', function (t) {
+  evaluateString(
+    '/**' +
+    ' * This is a constant called foo' +
+    ' */' +
+    'const foo = "bar";', function (result) {
+    t.equal(result[0].kind, 'constant');
+    t.end();
+  });
+});
+
+test('inferKind - no hint or ast', function (t) {
+  evaluate(function () {
+    /**
+     * @returns {number two
+     */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].kind, undefined);
     t.end();
   });
 });
