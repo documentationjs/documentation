@@ -62,11 +62,8 @@ test('html', function (tt) {
         .pipe(concat(function (result) {
         var clean = result.sort(function (a, b) {
           return a.path > b.path;
-        }).map(function (r) {
-          if (r.path.match(/json$/)) {
-            return JSON.stringify(normalize(JSON.parse(r.contents)), null, 2);
-          }
-          return r.contents;
+        }).filter(function (r) {
+          return (!r.path.match(/json$/));
         }).join('\n');
         var outputfile = file.replace('.input.js', '.output.files');
         if (UPDATE) fs.writeFileSync(outputfile, clean, 'utf8');
