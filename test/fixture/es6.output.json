@@ -13,6 +13,10 @@
       {
         "title": "name",
         "name": "multiply"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
       }
     ],
     "context": {
@@ -39,6 +43,7 @@
         }
       }
     ],
-    "name": "multiply"
+    "name": "multiply",
+    "kind": "function"
   }
 ]

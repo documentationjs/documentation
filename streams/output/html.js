@@ -216,7 +216,7 @@ module.exports = function (opts) {
 
     this.push(new File({
       path: 'index.json',
-      contents: new Buffer(JSON.stringify(comments), 'utf8')
+      contents: new Buffer(JSON.stringify(comments, null, 2), 'utf8')
     }));
 
     this.push(new File({
