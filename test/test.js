@@ -59,8 +59,10 @@ test('html', function (tt) {
       documentation([file])
         .pipe(outputHtml())
         .pipe(concat(function (result) {
-        var clean = result.map(function (r) {
-          return r.inspect();
+        var clean = result.sort(function (a, b) {
+          return a.path > b.path;
+        }).map(function (r) {
+          return r.contents;
         }).join('\n');
         var outputfile = file.replace('.input.js', '.output.files');
         if (UPDATE) fs.writeFileSync(outputfile, clean, 'utf8');
