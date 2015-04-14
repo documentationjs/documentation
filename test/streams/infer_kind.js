@@ -1,3 +1,4 @@
+'use strict';
 /*eslint-disable no-unused-vars*/
 var test = require('prova'),
   concat = require('concat-stream'),
@@ -16,6 +17,20 @@ function evaluate(fn, callback) {
   stream.end({
     file: __filename,
     source: '(' + fn.toString() + ')'
+  });
+}
+
+function evaluateString(string, callback) {
+  var stream = parse();
+
+  stream
+    .pipe(inferKind())
+    .pipe(flatten())
+    .pipe(concat(callback));
+
+  stream.end({
+    file: __filename,
+    source: string
   });
 }
 
@@ -191,12 +206,11 @@ test('inferKind - context: class (uppercase function)', function (t) {
 });
 
 test('inferKind - context: const', function (t) {
-  evaluate(function () {
-    /**
-     * This is a constant called foo
-     */
-    const foo = 'bar';
-  }, function (result) {
+  evaluateString(
+    '/**' +
+    ' * This is a constant called foo' +
+    ' */' +
+    'const foo = "bar";', function (result) {
     t.equal(result[0].kind, 'constant');
     t.end();
   });

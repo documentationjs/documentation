@@ -15,6 +15,10 @@
         "name": "exports"
       },
       {
+        "title": "kind",
+        "kind": "function"
+      },
+      {
         "title": "memberof",
         "description": "module"
       },
@@ -47,6 +51,7 @@
       }
     ],
     "name": "exports",
+    "kind": "function",
     "memberof": "module",
     "scope": "static"
   },
