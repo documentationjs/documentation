@@ -1626,7 +1626,7 @@ section:target {
           "column": 1
         }
       },
-      "file": "/Users/tmcw/src/documentation/test/fixture/html/nested.input.js",
+      "file": "fixture/html/nested.input.js",
       "code": "function Klass(foo) {\n  this.foo = foo;\n}\n\n/**\n * Get this Klass's foo\n * @returns {Number} foo\n */\nKlass.prototype.getFoo = function () {\n  return this.foo;\n};\n\n/**\n * Decide whether an object is a Klass instance\n *\n * @param {Object} other\n * @returns {boolean} whether the other thing is a Klass\n */\nKlass.isClass = function (other) {\n  return other instanceof Klass;\n};\n\n/**\n * A magic number that identifies this Klass.\n */\nKlass.MAGIC_NUMBER = 42;"
     },
     "name": "Klass",

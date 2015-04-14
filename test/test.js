@@ -16,6 +16,7 @@ function normalize(result) {
   result.forEach(function (item) {
     item.context.file = path.relative(__dirname, item.context.file);
   });
+  return result;
 }
 
 test('parse', function (tt) {
@@ -62,6 +63,9 @@ test('html', function (tt) {
         var clean = result.sort(function (a, b) {
           return a.path > b.path;
         }).map(function (r) {
+          if (r.path.match(/json$/)) {
+            return JSON.stringify(normalize(JSON.parse(r.contents)), null, 2);
+          }
           return r.contents;
         }).join('\n');
         var outputfile = file.replace('.input.js', '.output.files');

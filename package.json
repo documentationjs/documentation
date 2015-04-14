@@ -4,7 +4,7 @@
   "description": "a documentation generator",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js test/*.js test/streams/*.js && prova -p test/*.js test/streams/*.js | tap-difflet",
+    "test": "eslint index.js test/*.js test/streams/*.js && prova test/*.js test/streams/*.js",
     "cover": "istanbul cover prova test/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS"
   },
   "bin": {
