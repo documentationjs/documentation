@@ -12,6 +12,16 @@
 {{/params}}
 {{/if}}
 
+{{#if examples}}
+## Examples
+
+{{#each examples ~}}
+```js
+{{{.}}}
+```
+{{/each}}
+{{/if}}
+
 {{#returns}}
 Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}
 {{/returns}}
