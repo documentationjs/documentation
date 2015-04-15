@@ -1,14 +1,14 @@
 # `{{name}}`
 
 {{#description}}
-{{.}}
+{{inlines .}}
 {{/description}}
 
 {{#if params}}
 | name | description |
 | ---- | ----------- |
 {{#params}}
-| `{{name}}` | {{description}} |
+| `{{name}}` | {{inlines description}} |
 {{/params}}
 {{/if}}
 
@@ -23,6 +23,6 @@
 {{/if}}
 
 {{#returns}}
-Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}
+Returns {{#type.name}}`{{.}}`{{/type.name}} {{inlines description}}
 {{/returns}}
 
