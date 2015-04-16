@@ -11,7 +11,8 @@ var through = require('through'),
   extend = require('extend'),
   combine = require('stream-combiner'),
   hierarchy = require('../hierarchy.js'),
-  highlight = require('../highlight.js');
+  highlight = require('../highlight.js'),
+  inlineLex = require('jsdoc-inline-lex');
 
 /**
  * Make slugg a unary so we can use it in functions
@@ -22,6 +23,41 @@ var through = require('through'),
  */
 function slug(p) {
   return slugg(p);
+}
+
+/**
+ * Format link & tutorial tags with simple code inline tags.
+ *
+ * @param {string} text input - typically a description
+ * @returns {string} markdown-friendly output
+ * @private
+ * @example
+ * formatInlineTags('{@link Foo}'); // "[Foo](#foo)"
+ */
+function formatInlineTags(text) {
+  var output = '';
+  var tokens = inlineLex(text);
+
+  function markdownLink(description, href) {
+    return '[`' + description + '`](' + href + ')';
+  }
+
+  for (var i = 0; i < tokens.length; i++) {
+    if (tokens[i].type === 'text') {
+      output += tokens[i].capture[0];
+    } else if (tokens[i].type === 'link') {
+      var parts = tokens[i].capture[1].split(' ');
+      if (parts.length === 1) {
+        output += markdownLink(tokens[i].capture[1], slug(tokens[i].capture[1]));
+      } else {
+        output += markdownLink(parts.slice(1).join(' '), slug(parts[0]));
+      }
+    } else if (tokens[i].type === 'prefixLink') {
+      output += markdownLink(tokens[i].capture[1], slug(tokens[i].capture[2]));
+    }
+  }
+
+  return output;
 }
 
 var BUILTINS = [
@@ -112,7 +148,7 @@ module.exports = function (opts) {
    * // generates <h2>foo</h2>
    */
   Handlebars.registerHelper('md', function formatMarkdown(string) {
-    return md.render(string);
+    return new Handlebars.SafeString(md.render(formatInlineTags(string)));
   });
 
   /**

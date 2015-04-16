@@ -1481,6 +1481,11 @@ section:target {
                   class='button-indent regular block'>
                   <code>.MAGIC_NUMBER</code>
                 </a>
+              <a
+                href='#bar'
+                class='regular block'>
+                <code>bar</code>
+              </a>
           </div>
         </div>
       </div>
@@ -1536,7 +1541,8 @@ section:target {
       </code>
     </a>
   </h3>
-  <p>Decide whether an object is a Klass instance</p>
+  <p>Decide whether an object is a Klass instance
+This is a <a href="klass"><code>klasssic</code></a></p>
 
 
     <p>
@@ -1586,6 +1592,31 @@ section:target {
 
 </section>
       </div>
+
+</section>
+<section id='bar'class='mt2 mb2 py1 px3 keyline-top'>
+  <h3 class='regular'>
+    <a class='black' href='#bar'>
+      <code>
+        bar<span class='gray'></span>
+      </code>
+    </a>
+  </h3>
+  <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
+a <a href="klass"><code>klass instance multiword</code></a></p>
+
+
+
+      <h4>Returns</h4>
+      <code><code><a href="#klass">Klass</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>that class</p>
+
+      </span>
+
+
+
 
 </section>
 

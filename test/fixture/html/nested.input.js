@@ -16,6 +16,7 @@ Klass.prototype.getFoo = function () {
 
 /**
  * Decide whether an object is a Klass instance
+ * This is a [klasssic]{@link Klass}
  *
  * @param {Object} other
  * @returns {boolean} whether the other thing is a Klass
@@ -28,3 +29,15 @@ Klass.isClass = function (other) {
  * A magic number that identifies this Klass.
  */
 Klass.MAGIC_NUMBER = 42;
+
+/**
+ * Get an instance of {@link Klass}. Will make
+ * a {@link Klass klass instance multiword}
+ *
+ * @returns {Klass} that class
+ */
+function bar() {
+  return new Klass(1);
+}
+
+bar();
