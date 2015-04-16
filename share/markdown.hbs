@@ -1,19 +1,29 @@
-# `{{name}}`
+## `{{name}}`
 
 {{#description}}
 {{inlines .}}
 {{/description}}
 
 {{#if params}}
-| name | description |
-| ---- | ----------- |
+### Parameters
+
+| name | type | description |
+| ---- | ---- | ----------- |
 {{#params}}
-| `{{name}}` | {{inlines description}} |
+| `{{name}}` | {{format_type type}} | {{inlines description}} |
 {{/params}}
 {{/if}}
 
+{{#if properties}}
+| name | type | description |
+| ---- | ---- | ----------- |
+{{#properties}}
+| `{{name}}` | {{format_type type}} | {{inlines description}} |
+{{/properties}}
+{{/if}}
+
 {{#if examples}}
-## Examples
+### Examples
 
 {{#each examples ~}}
 ```js

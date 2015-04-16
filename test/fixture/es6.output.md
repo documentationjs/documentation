@@ -1,6 +1,7 @@
-# `multiply`
+## `multiply`
 
 This function returns the number one.
+
 
 
 

@@ -1,0 +1,75 @@
+[
+  {
+    "description": "Mouse event",
+    "tags": [
+      {
+        "title": "event",
+        "description": "Map#mousemove"
+      },
+      {
+        "title": "type",
+        "description": null,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      },
+      {
+        "title": "property",
+        "description": "the pixel location of the event",
+        "type": {
+          "type": "NameExpression",
+          "name": "Point"
+        },
+        "name": "point"
+      },
+      {
+        "title": "property",
+        "description": "the original DOM event",
+        "type": {
+          "type": "NameExpression",
+          "name": "Event"
+        },
+        "name": "originalEvent"
+      },
+      {
+        "title": "kind",
+        "kind": "event"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 0
+        }
+      },
+      "file": "fixture/event.input.js"
+    },
+    "properties": [
+      {
+        "title": "property",
+        "description": "the pixel location of the event",
+        "type": {
+          "type": "NameExpression",
+          "name": "Point"
+        },
+        "name": "point"
+      },
+      {
+        "title": "property",
+        "description": "the original DOM event",
+        "type": {
+          "type": "NameExpression",
+          "name": "Event"
+        },
+        "name": "originalEvent"
+      }
+    ],
+    "kind": "event"
+  }
+]

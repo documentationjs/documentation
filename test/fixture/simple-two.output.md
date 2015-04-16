@@ -1,12 +1,15 @@
-# `returnTwo`
+## `returnTwo`
 
 This function returns the number plus two.
 
-| name | description |
-| ---- | ----------- |
-| `a` | the number |
+### Parameters
 
-## Examples
+| name | type | description |
+| ---- | ---- | ----------- |
+| `a` | `Number` | the number |
+
+
+### Examples
 
 ```js
 var result = returnTwo(4);

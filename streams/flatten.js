@@ -19,6 +19,7 @@ var through = require('through'),
  * The following tags are flattened to a top-level array-valued property:
  *
  *  * `@param` (to `params` property)
+ *  * `@property` (to `properties` property)
  *  * `@returns` (to `returns` property)
  *  * `@example` (to `examples` property)
  *
@@ -58,6 +59,12 @@ var flatteners = {
   },
   'kind': function (result, tag) {
     result.kind = tag.kind;
+  },
+  'property': function (result, tag) {
+    if (!result.properties) {
+      result.properties = [];
+    }
+    result.properties.push(tag);
   },
   'param': function (result, tag) {
     if (!result.params) {
