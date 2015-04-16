@@ -1603,7 +1603,8 @@ This is a <a href="klass"><code>klasssic</code></a></p>
     </a>
   </h3>
   <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
-a <a href="klass"><code>klass instance multiword</code></a></p>
+a <a href="klass"><code>klass instance multiword</code></a>,
+like a <a href="klass"><code>klass</code></a></p>
 
 
 

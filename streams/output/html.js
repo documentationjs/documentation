@@ -46,7 +46,7 @@ function formatInlineTags(text) {
     if (tokens[i].type === 'text') {
       output += tokens[i].capture[0];
     } else if (tokens[i].type === 'link') {
-      var parts = tokens[i].capture[1].split(' ');
+      var parts = tokens[i].capture[1].split(/\s|\|/);
       if (parts.length === 1) {
         output += markdownLink(tokens[i].capture[1], slug(tokens[i].capture[1]));
       } else {

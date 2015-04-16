@@ -32,7 +32,8 @@ Klass.MAGIC_NUMBER = 42;
 
 /**
  * Get an instance of {@link Klass}. Will make
- * a {@link Klass klass instance multiword}
+ * a {@link Klass klass instance multiword},
+ * like a {@link Klass|klass}
  *
  * @returns {Klass} that class
  */
