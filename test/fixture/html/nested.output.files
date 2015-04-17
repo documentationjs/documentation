@@ -1526,6 +1526,8 @@ section:target {
 
       </span>
 
+    <h4>Examples</h4>
+<pre>foo.getFoo();</pre>
 
 
 
@@ -1542,7 +1544,8 @@ section:target {
     </a>
   </h3>
   <p>Decide whether an object is a Klass instance
-This is a <a href="klass"><code>klasssic</code></a></p>
+This is a <a href="klass"><code>klasssic</code></a>
+This is a <a href="doesnot"><code>link to something that does not exist</code></a></p>
 
 
     <p>

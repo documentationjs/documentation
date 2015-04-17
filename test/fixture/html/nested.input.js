@@ -9,6 +9,8 @@ function Klass(foo) {
 /**
  * Get this Klass's foo
  * @returns {Number} foo
+ * @example
+ * foo.getFoo();
  */
 Klass.prototype.getFoo = function () {
   return this.foo;
@@ -17,6 +19,7 @@ Klass.prototype.getFoo = function () {
 /**
  * Decide whether an object is a Klass instance
  * This is a [klasssic]{@link Klass}
+ * This is a [link to something that does not exist]{@link DoesNot}
  *
  * @param {Object} other
  * @returns {boolean} whether the other thing is a Klass

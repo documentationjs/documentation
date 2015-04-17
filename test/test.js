@@ -34,6 +34,21 @@ test('parse', function (tt) {
   });
 });
 
+test('formats', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
+    tt.test('json', function (ttt) {
+      documentation([file]).pipe(documentation.formats.json()).pipe(concat(function (str) {
+        var result = JSON.parse(str);
+        normalize(result);
+        var outputfile = file.replace('.input.js', '.output.json');
+        var expect = require(outputfile);
+        ttt.deepEqual(result, expect);
+        ttt.end();
+      }));
+    });
+  });
+});
+
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
