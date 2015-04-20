@@ -60,3 +60,18 @@ documentation.
 * The [eslint valid-jsdoc rule](http://eslint.org/docs/rules/valid-jsdoc.html)
   makes it possible to require documentation as part of your linting step,
   ensuring that new code doesn't lower documentation coverage.
+
+## Will adding JSDoc comments slow down my code?
+
+The short answer is "no".
+
+* As far as **execution performance** - how fast your code runs -
+  all JavaScript implementations like V8 or SpiderMonkey will remove
+  comments from the generated low-level code that they run. In other words,
+  your browser does not run JavaScript as a string of code - it parses your
+  code into an intermediate representation that ignores comments, and in this
+  system comments, as well as whitespace, have no effect on performance.
+* As far as **download performance** - whether these comments add kilobytes to
+  website's download time - any typical code minifier
+  like [UglifyJS](https://github.com/mishoo/UglifyJS) or [Closure Compiler](https://developers.google.com/closure/compiler/)
+  removes comments by default when compressing your code.
