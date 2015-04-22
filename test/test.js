@@ -19,6 +19,21 @@ function normalize(result) {
   return result;
 }
 
+test('external modules option', function (t) {
+  documentation([
+    path.join(__dirname, 'fixture', 'external.input.js')
+  ], {
+    external: '(external|external/node_modules/*)'
+  }).pipe(concat(function (result) {
+    normalize(result);
+    var outputfile = path.join(__dirname, 'fixture', '_external-deps-included.json');
+    if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+    var expect = require(outputfile);
+    t.deepEqual(result, expect);
+    t.end();
+  }));
+});
+
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
