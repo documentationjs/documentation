@@ -1,0 +1,114 @@
+[
+  {
+    "description": "Get the time",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "the current date",
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        }
+      },
+      {
+        "title": "name",
+        "name": "getTheTime"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "file": "fixture/multisignature.input.js",
+      "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}"
+    },
+    "returns": [
+      {
+        "title": "returns",
+        "description": "the current date",
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        }
+      }
+    ],
+    "name": "getTheTime",
+    "kind": "function"
+  },
+  {
+    "description": "Set the time",
+    "tags": [
+      {
+        "title": "param",
+        "description": "the current time",
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      },
+      {
+        "title": "returns",
+        "description": "nothing",
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      },
+      {
+        "title": "name",
+        "name": "getTheTime"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 19,
+          "column": 1
+        }
+      },
+      "file": "fixture/multisignature.input.js",
+      "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "the current time",
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "nothing",
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      }
+    ],
+    "name": "getTheTime",
+    "kind": "function"
+  }
+]
