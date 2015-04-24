@@ -44,10 +44,14 @@ function inferHierarchy(comments) {
   for (i = comments.length - 1; i >= 0; i--) {
     if (comments[i].memberof) {
       if (nameIndex[comments[i].memberof]) {
-        nameIndex[comments[i].memberof].members[comments[i].scope].push(comments[i]);
-        // remove non-root nodes from the lowest level: these are reachable
-        // as members of other docs.
-        comments.splice(i, 1);
+        if (comments[i].scope) {
+          nameIndex[comments[i].memberof].members[comments[i].scope].push(comments[i]);
+          // remove non-root nodes from the lowest level: these are reachable
+          // as members of other docs.
+          comments.splice(i, 1);
+        } else {
+          console.error('found memberof but no @scope, @static, or @instance tag');
+        }
       } else {
         console.error('memberof reference to %s not found', comments[i].memberof);
       }
