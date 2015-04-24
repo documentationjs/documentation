@@ -27,3 +27,37 @@ var area = function() {
   return chart;
 };
 ```
+
+## Overloaded Methods
+
+Also common in [jQuery](https://jquery.com/), [d3](http://d3js.org/),
+and concise JavaScript libraries are getter-setter methods, where you might
+call `thing.size()` to get a thing's size and `thing.size(10)` to set a thing's
+size to 10.
+
+The best way to document these kinds of methods is by doing it twice:
+
+```js
+var theTime;
+/**
+ * Get the time
+ * @returns {Date} the current date
+ */
+/**
+ * Set the time
+ * @param {Date} time the current time
+ * @returns {undefined} nothing
+ */
+function getTheTime(time) {
+  if (arguments.length === 0) {
+    return new Date();
+  } else {
+    theTime = time;
+  }
+}
+```
+
+The first documentation describes how you can call getTheTime without
+any arguments, and the second describes how you can call getTheTime with
+an argument. `documentation` will output two documented functions when you
+use this style.
