@@ -19,7 +19,7 @@ function normalize(result) {
   return result;
 }
 
-test('external modules option', function (t) {
+test.only('external modules option', function (t) {
   documentation([
     path.join(__dirname, 'fixture', 'external.input.js')
   ], {

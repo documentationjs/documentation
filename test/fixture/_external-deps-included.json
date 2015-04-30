@@ -93,7 +93,7 @@
           "column": 2
         }
       },
-      "file": "fixture/node_modules/external/index.js",
+      "file": "fixture/node_modules/external/lib/main.js",
       "code": "'use strict';\n\nvar otherDep = require('external2');\n\n/**\n * This function returns the number one.\n * @return {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return otherDep() - 1;\n};"
     },
     "returns": [
