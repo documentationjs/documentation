@@ -7,6 +7,7 @@ var mdeps = require('module-deps'),
   sort = require('./streams/sort'),
   normalize = require('./streams/normalize.js'),
   filterAccess = require('./streams/filter_access.js'),
+  filterJS = require('./streams/filter_js'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
   inferKind = require('./streams/infer_kind'),
@@ -57,6 +58,7 @@ module.exports = function (indexes, options) {
   }
 
   return md
+    .pipe(deferErrors(filterJS()))
     .pipe(deferErrors(parse()))
     .pipe(deferErrors(inferName()))
     .pipe(sort())

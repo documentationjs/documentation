@@ -1,3 +1,8 @@
+## 1.2.0
+
+* Transforms in package.json `browserify.transform` fields are now applied to
+  source code so that babel, etc can be supported.
+
 ## 1.1.0
 
 * Add `external` option that allows the user to whitelist specific external
