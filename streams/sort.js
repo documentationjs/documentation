@@ -18,6 +18,6 @@ module.exports = function () {
   }
 
   return sort(function (a, b) {
-    return getSortKey(a) > getSortKey(b);
+    return getSortKey(a).localeCompare(getSortKey(b));
   });
 };

@@ -19,18 +19,18 @@
                 class='regular block'>
                 <code>{{name}}</code>
               </a>
-              {{#each members.instance}}
-                <a
-                  href='#{{permalink}}'
-                  class='button-indent regular block'>
-                  <code>#{{name}}</code>
-                </a>
-              {{/each}}
               {{#each members.static}}
                 <a
                   href='#{{permalink}}'
                   class='button-indent regular block'>
                   <code>.{{name}}</code>
+                </a>
+              {{/each}}
+              {{#each members.instance}}
+                <a
+                  href='#{{permalink}}'
+                  class='button-indent regular block'>
+                  <code>#{{name}}</code>
                 </a>
               {{/each}}
             {{/each}}

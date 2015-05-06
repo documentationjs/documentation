@@ -1467,9 +1467,9 @@ section:target {
                 <code>Klass</code>
               </a>
                 <a
-                  href='#klass/getfoo'
+                  href='#klass/magic-number'
                   class='button-indent regular block'>
-                  <code>#getFoo</code>
+                  <code>.MAGIC_NUMBER</code>
                 </a>
                 <a
                   href='#klass/isclass'
@@ -1477,9 +1477,9 @@ section:target {
                   <code>.isClass</code>
                 </a>
                 <a
-                  href='#klass/magic-number'
+                  href='#klass/getfoo'
                   class='button-indent regular block'>
-                  <code>.MAGIC_NUMBER</code>
+                  <code>#getFoo</code>
                 </a>
               <a
                 href='#bar'
@@ -1506,34 +1506,24 @@ section:target {
 
 
       <div class='section-indent'>
-<section id='klass/getfoo'class='mt2 mb2 py1 px3 keyline-top'>
+<section id='klass/magic-number'class='mt2 mb2 py1 px3 keyline-top'>
   <h3 class='regular'>
-    <a class='black' href='#klass/getfoo'>
+    <a class='black' href='#klass/magic-number'>
       <code>
-        getFoo<span class='gray'></span>
+        MAGIC_NUMBER<span class='gray'></span>
       </code>
     </a>
   </h3>
-  <p>Get this Klass's foo</p>
+  <p>A magic number that identifies this Klass.</p>
 
 
 
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>foo</p>
 
-      </span>
-
-    <h4>Examples</h4>
-<pre>foo.getFoo();</pre>
 
 
 
 </section>
       </div>
-
       <div class='section-indent'>
 <section id='klass/isclass'class='mt2 mb2 py1 px3 keyline-top'>
   <h3 class='regular'>
@@ -1576,20 +1566,30 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
 
 </section>
       </div>
+
       <div class='section-indent'>
-<section id='klass/magic-number'class='mt2 mb2 py1 px3 keyline-top'>
+<section id='klass/getfoo'class='mt2 mb2 py1 px3 keyline-top'>
   <h3 class='regular'>
-    <a class='black' href='#klass/magic-number'>
+    <a class='black' href='#klass/getfoo'>
       <code>
-        MAGIC_NUMBER<span class='gray'></span>
+        getFoo<span class='gray'></span>
       </code>
     </a>
   </h3>
-  <p>A magic number that identifies this Klass.</p>
+  <p>Get this Klass's foo</p>
 
 
 
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>foo</p>
 
+      </span>
+
+    <h4>Examples</h4>
+<pre>foo.getFoo();</pre>
 
 
 

@@ -56,16 +56,16 @@
 {{#each examples ~}}<pre>{{{.}}}</pre>{{/each}}
   {{/if}}
 
-  {{#if members.instance}}
-    {{#each members.instance}}
+  {{#if members.static}}
+    {{#each members.static}}
       <div class='section-indent'>
 {{> section}}
       </div>
     {{/each}}
   {{/if}}
 
-  {{#if members.static}}
-    {{#each members.static}}
+  {{#if members.instance}}
+    {{#each members.instance}}
       <div class='section-indent'>
 {{> section}}
       </div>
