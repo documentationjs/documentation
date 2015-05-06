@@ -1,0 +1,114 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "exports"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      },
+      {
+        "title": "memberof",
+        "description": "module"
+      },
+      {
+        "title": "static"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 2
+        }
+      },
+      "file": "fixture/node_modules/external/node_modules/external2/index.js",
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};"
+    },
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "exports",
+    "kind": "function",
+    "memberof": "module",
+    "scope": "static"
+  },
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "name",
+        "name": "exports"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      },
+      {
+        "title": "memberof",
+        "description": "module"
+      },
+      {
+        "title": "static"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 2
+        }
+      },
+      "file": "fixture/node_modules/external/lib/main.js",
+      "code": "'use strict';\n\nvar otherDep = require('external2');\n\n/**\n * This function returns the number one.\n * @return {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return otherDep() - 1;\n};"
+    },
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "exports",
+    "kind": "function",
+    "memberof": "module",
+    "scope": "static"
+  }
+]
