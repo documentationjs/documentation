@@ -2,6 +2,7 @@
 
 * Transforms in package.json `browserify.transform` fields are now applied to
   source code so that babel, etc can be supported.
+* Fixes crash caused by requiring JSON files
 
 ## 1.1.0
 
