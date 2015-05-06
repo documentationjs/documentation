@@ -42,7 +42,7 @@ var yargs = require('yargs')
   .example('$0 foo.js', 'parse documentation in a given file'),
   argv = yargs.argv;
 
-var inputs, name, version;
+var inputs, name, version, transform;
 if (argv._.length > 0) {
   inputs = argv._;
 } else {
@@ -51,6 +51,9 @@ if (argv._.length > 0) {
     inputs = [p.main];
     name = argv.name || p.name;
     version = argv.version || p.version;
+    if (p.browserify && p.browserify.transform) {
+      transform = p.browserify.transform;
+    }
   } catch(e) {
     yargs.showHelp();
     throw new Error('documentation was given no files and was not run in a module directory');
@@ -77,7 +80,8 @@ if (argv.f === 'html' && argv.o === 'stdout') {
 }
 
 var docStream = documentation(inputs, {
-    private: argv.private
+    private: argv.private,
+    transform: transform
   })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
   .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))

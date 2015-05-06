@@ -23,6 +23,8 @@ var mdeps = require('module-deps'),
  * @param {Array<string>} options.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
+ * @param {Array<string>} options.transform source transforms given as strings
+ * passed to [the module-deps transform option](https://github.com/substack/module-deps)
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
@@ -32,6 +34,7 @@ module.exports = function (indexes, options) {
     filter: function (id) {
       return !!options.external || moduleFilters.internalOnly(id);
     },
+    transform: options.transform,
     postFilter: moduleFilters.externals(indexes, options)
   });
 
