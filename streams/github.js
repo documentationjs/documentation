@@ -55,8 +55,8 @@ module.exports = function () {
         comment.context.file.replace(root + '/', '') +
         '#L' + comment.context.loc.start.line + '-' +
         'L' + comment.context.loc.end.line;
-      this.resume();
       this.push(comment);
+      this.resume();
     }.bind(this));
   });
 };
