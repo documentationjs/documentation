@@ -20,6 +20,9 @@ var mdeps = require('module-deps'),
  * @name documentation
  * @param {Array<String>|String} indexes files to process
  * @param {Object} options options
+ * @param {Array<string>} options.external a string regex / glob match pattern
+ * that defines what external modules will be whitelisted and included in the
+ * generated documentation.
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
