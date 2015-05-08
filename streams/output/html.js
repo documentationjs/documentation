@@ -9,7 +9,7 @@ var through = require('through'),
   path = require('path'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
-  combine = require('stream-combiner'),
+  splicer = require('stream-splicer'),
   hierarchy = require('../hierarchy.js'),
   highlight = require('../highlight.js'),
   inlineLex = require('jsdoc-inline-lex');
@@ -273,5 +273,5 @@ module.exports = function (opts) {
       }.bind(this));
   });
 
-  return combine([highlight(), hierarchy(), htmlStream]);
+  return splicer.obj([highlight(), hierarchy(), htmlStream]);
 };

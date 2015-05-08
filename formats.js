@@ -1,4 +1,6 @@
-var combine = require('stream-combiner'),
+'use strict';
+
+var splicer = require('stream-splicer'),
   json = require('./streams/output/json.js'),
   markdown = require('./streams/output/markdown.js'),
   htmlOutput = require('./streams/output/html.js'),
@@ -9,7 +11,7 @@ module.exports = {
     return json();
   },
   docset: function (options) {
-    return combine([htmlOutput({
+    return splicer.obj([htmlOutput({
       hideSidebar: true,
       name: options.name,
       version: options.version
