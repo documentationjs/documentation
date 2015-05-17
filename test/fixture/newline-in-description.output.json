@@ -1,0 +1,34 @@
+[
+  {
+    "description": "A function.",
+    "tags": [
+      {
+        "title": "param",
+        "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
+        "type": null,
+        "name": "a"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 0
+        }
+      },
+      "file": "fixture/newline-in-description.input.js"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
+        "type": null,
+        "name": "a"
+      }
+    ]
+  }
+]
