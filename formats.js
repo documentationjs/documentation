@@ -3,6 +3,7 @@
 var splicer = require('stream-splicer'),
   json = require('./streams/output/json.js'),
   markdown = require('./streams/output/markdown.js'),
+  readme = require('./streams/output/readme.js'),
   htmlOutput = require('./streams/output/html.js'),
   docset = require('./streams/output/docset.js');
 
@@ -26,6 +27,16 @@ module.exports = {
       name: options.name,
       version: options.version
     });
+  },
+  readme: function (options) {
+    return splicer.obj([
+      markdown({
+        template: options.mdtemplate,
+        name: options.name,
+        version: options.version
+      }),
+      readme()
+    ]);
   },
   html: function (options) {
     return htmlOutput({
