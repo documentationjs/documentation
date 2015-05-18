@@ -98,7 +98,11 @@ module.exports = function (opts) {
     }
   }
 
-  Handlebars.registerHelper('format_params', function(params) {
+  function inlines(string) {
+    return new Handlebars.SafeString(formatInlineTags(string));
+  }
+
+  Handlebars.registerHelper('format_params', function (params) {
     return new Handlebars.SafeString(formatParameters(params));
   });
 
@@ -106,9 +110,12 @@ module.exports = function (opts) {
     return new Handlebars.SafeString('`' + formatType(type) + '`');
   });
 
-  Handlebars.registerHelper('inlines', function (string) {
-    return new Handlebars.SafeString(formatInlineTags(string));
+  Handlebars.registerHelper('format_description', function (desc) {
+    var singleLine = (desc || '').replace(/\n/g, ' ');
+    return inlines(singleLine);
   });
+
+  Handlebars.registerHelper('inlines', inlines);
 
   return through(function (comment) {
     this.push(template(comment));
