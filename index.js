@@ -2,6 +2,7 @@
 
 var mdeps = require('module-deps'),
   path = require('path'),
+  fs = require('fs'),
   PassThrough = require('stream').PassThrough,
   flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
@@ -43,8 +44,18 @@ module.exports = function (indexes, options) {
     indexes = [indexes];
   }
 
-  indexes.forEach(function (index) {
-    md.write(path.resolve(index));
+  indexes
+  .map(function (index) {
+    return path.resolve(index);
+  })
+  .filter(function (index) {
+    if (!(fs.existsSync(index) && fs.statSync(index).isFile())) {
+      console.error('file %s does not exist or is a directory', index);
+      return false;
+    }
+  })
+  .forEach(function (index) {
+    md.write(index);
   });
   md.end();
 

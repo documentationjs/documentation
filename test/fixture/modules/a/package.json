@@ -1,0 +1,16 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "a module that returns the letter a",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "keywords": [
+    "the",
+    "letter",
+    "a"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC"
+}

@@ -108,6 +108,23 @@ test('html', function (tt) {
 });
 
 
+test('readme package.json', function (tt) {
+  glob.sync(path.join(__dirname, 'fixture/modules/*')).forEach(function (file) {
+    tt.test(path.basename(file), function (t) {
+      documentation([file])
+        .pipe(documentation.formats.readme({}))
+        .pipe(concat(function (result) {
+        var outputfile = file.replace('.json', '.readme.md');
+        if (UPDATE) fs.writeFileSync(outputfile, result, 'utf8');
+        var expect = fs.readFileSync(outputfile, 'utf8');
+        t.equal(result.toString(), expect);
+        t.end();
+      }));
+    });
+  });
+});
+
+
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
