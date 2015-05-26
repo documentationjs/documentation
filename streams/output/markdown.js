@@ -5,6 +5,7 @@ var through = require('through'),
   path = require('path'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
+  formatType = require('./lib/markdown_format_type'),
   inlineLex = require('jsdoc-inline-lex');
 
 /**
@@ -77,26 +78,6 @@ module.exports = function (opts) {
   var template = Handlebars
     .compile(
       fs.readFileSync(options.template, 'utf8'));
-
-  function formatType(type) {
-    if (!type) return '';
-    if (type.type === 'NameExpression') {
-      return type.name;
-    } else if (type.type === 'UnionType') {
-      return type.elements.map(function (element) {
-        return formatType(element);
-      }).join(' or ');
-    } else if (type.type === 'AllLiteral') {
-      return 'Any';
-    } else if (type.type === 'OptionalType') {
-      return '[' + formatType(type.expression) + ']';
-    } else if (type.type === 'TypeApplication') {
-      return formatType(type.expression) + '<' +
-        type.applications.map(function (application) {
-          return formatType(application);
-        }).join(', ') + '>';
-    }
-  }
 
   function inlines(string) {
     return new Handlebars.SafeString(formatInlineTags(string));
