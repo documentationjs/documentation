@@ -1,0 +1,84 @@
+[
+  {
+    "description": "Represents an IPv6 address",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "type": null,
+        "name": "Address6"
+      },
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "address"
+      },
+      {
+        "title": "param",
+        "description": "How many octets to parse",
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "groups",
+        "default": "8"
+      },
+      {
+        "title": "example",
+        "description": "var address = new Address6('2001::/32');"
+      },
+      {
+        "title": "kind",
+        "kind": "class"
+      }
+    ],
+    "context": {
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 0
+        }
+      },
+      "file": "fixture/optional.input.js"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "address"
+      },
+      {
+        "title": "param",
+        "description": "How many octets to parse",
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "groups",
+        "default": "8"
+      }
+    ],
+    "examples": [
+      "var address = new Address6('2001::/32');"
+    ],
+    "kind": "class"
+  }
+]

@@ -101,7 +101,12 @@ module.exports = function () {
          * @return {undefined} this emits data
          */
         function parseComment(comment) {
-          var parsedComment = doctrine.parse(comment.value, { unwrap: true });
+          var parsedComment = doctrine.parse(comment.value, {
+            // have doctrine itself remove the comment asterisks from content
+            unwrap: true,
+            // enable parsing of optional parameters in brackets, JSDoc3 style
+            sloppy: true
+          });
 
           parsedComment.context = {
             loc: extend({}, path.value.loc),
