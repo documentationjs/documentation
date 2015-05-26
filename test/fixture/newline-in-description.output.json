@@ -5,7 +5,10 @@
       {
         "title": "param",
         "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
-        "type": null,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        },
         "name": "a"
       }
     ],
@@ -26,7 +29,10 @@
       {
         "title": "param",
         "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
-        "type": null,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        },
         "name": "a"
       }
     ]

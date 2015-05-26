@@ -7,10 +7,8 @@
 {{#if params}}
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
 {{#params}}
-| `{{name}}` | {{format_type type}} | {{format_description description}} |
+* `{{name}}` **{{format_type type}}** {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}}
 {{/params}}
 {{/if}}
 

@@ -4,10 +4,8 @@ Represents an IPv6 address
 
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `address` | `string` | An IPv6 address string |
-| `groups` | `[number]` | How many octets to parse |
+* `address` **`string`** An IPv6 address string
+* `groups` **`[number]`** How many octets to parse (optional, default `8`)
 
 
 ### Examples

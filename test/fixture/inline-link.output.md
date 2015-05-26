@@ -4,9 +4,7 @@ Adds one to a number
 
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `a` | `number` | the input |
+* `a` **`number`** the input
 
 
 
@@ -19,9 +17,7 @@ This function returns the number one. Internally, this uses
 
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `a` | `number` | the input |
+* `a` **`number`** the input
 
 
 

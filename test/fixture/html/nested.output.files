@@ -1548,7 +1548,9 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
         </thead>
           <tr>
             <td>other</td>
-            <td><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+            </td>
             <td></td>
           </tr>
       </table>

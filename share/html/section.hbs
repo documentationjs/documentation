@@ -32,7 +32,12 @@
         {{#params}}
           <tr>
             <td>{{name}}</td>
-            <td>{{{format_type type}}}</td>
+            <td>
+              {{{format_type type}}}
+              {{#default}}
+                (default <code>{{.}}</code>)
+              {{/default}}
+            </td>
             <td>{{{md description}}}</td>
           </tr>
         {{/params}}

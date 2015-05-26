@@ -4,9 +4,7 @@ This function returns the number plus two.
 
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `a` | `Number` | the number |
+* `a` **`Number`** the number
 
 
 ### Examples

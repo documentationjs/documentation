@@ -22,7 +22,7 @@ var through = require('through'),
  * @returns {string} output
  */
 function slug(p) {
-  return slugg(p);
+  return p ? slugg(p) : '';
 }
 
 /**

@@ -13,9 +13,7 @@ Set the time
 
 ### Parameters
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `time` | `Date` | the current time |
+* `time` **`Date`** the current time
 
 
 
