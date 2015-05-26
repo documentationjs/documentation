@@ -4,20 +4,44 @@ var through = require('through'),
   types = require('ast-types');
 
 /**
- * Create a transform stream that attempts to infer a `name` tag from the context.
+ * Create a transform stream that attempts to infer a `name` tag from the context,
+ * and adopt `@class` and other other tags as implied name tags.
  *
  * @name inferName
  * @return {stream.Transform}
  */
 module.exports = function () {
   return through(function (comment) {
-    // If this comment is already explicitly named, simply pass it
-    // through the stream without doing any inference.
-    if (comment.tags.some(function (tag) {
-      return tag.title === 'name';
-    })) {
+
+    var implyName = function (name) {
+      comment.tags.push({
+        title: 'name',
+        name: name
+      });
       this.push(comment);
-      return;
+    }.bind(this);
+
+    for (var i = 0; i < comment.tags.length; i++) {
+      // If this comment is already explicitly named, simply pass it
+      // through the stream without doing any inference.
+      if (comment.tags[i].title === 'name') {
+        this.push(comment);
+        return;
+      }
+
+      // If this comment has a @class tag with a name, use it
+      // as a title
+      if (comment.tags[i].title === 'class' && comment.tags[i].name) {
+        implyName(comment.tags[i].name);
+        return;
+      }
+
+      // If this comment has an @event tag with a name, use it
+      // as a title
+      if (comment.tags[i].title === 'event' && comment.tags[i].description) {
+        implyName(comment.tags[i].name);
+        return;
+      }
     }
 
     // The strategy here is to do a depth-first traversal of the AST,

@@ -35,6 +35,10 @@
         "description": "var address = new Address6('2001::/32');"
       },
       {
+        "title": "name",
+        "name": "Address6"
+      },
+      {
         "title": "kind",
         "kind": "class"
       }
@@ -79,6 +83,7 @@
     "examples": [
       "var address = new Address6('2001::/32');"
     ],
+    "name": "Address6",
     "kind": "class"
   }
 ]

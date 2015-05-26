@@ -33,6 +33,9 @@
         "name": "originalEvent"
       },
       {
+        "title": "name"
+      },
+      {
         "title": "kind",
         "kind": "event"
       }
