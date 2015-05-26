@@ -1,3 +1,13 @@
+## 1.3.0
+
+* Support for [JSDoc3-style bracketed optional parameters](http://usejsdoc.org/tags-param.html#optional-parameters-and-default-values), like
+
+```js
+/**
+ * @param {Type} [param=defaultValue]
+ */
+```
+
 ## 1.2.0
 
 * Transforms in package.json `browserify.transform` fields are now applied to
