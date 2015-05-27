@@ -28,7 +28,7 @@
     "espree": "^1.12.2",
     "extend": "^2.0.0",
     "github-url-from-git": "^1.4.0",
-    "globals-docs": "^2.0.0",
+    "globals-docs": "^2.0.1",
     "handlebars": "^3.0.0",
     "hat": "0.0.3",
     "highlight.js": "^8.4.0",

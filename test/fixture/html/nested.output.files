@@ -1560,7 +1560,7 @@ section:target {
     </p>
 
       <h4>Returns</h4>
-      <code><code>boolean</code></code>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
       :
       <span class='force-inline'>
         <p>whether the other thing is a Klass</p>
@@ -1604,7 +1604,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
     </p>
 
       <h4>Returns</h4>
-      <code><code>boolean</code></code>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
       :
       <span class='force-inline'>
         <p>whether the other thing is a Klass</p>
