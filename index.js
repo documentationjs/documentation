@@ -1,8 +1,6 @@
 'use strict';
 
-var mdeps = require('module-deps'),
-  path = require('path'),
-  PassThrough = require('stream').PassThrough,
+var splicer = require('stream-splicer'),
   flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
   normalize = require('./streams/normalize.js'),
@@ -10,9 +8,11 @@ var mdeps = require('module-deps'),
   filterJS = require('./streams/filter_js'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
+  dependency = require('./streams/dependency'),
+  shallow = require('./streams/shallow'),
+  polyglot = require('./streams/polyglot'),
   inferKind = require('./streams/infer_kind'),
-  inferMembership = require('./streams/infer_membership'),
-  moduleFilters = require('./lib/module-filters');
+  inferMembership = require('./streams/infer_membership');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -26,48 +26,35 @@ var mdeps = require('module-deps'),
  * generated documentation.
  * @param {Array<string>} options.transform source transforms given as strings
  * passed to [the module-deps transform option](https://github.com/substack/module-deps)
+ * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
+ * a proper parser. This enables support of non-JavaScript languages but
+ * reduces documentation's ability to infer structure of code.
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
   options = options || {};
 
-  var md = mdeps({
-    filter: function (id) {
-      return !!options.external || moduleFilters.internalOnly(id);
-    },
-    transform: options.transform,
-    postFilter: moduleFilters.externals(indexes, options)
-  });
-
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
 
-  indexes.forEach(function (index) {
-    md.write(path.resolve(index));
-  });
-  md.end();
+  var inputStream = options.polyglot ? [
+      shallow(indexes),
+      polyglot()
+    ] : [
+      dependency(indexes, options),
+      filterJS(),
+      parse(),
+      inferName(),
+      inferKind(),
+      inferMembership()];
 
-  var end = new PassThrough({ objectMode: true });
-
-  function deferErrors(stream) {
-    return stream.on('error', function (a, b, c) {
-      end.emit('error', a, b, c);
-      end.emit('end');
-    });
-  }
-
-  return md
-    .pipe(deferErrors(filterJS()))
-    .pipe(deferErrors(parse()))
-    .pipe(deferErrors(inferName()))
-    .pipe(sort())
-    .pipe(deferErrors(inferKind()))
-    .pipe(deferErrors(inferMembership()))
-    .pipe(normalize())
-    .pipe(flatten())
-    .pipe(filterAccess(options.private ? [] : undefined))
-    .pipe(end);
+  return splicer.obj(
+    inputStream.concat([
+    sort(),
+    normalize(),
+    flatten(),
+    filterAccess(options.private ? [] : undefined)]));
 };
 
 module.exports.formats = require('./formats.js');

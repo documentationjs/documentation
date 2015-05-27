@@ -1,0 +1,17 @@
+'use strict';
+
+var test = require('prova'),
+  concat = require('concat-stream'),
+  path = require('path'),
+  shallow = require('../../streams/shallow'),
+  polyglot = require('../../streams/polyglot');
+
+test('polyglot', function (t) {
+  shallow([path.resolve(path.join(__dirname, '../fixture/polyglot/blend.cpp'))])
+    .pipe(polyglot())
+    .pipe(concat(function (comments) {
+      t.equal(comments.length, 1);
+      t.equal(comments[0].description, 'This method moves a hex to a color');
+      t.end();
+    }));
+});

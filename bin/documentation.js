@@ -28,6 +28,9 @@ var yargs = require('yargs')
   .describe('name', 'project name. by default, inferred from package.json')
   .describe('version', 'project version. by default, inferred from package.json')
 
+  .boolean('polyglot')
+  .describe('polyglot', 'polyglot mode turns off dependency resolution and enables multi-language support. use this to document c++')
+
   .boolean('g')
   .describe('g', 'infer links to github in documentation')
   .alias('g', 'github')
@@ -81,7 +84,8 @@ if (argv.f === 'html' && argv.o === 'stdout') {
 
 var docStream = documentation(inputs, {
     private: argv.private,
-    transform: transform
+    transform: transform,
+    polyglot: argv.polyglot
   })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
   .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
