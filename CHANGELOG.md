@@ -1,6 +1,7 @@
 ## 1.3.0
 
 * Now infers `name` from `class` and `event` tags
+* Support for documenting C++ code with the `polyglot` option and `--polyglot` CLI option
 * Fixed github linking
 * Support for [JSDoc3-style bracketed optional parameters](http://usejsdoc.org/tags-param.html#optional-parameters-and-default-values), like
 
