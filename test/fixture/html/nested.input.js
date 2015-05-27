@@ -29,6 +29,16 @@ Klass.isClass = function (other) {
 };
 
 /**
+ * This method takes a Buffer object that will be linked to nodejs.org
+ *
+ * @param {Buffer} buf
+ * @returns {boolean} whether the other thing is a Klass
+ */
+Klass.isBuffer = function (buf) {
+  return other instanceof Buffer;
+};
+
+/**
  * A magic number that identifies this Klass.
  */
 Klass.MAGIC_NUMBER = 42;

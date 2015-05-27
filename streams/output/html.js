@@ -5,6 +5,7 @@ var through = require('through'),
   vfs = require('vinyl-fs'),
   slugg = require('slugg'),
   Remarkable = require('remarkable'),
+  getGlobalExternalLink = require('globals-docs').getDoc,
   fs = require('fs'),
   path = require('path'),
   Handlebars = require('handlebars'),
@@ -59,61 +60,6 @@ function formatInlineTags(text) {
 
   return output;
 }
-
-var BUILTINS = [
-  'Array',
-  'ArrayBuffer',
-  'Boolean',
-  'DataView',
-  'Date',
-  'Error',
-  'EvalError',
-  'Float32Array',
-  'Float64Array',
-  'Function',
-  'Generator',
-  'GeneratorFunction',
-  'Infinity',
-  'Int16Array',
-  'Int32Array',
-  'Int8Array',
-  'InternalError',
-  'Intl',
-  'Intl.Collator',
-  'Intl.DateTimeFormat',
-  'Intl.NumberFormat',
-  'Iterator',
-  'JSON',
-  'Map',
-  'Math',
-  'NaN',
-  'Number',
-  'Object',
-  'ParallelArray',
-  'Promise',
-  'Proxy',
-  'RangeError',
-  'ReferenceError',
-  'Reflect',
-  'RegExp',
-  'Set',
-  'StopIteration',
-  'String',
-  'Symbol',
-  'SyntaxError',
-  'TypeError',
-  'TypedArray',
-  'URIError',
-  'Uint16Array',
-  'Uint32Array',
-  'Uint8Array',
-  'Uint8ClampedArray',
-  'WeakMap',
-  'WeakSet'
-].reduce(function (memo, name) {
-  memo[name.toLowerCase()] = name;
-  return memo;
-}, {});
 
 /**
  * Create a transform stream that formats documentation as HTML.
@@ -242,8 +188,8 @@ module.exports = function (opts) {
     function autolink(text) {
       if (paths.indexOf(slug(text)) !== -1) {
         return '<a href="#' + slug(text) + '">' + text + '</a>';
-      } else if (BUILTINS[text.toLowerCase()]) {
-        return '<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + text + '">' + text + '</a>';
+      } else if (getGlobalExternalLink(text)) {
+        return '<a href="' + getGlobalExternalLink(text) + '">' + text + '</a>';
       }
       return text;
     }

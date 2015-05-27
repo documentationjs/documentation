@@ -1472,6 +1472,11 @@ section:target {
                   <code>.MAGIC_NUMBER</code>
                 </a>
                 <a
+                  href='#klass/isbuffer'
+                  class='px1 regular block'>
+                  <code>.isBuffer</code>
+                </a>
+                <a
                   href='#klass/isclass'
                   class='px1 regular block'>
                   <code>.isClass</code>
@@ -1526,6 +1531,48 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
+<section id='klass/isbuffer'class='mt2 mb2 py1 px2 keyline-top'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/isbuffer'>
+      <code>
+        isBuffer<span class='gray'>(buf)</span>
+      </code>
+    </a>
+  </h3>
+  <p>This method takes a Buffer object that will be linked to nodejs.org</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>buf</td>
+            <td>
+              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>
+            </td>
+            <td></td>
+          </tr>
+      </table>
+    </p>
+
+      <h4>Returns</h4>
+      <code><code>boolean</code></code>
+      :
+      <span class='force-inline'>
+        <p>whether the other thing is a Klass</p>
+
+      </span>
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
 <section id='klass/isclass'class='mt2 mb2 py1 px2 keyline-top'>
   <h3 class='regular'>
     <a class='black' href='#klass/isclass'>
@@ -1557,7 +1604,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
     </p>
 
       <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean">boolean</a></code></code>
+      <code><code>boolean</code></code>
       :
       <span class='force-inline'>
         <p>whether the other thing is a Klass</p>
