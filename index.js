@@ -1,8 +1,6 @@
 'use strict';
 
-var mdeps = require('module-deps'),
-  path = require('path'),
-  splicer = require('stream-splicer'),
+var splicer = require('stream-splicer'),
   flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
   normalize = require('./streams/normalize.js'),
@@ -10,9 +8,11 @@ var mdeps = require('module-deps'),
   filterJS = require('./streams/filter_js'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),
+  dependency = require('./streams/dependency'),
+  shallow = require('./streams/shallow'),
+  polyglot = require('./streams/polyglot'),
   inferKind = require('./streams/infer_kind'),
-  inferMembership = require('./streams/infer_membership'),
-  moduleFilters = require('./lib/module-filters');
+  inferMembership = require('./streams/infer_membership');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -34,33 +34,23 @@ var mdeps = require('module-deps'),
 module.exports = function (indexes, options) {
   options = options || {};
 
-  var md = mdeps({
-    filter: function (id) {
-      return !!options.external || moduleFilters.internalOnly(id);
-    },
-    transform: options.transform,
-    postFilter: moduleFilters.externals(indexes, options)
-  });
-
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
 
-  indexes.forEach(function (index) {
-    md.write(path.resolve(index));
-  });
-  md.end();
-
-  var astChain = [
-    md,
-    filterJS(),
-    parse(),
-    inferName(),
-    inferKind(),
-    inferMembership()];
+  var inputStream = options.polyglot ? [
+      shallow(indexes),
+      polyglot()
+    ] : [
+      dependency(indexes, options),
+      filterJS(),
+      parse(),
+      inferName(),
+      inferKind(),
+      inferMembership()];
 
   return splicer.obj(
-    astChain.concat([
+    inputStream.concat([
     sort(),
     normalize(),
     flatten(),
