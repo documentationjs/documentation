@@ -13,14 +13,6 @@ var through = require('through'),
 module.exports = function () {
   return through(function (comment) {
 
-    var implyName = function (name) {
-      comment.tags.push({
-        title: 'name',
-        name: name
-      });
-      this.push(comment);
-    }.bind(this);
-
     for (var i = 0; i < comment.tags.length; i++) {
       // If this comment is already explicitly named, simply pass it
       // through the stream without doing any inference.
@@ -32,14 +24,16 @@ module.exports = function () {
       // If this comment has a @class tag with a name, use it
       // as a title
       if (comment.tags[i].title === 'class' && comment.tags[i].name) {
-        implyName(comment.tags[i].name);
+        comment.tags.push({ title: 'name', name: comment.tags[i].name });
+        this.push(comment);
         return;
       }
 
       // If this comment has an @event tag with a name, use it
       // as a title
       if (comment.tags[i].title === 'event' && comment.tags[i].description) {
-        implyName(comment.tags[i].name);
+        comment.tags.push({ title: 'name', name: comment.tags[i].description });
+        this.push(comment);
         return;
       }
     }

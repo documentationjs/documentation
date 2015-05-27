@@ -5,7 +5,7 @@ an area chart generator
 
 Returns `area` chart
 
-## `chart`
+## `area`
 
 
 

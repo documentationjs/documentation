@@ -1,4 +1,4 @@
-## ``
+## `Map#mousemove`
 
 Mouse event
 
