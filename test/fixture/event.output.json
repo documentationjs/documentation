@@ -33,6 +33,10 @@
         "name": "originalEvent"
       },
       {
+        "title": "name",
+        "name": "Map#mousemove"
+      },
+      {
         "title": "kind",
         "kind": "event"
       }
@@ -70,6 +74,7 @@
         "name": "originalEvent"
       }
     ],
+    "name": "Map#mousemove",
     "kind": "event"
   }
 ]
