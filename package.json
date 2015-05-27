@@ -27,6 +27,7 @@
     "doctrine": "^0.6.4",
     "espree": "^1.12.2",
     "extend": "^2.0.0",
+    "get-comments": "^0.2.0",
     "github-url-from-git": "^1.4.0",
     "globals-docs": "^2.0.1",
     "handlebars": "^3.0.0",

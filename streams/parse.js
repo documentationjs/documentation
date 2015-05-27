@@ -2,7 +2,7 @@
 
 var doctrine = require('doctrine'),
   espree = require('espree'),
-  through = require('through'),
+  through = require('through2').obj,
   types = require('ast-types'),
   extend = require('extend'),
   isJSDocComment = require('../lib/is_jsdoc_comment');
@@ -81,7 +81,7 @@ var espreeConfig = {
  * @return {undefined} this emits data
  */
 module.exports = function () {
-  return through(function (data) {
+  return through(function (data, enc, callback) {
     try {
       var code = commentShebang(data.source),
         ast = espree.parse(code, espreeConfig),
@@ -90,6 +90,7 @@ module.exports = function () {
       e.message += ' (' + data.file + ')';
       this.emit('error', e);
       this.emit('end');
+      return callback();
     }
 
     types.visit(ast, {
@@ -135,5 +136,6 @@ module.exports = function () {
         this.traverse(path);
       }
     });
+    callback();
   });
 };

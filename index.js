@@ -2,7 +2,7 @@
 
 var mdeps = require('module-deps'),
   path = require('path'),
-  PassThrough = require('stream').PassThrough,
+  splicer = require('stream-splicer'),
   flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
   normalize = require('./streams/normalize.js'),
@@ -26,6 +26,9 @@ var mdeps = require('module-deps'),
  * generated documentation.
  * @param {Array<string>} options.transform source transforms given as strings
  * passed to [the module-deps transform option](https://github.com/substack/module-deps)
+ * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
+ * a proper parser. This enables support of non-JavaScript languages but
+ * reduces documentation's ability to infer structure of code.
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
@@ -48,26 +51,20 @@ module.exports = function (indexes, options) {
   });
   md.end();
 
-  var end = new PassThrough({ objectMode: true });
+  var astChain = [
+    md,
+    filterJS(),
+    parse(),
+    inferName(),
+    inferKind(),
+    inferMembership()];
 
-  function deferErrors(stream) {
-    return stream.on('error', function (a, b, c) {
-      end.emit('error', a, b, c);
-      end.emit('end');
-    });
-  }
-
-  return md
-    .pipe(deferErrors(filterJS()))
-    .pipe(deferErrors(parse()))
-    .pipe(deferErrors(inferName()))
-    .pipe(sort())
-    .pipe(deferErrors(inferKind()))
-    .pipe(deferErrors(inferMembership()))
-    .pipe(normalize())
-    .pipe(flatten())
-    .pipe(filterAccess(options.private ? [] : undefined))
-    .pipe(end);
+  return splicer.obj(
+    astChain.concat([
+    sort(),
+    normalize(),
+    flatten(),
+    filterAccess(options.private ? [] : undefined)]));
 };
 
 module.exports.formats = require('./formats.js');

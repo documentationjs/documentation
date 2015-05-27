@@ -72,6 +72,7 @@ test('bad input', function (tt) {
           t.fail('bad input should not yield data');
         })
         .on('error', function (error) {
+          delete error.stream;
           var outputfile = file.replace('.input.js', '.output.json');
           if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
           var expect = require(outputfile);
