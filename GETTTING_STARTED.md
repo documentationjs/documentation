@@ -78,6 +78,18 @@ And then you see the next line: it's very similar to `@param`, but just a little
 different: `@returns` instead of `@param`, and since returned values in JavaScript
 don't have names, it just says the description of the value.
 
+## Optional Parameters
+
+Sometimes libraries allow you to omit a parameter. Documentation should
+make this clear, and luckily there's a syntax that describes it:
+
+```js
+ * @param {number} [input=5] any number
+```
+
+This means that the number can be omitted, and if it is, it'll default
+to 5.
+
 ## Development Process
 
 If you're actively contributing documentation to a big project, there
