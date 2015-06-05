@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through');
+var mapStream = require('map-stream');
 
 /**
  * Exclude given access levels from the generated documentation: this allows
@@ -14,9 +14,11 @@ var through = require('through');
  */
 module.exports = function (levels) {
   levels = levels || ['private'];
-  return through(function (comment) {
+  return mapStream(function (comment, callback) {
     if (levels.indexOf(comment.access) === -1) {
-      this.push(comment);
+      callback(null, comment);
+    } else {
+      callback();
     }
   });
 };

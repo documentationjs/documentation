@@ -34,6 +34,7 @@
     "hat": "0.0.3",
     "highlight.js": "^8.4.0",
     "jsdoc-inline-lex": "^1.0.1",
+    "map-stream": "0.0.5",
     "micromatch": "^2.1.6",
     "module-deps": "^3.7.3",
     "queue-async": "^1.0.7",
