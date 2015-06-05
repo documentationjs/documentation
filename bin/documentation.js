@@ -45,15 +45,19 @@ var yargs = require('yargs')
   .example('$0 foo.js', 'parse documentation in a given file'),
   argv = yargs.argv;
 
-var inputs, name, version, transform;
+var inputs,
+  name = argv.name,
+  version = argv.version,
+  transform;
+
 if (argv._.length > 0) {
   inputs = argv._;
 } else {
   try {
     var p = require(path.resolve('package.json'));
     inputs = [p.main];
-    name = argv.name || p.name;
-    version = argv.version || p.version;
+    name = name || p.name;
+    version = version || p.version;
     if (p.browserify && p.browserify.transform) {
       transform = p.browserify.transform;
     }
