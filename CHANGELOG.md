@@ -1,3 +1,7 @@
+## 1.4.0
+
+* Output for the `@throws` tag.
+
 ## 1.3.0
 
 * Now infers `name` from `class` and `event` tags
