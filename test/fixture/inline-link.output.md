@@ -10,6 +10,7 @@ Adds one to a number
 
 Returns `number` the output
 
+
 ## `exports`
 
 This function returns the number one. Internally, this uses
@@ -22,4 +23,5 @@ This function returns the number one. Internally, this uses
 
 
 Returns `number` numberone
+
 

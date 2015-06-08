@@ -34,3 +34,11 @@
 Returns {{#type.name}}`{{.}}`{{/type.name}} {{inlines description}}
 {{/returns}}
 
+
+{{#if throws}}
+| type | description |
+| ---- | ----------- |
+{{#throws}}
+| {{format_type type}} | {{format_description description}} |
+{{/throws}}
+{{/if}}

@@ -22,6 +22,7 @@ var through = require('through'),
  *  * `@property` (to `properties` property)
  *  * `@returns` (to `returns` property)
  *  * `@example` (to `examples` property)
+ *  * `@throws` (to `throws` property)
  *
  * The `@global`, `@static`, `@instance`, and `@inner` tags are flattened
  * to a `scope` property whose value is `"global"`, `"static"`, `"instance"`,
@@ -71,6 +72,12 @@ var flatteners = {
       result.params = [];
     }
     result.params.push(tag);
+  },
+  'throws': function (result, tag) {
+    if (!result.throws) {
+      result.throws = [];
+    }
+    result.throws.push(tag);
   },
   'returns': function (result, tag) {
     if (!result.returns) {

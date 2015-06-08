@@ -56,6 +56,24 @@
     {{/returns}}
   {{/if}}
 
+  {{#if throws}}
+      <h4>Throws</h4>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>exception</th>
+          <th class='col-9'>description</th>
+        </thead>
+        {{#throws}}
+          <tr>
+            <td>{{{format_type type}}}</td>
+            <td>
+              {{{md description}}}
+            </td>
+          </tr>
+        {{/throws}}
+      </table>
+  {{/if}}
+
   {{#if examples}}
     <h4>Examples</h4>
 {{#each examples ~}}<pre>{{{.}}}</pre>{{/each}}

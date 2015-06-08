@@ -1511,6 +1511,7 @@ section:target {
 
 
 
+
       <div class='section-indent'>
 <section id='klass/magic-number'class='mt2 mb2 py1 px2 keyline-top'>
   <h3 class='regular'>
@@ -1521,6 +1522,7 @@ section:target {
     </a>
   </h3>
   <p>A magic number that identifies this Klass.</p>
+
 
 
 
@@ -1570,6 +1572,7 @@ section:target {
 
 
 
+
 </section>
       </div>
       <div class='section-indent'>
@@ -1614,6 +1617,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
 
 
 
+
 </section>
       </div>
 
@@ -1637,6 +1641,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
         <p>foo</p>
 
       </span>
+
 
     <h4>Examples</h4>
 <pre>foo.getFoo();</pre>
@@ -1668,6 +1673,7 @@ like a <a href="klass"><code>klass</code></a></p>
         <p>that class</p>
 
       </span>
+
 
 
 
