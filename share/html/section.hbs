@@ -45,6 +45,30 @@
     </p>
   {{/if}}
 
+  {{#if properties}}
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>property</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+        {{#properties}}
+          <tr>
+            <td>{{name}}</td>
+            <td>
+              {{{format_type type}}}
+              {{#default}}
+                (default <code>{{.}}</code>)
+              {{/default}}
+            </td>
+            <td>{{{md description}}}</td>
+          </tr>
+        {{/properties}}
+      </table>
+    </p>
+  {{/if}}
+
   {{#if returns}}
     {{#returns}}
       <h4>Returns</h4>

@@ -1,6 +1,7 @@
 ## 1.4.0
 
 * Output for the `@throws` tag.
+* Output in HTML for the `@properties` tag.
 
 ## 1.3.0
 
