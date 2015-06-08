@@ -2,7 +2,7 @@
 
 var mdeps = require('module-deps'),
   path = require('path'),
-  moduleFilters = require('../lib/module-filters');
+  moduleFilters = require('../lib/module_filters');
 
 /**
  * Returns a readable stream of dependencies, given an array of entry
