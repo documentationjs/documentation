@@ -121,3 +121,36 @@ test('inferName - explicit name', function (t) {
     t.end();
   });
 });
+
+test('inferName - class', function (t) {
+  evaluate(function () {
+    /** @class ExplicitClass */
+    function ImplicitClass() {}
+    return ImplicitClass;
+  }, function (result) {
+    t.equal(result[ 0 ].name, 'ExplicitClass');
+    t.end();
+  });
+});
+
+test('inferName - event', function (t) {
+  evaluate(function () {
+    /** @event explicitEvent */
+    function implicitName() {}
+    return implicitName;
+  }, function (result) {
+    t.equal(result[ 0 ].name, 'explicitEvent');
+    t.end();
+  });
+});
+
+test('inferName - typedef', function (t) {
+  evaluate(function () {
+    /** @typedef {Object} ExplicitTypedef */
+    function implicitName() {}
+    return implicitName;
+  }, function (result) {
+    t.equal(result[ 0 ].name, 'ExplicitTypedef');
+    t.end();
+  });
+});

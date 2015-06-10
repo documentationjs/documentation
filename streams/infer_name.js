@@ -21,20 +21,21 @@ module.exports = function () {
         return;
       }
 
-      // If this comment has a @class tag with a name, use it
-      // as a title
-      if (comment.tags[i].title === 'class' && comment.tags[i].name) {
-        comment.tags.push({ title: 'name', name: comment.tags[i].name });
-        this.push(comment);
-        return;
-      }
+      // If this comment has a @class, @event, or @typedef tag with a name,
+      // use it.
+      var explicitNameTags = {
+        'class': 'name',
+        'event': 'description',
+        'typedef': 'description'
+      };
 
-      // If this comment has an @event tag with a name, use it
-      // as a title
-      if (comment.tags[i].title === 'event' && comment.tags[i].description) {
-        comment.tags.push({ title: 'name', name: comment.tags[i].description });
-        this.push(comment);
-        return;
+      for (var title in explicitNameTags) {
+        var value = explicitNameTags[title];
+        if (comment.tags[i].title === title && comment.tags[i][value]) {
+          comment.tags.push({ title: 'name', name: comment.tags[i][value] });
+          this.push(comment);
+          return;
+        }
       }
     }
 
