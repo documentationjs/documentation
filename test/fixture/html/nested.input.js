@@ -54,4 +54,10 @@ function bar() {
   return new Klass(1);
 }
 
+/**
+ * Klass event
+ * @event event
+ * @memberof Klass
+ */
+
 bar();

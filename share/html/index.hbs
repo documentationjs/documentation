@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>{{options.name}} {{options.version}}</title>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -31,6 +32,13 @@
                   href='#{{permalink}}'
                   class='px1 regular block'>
                   <code>#{{name}}</code>
+                </a>
+              {{/each}}
+              {{#each events}}
+                <a
+                  href='#{{permalink}}'
+                  class='px1 regular block'>
+                  <code>ⓔ {{name}}</code>
                 </a>
               {{/each}}
             {{/each}}
