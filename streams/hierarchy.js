@@ -47,21 +47,31 @@ function inferHierarchy(comments) {
     nameIndex[comments[i].name] = comments[i];
     comments[i].members = { instance: [], static: [] };
   }
+
   for (i = comments.length - 1; i >= 0; i--) {
-    if (comments[i].memberof) {
-      if (nameIndex[comments[i].memberof]) {
-        if (comments[i].scope) {
-          nameIndex[comments[i].memberof].members[comments[i].scope].push(comments[i]);
-          // remove non-root nodes from the lowest level: these are reachable
-          // as members of other docs.
-          comments.splice(i, 1);
-        } else {
-          console.error(error(comments[i], 'found memberof but no @scope, @static, or @instance tag'));
-        }
-      } else {
-        console.error(error(comments[i], 'memberof reference to %s not found', comments[i].memberof));
-      }
+    var comment = comments[i];
+
+    if (!comment.memberof) {
+      continue;
     }
+
+    var parent = nameIndex[comment.memberof];
+
+    if (!parent) {
+      console.error(error(comment, 'memberof reference to %s not found', comment.memberof));
+      continue;
+    }
+
+    if (!comment.scope) {
+      console.error(error(comment, 'found memberof but no @scope, @static, or @instance tag'));
+      continue;
+    }
+
+    parent.members[comment.scope].push(comment);
+
+    // remove non-root nodes from the lowest level: these are reachable
+    // as members of other docs.
+    comments.splice(i, 1);
   }
 
   // Now the members are in the right order but the root comments are reversed
