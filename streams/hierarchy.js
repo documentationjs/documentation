@@ -1,6 +1,7 @@
 'use strict';
 
 var through = require('through');
+var error = require('../lib/error');
 
 /**
  * Infer a hierarchy of documentation from a stream of documentation
@@ -55,10 +56,10 @@ function inferHierarchy(comments) {
           // as members of other docs.
           comments.splice(i, 1);
         } else {
-          console.error('found memberof but no @scope, @static, or @instance tag');
+          console.error(error(comments[i], 'found memberof but no @scope, @static, or @instance tag'));
         }
       } else {
-        console.error('memberof reference to %s not found', comments[i].memberof);
+        console.error(error(comments[i], 'memberof reference to %s not found', comments[i].memberof));
       }
     }
   }
