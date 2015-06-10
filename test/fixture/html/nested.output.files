@@ -1512,6 +1512,7 @@ section:target {
 
 
 
+
       <div class='section-indent'>
 <section id='klass/magic-number'class='mt2 mb2 py1 px2 keyline-top'>
   <h3 class='regular'>
@@ -1522,6 +1523,7 @@ section:target {
     </a>
   </h3>
   <p>A magic number that identifies this Klass.</p>
+
 
 
 
@@ -1560,6 +1562,7 @@ section:target {
           </tr>
       </table>
     </p>
+
 
       <h4>Returns</h4>
       <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
@@ -1606,6 +1609,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </table>
     </p>
 
+
       <h4>Returns</h4>
       <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
       :
@@ -1631,6 +1635,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
     </a>
   </h3>
   <p>Get this Klass's foo</p>
+
 
 
 
@@ -1663,6 +1668,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
   <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
 a <a href="klass"><code>klass instance multiword</code></a>,
 like a <a href="klass"><code>klass</code></a></p>
+
 
 
 
