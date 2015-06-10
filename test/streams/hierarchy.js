@@ -58,10 +58,26 @@ test('hierarchy', function (t) {
      * A magic number that identifies this Klass.
      */
     Klass.MAGIC_NUMBER = 42;
+
+    /**
+     * Klass event
+     * @event event
+     * @memberof Klass
+     */
+
+    return Klass;
   }, function (result) {
     t.equal(result.length, 1);
+
     t.equal(result[0].members.static.length, 2);
+    t.deepEqual(result[0].members.static[0].path, ['Klass', 'isClass']);
+
     t.equal(result[0].members.instance.length, 1);
+    t.deepEqual(result[0].members.instance[0].path, ['Klass', 'getFoo']);
+
+    t.equal(result[0].events.length, 1);
+    t.deepEqual(result[0].events[0].path, ['Klass', 'event']);
+
     t.end();
   });
 });

@@ -46,6 +46,7 @@ function inferHierarchy(comments) {
   for (i = 0; i < comments.length; i++) {
     nameIndex[comments[i].name] = comments[i];
     comments[i].members = { instance: [], static: [] };
+    comments[i].events = [];
   }
 
   for (i = comments.length - 1; i >= 0; i--) {
@@ -62,12 +63,19 @@ function inferHierarchy(comments) {
       continue;
     }
 
-    if (!comment.scope) {
-      console.error(error(comment, 'found memberof but no @scope, @static, or @instance tag'));
-      continue;
-    }
+    switch (comment.kind) {
+      case 'event':
+        parent.events.push(comment);
+        break;
 
-    parent.members[comment.scope].push(comment);
+      default:
+        if (!comment.scope) {
+          console.error(error(comment, 'found memberof but no @scope, @static, or @instance tag'));
+          continue;
+        }
+        parent.members[comment.scope].push(comment);
+        break;
+    }
 
     // remove non-root nodes from the lowest level: these are reachable
     // as members of other docs.
@@ -93,6 +101,9 @@ function inferHierarchy(comments) {
       addPath(member, comment.path);
     });
     comment.members.static.forEach(function (member) {
+      addPath(member, comment.path);
+    });
+    comment.events.forEach(function (member) {
       addPath(member, comment.path);
     });
   }
