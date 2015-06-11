@@ -4,6 +4,7 @@ var splicer = require('stream-splicer'),
   flatten = require('./streams/flatten.js'),
   sort = require('./streams/sort'),
   normalize = require('./streams/normalize.js'),
+  nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access.js'),
   filterJS = require('./streams/filter_js'),
   parse = require('./streams/parse'),
@@ -54,6 +55,7 @@ module.exports = function (indexes, options) {
     sort(),
     normalize(),
     flatten(),
+    nestParams(),
     filterAccess(options.private ? [] : undefined)]));
 };
 

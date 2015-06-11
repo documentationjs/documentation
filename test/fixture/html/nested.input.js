@@ -17,6 +17,15 @@ Klass.prototype.getFoo = function () {
 };
 
 /**
+ * A function with an options parameter
+ * @param {Object} options
+ * @param {string} options.foo
+ * @param {number} options.bar
+ */
+Klass.prototype.withOptions = function (options) {
+};
+
+/**
  * Decide whether an object is a Klass instance
  * This is a [klasssic]{@link Klass}
  * This is a [link to something that does not exist]{@link DoesNot}

@@ -1488,6 +1488,11 @@ section:target {
                   <code>#getFoo</code>
                 </a>
                 <a
+                  href='#klass/withoptions'
+                  class='px1 regular block'>
+                  <code>#withOptions</code>
+                </a>
+                <a
                   href='#klass/event'
                   class='px1 regular block'>
                   <code>ⓔ event</code>
@@ -1659,6 +1664,58 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
 
     <h4>Examples</h4>
 <pre>foo.getFoo();</pre>
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
+<section id='klass/withoptions'class='mt2 mb2 py1 px2 keyline-top'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/withoptions'>
+      <code>
+        withOptions<span class='gray'>(options)</span>
+      </code>
+    </a>
+  </h3>
+  <p>A function with an options parameter</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>options</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+            </td>
+            <td></td>
+          </tr>
+            <tr>
+              <td>options.foo</td>
+              <td>
+                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>options.bar</td>
+              <td>
+                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+              </td>
+              <td></td>
+            </tr>
+      </table>
+    </p>
+
+
+
+
 
 
 
