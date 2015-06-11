@@ -1,11 +1,11 @@
 'use strict';
 
 var splicer = require('stream-splicer'),
-  flatten = require('./streams/flatten.js'),
+  flatten = require('./streams/flatten'),
   sort = require('./streams/sort'),
-  normalize = require('./streams/normalize.js'),
+  normalize = require('./streams/normalize'),
   nestParams = require('./streams/nest_params'),
-  filterAccess = require('./streams/filter_access.js'),
+  filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
   parse = require('./streams/parse'),
   inferName = require('./streams/infer_name'),

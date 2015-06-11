@@ -11,8 +11,8 @@ var through = require('through'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
   splicer = require('stream-splicer'),
-  hierarchy = require('../hierarchy.js'),
-  highlight = require('../highlight.js'),
+  hierarchy = require('../hierarchy'),
+  highlight = require('../highlight'),
   inlineLex = require('jsdoc-inline-lex');
 
 /**
