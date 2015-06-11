@@ -67,8 +67,9 @@ function formatInlineTags(text) {
  * File objects representing different HTML files to be produced.
  *
  * @param {Object} opts Options that can customize the output
- * @param {String} [opts.template='../../share/markdown.hbs'] Path to a Handlebars template file that
- * takes the place of the default.
+ * @param {String} [opts.path] Path to a directory containing 'index.hbs'
+ *   and 'section.hbs' Handlebars template files that take the place of
+ *   the default templates.
  * @name html
  * @return {stream.Transform}
  */
