@@ -106,7 +106,9 @@ module.exports = function () {
             // have doctrine itself remove the comment asterisks from content
             unwrap: true,
             // enable parsing of optional parameters in brackets, JSDoc3 style
-            sloppy: true
+            sloppy: true,
+            // keep going whenever possible
+            recoverable: true
           });
 
           parsedComment.context = {
