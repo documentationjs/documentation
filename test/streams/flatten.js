@@ -84,6 +84,17 @@ test('flatten - param', function (t) {
   });
 });
 
+test('flatten - property', function (t) {
+  evaluate(function () {
+    /** @property {number} test */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].properties.length, 1);
+    t.equal(result[0].properties[0].name, 'test');
+    t.end();
+  });
+});
+
 test('flatten - returns', function (t) {
   evaluate(function () {
     /** @returns {number} test */
@@ -102,6 +113,17 @@ test('flatten - example', function (t) {
   }, function (result) {
     t.equal(result[0].examples.length, 1);
     t.equal(result[0].examples[0], 'test');
+    t.end();
+  });
+});
+
+test('flatten - throws', function (t) {
+  evaluate(function () {
+    /** @throws {Object} exception */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].throws.length, 1);
+    t.equal(result[0].throws[0].description, 'exception');
     t.end();
   });
 });

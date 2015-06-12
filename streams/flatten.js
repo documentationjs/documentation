@@ -21,6 +21,7 @@ var through = require('through'),
  *  * `@param` (to `params` property)
  *  * `@property` (to `properties` property)
  *  * `@returns` (to `returns` property)
+ *  * `@augments` (to `augments` property)
  *  * `@example` (to `examples` property)
  *  * `@throws` (to `throws` property)
  *
