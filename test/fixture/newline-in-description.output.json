@@ -5,6 +5,7 @@
       {
         "title": "param",
         "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -12,6 +13,16 @@
         "name": "a"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -29,6 +40,7 @@
       {
         "title": "param",
         "description": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"

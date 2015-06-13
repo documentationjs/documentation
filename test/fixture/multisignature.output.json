@@ -5,6 +5,7 @@
       {
         "title": "returns",
         "description": "the current date",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Date"
@@ -19,6 +20,16 @@
         "kind": "function"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -37,6 +48,7 @@
       {
         "title": "returns",
         "description": "the current date",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Date"
@@ -52,6 +64,7 @@
       {
         "title": "param",
         "description": "the current time",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Date"
@@ -61,6 +74,7 @@
       {
         "title": "returns",
         "description": "nothing",
+        "lineNumber": 3,
         "type": {
           "type": "UndefinedLiteral"
         }
@@ -74,6 +88,16 @@
         "kind": "function"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 8,
+        "column": 0
+      },
+      "end": {
+        "line": 12,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -92,6 +116,7 @@
       {
         "title": "param",
         "description": "the current time",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Date"
@@ -103,6 +128,7 @@
       {
         "title": "returns",
         "description": "nothing",
+        "lineNumber": 3,
         "type": {
           "type": "UndefinedLiteral"
         }

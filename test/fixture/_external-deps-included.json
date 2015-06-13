@@ -5,6 +5,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -26,6 +27,16 @@
         "title": "static"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -44,6 +55,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -61,6 +73,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -82,6 +95,16 @@
         "title": "static"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 5,
+        "column": 0
+      },
+      "end": {
+        "line": 8,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -100,6 +123,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"

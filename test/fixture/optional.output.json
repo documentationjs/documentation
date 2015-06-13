@@ -5,12 +5,14 @@
       {
         "title": "class",
         "description": null,
+        "lineNumber": 2,
         "type": null,
         "name": "Address6"
       },
       {
         "title": "param",
         "description": "An IPv6 address string",
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "string"
@@ -20,6 +22,7 @@
       {
         "title": "param",
         "description": "How many octets to parse",
+        "lineNumber": 4,
         "type": {
           "type": "OptionalType",
           "expression": {
@@ -32,7 +35,8 @@
       },
       {
         "title": "example",
-        "description": "var address = new Address6('2001::/32');"
+        "description": "var address = new Address6('2001::/32');",
+        "lineNumber": 5
       },
       {
         "title": "name",
@@ -43,6 +47,16 @@
         "kind": "class"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 8,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -60,6 +74,7 @@
       {
         "title": "param",
         "description": "An IPv6 address string",
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "string"
@@ -69,6 +84,7 @@
       {
         "title": "param",
         "description": "How many octets to parse",
+        "lineNumber": 4,
         "type": {
           "type": "OptionalType",
           "expression": {

@@ -10,7 +10,13 @@ var test = require('prova'),
   inferMembership = require('../../streams/infer_membership');
 
 function evaluate(fn, callback) {
-  var stream = parse();
+  var stream = parse(),
+    consoleError = console.error,
+    errors = [];
+
+  console.error = function (error) {
+    errors.push(error);
+  };
 
   stream
     .pipe(inferName())
@@ -18,7 +24,10 @@ function evaluate(fn, callback) {
     .pipe(inferMembership())
     .pipe(flatten())
     .pipe(hierarchy())
-    .pipe(concat(callback));
+    .pipe(concat(function (result) {
+      console.error = consoleError;
+      callback(result, errors);
+    }));
 
   stream.end({
     file: __filename,
@@ -96,8 +105,9 @@ test('hierarchy - missing memberof', function (t) {
 
     getFoo();
 
-  }, function (result) {
+  }, function (result, errors) {
     t.equal(result.length, 1);
+    t.equal(errors.length, 1);
     t.end();
   });
 });

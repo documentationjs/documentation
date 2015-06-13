@@ -59,7 +59,7 @@ function inferHierarchy(comments) {
     var parent = nameIndex[comment.memberof];
 
     if (!parent) {
-      console.error(error(comment, 'memberof reference to %s not found', comment.memberof));
+      console.error(error(null, comment, 'memberof reference to %s not found', comment.memberof));
       continue;
     }
 
@@ -70,7 +70,7 @@ function inferHierarchy(comments) {
 
       default:
         if (!comment.scope) {
-          console.error(error(comment, 'found memberof but no @scope, @static, or @instance tag'));
+          console.error(error(null, comment, 'found memberof but no @scope, @static, or @instance tag'));
           continue;
         }
         parent.members[comment.scope].push(comment);

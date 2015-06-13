@@ -5,6 +5,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -26,6 +27,16 @@
         "title": "static"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -44,6 +55,7 @@
       {
         "title": "returns",
         "description": "numberone",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "Number"

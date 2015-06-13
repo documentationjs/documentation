@@ -5,6 +5,7 @@
       {
         "title": "param",
         "description": "the number",
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -14,6 +15,7 @@
       {
         "title": "returns",
         "description": "numbertwo",
+        "lineNumber": 4,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -22,6 +24,7 @@
       {
         "title": "throws",
         "description": "if number is 3",
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "Error"
@@ -29,7 +32,8 @@
       },
       {
         "title": "example",
-        "description": "var result = returnTwo(4);\n// result is 6"
+        "description": "var result = returnTwo(4);\n// result is 6",
+        "lineNumber": 6
       },
       {
         "title": "name",
@@ -40,6 +44,16 @@
         "kind": "function"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 10,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -58,6 +72,7 @@
       {
         "title": "param",
         "description": "the number",
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -69,6 +84,7 @@
       {
         "title": "returns",
         "description": "numbertwo",
+        "lineNumber": 4,
         "type": {
           "type": "NameExpression",
           "name": "Number"
@@ -79,6 +95,7 @@
       {
         "title": "throws",
         "description": "if number is 3",
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "Error"

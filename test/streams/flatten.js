@@ -53,12 +53,8 @@ test('flatten - augments', function (t) {
     /** @augments Foo */
     return 0;
   }, function (result) {
-    t.deepEqual(result[0].augments, [{
-      'title': 'augments',
-      'description': null,
-      'type': null,
-      'name': 'Foo'
-    }]);
+    t.equal(result[0].augments.length, 1);
+    t.equal(result[0].augments[0].name, 'Foo');
     t.end();
   });
 });

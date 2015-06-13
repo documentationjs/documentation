@@ -5,6 +5,7 @@
       {
         "title": "returns",
         "description": "chart",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "area"
@@ -19,6 +20,16 @@
         "kind": "function"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -37,6 +48,7 @@
       {
         "title": "returns",
         "description": "chart",
+        "lineNumber": 2,
         "type": {
           "type": "NameExpression",
           "name": "area"
@@ -52,6 +64,7 @@
       {
         "title": "class",
         "description": null,
+        "lineNumber": 1,
         "type": null,
         "name": "area"
       },
@@ -64,6 +77,16 @@
         "kind": "class"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 7,
+        "column": 2
+      },
+      "end": {
+        "line": 9,
+        "column": 5
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -87,6 +110,7 @@
       {
         "title": "function",
         "description": null,
+        "lineNumber": 2,
         "name": null
       },
       {
@@ -105,6 +129,16 @@
         "title": "static"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 13,
+        "column": 2
+      },
+      "end": {
+        "line": 16,
+        "column": 5
+      }
+    },
     "context": {
       "loc": {
         "start": {

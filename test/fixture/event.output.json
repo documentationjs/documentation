@@ -4,11 +4,13 @@
     "tags": [
       {
         "title": "event",
-        "description": "Map#mousemove"
+        "description": "Map#mousemove",
+        "lineNumber": 3
       },
       {
         "title": "type",
         "description": null,
+        "lineNumber": 4,
         "type": {
           "type": "NameExpression",
           "name": "Object"
@@ -17,6 +19,7 @@
       {
         "title": "property",
         "description": "the pixel location of the event",
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "Point"
@@ -26,6 +29,7 @@
       {
         "title": "property",
         "description": "the original DOM event",
+        "lineNumber": 6,
         "type": {
           "type": "NameExpression",
           "name": "Event"
@@ -41,6 +45,16 @@
         "kind": "event"
       }
     ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 8,
+        "column": 3
+      }
+    },
     "context": {
       "loc": {
         "start": {
@@ -58,6 +72,7 @@
       {
         "title": "property",
         "description": "the pixel location of the event",
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "Point"
@@ -67,6 +82,7 @@
       {
         "title": "property",
         "description": "the original DOM event",
+        "lineNumber": 6,
         "type": {
           "type": "NameExpression",
           "name": "Event"
