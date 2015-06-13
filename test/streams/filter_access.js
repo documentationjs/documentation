@@ -1,25 +1,19 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
   flatten = require('../../streams/flatten'),
   filterAccess = require('../../streams/filter_access'),
-  inferName = require('../../streams/infer_name');
+  inferName = require('../../streams/infer_name'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback, options) {
-  var stream = parse();
-
-  stream
-    .pipe(inferName())
-    .pipe(flatten())
-    .pipe(filterAccess(options))
-    .pipe(concat(callback));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([
+    parse(),
+    inferName(),
+    flatten(),
+    filterAccess(options)
+  ], 'filter_access.js', fn, callback);
 }
 
 test('filterAccess default', function (t) {

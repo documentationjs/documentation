@@ -1,38 +1,23 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
   flatten = require('../../streams/flatten'),
   hierarchy = require('../../streams/hierarchy'),
   inferName = require('../../streams/infer_name'),
   inferKind = require('../../streams/infer_kind'),
-  inferMembership = require('../../streams/infer_membership');
+  inferMembership = require('../../streams/infer_membership'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  var stream = parse(),
-    consoleError = console.error,
-    errors = [];
-
-  console.error = function (error) {
-    errors.push(error);
-  };
-
-  stream
-    .pipe(inferName())
-    .pipe(inferKind())
-    .pipe(inferMembership())
-    .pipe(flatten())
-    .pipe(hierarchy())
-    .pipe(concat(function (result) {
-      console.error = consoleError;
-      callback(result, errors);
-    }));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([
+    parse(),
+    inferName(),
+    inferKind(),
+    inferMembership(),
+    flatten(),
+    hierarchy()
+  ], 'hierarchy.js', fn, callback);
 }
 
 test('hierarchy', function (t) {

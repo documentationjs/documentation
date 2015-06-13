@@ -1,21 +1,12 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
-  flatten = require('../../streams/flatten');
+  flatten = require('../../streams/flatten'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  var stream = parse();
-
-  stream
-    .pipe(flatten())
-    .pipe(concat(callback));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([parse(), flatten()], 'flatten.js', fn, callback);
 }
 
 test('flatten - name', function (t) {

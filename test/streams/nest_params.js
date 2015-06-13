@@ -1,23 +1,13 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
   flatten = require('../../streams/flatten'),
-  nestParams = require('../../streams/nest_params');
+  nestParams = require('../../streams/nest_params'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  var stream = parse();
-
-  stream
-    .pipe(flatten())
-    .pipe(nestParams())
-    .pipe(concat(callback));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([parse(), flatten(), nestParams()], 'nest_params.js', fn, callback);
 }
 
 test('nestParams - no params', function (t) {

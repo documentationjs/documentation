@@ -1,28 +1,11 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
-  parse = require('../../streams/parse');
+  parse = require('../../streams/parse'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  var stream = parse(),
-    consoleError = console.error,
-    errors = [];
-
-  console.error = function (error) {
-    errors.push(error);
-  };
-
-  stream
-    .pipe(concat(function (result) {
-      console.error = consoleError;
-      callback(result, errors);
-    }));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([parse()], 'parse.js', fn, callback);
 }
 
 test('parse - unknown tag', function (t) {
@@ -40,7 +23,7 @@ test('parse - error', function (t) {
     /** @param {foo */
     return 0;
   }, function (result, errors) {
-    t.equal(errors[0], 'test/streams/parse.js:2: Braces are not balanced');
+    t.equal(errors[0], 'parse.js:2: Braces are not balanced');
     t.end();
   });
 });

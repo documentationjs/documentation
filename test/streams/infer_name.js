@@ -1,23 +1,13 @@
 'use strict';
 
 var test = require('prova'),
-  concat = require('concat-stream'),
   parse = require('../../streams/parse'),
   flatten = require('../../streams/flatten'),
-  inferName = require('../../streams/infer_name');
+  inferName = require('../../streams/infer_name'),
+  helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  var stream = parse();
-
-  stream
-    .pipe(inferName())
-    .pipe(flatten())
-    .pipe(concat(callback));
-
-  stream.end({
-    file: __filename,
-    source: '(' + fn.toString() + ')'
-  });
+  helpers.evaluate([parse(), inferName(), flatten()], 'infer_name.js', fn, callback);
 }
 
 test('inferName - expression statement', function (t) {
