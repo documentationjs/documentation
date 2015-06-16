@@ -15,7 +15,7 @@ var yargs = require('yargs')
 
   .alias('f', 'format')
   .default('f', 'json')
-  .describe('f', 'output format, of [json, md, html, docset]')
+  .describe('f', 'output format, of [json, md, html]')
 
   .describe('lint', 'check output for common style and uniformity mistakes')
 
@@ -97,8 +97,6 @@ var docStream = documentation(inputs, {
 
 if (argv.o !== 'stdout') {
   if (argv.f === 'html') {
-    docStream.pipe(vfs.dest(argv.o));
-  } else if (argv.f === 'docset') {
     docStream.pipe(vfs.dest(argv.o));
   } else {
     docStream.pipe(fs.createWriteStream(argv.o));

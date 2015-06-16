@@ -29,11 +29,6 @@ referenced files and include all of their documentation.
 The `--github` option automatically permalinks documentation to the exact
 sections of code it refers to in a GitHub repository.
 
-**Dash Support**
-
-The `-f docset` output option creates documentation compatible with
-the excellent [Dash](https://kapeli.com/) documentation tool.
-
 [**Gulp integration**](https://github.com/documentationjs/gulp-documentation)
 
 The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
