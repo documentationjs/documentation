@@ -1,0 +1,87 @@
+[
+  {
+    "description": "Represents an IPv6 address",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "Address6"
+      },
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 3,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        },
+        "name": "address"
+      },
+      {
+        "title": "name",
+        "name": "Address6"
+      },
+      {
+        "title": "kind",
+        "kind": "class"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 5,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 0
+        }
+      },
+      "file": "fixture/type_application.input.js"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 3,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        },
+        "name": "address"
+      }
+    ],
+    "name": "Address6",
+    "kind": "class"
+  }
+]
