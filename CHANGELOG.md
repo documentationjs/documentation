@@ -1,3 +1,8 @@
+## 2.0.0 [wip]
+
+* Removes `docset` support from documentation.js: this will be supported
+  by a 3rd party tool in the future
+
 ## 1.4.0
 
 * Output for the `@throws` tag.
