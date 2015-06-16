@@ -2,6 +2,12 @@
 
 * Removes `docset` support from documentation.js: this will be supported
   by a 3rd party tool in the future
+* JSDoc parse errors are now printed to stderr.
+* Parameter tags that document sub-parameters, such as `@param {Type} options.option`,
+  are now nested under their parent parameter.
+* HTML output now includes events.
+* Error messages now include source file name and line number.
+* @typedef names are now inferred correctly.
 
 ## 1.4.0
 
