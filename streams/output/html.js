@@ -148,22 +148,22 @@ module.exports = function (opts) {
      * // generates String
      */
     function formatType(type, html) {
-      if (!type) return '';
-      if (type.type === 'NameExpression') {
-        return html ? '<code>' + autolink(type.name) + '</code>' : type.name;
-      } else if (type.type === 'UnionType') {
-        return type.elements.map(function (element) {
-          return formatType(element, html);
-        }).join(' or ');
-      } else if (type.type === 'AllLiteral') {
-        return 'Any';
-      } else if (type.type === 'OptionalType') {
-        return '<code>[' + formatType(type.expression, html) + ']</code>';
-      } else if (type.type === 'TypeApplication') {
-        return formatType(type.expression) + '<' +
-          type.applications.map(function (application) {
-            return formatType(application, html);
-          }).join(', ') + '>';
+      switch (type.type) {
+        case 'NameExpression':
+          return html ? '<code>' + autolink(type.name) + '</code>' : type.name;
+        case 'UnionType':
+          return type.elements.map(function (element) {
+            return formatType(element, html);
+          }).join(' or ');
+        case 'AllLiteral':
+          return 'Any';
+        case 'OptionalType':
+          return '<code>[' + formatType(type.expression, html) + ']</code>';
+        case 'TypeApplication':
+          return formatType(type.expression) + '<' +
+            type.applications.map(function (application) {
+              return formatType(application, html);
+            }).join(', ') + '>';
       }
     }
 
@@ -173,8 +173,8 @@ module.exports = function (opts) {
       return path;
     });
 
-    Handlebars.registerHelper('format_type', function (string) {
-      return formatType(string, true);
+    Handlebars.registerHelper('format_type', function (type) {
+      return formatType(type, true);
     });
 
     Handlebars.registerHelper('permalink', function () {

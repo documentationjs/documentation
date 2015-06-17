@@ -1,0 +1,122 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      },
+      {
+        "title": "example",
+        "description": "foo(1);",
+        "lineNumber": 3
+      },
+      {
+        "title": "example",
+        "description": "foo(2);",
+        "lineNumber": 5
+      },
+      {
+        "title": "throws",
+        "description": "if you give it something",
+        "lineNumber": 7,
+        "type": {
+          "type": "NameExpression",
+          "name": "Error"
+        }
+      },
+      {
+        "title": "throws",
+        "description": "if you give it something else",
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "TypeError"
+        }
+      },
+      {
+        "title": "name",
+        "name": "exports"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      },
+      {
+        "title": "memberof",
+        "description": "module"
+      },
+      {
+        "title": "static"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 10,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 2
+        }
+      },
+      "file": "fixture/multiexample.input.js",
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};"
+    },
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "examples": [
+      "foo(1);",
+      "foo(2);"
+    ],
+    "throws": [
+      {
+        "title": "throws",
+        "description": "if you give it something",
+        "lineNumber": 7,
+        "type": {
+          "type": "NameExpression",
+          "name": "Error"
+        }
+      },
+      {
+        "title": "throws",
+        "description": "if you give it something else",
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "TypeError"
+        }
+      }
+    ],
+    "name": "exports",
+    "kind": "function",
+    "memberof": "module",
+    "scope": "static"
+  }
+]
