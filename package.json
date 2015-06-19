@@ -1,25 +1,11 @@
 {
   "name": "documentation",
-  "version": "1.4.0",
   "description": "a documentation generator",
-  "main": "index.js",
-  "scripts": {
-    "test": "eslint --no-eslintrc -c .eslintrc index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js",
-    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS"
-  },
+  "version": "1.4.0",
+  "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
   },
-  "keywords": [
-    "documentation",
-    "jsdoc",
-    "jsdoc3",
-    "parser",
-    "website",
-    "formatter"
-  ],
-  "author": "Tom MacWright",
-  "license": "ISC",
   "dependencies": {
     "JSONStream": "^0.10.0",
     "ast-types": "^0.7.2",
@@ -54,5 +40,23 @@
     "glob": "^5.0.2",
     "istanbul": "^0.3.7",
     "prova": "^2.1.1"
+  },
+  "keywords": [
+    "documentation",
+    "formatter",
+    "jsdoc",
+    "jsdoc3",
+    "parser",
+    "website"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:documentationjs/documentation.git"
+  },
+  "scripts": {
+    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS",
+    "test": "eslint --no-eslintrc -c .eslintrc index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
   }
 }
