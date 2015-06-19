@@ -52,7 +52,7 @@ module.exports = function (indexes, options) {
 
   return splicer.obj(
     inputStream.concat([
-    sort(),
+    sort(options.config),
     normalize(),
     flatten(),
     nestParams(),
