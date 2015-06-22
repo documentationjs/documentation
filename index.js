@@ -30,6 +30,8 @@ var splicer = require('stream-splicer'),
  * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
  * a proper parser. This enables support of non-JavaScript languages but
  * reduces documentation's ability to infer structure of code.
+ * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
+ * even in JavaScript code. With the polyglot option set, this has no effect.
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
@@ -43,7 +45,7 @@ module.exports = function (indexes, options) {
       shallow(indexes),
       polyglot()
     ] : [
-      dependency(indexes, options),
+      (options.shallow ? shallow(indexes) : dependency(indexes, options)),
       filterJS(),
       parse(),
       inferName(),
