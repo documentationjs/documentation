@@ -1,0 +1,6 @@
+## `MyType`
+
+A type definition.
+
+
+

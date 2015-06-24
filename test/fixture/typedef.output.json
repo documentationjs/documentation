@@ -1,0 +1,93 @@
+[
+  {
+    "description": "A type definition.",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 2,
+        "name": "MyType"
+      },
+      {
+        "title": "typedef",
+        "description": "MyType",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      },
+      {
+        "title": "property",
+        "description": "one property",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "prop1"
+      },
+      {
+        "title": "property",
+        "description": "another property",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "prop2"
+      },
+      {
+        "title": "kind",
+        "kind": "typedef"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 0
+        }
+      },
+      "file": "fixture/typedef.input.js"
+    },
+    "name": "MyType",
+    "properties": [
+      {
+        "title": "property",
+        "description": "one property",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "prop1"
+      },
+      {
+        "title": "property",
+        "description": "another property",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "prop2"
+      }
+    ],
+    "kind": "typedef"
+  }
+]
