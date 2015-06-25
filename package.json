@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "chdir": "0.0.0",
+    "coveralls": "^2.11.2",
     "eslint": "^0.17.1",
     "glob": "^5.0.2",
     "istanbul": "^0.3.7",
@@ -56,7 +57,7 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS",
+    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS && coveralls < coverage/lcov.info",
     "test": "eslint --no-eslintrc -c .eslintrc index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
   }
 }
