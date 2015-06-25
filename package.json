@@ -57,7 +57,7 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS && coveralls < ./coverage/lcov.info",
+    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS && coveralls < $CIRCLE_ARTIFACTS/lcov.info",
     "test": "eslint --no-eslintrc -c .eslintrc index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
   }
 }
