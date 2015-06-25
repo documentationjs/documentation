@@ -1,6 +1,6 @@
 # documentation
 
-[![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation)
+[![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation) [![Coverage Status](https://coveralls.io/repos/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/r/documentationjs/documentation?branch=master)
 
 This would be a big one, we would need the whole town to pitch in.
 
