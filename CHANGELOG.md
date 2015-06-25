@@ -1,7 +1,9 @@
-## 2.0.0 [wip]
+## 2.0.0
 
-* Removes `docset` support from documentation.js: this will be supported
-  by a 3rd party tool in the future
+* Breaking: Removes `docset` support from documentation.js: this will be supported
+  by a 3rd party tool in the future. This removal means that we no longer have
+  node-sqlite3 as a dependency, and documentation can be installed on systems
+  without a compile toolchain.
 * JSDoc parse errors are now printed to stderr.
 * Parameter tags that document sub-parameters, such as `@param {Type} options.option`,
   are now nested under their parent parameter.
