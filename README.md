@@ -52,7 +52,7 @@ $ documentation -h
 Usage: documentation <command> [options]
 
 Options:
-  -f, --format   output format, of [json, md, html, docset]    [default: "json"]
+  -f, --format   output format, of [json, md, html]    [default: "json"]
   --lint         check output for common style and uniformity mistakes
   --mdtemplate   markdown template: should be a file with Handlebars syntax
   -p, --private  generate documentation tagged as private
