@@ -2,7 +2,8 @@
 
 var test = require('prova'),
   path = require('path'),
-  exec = require('child_process').exec;
+  exec = require('child_process').exec,
+  fs = require('fs');
 
 function documentation(args, options, callback) {
   if (!callback) {
@@ -22,6 +23,13 @@ function documentation(args, options, callback) {
   });
 }
 
+function normalize(result) {
+  result.forEach(function (item) {
+    item.context.file = path.relative(__dirname, item.context.file);
+  });
+  return result;
+}
+
 test('documentation binary', function (t) {
   documentation(['fixture/simple.input.js'], function (err, data) {
     t.error(err);
@@ -34,6 +42,15 @@ test('defaults to parsing package.json main', function (t) {
   documentation([], { cwd: path.join(__dirname, '..') }, function (err, data) {
     t.error(err);
     t.ok(data.length, 'we document ourself');
+    t.end();
+  });
+});
+
+test('accepts config file', function (t) {
+  documentation(['fixture/sorting/input.js -c fixture/config.json'], function (err, data) {
+    t.error(err);
+    var expected = fs.readFileSync(path.resolve(__dirname, 'fixture', 'sorting/output.json'), 'utf8');
+    t.deepEqual(normalize(data), JSON.parse(expected), 'respected sort order from config file');
     t.end();
   });
 });
