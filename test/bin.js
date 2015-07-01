@@ -37,3 +37,11 @@ test('defaults to parsing package.json main', function (t) {
     t.end();
   });
 });
+
+test('--shallow option', function (t) {
+  documentation(['--shallow fixture/internal.input.js'], function (err, data) {
+    t.error(err);
+    t.equal(data.length, 0, 'should not check dependencies');
+    t.end();
+  });
+});
