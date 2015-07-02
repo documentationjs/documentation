@@ -30,6 +30,11 @@ module.exports = function () {
       var parts = param.name.split(/(\[\])?\./);
       if (parts.length > 1) {
         var parent = index[parts[0]];
+        if (parent === undefined) {
+          console.error('@param %s\'s parent %s not found', param.name, parts[0]);
+          result.params.push(param);
+          return;
+        }
         parent.properties = parent.properties || [];
         parent.properties.push(param);
       } else {

@@ -53,3 +53,16 @@ test('nestParams - basic', function (t) {
     t.end();
   });
 });
+
+test('nestParams - missing parent', function (t) {
+  evaluate(function () {
+    /**
+     * @param {string} foo.bar
+     */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].params.length, 1);
+    t.equal(result[0].params[0].name, 'foo.bar');
+    t.end();
+  });
+});
