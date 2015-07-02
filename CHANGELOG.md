@@ -2,6 +2,7 @@
 
 * Fixes `@param` tags that refer to properties of unmentioned objects: these
   will warn instead of crashing. For instance, `/** @param {boolean} foo.bar */`.
+* Expose `--shallow` option in CLI
 
 ## 2.0.0
 
