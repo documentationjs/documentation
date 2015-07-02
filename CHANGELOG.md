@@ -1,3 +1,8 @@
+## 2.0.1
+
+* Fixes `@param` tags that refer to properties of unmentioned objects: these
+  will warn instead of crashing. For instance, `/** @param {boolean} foo.bar */`.
+
 ## 2.0.0
 
 * Breaking: Removes `docset` support from documentation.js: this will be supported
