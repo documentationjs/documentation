@@ -3,7 +3,7 @@
 var test = require('prova'),
   concat = require('concat-stream'),
   path = require('path'),
-  shallow = require('../../streams/shallow');
+  shallow = require('../../streams/input/shallow');
 
 test('shallow deps', function (t) {
   shallow([path.resolve(path.join(__dirname, '../fixture/es6.input.js'))])

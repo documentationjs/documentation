@@ -4,7 +4,7 @@ var doctrine = require('doctrine'),
   getComments = require('get-comments'),
   through = require('through2').obj,
   extend = require('extend'),
-  isJSDocComment = require('../lib/is_jsdoc_comment');
+  isJSDocComment = require('../../lib/is_jsdoc_comment');
 
 /**
  * Documentation stream parser: this receives a module-dep item,

@@ -6,6 +6,10 @@ var streamify = require('stream-array'),
 /**
  * A readable source for content that doesn't do dependency resolution, but
  * simply reads files and pushes them onto a stream.
+ *
+ * This stream requires filesystem access, and thus isn't suitable
+ * for a browser environment.
+ *
  * @param {Array<string>} indexes entry points
  * @return {ReadableStream} this emits data
  */

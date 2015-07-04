@@ -5,8 +5,8 @@ var doctrine = require('doctrine'),
   through = require('through2').obj,
   types = require('ast-types'),
   extend = require('extend'),
-  isJSDocComment = require('../lib/is_jsdoc_comment'),
-  error = require('../lib/error');
+  isJSDocComment = require('../../lib/is_jsdoc_comment'),
+  error = require('../../lib/error');
 
 /**
  * Comment-out a shebang line that may sit at the top of a file,

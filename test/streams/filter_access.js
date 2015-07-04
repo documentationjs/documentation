@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-  parse = require('../../streams/parse'),
+  parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   filterAccess = require('../../streams/filter_access'),
   inferName = require('../../streams/infer_name'),

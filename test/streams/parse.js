@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-  parse = require('../../streams/parse'),
+  parse = require('../../streams/parsers/javascript'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {

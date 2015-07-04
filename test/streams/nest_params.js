@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('prova'),
-  parse = require('../../streams/parse'),
+  parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   nestParams = require('../../streams/nest_params'),
   helpers = require('../helpers');

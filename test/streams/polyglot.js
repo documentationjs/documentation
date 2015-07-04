@@ -3,8 +3,8 @@
 var test = require('prova'),
   concat = require('concat-stream'),
   path = require('path'),
-  shallow = require('../../streams/shallow'),
-  polyglot = require('../../streams/polyglot');
+  shallow = require('../../streams/input/shallow'),
+  polyglot = require('../../streams/parsers/polyglot');
 
 test('polyglot', function (t) {
   shallow([path.resolve(path.join(__dirname, '../fixture/polyglot/blend.cpp'))])
