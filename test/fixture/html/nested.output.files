@@ -1296,14 +1296,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-subst,
 .hljs-request,
 .hljs-status {
-  color: #333;
-  font-weight: bold;
+  color: #1184CE;
 }
 
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
-  color: #008080;
+  color: #ed225d;
 }
 
 .hljs-string,
@@ -1311,7 +1310,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-phpdoc,
 .hljs-dartdoc,
 .tex .hljs-formula {
-  color: #d14;
+  color: #ed225d;
 }
 
 .hljs-title,
@@ -1393,7 +1392,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .documentation a {
-  color: #416381;
+  color: #1184CE;
 }
 
 .container-small {
@@ -1420,19 +1419,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .bg-cloudy {
-  background: rgba(230, 235, 237, 1);
-}
-
-.bg-cloudy-light {
-  background: rgba(230, 235, 237, 0.5);
-}
-
-.keyline-top {
-  border-top:5px solid #eee;
-}
-
-.keyline-top:first-child {
-  border-top:0;
+  background: #fafafa;
 }
 
 .force-inline * {
@@ -1445,6 +1432,24 @@ section:target {
 
 .documentation-sidebar a:active {
   background: #fcfbf2;
+}
+
+.documentation,
+.documentation h1,
+.documentation h2,
+.documentation h3,
+.documentation h4,
+.documentation h5,
+.documentation h6,
+.documentation pre,
+.documentation code,
+.documentation samp {
+    font-family: 'Inconsolata', Consolas, 'Source Code Pro', monospace;
+}
+
+.documentation td,
+.documentation th {
+    padding: .25rem .25rem;
 }
 
 <html>
@@ -1505,10 +1510,10 @@ section:target {
           </div>
         </div>
       </div>
-      <div class='sm-col  col-9  flex flex-column'>
+      <div class='sm-col  lg-col-9  flex flex-column'>
         <div class='flex-auto full-width'>
           <div class='px1'>
-<section id='klass'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass'>
       <code>
@@ -1525,7 +1530,7 @@ section:target {
 
 
       <div class='section-indent'>
-<section id='klass/magic-number'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/magic-number'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/magic-number'>
       <code>
@@ -1547,7 +1552,7 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/isbuffer'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/isbuffer'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/isbuffer'>
       <code>
@@ -1592,7 +1597,7 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/isclass'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/isclass'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/isclass'>
       <code>
@@ -1640,7 +1645,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
       <div class='section-indent'>
-<section id='klass/getfoo'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/getfoo'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/getfoo'>
       <code>
@@ -1671,7 +1676,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/withoptions'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/withoptions'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/withoptions'>
       <code>
@@ -1724,7 +1729,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
       <div class='section-indent'>
-<section id='klass/event'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/event'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/event'>
       <code>
@@ -1747,7 +1752,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
 </section>
-<section id='bar'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='bar'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#bar'>
       <code>
