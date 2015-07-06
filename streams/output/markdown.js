@@ -71,13 +71,11 @@ function formatParameters() {
  */
 module.exports = function (opts) {
 
-  var options = extend({}, {
-    template: path.resolve(path.join(__dirname, '../../share/markdown.hbs'))
-  }, opts);
+  var templateStr = (opts && opts.template) ?
+    fs.readFileSync(opts.template, 'utf8') :
+    fs.readFileSync(path.resolve(path.join(__dirname, '../../share/markdown.hbs')), 'utf8');
 
-  var template = Handlebars
-    .compile(
-      fs.readFileSync(options.template, 'utf8'));
+  var template = Handlebars.compile(templateStr);
 
   function inlines(string) {
     return new Handlebars.SafeString(formatInlineTags(string));

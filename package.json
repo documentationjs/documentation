@@ -6,9 +6,16 @@
   "bin": {
     "documentation": "./bin/documentation.js"
   },
+  "browserify": {
+    "transforms": ["brfs"]
+  },
+  "browser": {
+    "vinyl-fs": false
+  },
   "dependencies": {
     "JSONStream": "^1.0.4",
     "ast-types": "^0.7.2",
+    "brfs": "^1.4.0",
     "concat-stream": "^1.4.7",
     "doctrine": "^0.6.4",
     "espree": "^2.0.3",
