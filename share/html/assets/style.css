@@ -1,5 +1,5 @@
 .documentation a {
-  color: #416381;
+  color: #1184CE;
 }
 
 .container-small {
@@ -26,19 +26,7 @@
 }
 
 .bg-cloudy {
-  background: rgba(230, 235, 237, 1);
-}
-
-.bg-cloudy-light {
-  background: rgba(230, 235, 237, 0.5);
-}
-
-.keyline-top {
-  border-top:5px solid #eee;
-}
-
-.keyline-top:first-child {
-  border-top:0;
+  background: #fafafa;
 }
 
 .force-inline * {
@@ -51,4 +39,22 @@ section:target {
 
 .documentation-sidebar a:active {
   background: #fcfbf2;
+}
+
+.documentation,
+.documentation h1,
+.documentation h2,
+.documentation h3,
+.documentation h4,
+.documentation h5,
+.documentation h6,
+.documentation pre,
+.documentation code,
+.documentation samp {
+    font-family: 'Inconsolata', Consolas, 'Source Code Pro', monospace;
+}
+
+.documentation td,
+.documentation th {
+    padding: .25rem .25rem;
 }
