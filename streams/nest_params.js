@@ -4,7 +4,8 @@ var through = require('through'),
   extend = require('extend');
 
 /**
- * Create a transform stream that nests [parameters with properties](http://usejsdoc.org/tags-param.html#parameters-with-properties).
+ * Create a transform stream that nests
+ * [parameters with properties](http://usejsdoc.org/tags-param.html#parameters-with-properties).
  *
  * A parameter `employee.name` will be attached to the parent parameter `employee` in
  * a `properties` array.
@@ -31,7 +32,10 @@ module.exports = function () {
       if (parts.length > 1) {
         var parent = index[parts[0]];
         if (parent === undefined) {
-          console.error('@param %s\'s parent %s not found', param.name, parts[0]);
+          console.error(
+            '@param %s\'s parent %s not found',
+            param.name,
+            parts[0]);
           result.params.push(param);
           return;
         }

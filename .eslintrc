@@ -11,6 +11,7 @@
     "camelcase": 2,
     "comma-style": 2,
     "no-lonely-if": 2,
+    "max-len": [2, 120],
     "no-else-return": 2,
     "new-cap": 2,
     "no-empty": 2,
