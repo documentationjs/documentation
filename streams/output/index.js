@@ -11,7 +11,7 @@ module.exports = {
   md: function (options) {
     options = options || {};
     return markdown({
-      template: options.mdtemplate,
+      theme: options.theme,
       name: options.name,
       version: options.version
     });
@@ -20,6 +20,7 @@ module.exports = {
     options = options || {};
     return htmlOutput({
       name: options.name,
+      theme: options.theme,
       version: options.version
     });
   }
