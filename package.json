@@ -7,7 +7,7 @@
     "documentation": "./bin/documentation.js"
   },
   "browserify": {
-    "transforms": ["brfs"]
+    "transform": ["brfs"]
   },
   "browser": {
     "vinyl-fs": false

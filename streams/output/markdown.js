@@ -1,10 +1,10 @@
 'use strict';
 
-var through = require('through'),
-  fs = require('fs'),
-  path = require('path'),
+var through = require('through');
+var fs = require('fs');
+
+var path = require('path'),
   Handlebars = require('handlebars'),
-  extend = require('extend'),
   formatType = require('./lib/markdown_format_type'),
   inlineLex = require('jsdoc-inline-lex');
 
@@ -73,7 +73,7 @@ module.exports = function (opts) {
 
   var templateStr = (opts && opts.template) ?
     fs.readFileSync(opts.template, 'utf8') :
-    fs.readFileSync(path.resolve(path.join(__dirname, '../../share/markdown.hbs')), 'utf8');
+    fs.readFileSync(path.join(__dirname, '/share/markdown.hbs'), 'utf8');
 
   var template = Handlebars.compile(templateStr);
 

@@ -6,7 +6,6 @@ var through = require('through'),
   slugg = require('slugg'),
   Remarkable = require('remarkable'),
   getGlobalExternalLink = require('globals-docs').getDoc,
-  fs = require('fs'),
   path = require('path'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
@@ -14,6 +13,8 @@ var through = require('through'),
   hierarchy = require('../hierarchy'),
   highlight = require('../highlight'),
   inlineLex = require('jsdoc-inline-lex');
+
+var fs = require('fs');
 
 /**
  * Make slugg a unary so we can use it in functions

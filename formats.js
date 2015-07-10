@@ -10,6 +10,7 @@ module.exports = {
     return json();
   },
   md: function (options) {
+    options = options || {};
     return markdown({
       template: options.mdtemplate,
       name: options.name,
@@ -17,6 +18,7 @@ module.exports = {
     });
   },
   html: function (options) {
+    options = options || {};
     return htmlOutput({
       name: options.name,
       version: options.version
