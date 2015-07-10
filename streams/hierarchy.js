@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through');
+var through2 = require('through2');
 var error = require('../lib/error');
 
 /**
@@ -20,11 +20,13 @@ var error = require('../lib/error');
  */
 module.exports = function () {
   var comments = [];
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     comments.push(comment);
-  }, function () {
+    callback();
+  }, function (callback) {
     this.push(inferHierarchy(comments));
     this.emit('end');
+    callback();
   });
 };
 

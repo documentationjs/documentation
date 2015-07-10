@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   types = require('ast-types');
 
 /**
@@ -11,14 +11,14 @@ var through = require('through'),
  * @return {stream.Transform}
  */
 module.exports = function inferName() {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
 
     for (var i = 0; i < comment.tags.length; i++) {
       // If this comment is already explicitly named, simply pass it
       // through the stream without doing any inference.
       if (comment.tags[i].title === 'name') {
         this.push(comment);
-        return;
+        return callback();
       }
 
       // If this comment has a @class, @event, or @typedef tag with a name,
@@ -34,7 +34,7 @@ module.exports = function inferName() {
         if (comment.tags[i].title === title && comment.tags[i][value]) {
           comment.tags.push({ title: 'name', name: comment.tags[i][value] });
           this.push(comment);
-          return;
+          return callback();
         }
       }
     }
@@ -67,5 +67,6 @@ module.exports = function inferName() {
     });
 
     this.push(comment);
+    callback();
   });
 };

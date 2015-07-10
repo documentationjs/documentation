@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   extend = require('extend');
 
 /**
@@ -16,10 +16,10 @@ var through = require('through'),
  * @return {stream.Transform}
  */
 module.exports = function () {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     if (!comment.params) {
       this.push(comment);
-      return;
+      return callback();
     }
 
     var result = extend({}, comment),
@@ -47,5 +47,6 @@ module.exports = function () {
     });
 
     this.push(result);
+    callback();
   });
 };

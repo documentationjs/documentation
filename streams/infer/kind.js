@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   types = require('ast-types');
 
 var kindShorthands = ['class', 'constant', 'event', 'external', 'file',
@@ -14,7 +14,7 @@ var kindShorthands = ['class', 'constant', 'event', 'external', 'file',
  * @return {stream.Transform}
  */
 module.exports = function inferKind() {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     function hasTag(title) {
       return comment.tags.some(function (tag) {
         return tag.title === title;
@@ -31,7 +31,7 @@ module.exports = function inferKind() {
           });
           // only allow a comment to have one kind
           this.push(comment);
-          return;
+          return callback();
         }
       }
 
@@ -62,5 +62,6 @@ module.exports = function inferKind() {
       });
     }
     this.push(comment);
+    callback();
   });
 };

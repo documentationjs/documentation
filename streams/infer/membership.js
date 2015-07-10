@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   types = require('ast-types'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
   doctrine = require('doctrine');
@@ -16,16 +16,16 @@ var n = types.namedTypes;
  * @returns {Stream.Transform} stream
  */
 module.exports = function inferMembership() {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     if (comment.tags.some(function (tag) {
       return tag.title === 'memberof';
     })) {
       this.push(comment);
-      return;
+      return callback();
     }
 
     if (findLendsTag(comment)) {
-      return;
+      return callback();
     }
 
     /**
@@ -183,5 +183,6 @@ module.exports = function inferMembership() {
     }
 
     this.push(comment);
+    callback();
   });
 };

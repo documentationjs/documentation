@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var through = require('through'),
+var through2 = require('through2'),
   File = require('vinyl'),
   vfs = require('vinyl-fs'),
   path = require('path'),
@@ -50,7 +50,7 @@ module.exports = function (opts) {
 
   Handlebars.registerPartial('section', sectionTemplate);
 
-  var htmlStream = through(function (comments) {
+  var htmlStream = through2.obj(function (comments, enc, callback) {
 
     var paths = comments.map(function (comment) {
       return comment.path.map(slug).join('/');
@@ -72,7 +72,9 @@ module.exports = function (opts) {
         options: opts
       }), 'utf8')
     }));
-  }, function () {
+
+    callback();
+  }, function (callback) {
     // push assets into the pipeline as well.
     vfs.src([options.path + '/**', '!' + options.path + '/**.hbs'])
       .on('data', function (file) {
@@ -80,6 +82,7 @@ module.exports = function (opts) {
       }.bind(this))
       .on('end', function () {
         this.emit('end');
+        callback();
       }.bind(this));
   });
 

@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var through = require('through'),
+var through2 = require('through2'),
   path = require('path'),
   helpers = require('./lib/markdown_helpers'),
   Handlebars = require('handlebars');
@@ -28,7 +28,8 @@ module.exports = function (opts) {
 
   helpers(Handlebars);
 
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     this.push(template(comment));
+    callback();
   });
 };

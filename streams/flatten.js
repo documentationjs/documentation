@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   extend = require('extend');
 
 var flatteners = {
@@ -113,7 +113,7 @@ var flatteners = {
  * @return {stream.Transform}
  */
 module.exports = function () {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     var result = extend({}, comment);
 
     comment.tags.forEach(function (tag) {
@@ -121,5 +121,6 @@ module.exports = function () {
     });
 
     this.push(result);
+    callback();
   });
 };

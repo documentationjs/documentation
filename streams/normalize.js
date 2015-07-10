@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   extend = require('extend');
 
 /**
@@ -44,10 +44,11 @@ var through = require('through'),
  * @return {stream.Transform}
  */
 module.exports = function () {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     this.push(extend({}, comment, {
       tags: comment.tags.map(normalize)
     }));
+    callback();
   });
 };
 

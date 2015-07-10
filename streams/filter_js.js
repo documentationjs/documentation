@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through');
+var filter = require('through2-filter');
 
 /**
  * Node & browserify support requiring JSON files. JSON files can't be documented
@@ -12,9 +12,7 @@ var through = require('through');
  * @return {stream.Transform}
  */
 module.exports = function () {
-  return through(function (data) {
-    if (!data.file.match(/\.json$/)) {
-      this.push(data);
-    }
+  return filter.obj(function (data) {
+    return !data.file.match(/\.json$/);
   });
 };
