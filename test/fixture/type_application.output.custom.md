@@ -2,6 +2,10 @@
 
 Represents an IPv6 address
 
-* `address`: An IPv6 address string
+### Parameters
+
+* `address` **`Array<string>`** An IPv6 address string
+
+
 
 

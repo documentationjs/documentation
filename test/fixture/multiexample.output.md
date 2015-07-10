@@ -15,7 +15,6 @@ foo(2);
 
 Returns `Number` numberone
 
-
 | type | description |
 | ---- | ----------- |
 | `Error` | if you give it something |

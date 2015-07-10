@@ -1,7 +1,7 @@
 'use strict';
 
-var fs = require('fs'),
-  path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 /**
  * Get a Handlebars template file out of a theme and compile it into

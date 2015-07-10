@@ -15,4 +15,3 @@ var address = new Address6('2001::/32');
 ```
 
 
-
