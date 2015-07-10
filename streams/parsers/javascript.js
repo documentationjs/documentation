@@ -124,9 +124,9 @@ module.exports = function () {
           while (i < parsedComment.tags.length) {
             var tag = parsedComment.tags[i];
             if (tag.errors) {
-              tag.errors.forEach(function (err) {
-                console.error(error(tag, parsedComment, err));
-              });
+              for (var j = 0; j < tag.errors.length; j++) {
+                console.error(error(tag, parsedComment, tag.errors[j]));
+              }
               parsedComment.tags.splice(i, 1);
             } else {
               i++;

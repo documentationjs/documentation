@@ -1,3 +1,5 @@
+'use strict';
+
 var sort = require('sort-stream');
 
 /**

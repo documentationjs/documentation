@@ -1,9 +1,8 @@
 'use strict';
 
-var splicer = require('stream-splicer'),
-  json = require('./streams/output/json.js'),
-  markdown = require('./streams/output/markdown.js'),
-  htmlOutput = require('./streams/output/html.js');
+var json = require('./json.js'),
+  markdown = require('./markdown.js'),
+  htmlOutput = require('./html.js');
 
 module.exports = {
   json: function () {

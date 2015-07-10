@@ -3,52 +3,6 @@
 var through = require('through'),
   extend = require('extend');
 
-/**
- * Create a transform stream that flattens tags in an opinionated way.
- *
- * The following tags are assumed to be singletons, and are flattened
- * to a top-level property on the result whose value is extracted from
- * the tag:
- *
- *  * `@name`
- *  * `@memberof`
- *  * `@classdesc`
- *  * `@kind`
- *  * `@access`
- *
- * The following tags are flattened to a top-level array-valued property:
- *
- *  * `@param` (to `params` property)
- *  * `@property` (to `properties` property)
- *  * `@returns` (to `returns` property)
- *  * `@augments` (to `augments` property)
- *  * `@example` (to `examples` property)
- *  * `@throws` (to `throws` property)
- *
- * The `@global`, `@static`, `@instance`, and `@inner` tags are flattened
- * to a `scope` property whose value is `"global"`, `"static"`, `"instance"`,
- * or `"inner"`.
- *
- * The `@access`, `@public`, `@protected`, and `@private` tags are flattened
- * to an `access` property whose value is `"protected"` or `"private"`.
- * The assumed default value is `"public"`, so `@access public` or `@public`
- * tags result in no `access` property.
- *
- * @name flatten
- * @return {stream.Transform}
- */
-module.exports = function () {
-  return through(function (comment) {
-    var result = extend({}, comment);
-
-    comment.tags.forEach(function (tag) {
-      (flatteners[tag.title] || function () {})(result, tag);
-    });
-
-    this.push(result);
-  });
-};
-
 var flatteners = {
   'name': function (result, tag) {
     result.name = tag.name;
@@ -122,4 +76,50 @@ var flatteners = {
   'private': function (result) {
     result.access = 'private';
   }
+};
+
+/**
+ * Create a transform stream that flattens tags in an opinionated way.
+ *
+ * The following tags are assumed to be singletons, and are flattened
+ * to a top-level property on the result whose value is extracted from
+ * the tag:
+ *
+ *  * `@name`
+ *  * `@memberof`
+ *  * `@classdesc`
+ *  * `@kind`
+ *  * `@access`
+ *
+ * The following tags are flattened to a top-level array-valued property:
+ *
+ *  * `@param` (to `params` property)
+ *  * `@property` (to `properties` property)
+ *  * `@returns` (to `returns` property)
+ *  * `@augments` (to `augments` property)
+ *  * `@example` (to `examples` property)
+ *  * `@throws` (to `throws` property)
+ *
+ * The `@global`, `@static`, `@instance`, and `@inner` tags are flattened
+ * to a `scope` property whose value is `"global"`, `"static"`, `"instance"`,
+ * or `"inner"`.
+ *
+ * The `@access`, `@public`, `@protected`, and `@private` tags are flattened
+ * to an `access` property whose value is `"protected"` or `"private"`.
+ * The assumed default value is `"public"`, so `@access public` or `@public`
+ * tags result in no `access` property.
+ *
+ * @name flatten
+ * @return {stream.Transform}
+ */
+module.exports = function () {
+  return through(function (comment) {
+    var result = extend({}, comment);
+
+    comment.tags.forEach(function (tag) {
+      (flatteners[tag.title] || function () {})(result, tag);
+    });
+
+    this.push(result);
+  });
 };

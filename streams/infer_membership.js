@@ -2,9 +2,10 @@
 
 var through = require('through'),
   types = require('ast-types'),
-  n = types.namedTypes,
   isJSDocComment = require('../lib/is_jsdoc_comment'),
   doctrine = require('doctrine');
+
+var n = types.namedTypes;
 
 /**
  * Create a transform stream that uses code structure to infer

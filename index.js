@@ -61,4 +61,4 @@ module.exports = function (indexes, options) {
     filterAccess(options.private ? [] : undefined)]));
 };
 
-module.exports.formats = require('./formats.js');
+module.exports.formats = require('./streams/output/index');
