@@ -11,6 +11,9 @@ var path = require('path');
  */
 function resolveTheme(theme) {
   try {
+    if (theme[0] === '.' || theme[0] === '/') {
+      theme = path.join(process.cwd(), theme);
+    }
     return path.dirname(require.resolve(theme));
   } catch(e) {
     throw new Error('Theme ' + theme + ' not found');
