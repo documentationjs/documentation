@@ -10,7 +10,9 @@
  * @return {string} formatted markdown expression of that type.
  */
 function formatType(type) {
-  if (!type) return '';
+  if (!type) {
+    return '';
+  }
   switch (type.type) {
     case 'NameExpression':
       return type.name;

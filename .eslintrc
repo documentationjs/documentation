@@ -27,7 +27,7 @@
     "no-eq-null": 2,
     "quotes": [2, "single"],
     "indent": [2, 2],
-    "curly": 0,
+    "curly": 2,
     "no-shadow": 0
   },
   "env": {

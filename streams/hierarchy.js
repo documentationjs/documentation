@@ -110,7 +110,9 @@ function inferHierarchy(comments) {
     });
   }
 
-  for (i = 0; i < comments.length; i++) addPath(comments[i], []);
+  for (i = 0; i < comments.length; i++) {
+    addPath(comments[i], []);
+  }
 
   return comments;
 }

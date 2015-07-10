@@ -17,7 +17,9 @@ function documentation(args, options, callback) {
   args.unshift(path.join(__dirname, '../bin/documentation.js'));
 
   exec(args.join(' '), options, function (err, stdout, stderr) {
-    if (err) return callback(err, stdout, stderr);
+    if (err) {
+      return callback(err, stdout, stderr);
+    }
     callback(err, JSON.parse(stdout), stderr);
   });
 }

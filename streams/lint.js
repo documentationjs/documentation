@@ -41,7 +41,9 @@ module.exports = function () {
       }
 
       function checkCanonical(type) {
-        if (!type) return;
+        if (!type) {
+          return;
+        }
         if (type.type === 'NameExpression') {
           nameInvariant(type.name);
         } else if (type.type === 'UnionType') {

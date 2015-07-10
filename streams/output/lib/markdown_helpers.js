@@ -47,7 +47,9 @@ function formatParameter(param) {
  * initially.
  */
 function formatParameters() {
-  if (!this.params) return '';
+  if (!this.params) {
+    return '';
+  }
   return '(' + this.params.map(function (param) {
     return formatParameter(param);
   }).join(', ') + ')';
