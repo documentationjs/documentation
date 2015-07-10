@@ -1,15 +1,15 @@
 'use strict';
 
-var fs = require('fs');
 var through2 = require('through2'),
   File = require('vinyl'),
   vfs = require('vinyl-fs'),
-  path = require('path'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
   slugg = require('slugg'),
   splicer = require('stream-splicer'),
   hierarchy = require('../hierarchy'),
+  getTemplate = require('./lib/get_template'),
+  resolveTheme = require('./lib/resolve_theme'),
   helpers = require('./lib/html_helpers'),
   highlight = require('../highlight');
 
@@ -22,19 +22,6 @@ var through2 = require('through2'),
  */
 function slug(p) {
   return p ? slugg(p) : '';
-}
-
-/**
- * Get a Handlebars template file out of a theme and compile it into
- * a template function
- *
- * @param {string} themeModule base directory of themey
- * @param {string} name template name
- * @returns {Function} template function
- */
-function getTemplate(themeModule, name) {
-  return Handlebars
-    .compile(fs.readFileSync(path.join(themeModule, name), 'utf8'));
 }
 
 /**
@@ -53,18 +40,11 @@ module.exports = function (opts) {
     theme: 'documentation-theme-default'
   }, opts);
 
-  try {
-    var themeModule = path.dirname(require.resolve(options.theme));
-  } catch(e) {
-    throw new Error('Theme ' + options.theme + ' not found');
-  }
+  var themeModule = resolveTheme(options.theme);
 
-  try {
-    var pageTemplate = getTemplate(themeModule, 'index.hbs');
-    Handlebars.registerPartial('section', getTemplate(themeModule, 'section.hbs'));
-  } catch(e) {
-    throw new Error('Template file (index.hbs, section.hbs) missing');
-  }
+  var pageTemplate = getTemplate(Handlebars, themeModule, 'index.hbs');
+  Handlebars.registerPartial('section',
+    getTemplate(Handlebars, themeModule, 'section.hbs'));
 
   var htmlStream = through2.obj(function (comments, enc, callback) {
 

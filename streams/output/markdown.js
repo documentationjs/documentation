@@ -1,9 +1,10 @@
 'use strict';
 
-var fs = require('fs');
 var through2 = require('through2'),
-  path = require('path'),
+  extend = require('extend'),
+  getTemplate = require('./lib/get_template'),
   helpers = require('./lib/markdown_helpers'),
+  resolveTheme = require('./lib/resolve_theme'),
   Handlebars = require('handlebars');
 
 /**
@@ -20,11 +21,11 @@ var through2 = require('through2'),
  */
 module.exports = function (opts) {
 
-  var templateStr = (opts && opts.template) ?
-    fs.readFileSync(opts.template, 'utf8') :
-    fs.readFileSync(path.join(__dirname, '/share/markdown.hbs'), 'utf8');
-
-  var template = Handlebars.compile(templateStr);
+  var options = extend({}, {
+    theme: 'documentation-theme-default'
+  }, opts);
+  var themeModule = resolveTheme(options.theme);
+  var template = getTemplate(Handlebars, themeModule, 'markdown.hbs');
 
   helpers(Handlebars);
 
