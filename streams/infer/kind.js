@@ -13,7 +13,7 @@ var kindShorthands = ['class', 'constant', 'event', 'external', 'file',
  * @name inferKind
  * @return {stream.Transform}
  */
-module.exports = function () {
+module.exports = function inferKind() {
   return through(function (comment) {
     function hasTag(title) {
       return comment.tags.some(function (tag) {

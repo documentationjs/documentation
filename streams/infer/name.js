@@ -10,7 +10,7 @@ var through = require('through'),
  * @name inferName
  * @return {stream.Transform}
  */
-module.exports = function () {
+module.exports = function inferName() {
   return through(function (comment) {
 
     for (var i = 0; i < comment.tags.length; i++) {

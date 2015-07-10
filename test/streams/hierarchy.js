@@ -4,9 +4,9 @@ var test = require('prova'),
   parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   hierarchy = require('../../streams/hierarchy'),
-  inferName = require('../../streams/infer_name'),
-  inferKind = require('../../streams/infer_kind'),
-  inferMembership = require('../../streams/infer_membership'),
+  inferName = require('../../streams/infer/name'),
+  inferKind = require('../../streams/infer/kind'),
+  inferMembership = require('../../streams/infer/membership'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {

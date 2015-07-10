@@ -7,13 +7,13 @@ var splicer = require('stream-splicer'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
-  inferName = require('./streams/infer_name'),
   dependency = require('./streams/input/dependency'),
   shallow = require('./streams/input/shallow'),
   parse = require('./streams/parsers/javascript'),
   polyglot = require('./streams/parsers/polyglot'),
-  inferKind = require('./streams/infer_kind'),
-  inferMembership = require('./streams/infer_membership');
+  inferName = require('./streams/infer/name'),
+  inferKind = require('./streams/infer/kind'),
+  inferMembership = require('./streams/infer/membership');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc

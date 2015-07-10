@@ -2,7 +2,7 @@
 
 var through = require('through'),
   types = require('ast-types'),
-  isJSDocComment = require('../lib/is_jsdoc_comment'),
+  isJSDocComment = require('../../lib/is_jsdoc_comment'),
   doctrine = require('doctrine');
 
 var n = types.namedTypes;
@@ -15,7 +15,7 @@ var n = types.namedTypes;
  * @name inferMembership
  * @returns {Stream.Transform} stream
  */
-module.exports = function () {
+module.exports = function inferMembership() {
   return through(function (comment) {
     if (comment.tags.some(function (tag) {
       return tag.title === 'memberof';

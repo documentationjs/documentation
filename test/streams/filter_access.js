@@ -4,7 +4,7 @@ var test = require('prova'),
   parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   filterAccess = require('../../streams/filter_access'),
-  inferName = require('../../streams/infer_name'),
+  inferName = require('../../streams/infer/name'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback, options) {
