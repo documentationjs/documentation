@@ -3,17 +3,9 @@
 [![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation) [![Coverage Status](https://coveralls.io/repos/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/r/documentationjs/documentation?branch=master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 
-This would be a big one, we would need the whole town to pitch in.
-
-The mission is to create a **documentation generation system** that's
+A **documentation generation system** that's
 _beautiful_ by default, _flexible_ across formats and styles, and
 _powerful_ enough to support [JSDoc](http://usejsdoc.org/)'s advanced syntax.
-
-_We also have plenty of
-[issues](https://github.com/documentationjs/documentation/issues) that we'd
-love help with._
-
-## Completed Goals
 
 **ES5 and ES6 support of JavaScript, with support for other transpilers a possibility**
 
@@ -67,13 +59,15 @@ Examples:
   documentation foo.js    parse documentation in a given file
 ```
 
-# Future Goals
+## [Contributing](CONTRIBUTING.md)
+
+_We have plenty of
+[issues](https://github.com/documentationjs/documentation/issues) that we'd
+love help with._
 
 * Robust and complete `JSDoc` support, including typedefs.
 * Strong support for HTML and Markdown output
 * Documentation coverage, statistics, and validation
-
-## [Contributing](CONTRIBUTING.md)
 
 documentation is an OPEN Open Source Project. This means that:
 
