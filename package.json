@@ -67,6 +67,6 @@
   },
   "scripts": {
     "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS && coveralls < $CIRCLE_ARTIFACTS/lcov.info",
-    "test": "eslint --no-eslintrc -c .eslintrc lib streams index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
+    "test": "eslint --no-eslintrc -c .eslintrc bin lib streams index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
   }
 }

@@ -19,7 +19,8 @@ var yargs = require('yargs')
 
   .describe('lint', 'check output for common style and uniformity mistakes')
 
-  .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
+  .describe('t', 'specify a theme: this must be a valid theme module')
+  .alias('t', 'theme')
 
   .boolean('p')
   .describe('p', 'generate documentation tagged as private')
@@ -29,17 +30,20 @@ var yargs = require('yargs')
   .describe('version', 'project version. by default, inferred from package.json')
 
   .boolean('shallow')
-  .describe('shallow', 'shallow mode turns off dependency resolution, only processing the specified files (or the main script specified in package.json)')
+  .describe('shallow', 'shallow mode turns off dependency resolution, ' +
+    'only processing the specified files (or the main script specified in package.json)')
   .default('shallow', false)
 
   .boolean('polyglot')
-  .describe('polyglot', 'polyglot mode turns off dependency resolution and enables multi-language support. use this to document c++')
+  .describe('polyglot', 'polyglot mode turns off dependency resolution and ' +
+            'enables multi-language support. use this to document c++')
 
   .boolean('g')
   .describe('g', 'infer links to github in documentation')
   .alias('g', 'github')
 
-  .describe('o', 'output location. omit for stdout, otherwise is a filename for single-file outputs and a directory name for multi-file outputs like html')
+  .describe('o', 'output location. omit for stdout, otherwise is a filename ' +
+            'for single-file outputs and a directory name for multi-file outputs like html')
   .alias('o', 'output')
   .default('o', 'stdout')
 
@@ -76,7 +80,7 @@ try {
   var formatterOptions = {
     name: name,
     version: version,
-    mdtemplate: argv.mdtemplate
+    theme: argv.theme
   };
 
   var formatter = documentation.formats[argv.f](formatterOptions);
