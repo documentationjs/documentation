@@ -25,30 +25,46 @@ function slug(p) {
 }
 
 /**
+ * Get a Handlebars template file out of a theme and compile it into
+ * a template function
+ *
+ * @param {string} themeModule base directory of themey
+ * @param {string} name template name
+ * @returns {Function} template function
+ */
+function getTemplate(themeModule, name) {
+  return Handlebars
+    .compile(fs.readFileSync(path.join(themeModule, name), 'utf8'));
+}
+
+/**
  * Create a transform stream that formats documentation as HTML.
  * Receives parsed & pivoted stream of documentation data, and emits
  * File objects representing different HTML files to be produced.
  *
  * @param {Object} opts Options that can customize the output
- * @param {String} [opts.path] Path to a directory containing 'index.hbs'
- *   and 'section.hbs' Handlebars template files that take the place of
- *   the default templates.
+ * @param {String} [opts.theme] Name of a module used for an HTML theme.
  * @name html
  * @return {stream.Transform}
  */
 module.exports = function (opts) {
 
   var options = extend({}, {
-    path: path.resolve(path.join(__dirname, '../../share/html/'))
+    theme: 'documentation-theme-default'
   }, opts);
 
-  var pageTemplate = Handlebars
-    .compile(fs.readFileSync(path.join(options.path, 'index.hbs'), 'utf8'));
+  try {
+    var themeModule = path.dirname(require.resolve(options.theme));
+  } catch(e) {
+    throw new Error('Theme ' + options.theme + ' not found');
+  }
 
-  var sectionTemplate = Handlebars
-    .compile(fs.readFileSync(path.join(options.path, 'section.hbs'), 'utf8'));
-
-  Handlebars.registerPartial('section', sectionTemplate);
+  try {
+    var pageTemplate = getTemplate(themeModule, 'index.hbs');
+    Handlebars.registerPartial('section', getTemplate(themeModule, 'section.hbs'));
+  } catch(e) {
+    throw new Error('Template file (index.hbs, section.hbs) missing');
+  }
 
   var htmlStream = through2.obj(function (comments, enc, callback) {
 
@@ -76,7 +92,7 @@ module.exports = function (opts) {
     callback();
   }, function (callback) {
     // push assets into the pipeline as well.
-    vfs.src([options.path + '/**', '!' + options.path + '/**.hbs'])
+    vfs.src([themeModule + '/assets/**'])
       .on('data', function (file) {
         this.push(file);
       }.bind(this))
