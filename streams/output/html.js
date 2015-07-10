@@ -77,11 +77,6 @@ module.exports = function (opts) {
     helpers(Handlebars, paths);
 
     this.push(new File({
-      path: 'index.json',
-      contents: new Buffer(JSON.stringify(comments, null, 2), 'utf8')
-    }));
-
-    this.push(new File({
       path: 'index.html',
       contents: new Buffer(pageTemplate({
         docs: comments,
@@ -92,7 +87,7 @@ module.exports = function (opts) {
     callback();
   }, function (callback) {
     // push assets into the pipeline as well.
-    vfs.src([themeModule + '/assets/**'])
+    vfs.src([themeModule + '/assets/**'], { base: themeModule })
       .on('data', function (file) {
         this.push(file);
       }.bind(this))
