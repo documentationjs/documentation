@@ -76,9 +76,9 @@ function autolink(paths, text) {
 }
 
 /**
- * @name formatType
- *
  * Helper used to format JSDoc-style type definitions into HTML.
+ *
+ * @name formatType
  * @param {Object} type
  * @returns {String} string
  * @example
@@ -149,10 +149,10 @@ module.exports = function (Handlebars, paths) {
   Handlebars.registerHelper('format_params', formatParameters);
 
   /**
-   * @name formatMarkdown
-   *
    * This helper is exposed in templates as `md` and is useful for showing
    * Markdown-formatted text as proper HTML.
+   *
+   * @name formatMarkdown
    * @param {String} string
    * @returns {String} string
    * @example

@@ -1,5 +1,4 @@
 
-
 /*
 
     Basscss v5.2.0
@@ -1454,7 +1453,7 @@ section:target {
 
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset='utf-8' />
   <title> </title>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -1465,7 +1464,7 @@ section:target {
     <div class='clearfix flex flex-stretch mxn2'>
       <div class='documentation-sidebar relative top-0 bottom-0 right-0 px2 py2 col-3 sm-show'>
         <div class='font-smaller fixed col-3 top-0 bottom-0 left-0 overflow-auto black bg-cloudy'>
-          <a href="/" class="h5 button block button-transparent"> </a>
+          <a href='/' class='h5 button block button-transparent'> </a>
           <div class='px2'>
               <a
                 href='#klass'

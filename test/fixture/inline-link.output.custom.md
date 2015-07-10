@@ -2,16 +2,24 @@
 
 Adds one to a number
 
-* `a`: the input
+### Parameters
+
+* `a` **`number`** the input
+
+
 
 Returns `number` the output
 
 ## `exports`
 
 This function returns the number one. Internally, this uses
-{@link addOne} to do the math.
+`addOne` to do the math.
 
-* `a`: the input
+### Parameters
+
+* `a` **`number`** the input
+
+
 
 Returns `number` numberone
 

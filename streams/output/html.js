@@ -1,15 +1,15 @@
 'use strict';
 
-var fs = require('fs');
 var through2 = require('through2'),
   File = require('vinyl'),
   vfs = require('vinyl-fs'),
-  path = require('path'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
   slugg = require('slugg'),
   splicer = require('stream-splicer'),
   hierarchy = require('../hierarchy'),
+  getTemplate = require('./lib/get_template'),
+  resolveTheme = require('./lib/resolve_theme'),
   helpers = require('./lib/html_helpers'),
   highlight = require('../highlight');
 
@@ -30,25 +30,21 @@ function slug(p) {
  * File objects representing different HTML files to be produced.
  *
  * @param {Object} opts Options that can customize the output
- * @param {String} [opts.path] Path to a directory containing 'index.hbs'
- *   and 'section.hbs' Handlebars template files that take the place of
- *   the default templates.
+ * @param {String} [opts.theme] Name of a module used for an HTML theme.
  * @name html
  * @return {stream.Transform}
  */
 module.exports = function (opts) {
 
   var options = extend({}, {
-    path: path.resolve(path.join(__dirname, '../../share/html/'))
+    theme: 'documentation-theme-default'
   }, opts);
 
-  var pageTemplate = Handlebars
-    .compile(fs.readFileSync(path.join(options.path, 'index.hbs'), 'utf8'));
+  var themeModule = resolveTheme(options.theme);
 
-  var sectionTemplate = Handlebars
-    .compile(fs.readFileSync(path.join(options.path, 'section.hbs'), 'utf8'));
-
-  Handlebars.registerPartial('section', sectionTemplate);
+  var pageTemplate = getTemplate(Handlebars, themeModule, 'index.hbs');
+  Handlebars.registerPartial('section',
+    getTemplate(Handlebars, themeModule, 'section.hbs'));
 
   var htmlStream = through2.obj(function (comments, enc, callback) {
 
@@ -61,11 +57,6 @@ module.exports = function (opts) {
     helpers(Handlebars, paths);
 
     this.push(new File({
-      path: 'index.json',
-      contents: new Buffer(JSON.stringify(comments, null, 2), 'utf8')
-    }));
-
-    this.push(new File({
       path: 'index.html',
       contents: new Buffer(pageTemplate({
         docs: comments,
@@ -76,7 +67,7 @@ module.exports = function (opts) {
     callback();
   }, function (callback) {
     // push assets into the pipeline as well.
-    vfs.src([options.path + '/**', '!' + options.path + '/**.hbs'])
+    vfs.src([themeModule + '/assets/**'], { base: themeModule })
       .on('data', function (file) {
         this.push(file);
       }.bind(this))
