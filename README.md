@@ -11,6 +11,11 @@ _powerful_ enough to support [JSDoc](http://usejsdoc.org/)'s advanced syntax.
 
 Using [espree](https://github.com/eslint/espree), we have support for a wide range of [ES6 features](https://github.com/lukehoban/es6features).
 
+**Support for C++**
+
+You can use the `--polyglot` mode of documentationjs to document native node.js
+modules in JSDoc _within the C++ code that implements the feature_.
+
 **Support for following dependency trees**
 
 Using [module-deps](https://github.com/substack/module-deps), `documentation` can
@@ -22,7 +27,7 @@ referenced files and include all of their documentation.
 The `--github` option automatically permalinks documentation to the exact
 sections of code it refers to in a GitHub repository.
 
-[**Gulp integration**](https://github.com/documentationjs/gulp-documentation)
+**Gulp integration**
 
 The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
 lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
