@@ -19,6 +19,17 @@ function slug(p) {
 }
 
 /**
+ * Format a description and target as a Markdown link.
+ *
+ * @param {string} description the text seen as the link
+ * @param {string} href where the link goes
+ * @return {string} markdown formatted link
+ */
+function markdownLink(description, href) {
+  return '[`' + description + '`](' + href + ')';
+}
+
+/**
  * Format link & tutorial tags with simple code inline tags.
  *
  * @param {string} text input - typically a description
@@ -30,10 +41,6 @@ function slug(p) {
 function formatInlineTags(text) {
   var output = '';
   var tokens = inlineLex(text);
-
-  function markdownLink(description, href) {
-    return '[`' + description + '`](' + href + ')';
-  }
 
   for (var i = 0; i < tokens.length; i++) {
     if (tokens[i].type === 'text') {
@@ -81,22 +88,21 @@ function autolink(paths, text) {
  * // generates String
  */
 function formatType(type, paths) {
+  function recurse(element) {
+    return formatType(element, paths);
+  }
   switch (type.type) {
     case 'NameExpression':
       return '<code>' + autolink(paths, type.name) + '</code>';
     case 'UnionType':
-      return type.elements.map(function (element) {
-        return formatType(element, paths);
-      }).join(' or ');
+      return type.elements.map(recurse).join(' or ');
     case 'AllLiteral':
       return 'Any';
     case 'OptionalType':
       return '<code>[' + formatType(type.expression, paths) + ']</code>';
     case 'TypeApplication':
       return formatType(type.expression, paths) + '<' +
-        type.applications.map(function (application) {
-          return formatType(application, paths);
-        }).join(', ') + '>';
+        type.applications.map(recurse).join(', ') + '>';
   }
 }
 
