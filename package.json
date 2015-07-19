@@ -19,7 +19,7 @@
     "ast-types": "^0.8.3",
     "brfs": "^1.4.0",
     "doctrine": "^0.6.4",
-    "documentation-theme-default": "^1.0.0-alpha",
+    "documentation-theme-default": "^1.0.0-alpha1",
     "espree": "^2.0.3",
     "extend": "^3.0.0",
     "get-comments": "^1.0.1",
