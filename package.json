@@ -24,7 +24,7 @@
     "extend": "^3.0.0",
     "get-comments": "^1.0.1",
     "github-url-from-git": "^1.4.0",
-    "globals-docs": "^2.0.1",
+    "globals-docs": "^2.1.0",
     "handlebars": "^3.0.0",
     "highlight.js": "^8.4.0",
     "jsdoc-inline-lex": "^1.0.1",
