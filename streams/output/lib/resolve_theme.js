@@ -1,6 +1,7 @@
 'use strict';
 
-var path = require('path');
+var path = require('path'),
+  resolve = require('resolve');
 
 /**
  * Given the name of a theme as a module, return the directory it
@@ -11,10 +12,7 @@ var path = require('path');
  */
 function resolveTheme(theme) {
   try {
-    if (theme[0] === '.' || theme[0] === '/') {
-      theme = path.join(process.cwd(), theme);
-    }
-    return path.dirname(require.resolve(theme));
+    return path.dirname(resolve.sync(theme, { basedir: process.cwd() }));
   } catch(e) {
     throw new Error('Theme ' + theme + ' not found');
   }

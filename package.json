@@ -31,6 +31,7 @@
     "micromatch": "^2.1.6",
     "module-deps": "^3.7.3",
     "remarkable": "^1.6.0",
+    "resolve": "^1.1.6",
     "slugg": "^0.1.2",
     "sort-stream": "^1.0.1",
     "stream-array": "^1.1.0",

@@ -75,19 +75,18 @@ if (argv._.length > 0) {
   }
 }
 
-try {
-
-  var formatterOptions = {
-    name: name,
-    version: version,
-    theme: argv.theme
-  };
-
-  var formatter = documentation.formats[argv.f](formatterOptions);
-} catch(e) {
+if (!documentation.formats[argv.f]) {
   yargs.showHelp();
   throw new Error('Formatter not found');
 }
+
+var formatterOptions = {
+  name: name,
+  version: version,
+  theme: argv.theme
+};
+
+var formatter = documentation.formats[argv.f](formatterOptions);
 
 if (argv.f === 'html' && argv.o === 'stdout') {
   yargs.showHelp();
