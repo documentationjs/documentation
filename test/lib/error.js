@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   util = require('util'),
   path = require('path'),
   error = require('../../lib/error');

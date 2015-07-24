@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   path = require('path'),
   exec = require('child_process').exec;
 

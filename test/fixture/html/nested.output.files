@@ -1477,6 +1477,11 @@ section:target {
                   <code>.MAGIC_NUMBER</code>
                 </a>
                 <a
+                  href='#klass/isarrayofbuffers'
+                  class='px1 regular block'>
+                  <code>.isArrayOfBuffers</code>
+                </a>
+                <a
                   href='#klass/isbuffer'
                   class='px1 regular block'>
                   <code>.isBuffer</code>
@@ -1485,6 +1490,11 @@ section:target {
                   href='#klass/isclass'
                   class='px1 regular block'>
                   <code>.isClass</code>
+                </a>
+                <a
+                  href='#klass/isweird'
+                  class='px1 regular block'>
+                  <code>.isWeird</code>
                 </a>
                 <a
                   href='#klass/getfoo'
@@ -1551,11 +1561,56 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
+<section id='klass/isarrayofbuffers'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/isarrayofbuffers'>
+      <code>
+        isArrayOfBuffers<span class='gray'>(buffers)</span>
+      </code>
+    </a>
+  </h3>
+  <p>This method takes an array of buffers and counts them</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>buffers</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>>
+            </td>
+            <td></td>
+          </tr>
+      </table>
+    </p>
+
+
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>how many</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
 <section id='klass/isbuffer'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/isbuffer'>
       <code>
-        isBuffer<span class='gray'>(buf)</span>
+        isBuffer<span class='gray'>(buf, [size])</span>
       </code>
     </a>
   </h3>
@@ -1572,9 +1627,18 @@ section:target {
           <tr>
             <td>buf</td>
             <td>
-              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>
+              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
             </td>
             <td></td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+                (default <code>0</code>)
+            </td>
+            <td><p>size</p>
+</td>
           </tr>
       </table>
     </p>
@@ -1600,7 +1664,7 @@ section:target {
   <h3 class='regular'>
     <a class='black' href='#klass/isclass'>
       <code>
-        isClass<span class='gray'>(other)</span>
+        isClass<span class='gray'>(other, also)</span>
       </code>
     </a>
   </h3>
@@ -1620,6 +1684,59 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
             <td>other</td>
             <td>
               <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>also</td>
+            <td>
+              Any
+            </td>
+            <td></td>
+          </tr>
+      </table>
+    </p>
+
+
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>whether the other thing is a Klass</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
+<section id='klass/isweird'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/isweird'>
+      <code>
+        isWeird<span class='gray'>(other)</span>
+      </code>
+    </a>
+  </h3>
+  <p>A function that triggers the case where the autolinker doesn't find
+the referenced class type</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>other</td>
+            <td>
+              <code>Weird</code>
             </td>
             <td></td>
           </tr>

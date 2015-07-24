@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates a new Klass
  * @class
@@ -31,20 +33,43 @@ Klass.prototype.withOptions = function (options) {
  * This is a [link to something that does not exist]{@link DoesNot}
  *
  * @param {Object} other
+ * @param {*} also
  * @returns {boolean} whether the other thing is a Klass
  */
-Klass.isClass = function (other) {
+Klass.isClass = function (other, also) {
   return other instanceof Klass;
+};
+
+/**
+ * A function that triggers the case where the autolinker doesn't find
+ * the referenced class type
+ *
+ * @param {Weird} other
+ * @returns {boolean} whether the other thing is a Klass
+ */
+Klass.isWeird = function (other) {
+  return other instanceof Weird;
 };
 
 /**
  * This method takes a Buffer object that will be linked to nodejs.org
  *
- * @param {Buffer} buf
+ * @param {Buffer|string} buf
+ * @param {number} [size=0] size
  * @returns {boolean} whether the other thing is a Klass
  */
-Klass.isBuffer = function (buf) {
+Klass.isBuffer = function (buf, size) {
   return other instanceof Buffer;
+};
+
+/**
+ * This method takes an array of buffers and counts them
+ *
+ * @param {Array<Buffer>} buffers
+ * @returns {number} how many
+ */
+Klass.isArrayOfBuffers = function (buffers) {
+  return buffers.length;
 };
 
 /**

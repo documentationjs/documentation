@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   concat = require('concat-stream'),
   path = require('path'),
   shallow = require('../../streams/input/shallow'),

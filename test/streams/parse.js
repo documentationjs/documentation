@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
   helpers = require('../helpers');
 

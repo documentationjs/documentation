@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
   outputHtml = require('../streams/output/html.js'),
@@ -51,6 +51,7 @@ test('parse', function (tt) {
       }));
     });
   });
+  tt.end();
 });
 
 test('formats', function (tt) {
@@ -66,6 +67,7 @@ test('formats', function (tt) {
       }));
     });
   });
+  tt.end();
 });
 
 test('bad input', function (tt) {
@@ -89,6 +91,7 @@ test('bad input', function (tt) {
         });
     });
   });
+  tt.end();
 });
 
 test('html', function (tt) {
@@ -114,8 +117,8 @@ test('html', function (tt) {
       }));
     });
   });
+  tt.end();
 });
-
 
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
@@ -148,8 +151,8 @@ test('markdown', function (tt) {
       }));
     });
   });
+  tt.end();
 });
-
 
 test('multi-file input', function (t) {
   documentation([

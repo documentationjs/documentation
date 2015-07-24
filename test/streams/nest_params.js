@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   nestParams = require('../../streams/nest_params'),

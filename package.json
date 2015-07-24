@@ -46,11 +46,9 @@
   "devDependencies": {
     "chdir": "0.0.0",
     "concat-stream": "^1.4.7",
-    "coveralls": "^2.11.2",
     "eslint": "^0.24.0",
     "glob": "^5.0.2",
-    "istanbul": "^0.3.7",
-    "prova": "^2.1.1"
+    "tap": "^1.3.1"
   },
   "keywords": [
     "documentation",
@@ -67,7 +65,7 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "cover": "istanbul cover prova test/*.js test/lib/*.js test/streams/*.js --dir $CIRCLE_ARTIFACTS && coveralls < $CIRCLE_ARTIFACTS/lcov.info",
-    "test": "eslint --no-eslintrc -c .eslintrc bin lib streams index.js test/*.js test/streams/*.js && prova test/*.js test/lib/*.js test/streams/*.js"
+    "lint": "eslint --no-eslintrc -c .eslintrc bin lib streams index.js test/*.js test/streams/*.js",
+    "test": "npm run lint && tap --coverage test/*.js test/lib/*.js test/streams/*.js"
   }
 }
