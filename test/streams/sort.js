@@ -13,16 +13,13 @@ test('sort stream alphanumeric', function (t) {
     .on('error', function (err) {
       throw err;
     })
-    .pipe(concat(function (deps) {
-      t.equal(
-        JSON.stringify(deps),
-        JSON.stringify([
-          {
-            tags: [
-            { title: 'name', 'name': 'apples' }]},
-            { tags: [{ title: 'name', name: 'bananas' }]},
-            { tags: [{ title: 'name', name: 'carrot' }]}])
-      );
+    .pipe(concat(function (docs) {
+      t.deepEqual(docs, [{
+        tags: [
+        { title: 'name', 'name': 'apples' }]},
+        { tags: [{ title: 'name', name: 'bananas' }]},
+        { tags: [{ title: 'name', name: 'carrot' }]}
+      ]);
       t.end();
     }));
 
@@ -49,10 +46,8 @@ test('sort stream with numbers', function (t) {
     .on('error', function (err) {
       throw err;
     })
-    .pipe(concat(function (deps) {
-      t.equal(
-        JSON.stringify(deps),
-        JSON.stringify([
+    .pipe(concat(function (docs) {
+      t.deepEqual(docs, [
           {
             'tags': [
               {
@@ -85,8 +80,7 @@ test('sort stream with numbers', function (t) {
               }
             ]
           }
-        ])
-      );
+        ]);
       t.end();
     }));
 
@@ -117,10 +111,8 @@ test('sort stream with explicit order for all', function (t) {
     .on('error', function (err) {
       throw err;
     })
-    .pipe(concat(function (deps) {
-      t.equal(
-        JSON.stringify(deps),
-        JSON.stringify([
+    .pipe(concat(function (docs) {
+      t.deepEqual(docs, [
           {
             'tags': [
               {
@@ -153,8 +145,7 @@ test('sort stream with explicit order for all', function (t) {
               }
             ]
           }
-        ])
-      );
+        ]);
       t.end();
     }));
 
@@ -185,10 +176,8 @@ test('sort stream with explicit order for some', function (t) {
     .on('error', function (err) {
       throw err;
     })
-    .pipe(concat(function (deps) {
-      t.equal(
-        JSON.stringify(deps),
-        JSON.stringify([
+    .pipe(concat(function (docs) {
+      t.deepEqual(docs, [
           {
             'tags': [
               {
@@ -221,8 +210,7 @@ test('sort stream with explicit order for some', function (t) {
               }
             ]
           }
-        ])
-      );
+        ]);
       t.end();
     }));
 
