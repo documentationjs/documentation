@@ -32,6 +32,33 @@ function getSortKey(comment, order) {
 }
 
 /**
+ * Sort two documentation objects, given an optional order object. Returns
+ * a numeric sorting value that is compatible with stream-sort.
+ *
+ * @param {Array<string>} order an array of namepaths that will be sorted
+ * in the order given.
+ * @param {Object} a documentation object
+ * @param {Object} b documentation object
+ * @return {number} sorting value
+ */
+function sortDocs(order, a, b) {
+  a = getSortKey(a, order);
+  b = getSortKey(b, order);
+
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a - b;
+  }
+  if (typeof a === 'number') {
+    return -1;
+  }
+  if (typeof b === 'number') {
+    return 1;
+  }
+
+  return a.localeCompare(b);
+}
+
+/**
  * Create a stream.Transform that sorts its input of comments
  * by the name tag, if any, and otherwise by filename.
  *
@@ -41,20 +68,5 @@ function getSortKey(comment, order) {
  * @return {stream.Transform} a transform stream
  */
 module.exports = function (order) {
-  return sort(function (a, b) {
-    a = getSortKey(a, order);
-    b = getSortKey(b, order);
-
-    if (typeof a === 'number' && typeof b === 'number') {
-      return a - b;
-    }
-    if (typeof a === 'number') {
-      return -1;
-    }
-    if (typeof b === 'number') {
-      return 1;
-    }
-
-    return a.localeCompare(b);
-  });
+  return sort(sortDocs.bind(undefined, order));
 };
