@@ -19,7 +19,8 @@ var yargs = require('yargs')
 
   .describe('lint', 'check output for common style and uniformity mistakes')
 
-  .describe('mdtemplate', 'markdown template: should be a file with Handlebars syntax')
+  .describe('t', 'specify a theme: this must be a valid theme module')
+  .alias('t', 'theme')
 
   .boolean('p')
   .describe('p', 'generate documentation tagged as private')
@@ -28,14 +29,21 @@ var yargs = require('yargs')
   .describe('name', 'project name. by default, inferred from package.json')
   .describe('version', 'project version. by default, inferred from package.json')
 
+  .boolean('shallow')
+  .describe('shallow', 'shallow mode turns off dependency resolution, ' +
+    'only processing the specified files (or the main script specified in package.json)')
+  .default('shallow', false)
+
   .boolean('polyglot')
-  .describe('polyglot', 'polyglot mode turns off dependency resolution and enables multi-language support. use this to document c++')
+  .describe('polyglot', 'polyglot mode turns off dependency resolution and ' +
+            'enables multi-language support. use this to document c++')
 
   .boolean('g')
   .describe('g', 'infer links to github in documentation')
   .alias('g', 'github')
 
-  .describe('o', 'output location. omit for stdout, otherwise is a filename for single-file outputs and a directory name for multi-file outputs like html')
+  .describe('o', 'output location. omit for stdout, otherwise is a filename ' +
+            'for single-file outputs and a directory name for multi-file outputs like html')
   .alias('o', 'output')
   .default('o', 'stdout')
 
@@ -70,19 +78,18 @@ if (argv._.length > 0) {
   }
 }
 
-try {
-
-  var formatterOptions = {
-    name: name,
-    version: version,
-    mdtemplate: argv.mdtemplate
-  };
-
-  var formatter = documentation.formats[argv.f](formatterOptions);
-} catch(e) {
+if (!documentation.formats[argv.f]) {
   yargs.showHelp();
   throw new Error('Formatter not found');
 }
+
+var formatterOptions = {
+  name: name,
+  version: version,
+  theme: argv.theme
+};
+
+var formatter = documentation.formats[argv.f](formatterOptions);
 
 if (argv.f === 'html' && argv.o === 'stdout') {
   yargs.showHelp();
@@ -102,7 +109,8 @@ var docStream = documentation(inputs, {
     private: argv.private,
     transform: transform,
     polyglot: argv.polyglot,
-    config: argv.config
+    config: argv.config,
+    shallow: argv.shallow
   })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
   .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))

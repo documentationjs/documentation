@@ -5,8 +5,8 @@ var doctrine = require('doctrine'),
   through = require('through2').obj,
   types = require('ast-types'),
   extend = require('extend'),
-  isJSDocComment = require('../lib/is_jsdoc_comment'),
-  error = require('../lib/error');
+  isJSDocComment = require('../../lib/is_jsdoc_comment'),
+  error = require('../../lib/error');
 
 /**
  * Comment-out a shebang line that may sit at the top of a file,
@@ -124,9 +124,9 @@ module.exports = function () {
           while (i < parsedComment.tags.length) {
             var tag = parsedComment.tags[i];
             if (tag.errors) {
-              tag.errors.forEach(function (err) {
-                console.error(error(tag, parsedComment, err));
-              });
+              for (var j = 0; j < tag.errors.length; j++) {
+                console.error(error(tag, parsedComment, tag.errors[j]));
+              }
               parsedComment.tags.splice(i, 1);
             } else {
               i++;

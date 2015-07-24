@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
   outputHtml = require('../streams/output/html.js'),
@@ -27,7 +27,9 @@ test('external modules option', function (t) {
   }).pipe(concat(function (result) {
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_external-deps-included.json');
-    if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+    if (UPDATE) {
+      fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+    }
     var expect = require(outputfile);
     t.deepEqual(result, expect);
     t.end();
@@ -40,13 +42,16 @@ test('parse', function (tt) {
       documentation([file]).pipe(concat(function (result) {
         normalize(result);
         var outputfile = file.replace('.input.js', '.output.json');
-        if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+        }
         var expect = require(outputfile);
         t.deepEqual(result, expect);
         t.end();
       }));
     });
   });
+  tt.end();
 });
 
 test('formats', function (tt) {
@@ -62,6 +67,7 @@ test('formats', function (tt) {
       }));
     });
   });
+  tt.end();
 });
 
 test('bad input', function (tt) {
@@ -74,7 +80,9 @@ test('bad input', function (tt) {
         .on('error', function (error) {
           delete error.stream;
           var outputfile = file.replace('.input.js', '.output.json');
-          if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
+          if (UPDATE) {
+            fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
+          }
           var expect = require(outputfile);
           t.deepEqual(error, expect);
         })
@@ -83,6 +91,7 @@ test('bad input', function (tt) {
         });
     });
   });
+  tt.end();
 });
 
 test('html', function (tt) {
@@ -99,15 +108,17 @@ test('html', function (tt) {
           return r.contents;
         }).join('\n');
         var outputfile = file.replace('.input.js', '.output.files');
-        if (UPDATE) fs.writeFileSync(outputfile, clean, 'utf8');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, clean, 'utf8');
+        }
         var expect = fs.readFileSync(outputfile, 'utf8');
         t.deepEqual(clean, expect);
         t.end();
       }));
     });
   });
+  tt.end();
 });
-
 
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
@@ -116,7 +127,9 @@ test('markdown', function (tt) {
         .pipe(markdown())
         .pipe(concat(function (result) {
         var outputfile = file.replace('.input.js', '.output.md');
-        if (UPDATE) fs.writeFileSync(outputfile, result, 'utf8');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, result, 'utf8');
+        }
         var expect = fs.readFileSync(outputfile, 'utf8');
         t.equal(result.toString(), expect);
         t.end();
@@ -129,15 +142,17 @@ test('markdown', function (tt) {
         }))
         .pipe(concat(function (result) {
         var outputfile = file.replace('.input.js', '.output.custom.md');
-        if (UPDATE) fs.writeFileSync(outputfile, result, 'utf8');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, result, 'utf8');
+        }
         var expect = fs.readFileSync(outputfile, 'utf8');
         t.equal(result.toString(), expect);
         t.end();
       }));
     });
   });
+  tt.end();
 });
-
 
 test('multi-file input', function (t) {
   documentation([
@@ -146,7 +161,9 @@ test('multi-file input', function (t) {
   ]).pipe(concat(function (result) {
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_multi-file-input.json');
-    if (UPDATE) fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+    if (UPDATE) {
+      fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+    }
     var expect = require(outputfile);
     t.deepEqual(result, expect);
     t.end();

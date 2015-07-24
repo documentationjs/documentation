@@ -1,10 +1,11 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   types = require('ast-types'),
-  n = types.namedTypes,
-  isJSDocComment = require('../lib/is_jsdoc_comment'),
+  isJSDocComment = require('../../lib/is_jsdoc_comment'),
   doctrine = require('doctrine');
+
+var n = types.namedTypes;
 
 /**
  * Create a transform stream that uses code structure to infer
@@ -14,17 +15,17 @@ var through = require('through'),
  * @name inferMembership
  * @returns {Stream.Transform} stream
  */
-module.exports = function () {
-  return through(function (comment) {
+module.exports = function inferMembership() {
+  return through2.obj(function (comment, enc, callback) {
     if (comment.tags.some(function (tag) {
       return tag.title === 'memberof';
     })) {
       this.push(comment);
-      return;
+      return callback();
     }
 
     if (findLendsTag(comment)) {
-      return;
+      return callback();
     }
 
     /**
@@ -182,5 +183,6 @@ module.exports = function () {
     }
 
     this.push(comment);
+    callback();
   });
 };

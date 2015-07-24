@@ -1,5 +1,4 @@
 
-
 /*
 
     Basscss v5.2.0
@@ -1296,14 +1295,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-subst,
 .hljs-request,
 .hljs-status {
-  color: #333;
-  font-weight: bold;
+  color: #1184CE;
 }
 
 .hljs-number,
 .hljs-hexcolor,
 .ruby .hljs-constant {
-  color: #008080;
+  color: #ed225d;
 }
 
 .hljs-string,
@@ -1311,7 +1309,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-phpdoc,
 .hljs-dartdoc,
 .tex .hljs-formula {
-  color: #d14;
+  color: #ed225d;
 }
 
 .hljs-title,
@@ -1393,7 +1391,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .documentation a {
-  color: #416381;
+  color: #1184CE;
 }
 
 .container-small {
@@ -1420,19 +1418,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .bg-cloudy {
-  background: rgba(230, 235, 237, 1);
-}
-
-.bg-cloudy-light {
-  background: rgba(230, 235, 237, 0.5);
-}
-
-.keyline-top {
-  border-top:5px solid #eee;
-}
-
-.keyline-top:first-child {
-  border-top:0;
+  background: #fafafa;
 }
 
 .force-inline * {
@@ -1447,9 +1433,27 @@ section:target {
   background: #fcfbf2;
 }
 
+.documentation,
+.documentation h1,
+.documentation h2,
+.documentation h3,
+.documentation h4,
+.documentation h5,
+.documentation h6,
+.documentation pre,
+.documentation code,
+.documentation samp {
+    font-family: 'Inconsolata', Consolas, 'Source Code Pro', monospace;
+}
+
+.documentation td,
+.documentation th {
+    padding: .25rem .25rem;
+}
+
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset='utf-8' />
   <title> </title>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -1460,7 +1464,7 @@ section:target {
     <div class='clearfix flex flex-stretch mxn2'>
       <div class='documentation-sidebar relative top-0 bottom-0 right-0 px2 py2 col-3 sm-show'>
         <div class='font-smaller fixed col-3 top-0 bottom-0 left-0 overflow-auto black bg-cloudy'>
-          <a href="/" class="h5 button block button-transparent"> </a>
+          <a href='/' class='h5 button block button-transparent'> </a>
           <div class='px2'>
               <a
                 href='#klass'
@@ -1473,6 +1477,11 @@ section:target {
                   <code>.MAGIC_NUMBER</code>
                 </a>
                 <a
+                  href='#klass/isarrayofbuffers'
+                  class='px1 regular block'>
+                  <code>.isArrayOfBuffers</code>
+                </a>
+                <a
                   href='#klass/isbuffer'
                   class='px1 regular block'>
                   <code>.isBuffer</code>
@@ -1481,6 +1490,11 @@ section:target {
                   href='#klass/isclass'
                   class='px1 regular block'>
                   <code>.isClass</code>
+                </a>
+                <a
+                  href='#klass/isweird'
+                  class='px1 regular block'>
+                  <code>.isWeird</code>
                 </a>
                 <a
                   href='#klass/getfoo'
@@ -1505,10 +1519,10 @@ section:target {
           </div>
         </div>
       </div>
-      <div class='sm-col  col-9  flex flex-column'>
+      <div class='sm-col  lg-col-9  flex flex-column'>
         <div class='flex-auto full-width'>
           <div class='px1'>
-<section id='klass'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass'>
       <code>
@@ -1525,7 +1539,7 @@ section:target {
 
 
       <div class='section-indent'>
-<section id='klass/magic-number'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/magic-number'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/magic-number'>
       <code>
@@ -1547,11 +1561,56 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/isbuffer'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/isarrayofbuffers'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/isarrayofbuffers'>
+      <code>
+        isArrayOfBuffers<span class='gray'>(buffers)</span>
+      </code>
+    </a>
+  </h3>
+  <p>This method takes an array of buffers and counts them</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>buffers</td>
+            <td>
+              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>>
+            </td>
+            <td></td>
+          </tr>
+      </table>
+    </p>
+
+
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>how many</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
+<section id='klass/isbuffer'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/isbuffer'>
       <code>
-        isBuffer<span class='gray'>(buf)</span>
+        isBuffer<span class='gray'>(buf, [size])</span>
       </code>
     </a>
   </h3>
@@ -1568,9 +1627,18 @@ section:target {
           <tr>
             <td>buf</td>
             <td>
-              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>
+              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
             </td>
             <td></td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>
+              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
+                (default <code>0</code>)
+            </td>
+            <td><p>size</p>
+</td>
           </tr>
       </table>
     </p>
@@ -1592,11 +1660,11 @@ section:target {
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/isclass'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/isclass'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/isclass'>
       <code>
-        isClass<span class='gray'>(other)</span>
+        isClass<span class='gray'>(other, also)</span>
       </code>
     </a>
   </h3>
@@ -1619,6 +1687,59 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
             </td>
             <td></td>
           </tr>
+          <tr>
+            <td>also</td>
+            <td>
+              Any
+            </td>
+            <td></td>
+          </tr>
+      </table>
+    </p>
+
+
+      <h4>Returns</h4>
+      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+      :
+      <span class='force-inline'>
+        <p>whether the other thing is a Klass</p>
+
+      </span>
+
+
+
+
+
+
+</section>
+      </div>
+      <div class='section-indent'>
+<section id='klass/isweird'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#klass/isweird'>
+      <code>
+        isWeird<span class='gray'>(other)</span>
+      </code>
+    </a>
+  </h3>
+  <p>A function that triggers the case where the autolinker doesn't find
+the referenced class type</p>
+
+
+    <p>
+      <table class='table-light overflow-hidden bg-cloudy-light'>
+        <thead>
+          <th class='col-3'>parameter</th>
+          <th class='col-3'>type</th>
+          <th class='col-6'>description</th>
+        </thead>
+          <tr>
+            <td>other</td>
+            <td>
+              <code>Weird</code>
+            </td>
+            <td></td>
+          </tr>
       </table>
     </p>
 
@@ -1640,7 +1761,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
       <div class='section-indent'>
-<section id='klass/getfoo'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/getfoo'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/getfoo'>
       <code>
@@ -1671,7 +1792,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
 </section>
       </div>
       <div class='section-indent'>
-<section id='klass/withoptions'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/withoptions'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/withoptions'>
       <code>
@@ -1724,7 +1845,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
       <div class='section-indent'>
-<section id='klass/event'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='klass/event'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#klass/event'>
       <code>
@@ -1747,7 +1868,7 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
       </div>
 
 </section>
-<section id='bar'class='mt2 mb2 py1 px2 keyline-top'>
+<section id='bar'class='mt4 mb4 px2'>
   <h3 class='regular'>
     <a class='black' href='#bar'>
       <code>

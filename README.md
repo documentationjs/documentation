@@ -1,22 +1,20 @@
 # documentation
 
-[![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation)
+[![Build Status](https://circleci.com/gh/documentationjs/documentation.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation) [![Coverage Status](https://coveralls.io/repos/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/r/documentationjs/documentation?branch=master)
+[![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 
-This would be a big one, we would need the whole town to pitch in.
-
-The mission is to create a **documentation generation system** that's
+A **documentation generation system** that's
 _beautiful_ by default, _flexible_ across formats and styles, and
 _powerful_ enough to support [JSDoc](http://usejsdoc.org/)'s advanced syntax.
-
-_We also have plenty of
-[issues](https://github.com/documentationjs/documentation/issues) that we'd
-love help with._
-
-## Completed Goals
 
 **ES5 and ES6 support of JavaScript, with support for other transpilers a possibility**
 
 Using [espree](https://github.com/eslint/espree), we have support for a wide range of [ES6 features](https://github.com/lukehoban/es6features).
+
+**Support for C++**
+
+You can use the `--polyglot` mode of documentationjs to document native node.js
+modules in JSDoc _within the C++ code that implements the feature_.
 
 **Support for following dependency trees**
 
@@ -29,7 +27,7 @@ referenced files and include all of their documentation.
 The `--github` option automatically permalinks documentation to the exact
 sections of code it refers to in a GitHub repository.
 
-[**Gulp integration**](https://github.com/documentationjs/gulp-documentation)
+**Gulp integration**
 
 The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
 lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
@@ -52,7 +50,7 @@ $ documentation -h
 Usage: documentation <command> [options]
 
 Options:
-  -f, --format   output format, of [json, md, html, docset]    [default: "json"]
+  -f, --format   output format, of [json, md, html]    [default: "json"]
   --lint         check output for common style and uniformity mistakes
   --mdtemplate   markdown template: should be a file with Handlebars syntax
   -p, --private  generate documentation tagged as private
@@ -66,13 +64,15 @@ Examples:
   documentation foo.js    parse documentation in a given file
 ```
 
-# Future Goals
+## [Contributing](CONTRIBUTING.md)
+
+_We have plenty of
+[issues](https://github.com/documentationjs/documentation/issues) that we'd
+love help with._
 
 * Robust and complete `JSDoc` support, including typedefs.
 * Strong support for HTML and Markdown output
 * Documentation coverage, statistics, and validation
-
-## [Contributing](CONTRIBUTING.md)
 
 documentation is an OPEN Open Source Project. This means that:
 

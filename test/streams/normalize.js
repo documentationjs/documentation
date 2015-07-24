@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   normalize = require('../../streams/normalize'),
   concat = require('concat-stream');
 

@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('prova'),
+var test = require('tap').test,
   concat = require('concat-stream'),
   sort = require('../../streams/sort'),
   stream = require('stream');
@@ -16,7 +16,12 @@ test('sort stream alphanumeric', function (t) {
     .pipe(concat(function (deps) {
       t.equal(
         JSON.stringify(deps),
-        '[{"tags":[{"title":"name","name":"apples"}]},{"tags":[{"title":"name","name":"bananas"}]},{"tags":[{"title":"name","name":"carrot"}]}]'
+        JSON.stringify([
+          {
+            tags: [
+            { title: 'name', 'name': 'apples' }]},
+            { tags: [{ title: 'name', name: 'bananas' }]},
+            { tags: [{ title: 'name', name: 'carrot' }]}])
       );
       t.end();
     }));
@@ -47,7 +52,40 @@ test('sort stream with numbers', function (t) {
     .pipe(concat(function (deps) {
       t.equal(
         JSON.stringify(deps),
-        '[{"tags":[{"title":"name","name":"10"}]},{"tags":[{"title":"name","name":"2"}]},{"tags":[{"title":"name","name":"apples"}]},{"tags":[{"title":"name","name":"carrot"}]}]'
+        JSON.stringify([
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '10'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '2'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'apples'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'carrot'
+              }
+            ]
+          }
+        ])
       );
       t.end();
     }));
@@ -82,7 +120,40 @@ test('sort stream with explicit order for all', function (t) {
     .pipe(concat(function (deps) {
       t.equal(
         JSON.stringify(deps),
-        '[{"tags":[{"title":"name","name":"apples"}]},{"tags":[{"title":"name","name":"2"}]},{"tags":[{"title":"name","name":"carrot"}]},{"tags":[{"title":"name","name":"10"}]}]'
+        JSON.stringify([
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'apples'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '2'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'carrot'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '10'
+              }
+            ]
+          }
+        ])
       );
       t.end();
     }));
@@ -117,7 +188,40 @@ test('sort stream with explicit order for some', function (t) {
     .pipe(concat(function (deps) {
       t.equal(
         JSON.stringify(deps),
-        '[{"tags":[{"title":"name","name":"carrot"}]},{"tags":[{"title":"name","name":"10"}]},{"tags":[{"title":"name","name":"2"}]},{"tags":[{"title":"name","name":"apples"}]}]'
+        JSON.stringify([
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'carrot'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '10'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': '2'
+              }
+            ]
+          },
+          {
+            'tags': [
+              {
+                'title': 'name',
+                'name': 'apples'
+              }
+            ]
+          }
+        ])
       );
       t.end();
     }));

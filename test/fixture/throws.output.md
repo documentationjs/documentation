@@ -16,7 +16,6 @@ var result = returnTwo(4);
 
 Returns `Number` numbertwo
 
-
 | type | description |
 | ---- | ----------- |
 | `Error` | if number is 3 |

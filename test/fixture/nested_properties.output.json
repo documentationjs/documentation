@@ -1,0 +1,133 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 1,
+        "name": "foo"
+      },
+      {
+        "title": "param",
+        "description": "some options",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "how much",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "options.much"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "how much",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "options.much"
+      },
+      {
+        "title": "param",
+        "description": "something else",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "bar"
+      },
+      {
+        "title": "returns",
+        "description": "foo something else",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 0
+        }
+      },
+      "file": "fixture/nested_properties.input.js"
+    },
+    "name": "foo",
+    "params": [
+      {
+        "title": "param",
+        "description": "some options",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "how much",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "options.much"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "something else",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "bar"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "foo something else",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      }
+    ]
+  }
+]

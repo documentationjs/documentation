@@ -26,6 +26,15 @@ is less structured and more focused on understanding internal code structure.
 * https://github.com/jdalton/docdown
 * https://github.com/tmcw/doxme
 * https://github.com/assemble/verb
+* https://github.com/videojs/doc-generator
+* https://github.com/daliwali/docchi
+* https://github.com/aef-/hambruger
+* https://github.com/llafuente/docr
+
+# JSDoc Parse APIs
+
+* https://github.com/wkeese/js-doc-parse
+* https://github.com/Constellation/doctrine
 
 ## React
 

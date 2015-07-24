@@ -1,65 +1,15 @@
 'use strict';
 
-var through = require('through'),
-  fs = require('fs'),
-  path = require('path'),
-  Handlebars = require('handlebars'),
+var through2 = require('through2'),
   extend = require('extend'),
-  formatType = require('./lib/markdown_format_type'),
-  inlineLex = require('jsdoc-inline-lex');
+  getTemplate = require('./lib/get_template'),
+  helpers = require('./lib/markdown_helpers'),
+  resolveTheme = require('./lib/resolve_theme'),
+  Handlebars = require('handlebars');
 
 /**
- * Format link & tutorial tags with simple code inline tags.
- *
- * @param {string} text input - typically a description
- * @returns {string} markdown-friendly output
- * @private
- * @example
- * formatInlineTags('{@link Foo}'); // "`Foo`"
- */
-function formatInlineTags(text) {
-  var output = '';
-  var tokens = inlineLex(text);
-
-  for (var i = 0; i < tokens.length; i++) {
-    if (tokens[i].type === 'text') {
-      output += tokens[i].capture[0];
-    } else {
-      output += '`' + tokens[i].capture[1] + '`';
-    }
-  }
-
-  return output;
-}
-
-
-/**
- * Format a parameter name. This is used in formatParameters
- * and just needs to be careful about differentiating optional
- * parameters
- *
- * @param {Object} param
- * @returns {String} formatted parameter representation.
- */
-function formatParameter(param) {
-  return (param.type && param.type.type === 'OptionalType') ?
-    '[' + param.name + ']' : param.name;
-}
-
-/**
- * Format the parameters of a function into a quickly-readable
- * summary that resembles how you would call the function
- * initially.
- */
-function formatParameters() {
-  if (!this.params) return '';
-  return '(' + this.params.map(function (param) {
-    return formatParameter(param);
-  }).join(', ') + ')';
-}
-
-/**
- * Create a transform stream that formats documentation as Markdown.
+ * Create a transform stream that formats documentation as
+ * [Markdown](http://daringfireball.net/projects/markdown/).
  * Receives parsed & pivoted stream of documentation data, and emits
  * strings of Markdown content.
  *
@@ -72,33 +22,15 @@ function formatParameters() {
 module.exports = function (opts) {
 
   var options = extend({}, {
-    template: path.resolve(path.join(__dirname, '../../share/markdown.hbs'))
+    theme: 'documentation-theme-default'
   }, opts);
+  var themeModule = resolveTheme(options.theme);
+  var template = getTemplate(Handlebars, themeModule, 'markdown.hbs');
 
-  var template = Handlebars
-    .compile(
-      fs.readFileSync(options.template, 'utf8'));
+  helpers(Handlebars);
 
-  function inlines(string) {
-    return new Handlebars.SafeString(formatInlineTags(string));
-  }
-
-  Handlebars.registerHelper('format_params', function (params) {
-    return new Handlebars.SafeString(formatParameters(params));
-  });
-
-  Handlebars.registerHelper('format_type', function (type) {
-    return new Handlebars.SafeString('`' + formatType(type) + '`');
-  });
-
-  Handlebars.registerHelper('format_description', function (desc) {
-    var singleLine = (desc || '').replace(/\n/g, ' ');
-    return inlines(singleLine);
-  });
-
-  Handlebars.registerHelper('inlines', inlines);
-
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     this.push(template(comment));
+    callback();
   });
 };

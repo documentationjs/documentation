@@ -20,7 +20,9 @@ function findGit(filename, relative) {
 function makeGetBase() {
   var base, root;
   return function (file, callback) {
-    if (base && root) return callback(base, root);
+    if (base && root) {
+      return callback(base, root);
+    }
     root = path.dirname(findGit(file));
     var cwd = { cwd: root };
     exec('git rev-parse HEAD', cwd, function (error, head, stderr) {

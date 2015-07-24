@@ -1,0 +1,83 @@
+[
+  {
+    "description": "Set the time",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 2,
+        "name": "setTime"
+      },
+      {
+        "title": "param",
+        "description": "the current time",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      },
+      {
+        "title": "memberof",
+        "description": "Foo",
+        "lineNumber": 4
+      },
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 5,
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 0
+        }
+      },
+      "file": "fixture/memberof-missing.input.js"
+    },
+    "name": "setTime",
+    "params": [
+      {
+        "title": "param",
+        "description": "the current time",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      }
+    ],
+    "memberof": "Foo",
+    "returns": [
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 5,
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      }
+    ]
+  }
+]

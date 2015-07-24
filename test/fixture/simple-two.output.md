@@ -16,4 +16,3 @@ var result = returnTwo(4);
 
 Returns `Number` numbertwo
 
-

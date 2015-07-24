@@ -1,7 +1,7 @@
 'use strict';
 
 var formatType = require('../../streams/output/lib/markdown_format_type.js'),
-  test = require('prova');
+  test = require('tap').test;
 
 test('formatType', function (t) {
   t.deepEqual(formatType(), '', 'null case');

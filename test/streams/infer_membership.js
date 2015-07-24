@@ -1,9 +1,9 @@
 'use strict';
 
-var test = require('prova'),
-  parse = require('../../streams/parse'),
+var test = require('tap').test,
+  parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
-  inferMembership = require('../../streams/infer_membership'),
+  inferMembership = require('../../streams/infer/membership'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {

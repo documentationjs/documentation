@@ -1,3 +1,5 @@
+'use strict';
+
 var sort = require('sort-stream');
 
 /**
@@ -18,7 +20,9 @@ module.exports = function (order) {
         break;
       }
     }
-    if (!key) key = comment.context.file;
+    if (!key) {
+      key = comment.context.file;
+    }
     return order.indexOf(key) > -1 ? order.indexOf(key) : key;
   }
 
@@ -26,12 +30,18 @@ module.exports = function (order) {
     a = getSortKey(a);
     b = getSortKey(b);
 
-    numa = typeof a === 'number';
-    numb = typeof b === 'number';
+    var numa = typeof a === 'number';
+    var numb = typeof b === 'number';
 
-    if (numa && numb) return a - b;
-    if (numa) return -1;
-    if (numb) return 1;
+    if (numa && numb) {
+      return a - b;
+    }
+    if (numa) {
+      return -1;
+    }
+    if (numb) {
+      return 1;
+    }
     return a.localeCompare(b);
   });
 };

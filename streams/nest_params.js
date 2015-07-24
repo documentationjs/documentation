@@ -1,10 +1,11 @@
 'use strict';
 
-var through = require('through'),
+var through2 = require('through2'),
   extend = require('extend');
 
 /**
- * Create a transform stream that nests [parameters with properties](http://usejsdoc.org/tags-param.html#parameters-with-properties).
+ * Create a transform stream that nests
+ * [parameters with properties](http://usejsdoc.org/tags-param.html#parameters-with-properties).
  *
  * A parameter `employee.name` will be attached to the parent parameter `employee` in
  * a `properties` array.
@@ -15,10 +16,10 @@ var through = require('through'),
  * @return {stream.Transform}
  */
 module.exports = function () {
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     if (!comment.params) {
       this.push(comment);
-      return;
+      return callback();
     }
 
     var result = extend({}, comment),
@@ -30,6 +31,14 @@ module.exports = function () {
       var parts = param.name.split(/(\[\])?\./);
       if (parts.length > 1) {
         var parent = index[parts[0]];
+        if (parent === undefined) {
+          console.error(
+            '@param %s\'s parent %s not found',
+            param.name,
+            parts[0]);
+          result.params.push(param);
+          return;
+        }
         parent.properties = parent.properties || [];
         parent.properties.push(param);
       } else {
@@ -38,5 +47,6 @@ module.exports = function () {
     });
 
     this.push(result);
+    callback();
   });
 };

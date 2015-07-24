@@ -1,9 +1,9 @@
 'use strict';
 /*eslint-disable no-unused-vars*/
-var test = require('prova'),
-  parse = require('../../streams/parse'),
+var test = require('tap').test,
+  parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
-  inferKind = require('../../streams/infer_kind'),
+  inferKind = require('../../streams/infer/kind'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {

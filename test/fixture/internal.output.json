@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "description": "I am in `external.input.js`.",
+    "tags": [
+      {
+        "title": "name",
+        "name": "foo"
+      },
+      {
+        "title": "kind",
+        "kind": "function"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 5,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 1
+        }
+      },
+      "file": "fixture/external.input.js",
+      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;"
+    },
+    "name": "foo",
+    "kind": "function"
+  }
+]

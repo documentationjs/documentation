@@ -1,7 +1,7 @@
 'use strict';
 
-var test = require('prova'),
-  parse = require('../../streams/parse'),
+var test = require('tap').test,
+  parse = require('../../streams/parsers/javascript'),
   flatten = require('../../streams/flatten'),
   nestParams = require('../../streams/nest_params'),
   helpers = require('../helpers');
@@ -50,6 +50,19 @@ test('nestParams - basic', function (t) {
     t.equal(result[0].params[0].properties.length, 2);
     t.equal(result[0].params[0].properties[0].name, 'foo.bar');
     t.equal(result[0].params[0].properties[1].name, 'foo.baz');
+    t.end();
+  });
+});
+
+test('nestParams - missing parent', function (t) {
+  evaluate(function () {
+    /**
+     * @param {string} foo.bar
+     */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].params.length, 1);
+    t.equal(result[0].params[0].name, 'foo.bar');
     t.end();
   });
 });

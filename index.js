@@ -7,13 +7,13 @@ var splicer = require('stream-splicer'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
-  parse = require('./streams/parse'),
-  inferName = require('./streams/infer_name'),
-  dependency = require('./streams/dependency'),
-  shallow = require('./streams/shallow'),
-  polyglot = require('./streams/polyglot'),
-  inferKind = require('./streams/infer_kind'),
-  inferMembership = require('./streams/infer_membership');
+  dependency = require('./streams/input/dependency'),
+  shallow = require('./streams/input/shallow'),
+  parse = require('./streams/parsers/javascript'),
+  polyglot = require('./streams/parsers/polyglot'),
+  inferName = require('./streams/infer/name'),
+  inferKind = require('./streams/infer/kind'),
+  inferMembership = require('./streams/infer/membership');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -30,6 +30,8 @@ var splicer = require('stream-splicer'),
  * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
  * a proper parser. This enables support of non-JavaScript languages but
  * reduces documentation's ability to infer structure of code.
+ * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
+ * even in JavaScript code. With the polyglot option set, this has no effect.
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
@@ -43,7 +45,7 @@ module.exports = function (indexes, options) {
       shallow(indexes),
       polyglot()
     ] : [
-      dependency(indexes, options),
+      (options.shallow ? shallow(indexes) : dependency(indexes, options)),
       filterJS(),
       parse(),
       inferName(),
@@ -59,4 +61,4 @@ module.exports = function (indexes, options) {
     filterAccess(options.private ? [] : undefined)]));
 };
 
-module.exports.formats = require('./formats.js');
+module.exports.formats = require('./streams/output/index');

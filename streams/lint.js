@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('through');
+var through2 = require('through2');
 var error = require('../lib/error');
 
 var CANON = [
@@ -30,7 +30,7 @@ var CANONICAL = CANON.reduce(function (memo, name) {
  */
 module.exports = function () {
 
-  return through(function (comment) {
+  return through2.obj(function (comment, enc, callback) {
     comment.tags.forEach(function (tag) {
       function nameInvariant(name) {
         if (CANONICAL_LOWER[name.toLowerCase()] &&
@@ -41,7 +41,9 @@ module.exports = function () {
       }
 
       function checkCanonical(type) {
-        if (!type) return;
+        if (!type) {
+          return;
+        }
         if (type.type === 'NameExpression') {
           nameInvariant(type.name);
         } else if (type.type === 'UnionType') {
@@ -60,5 +62,6 @@ module.exports = function () {
     });
 
     this.push(comment);
+    callback();
   });
 };

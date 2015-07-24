@@ -11,9 +11,11 @@
     "camelcase": 2,
     "comma-style": 2,
     "no-lonely-if": 2,
+    "max-len": [2, 120],
     "no-else-return": 2,
     "new-cap": 2,
     "no-empty": 2,
+    "consistent-return": 0,
     "no-new": 2,
     "key-spacing": 2,
     "no-multi-spaces": 2,
@@ -25,7 +27,7 @@
     "no-eq-null": 2,
     "quotes": [2, "single"],
     "indent": [2, 2],
-    "curly": 0,
+    "curly": 2,
     "no-shadow": 0
   },
   "env": {

@@ -1,7 +1,15 @@
-## 2.0.0 [wip]
+## 2.0.1
 
-* Removes `docset` support from documentation.js: this will be supported
-  by a 3rd party tool in the future
+* Fixes `@param` tags that refer to properties of unmentioned objects: these
+  will warn instead of crashing. For instance, `/** @param {boolean} foo.bar */`.
+* Expose `--shallow` option in CLI
+
+## 2.0.0
+
+* Breaking: Removes `docset` support from documentation.js: this will be supported
+  by a 3rd party tool in the future. This removal means that we no longer have
+  node-sqlite3 as a dependency, and documentation can be installed on systems
+  without a compile toolchain.
 * JSDoc parse errors are now printed to stderr.
 * Parameter tags that document sub-parameters, such as `@param {Type} options.option`,
   are now nested under their parent parameter.
