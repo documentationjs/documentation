@@ -8,7 +8,8 @@ var documentation = require('../'),
   vfs = require('vinyl-fs'),
 
   lint = require('../streams/lint.js'),
-  github = require('../streams/github.js');
+  github = require('../streams/github.js'),
+  loadConfig = require('../lib/load_config.js');
 
 var yargs = require('yargs')
   .usage('Usage: $0 <command> [options]')
@@ -46,6 +47,9 @@ var yargs = require('yargs')
             'for single-file outputs and a directory name for multi-file outputs like html')
   .alias('o', 'output')
   .default('o', 'stdout')
+
+  .describe('c', 'configuration file. an array defining explicit sort order')
+  .alias('c', 'config')
 
   .help('h')
   .alias('h', 'help')
@@ -93,10 +97,17 @@ if (argv.f === 'html' && argv.o === 'stdout') {
   throw new Error('The HTML output mode requires a destination directory set with -o');
 }
 
+var config = {};
+
+if (argv.config) {
+  config = loadConfig(argv.config);
+}
+
 var docStream = documentation(inputs, {
     private: argv.private,
     transform: transform,
     polyglot: argv.polyglot,
+    order: config.order || [],
     shallow: argv.shallow
   })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))

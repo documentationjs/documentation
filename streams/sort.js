@@ -3,23 +3,71 @@
 var sort = require('sort-stream');
 
 /**
- * Create a stream.Transform that sorts its input of comments
- * by the name tag, if any, and otherwise by filename.
- * @name sort
- * @return {stream.Transform} a transform stream
+ * Given a comment, get its sorting key: this is either the comment's
+ * name tag, or a hardcoded sorting index given by a user-provided
+ * `order` array.
+ *
+ * @param {Object} comment parsed documentation object
+ * @param {Array<string>} [order=[]] an optional list of namepaths
+ * @private
  */
-module.exports = function () {
-
-  function getSortKey(comment) {
-    for (var i = 0; i < comment.tags.length; i++) {
-      if (comment.tags[i].title === 'name') {
-        return comment.tags[i].name;
-      }
+function getSortKey(comment, order) {
+  var key;
+  for (var i = 0; i < comment.tags.length; i++) {
+    if (comment.tags[i].title === 'name') {
+      key = comment.tags[i].name;
+      break;
     }
-    return comment.context.file;
   }
 
-  return sort(function (a, b) {
-    return getSortKey(a).localeCompare(getSortKey(b));
-  });
+  if (!key) {
+    key = comment.context.file;
+  }
+
+  if (order && order.indexOf(key) !== -1) {
+    return order.indexOf(key);
+  }
+
+  return key;
+}
+
+/**
+ * Sort two documentation objects, given an optional order object. Returns
+ * a numeric sorting value that is compatible with stream-sort.
+ *
+ * @param {Array<string>} order an array of namepaths that will be sorted
+ * in the order given.
+ * @param {Object} a documentation object
+ * @param {Object} b documentation object
+ * @return {number} sorting value
+ * @private
+ */
+function sortDocs(order, a, b) {
+  a = getSortKey(a, order);
+  b = getSortKey(b, order);
+
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a - b;
+  }
+  if (typeof a === 'number') {
+    return -1;
+  }
+  if (typeof b === 'number') {
+    return 1;
+  }
+
+  return a.localeCompare(b);
+}
+
+/**
+ * Create a stream.Transform that sorts its input of comments
+ * by the name tag, if any, and otherwise by filename.
+ *
+ * @name sort
+ * @param {Array<string>} order an array of namepaths that will be sorted
+ * in the order given.
+ * @return {stream.Transform} a transform stream
+ */
+module.exports = function (order) {
+  return sort(sortDocs.bind(undefined, order));
 };

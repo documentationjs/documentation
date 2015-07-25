@@ -18,7 +18,6 @@ module.exports = function () {
         return hljs.highlight('js', example).value;
       })
     } : {};
-    this.push(extend({}, comment, highlighted));
-    callback();
+    callback(null, extend({}, comment, highlighted));
   });
 };

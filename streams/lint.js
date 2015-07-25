@@ -61,7 +61,6 @@ module.exports = function () {
       }
     });
 
-    this.push(comment);
-    callback();
+    callback(null, comment);
   });
 };

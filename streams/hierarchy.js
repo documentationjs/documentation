@@ -4,31 +4,31 @@ var through2 = require('through2');
 var error = require('../lib/error');
 
 /**
- * Infer a hierarchy of documentation from a stream of documentation
- * comments, emitting a single nested object.
+ * Add paths to each comment, making it possible to generate permalinks
+ * that differentiate between instance functions with the same name but
+ * different `@memberof` values.
  *
- * ```
- * Module
- *  Class
- *    Static methods
- *    Instance methods
- *    Events
- * ```
+ *     Person#say  // the instance method named "say."
+ *     Person.say  // the static method named "say."
+ *     Person~say  // the inner method named "say."
  *
- * @name hierarchy
- * @return {stream.Transform}
+ * @param {Object} comment the jsdoc comment
+ * @param {Array<string>} prefix an array of strings representing names
+ * @param {string} namepath the namepath so far
+ * @returns {undefined} changes its input by reference.
  */
-module.exports = function () {
-  var comments = [];
-  return through2.obj(function (comment, enc, callback) {
-    comments.push(comment);
-    callback();
-  }, function (callback) {
-    this.push(inferHierarchy(comments));
-    this.emit('end');
-    callback();
+function addPath(comment, prefix, namepath) {
+  comment.path = prefix.concat([comment.name]);
+  comment.members.instance.forEach(function (member) {
+    addPath(member, comment.path, comment.namepath);
   });
-};
+  comment.members.static.forEach(function (member) {
+    addPath(member, comment.path, namepath);
+  });
+  comment.events.forEach(function (member) {
+    addPath(member, comment.path, namepath);
+  });
+}
 
 /**
  * @param {Array<Object>} comments an array of parsed comments
@@ -88,31 +88,37 @@ function inferHierarchy(comments) {
   // so we reverse once more.
   comments.reverse();
 
-  /**
-   * Add paths to each comment, making it possible to generate permalinks
-   * that differentiate between instance functions with the same name but
-   * different `@memberof` values.
-   *
-   * @param {Object} comment the jsdoc comment
-   * @param {Array<String>} prefix an array of strings representing names
-   * @returns {undefined} changes its input by reference.
-   */
-  function addPath(comment, prefix) {
-    comment.path = prefix.concat([comment.name]);
-    comment.members.instance.forEach(function (member) {
-      addPath(member, comment.path);
-    });
-    comment.members.static.forEach(function (member) {
-      addPath(member, comment.path);
-    });
-    comment.events.forEach(function (member) {
-      addPath(member, comment.path);
-    });
-  }
-
   for (i = 0; i < comments.length; i++) {
-    addPath(comments[i], []);
+    addPath(comments[i], [], '');
   }
 
   return comments;
 }
+
+/**
+ * Infer a hierarchy of documentation from a stream of documentation
+ * comments, emitting a single nested object.
+ *
+ * ```
+ * Module
+ *   Class
+ *     Static methods
+ *     Instance methods
+ *     Events
+ * ```
+ *
+ * @return {stream.Transform}
+ */
+function hierarchy() {
+  var comments = [];
+  return through2.obj(function (comment, enc, callback) {
+    comments.push(comment);
+    callback();
+  }, function (callback) {
+    this.push(inferHierarchy(comments));
+    this.emit('end');
+    callback();
+  });
+}
+
+module.exports = hierarchy;
