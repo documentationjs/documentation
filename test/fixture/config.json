@@ -1,1 +1,3 @@
-["bananas", "carrots", "apples"]
+{
+  "order": ["bananas", "carrots", "apples"]
+}
