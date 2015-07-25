@@ -11,8 +11,8 @@ module.exports = {
   md: function (options) {
     options = options || {};
     return markdown({
-      theme: options.theme,
       name: options.name,
+      theme: options.theme,
       version: options.version
     });
   },

@@ -2,6 +2,8 @@
 
 var through2 = require('through2'),
   extend = require('extend'),
+  splicer = require('stream-splicer'),
+  hierarchy = require('../hierarchy'),
   getTemplate = require('./lib/get_template'),
   helpers = require('./lib/markdown_helpers'),
   resolveTheme = require('./lib/resolve_theme'),
@@ -29,8 +31,9 @@ module.exports = function (opts) {
 
   helpers(Handlebars);
 
-  return through2.obj(function (comment, enc, callback) {
-    this.push(template(comment));
-    callback();
+  var markdownStream = through2.obj(function (comment, enc, callback) {
+    return callback(null, template(comment));
   });
+
+  return splicer.obj([hierarchy(), markdownStream]);
 };

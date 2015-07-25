@@ -18,8 +18,7 @@ var through2 = require('through2'),
 module.exports = function () {
   return through2.obj(function (comment, enc, callback) {
     if (!comment.params) {
-      this.push(comment);
-      return callback();
+      return callback(null, comment);
     }
 
     var result = extend({}, comment),
@@ -46,7 +45,6 @@ module.exports = function () {
       }
     });
 
-    this.push(result);
-    callback();
+    callback(null, result);
   });
 };

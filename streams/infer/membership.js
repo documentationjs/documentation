@@ -8,112 +8,116 @@ var through2 = require('through2'),
 var n = types.namedTypes;
 
 /**
+ * Given a comment object, find and return the 'lends' tag it contains.
+ * @param {Object} comment
+ * @returns {Object|undefined} lends tag
+ */
+function findLendsTag(comment) {
+  for (var i = 0; i < comment.tags.length; i++) {
+    if (comment.tags[i].title === 'lends') {
+      return comment.tags[i];
+    }
+  }
+}
+
+function findLendsIdentifiers(node) {
+  if (!node || !node.leadingComments) {
+    return;
+  }
+
+  for (var i = 0; i < node.leadingComments.length; i++) {
+    var comment = node.leadingComments[i];
+    if (isJSDocComment(comment)) {
+      var lendsTag = findLendsTag(doctrine.parse(comment.value, { unwrap: true }));
+      if (lendsTag) {
+        return lendsTag.description.split('.');
+      }
+    }
+  }
+}
+
+/**
+ * Extract and return the chain of identifiers from the left hand side of expressions
+ * of the forms `Foo = ...`, `Foo.bar = ...`, `Foo.bar.baz = ...`, etc.
+ *
+ * @param {NodePath} path AssignmentExpression, MemberExpression, or Identifier
+ * @returns {Array<string>} identifiers
+ * @private
+ */
+function extractIdentifiers(path) {
+  var identifiers = [];
+
+  types.visit(path, {
+    visitNode: function () {
+      return false;
+    },
+
+    visitAssignmentExpression: function (path) {
+      this.traverse(path);
+    },
+
+    visitMemberExpression: function (path) {
+      this.traverse(path);
+    },
+
+    visitIdentifier: function (path) {
+      identifiers.push(path.node.name);
+      return false;
+    }
+  });
+
+  return identifiers;
+}
+
+/**
+ * Set `memberof` and `instance`/`static` tags on `comment` based on the
+ * array of `identifiers`. If the last element of the `identifiers` is
+ * `"prototype"`, it is assumed to be an instance member; otherwise static.
+ *
+ * @param {Object} comment comment for which to infer memberships
+ * @param {Array<string>} identifiers array of identifier names
+ * @returns {undefined} mutates `comment`
+ * @private
+ */
+function inferMembershipFromIdentifiers(comment, identifiers) {
+  if (identifiers[identifiers.length - 1] === 'prototype') {
+    comment.tags.push({
+      title: 'memberof',
+      description: identifiers.slice(0, -1).join('.')
+    });
+
+    comment.tags.push({
+      title: 'instance'
+    });
+  } else {
+    comment.tags.push({
+      title: 'memberof',
+      description: identifiers.join('.')
+    });
+
+    comment.tags.push({
+      title: 'static'
+    });
+  }
+}
+
+/**
  * Create a transform stream that uses code structure to infer
  * `memberof`, `instance`, and `static` tags from the placement of JSDoc
  * annotations within a file
  *
- * @name inferMembership
  * @returns {Stream.Transform} stream
  */
-module.exports = function inferMembership() {
+function inferMembership() {
   return through2.obj(function (comment, enc, callback) {
     if (comment.tags.some(function (tag) {
       return tag.title === 'memberof';
     })) {
-      this.push(comment);
-      return callback();
+      return callback(null, comment);
     }
 
     if (findLendsTag(comment)) {
       return callback();
-    }
-
-    /**
-     * Extract and return the chain of identifiers from the left hand side of expressions
-     * of the forms `Foo = ...`, `Foo.bar = ...`, `Foo.bar.baz = ...`, etc.
-     *
-     * @param {NodePath} path AssignmentExpression, MemberExpression, or Identifier
-     * @returns {Array<string>} identifiers
-     * @private
-     */
-    function extractIdentifiers(path) {
-      var identifiers = [];
-
-      types.visit(path, {
-        visitNode: function () {
-          return false;
-        },
-
-        visitAssignmentExpression: function (path) {
-          this.traverse(path);
-        },
-
-        visitMemberExpression: function (path) {
-          this.traverse(path);
-        },
-
-        visitIdentifier: function (path) {
-          identifiers.push(path.node.name);
-          return false;
-        }
-      });
-
-      return identifiers;
-    }
-
-    /**
-     * Set `memberof` and `instance`/`static` tags on `comment` based on the
-     * array of `identifiers`. If the last element of the `identifiers` is
-     * `"prototype"`, it is assumed to be an instance member; otherwise static.
-     *
-     * @param {Array<string>} identifiers array of identifier names
-     * @returns {undefined} mutates `comment`
-     * @private
-     */
-    function inferMembership(identifiers) {
-      if (identifiers[identifiers.length - 1] === 'prototype') {
-        comment.tags.push({
-          title: 'memberof',
-          description: identifiers.slice(0, -1).join('.')
-        });
-
-        comment.tags.push({
-          title: 'instance'
-        });
-      } else {
-        comment.tags.push({
-          title: 'memberof',
-          description: identifiers.join('.')
-        });
-
-        comment.tags.push({
-          title: 'static'
-        });
-      }
-    }
-
-    function findLendsTag(comment) {
-      for (var i = 0; i < comment.tags.length; i++) {
-        if (comment.tags[i].title === 'lends') {
-          return comment.tags[i];
-        }
-      }
-    }
-
-    function findLendsIdentifiers(node) {
-      if (!node || !node.leadingComments) {
-        return;
-      }
-
-      for (var i = 0; i < node.leadingComments.length; i++) {
-        var comment = node.leadingComments[i];
-        if (isJSDocComment(comment)) {
-          var lendsTag = findLendsTag(doctrine.parse(comment.value, { unwrap: true }));
-          if (lendsTag) {
-            return lendsTag.description.split('.');
-          }
-        }
-      }
     }
 
     var path = comment.context.ast;
@@ -143,7 +147,7 @@ module.exports = function inferMembership() {
     if (n.MemberExpression.check(path.node)) {
       identifiers = extractIdentifiers(path);
       if (identifiers.length >= 2) {
-        inferMembership(identifiers.slice(0, -1));
+        inferMembershipFromIdentifiers(comment, identifiers.slice(0, -1));
       }
     }
 
@@ -156,7 +160,7 @@ module.exports = function inferMembership() {
       identifiers = findLendsIdentifiers(path.parent.parent.node) ||
           findLendsIdentifiers(path.parent.parent.node.properties[0]);
       if (identifiers) {
-        inferMembership(identifiers);
+        inferMembershipFromIdentifiers(comment, identifiers);
       }
     }
 
@@ -169,7 +173,7 @@ module.exports = function inferMembership() {
         n.AssignmentExpression.check(path.parent.parent.parent.node)) {
       identifiers = extractIdentifiers(path.parent.parent.parent);
       if (identifiers.length >= 1) {
-        inferMembership(identifiers);
+        inferMembershipFromIdentifiers(comment, identifiers);
       }
     }
 
@@ -179,10 +183,11 @@ module.exports = function inferMembership() {
         n.ObjectExpression.check(path.parent.parent.node) &&
         n.VariableDeclarator.check(path.parent.parent.parent.node)) {
       identifiers = [path.parent.parent.parent.node.id.name];
-      inferMembership(identifiers);
+      inferMembershipFromIdentifiers(comment, identifiers);
     }
 
-    this.push(comment);
-    callback();
+    return callback(null, comment);
   });
-};
+}
+
+module.exports = inferMembership;

@@ -17,8 +17,7 @@ module.exports = function inferName() {
       // If this comment is already explicitly named, simply pass it
       // through the stream without doing any inference.
       if (comment.tags[i].title === 'name') {
-        this.push(comment);
-        return callback();
+        return callback(null, comment);
       }
 
       // If this comment has a @class, @event, or @typedef tag with a name,
@@ -33,8 +32,7 @@ module.exports = function inferName() {
         var value = explicitNameTags[title];
         if (comment.tags[i].title === title && comment.tags[i][value]) {
           comment.tags.push({ title: 'name', name: comment.tags[i][value] });
-          this.push(comment);
-          return callback();
+          return callback(null, comment);
         }
       }
     }
@@ -66,7 +64,6 @@ module.exports = function inferName() {
       }
     });
 
-    this.push(comment);
-    callback();
+    callback(null, comment);
   });
 };

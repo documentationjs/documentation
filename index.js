@@ -32,6 +32,8 @@ var splicer = require('stream-splicer'),
  * reduces documentation's ability to infer structure of code.
  * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
  * even in JavaScript code. With the polyglot option set, this has no effect.
+ * @param {Array<string|Object>} [options.order=[]] optional array that
+ * defines sorting order of documentation
  * @return {Object} stream of output
  */
 module.exports = function (indexes, options) {
@@ -54,7 +56,7 @@ module.exports = function (indexes, options) {
 
   return splicer.obj(
     inputStream.concat([
-    sort(options.config),
+    sort(options.order),
     normalize(),
     flatten(),
     nestParams(),

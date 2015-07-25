@@ -8,7 +8,8 @@ var documentation = require('../'),
   vfs = require('vinyl-fs'),
 
   lint = require('../streams/lint.js'),
-  github = require('../streams/github.js');
+  github = require('../streams/github.js'),
+  loadConfig = require('../lib/load_config.js');
 
 var yargs = require('yargs')
   .usage('Usage: $0 <command> [options]')
@@ -96,20 +97,17 @@ if (argv.f === 'html' && argv.o === 'stdout') {
   throw new Error('The HTML output mode requires a destination directory set with -o');
 }
 
-if (argv.config) {
-  if (!fs.existsSync(path.resolve(argv.config))) {
-    yargs.showHelp();
-    throw new Error('No config file was found at ' + argv.config);
-  }
+var config = {};
 
-  argv.config = JSON.parse(fs.readFileSync(path.resolve(argv.config)));
+if (argv.config) {
+  config = loadConfig(argv.config);
 }
 
 var docStream = documentation(inputs, {
     private: argv.private,
     transform: transform,
     polyglot: argv.polyglot,
-    config: argv.config,
+    order: config.order || [],
     shallow: argv.shallow
   })
   .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
