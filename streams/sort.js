@@ -40,6 +40,7 @@ function getSortKey(comment, order) {
  * @param {Object} a documentation object
  * @param {Object} b documentation object
  * @return {number} sorting value
+ * @private
  */
 function sortDocs(order, a, b) {
   a = getSortKey(a, order);
