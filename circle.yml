@@ -1,3 +1,0 @@
-test:
-  post:
-    - npm run cover

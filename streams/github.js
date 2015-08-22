@@ -3,19 +3,8 @@
 var through2 = require('through2');
 var exec = require('child_process').exec;
 var path = require('path');
-var fs = require('fs');
 var urlFromGit = require('github-url-from-git');
-
-function findGit(filename, relative) {
-  relative = relative || '.git';
-  var newPath = path.resolve(filename, relative);
-  if (fs.existsSync(newPath)) {
-    return newPath;
-  } else if (newPath === '/') {
-    return null;
-  }
-  return findGit(filename, '../' + relative);
-}
+var findGit = require('../lib/find_git');
 
 function makeGetBase() {
   var base, root;
