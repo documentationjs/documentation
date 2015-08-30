@@ -3,24 +3,15 @@
 var through2 = require('through2');
 var error = require('../lib/error');
 
-var CANON = [
-  'string',
-  'boolean',
-  'undefined',
-  'number',
-  'Array',
-  'Date',
-  'Object'];
-
-var CANONICAL_LOWER = CANON.map(function (name) {
-  return name.toLowerCase();
-}).reduce(function (memo, name) {
-  memo[name.toLowerCase()] = name; return memo;
-}, {});
-
-var CANONICAL = CANON.reduce(function (memo, name) {
-  memo[name] = true; return memo;
-}, {});
+var CANONICAL = {
+  'String': 'string',
+  'Boolean': 'boolean',
+  'Undefined': 'undefined',
+  'Number': 'number',
+  'array': 'Array',
+  'date': 'Date',
+  'object': 'Object'
+};
 
 /**
  * Create a transform stream that passively lints and checks documentation data.
@@ -33,10 +24,8 @@ module.exports = function () {
   return through2.obj(function (comment, enc, callback) {
     comment.tags.forEach(function (tag) {
       function nameInvariant(name) {
-        if (CANONICAL_LOWER[name.toLowerCase()] &&
-          !CANONICAL[name]) {
-          console.error(error(tag, comment, 'type %s found, %s is standard',
-            name, CANONICAL_LOWER[name.toLowerCase()]));
+        if (CANONICAL[name]) {
+          console.error(error(tag, comment, 'type %s found, %s is standard', name, CANONICAL[name]));
         }
       }
 
