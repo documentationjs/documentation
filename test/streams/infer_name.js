@@ -144,3 +144,14 @@ test('inferName - typedef', function (t) {
     t.end();
   });
 });
+
+test('inferName - callback', function (t) {
+  evaluate(function () {
+    /** @callback explicitCallback */
+    function implicitName() {}
+    return implicitName;
+  }, function (result) {
+    t.equal(result[ 0 ].name, 'explicitCallback');
+    t.end();
+  });
+});

@@ -20,12 +20,13 @@ module.exports = function inferName() {
         return callback(null, comment);
       }
 
-      // If this comment has a @class, @event, or @typedef tag with a name,
-      // use it.
+      // If this comment has a @class, @event, @typedef, or @callback
+      // tag with a name, use it.
       var explicitNameTags = {
         'class': 'name',
         'event': 'description',
-        'typedef': 'description'
+        'typedef': 'description',
+        'callback': 'description'
       };
 
       for (var title in explicitNameTags) {
