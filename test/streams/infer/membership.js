@@ -1,10 +1,10 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../streams/parsers/javascript'),
-  flatten = require('../../streams/flatten'),
-  inferMembership = require('../../streams/infer/membership'),
-  helpers = require('../helpers');
+  parse = require('../../../streams/parsers/javascript'),
+  flatten = require('../../../streams/flatten'),
+  inferMembership = require('../../../streams/infer/membership'),
+  helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
   helpers.evaluate([parse(), inferMembership(), flatten()], 'infer_membership.js', fn, callback);
