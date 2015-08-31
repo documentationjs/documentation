@@ -12,17 +12,7 @@ var sort = require('sort-stream');
  * @private
  */
 function getSortKey(comment, order) {
-  var key;
-  for (var i = 0; i < comment.tags.length; i++) {
-    if (comment.tags[i].title === 'name') {
-      key = comment.tags[i].name;
-      break;
-    }
-  }
-
-  if (!key) {
-    key = comment.context.file;
-  }
+  var key = comment.name || comment.context.file;
 
   if (order && order.indexOf(key) !== -1) {
     return order.indexOf(key);

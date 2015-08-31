@@ -56,11 +56,11 @@ module.exports = function (indexes, options) {
 
   return splicer.obj(
     inputStream.concat([
-    sort(options.order),
-    normalize(),
-    flatten(),
-    nestParams(),
-    filterAccess(options.private ? [] : undefined)]));
+      normalize(),
+      flatten(),
+      sort(options.order),
+      nestParams(),
+      filterAccess(options.private ? [] : undefined)]));
 };
 
 module.exports.formats = require('./streams/output/index');
