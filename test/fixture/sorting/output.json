@@ -1,12 +1,7 @@
 [
   {
     "description": "Bananas are yellow",
-    "tags": [
-      {
-        "title": "name",
-        "name": "bananas"
-      }
-    ],
+    "tags": [],
     "loc": {
       "start": {
         "line": 8,
@@ -36,12 +31,7 @@
   },
   {
     "description": "Carrots are awesome",
-    "tags": [
-      {
-        "title": "name",
-        "name": "carrots"
-      }
-    ],
+    "tags": [],
     "loc": {
       "start": {
         "line": 15,
@@ -71,12 +61,7 @@
   },
   {
     "description": "Apples are red",
-    "tags": [
-      {
-        "title": "name",
-        "name": "apples"
-      }
-    ],
+    "tags": [],
     "loc": {
       "start": {
         "line": 1,

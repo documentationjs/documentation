@@ -1,12 +1,7 @@
 [
   {
     "description": "I am in `external.input.js`.",
-    "tags": [
-      {
-        "title": "name",
-        "name": "foo"
-      }
-    ],
+    "tags": [],
     "loc": {
       "start": {
         "line": 5,

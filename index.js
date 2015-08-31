@@ -52,9 +52,9 @@ module.exports = function (indexes, options) {
     (options.shallow ? shallow(indexes) : dependency(indexes, options)),
     filterJS(),
     parse(),
-    inferName(),
     normalize(),
     flatten(),
+    inferName(),
     inferKind(),
     inferMembership()
   ];

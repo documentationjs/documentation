@@ -7,7 +7,7 @@ var test = require('tap').test,
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), inferName(), flatten()], 'infer_name.js', fn, callback);
+  helpers.evaluate([parse(), flatten(), inferName()], 'infer_name.js', fn, callback);
 }
 
 test('inferName - expression statement', function (t) {
@@ -119,6 +119,17 @@ test('inferName - class', function (t) {
     return ImplicitClass;
   }, function (result) {
     t.equal(result[ 0 ].name, 'ExplicitClass');
+    t.end();
+  });
+});
+
+test('inferName - anonymous class', function (t) {
+  evaluate(function () {
+    /** @class */
+    function ImplicitClass() {}
+    return ImplicitClass;
+  }, function (result) {
+    t.equal(result[ 0 ].name, 'ImplicitClass');
     t.end();
   });
 });

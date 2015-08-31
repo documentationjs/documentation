@@ -10,10 +10,6 @@
           "type": "NameExpression",
           "name": "Date"
         }
-      },
-      {
-        "title": "name",
-        "name": "getTheTime"
       }
     ],
     "loc": {
@@ -74,10 +70,6 @@
         "type": {
           "type": "UndefinedLiteral"
         }
-      },
-      {
-        "title": "name",
-        "name": "getTheTime"
       }
     ],
     "loc": {

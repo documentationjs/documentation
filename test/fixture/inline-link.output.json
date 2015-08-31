@@ -20,10 +20,6 @@
           "type": "NameExpression",
           "name": "number"
         }
-      },
-      {
-        "title": "name",
-        "name": "addOne"
       }
     ],
     "loc": {
@@ -97,10 +93,6 @@
           "type": "NameExpression",
           "name": "number"
         }
-      },
-      {
-        "title": "name",
-        "name": "exports"
       }
     ],
     "loc": {

@@ -12,30 +12,30 @@ var through2 = require('through2'),
  */
 module.exports = function inferName() {
   return through2.obj(function (comment, enc, callback) {
+    // If this comment is already explicitly named, simply pass it
+    // through the stream without doing any inference.
+    if (comment.name) {
+      return callback(null, comment);
+    }
 
-    for (var i = 0; i < comment.tags.length; i++) {
-      // If this comment is already explicitly named, simply pass it
-      // through the stream without doing any inference.
-      if (comment.tags[i].title === 'name') {
-        return callback(null, comment);
-      }
+    if (comment.event) {
+      comment.name = comment.event;
+      return callback(null, comment);
+    }
 
-      // If this comment has a @class, @event, @typedef, or @callback
-      // tag with a name, use it.
-      var explicitNameTags = {
-        'class': 'name',
-        'event': 'description',
-        'typedef': 'description',
-        'callback': 'description'
-      };
+    if (comment.callback) {
+      comment.name = comment.callback;
+      return callback(null, comment);
+    }
 
-      for (var title in explicitNameTags) {
-        var value = explicitNameTags[title];
-        if (comment.tags[i].title === title && comment.tags[i][value]) {
-          comment.tags.push({ title: 'name', name: comment.tags[i][value] });
-          return callback(null, comment);
-        }
-      }
+    if (comment.class && comment.class.name) {
+      comment.name = comment.class.name;
+      return callback(null, comment);
+    }
+
+    if (comment.typedef) {
+      comment.name = comment.typedef.name;
+      return callback(null, comment);
     }
 
     // The strategy here is to do a depth-first traversal of the AST,
@@ -46,10 +46,7 @@ module.exports = function inferName() {
     types.visit(comment.context.ast, {
       inferName: function (path, value) {
         if (value && value.name) {
-          comment.tags.push({
-            title: 'name',
-            name: value.name
-          });
+          comment.name = value.name;
           this.abort();
         } else {
           this.traverse(path);

@@ -52,10 +52,6 @@
         "lineNumber": 10,
         "type": null,
         "name": "Bar"
-      },
-      {
-        "title": "name",
-        "name": "exports"
       }
     ],
     "loc": {

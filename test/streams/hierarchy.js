@@ -12,8 +12,8 @@ var test = require('tap').test,
 function evaluate(fn, callback) {
   helpers.evaluate([
     parse(),
-    inferName(),
     flatten(),
+    inferName(),
     inferKind(),
     inferMembership(),
     hierarchy()

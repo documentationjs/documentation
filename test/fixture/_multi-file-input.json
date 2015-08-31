@@ -10,10 +10,6 @@
           "type": "NameExpression",
           "name": "Number"
         }
-      },
-      {
-        "title": "name",
-        "name": "exports"
       }
     ],
     "loc": {
@@ -82,10 +78,6 @@
         "title": "example",
         "description": "var result = returnTwo(4);\n// result is 6",
         "lineNumber": 5
-      },
-      {
-        "title": "name",
-        "name": "returnTwo"
       }
     ],
     "loc": {

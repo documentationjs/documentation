@@ -35,10 +35,6 @@
           "name": "Event"
         },
         "name": "originalEvent"
-      },
-      {
-        "title": "name",
-        "name": "Map#mousemove"
       }
     ],
     "loc": {

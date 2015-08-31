@@ -27,10 +27,6 @@
           ]
         },
         "name": "address"
-      },
-      {
-        "title": "name",
-        "name": "Address6"
       }
     ],
     "loc": {
