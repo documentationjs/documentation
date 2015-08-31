@@ -5,10 +5,6 @@
       {
         "title": "name",
         "name": "foo"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

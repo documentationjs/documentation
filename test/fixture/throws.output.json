@@ -38,10 +38,6 @@
       {
         "title": "name",
         "name": "returnTwo"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

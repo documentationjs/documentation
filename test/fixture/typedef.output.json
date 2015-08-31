@@ -36,10 +36,6 @@
           "name": "string"
         },
         "name": "prop2"
-      },
-      {
-        "title": "kind",
-        "kind": "typedef"
       }
     ],
     "loc": {

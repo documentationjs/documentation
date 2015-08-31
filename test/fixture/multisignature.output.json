@@ -14,10 +14,6 @@
       {
         "title": "name",
         "name": "getTheTime"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -82,10 +78,6 @@
       {
         "title": "name",
         "name": "getTheTime"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

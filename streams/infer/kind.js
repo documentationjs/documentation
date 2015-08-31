@@ -15,52 +15,40 @@ var kindShorthands = ['class', 'constant', 'event', 'external', 'file',
  */
 module.exports = function inferKind() {
   return through2.obj(function (comment, enc, callback) {
-    function hasTag(title) {
-      return comment.tags.some(function (tag) {
-        return tag.title === title;
-      });
+    if (comment.kind) {
+      return callback(null, comment);
     }
 
-    if (!hasTag('kind')) {
-      for (var i = 0; i < kindShorthands.length; i++) {
-        var kind = kindShorthands[i];
-        if (hasTag(kind)) {
-          comment.tags.push({
-            title: 'kind',
-            kind: kind
-          });
-          // only allow a comment to have one kind
-          this.push(comment);
-          return callback();
+    for (var i = 0; i < kindShorthands.length; i++) {
+      var kind = kindShorthands[i];
+      if (kind in comment) {
+        comment.kind = kind;
+        // only allow a comment to have one kind
+        return callback(null, comment);
+      }
+    }
+
+    types.visit(comment.context.ast, {
+      visitFunction: function (path) {
+        if (path.value && path.value.id && path.value.id.name && !!/^[A-Z]/.exec(path.value.id.name)) {
+          comment.kind = 'class';
+          this.abort();
+        } else {
+          comment.kind = 'function';
+          this.abort();
+        }
+      },
+
+      visitVariableDeclaration: function (path) {
+        if (path.value.kind === 'const') {
+          comment.kind = 'constant';
+          this.abort();
+        } else {
+          this.traverse(path);
         }
       }
+    });
 
-      types.visit(comment.context.ast, {
-        setKind: function (kind) {
-          comment.tags.push({
-            title: 'kind',
-            kind: kind
-          });
-          this.abort();
-        },
-
-        visitFunction: function (path) {
-          if (path.value && path.value.id && path.value.id.name && !!/^[A-Z]/.exec(path.value.id.name)) {
-            this.setKind('class');
-          } else {
-            this.setKind('function');
-          }
-        },
-
-        visitVariableDeclaration: function (path) {
-          if (path.value.kind === 'const') {
-            this.setKind('constant');
-          } else {
-            this.traverse(path);
-          }
-        }
-      });
-    }
     this.push(comment);
     callback();
   });

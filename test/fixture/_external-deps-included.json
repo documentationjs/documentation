@@ -14,10 +14,6 @@
       {
         "title": "name",
         "name": "exports"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -75,10 +71,6 @@
       {
         "title": "name",
         "name": "exports"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -127,10 +119,6 @@
       {
         "title": "name",
         "name": "foo"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

@@ -31,10 +31,6 @@
       {
         "title": "name",
         "name": "Address6"
-      },
-      {
-        "title": "kind",
-        "kind": "class"
       }
     ],
     "loc": {

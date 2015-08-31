@@ -14,10 +14,6 @@
       {
         "title": "name",
         "name": "exports"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

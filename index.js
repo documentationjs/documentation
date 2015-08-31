@@ -53,9 +53,9 @@ module.exports = function (indexes, options) {
     filterJS(),
     parse(),
     inferName(),
-    inferKind(),
     normalize(),
     flatten(),
+    inferKind(),
     inferMembership()
   ];
 

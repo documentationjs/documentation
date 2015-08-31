@@ -13,8 +13,8 @@ function evaluate(fn, callback) {
   helpers.evaluate([
     parse(),
     inferName(),
-    inferKind(),
     flatten(),
+    inferKind(),
     inferMembership(),
     hierarchy()
   ], 'hierarchy.js', fn, callback);

@@ -7,7 +7,7 @@ var test = require('tap').test,
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), inferKind(), flatten()], 'infer_kind.js', fn, callback);
+  helpers.evaluate([parse(), flatten(), inferKind()], 'infer_kind.js', fn, callback);
 }
 
 test('inferKind - explicit', function (t) {

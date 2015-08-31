@@ -5,10 +5,6 @@
       {
         "title": "name",
         "name": "bananas"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -44,10 +40,6 @@
       {
         "title": "name",
         "name": "carrots"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -83,10 +75,6 @@
       {
         "title": "name",
         "name": "apples"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

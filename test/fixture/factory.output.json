@@ -14,10 +14,6 @@
       {
         "title": "name",
         "name": "area"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -71,10 +67,6 @@
       {
         "title": "name",
         "name": "area"
-      },
-      {
-        "title": "kind",
-        "kind": "class"
       }
     ],
     "loc": {
@@ -119,10 +111,6 @@
       {
         "title": "name",
         "name": "data"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {

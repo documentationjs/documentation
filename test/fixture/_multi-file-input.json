@@ -14,10 +14,6 @@
       {
         "title": "name",
         "name": "exports"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
@@ -90,10 +86,6 @@
       {
         "title": "name",
         "name": "returnTwo"
-      },
-      {
-        "title": "kind",
-        "kind": "function"
       }
     ],
     "loc": {
