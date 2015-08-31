@@ -214,3 +214,13 @@ test('flatten - private', function (t) {
     t.end();
   });
 });
+
+test('flatten - lends', function (t) {
+  evaluate(function () {
+    /** @lends lendee */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].lends, 'lendee');
+    t.end();
+  });
+});

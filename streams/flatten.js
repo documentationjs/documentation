@@ -75,6 +75,9 @@ var flatteners = {
   },
   'private': function (result) {
     result.access = 'private';
+  },
+  'lends': function (result, tag) {
+    result.lends = tag.description;
   }
 };
 
@@ -90,6 +93,7 @@ var flatteners = {
  *  * `@classdesc`
  *  * `@kind`
  *  * `@access`
+ *  * `@lends`
  *
  * The following tags are flattened to a top-level array-valued property:
  *
