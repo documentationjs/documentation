@@ -156,13 +156,24 @@ var flatteners = {
  */
 module.exports = function () {
   return through2.obj(function (comment, enc, callback) {
-    var result = extend({}, comment);
-
-    comment.tags.forEach(function (tag) {
-      (flatteners[tag.title] || function () {})(result, tag);
-    });
-
-    this.push(result);
+    this.push(module.exports.one(comment));
     callback();
   });
+};
+
+/**
+ * Unstreamed version of `flatten`.
+ *
+ * @param {Object} comment - a doctrine comment object
+ * @returns {Object} an object conforming to the
+ * [documentation JSON API](https://github.com/documentationjs/api-json) schema
+ */
+module.exports.one = function (comment) {
+  var result = extend({}, comment);
+
+  comment.tags.forEach(function (tag) {
+    (flatteners[tag.title] || function () {})(result, tag);
+  });
+
+  return result;
 };
