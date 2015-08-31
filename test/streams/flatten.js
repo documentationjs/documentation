@@ -338,3 +338,13 @@ test('flatten - typedef', function (t) {
     t.end();
   });
 });
+
+test('flatten - callback', function (t) {
+  evaluate(function () {
+    /** @callback name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].callback, 'name');
+    t.end();
+  });
+});

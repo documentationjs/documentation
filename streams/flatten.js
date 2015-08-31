@@ -31,6 +31,7 @@ var flatteners = {
   'event': flattenDescription,
   'external': flattenDescription,
   'file': flattenDescription,
+  'callback': flattenDescription,
   'class': flattenTypedName,
   'constant': flattenTypedName,
   'member': flattenTypedName,
