@@ -50,15 +50,23 @@ $ documentation -h
 Usage: documentation <command> [options]
 
 Options:
-  -f, --format   output format, of [json, md, html]    [default: "json"]
-  --lint         check output for common style and uniformity mistakes
-  --mdtemplate   markdown template: should be a file with Handlebars syntax
-  -p, --private  generate documentation tagged as private
-  -g, --github   infer links to github in documentation
+  -f, --format   output format, of [json, md, html]            [default: "json"]
+  --lint         check output for common style and uniformity mistakes          
+  -t, --theme    specify a theme: this must be a valid theme module             
+  -p, --private  generate documentation tagged as private                       
+  --name         project name. by default, inferred from package.json           
+  --version      project version. by default, inferred from package.json        
+  --shallow      shallow mode turns off dependency resolution, only processing
+                 the specified files (or the main script specified in
+                 package.json)                                  [default: false]
+  --polyglot     polyglot mode turns off dependency resolution and enables
+                 multi-language support. use this to document c++               
+  -g, --github   infer links to github in documentation                         
   -o, --output   output location. omit for stdout, otherwise is a filename for
                  single-file outputs and a directory name for multi-file
                  outputs like html                           [default: "stdout"]
-  -h, --help     Show help
+  -c, --config   configuration file. an array defining explicit sort order      
+  -h, --help     Show help                                                      
 
 Examples:
   documentation foo.js    parse documentation in a given file
