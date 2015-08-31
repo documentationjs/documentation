@@ -14,8 +14,8 @@ function evaluate(fn, callback) {
     parse(),
     inferName(),
     inferKind(),
-    inferMembership(),
     flatten(),
+    inferMembership(),
     hierarchy()
   ], 'hierarchy.js', fn, callback);
 }

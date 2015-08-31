@@ -109,13 +109,6 @@
       {
         "title": "kind",
         "kind": "function"
-      },
-      {
-        "title": "memberof",
-        "description": "module"
-      },
-      {
-        "title": "static"
       }
     ],
     "loc": {

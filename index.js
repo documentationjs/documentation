@@ -44,20 +44,23 @@ module.exports = function (indexes, options) {
   }
 
   var inputStream = options.polyglot ? [
-      shallow(indexes),
-      polyglot()
-    ] : [
-      (options.shallow ? shallow(indexes) : dependency(indexes, options)),
-      filterJS(),
-      parse(),
-      inferName(),
-      inferKind(),
-      inferMembership()];
+    shallow(indexes),
+    polyglot(),
+    normalize(),
+    flatten()
+  ] : [
+    (options.shallow ? shallow(indexes) : dependency(indexes, options)),
+    filterJS(),
+    parse(),
+    inferName(),
+    inferKind(),
+    normalize(),
+    flatten(),
+    inferMembership()
+  ];
 
   return splicer.obj(
     inputStream.concat([
-      normalize(),
-      flatten(),
       sort(options.order),
       nestParams(),
       filterAccess(options.private ? [] : undefined)]));

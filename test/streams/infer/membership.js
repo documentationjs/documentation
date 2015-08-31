@@ -7,7 +7,7 @@ var test = require('tap').test,
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), inferMembership(), flatten()], 'infer_membership.js', fn, callback);
+  helpers.evaluate([parse(), flatten(), inferMembership()], 'infer_membership.js', fn, callback);
 }
 
 function Foo() {}

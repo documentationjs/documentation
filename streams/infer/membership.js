@@ -3,22 +3,10 @@
 var through2 = require('through2'),
   types = require('ast-types'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
+  flatten = require('../flatten'),
   doctrine = require('doctrine');
 
 var n = types.namedTypes;
-
-/**
- * Given a comment object, find and return the 'lends' tag it contains.
- * @param {Object} comment
- * @returns {Object|undefined} lends tag
- */
-function findLendsTag(comment) {
-  for (var i = 0; i < comment.tags.length; i++) {
-    if (comment.tags[i].title === 'lends') {
-      return comment.tags[i];
-    }
-  }
-}
 
 function findLendsIdentifiers(node) {
   if (!node || !node.leadingComments) {
@@ -28,9 +16,9 @@ function findLendsIdentifiers(node) {
   for (var i = 0; i < node.leadingComments.length; i++) {
     var comment = node.leadingComments[i];
     if (isJSDocComment(comment)) {
-      var lendsTag = findLendsTag(doctrine.parse(comment.value, { unwrap: true }));
-      if (lendsTag) {
-        return lendsTag.description.split('.');
+      var lends = flatten.one(doctrine.parse(comment.value, { unwrap: true })).lends;
+      if (lends) {
+        return lends.split('.');
       }
     }
   }
@@ -81,23 +69,11 @@ function extractIdentifiers(path) {
  */
 function inferMembershipFromIdentifiers(comment, identifiers) {
   if (identifiers[identifiers.length - 1] === 'prototype') {
-    comment.tags.push({
-      title: 'memberof',
-      description: identifiers.slice(0, -1).join('.')
-    });
-
-    comment.tags.push({
-      title: 'instance'
-    });
+    comment.memberof = identifiers.slice(0, -1).join('.');
+    comment.scope = 'instance';
   } else {
-    comment.tags.push({
-      title: 'memberof',
-      description: identifiers.join('.')
-    });
-
-    comment.tags.push({
-      title: 'static'
-    });
+    comment.memberof = identifiers.join('.');
+    comment.scope = 'static';
   }
 }
 
@@ -110,13 +86,11 @@ function inferMembershipFromIdentifiers(comment, identifiers) {
  */
 function inferMembership() {
   return through2.obj(function (comment, enc, callback) {
-    if (comment.tags.some(function (tag) {
-      return tag.title === 'memberof';
-    })) {
+    if (comment.memberof) {
       return callback(null, comment);
     }
 
-    if (findLendsTag(comment)) {
+    if (comment.lends) {
       return callback();
     }
 

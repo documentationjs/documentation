@@ -123,13 +123,6 @@
       {
         "title": "kind",
         "kind": "function"
-      },
-      {
-        "title": "memberof",
-        "description": "chart"
-      },
-      {
-        "title": "static"
       }
     ],
     "loc": {
