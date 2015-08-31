@@ -5,15 +5,15 @@ var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
   inferMembership = require('../../../lib/infer/membership')();
 
-function toComment(fn, filename) {
+function toComment(fn, file) {
   return parse({
-    file: filename,
+    file: file,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   });
 }
 
-function evaluate(fn, callback) {
-  return toComment(fn, callback).map(inferMembership);
+function evaluate(fn, file) {
+  return toComment(fn, file).map(inferMembership);
 }
 
 function Foo() {}
@@ -184,5 +184,72 @@ test('inferMembership', function (t) {
     return 0;
   })[0].memberof, undefined, 'inferMembership - lends applies only to following object');
 
+  t.end();
+});
+
+test('inferMembership - exports', function (t) {
+  var result = evaluate(function () {
+    /**
+     * @module mod
+     */
+    /** Test */
+    exports.foo = 1;
+  });
+
+  t.equal(result.length, 2);
+  t.equal(result[1].memberof, 'mod');
+  t.end();
+});
+
+test('inferMembership - module.exports', function (t) {
+  var result = evaluate(function () {
+    /**
+     * @module mod
+     */
+    /** Test */
+    module.exports.foo = 1;
+  });
+
+  t.equal(result.length, 2);
+  t.equal(result[1].memberof, 'mod');
+  t.end();
+});
+
+test('inferMembership - not module exports', function (t) {
+  var result = evaluate(function () {
+    /**
+     * @module mod
+     */
+    /** Test */
+    global.module.exports.foo = 1;
+  }, '/path/mod.js');
+
+  t.equal(result.length, 2);
+  t.notEqual(result[0].memberof, 'mod');
+  t.end();
+});
+
+test('inferMembership - anonymous module', function (t) {
+  var result = evaluate(function () {
+    /**
+     * @module
+     */
+    /** Test */
+    exports.foo = 1;
+  }, '/path/mod.js');
+
+  t.equal(result.length, 2);
+  t.equal(result[1].memberof, 'mod');
+  t.end();
+});
+
+test('inferMembership - no module', function (t) {
+  var result = evaluate(function () {
+    /** Test */
+    exports.foo = 1;
+  }, '/path/mod.js');
+
+  t.equal(result.length, 1);
+  t.equal(result[0].memberof, 'mod');
   t.end();
 });

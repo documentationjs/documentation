@@ -35,6 +35,7 @@
     "mdast-toc": "^1.1.0",
     "micromatch": "^2.1.6",
     "module-deps": "^3.7.3",
+    "parse-filepath": "^0.6.3",
     "remote-origin-url": "^0.4.0",
     "resolve": "^1.1.6",
     "slugg": "^0.1.2",
