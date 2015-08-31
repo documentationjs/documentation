@@ -60,6 +60,9 @@
       },
       "file": "fixture/type_application.input.js"
     },
+    "class": {
+      "name": "Address6"
+    },
     "params": [
       {
         "title": "param",

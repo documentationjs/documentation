@@ -66,6 +66,13 @@
       "file": "fixture/typedef.input.js"
     },
     "name": "MyType",
+    "typedef": {
+      "name": "MyType",
+      "type": {
+        "type": "NameExpression",
+        "name": "Object"
+      }
+    },
     "properties": [
       {
         "title": "property",

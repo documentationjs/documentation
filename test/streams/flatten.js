@@ -224,3 +224,117 @@ test('flatten - lends', function (t) {
     t.end();
   });
 });
+
+test('flatten - class', function (t) {
+  evaluate(function () {
+    /** @class name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].class.name, 'name');
+    t.end();
+  });
+});
+
+test('flatten - constant', function (t) {
+  evaluate(function () {
+    /** @constant name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].constant.name, 'name');
+    t.end();
+  });
+});
+
+test('flatten - event', function (t) {
+  evaluate(function () {
+    /** @event name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].event, 'name');
+    t.end();
+  });
+});
+
+test('flatten - external', function (t) {
+  evaluate(function () {
+    /** @external name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].external, 'name');
+    t.end();
+  });
+});
+
+test('flatten - file', function (t) {
+  evaluate(function () {
+    /** @file name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].file, 'name');
+    t.end();
+  });
+});
+
+test('flatten - function', function (t) {
+  evaluate(function () {
+    /** @function name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].function, 'name');
+    t.end();
+  });
+});
+
+test('flatten - member', function (t) {
+  evaluate(function () {
+    /** @member name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].member.name, 'name');
+    t.end();
+  });
+});
+
+test('flatten - mixin', function (t) {
+  evaluate(function () {
+    /** @mixin name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].mixin, 'name');
+    t.end();
+  });
+});
+
+test('flatten - module', function (t) {
+  evaluate(function () {
+    /** @module name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].module.name, 'name');
+    t.end();
+  });
+});
+
+test('flatten - namespace', function (t) {
+  evaluate(function () {
+    /** @namespace name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].namespace.name, 'name');
+    t.end();
+  });
+});
+
+test('flatten - typedef', function (t) {
+  evaluate(function () {
+    /** @typedef {Object} name */
+    return 0;
+  }, function (result) {
+    t.equal(result[0].typedef.name, 'name');
+    t.deepEqual(result[0].typedef.type, {
+      type: 'NameExpression',
+      name: 'Object'
+    });
+    t.end();
+  });
+});

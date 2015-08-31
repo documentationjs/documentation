@@ -68,6 +68,7 @@
       },
       "file": "fixture/event.input.js"
     },
+    "event": "Map#mousemove",
     "properties": [
       {
         "title": "property",

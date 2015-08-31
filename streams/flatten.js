@@ -3,16 +3,39 @@
 var through2 = require('through2'),
   extend = require('extend');
 
+function flattenName(result, tag) {
+  result[tag.title] = tag.name;
+}
+
+function flattenDescription(result, tag) {
+  result[tag.title] = tag.description;
+}
+
+function flattenTypedName(result, tag) {
+  result[tag.title] = {
+    name: tag.name
+  };
+
+  if (tag.type) {
+    result[tag.title].type = tag.type;
+  }
+}
+
 var flatteners = {
-  'name': function (result, tag) {
-    result.name = tag.name;
-  },
-  'memberof': function (result, tag) {
-    result.memberof = tag.description;
-  },
-  'classdesc': function (result, tag) {
-    result.classdesc = tag.description;
-  },
+  'name': flattenName,
+  'function': flattenName,
+  'mixin': flattenName,
+  'memberof': flattenDescription,
+  'classdesc': flattenDescription,
+  'lends': flattenDescription,
+  'event': flattenDescription,
+  'external': flattenDescription,
+  'file': flattenDescription,
+  'class': flattenTypedName,
+  'constant': flattenTypedName,
+  'member': flattenTypedName,
+  'module': flattenTypedName,
+  'namespace': flattenTypedName,
   'kind': function (result, tag) {
     result.kind = tag.kind;
   },
@@ -76,8 +99,11 @@ var flatteners = {
   'private': function (result) {
     result.access = 'private';
   },
-  'lends': function (result, tag) {
-    result.lends = tag.description;
+  'typedef': function (result, tag) {
+    result.typedef = {
+      name: tag.description,
+      type: tag.type
+    };
   }
 };
 
@@ -92,6 +118,17 @@ var flatteners = {
  *  * `@memberof`
  *  * `@classdesc`
  *  * `@kind`
+ *  * `@class`
+ *  * `@constant`
+ *  * `@event`
+ *  * `@external`
+ *  * `@file`
+ *  * `@function`
+ *  * `@member`
+ *  * `@mixin`
+ *  * `@module`
+ *  * `@namespace`
+ *  * `@typedef`
  *  * `@access`
  *  * `@lends`
  *
