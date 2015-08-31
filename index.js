@@ -1,9 +1,7 @@
 'use strict';
 
 var splicer = require('stream-splicer'),
-  flatten = require('./streams/flatten'),
   sort = require('./streams/sort'),
-  normalize = require('./streams/normalize'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
@@ -45,15 +43,11 @@ module.exports = function (indexes, options) {
 
   var inputStream = options.polyglot ? [
     shallow(indexes),
-    polyglot(),
-    normalize(),
-    flatten()
+    polyglot()
   ] : [
     (options.shallow ? shallow(indexes) : dependency(indexes, options)),
     filterJS(),
     parse(),
-    normalize(),
-    flatten(),
     inferName(),
     inferKind(),
     inferMembership()

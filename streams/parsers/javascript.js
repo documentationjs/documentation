@@ -1,12 +1,11 @@
 'use strict';
 
-var doctrine = require('doctrine'),
-  espree = require('espree'),
+var espree = require('espree'),
   through = require('through2').obj,
   types = require('ast-types'),
   extend = require('extend'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
-  error = require('../../lib/error');
+  parse = require('../../lib/parse');
 
 /**
  * Comment-out a shebang line that may sit at the top of a file,
@@ -103,49 +102,24 @@ module.exports = function () {
          * @return {undefined} this emits data
          */
         function parseComment(comment) {
-          var parsedComment = doctrine.parse(comment.value, {
-            // have doctrine itself remove the comment asterisks from content
-            unwrap: true,
-            // enable parsing of optional parameters in brackets, JSDoc3 style
-            sloppy: true,
-            // `recoverable: true` is the only way to get error information out
-            recoverable: true,
-            // include line numbers
-            lineNumbers: true
-          });
-
-          parsedComment.loc = comment.loc;
-          parsedComment.context = {
+          var context = {
             loc: extend({}, path.value.loc),
             file: data.file
           };
 
-          var i = 0;
-          while (i < parsedComment.tags.length) {
-            var tag = parsedComment.tags[i];
-            if (tag.errors) {
-              for (var j = 0; j < tag.errors.length; j++) {
-                console.error(error(tag, parsedComment, tag.errors[j]));
-              }
-              parsedComment.tags.splice(i, 1);
-            } else {
-              i++;
-            }
-          }
-
           // This is non-enumerable so that it doesn't get stringified in output; e.g. by the
           // documentation binary.
-          Object.defineProperty(parsedComment.context, 'ast', {
+          Object.defineProperty(context, 'ast', {
             enumerable: false,
             value: path
           });
 
           if (path.parent && path.parent.node) {
-            parsedComment.context.code = code.substring
+            context.code = code.substring
               .apply(code, path.parent.node.range);
           }
 
-          stream.push(parsedComment);
+          stream.push(parse(comment.value, comment.loc, context));
         }
 
         (path.value.leadingComments || [])

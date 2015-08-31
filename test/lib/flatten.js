@@ -2,11 +2,10 @@
 
 var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
-  flatten = require('../../streams/flatten'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), flatten()], 'flatten.js', fn, callback);
+  helpers.evaluate([parse()], 'flatten.js', fn, callback);
 }
 
 test('flatten - name', function (t) {

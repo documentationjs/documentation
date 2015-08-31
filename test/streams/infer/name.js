@@ -2,12 +2,11 @@
 
 var test = require('tap').test,
   parse = require('../../../streams/parsers/javascript'),
-  flatten = require('../../../streams/flatten'),
   inferName = require('../../../streams/infer/name'),
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), flatten(), inferName()], 'infer_name.js', fn, callback);
+  helpers.evaluate([parse(), inferName()], 'infer_name.js', fn, callback);
 }
 
 test('inferName - expression statement', function (t) {

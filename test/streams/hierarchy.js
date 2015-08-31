@@ -2,7 +2,6 @@
 
 var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
-  flatten = require('../../streams/flatten'),
   hierarchy = require('../../streams/hierarchy'),
   inferName = require('../../streams/infer/name'),
   inferKind = require('../../streams/infer/kind'),
@@ -12,7 +11,6 @@ var test = require('tap').test,
 function evaluate(fn, callback) {
   helpers.evaluate([
     parse(),
-    flatten(),
     inferName(),
     inferKind(),
     inferMembership(),

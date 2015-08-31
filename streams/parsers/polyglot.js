@@ -1,10 +1,10 @@
 'use strict';
 
-var doctrine = require('doctrine'),
-  getComments = require('get-comments'),
+var getComments = require('get-comments'),
   through = require('through2').obj,
   extend = require('extend'),
-  isJSDocComment = require('../../lib/is_jsdoc_comment');
+  isJSDocComment = require('../../lib/is_jsdoc_comment'),
+  parse = require('../../lib/parse');
 
 /**
  * Documentation stream parser: this receives a module-dep item,
@@ -20,15 +20,12 @@ module.exports = function () {
     getComments(data.source, true)
       .filter(isJSDocComment)
       .forEach(function (comment) {
-        var parsed = doctrine.parse(comment.value, {
-          unwrap: true,
-          sloppy: true
-        });
-        parsed.context = {
+        var context = {
           loc: extend({}, comment.loc),
           file: data.file
         };
-        this.push(parsed);
+
+        this.push(parse(comment.value, comment.loc, context));
       }.bind(this));
 
     callback();

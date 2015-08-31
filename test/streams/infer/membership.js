@@ -2,12 +2,11 @@
 
 var test = require('tap').test,
   parse = require('../../../streams/parsers/javascript'),
-  flatten = require('../../../streams/flatten'),
   inferMembership = require('../../../streams/infer/membership'),
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), flatten(), inferMembership()], 'infer_membership.js', fn, callback);
+  helpers.evaluate([parse(), inferMembership()], 'infer_membership.js', fn, callback);
 }
 
 function Foo() {}

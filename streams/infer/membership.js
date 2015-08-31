@@ -3,8 +3,7 @@
 var through2 = require('through2'),
   types = require('ast-types'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
-  flatten = require('../flatten'),
-  doctrine = require('doctrine');
+  parse = require('../../lib/parse');
 
 var n = types.namedTypes;
 
@@ -16,7 +15,7 @@ function findLendsIdentifiers(node) {
   for (var i = 0; i < node.leadingComments.length; i++) {
     var comment = node.leadingComments[i];
     if (isJSDocComment(comment)) {
-      var lends = flatten.one(doctrine.parse(comment.value, { unwrap: true })).lends;
+      var lends = parse(comment.value).lends;
       if (lends) {
         return lends.split('.');
       }

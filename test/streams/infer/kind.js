@@ -2,12 +2,11 @@
 /*eslint-disable no-unused-vars*/
 var test = require('tap').test,
   parse = require('../../../streams/parsers/javascript'),
-  flatten = require('../../../streams/flatten'),
   inferKind = require('../../../streams/infer/kind'),
   helpers = require('../../helpers');
 
 function evaluate(fn, callback) {
-  helpers.evaluate([parse(), flatten(), inferKind()], 'infer_kind.js', fn, callback);
+  helpers.evaluate([parse(), inferKind()], 'infer_kind.js', fn, callback);
 }
 
 test('inferKind - explicit', function (t) {
