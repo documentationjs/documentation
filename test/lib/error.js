@@ -1,7 +1,6 @@
 'use strict';
 
 var test = require('tap').test,
-  util = require('util'),
   path = require('path'),
   error = require('../../lib/error');
 
@@ -12,7 +11,7 @@ test('error', function (t) {
 
   var comment = {
     context: {
-      file: path.join(process.cwd(), 'file.js'),
+      file: path.join(process.cwd(), 'file.js')
     },
     loc: {
       start: {
