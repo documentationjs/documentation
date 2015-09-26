@@ -47,7 +47,8 @@ module.exports = function (indexes, options, callback) {
 
   return inputStream.pipe(concat(function (inputs) {
     try {
-      callback(null, inputs
+
+      var docs = inputs
         .filter(filterJS)
         .reduce(parse, [])
         .map(inferName)
@@ -55,17 +56,13 @@ module.exports = function (indexes, options, callback) {
         .map(inferMembership)
         .map(nestParams)
         .sort(sort.bind(undefined, options.order))
-        .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
+        .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
+
+      callback(null, docs);
     } catch(e) {
       callback(e);
     }
   }));
-  /*
-
-  return splicer.obj(
-    inputStream.concat([
-      filterAccess(options.private ? [] : undefined)]));
-      */
 };
 
 module.exports.formats = require('./streams/output/index');
