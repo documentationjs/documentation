@@ -1,7 +1,6 @@
 'use strict';
 
-var through2 = require('through2'),
-  types = require('ast-types'),
+var types = require('ast-types'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
   parse = require('../../lib/parse');
 
@@ -83,84 +82,82 @@ function inferMembershipFromIdentifiers(comment, identifiers) {
  *
  * @returns {Stream.Transform} stream
  */
-function inferMembership() {
-  return through2.obj(function (comment, enc, callback) {
-    if (comment.memberof) {
-      return callback(null, comment);
+function inferMembership(comment) {
+  if (comment.memberof) {
+    return comment;
+  }
+
+  if (comment.lends) {
+    return callback();
+  }
+
+  var path = comment.context.ast;
+  var identifiers;
+
+  /*
+   * Deal with an oddity of espree: the jsdoc comment is attached to a different
+   * node in the two expressions `a.b = c` vs `a.b = function () {}`.
+   */
+  if (n.ExpressionStatement.check(path.node) &&
+      n.AssignmentExpression.check(path.node.expression) &&
+      n.MemberExpression.check(path.node.expression.left)) {
+    path = path.get('expression').get('left');
+  }
+
+  /*
+   * Same as above but for `b: c` vs `b: function () {}`.
+   */
+  if (n.Property.check(path.node) &&
+      n.Identifier.check(path.node.key)) {
+    path = path.get('key');
+  }
+
+  // Foo.bar = ...;
+  // Foo.prototype.bar = ...;
+  // Foo.bar.baz = ...;
+  if (n.MemberExpression.check(path.node)) {
+    identifiers = extractIdentifiers(path);
+    if (identifiers.length >= 2) {
+      inferMembershipFromIdentifiers(comment, identifiers.slice(0, -1));
     }
+  }
 
-    if (comment.lends) {
-      return callback();
-    }
-
-    var path = comment.context.ast;
-    var identifiers;
-
-    /*
-     * Deal with an oddity of espree: the jsdoc comment is attached to a different
-     * node in the two expressions `a.b = c` vs `a.b = function () {}`.
-     */
-    if (n.ExpressionStatement.check(path.node) &&
-        n.AssignmentExpression.check(path.node.expression) &&
-        n.MemberExpression.check(path.node.expression.left)) {
-      path = path.get('expression').get('left');
-    }
-
-    /*
-     * Same as above but for `b: c` vs `b: function () {}`.
-     */
-    if (n.Property.check(path.node) &&
-        n.Identifier.check(path.node.key)) {
-      path = path.get('key');
-    }
-
-    // Foo.bar = ...;
-    // Foo.prototype.bar = ...;
-    // Foo.bar.baz = ...;
-    if (n.MemberExpression.check(path.node)) {
-      identifiers = extractIdentifiers(path);
-      if (identifiers.length >= 2) {
-        inferMembershipFromIdentifiers(comment, identifiers.slice(0, -1));
-      }
-    }
-
-    // /** @lends Foo */{ bar: ... }
-    if (n.Identifier.check(path.node) &&
-      n.Property.check(path.parent.node) &&
-      n.ObjectExpression.check(path.parent.parent.node)) {
-      // The @lends comment is sometimes attached to the first property rather than
-      // the object expression itself.
-      identifiers = findLendsIdentifiers(path.parent.parent.node) ||
-          findLendsIdentifiers(path.parent.parent.node.properties[0]);
-      if (identifiers) {
-        inferMembershipFromIdentifiers(comment, identifiers);
-      }
-    }
-
-    // Foo = { bar: ... };
-    // Foo.prototype = { bar: ... };
-    // Foo.bar = { baz: ... };
-    if (n.Identifier.check(path.node) &&
-        n.Property.check(path.parent.node) &&
-        n.ObjectExpression.check(path.parent.parent.node) &&
-        n.AssignmentExpression.check(path.parent.parent.parent.node)) {
-      identifiers = extractIdentifiers(path.parent.parent.parent);
-      if (identifiers.length >= 1) {
-        inferMembershipFromIdentifiers(comment, identifiers);
-      }
-    }
-
-    // var Foo = { bar: ... }
-    if (n.Identifier.check(path.node) &&
-        n.Property.check(path.parent.node) &&
-        n.ObjectExpression.check(path.parent.parent.node) &&
-        n.VariableDeclarator.check(path.parent.parent.parent.node)) {
-      identifiers = [path.parent.parent.parent.node.id.name];
+  // /** @lends Foo */{ bar: ... }
+  if (n.Identifier.check(path.node) &&
+    n.Property.check(path.parent.node) &&
+    n.ObjectExpression.check(path.parent.parent.node)) {
+    // The @lends comment is sometimes attached to the first property rather than
+    // the object expression itself.
+    identifiers = findLendsIdentifiers(path.parent.parent.node) ||
+        findLendsIdentifiers(path.parent.parent.node.properties[0]);
+    if (identifiers) {
       inferMembershipFromIdentifiers(comment, identifiers);
     }
+  }
 
-    return callback(null, comment);
-  });
+  // Foo = { bar: ... };
+  // Foo.prototype = { bar: ... };
+  // Foo.bar = { baz: ... };
+  if (n.Identifier.check(path.node) &&
+      n.Property.check(path.parent.node) &&
+      n.ObjectExpression.check(path.parent.parent.node) &&
+      n.AssignmentExpression.check(path.parent.parent.parent.node)) {
+    identifiers = extractIdentifiers(path.parent.parent.parent);
+    if (identifiers.length >= 1) {
+      inferMembershipFromIdentifiers(comment, identifiers);
+    }
+  }
+
+  // var Foo = { bar: ... }
+  if (n.Identifier.check(path.node) &&
+      n.Property.check(path.parent.node) &&
+      n.ObjectExpression.check(path.parent.parent.node) &&
+      n.VariableDeclarator.check(path.parent.parent.parent.node)) {
+    identifiers = [path.parent.parent.parent.node.id.name];
+    inferMembershipFromIdentifiers(comment, identifiers);
+  }
+
+  return comment;
 }
 
 module.exports = inferMembership;

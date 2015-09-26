@@ -41,6 +41,7 @@
     "through2": "^2.0.0",
     "through2-filter": "^2.0.0",
     "traverse": "^0.6.6",
+    "unstream": "^2.0.0",
     "vinyl": "^0.5.0",
     "vinyl-fs": "^1.0.0",
     "yargs": "^3.5.4"

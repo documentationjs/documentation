@@ -2,6 +2,8 @@
 
 var splicer = require('stream-splicer'),
   sort = require('./streams/sort'),
+  concat = require('concat-stream'),
+  unstream = require('unstream'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
@@ -45,19 +47,24 @@ module.exports = function (indexes, options) {
     shallow(indexes),
     polyglot()
   ] : [
-    (options.shallow ? shallow(indexes) : dependency(indexes, options)),
-    filterJS(),
-    parse(),
-    inferName(),
-    inferKind(),
-    inferMembership()
-  ];
+    (options.shallow ? shallow(indexes) : dependency(indexes, options))];
+
+  return splicer.obj(inputStream).pipe(unstream({ objectMode: true }, function (inputs, callback) {
+    callback(null, inputs
+      .filter(filterJS)
+      .reduce(parse, [])
+      .map(inferName)
+      .map(inferKind)
+      .map(inferMembership));
+  }));
+  /*
 
   return splicer.obj(
     inputStream.concat([
       sort(options.order),
       nestParams(),
       filterAccess(options.private ? [] : undefined)]));
+      */
 };
 
 module.exports.formats = require('./streams/output/index');

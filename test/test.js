@@ -36,6 +36,7 @@ test('external modules option', function (t) {
   }));
 });
 
+/*
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
@@ -178,3 +179,4 @@ test('accepts simple relative paths', function (t) {
     }));
   });
 });
+*/

@@ -1,7 +1,6 @@
 'use strict';
 
 var espree = require('espree'),
-  through = require('through2').obj,
   types = require('ast-types'),
   extend = require('extend'),
   isJSDocComment = require('../../lib/is_jsdoc_comment'),
@@ -80,55 +79,52 @@ var espreeConfig = {
  * @param {Object} data a chunk of data provided by module-deps
  * @return {undefined} this emits data
  */
-module.exports = function () {
-  return through(function (data, enc, callback) {
-    try {
-      var code = commentShebang(data.source),
-        ast = espree.parse(code, espreeConfig),
-        stream = this;
-    } catch(e) {
-      e.message += ' (' + data.file + ')';
-      this.emit('error', e);
-      this.emit('end');
-      return callback();
-    }
+module.exports = function (memo, data) {
+  try {
+    var code = commentShebang(data.source),
+      ast = espree.parse(code, espreeConfig);
+  } catch(e) {
+    // e.message += ' (' + data.file + ')';
+    // this.emit('error', e);
+    // this.emit('end');
+  }
 
-    types.visit(ast, {
-      visitNode: function (path) {
-        /**
-         * Parse a comment with doctrine and decorate the result with file position and code context.
-         *
-         * @param {Object} comment the current state of the parsed JSDoc comment
-         * @return {undefined} this emits data
-         */
-        function parseComment(comment) {
-          var context = {
-            loc: extend({}, path.value.loc),
-            file: data.file
-          };
+  types.visit(ast, {
+    visitNode: function (path) {
+      /**
+       * Parse a comment with doctrine and decorate the result with file position and code context.
+       *
+       * @param {Object} comment the current state of the parsed JSDoc comment
+       * @return {undefined} this emits data
+       */
+      function parseComment(comment) {
+        var context = {
+          loc: extend({}, path.value.loc),
+          file: data.file
+        };
 
-          // This is non-enumerable so that it doesn't get stringified in output; e.g. by the
-          // documentation binary.
-          Object.defineProperty(context, 'ast', {
-            enumerable: false,
-            value: path
-          });
+        // This is non-enumerable so that it doesn't get stringified in output; e.g. by the
+        // documentation binary.
+        Object.defineProperty(context, 'ast', {
+          enumerable: false,
+          value: path
+        });
 
-          if (path.parent && path.parent.node) {
-            context.code = code.substring
-              .apply(code, path.parent.node.range);
-          }
-
-          stream.push(parse(comment.value, comment.loc, context));
+        if (path.parent && path.parent.node) {
+          context.code = code.substring
+            .apply(code, path.parent.node.range);
         }
 
-        (path.value.leadingComments || [])
-          .filter(isJSDocComment)
-          .forEach(parseComment);
-
-        this.traverse(path);
+        memo.push(parse(comment.value, comment.loc, context));
       }
-    });
-    callback();
+
+      (path.value.leadingComments || [])
+        .filter(isJSDocComment)
+        .forEach(parseComment);
+
+      this.traverse(path);
+    }
   });
+
+  return memo;
 };
