@@ -1,12 +1,10 @@
 'use strict';
 
-var through2 = require('through2'),
-  File = require('vinyl'),
+var File = require('vinyl'),
   vfs = require('vinyl-fs'),
   Handlebars = require('handlebars'),
   extend = require('extend'),
   slugg = require('slugg'),
-  splicer = require('stream-splicer'),
   hierarchy = require('../hierarchy'),
   getTemplate = require('./lib/get_template'),
   resolveTheme = require('./lib/resolve_theme'),

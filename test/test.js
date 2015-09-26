@@ -6,7 +6,6 @@ var test = require('tape'),
   outputHtml = require('../streams/output/html.js'),
   glob = require('glob'),
   path = require('path'),
-  concat = require('concat-stream'),
   fs = require('fs'),
   chdir = require('chdir');
 
@@ -25,6 +24,7 @@ test('external modules option', function (t) {
   ], {
     external: '(external|external/node_modules/*)'
   }, function (err, result) {
+    t.ifError(err);
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_external-deps-included.json');
     if (UPDATE) {

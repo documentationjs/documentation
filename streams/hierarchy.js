@@ -1,6 +1,5 @@
 'use strict';
 
-var through2 = require('through2');
 var error = require('../lib/error');
 
 /**

@@ -1,8 +1,6 @@
 'use strict';
 
-var through2 = require('through2'),
-  extend = require('extend'),
-  splicer = require('stream-splicer'),
+var extend = require('extend'),
   getTemplate = require('./lib/get_template'),
   helpers = require('./lib/markdown_helpers'),
   resolveTheme = require('./lib/resolve_theme'),
@@ -18,21 +16,14 @@ var through2 = require('through2'),
  * @param {String} [opts.template='../../share/markdown.hbs'] Path to a Handlebars template file that
  * takes the place of the default.
  * @name markdown
- * @return {stream.Transform}
+ * @return {string}
  */
-module.exports = function (opts) {
-
+module.exports = function (comments, opts) {
   var options = extend({}, {
     theme: 'documentation-theme-default'
   }, opts);
   var themeModule = resolveTheme(options.theme);
   var template = getTemplate(Handlebars, themeModule, 'markdown.hbs');
-
   helpers(Handlebars);
-
-  var markdownStream = through2.obj(function (comment, enc, callback) {
-    return callback(null, template(comment));
-  });
-
-  return splicer.obj([markdownStream]);
+  return template(comments);
 };
