@@ -80,14 +80,8 @@ var espreeConfig = {
  * @return {undefined} this emits data
  */
 module.exports = function (memo, data) {
-  try {
-    var code = commentShebang(data.source),
-      ast = espree.parse(code, espreeConfig);
-  } catch(e) {
-    // e.message += ' (' + data.file + ')';
-    // this.emit('error', e);
-    // this.emit('end');
-  }
+  var code = commentShebang(data.source),
+    ast = espree.parse(code, espreeConfig);
 
   types.visit(ast, {
     visitNode: function (path) {

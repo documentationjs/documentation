@@ -24,7 +24,7 @@ test('external modules option', function (t) {
     path.join(__dirname, 'fixture', 'external.input.js')
   ], {
     external: '(external|external/node_modules/*)'
-  }).pipe(concat(function (result) {
+  }, function (err, result) {
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_external-deps-included.json');
     if (UPDATE) {
@@ -33,13 +33,14 @@ test('external modules option', function (t) {
     var expect = require(outputfile);
     t.deepEqual(result, expect);
     t.end();
-  }));
+  });
 });
 
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation([file]).pipe(concat(function (result) {
+      documentation([file], null, function (err, result) {
+        t.ifError(err);
         normalize(result);
         var outputfile = file.replace('.input.js', '.output.json');
         if (UPDATE) {
@@ -48,24 +49,23 @@ test('parse', function (tt) {
         var expect = require(outputfile);
         t.deepEqual(result, expect);
         t.end();
-      }));
+      });
     });
   });
   tt.end();
 });
 
-/*
 test('formats', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test('json', function (ttt) {
-      documentation([file]).pipe(documentation.formats.json()).pipe(concat(function (str) {
-        var result = JSON.parse(str);
+      documentation([file], null, function (err, result) {
+        ttt.ifError(err);
         normalize(result);
         var outputfile = file.replace('.input.js', '.output.json');
         var expect = require(outputfile);
         ttt.deepEqual(result, expect);
         ttt.end();
-      }));
+      });
     });
   });
   tt.end();
@@ -74,27 +74,23 @@ test('formats', function (tt) {
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation([file])
-        .on('data', function () {
-          t.fail('bad input should not yield data');
-        })
-        .on('error', function (error) {
-          delete error.stream;
-          var outputfile = file.replace('.input.js', '.output.json');
-          if (UPDATE) {
-            fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
-          }
-          var expect = require(outputfile);
-          t.deepEqual(error, expect);
-        })
-        .on('end', function () {
-          t.end();
-        });
+      documentation([file], null, function (error, res) {
+        t.equal(res, undefined);
+        delete error.stream;
+        var outputfile = file.replace('.input.js', '.output.json');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
+        }
+        var expect = require(outputfile);
+        t.deepEqual(error, expect);
+        t.end();
+      });
     });
   });
   tt.end();
 });
 
+/*
 test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {

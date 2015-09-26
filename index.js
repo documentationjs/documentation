@@ -1,8 +1,7 @@
 'use strict';
 
-var splicer = require('stream-splicer'),
-  sort = require('./streams/sort'),
-  unstream = require('unstream'),
+var sort = require('./streams/sort'),
+  concat = require('concat-stream'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
   filterJS = require('./streams/filter_js'),
@@ -35,29 +34,31 @@ var splicer = require('stream-splicer'),
  * defines sorting order of documentation
  * @return {Object} stream of output
  */
-module.exports = function (indexes, options) {
+module.exports = function (indexes, options, callback) {
   options = options || {};
 
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
 
-  var inputStream = options.polyglot ? [
-    shallow(indexes),
-    polyglot()
-  ] : [
-    (options.shallow ? shallow(indexes) : dependency(indexes, options))];
+  var inputStream = options.polyglot ?
+    shallow(indexes).pipe(polyglot()) :
+    (options.shallow ? shallow(indexes) : dependency(indexes, options));
 
-  return splicer.obj(inputStream).pipe(unstream({ objectMode: true }, function (inputs, callback) {
-    callback(null, inputs
-      .filter(filterJS)
-      .reduce(parse, [])
-      .map(inferName)
-      .map(inferKind)
-      .map(inferMembership)
-      .map(nestParams)
-      .sort(sort.bind(undefined, options.order))
-      .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
+  return inputStream.pipe(concat(function (inputs) {
+    try {
+      callback(null, inputs
+        .filter(filterJS)
+        .reduce(parse, [])
+        .map(inferName)
+        .map(inferKind)
+        .map(inferMembership)
+        .map(nestParams)
+        .sort(sort.bind(undefined, options.order))
+        .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
+    } catch(e) {
+      callback(e);
+    }
   }));
   /*
 
