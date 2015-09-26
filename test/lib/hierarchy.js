@@ -1,25 +1,28 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../streams/parsers/javascript'),
+  parse = require('../../lib/parsers/javascript'),
   hierarchy = require('../../lib/hierarchy'),
-  inferName = require('../../streams/infer/name'),
-  inferKind = require('../../streams/infer/kind'),
-  inferMembership = require('../../lib/infer/membership'),
-  helpers = require('../helpers');
+  inferName = require('../../lib/infer/name'),
+  inferKind = require('../../lib/infer/kind'),
+  inferMembership = require('../../lib/infer/membership');
+
+function toComments(fn, filename) {
+  return parse([], {
+    file: filename,
+    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+  });
+}
 
 function evaluate(fn, callback) {
-  helpers.evaluate([
-    parse(),
-    inferName(),
-    inferKind(),
-    inferMembership(),
-    hierarchy()
-  ], 'hierarchy.js', fn, callback);
+  return hierarchy(toComments(fn, callback)
+    .map(inferName)
+    .map(inferKind)
+    .map(inferMembership));
 }
 
 test('hierarchy', function (t) {
-  evaluate(function () {
+  var result = evaluate(function () {
     /**
      * Creates a new Klass
      * @class
@@ -58,25 +61,25 @@ test('hierarchy', function (t) {
      */
 
     return Klass;
-  }, function (result) {
-    t.equal(result.length, 1);
-
-    t.equal(result[0].members.static.length, 2);
-    t.deepEqual(result[0].members.static[0].path, ['Klass', 'isClass']);
-
-    t.equal(result[0].members.instance.length, 1);
-    t.deepEqual(result[0].members.instance[0].path, ['Klass', 'getFoo']);
-
-    t.equal(result[0].events.length, 1);
-    t.deepEqual(result[0].events[0].path, ['Klass', 'event']);
-
-    t.end();
   });
+
+  t.equal(result.length, 1);
+
+  t.equal(result[0].members.static.length, 2);
+  t.deepEqual(result[0].members.static[0].path, ['Klass', 'isClass']);
+
+  t.equal(result[0].members.instance.length, 1);
+  t.deepEqual(result[0].members.instance[0].path, ['Klass', 'getFoo']);
+
+  t.equal(result[0].events.length, 1);
+  t.deepEqual(result[0].events[0].path, ['Klass', 'event']);
+
+  t.end();
+
 });
 
 test('hierarchy - missing memberof', function (t) {
-  evaluate(function () {
-
+  var result = evaluate(function () {
     /**
      * Get foo
      * @memberof DoesNotExist
@@ -87,10 +90,9 @@ test('hierarchy - missing memberof', function (t) {
     }
 
     getFoo();
-
-  }, function (result, errors) {
-    t.equal(result.length, 1);
-    t.equal(errors.length, 1);
-    t.end();
   });
+
+  t.equal(result.length, 1);
+  t.equal(errors.length, 1);
+  t.end();
 });
