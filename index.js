@@ -2,16 +2,16 @@
 
 var sort = require('./lib/sort'),
   concat = require('concat-stream'),
-  nestParams = require('./streams/nest_params'),
+  nestParams = require('./lib/nest_params'),
   filterAccess = require('./lib/filter_access'),
   filterJS = require('./lib/filter_js'),
   dependency = require('./streams/input/dependency'),
   shallow = require('./streams/input/shallow'),
-  parse = require('./streams/parsers/javascript'),
-  polyglot = require('./streams/parsers/polyglot'),
+  parse = require('./lib/parsers/javascript'),
+  polyglot = require('./lib/parsers/polyglot'),
   inferName = require('./lib/infer/name'),
-  inferKind = require('./streams/infer/kind'),
-  inferMembership = require('./streams/infer/membership');
+  inferKind = require('./lib/infer/kind'),
+  inferMembership = require('./lib/infer/membership');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc

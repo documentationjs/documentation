@@ -2,7 +2,7 @@
 
 var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
-  nestParams = require('../../streams/nest_params'),
+  nestParams = require('../../lib/nest_params'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {

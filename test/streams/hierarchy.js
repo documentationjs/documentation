@@ -2,10 +2,10 @@
 
 var test = require('tap').test,
   parse = require('../../streams/parsers/javascript'),
-  hierarchy = require('../../streams/hierarchy'),
+  hierarchy = require('../../lib/hierarchy'),
   inferName = require('../../streams/infer/name'),
   inferKind = require('../../streams/infer/kind'),
-  inferMembership = require('../../streams/infer/membership'),
+  inferMembership = require('../../lib/infer/membership'),
   helpers = require('../helpers');
 
 function evaluate(fn, callback) {
