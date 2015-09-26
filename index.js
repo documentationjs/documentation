@@ -1,6 +1,6 @@
 'use strict';
 
-var sort = require('./streams/sort'),
+var sort = require('./lib/sort'),
   concat = require('concat-stream'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./lib/filter_access'),
