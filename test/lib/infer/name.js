@@ -1,44 +1,40 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../../streams/parsers/javascript'),
-  inferName = require('../../../streams/infer/name'),
-  helpers = require('../../helpers');
+  parse = require('../../../lib/parsers/javascript'),
+  inferName = require('../../../lib/infer/name');
 
-function evaluate(fn, callback) {
-  helpers.evaluate([parse(), inferName()], 'infer_name.js', fn, callback);
+function toComment(fn, filename) {
+  return parse([], {
+    file: filename,
+    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+  })[0];
 }
 
-test('inferName - expression statement', function (t) {
-  evaluate(function () {
+function evaluate(fn, callback) {
+  return inferName(toComment(fn, callback));
+}
+
+test('inferName', function (t) {
+  t.equal(evaluate(function () {
     // ExpressionStatement (comment attached here)
     //   AssignmentExpression
     //     MemberExpression
     //     Identifier
     /** Test */
     exports.name = test;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'expression statement');
 
-test('inferName - expression statement, function', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     // ExpressionStatement
     //   AssignmentExpression
     //     MemberExpression (comment attached here)
     //     FunctionExpression
     /** Test */
     exports.name = function () {};
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'expression statement, function');
 
-test('inferName - property', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     exports = {
       // Property (comment attached here)
       //   Identifier
@@ -46,14 +42,9 @@ test('inferName - property', function (t) {
       /** Test */
       name: test
     };
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'property');
 
-test('inferName - property, function', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     exports = {
       // Property
       //   Identifier (comment attached here)
@@ -61,107 +52,61 @@ test('inferName - property, function', function (t) {
       /** Test */
       name: function () {}
     };
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'property, function');
 
-test('inferName - function declaration', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** Test */
     function name() {}
     return name;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'function declaration');
 
-test('inferName - anonymous function expression', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** Test */
     var name = function () {};
     return name;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'anonymous function expression');
 
-test('inferName - named function expression', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** Test */
     var name = function name2() {};
     return name;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'name');
-    t.end();
-  });
-});
+  }).name, 'name', 'named function expression');
 
-test('inferName - explicit name', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @name explicitName */
     function implicitName() {}
     return implicitName;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'explicitName');
-    t.end();
-  });
-});
+  }).name, 'explicitName', 'explicit name');
 
-test('inferName - class', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @class ExplicitClass */
     function ImplicitClass() {}
     return ImplicitClass;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'ExplicitClass');
-    t.end();
-  });
-});
+  }).name, 'ExplicitClass', 'explicit class');
 
-test('inferName - anonymous class', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @class */
     function ImplicitClass() {}
     return ImplicitClass;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'ImplicitClass');
-    t.end();
-  });
-});
+  }).name, 'ImplicitClass', 'anonymous class');
 
-test('inferName - event', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @event explicitEvent */
     function implicitName() {}
     return implicitName;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'explicitEvent');
-    t.end();
-  });
-});
+  }).name, 'explicitEvent', 'explicitEvent');
 
-test('inferName - typedef', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @typedef {Object} ExplicitTypedef */
     function implicitName() {}
     return implicitName;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'ExplicitTypedef');
-    t.end();
-  });
-});
+  }).name, 'ExplicitTypedef', 'ExplicitTypedef');
 
-test('inferName - callback', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @callback explicitCallback */
     function implicitName() {}
     return implicitName;
-  }, function (result) {
-    t.equal(result[ 0 ].name, 'explicitCallback');
-    t.end();
-  });
+  }).name, 'explicitCallback', 'explicitCallback');
+
+  t.end();
 });
