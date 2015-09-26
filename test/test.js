@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tap').test,
+var test = require('tape'),
   documentation = require('../'),
   markdown = require('../streams/output/markdown.js'),
   outputHtml = require('../streams/output/html.js'),
@@ -36,7 +36,6 @@ test('external modules option', function (t) {
   }));
 });
 
-/*
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
@@ -55,6 +54,7 @@ test('parse', function (tt) {
   tt.end();
 });
 
+/*
 test('formats', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test('json', function (ttt) {

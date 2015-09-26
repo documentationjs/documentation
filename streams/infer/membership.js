@@ -88,7 +88,7 @@ function inferMembership(comment) {
   }
 
   if (comment.lends) {
-    return callback();
+    return comment;
   }
 
   var path = comment.context.ast;

@@ -1,7 +1,5 @@
 'use strict';
 
-var sort = require('sort-stream');
-
 /**
  * Given a comment, get its sorting key: this is either the comment's
  * name tag, or a hardcoded sorting index given by a user-provided
@@ -32,7 +30,7 @@ function getSortKey(comment, order) {
  * @return {number} sorting value
  * @private
  */
-function sortDocs(order, a, b) {
+module.exports = function sortDocs(order, a, b) {
   a = getSortKey(a, order);
   b = getSortKey(b, order);
 
@@ -47,17 +45,4 @@ function sortDocs(order, a, b) {
   }
 
   return a.localeCompare(b);
-}
-
-/**
- * Create a stream.Transform that sorts its input of comments
- * by the name tag, if any, and otherwise by filename.
- *
- * @name sort
- * @param {Array<string>} order an array of namepaths that will be sorted
- * in the order given.
- * @return {stream.Transform} a transform stream
- */
-module.exports = function (order) {
-  return sort(sortDocs.bind(undefined, order));
 };

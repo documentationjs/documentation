@@ -2,7 +2,6 @@
 
 var splicer = require('stream-splicer'),
   sort = require('./streams/sort'),
-  concat = require('concat-stream'),
   unstream = require('unstream'),
   nestParams = require('./streams/nest_params'),
   filterAccess = require('./streams/filter_access'),
@@ -55,14 +54,15 @@ module.exports = function (indexes, options) {
       .reduce(parse, [])
       .map(inferName)
       .map(inferKind)
-      .map(inferMembership));
+      .map(inferMembership)
+      .map(nestParams)
+      .sort(sort.bind(undefined, options.order))
+      .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
   }));
   /*
 
   return splicer.obj(
     inputStream.concat([
-      sort(options.order),
-      nestParams(),
       filterAccess(options.private ? [] : undefined)]));
       */
 };
