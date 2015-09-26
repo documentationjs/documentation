@@ -95,30 +95,4 @@ function inferHierarchy(comments) {
   return comments;
 }
 
-/**
- * Infer a hierarchy of documentation from a stream of documentation
- * comments, emitting a single nested object.
- *
- * ```
- * Module
- *   Class
- *     Static methods
- *     Instance methods
- *     Events
- * ```
- *
- * @return {stream.Transform}
- */
-function hierarchy() {
-  var comments = [];
-  return through2.obj(function (comment, enc, callback) {
-    comments.push(comment);
-    callback();
-  }, function (callback) {
-    this.push(inferHierarchy(comments));
-    this.emit('end');
-    callback();
-  });
-}
-
-module.exports = hierarchy;
+module.exports = inferHierarchy;

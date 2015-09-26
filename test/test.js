@@ -117,6 +117,7 @@ test('html', function (tt) {
   tt.end();
 });
 
+
 test('markdown', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
@@ -150,12 +151,14 @@ test('markdown', function (tt) {
   });
   tt.end();
 });
+*/
 
 test('multi-file input', function (t) {
   documentation([
     path.join(__dirname, 'fixture', 'simple.input.js'),
     path.join(__dirname, 'fixture', 'simple-two.input.js')
-  ]).pipe(concat(function (result) {
+  ], null, function (err, result) {
+    t.ifError(err);
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_multi-file-input.json');
     if (UPDATE) {
@@ -164,15 +167,15 @@ test('multi-file input', function (t) {
     var expect = require(outputfile);
     t.deepEqual(result, expect);
     t.end();
-  }));
+  });
 });
 
 test('accepts simple relative paths', function (t) {
   chdir(__dirname, function () {
-    documentation('fixture/simple.input.js').pipe(concat(function (data) {
+    documentation('fixture/simple.input.js', null, function (err, data) {
+      t.ifError(err);
       t.equal(data.length, 1, 'simple has no dependencies');
       t.end();
-    }));
+    });
   });
 });
-*/

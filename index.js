@@ -3,7 +3,7 @@
 var sort = require('./streams/sort'),
   concat = require('concat-stream'),
   nestParams = require('./streams/nest_params'),
-  filterAccess = require('./streams/filter_access'),
+  filterAccess = require('./lib/filter_access'),
   filterJS = require('./streams/filter_js'),
   dependency = require('./streams/input/dependency'),
   shallow = require('./streams/input/shallow'),

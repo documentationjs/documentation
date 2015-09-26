@@ -11,7 +11,7 @@ var through2 = require('through2'),
   getTemplate = require('./lib/get_template'),
   resolveTheme = require('./lib/resolve_theme'),
   helpers = require('./lib/html_helpers'),
-  highlight = require('../highlight');
+  highlight = require('../../lib/highlight');
 
 /**
  * Make slugg a unary so we can use it in functions
@@ -34,7 +34,7 @@ function slug(p) {
  * @name html
  * @return {stream.Transform}
  */
-module.exports = function (opts) {
+function makeHTML(comments, opts) {
 
   var options = extend({}, {
     theme: 'documentation-theme-default'
@@ -44,38 +44,38 @@ module.exports = function (opts) {
 
   var pageTemplate = getTemplate(Handlebars, themeModule, 'index.hbs');
   Handlebars.registerPartial('section',
-    getTemplate(Handlebars, themeModule, 'section.hbs'));
 
-  var htmlStream = through2.obj(function (comments, enc, callback) {
+  getTemplate(Handlebars, themeModule, 'section.hbs'));
 
-    var paths = comments.map(function (comment) {
-      return comment.path.map(slug).join('/');
-    }).filter(function (path) {
-      return path;
-    });
-
-    helpers(Handlebars, paths);
-
-    this.push(new File({
-      path: 'index.html',
-      contents: new Buffer(pageTemplate({
-        docs: comments,
-        options: opts
-      }), 'utf8')
-    }));
-
-    callback();
-  }, function (callback) {
-    // push assets into the pipeline as well.
-    vfs.src([themeModule + '/assets/**'], { base: themeModule })
-      .on('data', function (file) {
-        this.push(file);
-      }.bind(this))
-      .on('end', function () {
-        this.emit('end');
-        callback();
-      }.bind(this));
+  var paths = comments.map(function (comment) {
+    return comment.path.map(slug).join('/');
+  }).filter(function (path) {
+    return path;
   });
 
-  return splicer.obj([highlight(), hierarchy(), htmlStream]);
+  var output = [];
+
+  helpers(Handlebars, paths);
+
+  output.push(new File({
+    path: 'index.html',
+    contents: new Buffer(pageTemplate({
+      docs: comments,
+      options: opts
+    }), 'utf8')
+  }));
+
+  // push assets into the pipeline as well.
+  vfs.src([themeModule + '/assets/**'], { base: themeModule })
+    .on('data', function (file) {
+      this.push(file);
+    }.bind(this))
+    .on('end', function () {
+      this.emit('end');
+      callback();
+    }.bind(this));
+}
+
+module.exports = function(comments, opts) {
+  return makeHTML(hierarchy(comments.map(highlight)), opts);
 };
