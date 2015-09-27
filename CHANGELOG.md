@@ -1,3 +1,16 @@
+## 3.0.0
+
+The largest change to documentation.js so far.
+
+This a major refactor of the documentation.js interface with a focus on
+simplifying the system. Up until this point, documentation.js was built around
+[node.js streams](https://nodejs.org/api/stream.html), which are low-level
+representations of asynchronous series of data. While this abstraction was
+appropriate for the input and github streams, which are asynchronous, the
+majority of documentation.js's internals are simple and synchronous functions
+for which basic functional composition makes more sense than stream
+semantics.
+
 ## 2.0.1
 
 * Fixes `@param` tags that refer to properties of unmentioned objects: these

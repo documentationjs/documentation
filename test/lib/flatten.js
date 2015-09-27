@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tape'),
+var test = require('tap').test,
   parse = require('../../lib/parsers/javascript');
 
 function evaluate(fn, filename) {
@@ -175,7 +175,7 @@ test('flatten', function (t) {
       type: 'NameExpression',
       name: 'Object'
     }
-  }, 'name', 'namespace');
+  }, 'namespace');
 
   t.end();
 });

@@ -10,7 +10,6 @@ var documentation = require('../'),
   vfs = require('vinyl-fs'),
 
   lint = require('../lib/lint.js'),
-  // github = require('../streams/github.js'),
   loadConfig = require('../lib/load_config.js');
 
 var yargs = require('yargs')
@@ -108,6 +107,7 @@ if (argv.config) {
 documentation(inputs, {
   private: argv.private,
   transform: transform,
+  github: argv.github,
   polyglot: argv.polyglot,
   order: config.order || [],
   shallow: argv.shallow

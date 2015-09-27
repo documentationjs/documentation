@@ -9,6 +9,7 @@ var sort = require('./lib/sort'),
   shallow = require('./streams/input/shallow'),
   parse = require('./lib/parsers/javascript'),
   polyglot = require('./lib/parsers/polyglot'),
+  github = require('./lib/github'),
   inferName = require('./lib/infer/name'),
   inferKind = require('./lib/infer/kind'),
   inferMembership = require('./lib/infer/membership');
@@ -53,11 +54,14 @@ module.exports = function (indexes, options, callback) {
         .reduce(parse, [])
         .map(function (comment) {
           // compose nesting & membership to avoid intermediate arrays
-          return nestParams(inferMembership(inferKind(inferName(comment))));
+          comment = nestParams(inferMembership(inferKind(inferName(comment))));
+          if (options.github) {
+            comment = github(comment);
+          }
+          return comment;
         })
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
-
       callback(null, docs);
     } catch(e) {
       callback(e);

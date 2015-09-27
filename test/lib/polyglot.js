@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tape'),
+var test = require('tap').test,
   fs = require('fs'),
   path = require('path'),
   polyglot = require('../../lib/parsers/polyglot');

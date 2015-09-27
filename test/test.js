@@ -1,6 +1,6 @@
 'use strict';
 
-var test = require('tape'),
+var test = require('tap').test,
   documentation = require('../'),
   outputMarkdown = require('../lib/output/markdown.js'),
   outputHtml = require('../lib/output/html.js'),
