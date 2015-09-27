@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 
-var documentation = require('../'),
-  PassThrough = require('stream').PassThrough,
+'use strict';
 
+var documentation = require('../'),
+
+  streamArray = require('stream-array'),
   path = require('path'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
 
-  lint = require('../streams/lint.js'),
-  github = require('../streams/github.js'),
+  lint = require('../lib/lint.js'),
+  // github = require('../streams/github.js'),
   loadConfig = require('../lib/load_config.js');
 
 var yargs = require('yargs')
@@ -90,7 +92,7 @@ var formatterOptions = {
   theme: argv.theme
 };
 
-var formatter = documentation.formats[argv.f](formatterOptions);
+var formatter = documentation.formats[argv.f];
 
 if (argv.f === 'html' && argv.o === 'stdout') {
   yargs.showHelp();
@@ -103,23 +105,39 @@ if (argv.config) {
   config = loadConfig(argv.config);
 }
 
-var docStream = documentation(inputs, {
-    private: argv.private,
-    transform: transform,
-    polyglot: argv.polyglot,
-    order: config.order || [],
-    shallow: argv.shallow
-  })
-  .pipe(argv.lint ? lint() : new PassThrough({ objectMode: true }))
-  .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
-  .pipe(formatter);
-
-if (argv.o !== 'stdout') {
-  if (argv.f === 'html') {
-    docStream.pipe(vfs.dest(argv.o));
-  } else {
-    docStream.pipe(fs.createWriteStream(argv.o));
+documentation(inputs, {
+  private: argv.private,
+  transform: transform,
+  polyglot: argv.polyglot,
+  order: config.order || [],
+  shallow: argv.shallow
+}, function (err, result) {
+  if (err) {
+    throw err;
   }
-} else {
-  docStream.pipe(process.stdout);
-}
+  if (argv.lint) {
+    return lint(result).forEach(function (err) {
+      console.error(err);
+    });
+  }
+
+  formatter(result, formatterOptions, function (err, output) {
+    if (err) {
+      throw err;
+    }
+
+    if (argv.o !== 'stdout') {
+      if (argv.f === 'html') {
+        streamArray(output).pipe(vfs.dest(argv.o));
+      } else {
+        fs.writeFileSync(argv.o, output);
+      }
+    } else {
+      process.stdout.write(output);
+    }
+  });
+});
+
+/*
+  .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
+*/

@@ -2,8 +2,7 @@
 /*eslint-disable no-unused-vars*/
 var test = require('tap').test,
   inferKind = require('../../../lib/infer/kind'),
-  parse = require('../../../lib/parsers/javascript'),
-  helpers = require('../../helpers');
+  parse = require('../../../lib/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse([], {

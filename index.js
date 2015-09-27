@@ -66,5 +66,7 @@ module.exports = function (indexes, options, callback) {
 };
 
 module.exports.formats = {
-  html: require('./lib/output/html')
+  html: require('./lib/output/html'),
+  md: require('./lib/output/markdown'),
+  json: require('./lib/output/json')
 };

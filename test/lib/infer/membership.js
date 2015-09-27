@@ -17,7 +17,7 @@ function evaluate(fn, callback) {
 }
 
 function Foo() {}
-function lend() {}
+// function lend() {}
 
 test('inferMembership - explicit', function (t) {
   t.deepEqual(_.pick(evaluate(function () {

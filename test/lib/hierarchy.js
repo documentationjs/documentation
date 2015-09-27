@@ -9,7 +9,7 @@ var test = require('tap').test,
 
 function toComments(fn, filename) {
   return parse([], {
-    file: filename,
+    file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   });
 }
@@ -93,6 +93,6 @@ test('hierarchy - missing memberof', function (t) {
   });
 
   t.equal(result.length, 1);
-  t.equal(errors.length, 1);
+  t.equal(result[0].errors.length, 1);
   t.end();
 });
