@@ -9,7 +9,6 @@ var documentation = require('../'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
 
-  lint = require('../lib/lint.js'),
   loadConfig = require('../lib/load_config.js');
 
 var yargs = require('yargs')
@@ -111,15 +110,14 @@ documentation(inputs, {
   polyglot: argv.polyglot,
   order: config.order || [],
   shallow: argv.shallow
-}, function (err, result) {
+}, function (err, result, lints) {
   if (err) {
     throw err;
   }
-  if (argv.lint) {
-    return lint(result).forEach(function (err) {
-      console.error(err);
-    });
-  }
+
+  lints.forEach(function (err) {
+    console.error(err);
+  });
 
   formatter(result, formatterOptions, function (err, output) {
     if (err) {

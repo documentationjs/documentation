@@ -12,7 +12,8 @@ var sort = require('./lib/sort'),
   github = require('./lib/github'),
   inferName = require('./lib/infer/name'),
   inferKind = require('./lib/infer/kind'),
-  inferMembership = require('./lib/infer/membership');
+  inferMembership = require('./lib/infer/membership'),
+  lint = require('./lib/lint');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -62,7 +63,8 @@ module.exports = function (indexes, options, callback) {
         })
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
-      callback(null, docs);
+
+      callback(null, docs, docs.reduce(lint, []));
     } catch(e) {
       callback(e);
     }
