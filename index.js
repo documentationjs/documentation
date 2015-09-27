@@ -51,10 +51,10 @@ module.exports = function (indexes, options, callback) {
       var docs = inputs
         .filter(filterJS)
         .reduce(parse, [])
-        .map(inferName)
-        .map(inferKind)
-        .map(inferMembership)
-        .map(nestParams)
+        .map(function (comment) {
+          // compose nesting & membership to avoid intermediate arrays
+          return nestParams(inferMembership(inferKind(inferName(comment))));
+        })
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
 
@@ -65,4 +65,6 @@ module.exports = function (indexes, options, callback) {
   }));
 };
 
-module.exports.formats = require('./streams/output/index');
+module.exports.formats = {
+  html: require('./lib/output/html')
+};

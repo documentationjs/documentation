@@ -1,349 +1,181 @@
 'use strict';
 
-var test = require('tap').test,
-  parse = require('../../streams/parsers/javascript'),
-  helpers = require('../helpers');
+var test = require('tape'),
+  parse = require('../../lib/parsers/javascript');
 
-function evaluate(fn, callback) {
-  helpers.evaluate([parse()], 'flatten.js', fn, callback);
+function evaluate(fn, filename) {
+  return parse([], {
+    file: filename || 'test.js',
+    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+  });
 }
 
-test('flatten - name', function (t) {
-  evaluate(function () {
+test('flatten', function (t) {
+  t.equal(evaluate(function () {
     /** @name test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].name, 'test');
-    t.end();
-  });
-});
+  })[0].name, 'test', 'name');
 
-test('flatten - memberof', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @memberof test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].memberof, 'test');
-    t.end();
-  });
-});
+  })[0].memberof, 'test', 'memberof');
 
-test('flatten - classdesc', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @classdesc test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].classdesc, 'test');
-    t.end();
-  });
-});
+  })[0].classdesc, 'test', 'classdesc');
 
-test('flatten - augments', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @augments Foo */
     return 0;
-  }, function (result) {
-    t.equal(result[0].augments.length, 1);
-    t.equal(result[0].augments[0].name, 'Foo');
-    t.end();
-  });
-});
+  })[0].augments[0].name, 'Foo', 'augments');
 
-test('flatten - kind', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @kind class */
     return 0;
-  }, function (result) {
-    t.equal(result[0].kind, 'class');
-    t.end();
-  });
-});
+  })[0].kind, 'class', 'kind');
 
-test('flatten - param', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @param test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].params.length, 1);
-    t.equal(result[0].params[0].name, 'test');
-    t.end();
-  });
-});
+  })[0].params[0].name, 'test', 'param');
 
-test('flatten - property', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @property {number} test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].properties.length, 1);
-    t.equal(result[0].properties[0].name, 'test');
-    t.end();
-  });
-});
+  })[0].properties[0].name, 'test', 'property');
 
-test('flatten - returns', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @returns {number} test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].returns.length, 1);
-    t.equal(result[0].returns[0].description, 'test');
-    t.end();
-  });
-});
+  })[0].returns[0].description, 'test', 'returns');
 
-test('flatten - example', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @example test */
     return 0;
-  }, function (result) {
-    t.equal(result[0].examples.length, 1);
-    t.equal(result[0].examples[0], 'test');
-    t.end();
-  });
-});
+  })[0].examples[0], 'test', 'example');
 
-test('flatten - throws', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @throws {Object} exception */
     return 0;
-  }, function (result) {
-    t.equal(result[0].throws.length, 1);
-    t.equal(result[0].throws[0].description, 'exception');
-    t.end();
-  });
-});
+  })[0].throws[0].description, 'exception', 'throws');
 
-test('flatten - global', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @global */
     return 0;
-  }, function (result) {
-    t.equal(result[0].scope, 'global');
-    t.end();
-  });
-});
+  })[0].scope, 'global', 'global');
 
-test('flatten - static', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @static */
     return 0;
-  }, function (result) {
-    t.equal(result[0].scope, 'static');
-    t.end();
-  });
-});
+  })[0].scope, 'static', 'static');
 
-test('flatten - instance', function (t) {
-  evaluate(function () {
-    /** @instance */
+  t.equal(evaluate(function () {
+    /** @instance*/
     return 0;
-  }, function (result) {
-    t.equal(result[0].scope, 'instance');
-    t.end();
-  });
-});
+  })[0].scope, 'instance', 'instance');
 
-test('flatten - inner', function (t) {
-  evaluate(function () {
-    /** @inner */
+  t.equal(evaluate(function () {
+    /** @inner*/
     return 0;
-  }, function (result) {
-    t.equal(result[0].scope, 'inner');
-    t.end();
-  });
-});
+  })[0].scope, 'inner', 'inner');
 
-test('flatten - access public', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @access public */
     return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'public');
-    t.end();
-  });
-});
+  })[0].access, 'public', 'access public');
 
-test('flatten - access protected', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @access protected */
     return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'protected');
-    t.end();
-  });
-});
+  })[0].access, 'protected', 'access protected');
 
-test('flatten - access private', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @access private */
     return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'private');
-    t.end();
-  });
-});
+  })[0].access, 'private', 'access private');
 
-test('flatten - public', function (t) {
-  evaluate(function () {
-    /** @public */
-    return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'public');
-    t.end();
-  });
-});
-
-test('flatten - protected', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @protected */
     return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'protected');
-    t.end();
-  });
-});
+  })[0].access, 'protected', 'protected');
 
-test('flatten - private', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @private */
     return 0;
-  }, function (result) {
-    t.equal(result[0].access, 'private');
-    t.end();
-  });
-});
+  })[0].access, 'private', 'private');
 
-test('flatten - lends', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @lends lendee */
     return 0;
-  }, function (result) {
-    t.equal(result[0].lends, 'lendee');
-    t.end();
-  });
-});
+  })[0].lends, 'lendee', 'lends');
 
-test('flatten - class', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @class name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].class.name, 'name');
-    t.end();
-  });
-});
+  })[0].class.name, 'name', 'class');
 
-test('flatten - constant', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @constant name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].constant.name, 'name');
-    t.end();
-  });
-});
+  })[0].constant.name, 'name', 'constant');
 
-test('flatten - event', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @event name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].event, 'name');
-    t.end();
-  });
-});
+  })[0].event, 'name', 'event');
 
-test('flatten - external', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @external name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].external, 'name');
-    t.end();
-  });
-});
+  })[0].external, 'name', 'external');
 
-test('flatten - file', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @file name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].file, 'name');
-    t.end();
-  });
-});
+  })[0].file, 'name', 'file');
 
-test('flatten - function', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @function name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].function, 'name');
-    t.end();
-  });
-});
+  })[0].function, 'name', 'function');
 
-test('flatten - member', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @member name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].member.name, 'name');
-    t.end();
-  });
-});
+  })[0].member.name, 'name', 'member');
 
-test('flatten - mixin', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @mixin name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].mixin, 'name');
-    t.end();
-  });
-});
+  })[0].mixin, 'name', 'mixin');
 
-test('flatten - module', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @module name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].module.name, 'name');
-    t.end();
-  });
-});
+  })[0].module.name, 'name', 'module');
 
-test('flatten - namespace', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @namespace name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].namespace.name, 'name');
-    t.end();
-  });
-});
+  })[0].namespace.name, 'name', 'namespace');
 
-test('flatten - typedef', function (t) {
-  evaluate(function () {
-    /** @typedef {Object} name */
-    return 0;
-  }, function (result) {
-    t.equal(result[0].typedef.name, 'name');
-    t.deepEqual(result[0].typedef.type, {
-      type: 'NameExpression',
-      name: 'Object'
-    });
-    t.end();
-  });
-});
-
-test('flatten - callback', function (t) {
-  evaluate(function () {
+  t.equal(evaluate(function () {
     /** @callback name */
     return 0;
-  }, function (result) {
-    t.equal(result[0].callback, 'name');
-    t.end();
-  });
+  })[0].callback, 'name', 'callback');
+
+  t.deepEqual(evaluate(function () {
+    /** @typedef {Object} name */
+    return 0;
+  })[0].typedef, {
+    name: 'name',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  }, 'name', 'namespace');
+
+  t.end();
 });

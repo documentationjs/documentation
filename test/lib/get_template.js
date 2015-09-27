@@ -1,6 +1,6 @@
 'use strict';
 
-var getTemplate = require('../../streams/output/lib/get_template.js'),
+var getTemplate = require('../../lib/get_template.js'),
   Handlebars = require('handlebars'),
   test = require('tap').test;
 
