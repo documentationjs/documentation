@@ -7,12 +7,13 @@ var test = require('tap').test,
 
 test('polyglot', function (t) {
   var file = path.resolve(path.join(__dirname, '../fixture/polyglot/blend.cpp'));
-  t.deepEqual(polyglot([], {
+  var result = polyglot([], {
     file: file,
     source: fs.readFileSync(file, 'utf8')
-  }), [{
+  });
+  delete result[0].context.file;
+  t.deepEqual(result, [{
     context: {
-      file: '/Users/tmcw/src/documentation/test/fixture/polyglot/blend.cpp',
       loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } } },
       description: 'This method moves a hex to a color',
       loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } },
