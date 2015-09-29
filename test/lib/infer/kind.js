@@ -5,7 +5,7 @@ var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript');
 
 function toComment(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   })[0];
@@ -18,10 +18,10 @@ test('inferKind', function (t) {
 
   ['class', 'constant', 'event', 'external', 'file',
     'function', 'member', 'mixin', 'module', 'namespace', 'typedef'].forEach(function (tag) {
-    var comment = {};
-    comment[tag] = true;
-    t.equal(inferKind(comment).kind, tag, 'from ' + tag + ' keyword');
-  });
+      var comment = {};
+      comment[tag] = true;
+      t.equal(inferKind(comment).kind, tag, 'from ' + tag + ' keyword');
+    });
 
   t.equal(inferKind(toComment(function () {
     /** @returns {number} two */

@@ -6,7 +6,7 @@ var test = require('tap').test,
   inferMembership = require('../../../lib/infer/membership');
 
 function toComment(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   })[0];
@@ -83,7 +83,10 @@ test('inferMembership - explicit', function (t) {
 
   t.deepEqual(_.pick(evaluate(function () {
     Foo.prototype = {
-      /** Test */
+      /**
+       * Test
+       * @returns {undefined} bar
+       */
       bar: function () {}
     };
   }), ['memberof', 'scope']), {
@@ -104,7 +107,8 @@ test('inferMembership - explicit', function (t) {
 
   t.deepEqual(_.pick(evaluate(function () {
     var Foo = {
-      /** Test */
+      /** Test
+      * @returns {undefined} bar */
       baz: function () {}
     };
     return Foo;
@@ -114,7 +118,8 @@ test('inferMembership - explicit', function (t) {
   }, 'variable object assignment, function');
 
   t.deepEqual(_.pick(evaluate(function () {
-    /** Test */
+    /** Test
+    * @returns {undefined} bar */
     module.exports = function () {};
   }), ['memberof', 'scope']), {
     memberof: 'module',

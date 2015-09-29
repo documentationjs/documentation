@@ -5,14 +5,14 @@ var test = require('tap').test,
   lint = require('../../lib/lint');
 
 function toComment(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  });
+  })[0];
 }
 
 function evaluate(fn) {
-  return toComment(fn, 'input.js').reduce(lint, []);
+  return lint(toComment(fn, 'input.js'));
 }
 
 test('lint', function (t) {

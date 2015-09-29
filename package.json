@@ -45,7 +45,7 @@
   "devDependencies": {
     "chdir": "0.0.0",
     "concat-stream": "^1.4.7",
-    "eslint": "^0.24.0",
+    "eslint": "^1.5.1",
     "glob": "^5.0.2",
     "lodash": "^3.10.1",
     "tap": "^1.4.1"

@@ -8,7 +8,7 @@ var test = require('tap').test,
   inferMembership = require('../../lib/infer/membership');
 
 function toComments(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   });
@@ -25,6 +25,7 @@ test('hierarchy', function (t) {
   var result = evaluate(function () {
     /**
      * Creates a new Klass
+     * @param {string} foo bar
      * @class
      */
     function Klass(foo) {
@@ -42,7 +43,7 @@ test('hierarchy', function (t) {
     /**
      * Decide whether an object is a Klass instance
      *
-     * @param {Object} other
+     * @param {Object} other bar
      * @returns {boolean} whether the other thing is a Klass
      */
     Klass.isClass = function (other) {

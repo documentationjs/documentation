@@ -5,7 +5,7 @@ var test = require('tap').test,
   nestParams = require('../../lib/nest_params');
 
 function toComment(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   }).map(nestParams);

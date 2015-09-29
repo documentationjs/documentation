@@ -34,7 +34,9 @@ var sort = require('./lib/sort'),
  * even in JavaScript code. With the polyglot option set, this has no effect.
  * @param {Array<string|Object>} [options.order=[]] optional array that
  * defines sorting order of documentation
- * @return {Object} stream of output
+ * @param {Function} callback to be called when the documentation generation
+ * is complete, with (err, result) argumentsj
+ * @returns {undefined} calls callback
  */
 module.exports = function (indexes, options, callback) {
   options = options || {};
@@ -52,7 +54,9 @@ module.exports = function (indexes, options, callback) {
 
       var docs = inputs
         .filter(filterJS)
-        .reduce(parse, [])
+        .reduce(function (memo, file) {
+          return memo.concat(parse(file));
+        }, [])
         .map(function (comment) {
           // compose nesting & membership to avoid intermediate arrays
           comment = nestParams(inferMembership(inferKind(inferName(comment))));
@@ -64,8 +68,10 @@ module.exports = function (indexes, options, callback) {
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
 
-      callback(null, docs, docs.reduce(lint, []));
-    } catch(e) {
+      callback(null, docs, docs.reduce(function (memo, comment) {
+        return memo.concat(lint(comment));
+      }, []));
+    } catch (e) {
       callback(e);
     }
   }));

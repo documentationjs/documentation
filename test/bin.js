@@ -51,17 +51,17 @@ test('defaults to parsing package.json main', function (t) {
 test('accepts config file', function (t) {
   documentation(['fixture/sorting/input.js -c fixture/config.json'],
     function (err, data) {
-    t.error(err);
-    var expected = fs.readFileSync(
-      path.resolve(__dirname,
-        'fixture',
-        'sorting/output.json'), 'utf8');
-    t.deepEqual(
-      normalize(data),
-      JSON.parse(expected),
-      'respected sort order from config file');
-    t.end();
-  });
+      t.error(err);
+      var expected = fs.readFileSync(
+        path.resolve(__dirname,
+          'fixture',
+          'sorting/output.json'), 'utf8');
+      t.deepEqual(
+        normalize(data),
+        JSON.parse(expected),
+        'respected sort order from config file');
+      t.end();
+    });
 });
 
 test('--shallow option', function (t) {

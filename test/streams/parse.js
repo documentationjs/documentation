@@ -4,7 +4,7 @@ var test = require('tap').test,
   parse = require('../../lib/parsers/javascript');
 
 function toComment(fn, filename) {
-  return parse([], {
+  return parse({
     file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   });

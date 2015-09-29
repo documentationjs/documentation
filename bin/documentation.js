@@ -73,7 +73,7 @@ if (argv._.length > 0) {
     if (p.browserify && p.browserify.transform) {
       transform = p.browserify.transform;
     }
-  } catch(e) {
+  } catch (e) {
     yargs.showHelp();
     throw new Error('documentation was given no files and was not run in a module directory');
   }

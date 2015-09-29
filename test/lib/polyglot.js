@@ -7,7 +7,7 @@ var test = require('tap').test,
 
 test('polyglot', function (t) {
   var file = path.resolve(path.join(__dirname, '../fixture/polyglot/blend.cpp'));
-  var result = polyglot([], {
+  var result = polyglot({
     file: file,
     source: fs.readFileSync(file, 'utf8')
   });
@@ -15,23 +15,23 @@ test('polyglot', function (t) {
   t.deepEqual(result, [{
     context: {
       loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } } },
-      description: 'This method moves a hex to a color',
-      loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } },
-      name: 'hexToUInt32Color', params: [
-        { description: null, lineNumber: 3, name: 'hex', title: 'param',
-          type: { name: 'string', type: 'NameExpression' } } ],
-          returns: [
-            {
-              description: 'color',
-              lineNumber: 4,
-              title: 'returns',
-              type: { name: 'number', type: 'NameExpression' } } ],
-          tags: [ { description: null, lineNumber: 2, name: 'hexToUInt32Color', title: 'name' },
-            { description: null, lineNumber: 3, name: 'hex', title: 'param', type: {
-              name: 'string', type: 'NameExpression'
-            } },
-            { description: 'color', lineNumber: 4, title: 'returns', type: {
-              name: 'number', type: 'NameExpression'
-            } } ] } ], 'polyglot parser');
+    description: 'This method moves a hex to a color',
+    loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } },
+    name: 'hexToUInt32Color', params: [
+      { description: null, lineNumber: 3, name: 'hex', title: 'param',
+        type: { name: 'string', type: 'NameExpression' } } ],
+    returns: [
+      {
+        description: 'color',
+        lineNumber: 4,
+        title: 'returns',
+        type: { name: 'number', type: 'NameExpression' } } ],
+    tags: [ { description: null, lineNumber: 2, name: 'hexToUInt32Color', title: 'name' },
+      { description: null, lineNumber: 3, name: 'hex', title: 'param', type: {
+        name: 'string', type: 'NameExpression'
+      } },
+      { description: 'color', lineNumber: 4, title: 'returns', type: {
+        name: 'number', type: 'NameExpression'
+      } } ] } ], 'polyglot parser');
   t.end();
 });
