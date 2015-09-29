@@ -11,8 +11,9 @@ var mdeps = require('module-deps'),
  * This stream requires filesystem access, and thus isn't suitable
  * for a browser environment.
  *
- * @param {Array<string>} indexes
- * @param {Object} options
+ * @param {Array<string>} indexes paths to entry files as strings
+ * @param {Object} options optional options passed
+ * @param {Array<Object>} [options.transform=[]] optional array of transforms
  * @returns {ReadableStream} output
  */
 function dependencyStream(indexes, options) {

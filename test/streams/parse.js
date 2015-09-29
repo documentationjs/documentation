@@ -1,29 +1,29 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../streams/parsers/javascript'),
-  helpers = require('../helpers');
+  parse = require('../../lib/parsers/javascript');
 
-function evaluate(fn, callback) {
-  helpers.evaluate([parse()], 'parse.js', fn, callback);
+function toComment(fn, filename) {
+  return parse({
+    file: filename || 'test.js',
+    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+  });
 }
 
 test('parse - unknown tag', function (t) {
-  evaluate(function () {
+  t.equal(toComment(function () {
     /** @unknown */
     return 0;
-  }, function (result) {
-    t.equal(result[0].tags[0].title, 'unknown');
-    t.end();
-  });
+  })[0].tags[0].title, 'unknown');
+  t.end();
 });
 
 test('parse - error', function (t) {
-  evaluate(function () {
+  t.deepEqual(toComment(function () {
     /** @param {foo */
     return 0;
-  }, function (result, errors) {
-    t.equal(errors[0], 'parse.js:2: Braces are not balanced');
-    t.end();
-  });
+  })[0].errors, [
+    'test.js:2: Braces are not balanced',
+    'test.js:2: Missing or invalid tag name']);
+  t.end();
 });

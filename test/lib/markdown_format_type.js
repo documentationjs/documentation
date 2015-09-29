@@ -1,6 +1,6 @@
 'use strict';
 
-var formatType = require('../../streams/output/lib/markdown_format_type.js'),
+var formatType = require('../../lib/markdown_format_type.js'),
   test = require('tap').test;
 
 test('formatType', function (t) {

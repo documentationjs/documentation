@@ -1,17 +1,19 @@
 'use strict';
 
-var splicer = require('stream-splicer'),
-  sort = require('./streams/sort'),
-  nestParams = require('./streams/nest_params'),
-  filterAccess = require('./streams/filter_access'),
-  filterJS = require('./streams/filter_js'),
+var sort = require('./lib/sort'),
+  concat = require('concat-stream'),
+  nestParams = require('./lib/nest_params'),
+  filterAccess = require('./lib/filter_access'),
+  filterJS = require('./lib/filter_js'),
   dependency = require('./streams/input/dependency'),
   shallow = require('./streams/input/shallow'),
-  parse = require('./streams/parsers/javascript'),
-  polyglot = require('./streams/parsers/polyglot'),
-  inferName = require('./streams/infer/name'),
-  inferKind = require('./streams/infer/kind'),
-  inferMembership = require('./streams/infer/membership');
+  parse = require('./lib/parsers/javascript'),
+  polyglot = require('./lib/parsers/polyglot'),
+  github = require('./lib/github'),
+  inferName = require('./lib/infer/name'),
+  inferKind = require('./lib/infer/kind'),
+  inferMembership = require('./lib/infer/membership'),
+  lint = require('./lib/lint');
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -32,32 +34,51 @@ var splicer = require('stream-splicer'),
  * even in JavaScript code. With the polyglot option set, this has no effect.
  * @param {Array<string|Object>} [options.order=[]] optional array that
  * defines sorting order of documentation
- * @return {Object} stream of output
+ * @param {Function} callback to be called when the documentation generation
+ * is complete, with (err, result) argumentsj
+ * @returns {undefined} calls callback
  */
-module.exports = function (indexes, options) {
+module.exports = function (indexes, options, callback) {
   options = options || {};
 
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
 
-  var inputStream = options.polyglot ? [
-    shallow(indexes),
-    polyglot()
-  ] : [
-    (options.shallow ? shallow(indexes) : dependency(indexes, options)),
-    filterJS(),
-    parse(),
-    inferName(),
-    inferKind(),
-    inferMembership()
-  ];
+  var inputStream = options.polyglot ?
+    shallow(indexes).pipe(polyglot()) :
+    (options.shallow ? shallow(indexes) : dependency(indexes, options));
 
-  return splicer.obj(
-    inputStream.concat([
-      sort(options.order),
-      nestParams(),
-      filterAccess(options.private ? [] : undefined)]));
+  return inputStream.pipe(concat(function (inputs) {
+    try {
+
+      var docs = inputs
+        .filter(filterJS)
+        .reduce(function (memo, file) {
+          return memo.concat(parse(file));
+        }, [])
+        .map(function (comment) {
+          // compose nesting & membership to avoid intermediate arrays
+          comment = nestParams(inferMembership(inferKind(inferName(comment))));
+          if (options.github) {
+            comment = github(comment);
+          }
+          return comment;
+        })
+        .sort(sort.bind(undefined, options.order))
+        .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
+
+      callback(null, docs, docs.reduce(function (memo, comment) {
+        return memo.concat(lint(comment));
+      }, []));
+    } catch (e) {
+      callback(e);
+    }
+  }));
 };
 
-module.exports.formats = require('./streams/output/index');
+module.exports.formats = {
+  html: require('./lib/output/html'),
+  md: require('./lib/output/markdown'),
+  json: require('./lib/output/json')
+};
