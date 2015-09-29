@@ -9,4 +9,3 @@ A type definition.
 | `prop2` | `string` | another property |
 
 
-

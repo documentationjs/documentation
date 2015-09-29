@@ -9,4 +9,3 @@ Mouse event
 | `originalEvent` | `Event` | the original DOM event |
 
 
-

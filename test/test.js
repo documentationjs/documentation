@@ -130,7 +130,7 @@ test('markdown', function (tt) {
             fs.writeFileSync(outputfile, result, 'utf8');
           }
           var expect = fs.readFileSync(outputfile, 'utf8');
-          t.equal(result.toString(), expect);
+          t.equal(result.toString(), expect, 'markdown output correct');
           t.end();
         });
       });
@@ -139,7 +139,7 @@ test('markdown', function (tt) {
       documentation([file], null, function (err, result) {
         t.ifError(err);
         outputMarkdown(result, {
-          template: path.join(__dirname, '/misc/custom.hbs')
+          theme: path.join(__dirname, '/misc/')
         }, function (err, result) {
           t.ifError(err);
           var outputfile = file.replace('.input.js', '.output.custom.md');
@@ -147,7 +147,7 @@ test('markdown', function (tt) {
             fs.writeFileSync(outputfile, result, 'utf8');
           }
           var expect = fs.readFileSync(outputfile, 'utf8');
-          t.equal(result.toString(), expect);
+          t.equal(result.toString(), expect, 'custom output correct');
           t.end();
         });
       });

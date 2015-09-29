@@ -1,0 +1,29 @@
+## `{{name}}{{#if params}}{{format_params}}{{/if}}`
+
+{{#description}}
+{{.}}
+{{/description}}
+
+{{#if params}}
+### Parameters
+
+{{#params}}
+* `{{name}}` **{{format_type type}}** {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}}
+{{#properties}}
+  * `{{name}}` **{{format_type type}}** {{format_description description}}{{#default}} (optional, default `{{.}}`){{/default}}
+{{/properties}}
+{{/params}}
+{{/if}}
+
+{{#if properties}}
+| name | type | description |
+| ---- | ---- | ----------- |
+{{#properties}}
+| `{{name}}` | {{format_type type}} | {{format_description description}} |
+{{/properties}}
+{{/if}}
+
+{{#returns}}
+Returns {{#type.name}}`{{.}}`{{/type.name}} {{description}}
+{{/returns}}
+

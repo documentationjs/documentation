@@ -1,4 +1,4 @@
-## `Address6`
+## `Address6(address, [groups])`
 
 Represents an IPv6 address
 
@@ -7,11 +7,5 @@ Represents an IPv6 address
 * `address` **`string`** An IPv6 address string
 * `groups` **`[number]`** How many octets to parse (optional, default `8`)
 
-
-### Examples
-
-```js
-var address = new Address6('2001::/32');
-```
 
 

@@ -1,7 +1,6 @@
 ## `foo`
 
-I am in `external.input.js`.
-
+I am in &#x60;external.input.js&#x60;.
 
 
 
