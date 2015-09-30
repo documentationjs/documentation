@@ -29,13 +29,13 @@ if (argv._.length > 0) {
       transform = p.browserify.transform;
     }
   } catch (e) {
-    yargs.showHelp();
+    args.showHelp();
     throw new Error('documentation was given no files and was not run in a module directory');
   }
 }
 
 if (!documentation.formats[argv.f]) {
-  yargs.showHelp();
+  args.showHelp();
   throw new Error('Formatter not found');
 }
 
@@ -48,7 +48,7 @@ var formatterOptions = {
 var formatter = documentation.formats[argv.f];
 
 if (argv.f === 'html' && argv.o === 'stdout') {
-  yargs.showHelp();
+  args.showHelp();
   throw new Error('The HTML output mode requires a destination directory set with -o');
 }
 
