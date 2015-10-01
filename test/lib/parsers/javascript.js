@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../lib/parsers/javascript');
+  parse = require('../../../lib/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse({
@@ -23,7 +23,7 @@ test('parse - error', function (t) {
     /** @param {foo */
     return 0;
   })[0].errors, [
-    'test.js:2: Braces are not balanced',
-    'test.js:2: Missing or invalid tag name']);
+    'Braces are not balanced',
+    'Missing or invalid tag name']);
   t.end();
 });

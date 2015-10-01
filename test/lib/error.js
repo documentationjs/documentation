@@ -20,8 +20,7 @@ test('error', function (t) {
     }
   };
 
-  t.deepEqual(error(tag, comment, 'test'), 'file.js:3: test');
-  t.deepEqual(error(tag, comment, '%s', 'test'), 'file.js:3: test');
+  t.deepEqual(error(comment, 'test'), 'file.js:1: test');
 
   t.end();
 });

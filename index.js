@@ -52,15 +52,12 @@ module.exports = function (indexes, options, callback) {
   return inputStream.pipe(concat(function (inputs) {
     try {
 
-      var errors = [];
-
       var docs = inputs
         .filter(filterJS)
         .reduce(function (memo, file) {
           return memo.concat(parse(file));
         }, [])
         .map(function (comment) {
-          comment.errors = [];
           // compose nesting & membership to avoid intermediate arrays
           comment = nestParams(inferMembership(inferKind(inferName(lint(comment)))));
           if (options.github) {
@@ -71,7 +68,7 @@ module.exports = function (indexes, options, callback) {
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
 
-      callback(null, docs, errors);
+      callback(null, docs);
     } catch (e) {
       callback(e);
     }

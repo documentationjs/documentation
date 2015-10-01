@@ -13,6 +13,7 @@ var UPDATE = !!process.env.UPDATE;
 
 function normalize(result) {
   result.forEach(function (item) {
+    delete item.errors;
     item.context.file = path.relative(__dirname, item.context.file);
   });
   return result;

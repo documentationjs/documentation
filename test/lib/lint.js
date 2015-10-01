@@ -22,9 +22,9 @@ test('lint', function (t) {
      * @param {array} bar
      */
     return 0;
-  }), [
-    'input.js:3: type String found, string is standard',
-    'input.js:4: type array found, Array is standard'],
+  }).errors, [
+    'type String found, string is standard',
+    'type array found, Array is standard'],
     'non-canonical');
 
   t.deepEqual(evaluate(function () {
@@ -32,7 +32,7 @@ test('lint', function (t) {
      * @param {string} foo
      */
     return 0;
-  }), [], 'no errors');
+  }).errors, [], 'no errors');
 
   t.end();
 });

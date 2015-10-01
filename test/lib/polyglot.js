@@ -13,6 +13,7 @@ test('polyglot', function (t) {
   });
   delete result[0].context.file;
   t.deepEqual(result, [{
+    errors: [],
     context: {
       loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } } },
     description: 'This method moves a hex to a color',
