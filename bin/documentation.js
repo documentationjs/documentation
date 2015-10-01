@@ -8,6 +8,7 @@ var documentation = require('../'),
   path = require('path'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
+  formatError = require('../lib/error'),
   loadConfig = require('../lib/load_config.js'),
   args = require('../lib/args.js'),
   argv = args.parse(process.argv.slice(2));
@@ -65,13 +66,15 @@ documentation(inputs, {
   polyglot: argv.polyglot,
   order: config.order || [],
   shallow: argv.shallow
-}, function (err, result, lints) {
+}, function (err, result) {
   if (err) {
     throw err;
   }
 
-  lints.forEach(function (err) {
-    console.error(err);
+  result.forEach(function (comment) {
+    comment.errors.forEach(function (error) {
+      console.error(formatError(comment, error));
+    });
   });
 
   formatter(result, formatterOptions, function (err, output) {
