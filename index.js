@@ -51,8 +51,7 @@ module.exports = function (indexes, options, callback) {
 
   return inputStream.pipe(concat(function (inputs) {
     try {
-
-      var docs = inputs
+      callback(null, inputs
         .filter(filterJS)
         .reduce(function (memo, file) {
           return memo.concat(parse(file));
@@ -66,9 +65,7 @@ module.exports = function (indexes, options, callback) {
           return comment;
         })
         .sort(sort.bind(undefined, options.order))
-        .filter(filterAccess.bind(undefined, options.private ? [] : undefined));
-
-      callback(null, docs);
+        .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
     } catch (e) {
       callback(e);
     }
