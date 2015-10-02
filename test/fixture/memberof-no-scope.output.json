@@ -1,0 +1,141 @@
+[
+  {
+    "description": "This is the class",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "Foo"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 0
+        }
+      }
+    },
+    "errors": [
+      "found memberof but no @scope, @static, or @instance tag"
+    ],
+    "class": {
+      "name": "Foo"
+    },
+    "name": "Foo",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "Foo"
+    ]
+  },
+  {
+    "description": "Set the time",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 2,
+        "name": "setTime"
+      },
+      {
+        "title": "param",
+        "description": "the current time",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      },
+      {
+        "title": "memberof",
+        "description": "Foo",
+        "lineNumber": 4
+      },
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 5,
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 6,
+        "column": 0
+      },
+      "end": {
+        "line": 12,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 0
+        }
+      }
+    },
+    "errors": [],
+    "name": "setTime",
+    "params": [
+      {
+        "title": "param",
+        "description": "the current time",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Date"
+        },
+        "name": "time"
+      }
+    ],
+    "memberof": "Foo",
+    "returns": [
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 5,
+        "type": {
+          "type": "UndefinedLiteral"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "setTime"
+    ]
+  }
+]

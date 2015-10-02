@@ -1,4 +1,202 @@
 
+/*!
+ * AnchorJS - v1.2.1 - 2015-07-02
+ * https://github.com/bryanbraun/anchorjs
+ * Copyright (c) 2015 Bryan Braun; Licensed MIT
+ */
+
+function AnchorJS(options) {
+  'use strict';
+
+  this.options = options || {};
+
+  this._applyRemainingDefaultOptions = function(opts) {
+    this.options.icon = this.options.hasOwnProperty('icon') ? opts.icon : '\ue9cb'; // Accepts characters (and also URLs?), like  '#', '¶', '❡', or '§'.
+    this.options.visible = this.options.hasOwnProperty('visible') ? opts.visible : 'hover'; // Also accepts 'always'
+    this.options.placement = this.options.hasOwnProperty('placement') ? opts.placement : 'right'; // Also accepts 'left'
+    this.options.class = this.options.hasOwnProperty('class') ? opts.class : ''; // Accepts any class name.
+  };
+
+  this._applyRemainingDefaultOptions(options);
+
+  this.add = function(selector) {
+    var elements,
+        elsWithIds,
+        idList,
+        elementID,
+        i,
+        roughText,
+        tidyText,
+        index,
+        count,
+        newTidyText,
+        readableID,
+        anchor;
+
+    this._applyRemainingDefaultOptions(this.options);
+
+    // Provide a sensible default selector, if none is given.
+    if (!selector) {
+      selector = 'h1, h2, h3, h4, h5, h6';
+    } else if (typeof selector !== 'string') {
+      throw new Error('The selector provided to AnchorJS was invalid.');
+    }
+
+    elements = document.querySelectorAll(selector);
+    if (elements.length === 0) {
+      return false;
+    }
+
+    this._addBaselineStyles();
+
+    // We produce a list of existing IDs so we don't generate a duplicate.
+    elsWithIds = document.querySelectorAll('[id]');
+    idList = [].map.call(elsWithIds, function assign(el) {
+      return el.id;
+    });
+
+    for (i = 0; i < elements.length; i++) {
+
+      if (elements[i].hasAttribute('id')) {
+        elementID = elements[i].getAttribute('id');
+      } else {
+        roughText = elements[i].textContent;
+
+        // Refine it so it makes a good ID. Strip out non-safe characters, replace
+        // spaces with hyphens, truncate to 32 characters, and make toLowerCase.
+        //
+        // Example string:                                // '⚡⚡⚡ Unicode icons are cool--but they definitely don't belong in a URL fragment.'
+        tidyText = roughText.replace(/[^\w\s-]/gi, '')    // ' Unicode icons are cool--but they definitely dont belong in a URL fragment'
+                                .replace(/\s+/g, '-')     // '-Unicode-icons-are-cool--but-they-definitely-dont-belong-in-a-URL-fragment'
+                                .replace(/-{2,}/g, '-')   // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL-fragment'
+                                .substring(0, 64)         // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
+                                .replace(/^-+|-+$/gm, '') // 'Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
+                                .toLowerCase();           // 'unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-url'
+
+        // Compare our generated ID to existing IDs (and increment it if needed)
+        // before we add it to the page.
+        newTidyText = tidyText;
+        count = 0;
+        do {
+          if (index !== undefined) {
+            newTidyText = tidyText + '-' + count;
+          }
+          // .indexOf is supported in IE9+.
+          index = idList.indexOf(newTidyText);
+          count += 1;
+        } while (index !== -1);
+        index = undefined;
+        idList.push(newTidyText);
+
+        // Assign it to our element.
+        // Currently the setAttribute element is only supported in IE9 and above.
+        elements[i].setAttribute('id', newTidyText);
+
+        elementID = newTidyText;
+      }
+
+      readableID = elementID.replace(/-/g, ' ');
+
+      // The following code builds the following DOM structure in a more effiecient (albeit opaque) way.
+      // '<a class="anchorjs-link ' + this.options.class + '" href="#' + elementID + '" aria-label="Anchor link for: ' + readableID + '" data-anchorjs-icon="' + this.options.icon + '"></a>';
+      anchor = document.createElement('a');
+      anchor.className = 'anchorjs-link ' + this.options.class;
+      anchor.href = '#' + elementID;
+      anchor.setAttribute('aria-label', 'Anchor link for: ' + readableID);
+      anchor.setAttribute('data-anchorjs-icon', this.options.icon);
+
+      if (this.options.visible === 'always') {
+        anchor.style.opacity = '1';
+      }
+
+      if (this.options.icon === '\ue9cb') {
+        anchor.style.fontFamily = 'anchorjs-icons';
+        anchor.style.fontStyle = 'normal';
+        anchor.style.fontVariant = 'normal';
+        anchor.style.fontWeight = 'normal';
+        anchor.style.lineHeight = 1;
+      }
+
+      if (this.options.placement === 'left') {
+        anchor.style.position = 'absolute';
+        anchor.style.marginLeft = '-1em';
+        anchor.style.paddingRight = '0.5em';
+        elements[i].insertBefore(anchor, elements[i].firstChild);
+      } else { // if the option provided is `right` (or anything else).
+        anchor.style.paddingLeft = '0.375em';
+        elements[i].appendChild(anchor);
+      }
+    }
+
+    return this;
+  };
+
+  this.remove = function(selector) {
+    var domAnchor,
+        elements = document.querySelectorAll(selector);
+    for (var i = 0; i < elements.length; i++) {
+      domAnchor = elements[i].querySelector('.anchorjs-link');
+      if (domAnchor) {
+        elements[i].removeChild(domAnchor);
+      }
+    }
+    return this;
+  };
+
+  this._addBaselineStyles = function() {
+    // We don't want to add global baseline styles if they've been added before.
+    if (document.head.querySelector('style.anchorjs') !== null) {
+      return;
+    }
+
+    var style = document.createElement('style'),
+        linkRule =
+        ' .anchorjs-link {'                       +
+        '   opacity: 0;'                          +
+        '   text-decoration: none;'               +
+        '   -webkit-font-smoothing: antialiased;' +
+        '   -moz-osx-font-smoothing: grayscale;'  +
+        ' }',
+        hoverRule =
+        ' *:hover > .anchorjs-link,'              +
+        ' .anchorjs-link:focus  {'                +
+        '   opacity: 1;'                          +
+        ' }',
+        anchorjsLinkFontFace =
+        ' @font-face {'                           +
+        '   font-family: "anchorjs-icons";'       +
+        '   font-style: normal;'                  +
+        '   font-weight: normal;'                 + // Icon from icomoon; 10px wide & 10px tall; 2 empty below & 4 above
+        '   src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBTUAAAC8AAAAYGNtYXAWi9QdAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zgq29TcAAAF4AAABNGhlYWQEZM3pAAACrAAAADZoaGVhBhUDxgAAAuQAAAAkaG10eASAADEAAAMIAAAAFGxvY2EAKACuAAADHAAAAAxtYXhwAAgAVwAAAygAAAAgbmFtZQ5yJ3cAAANIAAAB2nBvc3QAAwAAAAAFJAAAACAAAwJAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpywPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6cv//f//AAAAAAAg6cv//f//AAH/4xY5AAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACADEARAJTAsAAKwBUAAABIiYnJjQ/AT4BMzIWFxYUDwEGIicmND8BNjQnLgEjIgYPAQYUFxYUBw4BIwciJicmND8BNjIXFhQPAQYUFx4BMzI2PwE2NCcmNDc2MhcWFA8BDgEjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAEAAAABAACiToc1Xw889QALBAAAAAAA0XnFFgAAAADRecUWAAAAAAJTAsAAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAlMAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAACAAAAAoAAMQAAAAAACgAUAB4AmgABAAAABQBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIABwCfAAEAAAAAAAMADgBLAAEAAAAAAAQADgC0AAEAAAAAAAUACwAqAAEAAAAAAAYADgB1AAEAAAAAAAoAGgDeAAMAAQQJAAEAHAAOAAMAAQQJAAIADgCmAAMAAQQJAAMAHABZAAMAAQQJAAQAHADCAAMAAQQJAAUAFgA1AAMAAQQJAAYAHACDAAMAAQQJAAoANAD4YW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("truetype");' +
+        ' }',
+        pseudoElContent =
+        ' [data-anchorjs-icon]::after {'          +
+        '   content: attr(data-anchorjs-icon);'   +
+        ' }',
+        firstStyleEl;
+
+    style.className = 'anchorjs';
+    style.appendChild(document.createTextNode('')); // Necessary for Webkit.
+
+    // We place it in the head with the other style tags, if possible, so as to
+    // not look out of place. We insert before the others so these styles can be
+    // overridden if necessary.
+    firstStyleEl = document.head.querySelector('[rel="stylesheet"], style');
+    if (firstStyleEl === undefined) {
+      document.head.appendChild(style);
+    } else {
+      document.head.insertBefore(style, firstStyleEl);
+    }
+
+    style.sheet.insertRule(linkRule, style.sheet.cssRules.length);
+    style.sheet.insertRule(hoverRule, style.sheet.cssRules.length);
+    style.sheet.insertRule(pseudoElContent, style.sheet.cssRules.length);
+    style.sheet.insertRule(anchorjsLinkFontFace, style.sheet.cssRules.length);
+  };
+}
+
+var anchors = new AnchorJS();
+
 /*
 
     Basscss v5.2.0
@@ -1390,8 +1588,56 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #aaa;
 }
 
+/* global anchors */
+
+// add anchor links to headers
+anchors.options.placement = 'left';
+anchors.add();
+
+// Filter UI
+var tocElements = document.getElementById('toc').getElementsByTagName('a');
+document.getElementById('filter-input').addEventListener('keyup', function(e) {
+
+  // enter key
+  if (e.keyCode === 13) {
+    // go to the first displayed item in the toc
+    for (var i = 0; i < tocElements.length; i++) {
+      var element = tocElements[i];
+      if (!element.classList.contains('hide')) {
+        location.replace(element.href);
+        return e.preventDefault();
+      }
+    }
+  }
+
+  var match = function() { return true; },
+    value = this.value.toLowerCase();
+
+  if (!value.match(/^\s*$/)) {
+    match = function(text) { return text.toLowerCase().indexOf(value) !== -1; };
+  }
+
+  for (var i = 0; i < tocElements.length; i++) {
+    var element = tocElements[i];
+    if (match(element.innerHTML)) {
+      element.classList.remove('hide');
+    } else {
+      element.classList.add('hide');
+    }
+  }
+});
+
 .documentation a {
   color: #1184CE;
+}
+
+.documentation .suppress-p-margin p {
+  margin:0;
+}
+
+.force-inline p {
+  display: inline;
+  color: #222;
 }
 
 .container-small {
@@ -1400,8 +1646,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   margin-right: auto;
 }
 
-.font-smaller {
-  font-size:80%;
+.max-height-100 {
+  max-height: 100%;
 }
 
 .fade {
@@ -1425,12 +1671,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   display:inline;
 }
 
-section:target {
-  background: #fcfbf2;
-}
-
-.documentation-sidebar a:active {
-  background: #fcfbf2;
+section:target h3 {
+  font-weight:700;
 }
 
 .documentation,
@@ -1439,11 +1681,15 @@ section:target {
 .documentation h3,
 .documentation h4,
 .documentation h5,
-.documentation h6,
+.documentation h6 {
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+
 .documentation pre,
 .documentation code,
 .documentation samp {
-    font-family: 'Inconsolata', Consolas, 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 90%;
 }
 
 .documentation td,
@@ -1451,437 +1697,406 @@ section:target {
     padding: .25rem .25rem;
 }
 
+h1:hover .anchorjs-link,
+h2:hover .anchorjs-link,
+h3:hover .anchorjs-link,
+h4:hover .anchorjs-link {
+  opacity: 1;
+}
+
+.collapsible .collapser {
+  display:none;
+}
+
+.collapsible:target .collapser {
+  display: block;
+}
+
+.fix-3 {
+  width: 25%;
+  max-width: 244px;
+}
+
+@media (min-width: 52em) {
+  .fix-margin-3 {
+    margin-left: 25%;
+  }
+}
+
 <html>
 <head>
   <meta charset='utf-8' />
   <title> </title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,500,700' rel='stylesheet' type='text/css'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
   <link href='assets/github.css' type='text/css' rel='stylesheet' />
 </head>
 <body class='documentation'>
-  <div class='px2'>
-    <div class='clearfix flex flex-stretch mxn2'>
-      <div class='documentation-sidebar relative top-0 bottom-0 right-0 px2 py2 col-3 sm-show'>
-        <div class='font-smaller fixed col-3 top-0 bottom-0 left-0 overflow-auto black bg-cloudy'>
+  <div class='container'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed md-show fix-3 overflow-auto max-height-100'>
+        <div class='px1 py1'>
           <a href='/' class='h5 button block button-transparent'> </a>
           <div class='px2'>
+            <input
+              placeholder='Filter'
+              id='filter-input'
+              class='col12 block field-light'
+              type='text' />
+          </div>
+          <div id='toc' class='px2'>
               <a
                 href='#klass'
-                class='regular block'>
-                <code>Klass</code>
+                class='block bold'>
+                Klass
               </a>
                 <a
                   href='#klass/magic-number'
-                  class='px1 regular block'>
-                  <code>.MAGIC_NUMBER</code>
+                  class='regular block'>
+                  .MAGIC_NUMBER
                 </a>
                 <a
                   href='#klass/isarrayofbuffers'
-                  class='px1 regular block'>
-                  <code>.isArrayOfBuffers</code>
+                  class='regular block'>
+                  .isArrayOfBuffers
                 </a>
                 <a
                   href='#klass/isbuffer'
-                  class='px1 regular block'>
-                  <code>.isBuffer</code>
+                  class='regular block'>
+                  .isBuffer
                 </a>
                 <a
                   href='#klass/isclass'
-                  class='px1 regular block'>
-                  <code>.isClass</code>
+                  class='regular block'>
+                  .isClass
                 </a>
                 <a
                   href='#klass/isweird'
-                  class='px1 regular block'>
-                  <code>.isWeird</code>
+                  class='regular block'>
+                  .isWeird
                 </a>
                 <a
                   href='#klass/getfoo'
-                  class='px1 regular block'>
-                  <code>#getFoo</code>
+                  class='regular block'>
+                  #getFoo
                 </a>
                 <a
                   href='#klass/withoptions'
-                  class='px1 regular block'>
-                  <code>#withOptions</code>
+                  class='regular block'>
+                  #withOptions
                 </a>
                 <a
                   href='#klass/event'
-                  class='px1 regular block'>
+                  class='regular block'>
                   <code>ⓔ event</code>
                 </a>
               <a
                 href='#bar'
-                class='regular block'>
-                <code>bar</code>
+                class='block bold'>
+                bar
+              </a>
+              <a
+                href='#bar'
+                class='block bold'>
+                bar
               </a>
           </div>
         </div>
       </div>
-      <div class='sm-col  lg-col-9  flex flex-column'>
-        <div class='flex-auto full-width'>
-          <div class='px1'>
-<section id='klass'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass'>
-      <code>
-        Klass<span class='gray'></span>
-      </code>
-    </a>
-  </h3>
+      <div class='fix-margin-3'>
+        <div class='px2'>
+<div class='py1'><section class='py2 clearfix'>
+  <h2 id='klass' class='mt0'>
+    Klass<span class='gray'></span>
+  </h2>
   <p>Creates a new Klass</p>
 
+      <h4>Static members</h4>
+        <div class='collapsible' id='klass/magic-number'>
+          <a href='#klass/magic-number'>
+            <code>
+              .MAGIC_NUMBER<span class='gray'></span>
+            </code>
+            <span class='force-inline'>
+              <p>A magic number that identifies this Klass.</p>
 
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/magic-number' class='mt0'>
+                MAGIC_NUMBER<span class='gray'></span>
+              </h2>
+              <p>A magic number that identifies this Klass.</p>
+            
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/isarrayofbuffers'>
+          <a href='#klass/isarrayofbuffers'>
+            <code>
+              .isArrayOfBuffers<span class='gray'>(buffers)</span>
+            </code>
+            <span class='force-inline'>
+              <p>This method takes an array of buffers and counts them</p>
 
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/isarrayofbuffers' class='mt0'>
+                isArrayOfBuffers<span class='gray'>(buffers)</span>
+              </h2>
+              <p>This method takes an array of buffers and counts them</p>
+            
+                <h4>Parameters</h4>
+                <ul class='suppress-p-margin'>
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>> <strong>buffers</strong>
+                      :
+                      <span class='force-inline'>
+                        <p>some buffers</p>
+            
+                      </span>
+                    </li>
+                </ul>
+                  <h4>Returns</h4>
+                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+                  :
+                  <span class='force-inline'>
+                    <p>how many</p>
+            
+                  </span>
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/isbuffer'>
+          <a href='#klass/isbuffer'>
+            <code>
+              .isBuffer<span class='gray'>(buf, [size])</span>
+            </code>
+            <span class='force-inline'>
+              <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
-
-
-
-      <div class='section-indent'>
-<section id='klass/magic-number'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/magic-number'>
-      <code>
-        MAGIC_NUMBER<span class='gray'></span>
-      </code>
-    </a>
-  </h3>
-  <p>A magic number that identifies this Klass.</p>
-
-
-
-
-
-
-
-
-
-
-</section>
-      </div>
-      <div class='section-indent'>
-<section id='klass/isarrayofbuffers'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/isarrayofbuffers'>
-      <code>
-        isArrayOfBuffers<span class='gray'>(buffers)</span>
-      </code>
-    </a>
-  </h3>
-  <p>This method takes an array of buffers and counts them</p>
-
-
-    <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
-        <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
-        </thead>
-          <tr>
-            <td>buffers</td>
-            <td>
-              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>>
-            </td>
-            <td></td>
-          </tr>
-      </table>
-    </p>
-
-
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>how many</p>
-
-      </span>
-
-
-
-
-
-
-</section>
-      </div>
-      <div class='section-indent'>
-<section id='klass/isbuffer'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/isbuffer'>
-      <code>
-        isBuffer<span class='gray'>(buf, [size])</span>
-      </code>
-    </a>
-  </h3>
-  <p>This method takes a Buffer object that will be linked to nodejs.org</p>
-
-
-    <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
-        <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
-        </thead>
-          <tr>
-            <td>buf</td>
-            <td>
-              <code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>size</td>
-            <td>
-              <code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code>
-                (default <code>0</code>)
-            </td>
-            <td><p>size</p>
-</td>
-          </tr>
-      </table>
-    </p>
-
-
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>whether the other thing is a Klass</p>
-
-      </span>
-
-
-
-
-
-
-</section>
-      </div>
-      <div class='section-indent'>
-<section id='klass/isclass'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/isclass'>
-      <code>
-        isClass<span class='gray'>(other, also)</span>
-      </code>
-    </a>
-  </h3>
-  <p>Decide whether an object is a Klass instance
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/isbuffer' class='mt0'>
+                isBuffer<span class='gray'>(buf, [size])</span>
+              </h2>
+              <p>This method takes a Buffer object that will be linked to nodejs.org</p>
+            
+                <h4>Parameters</h4>
+                <ul class='suppress-p-margin'>
+                    <li><code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>buf</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
+                    <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>size</strong>
+                        (default <code>0</code>)
+                      :
+                      <span class='force-inline'>
+                        <p>size</p>
+            
+                      </span>
+                    </li>
+                </ul>
+                  <h4>Returns</h4>
+                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  :
+                  <span class='force-inline'>
+                    <p>whether the other thing is a Klass</p>
+            
+                  </span>
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/isclass'>
+          <a href='#klass/isclass'>
+            <code>
+              .isClass<span class='gray'>(other, also)</span>
+            </code>
+            <span class='force-inline'>
+              <p>Decide whether an object is a Klass instance
 This is a <a href="klass"><code>klasssic</code></a>
 This is a <a href="doesnot"><code>link to something that does not exist</code></a></p>
 
-
-    <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
-        <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
-        </thead>
-          <tr>
-            <td>other</td>
-            <td>
-              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>also</td>
-            <td>
-              Any
-            </td>
-            <td></td>
-          </tr>
-      </table>
-    </p>
-
-
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>whether the other thing is a Klass</p>
-
-      </span>
-
-
-
-
-
-
-</section>
-      </div>
-      <div class='section-indent'>
-<section id='klass/isweird'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/isweird'>
-      <code>
-        isWeird<span class='gray'>(other)</span>
-      </code>
-    </a>
-  </h3>
-  <p>A function that triggers the case where the autolinker doesn't find
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/isclass' class='mt0'>
+                isClass<span class='gray'>(other, also)</span>
+              </h2>
+              <p>Decide whether an object is a Klass instance
+            This is a <a href="klass"><code>klasssic</code></a>
+            This is a <a href="doesnot"><code>link to something that does not exist</code></a></p>
+            
+                <h4>Parameters</h4>
+                <ul class='suppress-p-margin'>
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>other</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
+                    <li>Any <strong>also</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
+                </ul>
+                  <h4>Returns</h4>
+                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  :
+                  <span class='force-inline'>
+                    <p>whether the other thing is a Klass</p>
+            
+                  </span>
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/isweird'>
+          <a href='#klass/isweird'>
+            <code>
+              .isWeird<span class='gray'>(other)</span>
+            </code>
+            <span class='force-inline'>
+              <p>A function that triggers the case where the autolinker doesn&apos;t find
 the referenced class type</p>
 
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/isweird' class='mt0'>
+                isWeird<span class='gray'>(other)</span>
+              </h2>
+              <p>A function that triggers the case where the autolinker doesn&apos;t find
+            the referenced class type</p>
+            
+                <h4>Parameters</h4>
+                <ul class='suppress-p-margin'>
+                    <li><code>Weird</code> <strong>other</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
+                </ul>
+                  <h4>Returns</h4>
+                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  :
+                  <span class='force-inline'>
+                    <p>whether the other thing is a Klass</p>
+            
+                  </span>
+            </section>
+          </div>
+        </div>
+      <h4>Instance members</h4>
+        <div class='collapsible' id='klass/getfoo'>
+          <a href='#klass/getfoo'>
+            <code>
+              #getFoo<span class='gray'></span>
+            </code>
+            <span class='force-inline'>
+              <p>Get this Klass&apos;s foo</p>
 
-    <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
-        <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
-        </thead>
-          <tr>
-            <td>other</td>
-            <td>
-              <code>Weird</code>
-            </td>
-            <td></td>
-          </tr>
-      </table>
-    </p>
+            </span>
+          </a>
+          <div class='collapser border px2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/getfoo' class='mt0'>
+                getFoo<span class='gray'></span>
+              </h2>
+              <p>Get this Klass&apos;s foo</p>
+            
+                  <h4>Returns</h4>
+                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
+                  :
+                  <span class='force-inline'>
+                    <p>foo</p>
+            
+                  </span>
+                <h4>Examples</h4>
+            <pre class='overflow-auto'>foo.getFoo();</pre>
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/withoptions'>
+          <a href='#klass/withoptions'>
+            <code>
+              #withOptions<span class='gray'>(options)</span>
+            </code>
+            <span class='force-inline'>
+              <p>A function with an options parameter</p>
 
-
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>whether the other thing is a Klass</p>
-
-      </span>
-
-
-
-
-
-
+            </span>
+          </a>
+          <div class='collapser border px2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/withoptions' class='mt0'>
+                withOptions<span class='gray'>(options)</span>
+              </h2>
+              <p>A function with an options parameter</p>
+            
+                <h4>Parameters</h4>
+                <ul class='suppress-p-margin'>
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
+                      <ul>
+                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> options.foo
+                            </li>
+                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
+                            </li>
+                      </ul>
+                </ul>
+            </section>
+          </div>
+        </div>
+        <div>
+  <section class='py2 clearfix'>
+    <h2 id='klass/event' class='mt0'>
+      event<span class='gray'></span>
+    </h2>
+    <p>Klass event</p>
+  
+  </section>
+        </div>
 </section>
-      </div>
-
-      <div class='section-indent'>
-<section id='klass/getfoo'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/getfoo'>
-      <code>
-        getFoo<span class='gray'></span>
-      </code>
-    </a>
-  </h3>
-  <p>Get this Klass's foo</p>
-
-
-
-
-      <h4>Returns</h4>
-      <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
-      :
-      <span class='force-inline'>
-        <p>foo</p>
-
-      </span>
-
-
-    <h4>Examples</h4>
-<pre>foo.getFoo();</pre>
-
-
-
-
-</section>
-      </div>
-      <div class='section-indent'>
-<section id='klass/withoptions'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/withoptions'>
-      <code>
-        withOptions<span class='gray'>(options)</span>
-      </code>
-    </a>
-  </h3>
-  <p>A function with an options parameter</p>
-
-
-    <p>
-      <table class='table-light overflow-hidden bg-cloudy-light'>
-        <thead>
-          <th class='col-3'>parameter</th>
-          <th class='col-3'>type</th>
-          <th class='col-6'>description</th>
-        </thead>
-          <tr>
-            <td>options</td>
-            <td>
-              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
-            </td>
-            <td></td>
-          </tr>
-            <tr>
-              <td>options.foo</td>
-              <td>
-                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>options.bar</td>
-              <td>
-                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
-              </td>
-              <td></td>
-            </tr>
-      </table>
-    </p>
-
-
-
-
-
-
-
-
-</section>
-      </div>
-
-      <div class='section-indent'>
-<section id='klass/event'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#klass/event'>
-      <code>
-        event<span class='gray'></span>
-      </code>
-    </a>
-  </h3>
-  <p>Klass event</p>
-
-
-
-
-
-
-
-
-
-
-</section>
-      </div>
-
-</section>
-<section id='bar'class='mt4 mb4 px2'>
-  <h3 class='regular'>
-    <a class='black' href='#bar'>
-      <code>
-        bar<span class='gray'></span>
-      </code>
-    </a>
-  </h3>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='bar' class='mt0'>
+    bar<span class='gray'></span>
+  </h2>
   <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
 a <a href="klass"><code>klass instance multiword</code></a>,
 like a <a href="klass"><code>klass</code></a></p>
 
+      <h4>Returns</h4>
+      <code>undefined</code>
+      :
+      <span class='force-inline'>
+        <p>nothing</p>
 
-
+      </span>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='bar' class='mt0'>
+    bar<span class='gray'></span>
+  </h2>
+  <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
+a <a href="klass"><code>klass instance multiword</code></a>,
+like a <a href="klass"><code>klass</code></a></p>
 
       <h4>Returns</h4>
       <code><code><a href="#klass">Klass</a></code></code>
@@ -1890,18 +2105,13 @@ like a <a href="klass"><code>klass</code></a></p>
         <p>that class</p>
 
       </span>
-
-
-
-
-
-
 </section>
-
-          </div>
+</div>
         </div>
       </div>
     </div>
   </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
 </body>
 </html>

@@ -1,12 +1,15 @@
-## `setTime`
+# setTime
 
 Set the time
 
-### Parameters
 
-* `time` **`Date`** the current time
+**Parameters**
+
+-   `time` **Date** the current time
 
 
 
-Returns  nothing
+Returns **undefined** nothing
+
+
 

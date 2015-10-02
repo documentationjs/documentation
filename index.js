@@ -10,6 +10,7 @@ var sort = require('./lib/sort'),
   parse = require('./lib/parsers/javascript'),
   polyglot = require('./lib/parsers/polyglot'),
   github = require('./lib/github'),
+  hierarchy = require('./lib/hierarchy'),
   inferName = require('./lib/infer/name'),
   inferKind = require('./lib/infer/kind'),
   inferMembership = require('./lib/infer/membership'),
@@ -20,7 +21,7 @@ var sort = require('./lib/sort'),
  * comments, given a root file as a path.
  *
  * @name documentation
- * @param {Array<String>|String} indexes files to process
+ * @param {Array<string>|string} indexes files to process
  * @param {Object} options options
  * @param {Array<string>} options.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
@@ -51,7 +52,7 @@ module.exports = function (indexes, options, callback) {
 
   return inputStream.pipe(concat(function (inputs) {
     try {
-      callback(null, inputs
+      var flat = inputs
         .filter(filterJS)
         .reduce(function (memo, file) {
           return memo.concat(parse(file));
@@ -65,7 +66,8 @@ module.exports = function (indexes, options, callback) {
           return comment;
         })
         .sort(sort.bind(undefined, options.order))
-        .filter(filterAccess.bind(undefined, options.private ? [] : undefined)));
+        .filter(filterAccess.bind(undefined, options.private ? [] : undefined))
+      callback(null, options.hierarchy !== false ? hierarchy(flat) : flat);
     } catch (e) {
       callback(e);
     }

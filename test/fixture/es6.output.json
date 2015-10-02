@@ -33,9 +33,9 @@
           "column": 31
         }
       },
-      "file": "fixture/es6.input.js",
       "code": "var multiply = (a, b) => a * b;\n\nexport default multiply;"
     },
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -48,6 +48,14 @@
       }
     ],
     "name": "multiply",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "multiply"
+    ]
   }
 ]

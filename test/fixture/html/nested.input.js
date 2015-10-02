@@ -65,7 +65,7 @@ Klass.isBuffer = function (buf, size) {
 /**
  * This method takes an array of buffers and counts them
  *
- * @param {Array<Buffer>} buffers
+ * @param {Array<Buffer>} buffers some buffers
  * @returns {number} how many
  */
 Klass.isArrayOfBuffers = function (buffers) {
@@ -86,6 +86,17 @@ Klass.MAGIC_NUMBER = 42;
  */
 function bar() {
   return new Klass(1);
+}
+
+/**
+ * Get an instance of {@link Klass}. Will make
+ * a {@link Klass klass instance multiword},
+ * like a {@link Klass|klass}
+ *
+ * @returns {undefined} nothing
+ */
+function bar() {
+  return undefined;
 }
 
 /**

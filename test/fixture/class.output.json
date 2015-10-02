@@ -1,0 +1,218 @@
+[
+  {
+    "description": "This is my class, a demo thing.",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "MyClass"
+      },
+      {
+        "title": "property",
+        "description": "how many things it contains",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "howMany"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 5,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      },
+      "code": "function MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };"
+    },
+    "errors": [],
+    "class": {
+      "name": "MyClass"
+    },
+    "properties": [
+      {
+        "title": "property",
+        "description": "how many things it contains",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "howMany"
+      }
+    ],
+    "name": "MyClass",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "Get the number 42",
+          "tags": [
+            {
+              "title": "param",
+              "description": "whether to get the number",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "boolean"
+              },
+              "name": "getIt"
+            },
+            {
+              "title": "returns",
+              "description": "forty-two",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 0
+            },
+            "end": {
+              "line": 14,
+              "column": 3
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 0
+              },
+              "end": {
+                "line": 17,
+                "column": 2
+              }
+            },
+            "code": "function MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };"
+          },
+          "errors": [],
+          "params": [
+            {
+              "title": "param",
+              "description": "whether to get the number",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "boolean"
+              },
+              "name": "getIt"
+            }
+          ],
+          "returns": [
+            {
+              "title": "returns",
+              "description": "forty-two",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
+          ],
+          "name": "getFoo",
+          "kind": "function",
+          "memberof": "MyClass",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "events": [],
+          "path": [
+            "MyClass",
+            "getFoo"
+          ]
+        },
+        {
+          "description": "Get undefined",
+          "tags": [
+            {
+              "title": "returns",
+              "description": "does not return anything.",
+              "lineNumber": 2,
+              "type": {
+                "type": "UndefinedLiteral"
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 19,
+              "column": 0
+            },
+            "end": {
+              "line": 22,
+              "column": 3
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 23,
+                "column": 0
+              },
+              "end": {
+                "line": 23,
+                "column": 49
+              }
+            },
+            "code": "function MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };"
+          },
+          "errors": [],
+          "returns": [
+            {
+              "title": "returns",
+              "description": "does not return anything.",
+              "lineNumber": 2,
+              "type": {
+                "type": "UndefinedLiteral"
+              }
+            }
+          ],
+          "name": "getUndefined",
+          "kind": "function",
+          "memberof": "MyClass",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "events": [],
+          "path": [
+            "MyClass",
+            "getUndefined"
+          ]
+        }
+      ],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "MyClass"
+    ]
+  }
+]

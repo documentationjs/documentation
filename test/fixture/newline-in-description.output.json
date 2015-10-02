@@ -33,9 +33,11 @@
           "line": 7,
           "column": 0
         }
-      },
-      "file": "fixture/newline-in-description.input.js"
+      }
     },
+    "errors": [
+      "type Number found, number is standard"
+    ],
     "params": [
       {
         "title": "param",
@@ -47,6 +49,14 @@
         },
         "name": "a"
       }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      null
     ]
   }
 ]

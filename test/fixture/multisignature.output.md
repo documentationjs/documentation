@@ -1,21 +1,25 @@
-## `getTheTime`
+# getTheTime
 
 Get the time
 
 
+Returns **Date** the current date
 
 
-Returns `Date` the current date
 
-## `getTheTime`
+
+# getTheTime
 
 Set the time
 
-### Parameters
 
-* `time` **`Date`** the current time
+**Parameters**
+
+-   `time` **Date** the current time
 
 
 
-Returns  nothing
+Returns **undefined** nothing
+
+
 

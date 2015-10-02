@@ -4,20 +4,13 @@ var test = require('tap').test,
   documentation = require('../'),
   outputMarkdown = require('../lib/output/markdown.js'),
   outputHtml = require('../lib/output/html.js'),
+  normalize = require('./normalize'),
   glob = require('glob'),
   path = require('path'),
   fs = require('fs'),
   chdir = require('chdir');
 
 var UPDATE = !!process.env.UPDATE;
-
-function normalize(result) {
-  result.forEach(function (item) {
-    delete item.errors;
-    item.context.file = path.relative(__dirname, item.context.file);
-  });
-  return result;
-}
 
 test('external modules option', function (t) {
   documentation([

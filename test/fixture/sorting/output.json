@@ -23,11 +23,19 @@
           "column": 2
         }
       },
-      "file": "fixture/sorting/input.js",
+      "file": "[path]",
       "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
     },
     "name": "bananas",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "bananas"
+    ]
   },
   {
     "description": "Carrots are awesome",
@@ -53,11 +61,19 @@
           "column": 2
         }
       },
-      "file": "fixture/sorting/input.js",
+      "file": "[path]",
       "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
     },
     "name": "carrots",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "carrots"
+    ]
   },
   {
     "description": "Apples are red",
@@ -83,10 +99,18 @@
           "column": 2
         }
       },
-      "file": "fixture/sorting/input.js",
+      "file": "[path]",
       "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
     },
     "name": "apples",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "apples"
+    ]
   }
 ]

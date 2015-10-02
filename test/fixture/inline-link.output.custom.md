@@ -1,23 +1,32 @@
-## `addOne(a)`
+# addOne
 
 Adds one to a number
 
-### Parameters
 
-* `a` **`number`** the input
+**Parameters**
+
+-   `a` **number** the input
 
 
-Returns `number` the output
 
-## `exports(a)`
+Returns **number** the output
+
+
+
+
+# exports
 
 This function returns the number one. Internally, this uses
-{@link addOne} to do the math.
-
-### Parameters
-
-* `a` **`number`** the input
+`addOne` to do the math.
 
 
-Returns `number` numberone
+**Parameters**
+
+-   `a` **number** the input
+
+
+
+Returns **number** numberone
+
+
 

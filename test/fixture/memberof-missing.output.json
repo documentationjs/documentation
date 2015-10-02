@@ -52,9 +52,11 @@
           "line": 8,
           "column": 0
         }
-      },
-      "file": "fixture/memberof-missing.input.js"
+      }
     },
+    "errors": [
+      "memberof reference to Foo not found"
+    ],
     "name": "setTime",
     "params": [
       {
@@ -78,6 +80,14 @@
           "type": "UndefinedLiteral"
         }
       }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "setTime"
     ]
   }
 ]

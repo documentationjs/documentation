@@ -33,9 +33,11 @@
           "column": 2
         }
       },
-      "file": "fixture/simple-hashbang.input.js",
       "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};"
     },
+    "errors": [
+      "memberof reference to module not found"
+    ],
     "returns": [
       {
         "title": "returns",
@@ -50,6 +52,14 @@
     "name": "exports",
     "kind": "function",
     "memberof": "module",
-    "scope": "static"
+    "scope": "static",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "exports"
+    ]
   }
 ]
