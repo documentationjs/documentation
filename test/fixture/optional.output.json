@@ -59,9 +59,9 @@
           "line": 9,
           "column": 0
         }
-      },
-      "file": "fixture/optional.input.js"
+      }
     },
+    "errors": [],
     "class": {
       "name": "Address6"
     },
@@ -95,6 +95,14 @@
       "var address = new Address6('2001::/32');"
     ],
     "name": "Address6",
-    "kind": "class"
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "Address6"
+    ]
   }
 ]

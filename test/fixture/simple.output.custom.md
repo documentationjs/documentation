@@ -1,8 +1,9 @@
-## `exports`
+# exports
 
 This function returns the number one.
 
 
+Returns **Number** numberone
 
-Returns `Number` numberone
+
 

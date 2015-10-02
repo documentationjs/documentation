@@ -57,9 +57,9 @@
           "line": 9,
           "column": 0
         }
-      },
-      "file": "fixture/event.input.js"
+      }
     },
+    "errors": [],
     "event": "Map#mousemove",
     "properties": [
       {
@@ -84,6 +84,14 @@
       }
     ],
     "name": "Map#mousemove",
-    "kind": "event"
+    "kind": "event",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "Map#mousemove"
+    ]
   }
 ]

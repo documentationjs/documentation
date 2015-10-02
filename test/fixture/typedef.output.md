@@ -1,12 +1,13 @@
-## `MyType`
+# MyType
 
 A type definition.
 
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `prop1` | `number` | one property |
-| `prop2` | `string` | another property |
+**Properties**
+
+-   `property`  one property
+
+-   `property`  another property
 
 
 

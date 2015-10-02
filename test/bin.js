@@ -27,7 +27,7 @@ function documentation(args, options, callback) {
 
 function normalize(result) {
   result.forEach(function (item) {
-    item.context.file = path.relative(__dirname, item.context.file);
+    item.context.file = '[path]';
   });
   return result;
 }
@@ -52,6 +52,12 @@ test('accepts config file', function (t) {
   documentation(['fixture/sorting/input.js -c fixture/config.json'],
     function (err, data) {
       t.error(err);
+      if (process.env.UPDATE) {
+        var expected = fs.writeFileSync(
+          path.resolve(__dirname,
+            'fixture',
+            'sorting/output.json'), JSON.stringify(normalize(data), null, 2), 'utf8');
+      }
       var expected = fs.readFileSync(
         path.resolve(__dirname,
           'fixture',

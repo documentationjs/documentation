@@ -58,9 +58,9 @@
           "line": 9,
           "column": 0
         }
-      },
-      "file": "fixture/typedef.input.js"
+      }
     },
+    "errors": [],
     "name": "MyType",
     "typedef": {
       "name": "MyType",
@@ -91,6 +91,14 @@
         "name": "prop2"
       }
     ],
-    "kind": "typedef"
+    "kind": "typedef",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "MyType"
+    ]
   }
 ]

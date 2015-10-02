@@ -43,9 +43,9 @@
           "column": 1
         }
       },
-      "file": "fixture/inline-link.input.js",
       "code": "function addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};"
     },
+    "errors": [],
     "params": [
       {
         "title": "param",
@@ -70,7 +70,15 @@
       }
     ],
     "name": "addOne",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "addOne"
+    ]
   },
   {
     "description": "This function returns the number one. Internally, this uses\n{@link addOne} to do the math.",
@@ -116,9 +124,11 @@
           "column": 2
         }
       },
-      "file": "fixture/inline-link.input.js",
       "code": "function addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};"
     },
+    "errors": [
+      "memberof reference to module not found"
+    ],
     "params": [
       {
         "title": "param",
@@ -145,6 +155,14 @@
     "name": "exports",
     "kind": "function",
     "memberof": "module",
-    "scope": "static"
+    "scope": "static",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "exports"
+    ]
   }
 ]

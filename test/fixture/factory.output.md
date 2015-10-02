@@ -1,25 +1,21 @@
-## `area`
+# area
 
 an area chart generator
 
 
-
-
-Returns `area` chart
-
-## `area`
+Returns **area** chart
 
 
 
 
+# area
 
 
 
-## `data`
+
+
+# data
 
 Sets the chart data.
-
-
-
 
 

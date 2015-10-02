@@ -1,13 +1,17 @@
-## `foo(options, bar)`
+# foo
 
 
 
-### Parameters
 
-* `options` **`Object`** some options
-  * `options.much` **`number`** how much
-* `bar` **`number`** something else
+**Parameters**
+
+-   `options` **Object** some options
+
+-   `bar` **number** something else
 
 
-Returns `Object` foo something else
+
+Returns **Object** foo something else
+
+
 

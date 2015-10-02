@@ -80,9 +80,9 @@
           "line": 8,
           "column": 0
         }
-      },
-      "file": "fixture/nested_properties.input.js"
+      }
     },
+    "errors": [],
     "name": "foo",
     "params": [
       {
@@ -128,6 +128,14 @@
           "name": "Object"
         }
       }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "foo"
     ]
   }
 ]

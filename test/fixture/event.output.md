@@ -1,12 +1,13 @@
-## `Map#mousemove`
+# Map#mousemove
 
 Mouse event
 
 
-| name | type | description |
-| ---- | ---- | ----------- |
-| `point` | `Point` | the pixel location of the event |
-| `originalEvent` | `Event` | the original DOM event |
+**Properties**
+
+-   `property`  the pixel location of the event
+
+-   `property`  the original DOM event
 
 
 

@@ -33,9 +33,9 @@
           "column": 1
         }
       },
-      "file": "fixture/multisignature.input.js",
       "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}"
     },
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -48,7 +48,15 @@
       }
     ],
     "name": "getTheTime",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "getTheTime"
+    ]
   },
   {
     "description": "Set the time",
@@ -93,9 +101,9 @@
           "column": 1
         }
       },
-      "file": "fixture/multisignature.input.js",
       "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}"
     },
+    "errors": [],
     "params": [
       {
         "title": "param",
@@ -119,6 +127,14 @@
       }
     ],
     "name": "getTheTime",
-    "kind": "function"
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "getTheTime"
+    ]
   }
 ]

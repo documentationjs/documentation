@@ -1,8 +1,21 @@
-## `exports`
+# exports
 
 This function returns the number one.
 
 
+**Examples**
 
-Returns `Number` numberone
+```javascript
+foo(1);
+```
+
+```javascript
+foo(2);
+```
+
+
+
+Returns **Number** numberone
+
+
 
