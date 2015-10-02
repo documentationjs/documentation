@@ -167,6 +167,14 @@ test('flatten', function (t) {
   })[0].callback, 'name', 'callback');
 
   t.deepEqual(evaluate(function () {
+    /** @module {string} name */
+    return 0;
+  })[0].module.type, {
+    type: 'NameExpression',
+    name: 'string'
+  }, 'typed name');
+
+  t.deepEqual(evaluate(function () {
     /** @typedef {Object} name */
     return 0;
   })[0].typedef, {
