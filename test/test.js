@@ -3,6 +3,7 @@
 var test = require('tap').test,
   documentation = require('../'),
   outputMarkdown = require('../lib/output/markdown.js'),
+  outputMarkdownAST = require('../lib/output/markdown_ast.js'),
   outputHtml = require('../lib/output/html.js'),
   normalize = require('./normalize'),
   glob = require('glob'),
@@ -129,6 +130,23 @@ test('markdown', function (tt) {
         });
       });
     });
+
+    tt.test(path.basename(file), function (t) {
+      documentation([file], null, function (err, result) {
+        t.ifError(err);
+        outputMarkdownAST(result, null, function (err, result) {
+          t.ifError(err);
+          var outputfile = file.replace('.input.js', '.output.md.json');
+          if (UPDATE) {
+            fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
+          }
+          var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
+          t.deepEqual(result, expect, 'markdown AST output correct');
+          t.end();
+        });
+      });
+    });
+
     tt.test(path.basename(file) + ' custom', function (t) {
       documentation([file], null, function (err, result) {
         t.ifError(err);

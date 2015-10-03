@@ -1,0 +1,501 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "type": "root",
+      "children": [
+        {
+          "depth": 1,
+          "type": "heading",
+          "children": [
+            {
+              "type": "text",
+              "value": "addOne"
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Adds one to a number",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 21
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1
+                },
+                "end": {
+                  "line": 1,
+                  "column": 21
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 21
+            }
+          }
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "strong",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Parameters"
+                }
+              ]
+            },
+            {
+              "ordered": false,
+              "type": "list",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "a"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "strong",
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "number"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "root",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "the input",
+                                  "position": {
+                                    "start": {
+                                      "line": 1,
+                                      "column": 1
+                                    },
+                                    "end": {
+                                      "line": 1,
+                                      "column": 10
+                                    },
+                                    "indent": []
+                                  }
+                                }
+                              ],
+                              "position": {
+                                "start": {
+                                  "line": 1,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 1,
+                                  "column": 10
+                                },
+                                "indent": []
+                              }
+                            }
+                          ],
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 10
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Returns "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "number"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "the output",
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 11
+                            },
+                            "indent": []
+                          }
+                        }
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 11
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 11
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "root",
+      "children": [
+        {
+          "depth": 1,
+          "type": "heading",
+          "children": [
+            {
+              "type": "text",
+              "value": "exports"
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "This function returns the number one. Internally, this uses\n",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 1
+                    },
+                    "indent": [
+                      1
+                    ]
+                  }
+                },
+                {
+                  "type": "inlineCode",
+                  "value": "addOne",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 9
+                    },
+                    "indent": []
+                  }
+                },
+                {
+                  "type": "text",
+                  "value": " to do the math.",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 9
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 25
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1
+                },
+                "end": {
+                  "line": 2,
+                  "column": 25
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 2,
+              "column": 25
+            }
+          }
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "strong",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Parameters"
+                }
+              ]
+            },
+            {
+              "ordered": false,
+              "type": "list",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "a"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "strong",
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "number"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "root",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "the input",
+                                  "position": {
+                                    "start": {
+                                      "line": 1,
+                                      "column": 1
+                                    },
+                                    "end": {
+                                      "line": 1,
+                                      "column": 10
+                                    },
+                                    "indent": []
+                                  }
+                                }
+                              ],
+                              "position": {
+                                "start": {
+                                  "line": 1,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 1,
+                                  "column": 10
+                                },
+                                "indent": []
+                              }
+                            }
+                          ],
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 10
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Returns "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "number"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "numberone",
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 10
+                            },
+                            "indent": []
+                          }
+                        }
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 10
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 10
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
