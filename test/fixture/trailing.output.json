@@ -1,0 +1,169 @@
+[
+  {
+    "description": "this is a type",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "Something"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 15,
+        "column": 0
+      },
+      "end": {
+        "line": 18,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 1
+        }
+      },
+      "code": "function fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}"
+    },
+    "errors": [],
+    "class": {
+      "name": "Something"
+    },
+    "name": "Something",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "Something"
+    ]
+  },
+  {
+    "description": "ONE",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "something",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      },
+      "code": "function fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "something",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "name": "fooBar",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "fooBar"
+    ]
+  },
+  {
+    "description": "TWO",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "something",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 8,
+        "column": 0
+      },
+      "end": {
+        "line": 11,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 1
+        }
+      },
+      "code": "function fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "something",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "name": "fooBaz",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "fooBaz"
+    ]
+  }
+]
