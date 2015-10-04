@@ -3,61 +3,63 @@
     "description": "This function returns the number one.",
     "tags": [
       {
-        "title": "returns",
-        "description": "numberone",
+        "title": "param",
+        "name": "a",
+        "lineNumber": 7
+      },
+      {
+        "title": "param",
+        "description": "the second param",
         "lineNumber": 2,
         "type": {
           "type": "NameExpression",
-          "name": "Number"
-        }
+          "name": "number"
+        },
+        "name": "b"
       },
       {
         "title": "param",
-        "name": "a",
-        "lineNumber": 5
-      },
-      {
-        "title": "param",
-        "name": "b",
-        "lineNumber": 5
+        "name": "c",
+        "lineNumber": 7
       }
     ],
     "loc": {
       "start": {
-        "line": 1,
+        "line": 3,
         "column": 0
       },
       "end": {
-        "line": 4,
+        "line": 6,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 5,
+          "line": 7,
           "column": 0
         },
         "end": {
-          "line": 5,
-          "column": 31
+          "line": 9,
+          "column": 1
         }
       },
-      "code": "var multiply = (a, b) => a * b;\n\nexport default multiply;"
+      "code": "function addThem(a, b, c) {\n  return a + b + c;\n};"
     },
     "errors": [],
-    "returns": [
+    "params": [
       {
-        "title": "returns",
-        "description": "numberone",
+        "title": "param",
+        "description": "the second param",
         "lineNumber": 2,
         "type": {
           "type": "NameExpression",
-          "name": "Number"
-        }
+          "name": "number"
+        },
+        "name": "b"
       }
     ],
-    "name": "multiply",
+    "name": "addThem",
     "kind": "function",
     "members": {
       "instance": [],
@@ -65,7 +67,7 @@
     },
     "events": [],
     "path": [
-      "multiply"
+      "addThem"
     ]
   }
 ]

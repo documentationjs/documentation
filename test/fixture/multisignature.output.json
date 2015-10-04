@@ -10,6 +10,11 @@
           "type": "NameExpression",
           "name": "Date"
         }
+      },
+      {
+        "title": "param",
+        "name": "time",
+        "lineNumber": 13
       }
     ],
     "loc": {

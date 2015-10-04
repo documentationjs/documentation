@@ -67,6 +67,11 @@
         "lineNumber": 1,
         "type": null,
         "name": "area"
+      },
+      {
+        "title": "param",
+        "name": "selection",
+        "lineNumber": 10
       }
     ],
     "loc": {
@@ -115,6 +120,11 @@
         "description": null,
         "lineNumber": 2,
         "name": null
+      },
+      {
+        "title": "param",
+        "name": "_",
+        "lineNumber": 17
       }
     ],
     "loc": {
