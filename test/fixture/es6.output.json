@@ -10,16 +10,6 @@
           "type": "NameExpression",
           "name": "Number"
         }
-      },
-      {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 5
-      },
-      {
-        "title": "param",
-        "name": "b",
-        "lineNumber": 5
       }
     ],
     "loc": {
