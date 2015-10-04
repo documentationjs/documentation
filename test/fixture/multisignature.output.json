@@ -54,6 +54,13 @@
     ],
     "name": "getTheTime",
     "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "time",
+        "lineNumber": 13
+      }
+    ],
     "members": {
       "instance": [],
       "static": []

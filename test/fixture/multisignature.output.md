@@ -3,6 +3,12 @@
 Get the time
 
 
+**Parameters**
+
+-   `time`  
+
+
+
 Returns **Date** the current date
 
 

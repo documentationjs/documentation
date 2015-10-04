@@ -50,6 +50,11 @@
     "params": [
       {
         "title": "param",
+        "name": "a",
+        "lineNumber": 7
+      },
+      {
+        "title": "param",
         "description": "the second param",
         "lineNumber": 2,
         "type": {
@@ -57,6 +62,11 @@
           "name": "number"
         },
         "name": "b"
+      },
+      {
+        "title": "param",
+        "name": "c",
+        "lineNumber": 7
       }
     ],
     "name": "addThem",

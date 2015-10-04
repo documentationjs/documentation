@@ -103,6 +103,13 @@
     },
     "name": "area",
     "kind": "class",
+    "params": [
+      {
+        "title": "param",
+        "name": "selection",
+        "lineNumber": 10
+      }
+    ],
     "members": {
       "instance": [],
       "static": []
@@ -156,6 +163,13 @@
     "function": null,
     "name": "data",
     "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "_",
+        "lineNumber": 17
+      }
+    ],
     "memberof": "chart",
     "scope": "static",
     "members": {

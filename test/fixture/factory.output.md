@@ -13,9 +13,21 @@ Returns **area** chart
 
 
 
+**Parameters**
+
+-   `selection`  
+
+
+
 
 # data
 
 Sets the chart data.
+
+
+**Parameters**
+
+-   `_`  
+
 
 
