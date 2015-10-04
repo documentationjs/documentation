@@ -85,7 +85,7 @@ test('--shallow option', function (t) {
 
 test('bad -f option', function (t) {
   documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err, data) {
-    t.ok(err.toString().match(/Formatter not found/), 'reports bad formatter');
+    t.ok(err, 'returns error');
     t.end();
   });
 });
