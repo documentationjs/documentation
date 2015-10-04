@@ -35,7 +35,7 @@
       },
       "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};",
       "path": "test/fixture/simple.input.js",
-      "github": "https://github.com/documentationjs/documentation/blob/1e4dd63875058fdb540e9cd0141606eebd3a2f65/test/fixture/simple.input.js#L5-L8"
+      "github": "[github]"
     },
     "errors": [
       "memberof reference to module not found"
