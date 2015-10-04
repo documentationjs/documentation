@@ -1,0 +1,58 @@
+[
+  {
+    "description": "this is a type",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 4,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "nothing",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      null
+    ]
+  }
+]
