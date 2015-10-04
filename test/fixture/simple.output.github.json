@@ -1,0 +1,67 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 2
+        }
+      },
+      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};",
+      "path": "test/fixture/simple.input.js",
+      "github": "https://github.com/documentationjs/documentation/blob/1e4dd63875058fdb540e9cd0141606eebd3a2f65/test/fixture/simple.input.js#L5-L8"
+    },
+    "errors": [
+      "memberof reference to module not found"
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "exports",
+    "kind": "function",
+    "memberof": "module",
+    "scope": "static",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "exports"
+    ]
+  }
+]

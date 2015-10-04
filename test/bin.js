@@ -2,10 +2,11 @@
 
 var test = require('tap').test,
   path = require('path'),
+  os = require('os'),
   exec = require('child_process').exec,
   fs = require('fs');
 
-function documentation(args, options, callback) {
+function documentation(args, options, callback, parseJSON) {
   if (!callback) {
     callback = options;
     options = {};
@@ -21,7 +22,11 @@ function documentation(args, options, callback) {
     if (err) {
       return callback(err, stdout, stderr);
     }
-    callback(err, JSON.parse(stdout), stderr);
+    if (parseJSON === false) {
+      callback(err, stdout, stderr);
+    } else {
+      callback(err, JSON.parse(stdout), stderr);
+    }
   });
 }
 
@@ -76,4 +81,64 @@ test('--shallow option', function (t) {
     t.equal(data.length, 0, 'should not check dependencies');
     t.end();
   });
+});
+
+test('bad -f option', function (t) {
+  documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err, data) {
+    t.ok(err.toString().match(/Formatter not found/), 'reports bad formatter');
+    t.end();
+  });
+});
+
+test('html with no destination', function (t) {
+  documentation(['-f html fixture/internal.input.js'], function (err, data) {
+    t.ok(err.toString()
+      .match(/The HTML output mode requires a destination directory set with -o/),
+      'needs dest for html');
+    t.end();
+  });
+});
+
+test('given no files', function (t) {
+  documentation([''], function (err, data) {
+    t.ok(err.toString()
+      .match(/documentation was given no files and was not run in a module directory/),
+      'no files given');
+    t.end();
+  });
+});
+
+test('write to file', function (t) {
+
+  var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+
+  documentation(['--shallow fixture/internal.input.js -o ' + dst], {}, function (err, data) {
+    t.error(err);
+    t.equal(data, '');
+    t.ok(fs.existsSync(dst), 'created file');
+    t.end();
+  }, false);
+});
+
+test('write to html', function (t) {
+
+  var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  fs.mkdirSync(dstDir);
+
+  documentation(['--shallow fixture/internal.input.js -f html -o ' + dstDir], {},
+    function (err, data) {
+      t.error(err);
+      t.equal(data, '');
+      t.ok(fs.existsSync(path.join(dstDir, 'index.html')), 'created index.html');
+      t.end();
+    }, false);
+});
+
+test('fatal error', function (t) {
+
+  documentation(['--shallow fixture/bad/syntax.input.js'], {},
+    function (err, data) {
+      t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
+      t.end();
+    }, false);
 });

@@ -30,10 +30,6 @@ documentation(parsedArgs.inputs, parsedArgs.options, function (err, result) {
   });
 
   formatter(result, formatterOptions, function (err, output) {
-    if (err) {
-      throw err;
-    }
-
     if (outputLocation !== 'stdout') {
       if (parsedArgs.formatter === 'html') {
         streamArray(output).pipe(vfs.dest(outputLocation));
@@ -45,7 +41,3 @@ documentation(parsedArgs.inputs, parsedArgs.options, function (err, result) {
     }
   });
 });
-
-/*
-  .pipe(argv.g ? github() : new PassThrough({ objectMode: true }))
-*/

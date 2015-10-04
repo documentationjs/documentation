@@ -13,6 +13,23 @@ var test = require('tap').test,
 
 var UPDATE = !!process.env.UPDATE;
 
+if (fs.existsSync(path.join(__dirname, '../.git'))) {
+  test('git option', function (t) {
+    var file = path.join(__dirname, './fixture/simple.input.js');
+    documentation([file], { github: true }, function (err, result) {
+      t.ifError(err);
+      normalize(result);
+      var outputfile = file.replace('.input.js', '.output.github.json');
+      if (UPDATE) {
+        fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+      }
+      var expect = require(outputfile);
+      t.deepEqual(result, expect);
+      t.end();
+    });
+  });
+}
+
 test('external modules option', function (t) {
   documentation([
     path.join(__dirname, 'fixture', 'external.input.js')
