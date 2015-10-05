@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "ast-types": "^0.8.12",
-    "babel": "^5.8.23",
+    "babylon": "^5.8.23",
     "brfs": "^1.4.0",
     "concat-stream": "^1.5.0",
     "doctrine": "^0.6.4",
