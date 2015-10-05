@@ -34,7 +34,7 @@
           "column": 1
         }
       },
-      "code": "function addThem(a, b, c) {\n  return a + b + c;\n};"
+      "code": "/* eslint valid-jsdoc: 0 */\n\n/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c) {\n  return a + b + c;\n};\n"
     },
     "errors": [],
     "params": [
