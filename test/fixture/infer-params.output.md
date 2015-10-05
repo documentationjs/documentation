@@ -1,4 +1,4 @@
-# multiply
+# addThem
 
 This function returns the number one.
 
@@ -7,11 +7,9 @@ This function returns the number one.
 
 -   `a`  
 
--   `b`  
+-   `b` **number** the second param
 
-
-
-Returns **Number** numberone
+-   `c`  
 
 
 

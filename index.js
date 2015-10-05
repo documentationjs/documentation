@@ -13,6 +13,7 @@ var sort = require('./lib/sort'),
   hierarchy = require('./lib/hierarchy'),
   inferName = require('./lib/infer/name'),
   inferKind = require('./lib/infer/kind'),
+  inferParams = require('./lib/infer/params'),
   inferMembership = require('./lib/infer/membership'),
   lint = require('./lib/lint');
 
@@ -59,7 +60,12 @@ module.exports = function (indexes, options, callback) {
         }, [])
         .map(function (comment) {
           // compose nesting & membership to avoid intermediate arrays
-          comment = nestParams(inferMembership(inferKind(inferName(lint(comment)))));
+          comment = nestParams(
+            inferMembership(
+              inferParams(
+                inferKind(
+                  inferName(
+                    lint(comment))))));
           if (options.github) {
             comment = github(comment);
           }
