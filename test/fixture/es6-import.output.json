@@ -1,0 +1,139 @@
+[
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 31
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\nexport default multiply;\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "multiply",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 5
+      },
+      {
+        "title": "param",
+        "name": "b",
+        "lineNumber": 5
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "multiply"
+    ]
+  },
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 43
+        }
+      },
+      "code": "import multiply from \"./es6.input.js\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "multiplyTwice",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 7
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "multiplyTwice"
+    ]
+  }
+]
