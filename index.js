@@ -1,12 +1,11 @@
 'use strict';
 
 var sort = require('./lib/sort'),
-  concat = require('concat-stream'),
   nestParams = require('./lib/nest_params'),
   filterAccess = require('./lib/filter_access'),
   filterJS = require('./lib/filter_js'),
-  dependency = require('./streams/input/dependency'),
-  shallow = require('./streams/input/shallow'),
+  dependency = require('./lib/input/dependency'),
+  shallow = require('./lib/input/shallow'),
   parse = require('./lib/parsers/javascript'),
   polyglot = require('./lib/parsers/polyglot'),
   github = require('./lib/github'),
@@ -47,11 +46,12 @@ module.exports = function (indexes, options, callback) {
     indexes = [indexes];
   }
 
-  var inputStream = options.polyglot ?
-    shallow(indexes).pipe(polyglot()) :
-    (options.shallow ? shallow(indexes) : dependency(indexes, options));
+  var inputFn = (options.polyglot || options.shallow) ? shallow : dependency;
 
-  return inputStream.pipe(concat(function (inputs) {
+  return inputFn(indexes, options, function (error, inputs) {
+    if (error) {
+      return callback(error);
+    }
     try {
       var flat = inputs
         .filter(filterJS)
@@ -77,7 +77,7 @@ module.exports = function (indexes, options, callback) {
     } catch (e) {
       callback(e);
     }
-  }));
+  });
 };
 
 module.exports.formats = {

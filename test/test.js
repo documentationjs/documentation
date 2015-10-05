@@ -90,11 +90,13 @@ test('bad input', function (tt) {
         t.equal(res, undefined);
         // make error a serializable object
         error = JSON.parse(JSON.stringify(error));
+        // remove system-specific path
+        delete error.filename;
         var outputfile = file.replace('.input.js', '.output.json');
         if (UPDATE) {
           fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));
         }
-        var expect = require(outputfile);
+        var expect = JSON.parse(fs.readFileSync(outputfile));
         t.deepEqual(error, expect);
         t.end();
       });
