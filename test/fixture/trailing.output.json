@@ -81,7 +81,7 @@
           "column": 1
         }
       },
-      "code": "function fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}"
+      "code": "/**\n * ONE\n * @return {number} something\n */\nfunction fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}\n/**\n * this is a type\n * @class Something\n */\n"
     },
     "errors": [],
     "returns": [
@@ -140,7 +140,7 @@
           "column": 1
         }
       },
-      "code": "function fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}"
+      "code": "/**\n * ONE\n * @return {number} something\n */\nfunction fooBar() {\n  return 1;\n}\n/**\n * TWO\n * @return {number} something\n */\nfunction fooBaz() {\n  return 2;\n}\n/**\n * this is a type\n * @class Something\n */\n"
     },
     "errors": [],
     "returns": [

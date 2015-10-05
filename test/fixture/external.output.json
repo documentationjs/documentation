@@ -23,7 +23,7 @@
           "column": 1
         }
       },
-      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;"
+      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;\n"
     },
     "errors": [],
     "name": "foo",

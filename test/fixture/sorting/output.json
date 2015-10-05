@@ -24,7 +24,7 @@
         }
       },
       "file": "[path]",
-      "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
+      "code": "/**\n * Apples are red\n */\nvar apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};\n"
     },
     "name": "bananas",
     "kind": "function",
@@ -62,7 +62,7 @@
         }
       },
       "file": "[path]",
-      "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
+      "code": "/**\n * Apples are red\n */\nvar apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};\n"
     },
     "name": "carrots",
     "kind": "function",
@@ -100,7 +100,7 @@
         }
       },
       "file": "[path]",
-      "code": "var apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};"
+      "code": "/**\n * Apples are red\n */\nvar apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};\n"
     },
     "name": "apples",
     "kind": "function",

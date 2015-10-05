@@ -33,7 +33,7 @@
           "column": 31
         }
       },
-      "code": "var multiply = (a, b) => a * b;\n\nexport default multiply;"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\nexport default multiply;\n"
     },
     "errors": [],
     "returns": [

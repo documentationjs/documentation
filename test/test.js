@@ -88,7 +88,8 @@ test('bad input', function (tt) {
     tt.test(path.basename(file), function (t) {
       documentation([file], null, function (error, res) {
         t.equal(res, undefined);
-        delete error.stream;
+        // make error a serializable object
+        error = JSON.parse(JSON.stringify(error));
         var outputfile = file.replace('.input.js', '.output.json');
         if (UPDATE) {
           fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));

@@ -33,7 +33,7 @@
           "column": 2
         }
       },
-      "code": "module.exports = function () {\n  // this returns 1\n  return 1;\n};"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
     },
     "errors": [
       "memberof reference to module not found"
@@ -111,7 +111,7 @@
           "column": 1
         }
       },
-      "code": "function returnTwo(a) {\n  // this returns a + 2\n  return a + 2;\n}"
+      "code": "/**\n * This function returns the number plus two.\n *\n * @param {Number} a the number\n * @returns {Number} numbertwo\n * @example\n * var result = returnTwo(4);\n * // result is 6\n */\nfunction returnTwo(a) {\n  // this returns a + 2\n  return a + 2;\n}\n"
     },
     "errors": [
       "type Number found, number is standard"
