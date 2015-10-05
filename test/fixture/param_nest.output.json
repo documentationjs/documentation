@@ -1,0 +1,260 @@
+[
+  {
+    "description": "Create a GeoJSON data source instance given an options object",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "GeoJSONSource"
+      },
+      {
+        "title": "param",
+        "description": "optional options",
+        "lineNumber": 3,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+            "lineNumber": 4,
+            "type": {
+              "type": "UnionType",
+              "elements": [
+                {
+                  "type": "NameExpression",
+                  "name": "Object"
+                },
+                {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              ]
+            },
+            "name": "options.data"
+          },
+          {
+            "title": "param",
+            "description": "Maximum zoom to preserve detail at.",
+            "lineNumber": 6,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.maxzoom",
+            "default": "14"
+          },
+          {
+            "title": "param",
+            "description": "Tile buffer on each side.",
+            "lineNumber": 7,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.buffer"
+          },
+          {
+            "title": "param",
+            "description": "Simplification tolerance (higher means simpler).",
+            "lineNumber": 8,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.tolerance"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+        "lineNumber": 4,
+        "type": {
+          "type": "UnionType",
+          "elements": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            },
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        },
+        "name": "options.data"
+      },
+      {
+        "title": "param",
+        "description": "Maximum zoom to preserve detail at.",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.maxzoom",
+        "default": "14"
+      },
+      {
+        "title": "param",
+        "description": "Tile buffer on each side.",
+        "lineNumber": 7,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.buffer"
+      },
+      {
+        "title": "param",
+        "description": "Simplification tolerance (higher means simpler).",
+        "lineNumber": 8,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.tolerance"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 10,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 1
+        }
+      },
+      "code": "/**\n * Create a GeoJSON data source instance given an options object\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n"
+    },
+    "errors": [],
+    "class": {
+      "name": "GeoJSONSource"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "optional options",
+        "lineNumber": 3,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+            "lineNumber": 4,
+            "type": {
+              "type": "UnionType",
+              "elements": [
+                {
+                  "type": "NameExpression",
+                  "name": "Object"
+                },
+                {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              ]
+            },
+            "name": "options.data"
+          },
+          {
+            "title": "param",
+            "description": "Maximum zoom to preserve detail at.",
+            "lineNumber": 6,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.maxzoom",
+            "default": "14"
+          },
+          {
+            "title": "param",
+            "description": "Tile buffer on each side.",
+            "lineNumber": 7,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.buffer"
+          },
+          {
+            "title": "param",
+            "description": "Simplification tolerance (higher means simpler).",
+            "lineNumber": 8,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.tolerance"
+          }
+        ]
+      }
+    ],
+    "name": "GeoJSONSource",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "GeoJSONSource"
+    ]
+  }
+]

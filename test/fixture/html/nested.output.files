@@ -2041,7 +2041,7 @@ the referenced class type</p>
         <div class='collapsible' id='klass/withoptions'>
           <a href='#klass/withoptions'>
             <code>
-              #withOptions<span class='gray'>(options.foo, options.bar, options)</span>
+              #withOptions<span class='gray'>(options)</span>
             </code>
             <span class='force-inline'>
               <p>A function with an options parameter</p>
@@ -2051,30 +2051,24 @@ the referenced class type</p>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
               <h2 id='klass/withoptions' class='mt0'>
-                withOptions<span class='gray'>(options.foo, options.bar, options)</span>
+                withOptions<span class='gray'>(options)</span>
               </h2>
               <p>A function with an options parameter</p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>options.foo</strong>
-                      :
-                      <span class='force-inline'>
-                        
-                      </span>
-                    </li>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> <strong>options.bar</strong>
-                      :
-                      <span class='force-inline'>
-                        
-                      </span>
-                    </li>
                     <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
                       :
                       <span class='force-inline'>
                         
                       </span>
                     </li>
+                      <ul>
+                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> options.foo
+                            </li>
+                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
+                            </li>
+                      </ul>
                 </ul>
             </section>
           </div>

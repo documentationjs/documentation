@@ -5,7 +5,7 @@ This is my class, a demo thing.
 
 **Properties**
 
--   `property`  how many things it contains
+-   `howMany`  how many things it contains
 
 
 

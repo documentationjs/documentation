@@ -84,7 +84,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "property"
+                          "value": "point"
                         },
                         {
                           "type": "text",
@@ -161,7 +161,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "property"
+                          "value": "originalEvent"
                         },
                         {
                           "type": "text",

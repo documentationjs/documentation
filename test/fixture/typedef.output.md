@@ -5,9 +5,9 @@ A type definition.
 
 **Properties**
 
--   `property`  one property
+-   `prop1`  one property
 
--   `property`  another property
+-   `prop2`  another property
 
 
 

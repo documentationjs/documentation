@@ -84,7 +84,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "property"
+                          "value": "howMany"
                         },
                         {
                           "type": "text",
