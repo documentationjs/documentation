@@ -12,7 +12,7 @@ Create a GeoJSON data source instance given an options object
     -   `options.maxzoom` **[number]** Maximum zoom to preserve detail at.
          (optional, default 
 
-        inlineCode
+        `14`
 
         )
 

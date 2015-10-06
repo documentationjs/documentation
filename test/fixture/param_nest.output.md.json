@@ -315,10 +315,8 @@
                                           "value": " (optional, default "
                                         },
                                         {
-                                          "0": "1",
-                                          "1": "4",
-                                          "type": "text",
-                                          "value": "inlineCode"
+                                          "type": "inlineCode",
+                                          "value": "14"
                                         },
                                         {
                                           "type": "text",

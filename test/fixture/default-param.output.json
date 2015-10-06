@@ -1,0 +1,47 @@
+[
+  {
+    "description": "Very Important Transform",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 1
+        }
+      },
+      "code": "/**\n * Very Important Transform\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n"
+    },
+    "errors": [],
+    "name": "veryImportantTransform",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "foo",
+        "default": "'bar'"
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "veryImportantTransform"
+    ]
+  }
+]

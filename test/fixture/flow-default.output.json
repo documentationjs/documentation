@@ -1,0 +1,80 @@
+[
+  {
+    "description": "Very Important Transform",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 1
+        }
+      },
+      "code": "/**\n * Very Important Transform\n */\nfunction veryImportantTransform(\n  input: Array<string>,\n  options: Object = {}\n): string {\n  return \"42\";\n}\n"
+    },
+    "errors": [],
+    "name": "veryImportantTransform",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "input",
+        "lineNumber": 5,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        }
+      },
+      {
+        "title": "param",
+        "name": "options",
+        "default": "{}",
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        }
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "veryImportantTransform"
+    ]
+  }
+]

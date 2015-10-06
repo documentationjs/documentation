@@ -10,7 +10,7 @@ Represents an IPv6 address
 -   `groups` **[number]** How many octets to parse
      (optional, default 
 
-    inlineCode
+    `8`
 
     )
 
