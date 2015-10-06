@@ -6,7 +6,7 @@ var documentation = require('../'),
   streamArray = require('stream-array'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
-  formatError = require('../lib/error'),
+  formatError = require('../lib/format_error'),
   args = require('../lib/args.js');
 
 var parsedArgs = args(process.argv.slice(2)),

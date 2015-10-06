@@ -2,9 +2,9 @@
 
 var test = require('tap').test,
   path = require('path'),
-  error = require('../../lib/error');
+  formatError = require('../../lib/format_error');
 
-test('error', function (t) {
+test('formatError', function (t) {
   var comment = {
     context: {
       file: path.join(process.cwd(), 'file.js')
@@ -16,7 +16,14 @@ test('error', function (t) {
     }
   };
 
-  t.deepEqual(error(comment, 'test'), 'file.js:1: test');
+  t.deepEqual(formatError(comment, {
+    message: 'test'
+  }), 'file.js:1: test');
+
+  t.deepEqual(formatError(comment, {
+    message: 'test',
+    commentLineNumber: 1
+  }), 'file.js:2: test');
 
   t.end();
 });

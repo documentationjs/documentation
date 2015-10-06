@@ -94,6 +94,9 @@ test('hierarchy - missing memberof', function (t) {
   });
 
   t.equal(result.length, 1);
-  t.equal(result[0].errors[0], 'memberof reference to DoesNotExist not found', 'correct error message');
+  t.deepEqual(result[0].errors[0], {
+    message: 'memberof reference to DoesNotExist not found',
+    commentLineNumber: 2
+  }, 'correct error message');
   t.end();
 });

@@ -127,7 +127,10 @@
       "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
     },
     "errors": [
-      "memberof reference to module not found"
+      {
+        "message": "memberof reference to module not found",
+        "commentLineNumber": 0
+      }
     ],
     "params": [
       {

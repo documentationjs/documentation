@@ -2,6 +2,7 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
+  formatError = require('../../lib/format_error'),
   lint = require('../../lib/lint');
 
 function toComment(fn, filename) {
@@ -23,9 +24,24 @@ test('lint', function (t) {
      */
     return 0;
   }).errors, [
-    'type String found, string is standard',
-    'type array found, Array is standard'],
+    { commentLineNumber: 1, message: 'type String found, string is standard' },
+    { commentLineNumber: 2, message: 'type array found, Array is standard' }],
     'non-canonical');
+
+  var comment = evaluate(function () {/**
+     * @param {String} foo
+     * @param {array} bar
+     */
+    return 0;
+  });
+
+  t.equal(formatError(comment, comment.errors[0]),
+    'input.js:2: type String found, string is standard',
+    'formatError');
+
+  t.equal(formatError(comment, comment.errors[1]),
+    'input.js:3: type array found, Array is standard',
+    'formatError');
 
   t.deepEqual(evaluate(function () {
     /**

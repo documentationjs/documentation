@@ -36,7 +36,10 @@
       "code": "var util = require('util');\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = (<p>hello</p>);\n"
     },
     "errors": [
-      "memberof reference to module not found"
+      {
+        "message": "memberof reference to module not found",
+        "commentLineNumber": 0
+      }
     ],
     "returns": [
       {

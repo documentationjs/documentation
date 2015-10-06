@@ -36,7 +36,10 @@
       }
     },
     "errors": [
-      "type Number found, number is standard"
+      {
+        "message": "type Number found, number is standard",
+        "commentLineNumber": 2
+      }
     ],
     "params": [
       {

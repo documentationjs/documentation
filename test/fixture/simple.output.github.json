@@ -38,7 +38,10 @@
       "github": "[github]"
     },
     "errors": [
-      "memberof reference to module not found"
+      {
+        "message": "memberof reference to module not found",
+        "commentLineNumber": 0
+      }
     ],
     "returns": [
       {

@@ -48,13 +48,14 @@ test('nestParams - basic', function (t) {
 });
 
 test('nestParams - missing parent', function (t) {
-  var result = toComment(function () {
-    /** @param {string} foo.bar */
+  var result = toComment(function () {/** @param {string} foo.bar */
     return 0;
   });
   t.equal(result[0].params.length, 1);
-  t.equal(result[0].errors[0], '@param foo.bar\'s parent foo not found',
-    'correct error message');
+  t.deepEqual(result[0].errors[0], {
+    message: '@param foo.bar\'s parent foo not found',
+    commentLineNumber: 0
+  }, 'correct error message');
   t.equal(result[0].params[0].name, 'foo.bar');
   t.end();
 });

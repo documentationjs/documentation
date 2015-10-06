@@ -55,7 +55,10 @@
       }
     },
     "errors": [
-      "memberof reference to Foo not found"
+      {
+        "message": "memberof reference to Foo not found",
+        "commentLineNumber": 4
+      }
     ],
     "name": "setTime",
     "params": [

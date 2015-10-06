@@ -33,7 +33,10 @@
       }
     },
     "errors": [
-      "found memberof but no @scope, @static, or @instance tag"
+      {
+        "message": "found memberof but no @scope, @static, or @instance tag",
+        "commentLineNumber": 4
+      }
     ],
     "class": {
       "name": "Foo"
