@@ -2,6 +2,8 @@
 
 The largest change to documentation.js so far.
 
+**Dropping streams**
+
 This a major refactor of the documentation.js interface with a focus on
 simplifying the system. Up until this point, documentation.js was built around
 [node.js streams](https://nodejs.org/api/stream.html), which are low-level
@@ -10,6 +12,37 @@ appropriate for the input and github streams, which are asynchronous, the
 majority of documentation.js's internals are simple and synchronous functions
 for which basic functional composition makes more sense than stream
 semantics.
+
+Documentation 3.0.0 uses simple functional composition for operations like
+parmameter inference, rather than streams.
+
+**Stronger support for ES6, ES7, and Flow**
+
+We've switched to [Babel](https://babeljs.io/) as our source code parser,
+which means that we have much broader support of new JavaScript features,
+including import/export syntax and new features in ES6.
+
+Babel also parses [Flow type annotations](http://flowtype.org/docs/type-annotations.html),
+and new inference code means that we can infer
+
+* Parameter names & types
+* Return types
+
+Without any explicit JSDoc tags. This means that for many simple functions,
+we can generate great documentation with less writing.
+
+**mdast-based Markdown output**
+
+We've switched from templating Markdown output with [Handlebars.js](http://handlebarsjs.com/)
+to generating an [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+of desired output and stringifying it with [mdast](https://github.com/wooorm/mdast).
+This lets documentation.js output complex Markdown without having to worry
+about escaping and properly formatting certain elements.
+
+**Test coverage 100%**
+
+documentation.js returns to 100% test coverage, so every single line
+of code is covered by our large library of text fixtures and specific tests.
 
 ## 2.0.1
 
