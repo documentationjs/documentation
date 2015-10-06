@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint no-unused-vars: 0 */
+
 var test = require('tap').test,
   mock = require('mock-fs'),
   mockRepo = require('./git/mock_repo'),

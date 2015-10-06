@@ -5,7 +5,7 @@ var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
   inferMembership = require('../../../lib/infer/membership');
 
-function toComment(fn, filename, which) {
+function toComment(fn, filename) {
   return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn

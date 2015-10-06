@@ -1,7 +1,6 @@
 'use strict';
 
 var test = require('tap').test,
-  path = require('path'),
   mock = require('mock-fs'),
   mockRepo = require('./mock_repo'),
   findGit = require('../../../lib/git/find_git');

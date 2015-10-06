@@ -84,14 +84,14 @@ test('--shallow option', function (t) {
 });
 
 test('bad -f option', function (t) {
-  documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err, data) {
+  documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
     t.ok(err, 'returns error');
     t.end();
   });
 });
 
 test('html with no destination', function (t) {
-  documentation(['-f html fixture/internal.input.js'], function (err, data) {
+  documentation(['-f html fixture/internal.input.js'], function (err) {
     t.ok(err.toString()
       .match(/The HTML output mode requires a destination directory set with -o/),
       'needs dest for html');
@@ -100,7 +100,7 @@ test('html with no destination', function (t) {
 });
 
 test('given no files', function (t) {
-  documentation([''], function (err, data) {
+  documentation([''], function (err) {
     t.ok(err.toString()
       .match(/documentation was given no files and was not run in a module directory/),
       'no files given');
@@ -137,7 +137,7 @@ test('write to html', function (t) {
 test('fatal error', function (t) {
 
   documentation(['--shallow fixture/bad/syntax.input.js'], {},
-    function (err, data) {
+    function (err) {
       t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
       t.end();
     }, false);

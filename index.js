@@ -6,7 +6,7 @@ var sort = require('./lib/sort'),
   filterJS = require('./lib/filter_js'),
   dependency = require('./lib/input/dependency'),
   shallow = require('./lib/input/shallow'),
-  parse = require('./lib/parsers/javascript'),
+  parseJavaScript = require('./lib/parsers/javascript'),
   polyglot = require('./lib/parsers/polyglot'),
   github = require('./lib/github'),
   hierarchy = require('./lib/hierarchy'),
@@ -48,6 +48,7 @@ module.exports = function (indexes, options, callback) {
   }
 
   var inputFn = (options.polyglot || options.shallow) ? shallow : dependency;
+  var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
   return inputFn(indexes, options, function (error, inputs) {
     if (error) {
@@ -57,7 +58,7 @@ module.exports = function (indexes, options, callback) {
       var flat = inputs
         .filter(filterJS)
         .reduce(function (memo, file) {
-          return memo.concat(parse(file));
+          return memo.concat(parseFn(file));
         }, [])
         .map(function (comment) {
           // compose nesting & membership to avoid intermediate arrays

@@ -3,20 +3,16 @@
 'use strict';
 
 var documentation = require('../'),
-
   streamArray = require('stream-array'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
   formatError = require('../lib/error'),
   args = require('../lib/args.js');
 
-var parsedArgs = args(process.argv.slice(2));
-var inputs = parsedArgs.inputs,
-  options = parsedArgs.options,
+var parsedArgs = args(process.argv.slice(2)),
   formatterOptions = parsedArgs.formatterOptions,
-  outputLocation = parsedArgs.output;
-
-var formatter = documentation.formats[parsedArgs.formatter];
+  outputLocation = parsedArgs.output,
+  formatter = documentation.formats[parsedArgs.formatter];
 
 documentation(parsedArgs.inputs, parsedArgs.options, function (err, result) {
   if (err) {

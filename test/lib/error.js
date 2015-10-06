@@ -5,10 +5,6 @@ var test = require('tap').test,
   error = require('../../lib/error');
 
 test('error', function (t) {
-  var tag = {
-    lineNumber: 2
-  };
-
   var comment = {
     context: {
       file: path.join(process.cwd(), 'file.js')
