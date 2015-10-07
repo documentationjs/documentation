@@ -16,5 +16,5 @@ module.exports = {
         'index.js': 'module.exports = 42;'
       }
     }
-  },
+  }
 };

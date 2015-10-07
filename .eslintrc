@@ -33,6 +33,7 @@
     "no-shadow": 0,
     "no-undef": 2
   },
+  "extends": "eslint:recommended",
   "env": {
     "node": true,
     "es6": true,
