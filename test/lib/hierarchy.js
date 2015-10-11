@@ -2,10 +2,7 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
-  hierarchy = require('../../lib/hierarchy'),
-  inferName = require('../../lib/infer/name'),
-  inferKind = require('../../lib/infer/kind'),
-  inferMembership = require('../../lib/infer/membership');
+  hierarchy = require('../../lib/hierarchy');
 
 function toComments(fn, filename) {
   return parse({
@@ -15,68 +12,53 @@ function toComments(fn, filename) {
 }
 
 function evaluate(fn, callback) {
-  return hierarchy(toComments(fn, callback)
-    .map(inferName)
-    .map(inferKind)
-    .map(inferMembership));
+  return hierarchy(toComments(fn, callback));
 }
 
 test('hierarchy', function (t) {
   var result = evaluate(function () {
     /**
-     * Creates a new Klass
-     * @param {string} foo bar
+     * @name Class
      * @class
      */
-    function Klass(foo) {
-      this.foo = foo;
-    }
 
     /**
-     * Get this Klass's foo
-     * @returns {Number} foo
+     * @name getFoo
+     * @memberof Class
+     * @instance
      */
-    Klass.prototype.getFoo = function () {
-      return this.foo;
-    };
 
     /**
-     * Decide whether an object is a Klass instance
-     *
-     * @param {Object} other bar
-     * @returns {boolean} whether the other thing is a Klass
+     * @name isClass
+     * @memberof Class
+     * @static
      */
-    Klass.isClass = function (other) {
-      return other instanceof Klass;
-    };
 
     /**
-     * A magic number that identifies this Klass.
+     * @name MAGIC_NUMBER
+     * @memberof Class
+     * @static
      */
-    Klass.MAGIC_NUMBER = 42;
 
     /**
-     * Klass event
-     * @event event
-     * @memberof Klass
+     * @name event
+     * @memberof Class
+     * @kind event
      */
-
-    return Klass;
   });
 
   t.equal(result.length, 1);
 
   t.equal(result[0].members.static.length, 2);
-  t.deepEqual(result[0].members.static[0].path, ['Klass', 'isClass']);
+  t.deepEqual(result[0].members.static[0].path, ['Class', 'isClass']);
 
   t.equal(result[0].members.instance.length, 1);
-  t.deepEqual(result[0].members.instance[0].path, ['Klass', 'getFoo']);
+  t.deepEqual(result[0].members.instance[0].path, ['Class', 'getFoo']);
 
   t.equal(result[0].events.length, 1);
-  t.deepEqual(result[0].events[0].path, ['Klass', 'event']);
+  t.deepEqual(result[0].events[0].path, ['Class', 'event']);
 
   t.end();
-
 });
 
 test('hierarchy - missing memberof', function (t) {
@@ -86,11 +68,6 @@ test('hierarchy - missing memberof', function (t) {
      * @memberof DoesNotExist
      * @returns {Number} foo
      */
-    function getFoo() {
-      return this.foo;
-    }
-
-    getFoo();
   });
 
   t.equal(result.length, 1);
