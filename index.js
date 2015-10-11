@@ -10,11 +10,6 @@ var sort = require('./lib/sort'),
   polyglot = require('./lib/parsers/polyglot'),
   github = require('./lib/github'),
   hierarchy = require('./lib/hierarchy'),
-  inferName = require('./lib/infer/name'),
-  inferKind = require('./lib/infer/kind'),
-  inferParams = require('./lib/infer/params'),
-  inferMembership = require('./lib/infer/membership'),
-  inferReturn = require('./lib/infer/return'),
   lint = require('./lib/lint');
 
 /**
@@ -61,6 +56,12 @@ module.exports = function (indexes, options, callback) {
           return memo.concat(parseFn(file));
         }, [])
         .map(function (comment) {
+          var inferName = require('./lib/infer/name')();
+          var inferKind = require('./lib/infer/kind')();
+          var inferParams = require('./lib/infer/params')();
+          var inferMembership = require('./lib/infer/membership')();
+          var inferReturn = require('./lib/infer/return')();
+
           // compose nesting & membership to avoid intermediate arrays
           comment = nestParams(
             inferMembership(

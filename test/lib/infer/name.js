@@ -2,7 +2,7 @@
 
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
-  inferName = require('../../../lib/infer/name');
+  inferName = require('../../../lib/infer/name')();
 
 function toComment(fn, filename) {
   return parse({

@@ -3,7 +3,7 @@
 var test = require('tap').test,
   _ = require('lodash'),
   parse = require('../../../lib/parsers/javascript'),
-  inferMembership = require('../../../lib/infer/membership');
+  inferMembership = require('../../../lib/infer/membership')();
 
 function toComment(fn, filename) {
   return parse({
