@@ -136,12 +136,6 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'lends, static');
 
-  t.end();
-});
-
-
-
-test('inferMembership', function (t) {
   t.deepEqual(_.pick(evaluate(function () {
     lend(/** @lends Foo */{
       /**
@@ -182,7 +176,11 @@ test('inferMembership', function (t) {
     lend(/** @lends Foo */{});
     /** Test */
     return 0;
-  })[0].memberof, undefined, 'inferMembership - lends applies only to following object');
+  })[1].memberof, undefined, 'inferMembership - lends applies only to following object');
+
+  t.equal(evaluate(function () {
+    lend(/** @lends Foo */{});
+  })[0], undefined, 'inferMembership - drops lends');
 
   t.end();
 });

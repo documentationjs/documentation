@@ -10,7 +10,39 @@ var sort = require('./lib/sort'),
   polyglot = require('./lib/parsers/polyglot'),
   github = require('./lib/github'),
   hierarchy = require('./lib/hierarchy'),
+  inferName = require('./lib/infer/name'),
+  inferKind = require('./lib/infer/kind'),
+  inferParams = require('./lib/infer/params'),
+  inferMembership = require('./lib/infer/membership'),
+  inferReturn = require('./lib/infer/return'),
   lint = require('./lib/lint');
+
+/**
+ * Build a pipeline of comment handlers.
+ * @param {...Function} args - Pipeline elements. Each is a function that accepts
+ *  a comment and can return a comment or undefined (to drop that comment).
+ * @returns {Function} pipeline
+ * @private
+ */
+function pipeline() {
+  var elements = arguments;
+  return function (comment) {
+    for (var i = 0; comment && i < elements.length; i++) {
+      comment = elements[i](comment);
+    }
+    return comment;
+  }
+}
+
+/**
+ * A comment handler that returns the comment unchanged.
+ * @param {Object} comment parsed comment
+ * @returns {Object} comment
+ * @private
+ */
+function noop(comment) {
+  return comment;
+}
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -55,26 +87,17 @@ module.exports = function (indexes, options, callback) {
         .reduce(function (memo, file) {
           return memo.concat(parseFn(file));
         }, [])
-        .map(function (comment) {
-          var inferName = require('./lib/infer/name')();
-          var inferKind = require('./lib/infer/kind')();
-          var inferParams = require('./lib/infer/params')();
-          var inferMembership = require('./lib/infer/membership')();
-          var inferReturn = require('./lib/infer/return')();
-
-          // compose nesting & membership to avoid intermediate arrays
-          comment = nestParams(
-            inferMembership(
-              inferReturn(
-                inferParams(
-                  inferKind(
-                    inferName(
-                      lint(comment)))))));
-          if (options.github) {
-            comment = github(comment);
-          }
-          return comment;
-        })
+        .map(pipeline(
+          lint,
+          inferName(),
+          inferKind(),
+          inferParams(),
+          inferReturn(),
+          inferMembership(),
+          nestParams,
+          options.github ? github : noop
+        ))
+        .filter(Boolean)
         .sort(sort.bind(undefined, options.order))
         .filter(filterAccess.bind(undefined, options.private ? [] : undefined))
       callback(null, options.hierarchy !== false ? hierarchy(flat) : flat);
