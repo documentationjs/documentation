@@ -77,3 +77,23 @@ test('hierarchy - missing memberof', function (t) {
   }, 'correct error message');
   t.end();
 });
+
+test('hierarchy - missing scope', function (t) {
+  var result = evaluate(function () {
+    /**
+     * @name Class
+     * @class
+     */
+
+    /**
+     * @name test
+     * @memberof Class
+     */
+  });
+
+  t.equal(result.length, 2);
+  t.deepEqual(result[1].errors[0], {
+    message: 'found memberof but no @scope, @static, or @instance tag'
+  }, 'correct error message');
+  t.end();
+});
