@@ -16,6 +16,8 @@ function documentation(args, options, callback, parseJSON) {
     options.cwd = __dirname;
   }
 
+  options.maxBuffer = 1024 * 1024;
+
   args.unshift(path.join(__dirname, '../bin/documentation.js'));
 
   exec(args.join(' '), options, function (err, stdout, stderr) {
