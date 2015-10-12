@@ -37,12 +37,7 @@
       "path": "test/fixture/simple.input.js",
       "github": "[github]"
     },
-    "errors": [
-      {
-        "message": "memberof reference to simple.input not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -54,17 +49,15 @@
         }
       }
     ],
-    "name": "exports",
+    "name": "simple.input",
     "kind": "function",
-    "memberof": "simple.input",
-    "scope": "static",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "simple.input"
     ]
   }
 ]

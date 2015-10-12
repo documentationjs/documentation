@@ -241,7 +241,7 @@
           "children": [
             {
               "type": "text",
-              "value": "exports"
+              "value": "inline-link.input"
             }
           ]
         },

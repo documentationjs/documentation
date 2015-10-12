@@ -77,12 +77,7 @@
       },
       "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n * @example\n * foo(1);\n * @example\n * foo(2);\n * @throws {Error} if you give it something\n * @throws {TypeError} if you give it something else\n * @augments Foo\n * @augments Bar\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to multiexample.input not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -134,17 +129,15 @@
         "name": "Bar"
       }
     ],
-    "name": "exports",
+    "name": "multiexample.input",
     "kind": "function",
-    "memberof": "multiexample.input",
-    "scope": "static",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "multiexample.input"
     ]
   }
 ]

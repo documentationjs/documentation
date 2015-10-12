@@ -1,71 +1,5 @@
 [
   {
-    "description": "This function returns the number one.",
-    "tags": [
-      {
-        "title": "returns",
-        "description": "numberone",
-        "lineNumber": 2,
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
-        }
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 1,
-        "column": 0
-      },
-      "end": {
-        "line": 4,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 5,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 2
-        }
-      },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
-    },
-    "errors": [
-      {
-        "message": "memberof reference to simple.input not found",
-        "commentLineNumber": 0
-      }
-    ],
-    "returns": [
-      {
-        "title": "returns",
-        "description": "numberone",
-        "lineNumber": 2,
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
-        }
-      }
-    ],
-    "name": "exports",
-    "kind": "function",
-    "memberof": "simple.input",
-    "scope": "static",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "events": [],
-    "path": [
-      "exports"
-    ]
-  },
-  {
     "description": "This function returns the number plus two.",
     "tags": [
       {
@@ -157,6 +91,65 @@
     "events": [],
     "path": [
       "returnTwo"
+    ]
+  },
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 2
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "simple.input",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "simple.input"
     ]
   }
 ]

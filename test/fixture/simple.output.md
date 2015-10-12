@@ -1,4 +1,4 @@
-# exports
+# simple.input
 
 This function returns the number one.
 

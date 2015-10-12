@@ -1,4 +1,4 @@
-# exports
+# simple-hashbang.input
 
 This function returns the number one.
 

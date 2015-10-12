@@ -1,4 +1,4 @@
-# exports
+# jsx.input
 
 This function returns the number one.
 

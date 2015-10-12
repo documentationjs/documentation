@@ -286,19 +286,22 @@ test('inferMembership - module.exports', function (t) {
     };
   })[1].memberof, 'mod');
 
-  // https://github.com/documentationjs/documentation/issues/178
-  //
-  // t.equal(evaluate(function () {
-  //   /** @module mod */
-  //   /** foo */
-  //   module.exports = 1;
-  // })[1].memberof, 'mod');
-  //
-  // t.equal(evaluate(function () {
-  //   /** @module mod */
-  //   /** @returns {undefined} foo */
-  //   module.exports = function () {};
-  // })[1].memberof, 'mod');
+  t.equal(evaluate(function () {
+    /**
+     * @module mod
+     * @name exports
+     */
+    module.exports = 1;
+  })[0].memberof, undefined);
+
+  t.equal(evaluate(function () {
+    /**
+     * @module mod
+     * @name exports
+     * @returns {undefined} bar
+     */
+    module.exports = function () {};
+  })[0].memberof, undefined);
 
   t.equal(evaluate(function () {
     /** @module mod */

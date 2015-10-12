@@ -126,12 +126,7 @@
       },
       "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to inline-link.input not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "params": [
       {
         "title": "param",
@@ -155,17 +150,15 @@
         }
       }
     ],
-    "name": "exports",
+    "name": "inline-link.input",
     "kind": "function",
-    "memberof": "inline-link.input",
-    "scope": "static",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "inline-link.input"
     ]
   }
 ]

@@ -10,7 +10,7 @@
           "children": [
             {
               "type": "text",
-              "value": "exports"
+              "value": "jsx.input"
             }
           ]
         },

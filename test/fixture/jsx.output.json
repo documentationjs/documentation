@@ -35,12 +35,7 @@
       },
       "code": "var util = require('util');\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = (<p>hello</p>);\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to jsx.input not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -52,16 +47,14 @@
         }
       }
     ],
-    "name": "exports",
-    "memberof": "jsx.input",
-    "scope": "static",
+    "name": "jsx.input",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "jsx.input"
     ]
   }
 ]

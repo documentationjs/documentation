@@ -35,12 +35,7 @@
       },
       "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to simple.input not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -52,17 +47,15 @@
         }
       }
     ],
-    "name": "exports",
+    "name": "simple.input",
     "kind": "function",
-    "memberof": "simple.input",
-    "scope": "static",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "simple.input"
     ]
   }
 ]

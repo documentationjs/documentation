@@ -1,5 +1,43 @@
 [
   {
+    "description": "I am in `external.input.js`.",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 5,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 1
+        }
+      },
+      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;\n"
+    },
+    "errors": [],
+    "name": "foo",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "events": [],
+    "path": [
+      "foo"
+    ]
+  },
+  {
     "description": "This function returns the number one.",
     "tags": [
       {
@@ -35,12 +73,7 @@
       },
       "code": "/**\n * This function returns the number one.\n * @return {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to index not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -52,17 +85,15 @@
         }
       }
     ],
-    "name": "exports",
+    "name": "index",
     "kind": "function",
-    "memberof": "index",
-    "scope": "static",
     "members": {
       "instance": [],
       "static": []
     },
     "events": [],
     "path": [
-      "exports"
+      "index"
     ]
   },
   {
@@ -101,12 +132,7 @@
       },
       "code": "'use strict';\n\nvar otherDep = require('external2');\n\n/**\n * This function returns the number one.\n * @return {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return otherDep() - 1;\n};\n"
     },
-    "errors": [
-      {
-        "message": "memberof reference to main not found",
-        "commentLineNumber": 0
-      }
-    ],
+    "errors": [],
     "returns": [
       {
         "title": "returns",
@@ -118,47 +144,7 @@
         }
       }
     ],
-    "name": "exports",
-    "kind": "function",
-    "memberof": "main",
-    "scope": "static",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "events": [],
-    "path": [
-      "exports"
-    ]
-  },
-  {
-    "description": "I am in `external.input.js`.",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 5,
-        "column": 0
-      },
-      "end": {
-        "line": 7,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 0
-        },
-        "end": {
-          "line": 11,
-          "column": 1
-        }
-      },
-      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;\n"
-    },
-    "errors": [],
-    "name": "foo",
+    "name": "main",
     "kind": "function",
     "members": {
       "instance": [],
@@ -166,7 +152,7 @@
     },
     "events": [],
     "path": [
-      "foo"
+      "main"
     ]
   }
 ]

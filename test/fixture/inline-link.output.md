@@ -14,7 +14,7 @@ Returns **number** the output
 
 
 
-# exports
+# inline-link.input
 
 This function returns the number one. Internally, this uses
 `addOne` to do the math.
