@@ -4,15 +4,15 @@ var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
   inferName = require('../../../lib/infer/name')();
 
-function toComment(fn, filename) {
+function toComment(fn, file) {
   return parse({
-    file: filename,
+    file: file,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   })[0];
 }
 
-function evaluate(fn, callback) {
-  return inferName(toComment(fn, callback));
+function evaluate(fn, file) {
+  return inferName(toComment(fn, file));
 }
 
 test('inferName', function (t) {
@@ -135,6 +135,39 @@ test('inferName', function (t) {
     function implicitName() {}
     return implicitName;
   }).name, 'explicitCallback', 'explicitCallback');
+
+  t.equal(evaluate(function () {
+    /**
+     * @module explicitModule
+     * @returns {undefined} baz
+     */
+    function implicitName() {}
+    return implicitName;
+  }).name, 'explicitModule');
+
+  t.equal(evaluate(function () {
+    /**
+     * @module {Function} explicitModule
+     * @returns {undefined} baz
+     */
+    function implicitName() {}
+    return implicitName;
+  }).name, 'explicitModule');
+
+  t.equal(evaluate(function () {
+    /**
+     * @module
+     * @returns {undefined} baz
+     */
+    function implicitName() {}
+    return implicitName;
+  }, '/path/inferred-from-file.js').name, 'inferred-from-file');
+
+  t.equal(evaluate(function () {
+    /**
+     * @module
+     */
+  }, '/path/inferred-from-file.js').name, 'inferred-from-file');
 
   t.end();
 });
