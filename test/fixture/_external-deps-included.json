@@ -37,7 +37,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to module not found",
+        "message": "memberof reference to index not found",
         "commentLineNumber": 0
       }
     ],
@@ -54,7 +54,7 @@
     ],
     "name": "exports",
     "kind": "function",
-    "memberof": "module",
+    "memberof": "index",
     "scope": "static",
     "members": {
       "instance": [],
@@ -103,7 +103,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to module not found",
+        "message": "memberof reference to main not found",
         "commentLineNumber": 0
       }
     ],
@@ -120,7 +120,7 @@
     ],
     "name": "exports",
     "kind": "function",
-    "memberof": "module",
+    "memberof": "main",
     "scope": "static",
     "members": {
       "instance": [],

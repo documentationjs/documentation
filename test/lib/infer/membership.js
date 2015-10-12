@@ -186,30 +186,128 @@ test('inferMembership - explicit', function (t) {
 });
 
 test('inferMembership - exports', function (t) {
-  var result = evaluate(function () {
-    /**
-     * @module mod
-     */
-    /** Test */
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** foo */
     exports.foo = 1;
-  });
+  })[1].memberof, 'mod');
 
-  t.equal(result.length, 2);
-  t.equal(result[1].memberof, 'mod');
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** @returns {undefined} foo */
+    exports.foo = function () {};
+  })[1].memberof, 'mod');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** bar */
+    exports.foo.bar = 1;
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    exports.foo = {
+      /** bar */
+      bar: 1
+    };
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    exports.foo = {
+      /** @returns {undefined} bar */
+      bar: function () {}
+    };
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** @returns {undefined} bar */
+    exports.foo.prototype.bar = function () {};
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    exports.foo.prototype = {
+      /** @returns {undefined} bar */
+      bar: function () {}
+    };
+  })[1].memberof, 'mod.foo');
+
   t.end();
 });
 
 test('inferMembership - module.exports', function (t) {
-  var result = evaluate(function () {
-    /**
-     * @module mod
-     */
-    /** Test */
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** foo */
     module.exports.foo = 1;
-  });
+  })[1].memberof, 'mod');
 
-  t.equal(result.length, 2);
-  t.equal(result[1].memberof, 'mod');
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** @returns {undefined} foo */
+    module.exports.foo = function () {};
+  })[1].memberof, 'mod');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** bar */
+    module.exports.foo.bar = 1;
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    module.exports.foo = {
+      /** bar */
+      bar: 1
+    };
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    module.exports.foo = {
+      /** @returns {undefined} bar */
+      bar: function () {}
+    };
+  })[1].memberof, 'mod.foo');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    /** @returns {undefined} bar */
+    module.exports.prototype.bar = function () {};
+  })[1].memberof, 'mod');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    module.exports.prototype = {
+      /** @returns {undefined} bar */
+      bar: function () {}
+    };
+  })[1].memberof, 'mod');
+
+  // https://github.com/documentationjs/documentation/issues/178
+  //
+  // t.equal(evaluate(function () {
+  //   /** @module mod */
+  //   /** foo */
+  //   module.exports = 1;
+  // })[1].memberof, 'mod');
+  //
+  // t.equal(evaluate(function () {
+  //   /** @module mod */
+  //   /** @returns {undefined} foo */
+  //   module.exports = function () {};
+  // })[1].memberof, 'mod');
+
+  t.equal(evaluate(function () {
+    /** @module mod */
+    module.exports = {
+      /** foo */
+      foo: 1
+    };
+  })[1].memberof, 'mod');
+
   t.end();
 });
 
@@ -227,7 +325,7 @@ test('inferMembership - not module exports', function (t) {
   t.end();
 });
 
-test('inferMembership - anonymous module', function (t) {
+test('inferMembership - anonymous @module', function (t) {
   var result = evaluate(function () {
     /**
      * @module
@@ -241,7 +339,7 @@ test('inferMembership - anonymous module', function (t) {
   t.end();
 });
 
-test('inferMembership - no module', function (t) {
+test('inferMembership - no @module', function (t) {
   var result = evaluate(function () {
     /** Test */
     exports.foo = 1;

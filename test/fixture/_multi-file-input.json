@@ -37,7 +37,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to module not found",
+        "message": "memberof reference to simple.input not found",
         "commentLineNumber": 0
       }
     ],
@@ -54,7 +54,7 @@
     ],
     "name": "exports",
     "kind": "function",
-    "memberof": "module",
+    "memberof": "simple.input",
     "scope": "static",
     "members": {
       "instance": [],

@@ -128,7 +128,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to module not found",
+        "message": "memberof reference to inline-link.input not found",
         "commentLineNumber": 0
       }
     ],
@@ -157,7 +157,7 @@
     ],
     "name": "exports",
     "kind": "function",
-    "memberof": "module",
+    "memberof": "inline-link.input",
     "scope": "static",
     "members": {
       "instance": [],

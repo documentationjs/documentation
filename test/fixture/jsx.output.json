@@ -37,7 +37,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to module not found",
+        "message": "memberof reference to jsx.input not found",
         "commentLineNumber": 0
       }
     ],
@@ -53,7 +53,7 @@
       }
     ],
     "name": "exports",
-    "memberof": "module",
+    "memberof": "jsx.input",
     "scope": "static",
     "members": {
       "instance": [],
