@@ -1,13 +1,10 @@
-function normalize(comments) {
-  comments.forEach(function (comment) {
+var walk = require('../lib/walk');
+
+module.exports = function (comments) {
+  return walk(comments, function (comment) {
     delete comment.context.file;
     if (comment.context.github) {
       comment.context.github = '[github]';
     }
-    normalize(comment.members.instance);
-    normalize(comment.members.static);
   });
-  return comments;
 }
-
-module.exports = normalize;
