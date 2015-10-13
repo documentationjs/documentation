@@ -37,7 +37,6 @@ test('hierarchy', function (t) {
     /**
      * @name MAGIC_NUMBER
      * @memberof Class
-     * @static
      */
 
     /**
@@ -74,26 +73,6 @@ test('hierarchy - missing memberof', function (t) {
   t.deepEqual(result[0].errors[0], {
     message: 'memberof reference to DoesNotExist not found',
     commentLineNumber: 2
-  }, 'correct error message');
-  t.end();
-});
-
-test('hierarchy - missing scope', function (t) {
-  var result = evaluate(function () {
-    /**
-     * @name Class
-     * @class
-     */
-
-    /**
-     * @name test
-     * @memberof Class
-     */
-  });
-
-  t.equal(result.length, 2);
-  t.deepEqual(result[1].errors[0], {
-    message: 'found memberof but no @scope, @static, or @instance tag'
   }, 'correct error message');
   t.end();
 });
