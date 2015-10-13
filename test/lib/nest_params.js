@@ -14,7 +14,6 @@ function toComment(fn, filename) {
 test('nestParams - no params', function (t) {
   t.equal(toComment(function () {
     /** @name foo */
-    return 0;
   })[0].params, undefined, 'no params');
   t.end();
 });
@@ -22,7 +21,6 @@ test('nestParams - no params', function (t) {
 test('nestParams - no nesting', function (t) {
   var result = toComment(function () {
     /** @param {Object} foo */
-    return 0;
   });
   t.equal(result[0].params.length, 1);
   t.equal(result[0].params[0].name, 'foo');
@@ -37,7 +35,6 @@ test('nestParams - basic', function (t) {
      * @param {string} foo.bar
      * @param {string} foo.baz
      */
-    return 0;
   });
   t.equal(result[0].params.length, 1);
   t.equal(result[0].params[0].name, 'foo');
@@ -47,9 +44,25 @@ test('nestParams - basic', function (t) {
   t.end();
 });
 
+test('nestParams - array', function (t) {
+  var result = toComment(function () {
+    /**
+     * @param {Object[]} employees - The employees who are responsible for the project.
+     * @param {string} employees[].name - The name of an employee.
+     * @param {string} employees[].department - The employee's department.
+     */
+  });
+  t.equal(result[0].params.length, 1);
+  t.equal(result[0].params[0].name, 'employees');
+  t.equal(result[0].params[0].properties.length, 2);
+  t.equal(result[0].params[0].properties[0].name, 'employees[].name');
+  t.equal(result[0].params[0].properties[1].name, 'employees[].department');
+  t.end();
+});
+
 test('nestParams - missing parent', function (t) {
-  var result = toComment(function () {/** @param {string} foo.bar */
-    return 0;
+  var result = toComment(function () {
+    /** @param {string} foo.bar */
   });
   t.equal(result[0].params.length, 1);
   t.deepEqual(result[0].errors[0], {
