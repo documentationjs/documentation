@@ -35,7 +35,11 @@
         }
       }
     },
-    "errors": [],
+    "errors": [
+      {
+        "message": "could not determine @name for hierarchy"
+      }
+    ],
     "params": [
       {
         "title": "param",

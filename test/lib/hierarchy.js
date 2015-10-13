@@ -2,7 +2,8 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
-  hierarchy = require('../../lib/hierarchy');
+  hierarchy = require('../../lib/hierarchy'),
+  _ = require('lodash');
 
 function toComments(fn, filename) {
   return parse({
@@ -16,7 +17,7 @@ function evaluate(fn, callback) {
 }
 
 test('hierarchy', function (t) {
-  var result = evaluate(function () {
+  var comments = evaluate(function () {
     /**
      * @name Class
      * @class
@@ -47,31 +48,103 @@ test('hierarchy', function (t) {
      */
   });
 
-  t.equal(result.length, 1);
+  t.deepEqual(_.pluck(comments, 'name'), ['Class']);
 
-  t.equal(result[0].members.static.length, 2);
-  t.deepEqual(result[0].members.static[0].path, ['Class', 'isClass']);
+  var classMembers = comments[0].members;
 
-  t.equal(result[0].members.instance.length, 2);
-  t.deepEqual(result[0].members.instance[0].path, ['Class', 'getFoo']);
-  t.deepEqual(result[0].members.instance[1].path, ['Class', 'event']);
+  t.deepEqual(_.pluck(classMembers.static, 'name'), ['isClass', 'MAGIC_NUMBER']);
+  t.deepEqual(_.pluck(classMembers.instance, 'name'), ['getFoo', 'event']);
+
+  t.deepEqual(classMembers.static[0].path, ['Class', 'isClass']);
+  t.deepEqual(classMembers.instance[0].path, ['Class', 'getFoo']);
+  t.deepEqual(classMembers.instance[1].path, ['Class', 'event']);
 
   t.end();
 });
 
-test('hierarchy - missing memberof', function (t) {
-  var result = evaluate(function () {
+test('hierarchy - nesting', function (t) {
+  var comments = evaluate(function () {
     /**
-     * Get foo
-     * @memberof DoesNotExist
-     * @returns {Number} foo
+     * @name Parent
+     * @class
+     */
+
+    /**
+     * @name enum
+     * @memberof Parent
+     */
+
+    /**
+     * @name Parent
+     * @memberof Parent.enum
+     */
+
+    /**
+     * @name Child
+     * @memberof Parent.enum
      */
   });
 
-  t.equal(result.length, 1);
-  t.deepEqual(result[0].errors[0], {
-    message: 'memberof reference to DoesNotExist not found',
+  t.deepEqual(_.pluck(comments, 'name'), ['Parent']);
+
+  var classMembers = comments[0].members;
+  t.deepEqual(_.pluck(classMembers.static, 'name'), ['enum']);
+
+  var enumMembers = classMembers.static[0].members;
+  t.deepEqual(_.pluck(enumMembers.static, 'name'), ['Parent', 'Child']);
+  t.deepEqual(enumMembers.static[0].path, ['Parent', 'enum', 'Parent']);
+  t.deepEqual(enumMembers.static[1].path, ['Parent', 'enum', 'Child']);
+
+  t.end();
+});
+
+test('hierarchy - multisignature', function (t) {
+  var comments = evaluate(function () {
+    /**
+     * @name Parent
+     * @class
+     */
+
+    /**
+     * @name foo
+     * @memberof Parent
+     * @instance
+     */
+
+    /**
+     * @name foo
+     * @memberof Parent
+     * @instance
+     */
+  });
+
+  t.deepEqual(_.pluck(comments[0].members.instance, 'name'), ['foo', 'foo']);
+  t.end();
+});
+
+test('hierarchy - missing memberof', function (t) {
+  var test = evaluate(function () {
+    /**
+     * @name test
+     * @memberof DoesNotExist
+     */
+  })[0];
+
+  t.deepEqual(test.errors, [{
+    message: '@memberof reference to DoesNotExist not found',
     commentLineNumber: 2
-  }, 'correct error message');
+  }], 'correct error message');
+  t.end();
+});
+
+test('hierarchy - anonymous', function (t) {
+  var result = evaluate(function () {
+    /** Test */
+  })[0];
+
+  t.equal(result.description, 'Test');
+  t.deepEqual(result.errors, [{
+    message: 'could not determine @name for hierarchy'
+  }]);
   t.end();
 });

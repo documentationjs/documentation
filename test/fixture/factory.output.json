@@ -147,7 +147,7 @@
     },
     "errors": [
       {
-        "message": "memberof reference to chart not found",
+        "message": "@memberof reference to chart not found",
         "commentLineNumber": 0
       }
     ],

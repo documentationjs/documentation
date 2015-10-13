@@ -39,6 +39,9 @@
       {
         "message": "type Number found, number is standard",
         "commentLineNumber": 2
+      },
+      {
+        "message": "could not determine @name for hierarchy"
       }
     ],
     "params": [
