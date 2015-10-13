@@ -32,7 +32,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "foo"
     ]
@@ -91,7 +90,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "index"
     ]
@@ -150,7 +148,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "main"
     ]

@@ -65,7 +65,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "multiply"
     ]
@@ -131,7 +130,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "multiplyTwice"
     ]

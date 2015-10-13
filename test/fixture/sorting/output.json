@@ -32,7 +32,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "bananas"
     ]
@@ -70,7 +69,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "carrots"
     ]
@@ -108,7 +106,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "apples"
     ]

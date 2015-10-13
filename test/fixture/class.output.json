@@ -141,7 +141,6 @@
             "instance": [],
             "static": []
           },
-          "events": [],
           "path": [
             "MyClass",
             "getFoo"
@@ -201,7 +200,6 @@
             "instance": [],
             "static": []
           },
-          "events": [],
           "path": [
             "MyClass",
             "getUndefined"
@@ -210,7 +208,6 @@
       ],
       "static": []
     },
-    "events": [],
     "path": [
       "MyClass"
     ]

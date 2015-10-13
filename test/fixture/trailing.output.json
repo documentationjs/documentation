@@ -42,7 +42,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "Something"
     ]
@@ -101,7 +100,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "fooBar"
     ]
@@ -160,7 +158,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "fooBaz"
     ]

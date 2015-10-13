@@ -252,7 +252,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "GeoJSONSource"
     ]

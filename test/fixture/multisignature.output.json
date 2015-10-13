@@ -60,7 +60,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "getTheTime"
     ]
@@ -139,7 +138,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "getTheTime"
     ]

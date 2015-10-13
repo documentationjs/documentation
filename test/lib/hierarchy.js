@@ -43,6 +43,7 @@ test('hierarchy', function (t) {
      * @name event
      * @memberof Class
      * @kind event
+     * @instance
      */
   });
 
@@ -51,11 +52,9 @@ test('hierarchy', function (t) {
   t.equal(result[0].members.static.length, 2);
   t.deepEqual(result[0].members.static[0].path, ['Class', 'isClass']);
 
-  t.equal(result[0].members.instance.length, 1);
+  t.equal(result[0].members.instance.length, 2);
   t.deepEqual(result[0].members.instance[0].path, ['Class', 'getFoo']);
-
-  t.equal(result[0].events.length, 1);
-  t.deepEqual(result[0].events[0].path, ['Class', 'event']);
+  t.deepEqual(result[0].members.instance[1].path, ['Class', 'event']);
 
   t.end();
 });

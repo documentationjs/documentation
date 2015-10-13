@@ -75,7 +75,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "addOne"
     ]
@@ -156,7 +155,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "inline-link.input"
     ]

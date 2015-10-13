@@ -88,7 +88,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "returnTwo"
     ]
@@ -147,7 +146,6 @@
       "instance": [],
       "static": []
     },
-    "events": [],
     "path": [
       "simple.input"
     ]

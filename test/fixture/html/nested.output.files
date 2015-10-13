@@ -1758,6 +1758,11 @@ h4:hover .anchorjs-link {
                   .MAGIC_NUMBER
                 </a>
                 <a
+                  href='#klass/event'
+                  class='regular block'>
+                  .event
+                </a>
+                <a
                   href='#klass/isarrayofbuffers'
                   class='regular block'>
                   .isArrayOfBuffers
@@ -1786,11 +1791,6 @@ h4:hover .anchorjs-link {
                   href='#klass/withoptions'
                   class='regular block'>
                   #withOptions
-                </a>
-                <a
-                  href='#klass/event'
-                  class='regular block'>
-                  <code>ⓔ event</code>
                 </a>
               <a
                 href='#bar'
@@ -1839,6 +1839,26 @@ h4:hover .anchorjs-link {
                 MAGIC_NUMBER<span class='gray'></span>
               </h2>
               <p>A magic number that identifies this Klass.</p>
+            
+            </section>
+          </div>
+        </div>
+        <div class='collapsible' id='klass/event'>
+          <a href='#klass/event'>
+            <code>
+              .event<span class='gray'></span>
+            </code>
+            <span class='force-inline'>
+              <p>Klass event</p>
+
+            </span>
+          </a>
+          <div class='collapser border px2 m2'>
+            <section class='py2 clearfix'>
+              <h2 id='klass/event' class='mt0'>
+                event<span class='gray'></span>
+              </h2>
+              <p>Klass event</p>
             
             </section>
           </div>
@@ -2072,15 +2092,6 @@ the referenced class type</p>
                 </ul>
             </section>
           </div>
-        </div>
-        <div>
-  <section class='py2 clearfix'>
-    <h2 id='klass/event' class='mt0'>
-      event<span class='gray'></span>
-    </h2>
-    <p>Klass event</p>
-  
-  </section>
         </div>
 </section>
 </div><div class='py1'><section class='py2 clearfix'>
