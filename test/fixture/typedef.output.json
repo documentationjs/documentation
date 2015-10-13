@@ -10,12 +10,13 @@
       },
       {
         "title": "typedef",
-        "description": "MyType",
+        "description": null,
         "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "Object"
-        }
+        },
+        "name": "MyType"
       },
       {
         "title": "property",
