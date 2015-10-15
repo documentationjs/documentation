@@ -13,6 +13,10 @@ var test = require('tap').test,
 
 var UPDATE = !!process.env.UPDATE;
 
+function makePOJO(ast) {
+  return JSON.parse(JSON.stringify(ast));
+}
+
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', function (t) {
     var file = path.join(__dirname, './fixture/simple.input.js');
@@ -50,7 +54,7 @@ test('external modules option', function (t) {
 
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test(path.basename(file), function (t) {
+    tt.test(file, function (t) {
       documentation([file], null, function (err, result) {
         t.ifError(err);
         normalize(result);
@@ -59,7 +63,7 @@ test('parse', function (tt) {
           fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
         }
         var expect = require(outputfile);
-        t.deepEqual(result, expect);
+        t.deepEqual(makePOJO(result), expect);
         t.end();
       });
     });
@@ -67,15 +71,15 @@ test('parse', function (tt) {
   tt.end();
 });
 
-test('formats', function (tt) {
+test('json', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test('json', function (ttt) {
+    tt.test(file, function (ttt) {
       documentation([file], null, function (err, result) {
         ttt.ifError(err);
         normalize(result);
         var outputfile = file.replace('.input.js', '.output.json');
         var expect = require(outputfile);
-        ttt.deepEqual(result, expect);
+        ttt.deepEqual(makePOJO(result), expect);
         ttt.end();
       });
     });

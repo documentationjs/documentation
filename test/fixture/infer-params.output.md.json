@@ -224,6 +224,156 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "$3"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "root",
+                          "children": [],
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 1
+                            }
+                          }
+                        },
+                        {
+                          "ordered": false,
+                          "type": "list",
+                          "children": [
+                            {
+                              "type": "listItem",
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "children": [
+                                    {
+                                      "type": "inlineCode",
+                                      "value": "$3.d"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "root",
+                                      "children": [],
+                                      "position": {
+                                        "start": {
+                                          "line": 1,
+                                          "column": 1
+                                        },
+                                        "end": {
+                                          "line": 1,
+                                          "column": 1
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "listItem",
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "children": [
+                                    {
+                                      "type": "inlineCode",
+                                      "value": "$3.e"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "root",
+                                      "children": [],
+                                      "position": {
+                                        "start": {
+                                          "line": 1,
+                                          "column": 1
+                                        },
+                                        "end": {
+                                          "line": 1,
+                                          "column": 1
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "listItem",
+                              "children": [
+                                {
+                                  "type": "paragraph",
+                                  "children": [
+                                    {
+                                      "type": "inlineCode",
+                                      "value": "$3.f"
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "text",
+                                      "value": " "
+                                    },
+                                    {
+                                      "type": "root",
+                                      "children": [],
+                                      "position": {
+                                        "start": {
+                                          "line": 1,
+                                          "column": 1
+                                        },
+                                        "end": {
+                                          "line": 1,
+                                          "column": 1
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

@@ -34,7 +34,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c) {\n  return a + b + c;\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n"
     },
     "errors": [],
     "params": [
@@ -57,6 +57,27 @@
         "title": "param",
         "name": "c",
         "lineNumber": 5
+      },
+      {
+        "title": "param",
+        "name": "$3",
+        "properties": [
+          {
+            "title": "param",
+            "name": "$3.d",
+            "lineNumber": 5
+          },
+          {
+            "title": "param",
+            "name": "$3.e",
+            "lineNumber": 5
+          },
+          {
+            "title": "param",
+            "name": "$3.f",
+            "lineNumber": 5
+          }
+        ]
       }
     ],
     "name": "addThem",
