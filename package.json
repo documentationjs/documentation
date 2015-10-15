@@ -70,7 +70,7 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "lint": "eslint --no-eslintrc -c .eslintrc bin lib streams index.js test/*.js test/lib test/misc test/streams",
+    "lint": "eslint bin lib index.js test",
     "test": "npm run lint && tap --coverage test/*.js test/lib test/misc test/streams"
   }
 }

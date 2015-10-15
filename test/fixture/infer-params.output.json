@@ -15,33 +15,33 @@
     ],
     "loc": {
       "start": {
-        "line": 3,
+        "line": 1,
         "column": 0
       },
       "end": {
-        "line": 6,
+        "line": 4,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 7,
+          "line": 5,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 7,
           "column": 1
         }
       },
-      "code": "/* eslint valid-jsdoc: 0 */\n\n/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c) {\n  return a + b + c;\n};\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c) {\n  return a + b + c;\n}\n"
     },
     "errors": [],
     "params": [
       {
         "title": "param",
         "name": "a",
-        "lineNumber": 7
+        "lineNumber": 5
       },
       {
         "title": "param",
@@ -56,7 +56,7 @@
       {
         "title": "param",
         "name": "c",
-        "lineNumber": 7
+        "lineNumber": 5
       }
     ],
     "name": "addThem",

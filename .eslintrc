@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "espree",
   "rules": {
     "space-before-function-paren": 2,
