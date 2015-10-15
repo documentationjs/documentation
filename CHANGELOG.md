@@ -31,6 +31,33 @@ and new inference code means that we can infer
 Without any explicit JSDoc tags. This means that for many simple functions,
 we can generate great documentation with less writing.
 
+**Stronger module support**
+
+Documentation.js now has much better inference for membership and names of symbols
+exported via `exports` or `module.exports`.
+
+**Support for nested symbols**
+
+The parent/child relationship between symbols is now fully hierarchical, and
+symbols can be nested to any depth. For instance:
+
+```
+/**
+ * A global Parent class.
+ */
+var Parent = function () {};
+
+/**
+ * A Child class.
+ */
+Parent.Child = function () {};
+
+/**
+ * A Grandchild class.
+ */
+Parent.Child.Grandchild = function () {};
+```
+
 **mdast-based Markdown output**
 
 We've switched from templating Markdown output with [Handlebars.js](http://handlebarsjs.com/)
