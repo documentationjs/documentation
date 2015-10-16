@@ -24,24 +24,24 @@ test('inferKind', function (t) {
     });
 
   t.equal(inferKind(toComment(function () {
-    /** @returns {number} two */
+    /** function */
     function foo() { }
     foo();
   })).kind, 'function', 'inferred function');
 
   t.equal(inferKind(toComment(function () {
-    /** @returns {number} two */
+    /** function */
     var foo = function () { };
     foo();
   })).kind, 'function', 'inferred var function');
 
   t.equal(inferKind(toComment(function () {
-    /** @returns {number} two */
+    /** class */
     function Foo() { }
   })).kind, 'class', 'class via uppercase');
 
   t.equal(inferKind(toComment(function () {
-    /** @returns {number} two */
+    /** undefined */
   })).kind, undefined, 'undetectable');
 
   t.equal(inferKind(toComment(

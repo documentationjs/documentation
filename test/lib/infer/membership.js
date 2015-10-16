@@ -85,7 +85,6 @@ test('inferMembership - explicit', function (t) {
     Foo.prototype = {
       /**
        * Test
-       * @returns {undefined} bar
        */
       bar: function () {}
     };
@@ -107,8 +106,7 @@ test('inferMembership - explicit', function (t) {
 
   t.deepEqual(_.pick(evaluate(function () {
     var Foo = {
-      /** Test
-      * @returns {undefined} bar */
+      /** Test */
       baz: function () {}
     };
     return Foo;
@@ -118,8 +116,7 @@ test('inferMembership - explicit', function (t) {
   }, 'variable object assignment, function');
 
   t.deepEqual(_.pick(evaluate(function () {
-    /** Test
-    * @returns {undefined} bar */
+    /** Test */
     module.exports = function () {};
   })[0], ['memberof', 'scope']), {
     memberof: 'module',
@@ -138,10 +135,7 @@ test('inferMembership - explicit', function (t) {
 
   t.deepEqual(_.pick(evaluate(function () {
     lend(/** @lends Foo */{
-      /**
-       * Test
-       * @returns {undefined} nothing
-       */
+      /** Test */
       bar: function () {}
     });
   })[1], ['memberof', 'scope']), {
@@ -161,10 +155,7 @@ test('inferMembership - explicit', function (t) {
 
   t.deepEqual(_.pick(evaluate(function () {
     lend(/** @lends Foo.prototype */{
-      /**
-       * Test
-       * @returns {number} nothing
-       */
+      /** Test */
       bar: function () {}
     });
   })[1], ['memberof', 'scope']), {
@@ -193,7 +184,7 @@ test('inferMembership - exports', function (t) {
 
   t.equal(evaluate(function () {
     /** @module mod */
-    /** @returns {undefined} foo */
+    /** foo */
     exports.foo = function () {};
   })[1].memberof, 'mod');
 
@@ -214,21 +205,21 @@ test('inferMembership - exports', function (t) {
   t.equal(evaluate(function () {
     /** @module mod */
     exports.foo = {
-      /** @returns {undefined} bar */
+      /** bar */
       bar: function () {}
     };
   })[1].memberof, 'mod.foo');
 
   t.equal(evaluate(function () {
     /** @module mod */
-    /** @returns {undefined} bar */
+    /** bar */
     exports.foo.prototype.bar = function () {};
   })[1].memberof, 'mod.foo');
 
   t.equal(evaluate(function () {
     /** @module mod */
     exports.foo.prototype = {
-      /** @returns {undefined} bar */
+      /** bar */
       bar: function () {}
     };
   })[1].memberof, 'mod.foo');
@@ -245,7 +236,7 @@ test('inferMembership - module.exports', function (t) {
 
   t.equal(evaluate(function () {
     /** @module mod */
-    /** @returns {undefined} foo */
+    /** foo */
     module.exports.foo = function () {};
   })[1].memberof, 'mod');
 
@@ -266,21 +257,21 @@ test('inferMembership - module.exports', function (t) {
   t.equal(evaluate(function () {
     /** @module mod */
     module.exports.foo = {
-      /** @returns {undefined} bar */
+      /** bar */
       bar: function () {}
     };
   })[1].memberof, 'mod.foo');
 
   t.equal(evaluate(function () {
     /** @module mod */
-    /** @returns {undefined} bar */
+    /** bar */
     module.exports.prototype.bar = function () {};
   })[1].memberof, 'mod');
 
   t.equal(evaluate(function () {
     /** @module mod */
     module.exports.prototype = {
-      /** @returns {undefined} bar */
+      /** bar */
       bar: function () {}
     };
   })[1].memberof, 'mod');
@@ -297,7 +288,6 @@ test('inferMembership - module.exports', function (t) {
     /**
      * @module mod
      * @name exports
-     * @returns {undefined} bar
      */
     module.exports = function () {};
   })[0].memberof, undefined);

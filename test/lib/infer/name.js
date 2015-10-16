@@ -30,10 +30,7 @@ test('inferName', function (t) {
     //   AssignmentExpression
     //     MemberExpression (comment attached here)
     //     FunctionExpression
-    /**
-     * Test
-     * @returns {undefined} bar
-     */
+    /** Test */
     exports.name = function () {};
   }).name, 'name', 'expression statement, function');
 
@@ -52,37 +49,25 @@ test('inferName', function (t) {
       // Property
       //   Identifier (comment attached here)
       //   FunctionExpression
-      /**
-       * Test
-       * @returns {undefined} bar
-       */
+      /** Test */
       name: function () {}
     };
   }).name, 'name', 'property, function');
 
   t.equal(evaluate(function () {
-    /**
-     * Test
-     * @returns {undefined} bar
-     */
+    /** Test */
     function name() {}
     return name;
   }).name, 'name', 'function declaration');
 
   t.equal(evaluate(function () {
-    /**
-     * Test
-     * @returns {undefined} bar
-     */
+    /** Test */
     var name = function () {};
     return name;
   }).name, 'name', 'anonymous function expression');
 
   t.equal(evaluate(function () {
-    /**
-     * Test
-     * @returns {undefined} bar
-     */
+    /** Test */
     var name = function name2() {};
     return name;
   }).name, 'name', 'named function expression');
@@ -91,7 +76,6 @@ test('inferName', function (t) {
     /**
      * Test
      * @name explicitName
-     * @returns {undefined} bar
      */
     function implicitName() {}
     return implicitName;
@@ -112,7 +96,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @event explicitEvent
-     * @returns {undefined} bar
      */
     function implicitName() {}
     return implicitName;
@@ -121,7 +104,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @typedef {Object} ExplicitTypedef
-     * @returns {undefined} bar
      */
     function implicitName() {}
     return implicitName;
@@ -130,7 +112,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @callback explicitCallback
-     * @returns {undefined} baz
      */
     function implicitName() {}
     return implicitName;
@@ -139,7 +120,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @module explicitModule
-     * @returns {undefined} baz
      */
     function implicitName() {}
     return implicitName;
@@ -148,7 +128,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @module {Function} explicitModule
-     * @returns {undefined} baz
      */
     function implicitName() {}
     return implicitName;
@@ -157,7 +136,6 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /**
      * @module
-     * @returns {undefined} baz
      */
     function implicitName() {}
     return implicitName;
