@@ -82,25 +82,27 @@ module.exports = function (indexes, options, callback) {
       return callback(error);
     }
     try {
-      var flat = inputs
-        .filter(filterJS)
-        .reduce(function (memo, file) {
-          return memo.concat(parseFn(file));
-        }, [])
-        .map(pipeline(
-          lint,
-          inferName(),
-          inferKind(),
-          inferParams(),
-          inferReturn(),
-          inferMembership(),
-          nestParams,
-          options.github ? github : noop
-        ))
-        .filter(Boolean)
-        .sort(sort.bind(undefined, options.order))
-        .filter(filterAccess.bind(undefined, options.private ? [] : undefined))
-      callback(null, options.hierarchy !== false ? hierarchy(flat) : flat);
+      callback(null,
+        filterAccess(
+          options.private ? [] : undefined,
+          hierarchy(
+            inputs
+              .filter(filterJS)
+              .reduce(function (memo, file) {
+                return memo.concat(parseFn(file));
+              }, [])
+              .map(pipeline(
+                lint,
+                inferName(),
+                inferKind(),
+                inferParams(),
+                inferReturn(),
+                inferMembership(),
+                nestParams,
+                options.github ? github : noop
+              ))
+              .filter(Boolean)
+              .sort(sort.bind(undefined, options.order)))));
     } catch (e) {
       callback(e);
     }

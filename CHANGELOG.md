@@ -58,6 +58,10 @@ Parent.Child = function () {};
 Parent.Child.Grandchild = function () {};
 ```
 
+In addition, filtering by access is now applied to the entire hierarchy: if you
+mark a class as `@private`, neither it nor its children will be included in the
+output by default, regardless of the access specifiers of the children.
+
 **mdast-based Markdown output**
 
 We've switched from templating Markdown output with [Handlebars.js](http://handlebarsjs.com/)
