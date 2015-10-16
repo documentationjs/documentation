@@ -175,7 +175,6 @@ test('inferMembership - explicit', function (t) {
   t.equal(evaluate(function () {
     lend(/** @lends Foo */{});
     /** Test */
-    return 0;
   })[1].memberof, undefined, 'inferMembership - lends applies only to following object');
 
   t.equal(evaluate(function () {

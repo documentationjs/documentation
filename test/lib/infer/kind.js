@@ -42,7 +42,6 @@ test('inferKind', function (t) {
 
   t.equal(inferKind(toComment(function () {
     /** @returns {number} two */
-    return 0;
   })).kind, undefined, 'undetectable');
 
   t.equal(inferKind(toComment(

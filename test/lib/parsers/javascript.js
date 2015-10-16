@@ -13,7 +13,6 @@ function toComment(fn, filename) {
 test('parse - unknown tag', function (t) {
   t.equal(toComment(function () {
     /** @unknown */
-    return 0;
   })[0].tags[0].title, 'unknown');
   t.end();
 });
@@ -21,7 +20,6 @@ test('parse - unknown tag', function (t) {
 test('parse - error', function (t) {
   t.deepEqual(toComment(function () {
     /** @param {foo */
-    return 0;
   })[0].errors, [
     'Braces are not balanced',
     'Missing or invalid tag name']);

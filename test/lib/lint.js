@@ -22,7 +22,6 @@ test('lint', function (t) {
      * @param {String} foo
      * @param {array} bar
      */
-    return 0;
   }).errors, [
     { commentLineNumber: 1, message: 'type String found, string is standard' },
     { commentLineNumber: 2, message: 'type array found, Array is standard' }],
@@ -32,7 +31,6 @@ test('lint', function (t) {
      * @param {String} foo
      * @param {array} bar
      */
-    return 0;
   });
 
   t.equal(formatError(comment, comment.errors[0]),
@@ -47,7 +45,6 @@ test('lint', function (t) {
     /**
      * @param {string} foo
      */
-    return 0;
   }).errors, [], 'no errors');
 
   t.end();
