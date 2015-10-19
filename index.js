@@ -92,7 +92,7 @@ module.exports = function (indexes, options, callback) {
                 return memo.concat(parseFn(file));
               }, [])
               .map(pipeline(
-                lint,
+                lint.lint,
                 inferName(),
                 inferKind(),
                 inferParams(),

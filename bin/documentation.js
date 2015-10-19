@@ -8,8 +8,7 @@ var documentation = require('../'),
   streamArray = require('stream-array'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
-  walk = require('../lib/walk'),
-  formatError = require('../lib/format_error'),
+  lint = require('../lib/lint'),
   args = require('../lib/args.js');
 
 var parsedArgs = args(process.argv.slice(2)),
@@ -22,11 +21,15 @@ documentation(parsedArgs.inputs, parsedArgs.options, function (err, comments) {
     throw err;
   }
 
-  walk(comments, function (comment) {
-    comment.errors.forEach(function (error) {
-      console.error(formatError(comment, error));
-    });
-  });
+  if (parsedArgs.options.lint) {
+    var lintOutput = lint.format(comments);
+    if (lintOutput) {
+      console.log(lintOutput);
+      process.exit(1);
+    } else {
+      process.exit(0);
+    }
+  }
 
   formatter(comments, formatterOptions, function (err, output) {
     if (outputLocation !== 'stdout') {

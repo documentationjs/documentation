@@ -43,6 +43,9 @@
     "strip-json-comments": "^1.0.2",
     "traverse": "^0.6.6",
     "unist-builder": "^1.0.0",
+    "vfile": "^1.1.2",
+    "vfile-reporter": "^1.4.1",
+    "vfile-sort": "^1.0.0",
     "vinyl": "^0.5.0",
     "vinyl-fs": "^1.0.0",
     "yargs": "^3.5.4"

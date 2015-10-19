@@ -101,6 +101,27 @@ test('html with no destination', function (t) {
   });
 });
 
+test('--lint option', function (t) {
+  documentation(['--lint fixture/lint/lint.input.js'], function (err, data) {
+    var output = path.join(__dirname, 'fixture/lint/lint.output.js');
+    data = data.toString().split('\n').slice(2).join('\n');
+    if (process.env.UPDATE) {
+      fs.writeFileSync(output, data);
+    }
+    t.equal(err.code, 1);
+    t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
+    t.end();
+  });
+});
+
+test('--lint option on good file', function (t) {
+  documentation(['--lint fixture/simple.input.js'], {}, function (err, data) {
+    t.equal(err, null);
+    t.equal(data, '', 'no output');
+    t.end();
+  }, false);
+});
+
 test('given no files', function (t) {
   documentation([''], function (err) {
     t.ok(err.toString()
