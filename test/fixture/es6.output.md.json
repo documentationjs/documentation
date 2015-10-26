@@ -10,6 +10,402 @@
           "children": [
             {
               "type": "text",
+              "value": "Sink"
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "This is a sink",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 15
+            }
+          }
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "root",
+              "children": [
+                {
+                  "depth": 2,
+                  "type": "heading",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "constructor"
+                    }
+                  ]
+                },
+                {
+                  "type": "root",
+                  "children": [],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 1
+                    }
+                  }
+                },
+                {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "strong",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Parameters"
+                        }
+                      ]
+                    },
+                    {
+                      "ordered": false,
+                      "type": "list",
+                      "children": [
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "inlineCode",
+                                  "value": "height"
+                                },
+                                {
+                                  "type": "text",
+                                  "value": " "
+                                },
+                                {
+                                  "type": "strong",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "number"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "value": " "
+                                },
+                                {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "value": "the height of the thing",
+                                          "position": {
+                                            "start": {
+                                              "line": 1,
+                                              "column": 1
+                                            },
+                                            "end": {
+                                              "line": 1,
+                                              "column": 24
+                                            },
+                                            "indent": []
+                                          }
+                                        }
+                                      ],
+                                      "position": {
+                                        "start": {
+                                          "line": 1,
+                                          "column": 1
+                                        },
+                                        "end": {
+                                          "line": 1,
+                                          "column": 24
+                                        },
+                                        "indent": []
+                                      }
+                                    }
+                                  ],
+                                  "position": {
+                                    "start": {
+                                      "line": 1,
+                                      "column": 1
+                                    },
+                                    "end": {
+                                      "line": 1,
+                                      "column": 24
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "listItem",
+                          "children": [
+                            {
+                              "type": "paragraph",
+                              "children": [
+                                {
+                                  "type": "inlineCode",
+                                  "value": "width"
+                                },
+                                {
+                                  "type": "text",
+                                  "value": " "
+                                },
+                                {
+                                  "type": "strong",
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "number"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "text",
+                                  "value": " "
+                                },
+                                {
+                                  "type": "root",
+                                  "children": [
+                                    {
+                                      "type": "paragraph",
+                                      "children": [
+                                        {
+                                          "type": "text",
+                                          "value": "the width of the thing",
+                                          "position": {
+                                            "start": {
+                                              "line": 1,
+                                              "column": 1
+                                            },
+                                            "end": {
+                                              "line": 1,
+                                              "column": 23
+                                            },
+                                            "indent": []
+                                          }
+                                        }
+                                      ],
+                                      "position": {
+                                        "start": {
+                                          "line": 1,
+                                          "column": 1
+                                        },
+                                        "end": {
+                                          "line": 1,
+                                          "column": 23
+                                        },
+                                        "indent": []
+                                      }
+                                    }
+                                  ],
+                                  "position": {
+                                    "start": {
+                                      "line": 1,
+                                      "column": 1
+                                    },
+                                    "end": {
+                                      "line": 1,
+                                      "column": 23
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "root",
+              "children": [
+                {
+                  "depth": 2,
+                  "type": "heading",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "empty"
+                    }
+                  ]
+                },
+                {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Is it empty",
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 12
+                            },
+                            "indent": []
+                          }
+                        }
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 12
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 12
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "root",
+              "children": [
+                {
+                  "depth": 2,
+                  "type": "heading",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "hello"
+                    }
+                  ]
+                },
+                {
+                  "type": "root",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "This method says hello",
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 1
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 23
+                            },
+                            "indent": []
+                          }
+                        }
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 23
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 23
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "root",
+      "children": [
+        {
+          "depth": 1,
+          "type": "heading",
+          "children": [
+            {
+              "type": "text",
               "value": "multiply"
             }
           ]

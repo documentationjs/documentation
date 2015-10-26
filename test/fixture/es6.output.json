@@ -1,5 +1,207 @@
 [
   {
+    "description": "This is a sink",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 7,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\nexport default multiply;\n"
+    },
+    "errors": [],
+    "name": "Sink",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "",
+          "tags": [
+            {
+              "title": "param",
+              "description": "the height of the thing",
+              "lineNumber": 1,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "height"
+            },
+            {
+              "title": "param",
+              "description": "the width of the thing",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "width"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 2
+            },
+            "end": {
+              "line": 28,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 29,
+                "column": 2
+              },
+              "end": {
+                "line": 32,
+                "column": 3
+              }
+            },
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\nexport default multiply;\n"
+          },
+          "errors": [],
+          "params": [
+            {
+              "title": "param",
+              "description": "the height of the thing",
+              "lineNumber": 1,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "height"
+            },
+            {
+              "title": "param",
+              "description": "the width of the thing",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "width"
+            }
+          ],
+          "name": "constructor",
+          "kind": "function",
+          "memberof": "Sink",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "Sink",
+            "constructor"
+          ]
+        },
+        {
+          "description": "Is it empty",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 2
+            },
+            "end": {
+              "line": 13,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 2
+              },
+              "end": {
+                "line": 16,
+                "column": 3
+              }
+            },
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\nexport default multiply;\n"
+          },
+          "errors": [],
+          "name": "empty",
+          "kind": "function",
+          "memberof": "Sink",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "Sink",
+            "empty"
+          ]
+        }
+      ],
+      "static": [
+        {
+          "description": "This method says hello",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 18,
+              "column": 2
+            },
+            "end": {
+              "line": 20,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 21,
+                "column": 2
+              },
+              "end": {
+                "line": 23,
+                "column": 3
+              }
+            },
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\nexport default multiply;\n"
+          },
+          "errors": [],
+          "name": "hello",
+          "kind": "function",
+          "memberof": "Sink",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "Sink",
+            "hello"
+          ]
+        }
+      ]
+    },
+    "path": [
+      "Sink"
+    ]
+  },
+  {
     "description": "This function returns the number one.",
     "tags": [
       {
@@ -33,7 +235,7 @@
           "column": 31
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\nexport default multiply;\n"
     },
     "errors": [],
     "returns": [
