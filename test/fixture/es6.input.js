@@ -9,6 +9,11 @@ var multiply = (a, b) => a * b;
  */
 class Sink {
   /**
+   * This is a property of the sink.
+   */
+  staticProp = 42;
+
+  /**
    * Is it empty
    */
   empty() {

@@ -49,3 +49,9 @@ Returns **Number** numberone
 
 
 
+
+# staticProp
+
+This is a property of the sink.
+
+
