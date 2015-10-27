@@ -1,0 +1,190 @@
+[
+  {
+    "description": "Attempt to establish a cookie-based session in exchange for credentials.",
+    "tags": [
+      {
+        "title": "function",
+        "description": null,
+        "lineNumber": 1,
+        "name": null
+      },
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 3,
+        "name": "sessions.create"
+      },
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "object"
+        },
+        "name": "credentials",
+        "properties": [
+          {
+            "title": "param",
+            "description": "Login username. Also accepted as `username` or `email`.",
+            "lineNumber": 5,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "credentials.name"
+          },
+          {
+            "title": "param",
+            "description": "Login password",
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "credentials.password"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "Login username. Also accepted as `username` or `email`.",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "credentials.name"
+      },
+      {
+        "title": "param",
+        "description": "Login password",
+        "lineNumber": 6,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "credentials.password"
+      },
+      {
+        "title": "param",
+        "description": "Gets passed `(err, { success:Boolean })`.",
+        "lineNumber": 7,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "function"
+          }
+        },
+        "name": "callback"
+      },
+      {
+        "title": "returns",
+        "description": "promise, to be resolved on success or rejected on failure",
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "Promise"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 3
+        }
+      },
+      "code": "/** Attempt to establish a cookie-based session in exchange for credentials.\n *  @function\n *  @name sessions.create\n *  @param {object} credentials\n *  @param {string} credentials.name        Login username. Also accepted as `username` or `email`.\n *  @param {string} credentials.password    Login password\n *  @param {function} [callback]            Gets passed `(err, { success:Boolean })`.\n *  @returns {Promise} promise, to be resolved on success or rejected on failure\n */\nsessions.addMethod('create', 'POST / form', {\n    // normalize request body params\n    before({ body }) {\n    }\n});\n"
+    },
+    "errors": [
+      {
+        "message": "type object found, Object is standard",
+        "commentLineNumber": 4
+      }
+    ],
+    "function": null,
+    "name": "sessions.create",
+    "params": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "object"
+        },
+        "name": "credentials",
+        "properties": [
+          {
+            "title": "param",
+            "description": "Login username. Also accepted as `username` or `email`.",
+            "lineNumber": 5,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "credentials.name"
+          },
+          {
+            "title": "param",
+            "description": "Login password",
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "credentials.password"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "Gets passed `(err, { success:Boolean })`.",
+        "lineNumber": 7,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "function"
+          }
+        },
+        "name": "callback"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "promise, to be resolved on success or rejected on failure",
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "Promise"
+        }
+      }
+    ],
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "sessions.create"
+    ]
+  }
+]
