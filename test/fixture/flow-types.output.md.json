@@ -230,7 +230,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "value": "Array<number>"
+                              "value": "Array&lt;number&gt;"
                             }
                           ]
                         },

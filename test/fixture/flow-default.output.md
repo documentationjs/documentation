@@ -5,7 +5,7 @@ Very Important Transform
 
 **Parameters**
 
--   `input` **Array<string>** 
+-   `input` **Array&lt;string&gt;** 
 
 -   `options` **[Object]** 
      (optional, default 

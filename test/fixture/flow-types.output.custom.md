@@ -11,7 +11,7 @@ This function returns the number one.
 
 -   `c` **[boolean]** 
 
--   `d` **Array<number>** 
+-   `d` **Array&lt;number&gt;** 
 
 -   `e` **Object** 
 

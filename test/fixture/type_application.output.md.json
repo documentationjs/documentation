@@ -95,7 +95,7 @@
                           "children": [
                             {
                               "type": "text",
-                              "value": "Array<string>"
+                              "value": "Array&lt;string&gt;"
                             }
                           ]
                         },
