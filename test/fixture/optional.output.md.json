@@ -227,7 +227,7 @@
                           }
                         },
                         {
-                          "type": "root",
+                          "type": "paragraph",
                           "children": [
                             {
                               "type": "text",

@@ -8,12 +8,7 @@ Very Important Transform
 -   `input` **Array&lt;string&gt;** 
 
 -   `options` **[Object]** 
-     (optional, default 
-
-    `{}`
-
-    )
-
+     (optional, default `{}`)
 
 
 Returns **string** 
