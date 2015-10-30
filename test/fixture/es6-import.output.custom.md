@@ -32,6 +32,12 @@ This method says hello
 
 
 
+# foo
+
+This is an async method
+
+
+
 # multiply
 
 This function returns the number one.

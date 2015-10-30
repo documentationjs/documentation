@@ -96,6 +96,7 @@ test('bad input', function (tt) {
         error = JSON.parse(JSON.stringify(error));
         // remove system-specific path
         delete error.filename;
+        delete error.codeFrame;
         var outputfile = file.replace('.input.js', '.output.json');
         if (UPDATE) {
           fs.writeFileSync(outputfile, JSON.stringify(error, null, 2));

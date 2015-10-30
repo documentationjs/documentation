@@ -17,7 +17,7 @@
   "dependencies": {
     "ast-types": "^0.8.12",
     "babelify": "^6.3.0",
-    "babylon": "^5.8.23",
+    "babel-core": "^5.0.0",
     "brfs": "^1.4.0",
     "concat-stream": "^1.5.0",
     "doctrine": "^0.7.0",
@@ -74,6 +74,7 @@
   },
   "scripts": {
     "lint": "eslint bin lib index.js test",
+    "doc": "documentation index.js -f md > docs/NODE_API.md",
     "test": "npm run lint && tap --coverage test/*.js test/lib test/misc test/streams"
   }
 }

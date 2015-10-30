@@ -37,4 +37,9 @@ class Sink {
   }
 }
 
+/**
+ * This is an async method
+ */
+async function foo() { }
+
 export default multiply;
