@@ -82,6 +82,11 @@ types, like `String`, or missing namespaces. If the encountered files have
 any problems, it pretty-prints helpful debug messages and exits with status 1,
 and otherwise exits with no output and status 0.
 
+**Breaking changes**
+
+* The `--version` flag is now `--project-version`. `--version` now outputs
+  documentation.js's version
+
 ## 2.0.1
 
 * Fixes `@param` tags that refer to properties of unmentioned objects: these
