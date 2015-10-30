@@ -39,13 +39,15 @@ function normalize(result) {
   return result;
 }
 
+var options = { timeout: 1000 * 30 };
+
 test('documentation binary', function (t) {
   documentation(['fixture/simple.input.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 1, 'simple has no dependencies');
     t.end();
   });
-});
+}, options);
 
 test('defaults to parsing package.json main', function (t) {
   documentation([], { cwd: path.join(__dirname, '..') }, function (err, data) {
@@ -53,7 +55,7 @@ test('defaults to parsing package.json main', function (t) {
     t.ok(data.length, 'we document ourself');
     t.end();
   });
-});
+}, options);
 
 test('accepts config file', function (t) {
   documentation(['fixture/sorting/input.js -c fixture/config.json'],
@@ -75,7 +77,7 @@ test('accepts config file', function (t) {
         'respected sort order from config file');
       t.end();
     });
-});
+}, options);
 
 test('--shallow option', function (t) {
   documentation(['--shallow fixture/internal.input.js'], function (err, data) {
@@ -83,14 +85,14 @@ test('--shallow option', function (t) {
     t.equal(data.length, 0, 'should not check dependencies');
     t.end();
   });
-});
+}, options);
 
 test('bad -f option', function (t) {
   documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
     t.ok(err, 'returns error');
     t.end();
   });
-});
+}, options);
 
 test('html with no destination', function (t) {
   documentation(['-f html fixture/internal.input.js'], function (err) {
@@ -99,7 +101,7 @@ test('html with no destination', function (t) {
       'needs dest for html');
     t.end();
   });
-});
+}, options);
 
 test('--lint option', function (t) {
   documentation(['--lint fixture/lint/lint.input.js'], function (err, data) {
@@ -112,7 +114,7 @@ test('--lint option', function (t) {
     t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
     t.end();
   });
-});
+}, options);
 
 test('--lint option on good file', function (t) {
   documentation(['--lint fixture/simple.input.js'], {}, function (err, data) {
@@ -120,7 +122,7 @@ test('--lint option on good file', function (t) {
     t.equal(data, '', 'no output');
     t.end();
   }, false);
-});
+}, options);
 
 test('given no files', function (t) {
   documentation([''], function (err) {
@@ -129,7 +131,7 @@ test('given no files', function (t) {
       'no files given');
     t.end();
   });
-});
+}, options);
 
 test('write to file', function (t) {
 
@@ -141,7 +143,7 @@ test('write to file', function (t) {
     t.ok(fs.existsSync(dst), 'created file');
     t.end();
   }, false);
-});
+}, options);
 
 test('write to html', function (t) {
 
@@ -155,7 +157,7 @@ test('write to html', function (t) {
       t.ok(fs.existsSync(path.join(dstDir, 'index.html')), 'created index.html');
       t.end();
     }, false);
-});
+}, options);
 
 test('fatal error', function (t) {
 
@@ -164,4 +166,4 @@ test('fatal error', function (t) {
       t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
       t.end();
     }, false);
-});
+}, options);
