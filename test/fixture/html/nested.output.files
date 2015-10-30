@@ -199,35 +199,42 @@ var anchors = new AnchorJS();
 
 /*
 
-    Basscss v5.2.0
+    Basscss v7.0.3
     Low-level CSS toolkit
     http://basscss.com
+
+    14.88 kB
+    3.38 kB Gzipped
+    286 Rules
+    328 Selectors
+    441 Declarations
+    95 Properties
 
 */
 
 
-body, button { margin: 0 }
 
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-}
-
+body { margin: 0 }
 img { max-width: 100% }
 svg { max-height: 100% }
-/* Basscss Base Forms */
 
 input,
 select,
 textarea,
 fieldset {
+  font-family: inherit;
   font-size: 1rem;
+  box-sizing: border-box;
   margin-top: 0;
-  margin-bottom: .5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0;
+}
+
+label {
+  vertical-align: middle;
 }
 
 input[type=text],
+input[type=date],
 input[type=datetime],
 input[type=datetime-local],
 input[type=email],
@@ -239,7 +246,6 @@ input[type=tel],
 input[type=time],
 input[type=url],
 input[type=week] {
-  box-sizing: border-box;
   height: 2.25rem;
   padding: .5rem .5rem;
   vertical-align: middle;
@@ -247,7 +253,6 @@ input[type=week] {
 }
 
 select {
-  box-sizing: border-box;
   line-height: 1.75;
   padding: .5rem .5rem;
 }
@@ -258,46 +263,9 @@ select:not([multiple]) {
 }
 
 textarea {
-  box-sizing: border-box;
   line-height: 1.75;
   padding: .5rem .5rem;
 }
-
-.fieldset-reset {
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
-  border: 0;
-}
-.fieldset-reset legend {
-  padding: 0;
-}
-/* Basscss Base Buttons */
-
-button,
-.button {
-  font-size: inherit;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  box-sizing: border-box;
-  line-height: 1.125rem;
-  padding: .4rem 0.6rem;
-  margin: 0;
-  height: auto;
-  border: 1px solid transparent;
-  vertical-align: middle;
-  -webkit-appearance: none;
-}
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-.button:hover { text-decoration: none }
-/* Basscss Base Tables */
 
 table {
   border-collapse: separate;
@@ -319,7 +287,6 @@ td {
 
 th { vertical-align: bottom }
 td { vertical-align: top }
-/* Basscss Base Typography */
 
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
@@ -335,18 +302,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5em;
 }
 
-p, dl, ol, ul {
-  font-size: 1rem;
+p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-ol, ul {
-  padding-left: 2rem;
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 pre, code, samp {
-  font-family: Consolas, 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', Consolas, monospace;
   font-size: inherit;
 }
 
@@ -354,45 +321,223 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow-x: scroll;
-  padding: 1rem;
-  background-color: rgba(0,0,0,.03125);
+}
+
+h1 { font-size: 2rem }
+h2 { font-size: 1.5rem }
+h3 { font-size: 1.25rem }
+h4 { font-size: 1rem }
+h5 { font-size: .875rem }
+h6 { font-size: .75rem }
+
+body {
+  color: #111;
+  background-color: #fff;
+}
+
+a {
+  color: #0074d9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+pre, code {
+  background-color: transparent;
+  border-radius: 3px;
 }
 
 hr {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  border: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0,0,0,.125);
 }
 
-blockquote {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.field {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,.125);
+  border-radius: 3px;
 }
-  blockquote,
-  blockquote p {
-    font-size: 1.25rem;
-    font-style: italic;
-  }
 
-h1, .h1 { font-size: 2rem }
-h2, .h2 { font-size: 1.5rem }
-h3, .h3 { font-size: 1.25rem }
-h4, .h4 { font-size: 1rem }
-h5, .h5 { font-size: .875rem }
-h6, .h6 { font-size: .75rem }
+.field:focus,
+.field.is-focused {
+  outline: none;
+  border-color: #0074d9;
+  box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.5);
+}
+
+.field:disabled,
+.field.is-disabled {
+  background-color: rgba(0,0,0,.125);
+  opacity: .5;
+}
+
+.field:read-only:not(select),
+.field.is-read-only {
+  background-color: rgba(0,0,0,.125);
+}
+
+
+.field.is-success {
+  border-color: #2ecc40;
+}
+
+.field.is-success:focus,
+.field.is-success.is-focused {
+  box-shadow: 0 0 0 2px rgba(46, 204, 64, 0.5);
+}
+
+.field.is-warning {
+  border-color: #ffdc00;
+}
+
+.field.is-warning:focus,
+.field.is-warning.is-focused {
+  box-shadow: 0 0 0 2px rgba(255, 220, 0, 0.5);
+}
+
+.field:invalid,
+.field.is-error {
+  border-color: #ff4136;
+}
+
+.field:invalid:focus,
+.field:invalid.is-focused,
+.field.is-error:focus,
+.field.is-error.is-focused {
+  box-shadow: 0 0 0 2px rgba(255, 65, 54, 0.5);
+}
+
+.table-light th,
+.table-light td {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0,.125);
+}
+
+.table-light tr:last-child td {
+  border-bottom: 0;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.125rem;
+  padding: .5rem 1rem;
+  margin: 0;
+  height: auto;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
+  border-color: rgba(0,0,0,.125);
+  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0074d9;
+  border-radius: 3px;
+}
+
+.btn-primary:hover {
+  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
+}
+
+.btn-primary:active {
+  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
+    inset 0 3px 4px 0 rgba(0,0,0,.25),
+    0 0 1px rgba(0,0,0,.125);
+}
+
+.btn-primary:disabled,
+.btn-primary.is-disabled {
+  opacity: .5;
+}
+
+.btn-outline,
+.btn-outline:hover {
+  border-color: currentcolor;
+}
+
+.btn-outline {
+  border-radius: 3px;
+}
+
+.btn-outline:hover {
+  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
+}
+
+.btn-outline:active {
+  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
+    inset 0 3px 4px 0 rgba(0,0,0,.25),
+    0 0 1px rgba(0,0,0,.125);
+}
+
+.btn-outline:disabled,
+.btn-outline.is-disabled {
+  opacity: .5;
+}
+
+.h1 { font-size: 2rem }
+.h2 { font-size: 1.5rem }
+.h3 { font-size: 1.25rem }
+.h4 { font-size: 1rem }
+.h5 { font-size: .875rem }
+.h6 { font-size: .75rem }
+
+.bold    { font-weight: bold }
+.regular { font-weight: normal }
+.italic  { font-style: italic }
+.caps    { text-transform: uppercase; letter-spacing: .2em; }
+
+.left-align   { text-align: left }
+.center       { text-align: center }
+.right-align  { text-align: right }
+.justify      { text-align: justify }
+
+.nowrap { white-space: nowrap }
+.break-word { word-wrap: break-word }
+
+.truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .list-reset {
   list-style: none;
   padding-left: 0;
 }
 
-/* Basscss Utility Layout */
-
 .inline       { display: inline }
 .block        { display: block }
 .inline-block { display: inline-block }
+.table        { display: table }
+.table-cell   { display: table-cell }
 
 .overflow-hidden { overflow: hidden }
 .overflow-scroll { overflow: scroll }
@@ -410,22 +555,12 @@ h6, .h6 { font-size: .75rem }
 
 .fit { max-width: 100% }
 
-.half-width { width: 50% }
-.full-width { width: 100% }
-/* Basscss Utility Typography */
+.border-box { box-sizing: border-box }
 
-.bold    { font-weight: bold }
-.regular { font-weight: normal }
-.italic  { font-style: italic }
-.caps    { text-transform: uppercase; letter-spacing: .2em; }
-
-.left-align   { text-align: left }
-.center       { text-align: center }
-.right-align  { text-align: right }
-.justify      { text-align: justify }
-
-.nowrap { white-space: nowrap }
-/* Basscss Utility White Space */
+.align-baseline { vertical-align: baseline }
+.align-top      { vertical-align: top }
+.align-middle   { vertical-align: middle }
+.align-bottom   { vertical-align: bottom }
 
 .m0  { margin:        0 }
 .mt0 { margin-top:    0 }
@@ -463,6 +598,8 @@ h6, .h6 { font-size: .75rem }
 .mxn4 { margin-left: -4rem; margin-right: -4rem; }
 
 .mx-auto { margin-left: auto; margin-right: auto; }
+.p0 { padding: 0 }
+
 .p1  { padding: .5rem }
 .py1 { padding-top: .5rem; padding-bottom: .5rem }
 .px1 { padding-left: .5rem; padding-right: .5rem }
@@ -478,7 +615,20 @@ h6, .h6 { font-size: .75rem }
 .p4  { padding: 4rem }
 .py4 { padding-top: 4rem; padding-bottom: 4rem }
 .px4 { padding-left: 4rem; padding-right: 4rem }
-/* Basscss Utility Responsive States */
+
+.relative { position: relative }
+.absolute { position: absolute }
+.fixed    { position: fixed }
+
+.top-0    { top: 0 }
+.right-0  { right: 0 }
+.bottom-0 { bottom: 0 }
+.left-0   { left: 0 }
+
+.z1 { z-index: 1 }
+.z2 { z-index: 2 }
+.z3 { z-index: 3 }
+.z4 { z-index: 4 }
 
 .sm-show, .md-show, .lg-show {
   display: none !important
@@ -518,46 +668,6 @@ h6, .h6 { font-size: .75rem }
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
-/* Basscss Positions */
-
-.relative { position: relative }
-.absolute { position: absolute }
-.fixed    { position: fixed }
-
-.top-0    { top: 0 }
-.right-0  { right: 0 }
-.bottom-0 { bottom: 0 }
-.left-0   { left: 0 }
-
-.z1 { z-index: 1 }
-.z2 { z-index: 2 }
-.z3 { z-index: 3 }
-.z4 { z-index: 4 }
-
-.absolute-center {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  display: table;
-}
-/* Basscss UI Utility Button Sizes */
-
-.button-small {
-  padding: .25rem .5rem;
-}
-
-.button-big {
-  padding: 1rem 1.25rem;
-}
-
-.button-narrow {
-  padding-left: .5rem;
-  padding-right: .5rem;
-}
-
-/* Basscss Grid */
 
 .container {
   max-width: 64em;
@@ -804,9 +914,6 @@ h6, .h6 { font-size: .75rem }
   }
 
 }
-/*
- * Basscss Flex Object
- */
 
 .flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
 
@@ -819,514 +926,30 @@ h6, .h6 { font-size: .75rem }
 .flex-start    { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start }
 .flex-end      { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end }
 
-.flex-first { -webkit-box-ordinal-group: 0; -webkit-order: -1; -ms-flex-order: -1; order: -1 }
-.flex-last  { -webkit-box-ordinal-group: 1025; -webkit-order: 1024; -ms-flex-order: 1024; order: 1024 }
+.flex-justify  { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between }
 
-.flex-auto { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto }
+.flex-auto {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
 .flex-grow { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto }
 .flex-none { -webkit-box-flex: 0; -webkit-flex: none; -ms-flex: none; flex: none }
 
-.flex > div { box-sizing: border-box }
+.flex-first { -webkit-box-ordinal-group: 0; -webkit-order: -1; -ms-flex-order: -1; order: -1 }
+.flex-last  { -webkit-box-ordinal-group: 100000; -webkit-order: 99999; -ms-flex-order: 99999; order: 99999 }
 @media (min-width: 40em) {
   .sm-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-  .sm-flex > div { box-sizing: border-box }
 }
 @media (min-width: 52em) {
   .md-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-  .md-flex > div { box-sizing: border-box }
 }
 @media (min-width: 64em) {
   .lg-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-  .lg-flex > div { box-sizing: border-box }
-} /* New */
-
-/* Basscss Color Base */
-
-/*
-
-   COLOR VARIABLES
-
-   - Cool
-   - Warm
-   - Gray Scale
-
-*/
-
-:root {
-
-  /* Cool */
-
-
-  /* Warm */
-
-
-  /* Gray scale */
-
 }
-
-body {
-  color: #222;
-  background-color: white;
-}
-
-a {
-  color: #0074d9 ;
-  color: #0074d9;
-  text-decoration: none;
-}
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-hr {
-  border: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0,0,0,.125);
-}
-
-.button {
-  color: white;
-  background-color: #0074d9 ;
-  background-color: #0074d9;
-  border-radius: 3px;
-  /*
-  -webkit-transition-duration: .05s;
-          transition-duration: .05s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: box-shadow, background-color;
-          transition-property: box-shadow, background-color;
-          */
-}
-
-.button:hover {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
-}
-
-.button:focus {
-  outline: none;
-  border-color: rgba(0,0,0,.125);
-  box-shadow: 0 0 2px 1px rgba(0,0,0,.25);
-}
-
-.button:active,
-.button.is-active {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
-    inset 0 3px 4px 0 rgba(0,0,0,.25),
-    0 0 1px rgba(0,0,0,.125);
-}
-
-.button:disabled,
-.button.is-disabled {
-  opacity: .5;
-}
-/* Basscss Color Forms */
-
-/*
-
-   COLOR VARIABLES
-
-   - Cool
-   - Warm
-   - Gray Scale
-
-*/
-
-:root {
-
-  /* Cool */
-
-
-  /* Warm */
-
-
-  /* Gray scale */
-
-}
-
-.field-light {
-  background-color: white;
-  -webkit-transition: box-shadow .2s ease;
-          transition: box-shadow .2s ease;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0,0,0,.125);
-  border-radius: 3px;
-}
-
-.field-light:focus {
-  outline: none;
-  border-color: #0074d9;
-  box-shadow: 0 0 2px rgba(0, 116, 217, 0.5);
-}
-
-.field-light:disabled {
-  color: #aaa;
-  background-color: rgba(0,0,0,.125);
-}
-
-.field-light:read-only:not(select) {
-  background-color: rgba(0,0,0,.125);
-}
-
-.field-light:invalid {
-  border-color: #ff4136;
-}
-
-.field-light.is-success {
-  border-color: #2ecc40;
-}
-
-.field-light.is-warning {
-  border-color: #ffdc00;
-}
-
-.field-light.is-error {
-  border-color: #ff4136;
-}
-
-
-.radio-light,
-.checkbox-light {
-  -webkit-transition: box-shadow .2s ease;
-          transition: box-shadow .2s ease;
-}
-
-.radio-light {
-  border-radius: 50%;
-}
-  
-.radio-light:focus,
-.checkbox-light:focus {
-  outline: none;
-  box-shadow: 0 0 2px rgba(0, 116, 217, 0.5);
-}
-/* Basscss Color Forms Dark */
-
-/*
-
-   COLOR VARIABLES
-
-   - Cool
-   - Warm
-   - Gray Scale
-
-*/
-
-:root {
-
-  /* Cool */
-
-
-  /* Warm */
-
-
-  /* Gray scale */
-
-}
-
-.field-dark {
-  color: white;
-  background-color: rgba(0,0,0,.25);
-  border: 1px solid rgba(0,0,0,.0625);
-  border-radius: 3px;
-  border-radius: 3px;
-}
-
-.field-dark::-webkit-input-placeholder {
-  color: rgba(255,255,255,.75);
-}
-
-.field-dark::-moz-placeholder {
-  color: rgba(255,255,255,.75);
-}
-
-.field-dark:-ms-input-placeholder {
-  color: rgba(255,255,255,.75);
-}
-
-.field-dark::placeholder {
-  color: rgba(255,255,255,.75);
-}
-
-.field-dark:focus {
-  outline: 0;
-  border: 1px solid rgba(255,255,255,.5);
-}
-
-.field-dark:read-only:not(select) {
-  background-color: rgba(255,255,255,.25);
-}
-
-.field-dark:invalid {
-  border-color: #ff4136;
-}
-
-.field-dark.is-success {
-  border-color: #2ecc40;
-}
-
-.field-dark.is-warning {
-  border-color: #ffdc00;
-}
-
-.field-dark.is-error {
-  border-color: #ff4136;
-}
-/* Basscss Input Range */
-
-input[type=range] {
-  vertical-align: middle;
-  background-color: transparent;
-}
-
-.range-light {
-  color: inherit;
-  -webkit-appearance: none;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-
-.range-light::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  position: relative;
-  width: .5rem;
-  height: 1.25rem;
-  border-radius: 3px;
-  background-color: currentcolor;
-  cursor: pointer;
-  margin-top: -0.5rem;
-}
-
-/* Touch screen friendly pseudo element */
-.range-light::-webkit-slider-thumb:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -0.5rem;
-  left: -0.875rem;
-  width: 2.25rem;
-  height: 2.25rem;
-  opacity: 0;
-}
-
-.range-light::-moz-range-thumb {
-  width: .5rem;
-  height: 1.25rem;
-  border-radius: 3px;
-  border-color: transparent;
-  border-width: 0;
-  background-color: currentcolor;
-  cursor: pointer;
-}
-
-.range-light::-webkit-slider-runnable-track {
-  height: 0.25rem;
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: rgba(0,0,0,.25);
-}
-
-.range-light::-moz-range-track {
-  height: 0.25rem;
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: rgba(0,0,0,.25);
-}
-
-.range-light:focus {
-  outline: none;
-}
-
-.range-light:focus::-webkit-slider-thumb {
-  outline: none;
-  border: 0;
-  box-shadow: 0 0 1px 2px currentcolor;
-}
-
-.range-light:focus::-moz-range-thumb {
-  outline: none;
-  border: 0;
-  box-shadow: 0 0 1px 2px currentcolor;
-}
-/* Basscss Progress */
-
-.progress {
-  display: block;
-  width: 100%;
-  height: 0.5625rem;
-  margin: .5rem 0;
-  background-color: rgba(0,0,0,.125);
-  border: 0;
-  border-radius: 10000px;
-  overflow: hidden;
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-
-.progress::-webkit-progress-bar {
-  -webkit-appearance: none;
-  background-color: rgba(0,0,0,.125)
-}
-
-.progress::-webkit-progress-value {
-  -webkit-appearance: none;
-  background-color: currentColor;
-}
-
-.progress::-moz-progress-bar {
-  background-color: currentColor;
-}
-/* Basscss Color Tables */
-
-.table-light th,
-.table-light td {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0,0,0,.125);
-}
-
-.table-light tr:last-child td {
-  border-bottom: 0;
-}
-
-/* Basscss Button Outline */
-
-.button-outline {
-  position: relative;
-  z-index: 2;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 3px;
-  border: 1px solid currentcolor;
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: box-shadow, background-color;
-          transition-property: box-shadow, background-color;
-}
-
-.button-outline:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: -1px;
-  left: -1px;
-  border: 1px solid transparent;
-  background-color: currentcolor;
-  border-radius: 3px;
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: opacity;
-          transition-property: opacity;
-  opacity: 0;
-}
-
-.button-outline:hover {
-  box-shadow: none;
-}
-
-.button-outline:hover:before {
-  opacity: .125;
-}
-
-.button-outline:focus {
-  outline: none;
-  border: 1px solid currentcolor;
-  box-shadow: 0 0 3px 1px;
-}
-
-.button-outline:active,
-.button-outline.is-active {
-  box-shadow: inset 0 1px 5px 0, 0 0 1px;
-}
-
-.button-outline:disabled,
-.button-outline.is-disabled {
-  opacity: .5;
-} /* New */
-/* Basscss Button Transparent */
-
-.button-transparent {
-  position: relative;
-  z-index: 2;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
-  border: 1px solid transparent;
-  /*
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: box-shadow;
-          transition-property: box-shadow;
-          */
-}
-
-.button-transparent:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: -1px;
-  left: -1px;
-  border: 1px solid transparent;
-  background-color: currentcolor;
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
-  -webkit-transition-property: opacity;
-          transition-property: opacity;
-  opacity: 0;
-}
-
-.button-transparent:hover {
-  box-shadow: none;
-}
-
-.button-transparent:hover:before {
-  opacity: .0625;
-  opacity: .09375;
-}
-
-.button-transparent:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 3px;
-}
-
-.button-transparent:active:before,
-.button-transparent.is-active:before {
-  opacity: .0625;
-}
-
-.button-transparent:disabled,
-.button-transparent.is-disabled {
-  opacity: .5;
-} /* New */
-/* Basscss Background Images */
-
-.bg-cover   { background-size: cover }
-.bg-contain { background-size: contain }
-
-.bg-center  { background-position: center }
-.bg-top     { background-position: top }
-.bg-right   { background-position: right }
-.bg-bottom  { background-position: bottom }
-.bg-left    { background-position: left } /* New */
-/* Basscss Color Borders */
 
 .border {
   border-style: solid;
@@ -1358,6 +981,8 @@ input[type=range] {
   border-left-color: rgba(0,0,0,.125);
 }
 
+.border-none { border: 0 }
+
 .rounded { border-radius: 3px }
 .circle  { border-radius: 50% }
 
@@ -1368,15 +993,10 @@ input[type=range] {
 
 .not-rounded { border-radius: 0 }
 
-/* Basscss Colors */
-
-
-/* Color */
-
-.black, .dark-gray   { color: #222 }
-.gray, .mid-gray     { color: #aaa }
-.silver, .light-gray { color: #ddd }
-.white { color: #fff }
+.black  { color: #111 }
+.gray   { color: #aaa }
+.silver { color: #ddd }
+.white  { color: #fff }
 
 .aqua  { color: #7fdbff }
 .blue  { color: #0074d9 }
@@ -1393,12 +1013,12 @@ input[type=range] {
 .purple  { color: #b10dc9 }
 .maroon  { color: #85144b }
 
+.color-inherit { color: inherit }
+.muted { opacity: .5 }
 
-/* Background Color */
-
-.bg-black, .bg-dark-gray   { background-color: #222 }
-.bg-gray, .bg-mid-gray     { background-color: #aaa }
-.bg-silver, .bg-light-gray { background-color: #ddd }
+.bg-black  { background-color: #111 }
+.bg-gray   { background-color: #aaa }
+.bg-silver { background-color: #ddd }
 .bg-white  { background-color: #fff }
 
 .bg-aqua  { background-color: #7fdbff }
@@ -1416,52 +1036,16 @@ input[type=range] {
 .bg-purple  { background-color: #b10dc9 }
 .bg-maroon  { background-color: #85144b }
 
-.bg-darken-0 { background-color: rgba(0,0,0,.03125) }
 .bg-darken-1 { background-color: rgba(0,0,0,.0625) }
 .bg-darken-2 { background-color: rgba(0,0,0,.125) }
 .bg-darken-3 { background-color: rgba(0,0,0,.25) }
 .bg-darken-4 { background-color: rgba(0,0,0,.5) }
 
+.bg-lighten-1 { background-color: rgba(255,255,255,.0625) }
+.bg-lighten-2 { background-color: rgba(255,255,255,.125) }
+.bg-lighten-3 { background-color: rgba(255,255,255,.25) }
+.bg-lighten-4 { background-color: rgba(255,255,255,.5) }
 
-/* Border Color */
-
-.border-aqua  { border-color: #7fdbff }
-.border-blue  { border-color: #0074d9 }
-.border-navy  { border-color: #001f3f }
-.border-teal  { border-color: #39cccc }
-.border-green { border-color: #2ecc40 }
-.border-olive { border-color: #3d9970 }
-.border-lime  { border-color: #01ff70 }
-
-.border-yellow  { border-color: #ffdc00 }
-.border-orange  { border-color: #ff851b }
-.border-red     { border-color: #ff4136 }
-.border-fuchsia { border-color: #f012be }
-.border-purple  { border-color: #b10dc9 }
-.border-maroon  { border-color: #85144b }
-
-.border-black  { border-color: #222 }
-.border-gray   { border-color: #aaa }
-.border-silver { border-color: #ddd }
-.border-white  { border-color: #fff }
-
-.border-darken-1 { border-color: rgba(0,0,0,.0625) }
-.border-darken-2 { border-color: rgba(0,0,0,.125) }
-.border-darken-3 { border-color: rgba(0,0,0,.25) }
-.border-darken-4 { border-color: rgba(0,0,0,.5) }
-
-/* Opacity */
-.muted { opacity: .5 }
-
-
-/* Variables */
-/* Basscss Defaults */
-
-:root {
-
-  /* Legacy support */
-
-}
 
 
 /*
@@ -1592,17 +1176,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 // add anchor links to headers
 anchors.options.placement = 'left';
-anchors.add();
+anchors.add().remove('.no-anchor');
 
 // Filter UI
 var tocElements = document.getElementById('toc').getElementsByTagName('a');
 document.getElementById('filter-input').addEventListener('keyup', function(e) {
 
+  var i, element;
+
   // enter key
   if (e.keyCode === 13) {
     // go to the first displayed item in the toc
-    for (var i = 0; i < tocElements.length; i++) {
-      var element = tocElements[i];
+    for (i = 0; i < tocElements.length; i++) {
+      element = tocElements[i];
       if (!element.classList.contains('hide')) {
         location.replace(element.href);
         return e.preventDefault();
@@ -1617,8 +1203,8 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
     match = function(text) { return text.toLowerCase().indexOf(value) !== -1; };
   }
 
-  for (var i = 0; i < tocElements.length; i++) {
-    var element = tocElements[i];
+  for (i = 0; i < tocElements.length; i++) {
+    element = tocElements[i];
     if (match(element.innerHTML)) {
       element.classList.remove('hide');
     } else {
@@ -1726,7 +1312,7 @@ h4:hover .anchorjs-link {
 <html>
 <head>
   <meta charset='utf-8' />
-  <title> </title>
+  <title>  | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,500,700' rel='stylesheet' type='text/css'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
@@ -1737,58 +1323,57 @@ h4:hover .anchorjs-link {
   <div class='container'>
     <div class='clearfix md-mxn2'>
       <div class='fixed md-show fix-3 overflow-auto max-height-100'>
-        <div class='px1 py1'>
-          <a href='/' class='h5 button block button-transparent'> </a>
-          <div class='px2'>
-            <input
-              placeholder='Filter'
-              id='filter-input'
-              class='col12 block field-light'
-              type='text' />
-          </div>
-          <div id='toc' class='px2'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block field'
+            type='text' />
+          <div id='toc'>
               <a
-                href='#klass'
+                href='#Klass'
                 class='block bold'>
                 Klass
               </a>
                 <a
-                  href='#klass/magic-number'
+                  href='#Klass.MAGIC_NUMBER'
                   class='regular block'>
                   .MAGIC_NUMBER
                 </a>
                 <a
-                  href='#klass/event'
+                  href='#Klass.event'
                   class='regular block'>
                   .event
                 </a>
                 <a
-                  href='#klass/isarrayofbuffers'
+                  href='#Klass.isArrayOfBuffers'
                   class='regular block'>
                   .isArrayOfBuffers
                 </a>
                 <a
-                  href='#klass/isbuffer'
+                  href='#Klass.isBuffer'
                   class='regular block'>
                   .isBuffer
                 </a>
                 <a
-                  href='#klass/isclass'
+                  href='#Klass.isClass'
                   class='regular block'>
                   .isClass
                 </a>
                 <a
-                  href='#klass/isweird'
+                  href='#Klass.isWeird'
                   class='regular block'>
                   .isWeird
                 </a>
                 <a
-                  href='#klass/getfoo'
+                  href='#Klass.getFoo'
                   class='regular block'>
                   #getFoo
                 </a>
                 <a
-                  href='#klass/withoptions'
+                  href='#Klass.withOptions'
                   class='regular block'>
                   #withOptions
                 </a>
@@ -1808,7 +1393,7 @@ h4:hover .anchorjs-link {
       <div class='fix-margin-3'>
         <div class='px2'>
 <div class='py1'><section class='py2 clearfix'>
-  <h2 id='klass' class='mt0'>
+  <h2 id='Klass' class='mt0'>
     Klass<span class='gray'>(foo)</span>
   </h2>
   <p>Creates a new Klass</p>
@@ -1823,8 +1408,8 @@ h4:hover .anchorjs-link {
         </li>
     </ul>
       <h4>Static members</h4>
-        <div class='collapsible' id='klass/magic-number'>
-          <a href='#klass/magic-number'>
+        <div class='collapsible' id='Klass.MAGIC_NUMBER'>
+          <a href='#Klass.MAGIC_NUMBER'>
             <code>
               .MAGIC_NUMBER<span class='gray'></span>
             </code>
@@ -1835,7 +1420,7 @@ h4:hover .anchorjs-link {
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/magic-number' class='mt0'>
+              <h2 id='Klass.MAGIC_NUMBER' class='mt0'>
                 MAGIC_NUMBER<span class='gray'></span>
               </h2>
               <p>A magic number that identifies this Klass.</p>
@@ -1843,8 +1428,8 @@ h4:hover .anchorjs-link {
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/event'>
-          <a href='#klass/event'>
+        <div class='collapsible' id='Klass.event'>
+          <a href='#Klass.event'>
             <code>
               .event<span class='gray'></span>
             </code>
@@ -1855,7 +1440,7 @@ h4:hover .anchorjs-link {
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/event' class='mt0'>
+              <h2 id='Klass.event' class='mt0'>
                 event<span class='gray'></span>
               </h2>
               <p>Klass event</p>
@@ -1863,8 +1448,8 @@ h4:hover .anchorjs-link {
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/isarrayofbuffers'>
-          <a href='#klass/isarrayofbuffers'>
+        <div class='collapsible' id='Klass.isArrayOfBuffers'>
+          <a href='#Klass.isArrayOfBuffers'>
             <code>
               .isArrayOfBuffers<span class='gray'>(buffers)</span>
             </code>
@@ -1875,7 +1460,7 @@ h4:hover .anchorjs-link {
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/isarrayofbuffers' class='mt0'>
+              <h2 id='Klass.isArrayOfBuffers' class='mt0'>
                 isArrayOfBuffers<span class='gray'>(buffers)</span>
               </h2>
               <p>This method takes an array of buffers and counts them</p>
@@ -1900,8 +1485,8 @@ h4:hover .anchorjs-link {
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/isbuffer'>
-          <a href='#klass/isbuffer'>
+        <div class='collapsible' id='Klass.isBuffer'>
+          <a href='#Klass.isBuffer'>
             <code>
               .isBuffer<span class='gray'>(buf, [size])</span>
             </code>
@@ -1912,7 +1497,7 @@ h4:hover .anchorjs-link {
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/isbuffer' class='mt0'>
+              <h2 id='Klass.isBuffer' class='mt0'>
                 isBuffer<span class='gray'>(buf, [size])</span>
               </h2>
               <p>This method takes a Buffer object that will be linked to nodejs.org</p>
@@ -1944,26 +1529,26 @@ h4:hover .anchorjs-link {
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/isclass'>
-          <a href='#klass/isclass'>
+        <div class='collapsible' id='Klass.isClass'>
+          <a href='#Klass.isClass'>
             <code>
               .isClass<span class='gray'>(other, also)</span>
             </code>
             <span class='force-inline'>
               <p>Decide whether an object is a Klass instance
-This is a <a href="klass"><code>klasssic</code></a>
-This is a <a href="doesnot"><code>link to something that does not exist</code></a></p>
+This is a <a href="Klass"><code>klasssic</code></a>
+This is a <a href="DoesNot"><code>link to something that does not exist</code></a></p>
 
             </span>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/isclass' class='mt0'>
+              <h2 id='Klass.isClass' class='mt0'>
                 isClass<span class='gray'>(other, also)</span>
               </h2>
               <p>Decide whether an object is a Klass instance
-            This is a <a href="klass"><code>klasssic</code></a>
-            This is a <a href="doesnot"><code>link to something that does not exist</code></a></p>
+            This is a <a href="Klass"><code>klasssic</code></a>
+            This is a <a href="DoesNot"><code>link to something that does not exist</code></a></p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
@@ -1990,8 +1575,8 @@ This is a <a href="doesnot"><code>link to something that does not exist</code></
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/isweird'>
-          <a href='#klass/isweird'>
+        <div class='collapsible' id='Klass.isWeird'>
+          <a href='#Klass.isWeird'>
             <code>
               .isWeird<span class='gray'>(other)</span>
             </code>
@@ -2003,7 +1588,7 @@ the referenced class type</p>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/isweird' class='mt0'>
+              <h2 id='Klass.isWeird' class='mt0'>
                 isWeird<span class='gray'>(other)</span>
               </h2>
               <p>A function that triggers the case where the autolinker doesn&apos;t find
@@ -2029,8 +1614,8 @@ the referenced class type</p>
           </div>
         </div>
       <h4>Instance members</h4>
-        <div class='collapsible' id='klass/getfoo'>
-          <a href='#klass/getfoo'>
+        <div class='collapsible' id='Klass.getFoo'>
+          <a href='#Klass.getFoo'>
             <code>
               #getFoo<span class='gray'></span>
             </code>
@@ -2041,7 +1626,7 @@ the referenced class type</p>
           </a>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/getfoo' class='mt0'>
+              <h2 id='Klass.getFoo' class='mt0'>
                 getFoo<span class='gray'></span>
               </h2>
               <p>Get this Klass&apos;s foo</p>
@@ -2058,8 +1643,8 @@ the referenced class type</p>
             </section>
           </div>
         </div>
-        <div class='collapsible' id='klass/withoptions'>
-          <a href='#klass/withoptions'>
+        <div class='collapsible' id='Klass.withOptions'>
+          <a href='#Klass.withOptions'>
             <code>
               #withOptions<span class='gray'>(options)</span>
             </code>
@@ -2070,7 +1655,7 @@ the referenced class type</p>
           </a>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
-              <h2 id='klass/withoptions' class='mt0'>
+              <h2 id='Klass.withOptions' class='mt0'>
                 withOptions<span class='gray'>(options)</span>
               </h2>
               <p>A function with an options parameter</p>
@@ -2098,9 +1683,9 @@ the referenced class type</p>
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
-  <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
-a <a href="klass"><code>klass instance multiword</code></a>,
-like a <a href="klass"><code>klass</code></a></p>
+  <p>Get an instance of <a href="Klass"><code>Klass</code></a>. Will make
+a <a href="Klass"><code>klass instance multiword</code></a>,
+like a <a href="Klass"><code>klass</code></a></p>
 
       <h4>Returns</h4>
       <code>undefined</code>
@@ -2114,12 +1699,12 @@ like a <a href="klass"><code>klass</code></a></p>
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
-  <p>Get an instance of <a href="klass"><code>Klass</code></a>. Will make
-a <a href="klass"><code>klass instance multiword</code></a>,
-like a <a href="klass"><code>klass</code></a></p>
+  <p>Get an instance of <a href="Klass"><code>Klass</code></a>. Will make
+a <a href="Klass"><code>klass instance multiword</code></a>,
+like a <a href="Klass"><code>klass</code></a></p>
 
       <h4>Returns</h4>
-      <code><code><a href="#klass">Klass</a></code></code>
+      <code><code><a href="#Klass">Klass</a></code></code>
       :
       <span class='force-inline'>
         <p>that class</p>
