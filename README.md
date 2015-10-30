@@ -33,6 +33,17 @@ sections of code it refers to in a GitHub repository.
 The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
 lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 
+## Documentation
+
+* [Getting_Started](docs/GETTING_STARTED.md): start here
+* [Usage](docs/USAGE.md): how to use documentation.js
+* [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
+* [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
+* [FAQ](docs/FAQ.md)
+
+* [Theming HTML](docs/THEME_HTML.md): tips for theming documentation output in HTML
+* [See also](docs/SEE_ALSO.md): a list of projects similar to documentation.js
+
 ## User Guide
 
 Globally install `documentation` using the [npm](https://www.npmjs.com/) package manager:
