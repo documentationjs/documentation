@@ -39,7 +39,7 @@ function normalize(result) {
   return result;
 }
 
-var options = { timeout: 1000 * 30 };
+var options = { timeout: 1000 * 120 };
 
 test('documentation binary', function (t) {
   documentation(['fixture/simple.input.js'], function (err, data) {
