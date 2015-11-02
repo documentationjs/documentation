@@ -1,3 +1,7 @@
+## 3.0.1
+
+* BUGFIX: Fix default theme resolution [#212](https://github.com/documentationjs/documentation/pull/212)
+
 ## 3.0.0
 
 The largest change to documentation.js so far.
