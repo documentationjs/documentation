@@ -2,7 +2,6 @@
 
 Very Important Transform
 
-
 **Parameters**
 
 -   `input` **Array&lt;string&gt;** 
@@ -10,8 +9,5 @@ Very Important Transform
 -   `options` **[Object]** 
      (optional, default `{}`)
 
-
 Returns **string** 
-
-
 

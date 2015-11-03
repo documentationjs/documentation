@@ -2,53 +2,21 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text",
-              "value": "returnTwo"
-            }
-          ]
-        },
+          "type": "text",
+          "value": "returnTwo"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "This function returns the number plus two.",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 43
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 43
-                },
-                "indent": []
-              }
-            }
-          ],
+          "type": "text",
+          "value": "This function returns the number plus two.",
           "position": {
             "start": {
               "line": 1,
@@ -57,139 +25,49 @@
             "end": {
               "line": 1,
               "column": 43
-            }
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
         },
-        {
-          "type": "root",
-          "children": [
-            {
-              "type": "strong",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Parameters"
-                }
-              ]
-            },
-            {
-              "ordered": false,
-              "type": "list",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "a"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "strong",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": "Number"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [
-                            {
-                              "type": "paragraph",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "value": "the number",
-                                  "position": {
-                                    "start": {
-                                      "line": 1,
-                                      "column": 1
-                                    },
-                                    "end": {
-                                      "line": 1,
-                                      "column": 11
-                                    },
-                                    "indent": []
-                                  }
-                                }
-                              ],
-                              "position": {
-                                "start": {
-                                  "line": 1,
-                                  "column": 1
-                                },
-                                "end": {
-                                  "line": 1,
-                                  "column": 11
-                                },
-                                "indent": []
-                              }
-                            }
-                          ],
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 11
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+        "end": {
+          "line": 1,
+          "column": 43
         },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "strong",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Examples"
-                }
-              ]
-            },
-            {
-              "type": "root",
-              "children": [
-                {
-                  "lang": "javascript",
-                  "type": "code",
-                  "value": "var result = returnTwo(4);\n// result is 6"
-                }
-              ]
-            }
-          ]
-        },
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
         {
-          "type": "root",
+          "type": "listItem",
           "children": [
             {
               "type": "paragraph",
               "children": [
                 {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
+                {
                   "type": "text",
-                  "value": "Returns "
+                  "value": " "
                 },
                 {
                   "type": "strong",
@@ -212,7 +90,7 @@
                       "children": [
                         {
                           "type": "text",
-                          "value": "numbertwo",
+                          "value": "the number",
                           "position": {
                             "start": {
                               "line": 1,
@@ -220,7 +98,7 @@
                             },
                             "end": {
                               "line": 1,
-                              "column": 10
+                              "column": 11
                             },
                             "indent": []
                           }
@@ -233,7 +111,7 @@
                         },
                         "end": {
                           "line": 1,
-                          "column": 10
+                          "column": 11
                         },
                         "indent": []
                       }
@@ -246,13 +124,95 @@
                     },
                     "end": {
                       "line": 1,
-                      "column": 10
+                      "column": 11
                     }
                   }
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "strong",
+      "children": [
+        {
+          "type": "text",
+          "value": "Examples"
+        }
+      ]
+    },
+    {
+      "lang": "javascript",
+      "type": "code",
+      "value": "var result = returnTwo(4);\n// result is 6"
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
+          "children": [
+            {
+              "type": "text",
+              "value": "Number"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "numbertwo",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 10
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 10
+            }
+          }
         }
       ]
     }

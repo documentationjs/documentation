@@ -2,17 +2,65 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
+          "type": "text",
+          "value": "simple-hashbang.input"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This function returns the number one.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 38
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 38
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
           "children": [
             {
               "type": "text",
-              "value": "simple-hashbang.input"
+              "value": "Number"
             }
           ]
+        },
+        {
+          "type": "text",
+          "value": " "
         },
         {
           "type": "root",
@@ -22,7 +70,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "This function returns the number one.",
+                  "value": "numberone",
                   "position": {
                     "start": {
                       "line": 1,
@@ -30,7 +78,7 @@
                     },
                     "end": {
                       "line": 1,
-                      "column": 38
+                      "column": 10
                     },
                     "indent": []
                   }
@@ -43,7 +91,7 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 38
+                  "column": 10
                 },
                 "indent": []
               }
@@ -56,82 +104,9 @@
             },
             "end": {
               "line": 1,
-              "column": 38
+              "column": 10
             }
           }
-        },
-        {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Returns "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "Number"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "numberone",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 10
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
-                      "position": {
-                        "start": {
-                          "line": 1,
-                          "column": 1
-                        },
-                        "end": {
-                          "line": 1,
-                          "column": 10
-                        },
-                        "indent": []
-                      }
-                    }
-                  ],
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10
-                    }
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     }

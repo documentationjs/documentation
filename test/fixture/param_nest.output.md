@@ -2,7 +2,6 @@
 
 Create a GeoJSON data source instance given an options object
 
-
 **Parameters**
 
 -   `options` **[Object]** optional options
@@ -14,6 +13,4 @@ Create a GeoJSON data source instance given an options object
     -   `options.buffer` **[number]** Tile buffer on each side.
 
     -   `options.tolerance` **[number]** Simplification tolerance (higher means simpler).
-
-
 

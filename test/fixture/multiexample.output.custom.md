@@ -2,7 +2,6 @@
 
 This function returns the number one.
 
-
 **Examples**
 
 ```javascript
@@ -13,9 +12,5 @@ foo(1);
 foo(2);
 ```
 
-
-
 Returns **Number** numberone
-
-
 

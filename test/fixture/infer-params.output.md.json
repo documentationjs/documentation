@@ -2,53 +2,21 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text",
-              "value": "addThem"
-            }
-          ]
-        },
+          "type": "text",
+          "value": "addThem"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "This function returns the number one.",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 38
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 38
-                },
-                "indent": []
-              }
-            }
-          ],
+          "type": "text",
+          "value": "This function returns the number one.",
           "position": {
             "start": {
               "line": 1,
@@ -57,123 +25,108 @@
             "end": {
               "line": 1,
               "column": 38
-            }
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
         },
+        "end": {
+          "line": 1,
+          "column": 38
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
         {
-          "type": "root",
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
           "children": [
             {
-              "type": "strong",
+              "type": "paragraph",
               "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
                 {
                   "type": "text",
-                  "value": "Parameters"
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
+                  "children": [],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 1
+                    }
+                  }
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
             {
-              "ordered": false,
-              "type": "list",
+              "type": "paragraph",
               "children": [
                 {
-                  "type": "listItem",
+                  "type": "inlineCode",
+                  "value": "b"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "a"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [],
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 1
-                            }
-                          }
-                        }
-                      ]
+                      "type": "text",
+                      "value": "number"
                     }
                   ]
                 },
                 {
-                  "type": "listItem",
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
                   "children": [
                     {
                       "type": "paragraph",
                       "children": [
                         {
-                          "type": "inlineCode",
-                          "value": "b"
-                        },
-                        {
                           "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "strong",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": "number"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [
-                            {
-                              "type": "paragraph",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "value": "the second param",
-                                  "position": {
-                                    "start": {
-                                      "line": 1,
-                                      "column": 1
-                                    },
-                                    "end": {
-                                      "line": 1,
-                                      "column": 17
-                                    },
-                                    "indent": []
-                                  }
-                                }
-                              ],
-                              "position": {
-                                "start": {
-                                  "line": 1,
-                                  "column": 1
-                                },
-                                "end": {
-                                  "line": 1,
-                                  "column": 17
-                                },
-                                "indent": []
-                              }
-                            }
-                          ],
+                          "value": "the second param",
                           "position": {
                             "start": {
                               "line": 1,
@@ -182,192 +135,214 @@
                             "end": {
                               "line": 1,
                               "column": 17
-                            }
+                            },
+                            "indent": []
                           }
                         }
-                      ]
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 17
+                        },
+                        "indent": []
+                      }
                     }
-                  ]
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "c"
                 },
                 {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "c"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [],
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 1
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  ]
+                  "type": "text",
+                  "value": " "
                 },
                 {
-                  "type": "listItem",
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
+                  "children": [],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 1
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "$3"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
+                  "children": [],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 1
+                    }
+                  }
+                },
+                {
+                  "ordered": false,
+                  "type": "list",
                   "children": [
                     {
-                      "type": "paragraph",
+                      "type": "listItem",
                       "children": [
                         {
-                          "type": "inlineCode",
-                          "value": "$3"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [],
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 1
-                            }
-                          }
-                        },
-                        {
-                          "ordered": false,
-                          "type": "list",
+                          "type": "paragraph",
                           "children": [
                             {
-                              "type": "listItem",
-                              "children": [
-                                {
-                                  "type": "paragraph",
-                                  "children": [
-                                    {
-                                      "type": "inlineCode",
-                                      "value": "$3.d"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "root",
-                                      "children": [],
-                                      "position": {
-                                        "start": {
-                                          "line": 1,
-                                          "column": 1
-                                        },
-                                        "end": {
-                                          "line": 1,
-                                          "column": 1
-                                        }
-                                      }
-                                    }
-                                  ]
-                                }
-                              ]
+                              "type": "inlineCode",
+                              "value": "$3.d"
                             },
                             {
-                              "type": "listItem",
-                              "children": [
-                                {
-                                  "type": "paragraph",
-                                  "children": [
-                                    {
-                                      "type": "inlineCode",
-                                      "value": "$3.e"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "root",
-                                      "children": [],
-                                      "position": {
-                                        "start": {
-                                          "line": 1,
-                                          "column": 1
-                                        },
-                                        "end": {
-                                          "line": 1,
-                                          "column": 1
-                                        }
-                                      }
-                                    }
-                                  ]
-                                }
-                              ]
+                              "type": "text",
+                              "value": " "
                             },
                             {
-                              "type": "listItem",
-                              "children": [
-                                {
-                                  "type": "paragraph",
-                                  "children": [
-                                    {
-                                      "type": "inlineCode",
-                                      "value": "$3.f"
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "text",
-                                      "value": " "
-                                    },
-                                    {
-                                      "type": "root",
-                                      "children": [],
-                                      "position": {
-                                        "start": {
-                                          "line": 1,
-                                          "column": 1
-                                        },
-                                        "end": {
-                                          "line": 1,
-                                          "column": 1
-                                        }
-                                      }
-                                    }
-                                  ]
+                              "type": "text",
+                              "value": " "
+                            },
+                            {
+                              "type": "root",
+                              "children": [],
+                              "position": {
+                                "start": {
+                                  "line": 1,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 1,
+                                  "column": 1
                                 }
-                              ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "children": [
+                            {
+                              "type": "inlineCode",
+                              "value": "$3.e"
+                            },
+                            {
+                              "type": "text",
+                              "value": " "
+                            },
+                            {
+                              "type": "text",
+                              "value": " "
+                            },
+                            {
+                              "type": "root",
+                              "children": [],
+                              "position": {
+                                "start": {
+                                  "line": 1,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 1,
+                                  "column": 1
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "listItem",
+                      "children": [
+                        {
+                          "type": "paragraph",
+                          "children": [
+                            {
+                              "type": "inlineCode",
+                              "value": "$3.f"
+                            },
+                            {
+                              "type": "text",
+                              "value": " "
+                            },
+                            {
+                              "type": "text",
+                              "value": " "
+                            },
+                            {
+                              "type": "root",
+                              "children": [],
+                              "position": {
+                                "start": {
+                                  "line": 1,
+                                  "column": 1
+                                },
+                                "end": {
+                                  "line": 1,
+                                  "column": 1
+                                }
+                              }
                             }
                           ]
                         }

@@ -2,16 +2,64 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "this is a type",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 15
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 15
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
           "children": [
             {
-              "type": "text"
+              "type": "text",
+              "value": "number"
             }
           ]
+        },
+        {
+          "type": "text",
+          "value": " "
         },
         {
           "type": "root",
@@ -21,7 +69,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "this is a type",
+                  "value": "nothing",
                   "position": {
                     "start": {
                       "line": 1,
@@ -29,7 +77,7 @@
                     },
                     "end": {
                       "line": 1,
-                      "column": 15
+                      "column": 8
                     },
                     "indent": []
                   }
@@ -42,7 +90,7 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 15
+                  "column": 8
                 },
                 "indent": []
               }
@@ -55,82 +103,9 @@
             },
             "end": {
               "line": 1,
-              "column": 15
+              "column": 8
             }
           }
-        },
-        {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Returns "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "number"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "nothing",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 8
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
-                      "position": {
-                        "start": {
-                          "line": 1,
-                          "column": 1
-                        },
-                        "end": {
-                          "line": 1,
-                          "column": 8
-                        },
-                        "indent": []
-                      }
-                    }
-                  ],
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 8
-                    }
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     }

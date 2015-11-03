@@ -2,53 +2,21 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text",
-              "value": "foo"
-            }
-          ]
-        },
+          "type": "text",
+          "value": "foo"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Represents an IPv6 address",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 27
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 27
-                },
-                "indent": []
-              }
-            }
-          ],
+          "type": "text",
+          "value": "Represents an IPv6 address",
           "position": {
             "start": {
               "line": 1,
@@ -57,78 +25,63 @@
             "end": {
               "line": 1,
               "column": 27
-            }
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
         },
+        "end": {
+          "line": 1,
+          "column": 27
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
         {
-          "type": "root",
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
           "children": [
             {
-              "type": "strong",
+              "type": "paragraph",
               "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "address"
+                },
                 {
                   "type": "text",
-                  "value": "Parameters"
-                }
-              ]
-            },
-            {
-              "ordered": false,
-              "type": "list",
-              "children": [
+                  "value": " "
+                },
                 {
-                  "type": "listItem",
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
                   "children": [
                     {
                       "type": "paragraph",
                       "children": [
                         {
-                          "type": "inlineCode",
-                          "value": "address"
-                        },
-                        {
                           "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [
-                            {
-                              "type": "paragraph",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "value": "An IPv6 address string",
-                                  "position": {
-                                    "start": {
-                                      "line": 1,
-                                      "column": 1
-                                    },
-                                    "end": {
-                                      "line": 1,
-                                      "column": 23
-                                    },
-                                    "indent": []
-                                  }
-                                }
-                              ],
-                              "position": {
-                                "start": {
-                                  "line": 1,
-                                  "column": 1
-                                },
-                                "end": {
-                                  "line": 1,
-                                  "column": 23
-                                },
-                                "indent": []
-                              }
-                            }
-                          ],
+                          "value": "An IPv6 address string",
                           "position": {
                             "start": {
                               "line": 1,
@@ -137,12 +90,34 @@
                             "end": {
                               "line": 1,
                               "column": 23
-                            }
+                            },
+                            "indent": []
                           }
                         }
-                      ]
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 23
+                        },
+                        "indent": []
+                      }
                     }
-                  ]
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 23
+                    }
+                  }
                 }
               ]
             }

@@ -2,7 +2,6 @@
 
 This function returns the number one.
 
-
 **Parameters**
 
 -   `a` **number** 
@@ -18,8 +17,5 @@ This function returns the number one.
 -   `f` **Named** 
 
 
-
 Returns **number** 
-
-
 

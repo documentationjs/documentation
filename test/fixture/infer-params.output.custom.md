@@ -2,7 +2,6 @@
 
 This function returns the number one.
 
-
 **Parameters**
 
 -   `a`  
@@ -17,6 +16,4 @@ This function returns the number one.
     -   `$3.e`  
 
     -   `$3.f`  
-
-
 

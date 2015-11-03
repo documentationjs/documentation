@@ -2,53 +2,21 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text",
-              "value": "Something"
-            }
-          ]
-        },
+          "type": "text",
+          "value": "Something"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "this is a type",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 15
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 15
-                },
-                "indent": []
-              }
-            }
-          ],
+          "type": "text",
+          "value": "this is a type",
           "position": {
             "start": {
               "line": 1,
@@ -57,23 +25,83 @@
             "end": {
               "line": 1,
               "column": 15
-            }
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 15
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "fooBar"
         }
       ]
     },
     {
-      "type": "root",
+      "type": "paragraph",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
+          "type": "text",
+          "value": "ONE",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 4
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 4
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
           "children": [
             {
               "type": "text",
-              "value": "fooBar"
+              "value": "number"
             }
           ]
+        },
+        {
+          "type": "text",
+          "value": " "
         },
         {
           "type": "root",
@@ -83,7 +111,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "ONE",
+                  "value": "something",
                   "position": {
                     "start": {
                       "line": 1,
@@ -91,7 +119,7 @@
                     },
                     "end": {
                       "line": 1,
-                      "column": 4
+                      "column": 10
                     },
                     "indent": []
                   }
@@ -104,7 +132,7 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 4
+                  "column": 10
                 },
                 "indent": []
               }
@@ -117,9 +145,72 @@
             },
             "end": {
               "line": 1,
-              "column": 4
+              "column": 10
             }
           }
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "fooBaz"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "TWO",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 1,
+              "column": 4
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 1,
+          "column": 4
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
+          "children": [
+            {
+              "type": "text",
+              "value": "number"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
         },
         {
           "type": "root",
@@ -129,56 +220,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "Returns "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "number"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "something",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 10
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
-                      "position": {
-                        "start": {
-                          "line": 1,
-                          "column": 1
-                        },
-                        "end": {
-                          "line": 1,
-                          "column": 10
-                        },
-                        "indent": []
-                      }
-                    }
-                  ],
+                  "value": "something",
                   "position": {
                     "start": {
                       "line": 1,
@@ -187,45 +229,6 @@
                     "end": {
                       "line": 1,
                       "column": 10
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "root",
-      "children": [
-        {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text",
-              "value": "fooBaz"
-            }
-          ]
-        },
-        {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "TWO",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 4
                     },
                     "indent": []
                   }
@@ -238,7 +241,7 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 4
+                  "column": 10
                 },
                 "indent": []
               }
@@ -251,82 +254,9 @@
             },
             "end": {
               "line": 1,
-              "column": 4
+              "column": 10
             }
           }
-        },
-        {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Returns "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "number"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "something",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 10
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
-                      "position": {
-                        "start": {
-                          "line": 1,
-                          "column": 1
-                        },
-                        "end": {
-                          "line": 1,
-                          "column": 10
-                        },
-                        "indent": []
-                      }
-                    }
-                  ],
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10
-                    }
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     }

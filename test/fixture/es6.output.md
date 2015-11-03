@@ -2,11 +2,7 @@
 
 This is a sink
 
-
 ## constructor
-
-
-
 
 **Parameters**
 
@@ -15,33 +11,21 @@ This is a sink
 -   `width` **number** the width of the thing
 
 
-
-
 ## empty
 
 Is it empty
-
-
-
 
 ## hello
 
 This method says hello
 
-
-
-
-
 # foo
 
 This is an async method
 
-
-
 # multiply
 
 This function returns the number one.
-
 
 **Parameters**
 
@@ -50,14 +34,9 @@ This function returns the number one.
 -   `b`  
 
 
-
 Returns **Number** numberone
-
-
 
 
 # staticProp
 
 This is a property of the sink.
-
-

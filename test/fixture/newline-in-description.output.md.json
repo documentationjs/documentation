@@ -2,52 +2,20 @@
   "type": "root",
   "children": [
     {
-      "type": "root",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
-          "depth": 1,
-          "type": "heading",
-          "children": [
-            {
-              "type": "text"
-            }
-          ]
-        },
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
         {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "A function.",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 12
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1
-                },
-                "end": {
-                  "line": 1,
-                  "column": 12
-                },
-                "indent": []
-              }
-            }
-          ],
+          "type": "text",
+          "value": "A function.",
           "position": {
             "start": {
               "line": 1,
@@ -56,93 +24,72 @@
             "end": {
               "line": 1,
               "column": 12
-            }
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
         },
+        "end": {
+          "line": 1,
+          "column": 12
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
         {
-          "type": "root",
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
           "children": [
             {
-              "type": "strong",
+              "type": "paragraph",
               "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
                 {
                   "type": "text",
-                  "value": "Parameters"
-                }
-              ]
-            },
-            {
-              "ordered": false,
-              "type": "list",
-              "children": [
+                  "value": " "
+                },
                 {
-                  "type": "listItem",
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Number"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "root",
                   "children": [
                     {
                       "type": "paragraph",
                       "children": [
                         {
-                          "type": "inlineCode",
-                          "value": "a"
-                        },
-                        {
                           "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "strong",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": "Number"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "root",
-                          "children": [
-                            {
-                              "type": "paragraph",
-                              "children": [
-                                {
-                                  "type": "text",
-                                  "value": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
-                                  "position": {
-                                    "start": {
-                                      "line": 1,
-                                      "column": 1
-                                    },
-                                    "end": {
-                                      "line": 3,
-                                      "column": 34
-                                    },
-                                    "indent": [
-                                      1,
-                                      1
-                                    ]
-                                  }
-                                }
-                              ],
-                              "position": {
-                                "start": {
-                                  "line": 1,
-                                  "column": 1
-                                },
-                                "end": {
-                                  "line": 3,
-                                  "column": 34
-                                },
-                                "indent": [
-                                  1,
-                                  1
-                                ]
-                              }
-                            }
-                          ],
+                          "value": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
                           "position": {
                             "start": {
                               "line": 1,
@@ -151,12 +98,40 @@
                             "end": {
                               "line": 3,
                               "column": 34
-                            }
+                            },
+                            "indent": [
+                              1,
+                              1
+                            ]
                           }
                         }
-                      ]
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 3,
+                          "column": 34
+                        },
+                        "indent": [
+                          1,
+                          1
+                        ]
+                      }
                     }
-                  ]
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 34
+                    }
+                  }
                 }
               ]
             }
