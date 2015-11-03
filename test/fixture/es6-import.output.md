@@ -23,6 +23,24 @@ This method says hello
 
 This is an async method
 
+# functionWithRest
+
+This function takes rest params
+
+**Parameters**
+
+-   `someParams` **...** 
+
+
+# functionWithRestAndType
+
+So does this one, with types
+
+**Parameters**
+
+-   `someParams` **...number** 
+
+
 # multiply
 
 This function returns the number one.

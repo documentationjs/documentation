@@ -38,6 +38,18 @@ class Sink {
 }
 
 /**
+ * This function takes rest params
+ */
+function functionWithRest(...someParams) {
+}
+
+/**
+ * So does this one, with types
+ */
+function functionWithRestAndType(...someParams: number) {
+}
+
+/**
  * This is an async method
  */
 async function foo() { }
