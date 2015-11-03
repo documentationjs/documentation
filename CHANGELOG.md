@@ -1,3 +1,9 @@
+## 3.0.2
+
+* Infer rest parameters. Fixes #223
+* Avoid filtering comments in lint mode. Fixes #186
+* Nest both properties and params. Fixes #164
+
 ## 3.0.1
 
 * BUGFIX: Fix default theme resolution [#212](https://github.com/documentationjs/documentation/pull/212)
