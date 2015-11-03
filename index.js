@@ -84,7 +84,7 @@ module.exports = function (indexes, options, callback) {
     try {
       callback(null,
         filterAccess(
-          options.private ? [] : undefined,
+          (options.private || options.lint) ? [] : undefined,
           hierarchy(
             inputs
               .filter(filterJS)
