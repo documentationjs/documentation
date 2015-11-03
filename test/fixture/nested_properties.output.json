@@ -51,9 +51,81 @@
         "name": "bar"
       },
       {
+        "title": "property",
+        "description": "the current time",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "theTime",
+        "properties": [
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.hours"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 7,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.minutes"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 8,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.seconds"
+          }
+        ]
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 6,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.hours"
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 7,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.minutes"
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.seconds"
+      },
+      {
         "title": "returns",
         "description": "foo something else",
-        "lineNumber": 5,
+        "lineNumber": 9,
         "type": {
           "type": "NameExpression",
           "name": "Object"
@@ -66,7 +138,7 @@
         "column": 0
       },
       "end": {
-        "line": 7,
+        "line": 11,
         "column": 3
       }
     },
@@ -77,7 +149,7 @@
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 12,
           "column": 0
         }
       }
@@ -118,11 +190,55 @@
         "name": "bar"
       }
     ],
+    "properties": [
+      {
+        "title": "property",
+        "description": "the current time",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "theTime",
+        "properties": [
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.hours"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 7,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.minutes"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 8,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.seconds"
+          }
+        ]
+      }
+    ],
     "returns": [
       {
         "title": "returns",
         "description": "foo something else",
-        "lineNumber": 5,
+        "lineNumber": 9,
         "type": {
           "type": "NameExpression",
           "name": "Object"

@@ -2,23 +2,23 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
-  nestParams = require('../../lib/nest_params');
+  nest = require('../../lib/nest');
 
 function toComment(fn, filename) {
   return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  }).map(nestParams);
+  }).map(nest);
 }
 
-test('nestParams - no params', function (t) {
+test('nest params - no params', function (t) {
   t.equal(toComment(function () {
     /** @name foo */
   })[0].params, undefined, 'no params');
   t.end();
 });
 
-test('nestParams - no nesting', function (t) {
+test('nest params - no nesting', function (t) {
   var result = toComment(function () {
     /** @param {Object} foo */
   });
@@ -28,7 +28,7 @@ test('nestParams - no nesting', function (t) {
   t.end();
 });
 
-test('nestParams - basic', function (t) {
+test('nest params - basic', function (t) {
   var result = toComment(function () {
     /**
      * @param {Object} foo
@@ -44,7 +44,23 @@ test('nestParams - basic', function (t) {
   t.end();
 });
 
-test('nestParams - array', function (t) {
+test('nest properties - basic', function (t) {
+  var result = toComment(function () {
+    /**
+     * @property {Object} foo
+     * @property {string} foo.bar
+     * @property {string} foo.baz
+     */
+  });
+  t.equal(result[0].properties.length, 1);
+  t.equal(result[0].properties[0].name, 'foo');
+  t.equal(result[0].properties[0].properties.length, 2);
+  t.equal(result[0].properties[0].properties[0].name, 'foo.bar');
+  t.equal(result[0].properties[0].properties[1].name, 'foo.baz');
+  t.end();
+});
+
+test('nest params - array', function (t) {
   var result = toComment(function () {
     /**
      * @param {Object[]} employees - The employees who are responsible for the project.
@@ -60,7 +76,7 @@ test('nestParams - array', function (t) {
   t.end();
 });
 
-test('nestParams - missing parent', function (t) {
+test('nest params - missing parent', function (t) {
   var result = toComment(function () {
     /** @param {string} foo.bar */
   });

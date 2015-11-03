@@ -1,7 +1,7 @@
 'use strict';
 
 var sort = require('./lib/sort'),
-  nestParams = require('./lib/nest_params'),
+  nest = require('./lib/nest'),
   filterAccess = require('./lib/filter_access'),
   filterJS = require('./lib/filter_js'),
   dependency = require('./lib/input/dependency'),
@@ -98,7 +98,7 @@ module.exports = function (indexes, options, callback) {
                 inferParams(),
                 inferReturn(),
                 inferMembership(),
-                nestParams,
+                nest,
                 options.github ? github : noop
               ))
               .filter(Boolean)

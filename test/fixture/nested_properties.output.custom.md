@@ -8,5 +8,16 @@
 -   `bar` **number** something else
 
 
+**Properties**
+
+-   `theTime`  the current time
+
+    -   `theTime.hours`  
+
+    -   `theTime.minutes`  
+
+    -   `theTime.seconds`  
+
+
 Returns **Object** foo something else
 
