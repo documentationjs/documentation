@@ -92,7 +92,7 @@ function bar() {
  * Rest property function
  * @returns {undefined} nothing
  */
-function bar(...toys) {
+function bar(...toys: Number) {
   return undefined;
 }
 
