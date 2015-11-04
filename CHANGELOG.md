@@ -1,3 +1,8 @@
+## 3.0.3
+
+* Infer typedefs from Flow type aliases. Fixes #227
+* Fix type-annotated rest expressions, raised in #230
+
 ## 3.0.2
 
 * Infer rest parameters. Fixes #223
