@@ -82,30 +82,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 3,
-                              "column": 34
-                            },
-                            "indent": [
-                              1,
-                              1
-                            ]
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "The input to the function.\nI should be able to continue the description on a new line, and have it\nstill work in the markdown table.",
                       "position": {
                         "start": {
                           "line": 1,
@@ -130,7 +111,11 @@
                     "end": {
                       "line": 3,
                       "column": 34
-                    }
+                    },
+                    "indent": [
+                      1,
+                      1
+                    ]
                   }
                 }
               ]

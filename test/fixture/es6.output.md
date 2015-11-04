@@ -7,9 +7,7 @@ This is a sink
 **Parameters**
 
 -   `height` **number** the height of the thing
-
 -   `width` **number** the width of the thing
-
 
 ## empty
 
@@ -31,7 +29,6 @@ This function takes rest params
 
 -   `someParams` **...** 
 
-
 # functionWithRestAndType
 
 So does this one, with types
@@ -40,7 +37,6 @@ So does this one, with types
 
 -   `someParams` **...number** 
 
-
 # multiply
 
 This function returns the number one.
@@ -48,12 +44,9 @@ This function returns the number one.
 **Parameters**
 
 -   `a`  
-
 -   `b`  
 
-
 Returns **Number** numberone
-
 
 # staticProp
 

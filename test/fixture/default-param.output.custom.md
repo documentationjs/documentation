@@ -4,5 +4,4 @@ Very Important Transform
 
 **Parameters**
 
--   `foo`  
-     (optional, default `'bar'`)
+-   `foo`   (optional, default `'bar'`)

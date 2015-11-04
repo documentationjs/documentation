@@ -63,27 +63,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "chart",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 6
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "chart",
               "position": {
                 "start": {
                   "line": 1,
@@ -105,7 +89,8 @@
             "end": {
               "line": 1,
               "column": 6
-            }
+            },
+            "indent": []
           }
         }
       ]
@@ -150,20 +135,6 @@
                 {
                   "type": "text",
                   "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [],
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 1
-                    }
-                  }
                 }
               ]
             }
@@ -242,20 +213,6 @@
                 {
                   "type": "text",
                   "value": " "
-                },
-                {
-                  "type": "root",
-                  "children": [],
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 1
-                    }
-                  }
                 }
               ]
             }

@@ -70,7 +70,7 @@
                   "value": " "
                 },
                 {
-                  "type": "text",
+                  "type": "strong",
                   "children": [
                     {
                       "type": "text",
@@ -83,27 +83,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "how many things it contains",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 28
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "how many things it contains",
                       "position": {
                         "start": {
                           "line": 1,
@@ -125,7 +109,8 @@
                     "end": {
                       "line": 1,
                       "column": 28
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]
@@ -216,27 +201,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "whether to get the number",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 26
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "whether to get the number",
                       "position": {
                         "start": {
                           "line": 1,
@@ -258,7 +227,8 @@
                     "end": {
                       "line": 1,
                       "column": 26
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]
@@ -288,27 +258,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "forty-two",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "forty-two",
               "position": {
                 "start": {
                   "line": 1,
@@ -330,7 +284,8 @@
             "end": {
               "line": 1,
               "column": 10
-            }
+            },
+            "indent": []
           }
         }
       ]
@@ -397,27 +352,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "does not return anything.",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 26
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "does not return anything.",
               "position": {
                 "start": {
                   "line": 1,
@@ -439,7 +378,8 @@
             "end": {
               "line": 1,
               "column": 26
-            }
+            },
+            "indent": []
           }
         }
       ]

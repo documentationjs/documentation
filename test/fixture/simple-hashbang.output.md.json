@@ -63,27 +63,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "numberone",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "numberone",
               "position": {
                 "start": {
                   "line": 1,
@@ -105,7 +89,8 @@
             "end": {
               "line": 1,
               "column": 10
-            }
+            },
+            "indent": []
           }
         }
       ]

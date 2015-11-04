@@ -4,7 +4,5 @@ Mouse event
 
 **Properties**
 
--   `point`  the pixel location of the event
-
--   `originalEvent`  the original DOM event
-
+-   `point` **Point** the pixel location of the event
+-   `originalEvent` **Event** the original DOM event

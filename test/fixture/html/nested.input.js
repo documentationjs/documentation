@@ -89,6 +89,14 @@ function bar() {
 }
 
 /**
+ * Rest property function
+ * @returns {undefined} nothing
+ */
+function bar(...toys) {
+  return undefined;
+}
+
+/**
  * Get an instance of {@link Klass}. Will make
  * a {@link Klass klass instance multiword},
  * like a {@link Klass|klass}

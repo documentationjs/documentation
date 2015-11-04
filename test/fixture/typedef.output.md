@@ -4,7 +4,5 @@ A type definition.
 
 **Properties**
 
--   `prop1`  one property
-
--   `prop2`  another property
-
+-   `prop1` **number** one property
+-   `prop2` **string** another property

@@ -13,4 +13,3 @@ foo(2);
 ```
 
 Returns **Number** numberone
-

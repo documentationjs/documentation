@@ -70,7 +70,7 @@
                   "value": " "
                 },
                 {
-                  "type": "text",
+                  "type": "strong",
                   "children": [
                     {
                       "type": "text",
@@ -83,27 +83,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "one property",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 13
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "one property",
                       "position": {
                         "start": {
                           "line": 1,
@@ -125,7 +109,8 @@
                     "end": {
                       "line": 1,
                       "column": 13
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]
@@ -147,7 +132,7 @@
                   "value": " "
                 },
                 {
-                  "type": "text",
+                  "type": "strong",
                   "children": [
                     {
                       "type": "text",
@@ -160,27 +145,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "another property",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 17
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "another property",
                       "position": {
                         "start": {
                           "line": 1,
@@ -202,7 +171,8 @@
                     "end": {
                       "line": 1,
                       "column": 17
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]

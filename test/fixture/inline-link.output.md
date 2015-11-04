@@ -6,9 +6,7 @@ Adds one to a number
 
 -   `a` **number** the input
 
-
 Returns **number** the output
-
 
 # inline-link.input
 
@@ -19,6 +17,4 @@ This function returns the number one. Internally, this uses
 
 -   `a` **number** the input
 
-
 Returns **number** numberone
-

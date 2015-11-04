@@ -1,0 +1,149 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "param",
+        "description": "The employees who are responsible for the project.",
+        "lineNumber": 1,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            }
+          ]
+        },
+        "name": "employees",
+        "properties": [
+          {
+            "title": "param",
+            "description": "The name of an employee.",
+            "lineNumber": 2,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "employees[].name"
+          },
+          {
+            "title": "param",
+            "description": "The employee's department.",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "employees[].department"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "The name of an employee.",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "employees[].name"
+      },
+      {
+        "title": "param",
+        "description": "The employee's department.",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "employees[].department"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 5,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      },
+      "code": "/**\n * @param {Object[]} employees - The employees who are responsible for the project.\n * @param {string} employees[].name - The name of an employee.\n * @param {string} employees[].department - The employee's department.\n */\nfunction foo(employee) {\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": "The employees who are responsible for the project.",
+        "lineNumber": 1,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            }
+          ]
+        },
+        "name": "employees",
+        "properties": [
+          {
+            "title": "param",
+            "description": "The name of an employee.",
+            "lineNumber": 2,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "employees[].name"
+          },
+          {
+            "title": "param",
+            "description": "The employee's department.",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "string"
+            },
+            "name": "employees[].department"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "name": "employee",
+        "lineNumber": 6
+      }
+    ],
+    "name": "foo",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "foo"
+    ]
+  }
+]

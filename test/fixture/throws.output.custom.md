@@ -6,7 +6,6 @@ This function returns the number plus two.
 
 -   `a` **Number** the number
 
-
 **Examples**
 
 ```javascript
@@ -15,4 +14,3 @@ var result = returnTwo(4);
 ```
 
 Returns **Number** numbertwo
-

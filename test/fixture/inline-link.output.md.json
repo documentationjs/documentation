@@ -83,27 +83,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "the input",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 10
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "the input",
                       "position": {
                         "start": {
                           "line": 1,
@@ -125,7 +109,8 @@
                     "end": {
                       "line": 1,
                       "column": 10
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]
@@ -155,27 +140,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "the output",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 11
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "the output",
               "position": {
                 "start": {
                   "line": 1,
@@ -197,7 +166,8 @@
             "end": {
               "line": 1,
               "column": 11
-            }
+            },
+            "indent": []
           }
         }
       ]
@@ -318,27 +288,11 @@
                   "value": " "
                 },
                 {
-                  "type": "root",
+                  "type": "paragraph",
                   "children": [
                     {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "the input",
-                          "position": {
-                            "start": {
-                              "line": 1,
-                              "column": 1
-                            },
-                            "end": {
-                              "line": 1,
-                              "column": 10
-                            },
-                            "indent": []
-                          }
-                        }
-                      ],
+                      "type": "text",
+                      "value": "the input",
                       "position": {
                         "start": {
                           "line": 1,
@@ -360,7 +314,8 @@
                     "end": {
                       "line": 1,
                       "column": 10
-                    }
+                    },
+                    "indent": []
                   }
                 }
               ]
@@ -390,27 +345,11 @@
           "value": " "
         },
         {
-          "type": "root",
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "numberone",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "numberone",
               "position": {
                 "start": {
                   "line": 1,
@@ -432,7 +371,8 @@
             "end": {
               "line": 1,
               "column": 10
-            }
+            },
+            "indent": []
           }
         }
       ]

@@ -5,9 +5,7 @@ Represents an IPv6 address
 **Parameters**
 
 -   `address` **string** An IPv6 address string
-
--   `groups` **[number]** How many octets to parse
-     (optional, default `8`)
+-   `groups` **[number]** How many octets to parse (optional, default `8`)
 
 **Examples**
 
