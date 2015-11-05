@@ -1,0 +1,82 @@
+[
+  {
+    "description": "Add five to `x`.",
+    "tags": [
+      {
+        "title": "param",
+        "description": "The number to add five to.",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      },
+      {
+        "title": "returns",
+        "description": "x plus five.",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 1
+        }
+      },
+      "code": "/**\n * Add five to `x`.\n *\n * @param x The number to add five to.\n * @returns {number} x plus five.\n */\nfunction addFive(x: number): number {\n  return x + 5;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": "The number to add five to.",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "x plus five.",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "name": "addFive",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "addFive"
+    ]
+  }
+]
