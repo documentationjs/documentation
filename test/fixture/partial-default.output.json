@@ -1,0 +1,82 @@
+[
+  {
+    "description": "Number",
+    "tags": [
+      {
+        "title": "param",
+        "description": "an argument",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      },
+      {
+        "title": "returns",
+        "description": "some",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 37
+        }
+      },
+      "code": "/**\n * Number\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": "an argument",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "some",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "name": "myfunc",
+    "kind": "constant",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "myfunc"
+    ]
+  }
+]
