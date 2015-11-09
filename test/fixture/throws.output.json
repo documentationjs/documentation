@@ -59,12 +59,7 @@
       },
       "code": "/**\n * This function returns the number plus two.\n *\n * @param {Number} a the number\n * @returns {Number} numbertwo\n * @throws {Error} if number is 3\n * @example\n * var result = returnTwo(4);\n * // result is 6\n */\nfunction returnTwo(a) {\n  if (a === 3) throw new Error('cannot be 3');\n  // this returns a + 2\n  return a + 2;\n}\n"
     },
-    "errors": [
-      {
-        "message": "type Number found, number is standard",
-        "commentLineNumber": 3
-      }
-    ],
+    "errors": [],
     "params": [
       {
         "title": "param",

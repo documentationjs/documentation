@@ -35,3 +35,13 @@ type Two = {
  * Just an alias for an array of strings
  */
 type T = Array<string>;
+
+/**
+ * Very Important Transform
+ */
+function veryImportantTransform(
+  input: Array<string>,
+  options: Object = {}
+): string {
+  return "42";
+}

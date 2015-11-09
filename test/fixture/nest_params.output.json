@@ -85,7 +85,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * @param {Object[]} employees - The employees who are responsible for the project.\n * @param {string} employees[].name - The name of an employee.\n * @param {string} employees[].department - The employee's department.\n */\nfunction foo(employee) {\n}\n"
+      "code": "/**\n * @param {Object[]} employees - The employees who are responsible for the project.\n * @param {string} employees[].name - The name of an employee.\n * @param {string} employees[].department - The employee's department.\n */\nfunction foo(employee) {\n}\n\n/**\n * @name foo\n * @param {Object} options some options\n * @param {number} options.much how much\n * @param {number} bar something else\n * @property {Object} theTime the current time\n * @property {number} theTime.hours\n * @property {number} theTime.minutes\n * @property {number} theTime.seconds\n * @returns {Object} foo something else\n */\n"
     },
     "errors": [],
     "params": [
@@ -138,6 +138,260 @@
     ],
     "name": "foo",
     "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "foo"
+    ]
+  },
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "name",
+        "description": null,
+        "lineNumber": 1,
+        "name": "foo"
+      },
+      {
+        "title": "param",
+        "description": "some options",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "how much",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "options.much"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "how much",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "options.much"
+      },
+      {
+        "title": "param",
+        "description": "something else",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "bar"
+      },
+      {
+        "title": "property",
+        "description": "the current time",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "theTime",
+        "properties": [
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.hours"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 7,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.minutes"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 8,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.seconds"
+          }
+        ]
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 6,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.hours"
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 7,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.minutes"
+      },
+      {
+        "title": "property",
+        "description": null,
+        "lineNumber": 8,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "theTime.seconds"
+      },
+      {
+        "title": "returns",
+        "description": "foo something else",
+        "lineNumber": 9,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 19,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "foo",
+    "params": [
+      {
+        "title": "param",
+        "description": "some options",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "how much",
+            "lineNumber": 3,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "options.much"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "something else",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "bar"
+      }
+    ],
+    "properties": [
+      {
+        "title": "property",
+        "description": "the current time",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "theTime",
+        "properties": [
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 6,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.hours"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 7,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.minutes"
+          },
+          {
+            "title": "property",
+            "description": null,
+            "lineNumber": 8,
+            "type": {
+              "type": "NameExpression",
+              "name": "number"
+            },
+            "name": "theTime.seconds"
+          }
+        ]
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "foo something else",
+        "lineNumber": 9,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      }
+    ],
     "members": {
       "instance": [],
       "static": []

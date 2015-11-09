@@ -55,3 +55,9 @@ function functionWithRestAndType(...someParams: number) {
 async function foo() { }
 
 export default multiply;
+
+/**
+ * This function returns the number one.
+ * @returns {Number} numberone
+ */
+module.exports = () => (<p>hello</p>);

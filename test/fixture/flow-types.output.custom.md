@@ -39,3 +39,14 @@ This function returns the number one.
 -   `f` **Named** 
 
 Returns **number** 
+
+# veryImportantTransform
+
+Very Important Transform
+
+**Parameters**
+
+-   `input` **Array&lt;string&gt;** 
+-   `options` **[Object]**  (optional, default `{}`)
+
+Returns **string** 

@@ -2,8 +2,8 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
-  lint = require('../../lib/lint').lint,
-  format = require('../../lib/lint').format;
+  lintComments = require('../../lib/lint').lintComments,
+  formatLint = require('../../lib/lint').formatLint;
 
 function toComment(fn, filename) {
   return parse({
@@ -13,10 +13,10 @@ function toComment(fn, filename) {
 }
 
 function evaluate(fn) {
-  return lint(toComment(fn, 'input.js'));
+  return lintComments(toComment(fn, 'input.js'));
 }
 
-test('lint', function (t) {
+test('lintComments', function (t) {
   t.deepEqual(evaluate(function () {
     /**
      * @param {String} foo
@@ -45,7 +45,7 @@ test('lint', function (t) {
   t.end();
 });
 
-test('format', function (t) {
+test('formatLint', function (t) {
   var comment = evaluate(function () {
     /**
      * @param {String} foo
@@ -54,7 +54,7 @@ test('format', function (t) {
      */
   });
 
-  var formatted = format([comment]);
+  var formatted = formatLint([comment]);
 
   t.contains(formatted, 'input.js');
   t.contains(formatted, /1:1[^\n]+Braces are not balanced/);

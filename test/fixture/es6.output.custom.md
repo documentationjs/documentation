@@ -17,6 +17,12 @@ Is it empty
 
 This method says hello
 
+# es6.input
+
+This function returns the number one.
+
+Returns **Number** numberone
+
 # foo
 
 This is an async method

@@ -23,7 +23,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "name": "Sink",
@@ -75,7 +75,7 @@
                 "column": 3
               }
             },
-            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
           },
           "errors": [],
           "params": [
@@ -137,7 +137,7 @@
                 "column": 3
               }
             },
-            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
           },
           "errors": [],
           "name": "empty",
@@ -179,7 +179,7 @@
                 "column": 3
               }
             },
-            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+            "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
           },
           "errors": [],
           "name": "hello",
@@ -199,6 +199,64 @@
     },
     "path": [
       "Sink"
+    ]
+  },
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 59,
+        "column": 0
+      },
+      "end": {
+        "line": 62,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 63,
+          "column": 0
+        },
+        "end": {
+          "line": 63,
+          "column": 38
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "es6.input",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "es6.input"
     ]
   },
   {
@@ -225,7 +283,7 @@
           "column": 24
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "name": "foo",
@@ -262,7 +320,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "name": "functionWithRest",
@@ -308,7 +366,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "name": "functionWithRestAndType",
@@ -368,7 +426,7 @@
           "column": 31
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "returns": [
@@ -493,7 +551,7 @@
           "column": 18
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n"
     },
     "errors": [],
     "name": "staticProp",

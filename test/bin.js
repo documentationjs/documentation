@@ -42,7 +42,7 @@ function normalize(result) {
 var options = { timeout: 1000 * 120 };
 
 test('documentation binary', function (t) {
-  documentation(['fixture/simple.input.js'], function (err, data) {
+  documentation(['build fixture/simple.input.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 1, 'simple has no dependencies');
     t.end();
@@ -50,7 +50,7 @@ test('documentation binary', function (t) {
 }, options);
 
 test('defaults to parsing package.json main', function (t) {
-  documentation([], { cwd: path.join(__dirname, '..') }, function (err, data) {
+  documentation(['build'], { cwd: path.join(__dirname, '..') }, function (err, data) {
     t.error(err);
     t.ok(data.length, 'we document ourself');
     t.end();
@@ -58,7 +58,7 @@ test('defaults to parsing package.json main', function (t) {
 }, options);
 
 test('accepts config file', function (t) {
-  documentation(['fixture/sorting/input.js -c fixture/config.json'],
+  documentation(['build fixture/sorting/input.js -c fixture/config.json'],
     function (err, data) {
       t.error(err);
       if (process.env.UPDATE) {
@@ -80,19 +80,32 @@ test('accepts config file', function (t) {
 }, options);
 
 test('--shallow option', function (t) {
-  documentation(['--shallow fixture/internal.input.js'], function (err, data) {
+  documentation(['build --shallow fixture/internal.input.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 0, 'should not check dependencies');
     t.end();
   });
 }, options);
 
-test('bad -f option', function (t) {
-  documentation(['-f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
-    t.ok(err, 'returns error');
-    t.end();
-  });
-}, options);
+test('invalid arguments', function (group) {
+  group.test('bad -f option', function (t) {
+    documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
+      t.ok(err, 'returns error');
+      t.end();
+    });
+  }, options);
+
+  group.test('html with no destination', function (t) {
+    documentation(['build -f html fixture/internal.input.js'], function (err) {
+      t.ok(err.toString()
+        .match(/The HTML output mode requires a destination directory set with -o/),
+        'needs dest for html');
+      t.end();
+    });
+  }, options);
+
+  group.end();
+});
 
 test('--version', function (t) {
   documentation(['--version'], {}, function (err, output) {
@@ -101,41 +114,51 @@ test('--version', function (t) {
   }, false);
 }, options);
 
-test('html with no destination', function (t) {
-  documentation(['-f html fixture/internal.input.js'], function (err) {
-    t.ok(err.toString()
-      .match(/The HTML output mode requires a destination directory set with -o/),
-      'needs dest for html');
-    t.end();
-  });
-}, options);
+test('lint command', function (group) {
 
-test('--lint option', function (t) {
-  documentation(['--lint fixture/lint/lint.input.js'], function (err, data) {
-    var output = path.join(__dirname, 'fixture/lint/lint.output.js');
-    data = data.toString().split('\n').slice(2).join('\n');
-    if (process.env.UPDATE) {
-      fs.writeFileSync(output, data);
-    }
-    t.equal(err.code, 1);
-    t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
-    t.end();
-  });
-}, options);
+  group.test('generates lint output', function (t) {
+    documentation(['lint fixture/lint/lint.input.js'], function (err, data) {
+      var output = path.join(__dirname, 'fixture/lint/lint.output.js');
+      data = data.toString().split('\n').slice(2).join('\n');
+      if (process.env.UPDATE) {
+        fs.writeFileSync(output, data);
+      }
+      t.equal(err.code, 1);
+      t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
+      t.end();
+    });
+  }, options);
 
-test('--lint option on good file', function (t) {
-  documentation(['--lint fixture/simple.input.js'], {}, function (err, data) {
-    t.equal(err, null);
-    t.equal(data, '', 'no output');
-    t.end();
-  }, false);
-}, options);
+  group.test('generates no output on a good file', function (t) {
+    documentation(['lint fixture/simple.input.js'], {}, function (err, data) {
+      t.equal(err, null);
+      t.equal(data, '', 'no output');
+      t.end();
+    }, false);
+  }, options);
+
+  group.test('exposes syntax error on a bad file', function (t) {
+    documentation(['lint fixture/bad/syntax.input.js'], {}, function (err, data) {
+      t.ok(err.code > 0, 'exits with a > 0 exit code');
+      t.end();
+    }, false);
+  }, options);
+
+  group.end();
+});
 
 test('given no files', function (t) {
-  documentation([''], function (err) {
+  documentation(['build'], function (err) {
     t.ok(err.toString()
       .match(/documentation was given no files and was not run in a module directory/),
       'no files given');
+    t.end();
+  });
+}, options);
+
+test('with an invalid command', function (t) {
+  documentation(['invalid'], function (err) {
+    t.ok(err, 'returns error');
     t.end();
   });
 }, options);
@@ -144,7 +167,7 @@ test('write to file', function (t) {
 
   var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
 
-  documentation(['--shallow fixture/internal.input.js -o ' + dst], {}, function (err, data) {
+  documentation(['build --shallow fixture/internal.input.js -o ' + dst], {}, function (err, data) {
     t.error(err);
     t.equal(data, '');
     t.ok(fs.existsSync(dst), 'created file');
@@ -157,7 +180,7 @@ test('write to html', function (t) {
   var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dstDir);
 
-  documentation(['--shallow fixture/internal.input.js -f html -o ' + dstDir], {},
+  documentation(['build --shallow fixture/internal.input.js -f html -o ' + dstDir], {},
     function (err, data) {
       t.error(err);
       t.equal(data, '');
@@ -168,7 +191,7 @@ test('write to html', function (t) {
 
 test('fatal error', function (t) {
 
-  documentation(['--shallow fixture/bad/syntax.input.js'], {},
+  documentation(['build --shallow fixture/bad/syntax.input.js'], {},
     function (err) {
       t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
       t.end();

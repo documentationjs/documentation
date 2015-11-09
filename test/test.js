@@ -229,3 +229,22 @@ test('accepts simple relative paths', function (t) {
     });
   });
 });
+
+test('.lint', function (t) {
+  chdir(__dirname, function () {
+    documentation.lint('fixture/simple.input.js', null, function (err, data) {
+      t.ifError(err);
+      t.equal(data, '', 'outputs lint information');
+      t.end();
+    });
+  });
+});
+
+test('.lint with bad input', function (t) {
+  chdir(__dirname, function () {
+    documentation.lint('fixture/bad/syntax.input.js', null, function (err, data) {
+      t.ok(err, 'returns an error when syntax is incorrect');
+      t.end();
+    });
+  });
+});

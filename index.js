@@ -16,7 +16,8 @@ var sort = require('./lib/sort'),
   inferProperties = require('./lib/infer/properties'),
   inferMembership = require('./lib/infer/membership'),
   inferReturn = require('./lib/infer/return'),
-  lint = require('./lib/lint');
+  formatLint = require('./lib/lint').formatLint,
+  lintComments = require('./lib/lint').lintComments;
 
 /**
  * Build a pipeline of comment handlers.
@@ -43,6 +44,20 @@ function pipeline() {
  */
 function noop(comment) {
   return comment;
+}
+
+/**
+ * Given an array of indexes and options for whether to resolve shallow
+ * or deep dependencies, resolve dependencies.
+ *
+ * @param {Array<string>|string} indexes files to process
+ * @param {Object} options options
+ * @param {Function} callback called with results
+ * @returns {undefined}
+ */
+function expandInputs(indexes, options, callback) {
+  var inputFn = (options.polyglot || options.shallow) ? shallow : dependency;
+  inputFn(indexes, options, callback);
 }
 
 /**
@@ -75,17 +90,16 @@ module.exports = function (indexes, options, callback) {
     indexes = [indexes];
   }
 
-  var inputFn = (options.polyglot || options.shallow) ? shallow : dependency;
   var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
-  return inputFn(indexes, options, function (error, inputs) {
+  return expandInputs(indexes, options, function (error, inputs) {
     if (error) {
       return callback(error);
     }
     try {
       callback(null,
         filterAccess(
-          (options.private || options.lint) ? [] : undefined,
+          options.private ? [] : undefined,
           hierarchy(
             inputs
               .filter(filterJS)
@@ -93,7 +107,6 @@ module.exports = function (indexes, options, callback) {
                 return memo.concat(parseFn(file));
               }, [])
               .map(pipeline(
-                lint.lint,
                 inferName(),
                 inferKind(),
                 inferParams(),
@@ -110,6 +123,62 @@ module.exports = function (indexes, options, callback) {
     }
   });
 };
+
+/**
+ * Lint files for non-standard or incorrect documentation
+ * information, returning a potentially-empty string
+ * of lint information intended for human-readable output.
+ *
+ * @param {Array<string>|string} indexes files to process
+ * @param {Object} options options
+ * @param {Array<string>} options.external a string regex / glob match pattern
+ * that defines what external modules will be whitelisted and included in the
+ * generated documentation.
+ * @param {Array<string>} options.transform source transforms given as strings
+ * passed to [the module-deps transform option](https://github.com/substack/module-deps)
+ * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
+ * a proper parser. This enables support of non-JavaScript languages but
+ * reduces documentation's ability to infer structure of code.
+ * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
+ * even in JavaScript code. With the polyglot option set, this has no effect.
+ * @param {Function} callback to be called when the documentation generation
+ * is complete, with (err, result) argumentsj
+ * @returns {undefined} calls callback
+ */
+module.exports.lint = function lint(indexes, options, callback) {
+  options = options || {};
+
+  if (typeof indexes === 'string') {
+    indexes = [indexes];
+  }
+
+  var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
+
+  return expandInputs(indexes, options, function (error, inputs) {
+    if (error) {
+      return callback(error);
+    }
+    callback(null,
+      formatLint(hierarchy(
+        inputs
+          .filter(filterJS)
+          .reduce(function (memo, file) {
+            return memo.concat(parseFn(file));
+          }, [])
+          .map(pipeline(
+            lintComments,
+            inferName(),
+            inferKind(),
+            inferParams(),
+            inferProperties(),
+            inferReturn(),
+            inferMembership(),
+            nest))
+          .filter(Boolean))));
+  });
+};
+
+module.exports.expandInputs = expandInputs;
 
 module.exports.formats = {
   html: require('./lib/output/html'),

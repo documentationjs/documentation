@@ -1,3 +1,16 @@
+## 4.0.0
+
+**Revitalized documentation.js command line interface!**
+
+The `documentation` utility now takes commands:
+
+* `documentation build` extracts and formats documentation
+* `documentation serve` provides an auto-reloading server
+* `documentation lint` reviews files for inconsistencies
+
+This functionality was previously included in `dev-documentation` and has
+been folded into `documentation` proper.
+
 ## 3.0.4
 
 * Allow parameter types to be mixed into explicit parameter documentation. (#239 and #232)
