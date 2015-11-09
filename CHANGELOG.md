@@ -1,3 +1,8 @@
+## 3.0.4
+
+* Allow parameter types to be mixed into explicit parameter documentation. (#239 and #232)
+* Support GitHub links in Markdown output (#238)
+
 ## 3.0.3
 
 * Infer typedefs from Flow type aliases. Fixes #227
