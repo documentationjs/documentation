@@ -29,7 +29,17 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
       }
       var expect = require(outputfile);
       t.deepEqual(result, expect);
-      t.end();
+
+      outputMarkdown(result, null, function (err, result) {
+        t.ifError(err);
+        var outputfile = file.replace('.input.js', '.output.github.md');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, result, 'utf8');
+        }
+        var expect = fs.readFileSync(outputfile, 'utf8');
+        t.equal(result.toString(), expect, 'markdown output correct');
+        t.end();
+      });
     });
   });
 }
