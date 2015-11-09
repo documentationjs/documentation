@@ -94,6 +94,13 @@ test('bad -f option', function (t) {
   });
 }, options);
 
+test('--version', function (t) {
+  documentation(['--version'], {}, function (err, output) {
+    t.ok(output, 'outputs version');
+    t.end();
+  }, false);
+}, options);
+
 test('html with no destination', function (t) {
   documentation(['-f html fixture/internal.input.js'], function (err) {
     t.ok(err.toString()
