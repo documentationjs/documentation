@@ -21,7 +21,7 @@ test('parse - error', function (t) {
   t.deepEqual(toComment(function () {
     /** @param {foo */
   })[0].errors, [
-    'Braces are not balanced',
-    'Missing or invalid tag name']);
+    { message: 'Braces are not balanced' },
+    { message: 'Missing or invalid tag name' }]);
   t.end();
 });
