@@ -257,6 +257,85 @@
               ]
             }
           ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "foo"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "[Array]"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "to properly be parsed",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 22
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 22
+                    },
+                    "indent": []
+                  }
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": " (optional, default "
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "[1]"
+                    },
+                    {
+                      "type": "text",
+                      "value": ")"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },

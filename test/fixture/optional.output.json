@@ -48,9 +48,23 @@
         "name": "third"
       },
       {
+        "title": "param",
+        "description": "to properly be parsed",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          }
+        },
+        "name": "foo",
+        "default": "[1]"
+      },
+      {
         "title": "example",
         "description": "var address = new Address6('2001::/32');",
-        "lineNumber": 6
+        "lineNumber": 7
       }
     ],
     "loc": {
@@ -59,7 +73,7 @@
         "column": 0
       },
       "end": {
-        "line": 9,
+        "line": 10,
         "column": 3
       }
     },
@@ -70,7 +84,7 @@
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 0
         }
       }
@@ -117,6 +131,20 @@
           "prefix": true
         },
         "name": "third"
+      },
+      {
+        "title": "param",
+        "description": "to properly be parsed",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          }
+        },
+        "name": "foo",
+        "default": "[1]"
       }
     ],
     "examples": [

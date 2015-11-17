@@ -20,7 +20,7 @@
     "babel-core": "^5.0.0",
     "brfs": "^1.4.0",
     "concat-stream": "^1.5.0",
-    "doctrine": "^0.7.0",
+    "doctrine": "^0.7.1",
     "documentation-theme-default": "^1.0.0",
     "extend": "^3.0.0",
     "get-comments": "^1.0.1",
