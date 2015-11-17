@@ -34,9 +34,23 @@
         "default": "8"
       },
       {
+        "title": "param",
+        "description": "A third argument",
+        "lineNumber": 5,
+        "type": {
+          "type": "NullableType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "prefix": true
+        },
+        "name": "third"
+      },
+      {
         "title": "example",
         "description": "var address = new Address6('2001::/32');",
-        "lineNumber": 5
+        "lineNumber": 6
       }
     ],
     "loc": {
@@ -45,7 +59,7 @@
         "column": 0
       },
       "end": {
-        "line": 8,
+        "line": 9,
         "column": 3
       }
     },
@@ -56,7 +70,7 @@
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 0
         }
       }
@@ -89,6 +103,20 @@
         },
         "name": "groups",
         "default": "8"
+      },
+      {
+        "title": "param",
+        "description": "A third argument",
+        "lineNumber": 5,
+        "type": {
+          "type": "NullableType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "prefix": true
+        },
+        "name": "third"
       }
     ],
     "examples": [

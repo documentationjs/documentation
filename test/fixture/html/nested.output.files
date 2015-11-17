@@ -1651,7 +1651,7 @@ the referenced class type</p>
         <div class='collapsible' id='Klass.withOptions'>
           <a href='#Klass.withOptions'>
             <code>
-              #withOptions<span class='gray'>(options)</span>
+              #withOptions<span class='gray'>(options, otherOptions)</span>
             </code>
             <span class='force-inline'>
               <p>A function with an options parameter</p>
@@ -1661,7 +1661,7 @@ the referenced class type</p>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
               <h2 id='Klass.withOptions' class='mt0'>
-                withOptions<span class='gray'>(options)</span>
+                withOptions<span class='gray'>(options, otherOptions)</span>
               </h2>
               <p>A function with an options parameter</p>
             
@@ -1679,6 +1679,12 @@ the referenced class type</p>
                           <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
                             </li>
                       </ul>
+                    <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>otherOptions</strong>
+                      :
+                      <span class='force-inline'>
+                        
+                      </span>
+                    </li>
                 </ul>
             </section>
           </div>

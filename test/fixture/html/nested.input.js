@@ -23,8 +23,9 @@ Klass.prototype.getFoo = function () {
  * @param {Object} options
  * @param {string} options.foo
  * @param {number} options.bar
+ * @param {?number} otherOptions
  */
-Klass.prototype.withOptions = function (options) {
+Klass.prototype.withOptions = function (options, otherOptions) {
 };
 
 /**
