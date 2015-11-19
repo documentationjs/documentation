@@ -66,7 +66,6 @@ human-readable documentation. First run `documentation` with the `-h`
 option for help:
 
 ```sh
-$ documentation -h
 Usage: documentation <command> [options]
 
 Options:
@@ -74,6 +73,7 @@ Options:
                                                                        [boolean]
   -t, --theme        specify a theme: this must be a valid theme module
   -p, --private      generate documentation tagged as private          [boolean]
+  --markdown-toc     generate a table of contents in markdown output   [boolean]
   --version          Show version number                               [boolean]
   --name             project name. by default, inferred from package.json
   --project-version  project version. by default, inferred from package.json
@@ -91,7 +91,7 @@ Options:
   -f, --format                 [choices: "json", "md", "html"] [default: "json"]
 
 Examples:
-  documentation foo.js  parse documentation in a given file
+  documentation foo.js
 ```
 
 ## [Contributing](CONTRIBUTING.md)
