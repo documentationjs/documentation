@@ -1,27 +1,24 @@
-This assumes you have node.js installed:
-
-First install dev-documentation:
-
-```
-npm install -g dev-documentation@2.1.0-alpha1
-```
-
-Get a JSDoc-documented project to test against:
+Documentation.js supports customizable themes for HTML output. A theme is a Node.js
+module that exports a single function with the following signature:
 
 ```
-git clone git@github.com:mapbox/mapbox-gl-js.git
+/**
+ * @function
+ * @param {Array<Object>} comments - an array of comments to be output
+ * @param {Object} options - theme options
+ * @param {ThemeCallback} callback - see below
+ */
+
+/**
+ * @callback ThemeCallback
+ * @param {?Error} error
+ * @param {?Array<vinyl.File>} output
+ */
 ```
 
-Get a checkout of the default style
+The theme function should call the callback with either an error, if one occurs,
+or an array of [vinyl](https://github.com/gulpjs/vinyl) `File` objects.
 
-```
-git@github.com:documentationjs/documentation-theme-default.git
-```
-
-Now start theming
-
-```
-dev-documentation mapbox-gl-js/js/mapbox-gl.js -t ./documentation-theme-default/
-```
-
-If you have [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) installed, you can enable it and it'll automatically refresh the page when you edit the theme.
+The theme is free to implement HTML generation however it chooses. See
+[the default theme](https://github.com/documentationjs/documentation-theme-default/)
+for some ideas.

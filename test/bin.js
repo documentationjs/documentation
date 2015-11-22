@@ -207,6 +207,20 @@ test('write to html', function (t) {
     }, false);
 }, options);
 
+test('write to html with custom theme', function (t) {
+
+  var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  fs.mkdirSync(dstDir);
+
+  documentation(['build -t fixture/custom_theme --shallow fixture/internal.input.js -f html -o ' + dstDir], {},
+    function (err, data) {
+      t.error(err);
+      t.equal(data, '');
+      t.ok(fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8'), 'Hello world');
+      t.end();
+    }, false);
+}, options);
+
 test('write to html, highlightAuto', function (t) {
 
   var fixture = 'fixture/auto_lang_hljs/multilanguage.input.js',

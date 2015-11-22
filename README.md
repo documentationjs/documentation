@@ -50,7 +50,7 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 * [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
 * [FAQ](docs/FAQ.md)
 
-* [Theming HTML](docs/THEME_HTML.md): tips for theming documentation output in HTML
+* [Theming](docs/THEMING.md): tips for theming documentation output in HTML
 * [See also](docs/SEE_ALSO.md): a list of projects similar to documentation.js
 
 ## User Guide
