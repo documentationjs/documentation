@@ -64,7 +64,7 @@ test('external modules option', function (t) {
 
 test('parse', function (tt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test(file, function (t) {
+    tt.test(path.basename(file), function (t) {
       documentation([file], null, function (err, result) {
         t.ifError(err);
         normalize(result);
