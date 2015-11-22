@@ -3,22 +3,44 @@
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript');
 
-function toComment(fn, filename) {
+function toComments(fn, filename) {
   return parse({
     file: filename || 'test.js',
-    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+    source: '(' + fn.toString() + ')'
   });
 }
 
+test('parse - leading comment', function (t) {
+  t.deepEqual(toComments(function () {
+    /** one */
+    /** two */
+    function two() {}
+  }).map(function (c) {
+    return c.description;
+  }), ['one', 'two']);
+  t.end();
+});
+
+test('parse - trailing comment', function (t) {
+  t.deepEqual(toComments(function () {
+    /** one */
+    function one() {}
+    /** two */
+  }).map(function (c) {
+    return c.description;
+  }), ['one', 'two']);
+  t.end();
+});
+
 test('parse - unknown tag', function (t) {
-  t.equal(toComment(function () {
+  t.equal(toComments(function () {
     /** @unknown */
   })[0].tags[0].title, 'unknown');
   t.end();
 });
 
 test('parse - error', function (t) {
-  t.deepEqual(toComment(function () {
+  t.deepEqual(toComments(function () {
     /** @param {foo */
   })[0].errors, [
     { message: 'Braces are not balanced' },
