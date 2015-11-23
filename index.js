@@ -88,7 +88,7 @@ module.exports = function (indexes, options, callback) {
           (options.private || options.lint) ? [] : undefined,
           hierarchy(
             inputs
-              .filter(filterJS)
+              .filter(filterJS(options.extension))
               .reduce(function (memo, file) {
                 return memo.concat(parseFn(file));
               }, [])
