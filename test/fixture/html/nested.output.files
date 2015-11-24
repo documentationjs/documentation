@@ -1221,7 +1221,7 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
   margin:0;
 }
 
-.force-inline p {
+.force-inline, .force-inline p {
   display: inline;
   color: #222;
 }
@@ -1309,6 +1309,7 @@ h4:hover .anchorjs-link {
   }
 }
 
+<!doctype html>
 <html>
 <head>
   <meta charset='utf-8' />
@@ -1407,9 +1408,9 @@ h4:hover .anchorjs-link {
     <ul class='suppress-p-margin'>
         <li> <strong>foo</strong>
           :
-          <span class='force-inline'>
+          <div class='force-inline'>
             
-          </span>
+          </div>
         </li>
     </ul>
       <h4>Static members</h4>
@@ -1418,10 +1419,10 @@ h4:hover .anchorjs-link {
             <code>
               .MAGIC_NUMBER<span class='gray'></span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>A magic number that identifies this Klass.</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1438,10 +1439,10 @@ h4:hover .anchorjs-link {
             <code>
               .event<span class='gray'></span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>Klass event</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1458,10 +1459,10 @@ h4:hover .anchorjs-link {
             <code>
               .isArrayOfBuffers<span class='gray'>(buffers)</span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>This method takes an array of buffers and counts them</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1472,21 +1473,21 @@ h4:hover .anchorjs-link {
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code><<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>> <strong>buffers</strong>
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>&lt;<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>&gt; <strong>buffers</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         <p>some buffers</p>
             
-                      </span>
+                      </div>
                     </li>
                 </ul>
                   <h4>Returns</h4>
                   <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
                   :
-                  <span class='force-inline'>
+                  <div class='force-inline'>
                     <p>how many</p>
             
-                  </span>
+                  </div>
             </section>
           </div>
         </div>
@@ -1495,10 +1496,10 @@ h4:hover .anchorjs-link {
             <code>
               .isBuffer<span class='gray'>(buf, [size])</span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1511,26 +1512,26 @@ h4:hover .anchorjs-link {
                 <ul class='suppress-p-margin'>
                     <li><code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>buf</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
                     </li>
                     <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>size</strong>
                         (default <code>0</code>)
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         <p>size</p>
             
-                      </span>
+                      </div>
                     </li>
                 </ul>
                   <h4>Returns</h4>
                   <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
                   :
-                  <span class='force-inline'>
+                  <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
             
-                  </span>
+                  </div>
             </section>
           </div>
         </div>
@@ -1539,12 +1540,12 @@ h4:hover .anchorjs-link {
             <code>
               .isClass<span class='gray'>(other, also)</span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>Decide whether an object is a Klass instance
 This is a <a href="Klass"><code>klasssic</code></a>
 This is a <a href="DoesNot"><code>link to something that does not exist</code></a></p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1559,24 +1560,24 @@ This is a <a href="DoesNot"><code>link to something that does not exist</code></
                 <ul class='suppress-p-margin'>
                     <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>other</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
                     </li>
                     <li>Any <strong>also</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
                     </li>
                 </ul>
                   <h4>Returns</h4>
                   <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
                   :
-                  <span class='force-inline'>
+                  <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
             
-                  </span>
+                  </div>
             </section>
           </div>
         </div>
@@ -1585,11 +1586,11 @@ This is a <a href="DoesNot"><code>link to something that does not exist</code></
             <code>
               .isWeird<span class='gray'>(other)</span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>A function that triggers the case where the autolinker doesn&apos;t find
 the referenced class type</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2 m2'>
             <section class='py2 clearfix'>
@@ -1603,18 +1604,18 @@ the referenced class type</p>
                 <ul class='suppress-p-margin'>
                     <li><code>Weird</code> <strong>other</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
                     </li>
                 </ul>
                   <h4>Returns</h4>
                   <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
                   :
-                  <span class='force-inline'>
+                  <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
             
-                  </span>
+                  </div>
             </section>
           </div>
         </div>
@@ -1624,7 +1625,7 @@ the referenced class type</p>
             <code>
               #getFoo<span class='gray'></span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>Get this Klass&apos;s foo</p>
 
             </span>
@@ -1639,10 +1640,10 @@ the referenced class type</p>
                   <h4>Returns</h4>
                   <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
                   :
-                  <span class='force-inline'>
+                  <div class='force-inline'>
                     <p>foo</p>
             
-                  </span>
+                  </div>
                 <h4>Examples</h4>
             <pre class='overflow-auto'>foo.getFoo();</pre>
             </section>
@@ -1653,7 +1654,7 @@ the referenced class type</p>
             <code>
               #withOptions<span class='gray'>(options, otherOptions)</span>
             </code>
-            <span class='force-inline'>
+            <div class='force-inline'>
               <p>A function with an options parameter</p>
 
             </span>
@@ -1669,21 +1670,21 @@ the referenced class type</p>
                 <ul class='suppress-p-margin'>
                     <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
+                        <ul>
+                            <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> options.foo
+                              </li>
+                            <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
+                              </li>
+                        </ul>
                     </li>
-                      <ul>
-                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> options.foo
-                            </li>
-                          <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
-                            </li>
-                      </ul>
                     <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>otherOptions</strong>
                       :
-                      <span class='force-inline'>
+                      <div class='force-inline'>
                         
-                      </span>
+                      </div>
                     </li>
                 </ul>
             </section>
@@ -1701,10 +1702,10 @@ like a <a href="Klass"><code>klass</code></a></p>
       <h4>Returns</h4>
       <code>undefined</code>
       :
-      <span class='force-inline'>
+      <div class='force-inline'>
         <p>nothing</p>
 
-      </span>
+      </div>
 </section>
 </div><div class='py1'><section class='py2 clearfix'>
   <h2 id='bar' class='mt0'>
@@ -1716,18 +1717,18 @@ like a <a href="Klass"><code>klass</code></a></p>
     <ul class='suppress-p-margin'>
         <li>...<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code> <strong>toys</strong>
           :
-          <span class='force-inline'>
+          <div class='force-inline'>
             
-          </span>
+          </div>
         </li>
     </ul>
       <h4>Returns</h4>
       <code>undefined</code>
       :
-      <span class='force-inline'>
+      <div class='force-inline'>
         <p>nothing</p>
 
-      </span>
+      </div>
 </section>
 </div><div class='py1'><section class='py2 clearfix'>
   <h2 id='bar' class='mt0'>
@@ -1740,10 +1741,10 @@ like a <a href="Klass"><code>klass</code></a></p>
       <h4>Returns</h4>
       <code><code><a href="#Klass">Klass</a></code></code>
       :
-      <span class='force-inline'>
+      <div class='force-inline'>
         <p>that class</p>
 
-      </span>
+      </div>
 </section>
 </div>
         </div>
