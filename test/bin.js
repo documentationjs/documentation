@@ -87,6 +87,15 @@ test('--shallow option', function (t) {
   });
 }, options);
 
+test('external modules option', function (t) {
+  documentation(['build fixture/external.input.js ' +
+    '--external=external --external=external/node_modules'], function (err, data) {
+    t.ifError(err);
+    t.equal(data.length, 2, 'Includes external file');
+    t.end();
+  });
+});
+
 test('invalid arguments', function (group) {
   group.test('bad -f option', function (t) {
     documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
