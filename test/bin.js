@@ -96,6 +96,15 @@ test('external modules option', function (t) {
   });
 });
 
+test('extension option', function (t) {
+  documentation(['build fixture/extension/jsx.jsx ' +
+    '--extension=jsx'], function (err, data) {
+    t.ifError(err);
+    t.equal(data.length, 1, 'includes jsx file');
+    t.end();
+  });
+});
+
 test('invalid arguments', function (group) {
   group.test('bad -f option', function (t) {
     documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {

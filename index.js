@@ -161,7 +161,7 @@ module.exports.lint = function lint(indexes, options, callback) {
     callback(null,
       formatLint(hierarchy(
         inputs
-          .filter(filterJS)
+          .filter(filterJS(options.extension))
           .reduce(function (memo, file) {
             return memo.concat(parseFn(file));
           }, [])
