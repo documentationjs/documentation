@@ -81,22 +81,6 @@ test('parse', function (tt) {
   tt.end();
 });
 
-test('json', function (tt) {
-  glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test(file, function (ttt) {
-      documentation([file], null, function (err, result) {
-        ttt.ifError(err);
-        normalize(result);
-        var outputfile = file.replace('.input.js', '.output.json');
-        var expect = require(outputfile);
-        ttt.deepEqual(makePOJO(result), expect);
-        ttt.end();
-      });
-    });
-  });
-  tt.end();
-});
-
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
