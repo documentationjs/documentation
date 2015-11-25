@@ -21,7 +21,7 @@ function evaluate(fn) {
 
 test('github', function (t) {
 
-  mock(mockRepo);
+  mock(mockRepo.master);
 
   t.equal(evaluate(function () {
     /**

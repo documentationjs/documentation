@@ -7,7 +7,7 @@ var test = require('tap').test,
 
 test('findGit', function (t) {
 
-  mock(mockRepo);
+  mock(mockRepo.master);
 
   t.equal(
     findGit(
