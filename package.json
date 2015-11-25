@@ -15,7 +15,7 @@
     "vinyl-fs": false
   },
   "dependencies": {
-    "ansi-html": "0.0.4",
+    "ansi-html": "0.0.5",
     "ast-types": "^0.8.12",
     "babel-core": "^5.0.0",
     "babelify": "^6.3.0",
