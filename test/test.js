@@ -187,6 +187,25 @@ test('markdown', function (tt) {
   tt.end();
 });
 
+test('highlightAuto md output', function (t) {
+  var file = path.join(__dirname, 'fixture/auto_lang_hljs/multilanguage.input.js'),
+    hljsConfig = {hljs: {highlightAuto: true, languages: ['js', 'css', 'html']}};
+
+  documentation(file, null, function (err, result) {
+    t.ifError(err);
+    outputMarkdown(result, hljsConfig, function (err, result) {
+      t.ifError(err);
+      var outputfile = file.replace('.input.js', '.output.md');
+      if (UPDATE) {
+        fs.writeFileSync(outputfile, result, 'utf8');
+      }
+      var expect = fs.readFileSync(outputfile, 'utf8');
+      t.equal(result.toString(), expect, 'recognizes examples in html, css and js');
+      t.end();
+    });
+  });
+});
+
 test('multi-file input', function (t) {
   documentation([
     path.join(__dirname, 'fixture', 'simple.input.js'),

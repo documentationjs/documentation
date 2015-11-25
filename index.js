@@ -79,12 +79,16 @@ function expandInputs(indexes, options, callback) {
  * even in JavaScript code. With the polyglot option set, this has no effect.
  * @param {Array<string|Object>} [options.order=[]] optional array that
  * defines sorting order of documentation
+ * @param {Object} [options.hljs] hljs optional options
+ * @param {boolean} [options.hljs.highlightAuto=false] hljs automatically detect language
+ * @param {Array} [options.hljs.languages] languages for hljs to choose from
  * @param {Function} callback to be called when the documentation generation
  * is complete, with (err, result) argumentsj
  * @returns {undefined} calls callback
  */
 module.exports = function (indexes, options, callback) {
   options = options || {};
+  options.hljs = options.hljs || {};
 
   if (typeof indexes === 'string') {
     indexes = [indexes];

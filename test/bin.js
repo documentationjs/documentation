@@ -207,6 +207,27 @@ test('write to html', function (t) {
     }, false);
 }, options);
 
+test('write to html, highlightAuto', function (t) {
+
+  var fixture = 'fixture/auto_lang_hljs/multilanguage.input.js',
+    config = 'fixture/auto_lang_hljs/config.yml',
+    dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+
+  fs.mkdirSync(dstDir);
+
+  documentation(['build --shallow ' + fixture + ' -c ' + config + ' -f html -o ' + dstDir], {},
+    function (err) {
+      var result = fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8');
+      t.ok(result.indexOf('<span class="hljs-number">42</span>') > 0,
+        'javascript is recognized by highlightjs');
+      t.ok(result.indexOf('<span class="hljs-attr_selector">[data-foo]</span>') > 0,
+        'css is recognized by highlightjs');
+      t.ok(result.indexOf('<span class="hljs-attribute">data-foo</span>') > 0,
+        'html is recognized by highlightjs');
+      t.end();
+    }, false);
+}, options);
+
 test('fatal error', function (t) {
 
   documentation(['build --shallow fixture/bad/syntax.input.js'], {},
