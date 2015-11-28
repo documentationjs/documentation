@@ -173,7 +173,6 @@
         }
       }
     ],
-    "kind": "function",
     "members": {
       "instance": [],
       "static": []

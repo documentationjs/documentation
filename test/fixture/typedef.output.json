@@ -92,7 +92,6 @@
         "name": "prop2"
       }
     ],
-    "kind": "typedef",
     "members": {
       "instance": [],
       "static": []

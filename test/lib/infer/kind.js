@@ -13,12 +13,13 @@ function toComment(fn, filename) {
 
 test('inferKind', function (t) {
   t.equal(inferKind({
-    kind: 'class'
+    kind: 'class',
+    tags: []
   }).kind, 'class', 'explicit');
 
   ['class', 'constant', 'event', 'external', 'file',
     'function', 'member', 'mixin', 'module', 'namespace', 'typedef'].forEach(function (tag) {
-      var comment = {};
+      var comment = { tags: [] };
       comment[tag] = true;
       t.equal(inferKind(comment).kind, tag, 'from ' + tag + ' keyword');
     });
