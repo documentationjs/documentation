@@ -21,7 +21,7 @@ var sort = require('./lib/sort'),
 
 /**
  * Build a pipeline of comment handlers.
- * @param {...Function} args - Pipeline elements. Each is a function that accepts
+ * @param {...Function|null} args - Pipeline elements. Each is a function that accepts
  *  a comment and can return a comment or undefined (to drop that comment).
  * @returns {Function} pipeline
  * @private
@@ -30,20 +30,12 @@ function pipeline() {
   var elements = arguments;
   return function (comment) {
     for (var i = 0; comment && i < elements.length; i++) {
-      comment = elements[i](comment);
+      if (elements[i]) {
+        comment = elements[i](comment);
+      }
     }
     return comment;
   }
-}
-
-/**
- * A comment handler that returns the comment unchanged.
- * @param {Object} comment parsed comment
- * @returns {Object} comment
- * @private
- */
-function noop(comment) {
-  return comment;
 }
 
 /**
@@ -118,7 +110,7 @@ module.exports = function (indexes, options, callback) {
                 inferReturn(),
                 inferMembership(),
                 nest,
-                options.github ? github : noop
+                options.github && github
               ))
               .filter(Boolean)
               .sort(sort.bind(undefined, options.order)))));
