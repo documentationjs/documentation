@@ -90,8 +90,14 @@
           "type": "strong",
           "children": [
             {
-              "type": "text",
-              "value": "Date"
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Date"
+                }
+              ]
             }
           ]
         },
@@ -204,8 +210,14 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "Date"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Date"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -261,8 +273,14 @@
           "type": "strong",
           "children": [
             {
-              "type": "text",
-              "value": "undefined"
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "undefined"
+                }
+              ]
             }
           ]
         },

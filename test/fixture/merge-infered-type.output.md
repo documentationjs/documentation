@@ -4,6 +4,6 @@ Add five to `x`.
 
 **Parameters**
 
--   `x` **number** The number to add five to.
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The number to add five to.
 
-Returns **number** x plus five.
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** x plus five.

@@ -73,8 +73,32 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "Array&lt;string&gt;"
+                      "value": ".&lt;"
+                    },
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "&gt;"
                     }
                   ]
                 },

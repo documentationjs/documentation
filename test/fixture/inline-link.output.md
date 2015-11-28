@@ -4,9 +4,9 @@ Adds one to a number
 
 **Parameters**
 
--   `a` **number** the input
+-   `a` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the input
 
-Returns **number** the output
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the output
 
 # inline-link.input
 
@@ -15,6 +15,6 @@ This function returns the number one. Internally, this uses
 
 **Parameters**
 
--   `a` **number** the input
+-   `a` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the input
 
-Returns **number** numberone
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone

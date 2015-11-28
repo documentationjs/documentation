@@ -6,8 +6,8 @@ This is a sink
 
 **Parameters**
 
--   `height` **number** the height of the thing
--   `width` **number** the width of the thing
+-   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the height of the thing
+-   `width` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the width of the thing
 
 ## empty
 
@@ -23,7 +23,7 @@ This function destructures with defaults.
 
 **Parameters**
 
--   `$0` **Object**  (optional, default `{}`)
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `$0.phoneNumbers`   (optional, default `[]`)
     -   `$0.emailAddresses`   (optional, default `[]`)
     -   `$0.params` **...** 
@@ -34,7 +34,7 @@ Similar, but with an array
 
 **Parameters**
 
--   `$0` **Array** 
+-   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
     -   `$0.a`  
     -   `$0.b`  
     -   `$0.c`  
@@ -43,7 +43,7 @@ Similar, but with an array
 
 This function returns the number one.
 
-Returns **Number** numberone
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
 
 # foo
 
@@ -63,7 +63,7 @@ So does this one, with types
 
 **Parameters**
 
--   `someParams` **...number** 
+-   `someParams` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 # multiply
 
@@ -71,10 +71,10 @@ This function returns the number one.
 
 **Parameters**
 
--   `a`  
+-   `a` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)&gt;** an array of numbers
 -   `b`  
 
-Returns **Number** numberone
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
 
 # staticProp
 

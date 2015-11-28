@@ -72,8 +72,14 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "Number"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Number"
+                        }
+                      ]
                     }
                   ]
                 },

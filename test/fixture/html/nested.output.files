@@ -1402,12 +1402,13 @@ h4:hover .anchorjs-link {
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
-  <p>Get an instance of <a href="Klass"><code>Klass</code></a>. Will make
-a <a href="Klass"><code>klass instance multiword</code></a>,
-like a <a href="Klass"><code>klass</code></a></p>
+  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
+a <a href="#Klass">klass instance multiword</a>,
+like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> input.</p>
 
       <h4>Returns</h4>
-      <code>undefined</code>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
+</code>
       :
       <div class='force-inline'>
         <p>nothing</p>
@@ -1422,7 +1423,9 @@ like a <a href="Klass"><code>klass</code></a></p>
 
     <h4>Parameters</h4>
     <ul class='suppress-p-margin'>
-        <li>...<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code> <strong>toys</strong>
+        <li>...
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+ <strong>toys</strong>
           :
           <div class='force-inline'>
             
@@ -1430,7 +1433,8 @@ like a <a href="Klass"><code>klass</code></a></p>
         </li>
     </ul>
       <h4>Returns</h4>
-      <code>undefined</code>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
+</code>
       :
       <div class='force-inline'>
         <p>nothing</p>
@@ -1441,12 +1445,13 @@ like a <a href="Klass"><code>klass</code></a></p>
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
-  <p>Get an instance of <a href="Klass"><code>Klass</code></a>. Will make
-a <a href="Klass"><code>klass instance multiword</code></a>,
-like a <a href="Klass"><code>klass</code></a></p>
+  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
+a <a href="#Klass">klass instance multiword</a>,
+like a <a href="#Klass">klass</a></p>
 
       <h4>Returns</h4>
-      <code><code><a href="#Klass">Klass</a></code></code>
+      <code>Klass
+</code>
       :
       <div class='force-inline'>
         <p>that class</p>
@@ -1508,7 +1513,11 @@ like a <a href="Klass"><code>klass</code></a></p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>&lt;<code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code>&gt; <strong>buffers</strong>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+            .&lt;
+            <a href="https://nodejs.org/api/buffer.html">Buffer</a>
+            &gt;
+             <strong>buffers</strong>
                       :
                       <div class='force-inline'>
                         <p>some buffers</p>
@@ -1517,7 +1526,8 @@ like a <a href="Klass"><code>klass</code></a></p>
                     </li>
                 </ul>
                   <h4>Returns</h4>
-                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code></code>
+                  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            </code>
                   :
                   <div class='force-inline'>
                     <p>how many</p>
@@ -1545,13 +1555,20 @@ like a <a href="Klass"><code>klass</code></a></p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://nodejs.org/api/buffer.html">Buffer</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> <strong>buf</strong>
+                    <li>(
+            <a href="https://nodejs.org/api/buffer.html">Buffer</a>
+            |
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            )
+             <strong>buf</strong>
                       :
                       <div class='force-inline'>
                         
                       </div>
                     </li>
-                    <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>size</strong>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            =
+             <strong>size</strong>
                         (default <code>0</code>)
                       :
                       <div class='force-inline'>
@@ -1561,7 +1578,8 @@ like a <a href="Klass"><code>klass</code></a></p>
                     </li>
                 </ul>
                   <h4>Returns</h4>
-                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+            </code>
                   :
                   <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
@@ -1577,8 +1595,8 @@ like a <a href="Klass"><code>klass</code></a></p>
             </code>
             <div class='force-inline'>
               <p>Decide whether an object is a Klass instance
-This is a <a href="Klass"><code>klasssic</code></a>
-This is a <a href="DoesNot"><code>link to something that does not exist</code></a></p>
+This is a klasssic
+This is a link to something that does not exist</p>
 
             </div>
           </a>
@@ -1588,18 +1606,20 @@ This is a <a href="DoesNot"><code>link to something that does not exist</code></
                 isClass<span class='gray'>(other, also)</span>
               </h2>
               <p>Decide whether an object is a Klass instance
-            This is a <a href="Klass"><code>klasssic</code></a>
-            This is a <a href="DoesNot"><code>link to something that does not exist</code></a></p>
+            This is a klasssic
+            This is a link to something that does not exist</p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>other</strong>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+             <strong>other</strong>
                       :
                       <div class='force-inline'>
                         
                       </div>
                     </li>
-                    <li>Any <strong>also</strong>
+                    <li>Any
+             <strong>also</strong>
                       :
                       <div class='force-inline'>
                         
@@ -1607,7 +1627,8 @@ This is a <a href="DoesNot"><code>link to something that does not exist</code></
                     </li>
                 </ul>
                   <h4>Returns</h4>
-                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+            </code>
                   :
                   <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
@@ -1622,7 +1643,7 @@ This is a <a href="DoesNot"><code>link to something that does not exist</code></
               .isWeird<span class='gray'>(other)</span>
             </code>
             <div class='force-inline'>
-              <p>A function that triggers the case where the autolinker doesn&apos;t find
+              <p>A function that triggers the case where the autolinker doesn't find
 the referenced class type</p>
 
             </div>
@@ -1632,12 +1653,13 @@ the referenced class type</p>
               <h2 id='Klass.isWeird' class='mt0'>
                 isWeird<span class='gray'>(other)</span>
               </h2>
-              <p>A function that triggers the case where the autolinker doesn&apos;t find
+              <p>A function that triggers the case where the autolinker doesn't find
             the referenced class type</p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code>Weird</code> <strong>other</strong>
+                    <li>Weird
+             <strong>other</strong>
                       :
                       <div class='force-inline'>
                         
@@ -1645,7 +1667,8 @@ the referenced class type</p>
                     </li>
                 </ul>
                   <h4>Returns</h4>
-                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></code>
+                  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+            </code>
                   :
                   <div class='force-inline'>
                     <p>whether the other thing is a Klass</p>
@@ -1681,7 +1704,7 @@ the referenced class type</p>
               #getFoo<span class='gray'></span>
             </code>
             <div class='force-inline'>
-              <p>Get this Klass&apos;s foo</p>
+              <p>Get this Klass's foo</p>
 
             </div>
           </a>
@@ -1690,10 +1713,11 @@ the referenced class type</p>
               <h2 id='Klass.getFoo' class='mt0'>
                 getFoo<span class='gray'></span>
               </h2>
-              <p>Get this Klass&apos;s foo</p>
+              <p>Get this Klass's foo</p>
             
                   <h4>Returns</h4>
-                  <code><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code></code>
+                  <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </code>
                   :
                   <div class='force-inline'>
                     <p>foo</p>
@@ -1723,19 +1747,24 @@ the referenced class type</p>
             
                 <h4>Parameters</h4>
                 <ul class='suppress-p-margin'>
-                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code> <strong>options</strong>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+             <strong>options</strong>
                       :
                       <div class='force-inline'>
                         
                       </div>
                         <ul>
-                            <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code> options.foo
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+             options.foo
                               </li>
-                            <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code> options.bar
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+             options.bar
                               </li>
                         </ul>
                     </li>
-                    <li><code>[<code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>]</code> <strong>otherOptions</strong>
+                    <li>?
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+             <strong>otherOptions</strong>
                       :
                       <div class='force-inline'>
                         

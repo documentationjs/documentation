@@ -2,13 +2,13 @@
 
 ONE
 
-Returns **number** something
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** something
 
 # fooBaz
 
 TWO
 
-Returns **number** something
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** something
 
 # Something
 

@@ -12,4 +12,4 @@ foo(1);
 foo(2);
 ```
 
-Returns **Number** numberone
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone

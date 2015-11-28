@@ -5,13 +5,13 @@ This function returns the number one.
 **Parameters**
 
 -   `a` **Point** 
--   `b` **string** 
--   `c` **[boolean]** 
--   `d` **Array&lt;number&gt;** 
--   `e` **Object** 
+-   `b` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `c` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)=** 
+-   `d` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)&gt;** 
+-   `e` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 -   `f` **Named** 
 
-Returns **number** 
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 # Point
 
@@ -19,13 +19,13 @@ A 2D point.
 
 **Properties**
 
--   `x` **number** this is a prop
--   `y` **number** 
--   `rgb` **Object** 
-    -   `rgb.hex` **string** 
--   `props` **Object** 
-    -   `props.radius` **Object** 
-        -   `props.radius.x` **number** 
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** this is a prop
+-   `y` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `rgb` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `rgb.hex` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `props` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `props.radius` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+        -   `props.radius.x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 # T
 
@@ -37,8 +37,8 @@ A type with entirely derived properties
 
 **Properties**
 
--   `x` **number** 
--   `y` **number** 
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `y` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 # veryImportantTransform
 
@@ -46,7 +46,7 @@ Very Important Transform
 
 **Parameters**
 
--   `input` **Array&lt;string&gt;** 
--   `options` **[Object]**  (optional, default `{}`)
+-   `input` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)&gt;** 
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=**  (optional, default `{}`)
 
-Returns **string** 
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 

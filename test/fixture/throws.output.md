@@ -4,7 +4,7 @@ This function returns the number plus two.
 
 **Parameters**
 
--   `a` **Number** the number
+-   `a` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the number
 
 **Examples**
 
@@ -13,4 +13,4 @@ var result = returnTwo(4);
 // result is 6
 ```
 
-Returns **Number** numbertwo
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numbertwo

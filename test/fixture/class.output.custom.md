@@ -4,7 +4,7 @@ This is my class, a demo thing.
 
 **Properties**
 
--   `howMany` **number** how many things it contains
+-   `howMany` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** how many things it contains
 
 ## getFoo
 
@@ -12,12 +12,12 @@ Get the number 42
 
 **Parameters**
 
--   `getIt` **boolean** whether to get the number
+-   `getIt` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** whether to get the number
 
-Returns **number** forty-two
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** forty-two
 
 ## getUndefined
 
 Get undefined
 
-Returns **undefined** does not return anything.
+Returns **[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)** does not return anything.

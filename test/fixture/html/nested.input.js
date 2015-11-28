@@ -100,7 +100,7 @@ function bar(...toys: Number) {
 /**
  * Get an instance of {@link Klass}. Will make
  * a {@link Klass klass instance multiword},
- * like a {@link Klass|klass}
+ * like a {@link Klass|klass}. This needs a {@link number} input.
  *
  * @returns {undefined} nothing
  */

@@ -2,4 +2,4 @@
 
 This function returns the number one.
 
-Returns **Number** numberone
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone

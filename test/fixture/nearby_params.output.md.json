@@ -73,8 +73,14 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "object"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "object"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -106,8 +112,14 @@
                           "type": "strong",
                           "children": [
                             {
-                              "type": "text",
-                              "value": "string"
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "string"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -228,8 +240,14 @@
                           "type": "strong",
                           "children": [
                             {
-                              "type": "text",
-                              "value": "string"
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "string"
+                                }
+                              ]
                             }
                           ]
                         },
@@ -294,8 +312,18 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "function"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "[function]"
+                      "value": "="
                     }
                   ]
                 },
@@ -381,8 +409,14 @@
           "type": "strong",
           "children": [
             {
-              "type": "text",
-              "value": "Promise"
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Promise"
+                }
+              ]
             }
           ]
         },

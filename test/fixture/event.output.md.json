@@ -135,8 +135,14 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "Event"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Event"
+                        }
+                      ]
                     }
                   ]
                 },

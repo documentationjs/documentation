@@ -6,7 +6,7 @@ Get the time
 
 -   `time`  
 
-Returns **Date** the current date
+Returns **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** the current date
 
 # getTheTime
 
@@ -14,6 +14,6 @@ Set the time
 
 **Parameters**
 
--   `time` **Date** the current time
+-   `time` **[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)** the current time
 
-Returns **undefined** nothing
+Returns **[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)** nothing

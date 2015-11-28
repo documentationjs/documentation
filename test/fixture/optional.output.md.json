@@ -73,8 +73,14 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "string"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "string"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -135,8 +141,18 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "number"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "[number]"
+                      "value": "="
                     }
                   ]
                 },
@@ -215,7 +231,17 @@
                   "children": [
                     {
                       "type": "text",
-                      "value": "[number]"
+                      "value": "?"
+                    },
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "number"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -276,8 +302,18 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "[Array]"
+                      "value": "="
                     }
                   ]
                 },

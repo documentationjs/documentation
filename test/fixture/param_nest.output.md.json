@@ -73,8 +73,18 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Object"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "[Object]"
+                      "value": "="
                     }
                   ]
                 },
@@ -138,7 +148,35 @@
                           "children": [
                             {
                               "type": "text",
-                              "value": "Object or string"
+                              "value": "("
+                            },
+                            {
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "Object"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "value": "|"
+                            },
+                            {
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "string"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "value": ")"
                             }
                           ]
                         },
@@ -203,8 +241,18 @@
                           "type": "strong",
                           "children": [
                             {
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "number"
+                                }
+                              ]
+                            },
+                            {
                               "type": "text",
-                              "value": "[number]"
+                              "value": "="
                             }
                           ]
                         },
@@ -282,8 +330,18 @@
                           "type": "strong",
                           "children": [
                             {
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "number"
+                                }
+                              ]
+                            },
+                            {
                               "type": "text",
-                              "value": "[number]"
+                              "value": "="
                             }
                           ]
                         },
@@ -344,8 +402,18 @@
                           "type": "strong",
                           "children": [
                             {
+                              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                              "type": "link",
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "value": "number"
+                                }
+                              ]
+                            },
+                            {
                               "type": "text",
-                              "value": "[number]"
+                              "value": "="
                             }
                           ]
                         },

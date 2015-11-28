@@ -12,6 +12,7 @@ function destructure([a, b, c]) {
 
 /**
  * This function returns the number one.
+ * @param {Array<Number>} a an array of numbers
  * @returns {Number} numberone
  */
 var multiply = (a, b) => a * b;
