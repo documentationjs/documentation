@@ -1,3 +1,18 @@
+# addThem
+
+This function returns the number one.
+
+**Parameters**
+
+-   `a` **Point** 
+-   `b` **string** 
+-   `c` **[boolean]** 
+-   `d` **Array&lt;number&gt;** 
+-   `e` **Object** 
+-   `f` **Named** 
+
+Returns **number** 
+
 # Point
 
 A 2D point.
@@ -24,21 +39,6 @@ A type with entirely derived properties
 
 -   `x` **number** 
 -   `y` **number** 
-
-# addThem
-
-This function returns the number one.
-
-**Parameters**
-
--   `a` **Point** 
--   `b` **string** 
--   `c` **[boolean]** 
--   `d` **Array&lt;number&gt;** 
--   `e` **Object** 
--   `f` **Named** 
-
-Returns **number** 
 
 # veryImportantTransform
 

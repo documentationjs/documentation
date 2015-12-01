@@ -329,6 +329,7 @@
       {
         "title": "param",
         "name": "someParams",
+        "lineNumber": 43,
         "type": {
           "type": "RestType"
         }
@@ -375,6 +376,7 @@
       {
         "title": "param",
         "name": "someParams",
+        "lineNumber": 49,
         "type": {
           "type": "RestType",
           "expression": {

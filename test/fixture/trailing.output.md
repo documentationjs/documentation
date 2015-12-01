@@ -1,7 +1,3 @@
-# Something
-
-this is a type
-
 # fooBar
 
 ONE
@@ -13,3 +9,7 @@ Returns **number** something
 TWO
 
 Returns **number** something
+
+# Something
+
+this is a type

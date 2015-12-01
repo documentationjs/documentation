@@ -1,52 +1,5 @@
 [
   {
-    "description": "this is a type",
-    "tags": [
-      {
-        "title": "class",
-        "description": null,
-        "lineNumber": 2,
-        "type": null,
-        "name": "Something"
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 15,
-        "column": 0
-      },
-      "end": {
-        "line": 18,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 12,
-          "column": 0
-        },
-        "end": {
-          "line": 14,
-          "column": 1
-        }
-      }
-    },
-    "errors": [],
-    "class": {
-      "name": "Something"
-    },
-    "name": "Something",
-    "kind": "class",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "Something"
-    ]
-  },
-  {
     "description": "ONE",
     "tags": [
       {
@@ -160,6 +113,53 @@
     },
     "path": [
       "fooBaz"
+    ]
+  },
+  {
+    "description": "this is a type",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 2,
+        "type": null,
+        "name": "Something"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 15,
+        "column": 0
+      },
+      "end": {
+        "line": 18,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 0
+        },
+        "end": {
+          "line": 14,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "class": {
+      "name": "Something"
+    },
+    "name": "Something",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "Something"
     ]
   }
 ]

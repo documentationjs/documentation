@@ -6,20 +6,11 @@
   "bin": {
     "documentation": "./bin/documentation.js"
   },
-  "browserify": {
-    "transform": [
-      "brfs"
-    ]
-  },
-  "browser": {
-    "vinyl-fs": false
-  },
   "dependencies": {
     "ansi-html": "0.0.5",
     "ast-types": "^0.8.12",
     "babel-core": "^5.0.0",
     "babelify": "^6.3.0",
-    "brfs": "^1.4.0",
     "chokidar": "^1.2.0",
     "concat-stream": "^1.5.0",
     "debounce": "^1.0.0",
@@ -47,7 +38,6 @@
     "stream-array": "^1.1.0",
     "strip-json-comments": "^1.0.2",
     "tiny-lr": "^0.2.1",
-    "traverse": "^0.6.6",
     "unist-builder": "^1.0.0",
     "vfile": "^1.1.2",
     "vfile-reporter": "^1.4.1",
@@ -61,7 +51,7 @@
     "eslint": "^1.5.1",
     "glob": "^5.0.2",
     "lodash": "^3.10.1",
-    "mock-fs": "^3.2.0",
+    "mock-fs": "^3.5.0",
     "tap": "^2.2.0"
   },
   "keywords": [

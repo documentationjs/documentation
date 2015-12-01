@@ -11,13 +11,13 @@
       {
         "title": "name",
         "description": null,
-        "lineNumber": 3,
+        "lineNumber": 2,
         "name": "sessions.create"
       },
       {
         "title": "param",
         "description": null,
-        "lineNumber": 4,
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "object"
@@ -27,7 +27,7 @@
           {
             "title": "param",
             "description": "Login username. Also accepted as `username` or `email`.",
-            "lineNumber": 5,
+            "lineNumber": 4,
             "type": {
               "type": "NameExpression",
               "name": "string"
@@ -37,7 +37,7 @@
           {
             "title": "param",
             "description": "Login password",
-            "lineNumber": 6,
+            "lineNumber": 5,
             "type": {
               "type": "NameExpression",
               "name": "string"
@@ -49,7 +49,7 @@
       {
         "title": "param",
         "description": "Login username. Also accepted as `username` or `email`.",
-        "lineNumber": 5,
+        "lineNumber": 4,
         "type": {
           "type": "NameExpression",
           "name": "string"
@@ -59,7 +59,7 @@
       {
         "title": "param",
         "description": "Login password",
-        "lineNumber": 6,
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "string"
@@ -69,7 +69,7 @@
       {
         "title": "param",
         "description": "Gets passed `(err, { success:Boolean })`.",
-        "lineNumber": 7,
+        "lineNumber": 6,
         "type": {
           "type": "OptionalType",
           "expression": {
@@ -82,7 +82,7 @@
       {
         "title": "returns",
         "description": "promise, to be resolved on success or rejected on failure",
-        "lineNumber": 8,
+        "lineNumber": 7,
         "type": {
           "type": "NameExpression",
           "name": "Promise"
@@ -119,7 +119,7 @@
       {
         "title": "param",
         "description": null,
-        "lineNumber": 4,
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "object"
@@ -129,7 +129,7 @@
           {
             "title": "param",
             "description": "Login username. Also accepted as `username` or `email`.",
-            "lineNumber": 5,
+            "lineNumber": 4,
             "type": {
               "type": "NameExpression",
               "name": "string"
@@ -139,7 +139,7 @@
           {
             "title": "param",
             "description": "Login password",
-            "lineNumber": 6,
+            "lineNumber": 5,
             "type": {
               "type": "NameExpression",
               "name": "string"
@@ -151,7 +151,7 @@
       {
         "title": "param",
         "description": "Gets passed `(err, { success:Boolean })`.",
-        "lineNumber": 7,
+        "lineNumber": 6,
         "type": {
           "type": "OptionalType",
           "expression": {
@@ -166,7 +166,7 @@
       {
         "title": "returns",
         "description": "promise, to be resolved on success or rejected on failure",
-        "lineNumber": 8,
+        "lineNumber": 7,
         "type": {
           "type": "NameExpression",
           "name": "Promise"

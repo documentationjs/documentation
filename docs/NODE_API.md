@@ -93,10 +93,6 @@ comments, given a root file as a path.
     -   `options.external` **Array&lt;string&gt;** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-
-    -   `options.transform` **Array&lt;string&gt;** source transforms given as strings
-        passed to [the module-deps transform option](https://github.com/substack/module-deps)
-
     -   `options.polyglot` **[boolean]** parse comments with a regex rather than
         a proper parser. This enables support of non-JavaScript languages but
         reduces documentation's ability to infer structure of code.
