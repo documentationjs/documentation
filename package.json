@@ -11,6 +11,7 @@
     "ast-types": "^0.8.12",
     "babel-core": "^6.0.0",
     "babel-traverse": "^6.2.0",
+    "babel-types": "^6.3.0",
     "babelify": "^7.2.0",
     "babylon": "^6.3.0",
     "brfs": "^1.4.0",
