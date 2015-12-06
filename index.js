@@ -35,7 +35,7 @@ function pipeline() {
       }
     }
     return comment;
-  }
+  };
 }
 
 /**

@@ -7,4 +7,4 @@ module.exports = function (comments) {
       comment.context.github = '[github]';
     }
   });
-}
+};

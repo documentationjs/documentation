@@ -10,6 +10,7 @@
     "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
     "no-use-before-define": [2, "nofunc"],
     "camelcase": 2,
+    "semi": 2,
     "comma-style": 2,
     "no-lonely-if": 2,
     "max-len": [2, 120],
