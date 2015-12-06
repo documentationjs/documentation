@@ -9,7 +9,7 @@ var documentation = require('../'),
   loadConfig = require('../lib/load_config.js'),
   commands = require('../lib/commands');
 
-var parsedArgs = parseArgs()
+var parsedArgs = parseArgs();
 commands[parsedArgs.command](documentation, parsedArgs);
 
 function parseArgs() {
@@ -70,7 +70,7 @@ function parseArgs() {
   if (inputs.length == 0) {
     try {
       var p = require(path.resolve('package.json'));
-      options.package = p
+      options.package = p;
       inputs = [p.main || 'index.js'];
     } catch (e) {
       yargs.showHelp();
@@ -83,14 +83,14 @@ function parseArgs() {
     command: command,
     commandOptions: addCommands(yargs).argv,
     options: options
-  }
+  };
 }
 
 function addCommands(parser) {
-  parser = parser.demand(1)
+  parser = parser.demand(1);
   for (var cmd in commands) {
-    parser = parser.command(cmd, commands[cmd].description, commands[cmd].parseArgs)
+    parser = parser.command(cmd, commands[cmd].description, commands[cmd].parseArgs);
   }
-  return parser.help('help')
+  return parser.help('help');
 }
 
