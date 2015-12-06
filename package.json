@@ -44,7 +44,7 @@
     "vfile-sort": "^1.0.0",
     "vinyl": "^0.5.0",
     "vinyl-fs": "^1.0.0",
-    "yargs": "^3.5.4"
+    "yargs": "^3.31.0"
   },
   "devDependencies": {
     "chdir": "0.0.0",
