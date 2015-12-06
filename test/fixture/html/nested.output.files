@@ -1683,7 +1683,7 @@ the referenced class type</p>
             <div class='force-inline'>
               <p>Get this Klass&apos;s foo</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
@@ -1712,7 +1712,7 @@ the referenced class type</p>
             <div class='force-inline'>
               <p>A function with an options parameter</p>
 
-            </span>
+            </div>
           </a>
           <div class='collapser border px2'>
             <section class='py2 clearfix'>
