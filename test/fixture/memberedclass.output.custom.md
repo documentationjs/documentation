@@ -1,0 +1,19 @@
+# MyClass
+
+This is my class, a demo thing.
+
+## getFoo
+
+Get the number 42
+
+**Parameters**
+
+-   `getIt` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** whether to get the number
+
+Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** forty-two
+
+## getUndefined
+
+Get undefined
+
+Returns **[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)** does not return anything.

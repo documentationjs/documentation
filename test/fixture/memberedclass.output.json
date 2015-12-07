@@ -1,0 +1,205 @@
+[
+  {
+    "description": "This is my class, a demo thing.",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 3,
+        "type": null,
+        "name": "MyClass"
+      },
+      {
+        "title": "memberof",
+        "description": "com.Test",
+        "lineNumber": 4
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 29,
+          "column": 2
+        }
+      },
+      "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+    },
+    "errors": [
+      {
+        "message": "@memberof reference to com.Test not found",
+        "commentLineNumber": 4
+      }
+    ],
+    "class": {
+      "name": "MyClass"
+    },
+    "memberof": "com.Test",
+    "name": "MyClass",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "Get the number 42",
+          "tags": [
+            {
+              "title": "param",
+              "description": "whether to get the number",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "boolean"
+              },
+              "name": "getIt"
+            },
+            {
+              "title": "returns",
+              "description": "forty-two",
+              "lineNumber": 4,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 4
+            },
+            "end": {
+              "line": 18,
+              "column": 7
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 19,
+                "column": 4
+              },
+              "end": {
+                "line": 21,
+                "column": 5
+              }
+            },
+            "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+          },
+          "errors": [],
+          "params": [
+            {
+              "title": "param",
+              "description": "whether to get the number",
+              "lineNumber": 3,
+              "type": {
+                "type": "NameExpression",
+                "name": "boolean"
+              },
+              "name": "getIt"
+            }
+          ],
+          "returns": [
+            {
+              "title": "returns",
+              "description": "forty-two",
+              "lineNumber": 4,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
+          ],
+          "name": "getFoo",
+          "kind": "function",
+          "memberof": "com.Test.MyClass",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "MyClass",
+            "getFoo"
+          ]
+        }
+      ],
+      "static": [
+        {
+          "description": "Get undefined",
+          "tags": [
+            {
+              "title": "returns",
+              "description": "does not return anything.",
+              "lineNumber": 3,
+              "type": {
+                "type": "UndefinedLiteral"
+              }
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 23,
+              "column": 4
+            },
+            "end": {
+              "line": 27,
+              "column": 7
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 4
+              },
+              "end": {
+                "line": 28,
+                "column": 28
+              }
+            },
+            "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+          },
+          "errors": [],
+          "returns": [
+            {
+              "title": "returns",
+              "description": "does not return anything.",
+              "lineNumber": 3,
+              "type": {
+                "type": "UndefinedLiteral"
+              }
+            }
+          ],
+          "name": "getUndefined",
+          "kind": "function",
+          "memberof": "com.Test.MyClass",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "MyClass",
+            "getUndefined"
+          ]
+        }
+      ]
+    },
+    "path": [
+      "MyClass"
+    ]
+  }
+]
