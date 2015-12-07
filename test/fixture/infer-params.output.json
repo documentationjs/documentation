@@ -34,7 +34,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n"
     },
     "errors": [],
     "params": [
@@ -92,6 +92,81 @@
     },
     "path": [
       "addThem"
+    ]
+  },
+  {
+    "description": "This method has partially inferred params",
+    "tags": [
+      {
+        "title": "param",
+        "description": "number of kinds of fish",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "String"
+        },
+        "name": "$0.fishes"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 12,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "$0",
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "properties": [
+          {
+            "title": "param",
+            "description": "number of kinds of fish",
+            "lineNumber": 2,
+            "type": {
+              "type": "NameExpression",
+              "name": "String"
+            },
+            "name": "$0.fishes"
+          },
+          {
+            "title": "param",
+            "name": "$0.foxes",
+            "lineNumber": 13
+          }
+        ]
+      }
+    ],
+    "name": "fishesAndFoxes",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "fishesAndFoxes"
     ]
   }
 ]

@@ -1,3 +1,37 @@
+## Destructuring Parameters
+
+In ES6, you can use [destructuring assignment in functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
+this lets you quickly write functions that use only some properties of an object.
+For instance:
+
+```js
+function addTheXandYProperties({ x, y }) {
+    return x + y;
+}
+```
+
+Destructured parameters are **unnamed**: while we have names for x & y,
+the function doesn't declare what it will call the object you call
+this function with. So documentation.js names your destructured parameters
+for you: if the param is the first, it'll call it `$0`, if second, `$1`,
+and so on.
+
+So, if you want to add more detailed documentation for properties
+within destructured params, prefix property names with $0 for the object,
+or $1 if it's the second parameter, and so on - the number is the position
+of the destructuring parameter within the list of parameters. Here's
+an example:
+
+```js
+/**
+ * This method has partially inferred params
+ * @param {String} $0.fishes number of kinds of fish
+ */
+function fishesAndFoxes({ fishes, foxes }) {
+  return fishes + foxes;
+}
+```
+
 ## Object Factories
 
 Libraries like [d3](http://d3js.org/) eschew JavaScript's `new` operator
