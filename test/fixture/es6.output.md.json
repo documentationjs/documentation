@@ -561,6 +561,15 @@
                   "value": " "
                 },
                 {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Array"
+                    }
+                  ]
+                },
+                {
                   "type": "text",
                   "value": " "
                 }

@@ -302,6 +302,10 @@
       {
         "title": "param",
         "name": "$0",
+        "type": {
+          "type": "NameExpression",
+          "name": "Array"
+        },
         "properties": [
           {
             "title": "param",
