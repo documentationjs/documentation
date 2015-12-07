@@ -1,0 +1,130 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "nixon"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a method that has an alias tag: so it should\nbe referred to as nixon, but should still have inference.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 2,
+              "column": 58
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 58
+        },
+        "indent": [
+          1
+        ]
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
+        {
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "number"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
+          "children": [
+            {
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        }
+      ]
+    }
+  ]
+}
