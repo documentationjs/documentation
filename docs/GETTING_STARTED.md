@@ -112,6 +112,19 @@ you'll see are:
 * @example - you can us the @example tag to add code examples of how to
   use some thing inline with the thing itself
 
+## Flow type annotations
+
+Alternatively, [Flow](http://flowtype.org/) type annotations allows for a compacter syntax:
+
+```js
+/**
+ * This function adds one to its input.
+ */
+function addOne(input: number): number {
+  return input + 1;
+}
+```
+
 ## What `documentation` does
 
 Documentation does some minor magic to generate documentation. Unless
