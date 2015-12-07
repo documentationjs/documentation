@@ -15,7 +15,7 @@
     "concat-stream": "^1.5.0",
     "debounce": "^1.0.0",
     "doctrine": "^0.7.1",
-    "documentation-theme-default": "2.0.0",
+    "documentation-theme-default": "2.1.0",
     "documentation-theme-utils": "^1.0.1",
     "events": "^1.1.0",
     "extend": "^3.0.0",
