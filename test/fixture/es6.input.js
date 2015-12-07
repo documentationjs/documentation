@@ -1,4 +1,16 @@
 /**
+ * This function destructures with defaults.
+ */
+function destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {
+}
+
+/**
+ * Similar, but with an array
+ */
+function destructure([a, b, c]) {
+}
+
+/**
  * This function returns the number one.
  * @returns {Number} numberone
  */

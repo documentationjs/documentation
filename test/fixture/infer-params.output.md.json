@@ -176,6 +176,15 @@
                   "value": " "
                 },
                 {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Object"
+                    }
+                  ]
+                },
+                {
                   "type": "text",
                   "value": " "
                 }

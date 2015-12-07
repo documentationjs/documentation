@@ -17,6 +17,28 @@ Is it empty
 
 This method says hello
 
+# destructure
+
+This function destructures with defaults.
+
+**Parameters**
+
+-   `$0` **Object**  (optional, default `{}`)
+    -   `$0.phoneNumbers`   (optional, default `[]`)
+    -   `$0.emailAddresses`   (optional, default `[]`)
+    -   `$0.params` **...** 
+
+# destructure
+
+Similar, but with an array
+
+**Parameters**
+
+-   `$0`  
+    -   `$0.a`  
+    -   `$0.b`  
+    -   `$0.c`  
+
 # es6.input
 
 This function returns the number one.

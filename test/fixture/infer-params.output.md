@@ -7,7 +7,7 @@ This function returns the number one.
 -   `a`  
 -   `b` **number** the second param
 -   `c`  
--   `$3`  
+-   `$3` **Object** 
     -   `$3.d`  
     -   `$3.e`  
     -   `$3.f`  

@@ -61,6 +61,10 @@
       {
         "title": "param",
         "name": "$3",
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
         "properties": [
           {
             "title": "param",
