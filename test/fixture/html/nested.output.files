@@ -1,202 +1,4 @@
 
-/*!
- * AnchorJS - v1.2.1 - 2015-07-02
- * https://github.com/bryanbraun/anchorjs
- * Copyright (c) 2015 Bryan Braun; Licensed MIT
- */
-
-function AnchorJS(options) {
-  'use strict';
-
-  this.options = options || {};
-
-  this._applyRemainingDefaultOptions = function(opts) {
-    this.options.icon = this.options.hasOwnProperty('icon') ? opts.icon : '\ue9cb'; // Accepts characters (and also URLs?), like  '#', '¶', '❡', or '§'.
-    this.options.visible = this.options.hasOwnProperty('visible') ? opts.visible : 'hover'; // Also accepts 'always'
-    this.options.placement = this.options.hasOwnProperty('placement') ? opts.placement : 'right'; // Also accepts 'left'
-    this.options.class = this.options.hasOwnProperty('class') ? opts.class : ''; // Accepts any class name.
-  };
-
-  this._applyRemainingDefaultOptions(options);
-
-  this.add = function(selector) {
-    var elements,
-        elsWithIds,
-        idList,
-        elementID,
-        i,
-        roughText,
-        tidyText,
-        index,
-        count,
-        newTidyText,
-        readableID,
-        anchor;
-
-    this._applyRemainingDefaultOptions(this.options);
-
-    // Provide a sensible default selector, if none is given.
-    if (!selector) {
-      selector = 'h1, h2, h3, h4, h5, h6';
-    } else if (typeof selector !== 'string') {
-      throw new Error('The selector provided to AnchorJS was invalid.');
-    }
-
-    elements = document.querySelectorAll(selector);
-    if (elements.length === 0) {
-      return false;
-    }
-
-    this._addBaselineStyles();
-
-    // We produce a list of existing IDs so we don't generate a duplicate.
-    elsWithIds = document.querySelectorAll('[id]');
-    idList = [].map.call(elsWithIds, function assign(el) {
-      return el.id;
-    });
-
-    for (i = 0; i < elements.length; i++) {
-
-      if (elements[i].hasAttribute('id')) {
-        elementID = elements[i].getAttribute('id');
-      } else {
-        roughText = elements[i].textContent;
-
-        // Refine it so it makes a good ID. Strip out non-safe characters, replace
-        // spaces with hyphens, truncate to 32 characters, and make toLowerCase.
-        //
-        // Example string:                                // '⚡⚡⚡ Unicode icons are cool--but they definitely don't belong in a URL fragment.'
-        tidyText = roughText.replace(/[^\w\s-]/gi, '')    // ' Unicode icons are cool--but they definitely dont belong in a URL fragment'
-                                .replace(/\s+/g, '-')     // '-Unicode-icons-are-cool--but-they-definitely-dont-belong-in-a-URL-fragment'
-                                .replace(/-{2,}/g, '-')   // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL-fragment'
-                                .substring(0, 64)         // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
-                                .replace(/^-+|-+$/gm, '') // 'Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
-                                .toLowerCase();           // 'unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-url'
-
-        // Compare our generated ID to existing IDs (and increment it if needed)
-        // before we add it to the page.
-        newTidyText = tidyText;
-        count = 0;
-        do {
-          if (index !== undefined) {
-            newTidyText = tidyText + '-' + count;
-          }
-          // .indexOf is supported in IE9+.
-          index = idList.indexOf(newTidyText);
-          count += 1;
-        } while (index !== -1);
-        index = undefined;
-        idList.push(newTidyText);
-
-        // Assign it to our element.
-        // Currently the setAttribute element is only supported in IE9 and above.
-        elements[i].setAttribute('id', newTidyText);
-
-        elementID = newTidyText;
-      }
-
-      readableID = elementID.replace(/-/g, ' ');
-
-      // The following code builds the following DOM structure in a more effiecient (albeit opaque) way.
-      // '<a class="anchorjs-link ' + this.options.class + '" href="#' + elementID + '" aria-label="Anchor link for: ' + readableID + '" data-anchorjs-icon="' + this.options.icon + '"></a>';
-      anchor = document.createElement('a');
-      anchor.className = 'anchorjs-link ' + this.options.class;
-      anchor.href = '#' + elementID;
-      anchor.setAttribute('aria-label', 'Anchor link for: ' + readableID);
-      anchor.setAttribute('data-anchorjs-icon', this.options.icon);
-
-      if (this.options.visible === 'always') {
-        anchor.style.opacity = '1';
-      }
-
-      if (this.options.icon === '\ue9cb') {
-        anchor.style.fontFamily = 'anchorjs-icons';
-        anchor.style.fontStyle = 'normal';
-        anchor.style.fontVariant = 'normal';
-        anchor.style.fontWeight = 'normal';
-        anchor.style.lineHeight = 1;
-      }
-
-      if (this.options.placement === 'left') {
-        anchor.style.position = 'absolute';
-        anchor.style.marginLeft = '-1em';
-        anchor.style.paddingRight = '0.5em';
-        elements[i].insertBefore(anchor, elements[i].firstChild);
-      } else { // if the option provided is `right` (or anything else).
-        anchor.style.paddingLeft = '0.375em';
-        elements[i].appendChild(anchor);
-      }
-    }
-
-    return this;
-  };
-
-  this.remove = function(selector) {
-    var domAnchor,
-        elements = document.querySelectorAll(selector);
-    for (var i = 0; i < elements.length; i++) {
-      domAnchor = elements[i].querySelector('.anchorjs-link');
-      if (domAnchor) {
-        elements[i].removeChild(domAnchor);
-      }
-    }
-    return this;
-  };
-
-  this._addBaselineStyles = function() {
-    // We don't want to add global baseline styles if they've been added before.
-    if (document.head.querySelector('style.anchorjs') !== null) {
-      return;
-    }
-
-    var style = document.createElement('style'),
-        linkRule =
-        ' .anchorjs-link {'                       +
-        '   opacity: 0;'                          +
-        '   text-decoration: none;'               +
-        '   -webkit-font-smoothing: antialiased;' +
-        '   -moz-osx-font-smoothing: grayscale;'  +
-        ' }',
-        hoverRule =
-        ' *:hover > .anchorjs-link,'              +
-        ' .anchorjs-link:focus  {'                +
-        '   opacity: 1;'                          +
-        ' }',
-        anchorjsLinkFontFace =
-        ' @font-face {'                           +
-        '   font-family: "anchorjs-icons";'       +
-        '   font-style: normal;'                  +
-        '   font-weight: normal;'                 + // Icon from icomoon; 10px wide & 10px tall; 2 empty below & 4 above
-        '   src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBTUAAAC8AAAAYGNtYXAWi9QdAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zgq29TcAAAF4AAABNGhlYWQEZM3pAAACrAAAADZoaGVhBhUDxgAAAuQAAAAkaG10eASAADEAAAMIAAAAFGxvY2EAKACuAAADHAAAAAxtYXhwAAgAVwAAAygAAAAgbmFtZQ5yJ3cAAANIAAAB2nBvc3QAAwAAAAAFJAAAACAAAwJAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpywPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6cv//f//AAAAAAAg6cv//f//AAH/4xY5AAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACADEARAJTAsAAKwBUAAABIiYnJjQ/AT4BMzIWFxYUDwEGIicmND8BNjQnLgEjIgYPAQYUFxYUBw4BIwciJicmND8BNjIXFhQPAQYUFx4BMzI2PwE2NCcmNDc2MhcWFA8BDgEjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAEAAAABAACiToc1Xw889QALBAAAAAAA0XnFFgAAAADRecUWAAAAAAJTAsAAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAlMAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAACAAAAAoAAMQAAAAAACgAUAB4AmgABAAAABQBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIABwCfAAEAAAAAAAMADgBLAAEAAAAAAAQADgC0AAEAAAAAAAUACwAqAAEAAAAAAAYADgB1AAEAAAAAAAoAGgDeAAMAAQQJAAEAHAAOAAMAAQQJAAIADgCmAAMAAQQJAAMAHABZAAMAAQQJAAQAHADCAAMAAQQJAAUAFgA1AAMAAQQJAAYAHACDAAMAAQQJAAoANAD4YW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("truetype");' +
-        ' }',
-        pseudoElContent =
-        ' [data-anchorjs-icon]::after {'          +
-        '   content: attr(data-anchorjs-icon);'   +
-        ' }',
-        firstStyleEl;
-
-    style.className = 'anchorjs';
-    style.appendChild(document.createTextNode('')); // Necessary for Webkit.
-
-    // We place it in the head with the other style tags, if possible, so as to
-    // not look out of place. We insert before the others so these styles can be
-    // overridden if necessary.
-    firstStyleEl = document.head.querySelector('[rel="stylesheet"], style');
-    if (firstStyleEl === undefined) {
-      document.head.appendChild(style);
-    } else {
-      document.head.insertBefore(style, firstStyleEl);
-    }
-
-    style.sheet.insertRule(linkRule, style.sheet.cssRules.length);
-    style.sheet.insertRule(hoverRule, style.sheet.cssRules.length);
-    style.sheet.insertRule(pseudoElContent, style.sheet.cssRules.length);
-    style.sheet.insertRule(anchorjsLinkFontFace, style.sheet.cssRules.length);
-  };
-}
-
-var anchors = new AnchorJS();
-
 /*
 
     Basscss v7.0.3
@@ -1048,6 +850,626 @@ hr {
 
 
 
+/*!
+ * AnchorJS - v1.2.1 - 2015-07-02
+ * https://github.com/bryanbraun/anchorjs
+ * Copyright (c) 2015 Bryan Braun; Licensed MIT
+ */
+
+function AnchorJS(options) {
+  'use strict';
+
+  this.options = options || {};
+
+  this._applyRemainingDefaultOptions = function(opts) {
+    this.options.icon = this.options.hasOwnProperty('icon') ? opts.icon : '\ue9cb'; // Accepts characters (and also URLs?), like  '#', '¶', '❡', or '§'.
+    this.options.visible = this.options.hasOwnProperty('visible') ? opts.visible : 'hover'; // Also accepts 'always'
+    this.options.placement = this.options.hasOwnProperty('placement') ? opts.placement : 'right'; // Also accepts 'left'
+    this.options.class = this.options.hasOwnProperty('class') ? opts.class : ''; // Accepts any class name.
+  };
+
+  this._applyRemainingDefaultOptions(options);
+
+  this.add = function(selector) {
+    var elements,
+        elsWithIds,
+        idList,
+        elementID,
+        i,
+        roughText,
+        tidyText,
+        index,
+        count,
+        newTidyText,
+        readableID,
+        anchor;
+
+    this._applyRemainingDefaultOptions(this.options);
+
+    // Provide a sensible default selector, if none is given.
+    if (!selector) {
+      selector = 'h1, h2, h3, h4, h5, h6';
+    } else if (typeof selector !== 'string') {
+      throw new Error('The selector provided to AnchorJS was invalid.');
+    }
+
+    elements = document.querySelectorAll(selector);
+    if (elements.length === 0) {
+      return false;
+    }
+
+    this._addBaselineStyles();
+
+    // We produce a list of existing IDs so we don't generate a duplicate.
+    elsWithIds = document.querySelectorAll('[id]');
+    idList = [].map.call(elsWithIds, function assign(el) {
+      return el.id;
+    });
+
+    for (i = 0; i < elements.length; i++) {
+
+      if (elements[i].hasAttribute('id')) {
+        elementID = elements[i].getAttribute('id');
+      } else {
+        roughText = elements[i].textContent;
+
+        // Refine it so it makes a good ID. Strip out non-safe characters, replace
+        // spaces with hyphens, truncate to 32 characters, and make toLowerCase.
+        //
+        // Example string:                                // '⚡⚡⚡ Unicode icons are cool--but they definitely don't belong in a URL fragment.'
+        tidyText = roughText.replace(/[^\w\s-]/gi, '')    // ' Unicode icons are cool--but they definitely dont belong in a URL fragment'
+                                .replace(/\s+/g, '-')     // '-Unicode-icons-are-cool--but-they-definitely-dont-belong-in-a-URL-fragment'
+                                .replace(/-{2,}/g, '-')   // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL-fragment'
+                                .substring(0, 64)         // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
+                                .replace(/^-+|-+$/gm, '') // 'Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
+                                .toLowerCase();           // 'unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-url'
+
+        // Compare our generated ID to existing IDs (and increment it if needed)
+        // before we add it to the page.
+        newTidyText = tidyText;
+        count = 0;
+        do {
+          if (index !== undefined) {
+            newTidyText = tidyText + '-' + count;
+          }
+          // .indexOf is supported in IE9+.
+          index = idList.indexOf(newTidyText);
+          count += 1;
+        } while (index !== -1);
+        index = undefined;
+        idList.push(newTidyText);
+
+        // Assign it to our element.
+        // Currently the setAttribute element is only supported in IE9 and above.
+        elements[i].setAttribute('id', newTidyText);
+
+        elementID = newTidyText;
+      }
+
+      readableID = elementID.replace(/-/g, ' ');
+
+      // The following code builds the following DOM structure in a more effiecient (albeit opaque) way.
+      // '<a class="anchorjs-link ' + this.options.class + '" href="#' + elementID + '" aria-label="Anchor link for: ' + readableID + '" data-anchorjs-icon="' + this.options.icon + '"></a>';
+      anchor = document.createElement('a');
+      anchor.className = 'anchorjs-link ' + this.options.class;
+      anchor.href = '#' + elementID;
+      anchor.setAttribute('aria-label', 'Anchor link for: ' + readableID);
+      anchor.setAttribute('data-anchorjs-icon', this.options.icon);
+
+      if (this.options.visible === 'always') {
+        anchor.style.opacity = '1';
+      }
+
+      if (this.options.icon === '\ue9cb') {
+        anchor.style.fontFamily = 'anchorjs-icons';
+        anchor.style.fontStyle = 'normal';
+        anchor.style.fontVariant = 'normal';
+        anchor.style.fontWeight = 'normal';
+        anchor.style.lineHeight = 1;
+      }
+
+      if (this.options.placement === 'left') {
+        anchor.style.position = 'absolute';
+        anchor.style.marginLeft = '-1em';
+        anchor.style.paddingRight = '0.5em';
+        elements[i].insertBefore(anchor, elements[i].firstChild);
+      } else { // if the option provided is `right` (or anything else).
+        anchor.style.paddingLeft = '0.375em';
+        elements[i].appendChild(anchor);
+      }
+    }
+
+    return this;
+  };
+
+  this.remove = function(selector) {
+    var domAnchor,
+        elements = document.querySelectorAll(selector);
+    for (var i = 0; i < elements.length; i++) {
+      domAnchor = elements[i].querySelector('.anchorjs-link');
+      if (domAnchor) {
+        elements[i].removeChild(domAnchor);
+      }
+    }
+    return this;
+  };
+
+  this._addBaselineStyles = function() {
+    // We don't want to add global baseline styles if they've been added before.
+    if (document.head.querySelector('style.anchorjs') !== null) {
+      return;
+    }
+
+    var style = document.createElement('style'),
+        linkRule =
+        ' .anchorjs-link {'                       +
+        '   opacity: 0;'                          +
+        '   text-decoration: none;'               +
+        '   -webkit-font-smoothing: antialiased;' +
+        '   -moz-osx-font-smoothing: grayscale;'  +
+        ' }',
+        hoverRule =
+        ' *:hover > .anchorjs-link,'              +
+        ' .anchorjs-link:focus  {'                +
+        '   opacity: 1;'                          +
+        ' }',
+        anchorjsLinkFontFace =
+        ' @font-face {'                           +
+        '   font-family: "anchorjs-icons";'       +
+        '   font-style: normal;'                  +
+        '   font-weight: normal;'                 + // Icon from icomoon; 10px wide & 10px tall; 2 empty below & 4 above
+        '   src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBTUAAAC8AAAAYGNtYXAWi9QdAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zgq29TcAAAF4AAABNGhlYWQEZM3pAAACrAAAADZoaGVhBhUDxgAAAuQAAAAkaG10eASAADEAAAMIAAAAFGxvY2EAKACuAAADHAAAAAxtYXhwAAgAVwAAAygAAAAgbmFtZQ5yJ3cAAANIAAAB2nBvc3QAAwAAAAAFJAAAACAAAwJAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpywPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6cv//f//AAAAAAAg6cv//f//AAH/4xY5AAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACADEARAJTAsAAKwBUAAABIiYnJjQ/AT4BMzIWFxYUDwEGIicmND8BNjQnLgEjIgYPAQYUFxYUBw4BIwciJicmND8BNjIXFhQPAQYUFx4BMzI2PwE2NCcmNDc2MhcWFA8BDgEjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAEAAAABAACiToc1Xw889QALBAAAAAAA0XnFFgAAAADRecUWAAAAAAJTAsAAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAlMAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAACAAAAAoAAMQAAAAAACgAUAB4AmgABAAAABQBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIABwCfAAEAAAAAAAMADgBLAAEAAAAAAAQADgC0AAEAAAAAAAUACwAqAAEAAAAAAAYADgB1AAEAAAAAAAoAGgDeAAMAAQQJAAEAHAAOAAMAAQQJAAIADgCmAAMAAQQJAAMAHABZAAMAAQQJAAQAHADCAAMAAQQJAAUAFgA1AAMAAQQJAAYAHACDAAMAAQQJAAoANAD4YW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("truetype");' +
+        ' }',
+        pseudoElContent =
+        ' [data-anchorjs-icon]::after {'          +
+        '   content: attr(data-anchorjs-icon);'   +
+        ' }',
+        firstStyleEl;
+
+    style.className = 'anchorjs';
+    style.appendChild(document.createTextNode('')); // Necessary for Webkit.
+
+    // We place it in the head with the other style tags, if possible, so as to
+    // not look out of place. We insert before the others so these styles can be
+    // overridden if necessary.
+    firstStyleEl = document.head.querySelector('[rel="stylesheet"], style');
+    if (firstStyleEl === undefined) {
+      document.head.appendChild(style);
+    } else {
+      document.head.insertBefore(style, firstStyleEl);
+    }
+
+    style.sheet.insertRule(linkRule, style.sheet.cssRules.length);
+    style.sheet.insertRule(hoverRule, style.sheet.cssRules.length);
+    style.sheet.insertRule(pseudoElContent, style.sheet.cssRules.length);
+    style.sheet.insertRule(anchorjsLinkFontFace, style.sheet.cssRules.length);
+  };
+}
+
+var anchors = new AnchorJS();
+
+/* global anchors */
+
+// add anchor links to headers
+anchors.options.placement = 'left';
+anchors.add().remove('.no-anchor');
+
+// Filter UI
+var tocElements = document.getElementById('toc').getElementsByTagName('a');
+document.getElementById('filter-input').addEventListener('keyup', function(e) {
+
+  var i, element;
+
+  // enter key
+  if (e.keyCode === 13) {
+    // go to the first displayed item in the toc
+    for (i = 0; i < tocElements.length; i++) {
+      element = tocElements[i];
+      if (!element.classList.contains('hide')) {
+        location.replace(element.href);
+        return e.preventDefault();
+      }
+    }
+  }
+
+  var match = function() { return true; },
+    value = this.value.toLowerCase();
+
+  if (!value.match(/^\s*$/)) {
+    match = function(text) { return text.toLowerCase().indexOf(value) !== -1; };
+  }
+
+  for (i = 0; i < tocElements.length; i++) {
+    element = tocElements[i];
+    if (match(element.innerHTML)) {
+      element.classList.remove('hide');
+    } else {
+      element.classList.add('hide');
+    }
+  }
+});
+
+
+
+Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+
+This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+# Source Code Pro
+
+Source Code Pro is a set of OpenType fonts that have been designed to work well
+in user interface (UI) environments. In addition to a functional OpenType font, this open
+source project provides all of the source files that were used to build this OpenType font
+by using the AFDKO makeotf tool.
+
+## Font installation instructions
+
+* [Mac OS X](http://support.apple.com/kb/HT2509)
+* [Windows](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts)
+* [Linux/Unix-based systems](https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-8967116)
+
+## Getting Involved
+
+Send suggestions for changes to the Source Code OpenType font project maintainer, [Paul D. Hunt](mailto:opensourcefonts@adobe.com?subject=[GitHub] Source Code Pro), for consideration.
+
+## Further information
+
+For information about the design and background of Source Code, please refer to the [official font readme file](http://www.adobe.com/products/type/font-information/source-code-pro-readme.html).
+
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-Light.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-LightIt.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-Regular.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-It.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-Medium.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-MediumIt.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-Semibold.otf.woff') format('woff');
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-SemiboldIt.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-Bold.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Code Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceCodePro-BoldIt.otf.woff') format('woff');
+}
+
+Copyright 2010, 2012, 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+
+This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+"Font Software" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+"Reserved Font Name" refers to any names specified as such after the
+copyright statement(s).
+
+"Original Version" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+"Modified Version" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+"Author" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+
+# Source Sans Pro
+
+Source Sans Pro is a set of OpenType fonts that have been designed to work well
+in user interface (UI) environments. In addition to a functional OpenType font, this open
+source project provides all of the source files that were used to build this OpenType font
+by using the AFDKO makeotf tool.
+
+## Font installation instructions
+
+* [Mac OS X](http://support.apple.com/kb/HT2509)
+* [Windows](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts)
+* [Linux/Unix-based systems](https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-8967116)
+
+## Getting Involved
+
+Send suggestions for changes to the Source Sans OpenType font project maintainer, [Paul D. Hunt](mailto:opensourcefonts@adobe.com?subject=[GitHub] Source Sans Pro), for consideration.
+
+## Further information
+
+For information about the design and background of Source Sans, please refer to the [official font readme file](http://www.adobe.com/products/type/font-information/source-sans-pro-readme.html).
+
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-LightIt.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-It.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-SemiboldIt.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('WOFF/OTF/SourceSansPro-BoldIt.otf.woff') format('woff');
+}
+
+
+
+
+
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
@@ -1172,46 +1594,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #aaa;
 }
 
-/* global anchors */
 
-// add anchor links to headers
-anchors.options.placement = 'left';
-anchors.add().remove('.no-anchor');
-
-// Filter UI
-var tocElements = document.getElementById('toc').getElementsByTagName('a');
-document.getElementById('filter-input').addEventListener('keyup', function(e) {
-
-  var i, element;
-
-  // enter key
-  if (e.keyCode === 13) {
-    // go to the first displayed item in the toc
-    for (i = 0; i < tocElements.length; i++) {
-      element = tocElements[i];
-      if (!element.classList.contains('hide')) {
-        location.replace(element.href);
-        return e.preventDefault();
-      }
-    }
-  }
-
-  var match = function() { return true; },
-    value = this.value.toLowerCase();
-
-  if (!value.match(/^\s*$/)) {
-    match = function(text) { return text.toLowerCase().indexOf(value) !== -1; };
-  }
-
-  for (i = 0; i < tocElements.length; i++) {
-    element = tocElements[i];
-    if (match(element.innerHTML)) {
-      element.classList.remove('hide');
-    } else {
-      element.classList.add('hide');
-    }
-  }
-});
+@import url(fonts/source-sans-pro/source-sans-pro.css);
+@import url(fonts/source-code-pro/source-code-pro.css);
 
 .documentation a {
   color: #1184CE;
@@ -1315,7 +1700,6 @@ h4:hover .anchorjs-link {
   <meta charset='utf-8' />
   <title>  | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,500,700' rel='stylesheet' type='text/css'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
   <link href='assets/github.css' type='text/css' rel='stylesheet' />

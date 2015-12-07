@@ -1,0 +1,77 @@
+[
+  {
+    "description": "This function has a lot of metadata",
+    "tags": [
+      {
+        "title": "version",
+        "description": "1.2.0",
+        "lineNumber": 2
+      },
+      {
+        "title": "author",
+        "description": "Jim Jones",
+        "lineNumber": 3
+      },
+      {
+        "title": "copyright",
+        "description": "John Jones",
+        "lineNumber": 4
+      },
+      {
+        "title": "since",
+        "description": "1962",
+        "lineNumber": 5
+      },
+      {
+        "title": "license",
+        "description": "Public Domain",
+        "lineNumber": 6
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 8,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function has a lot of metadata\n * @version 1.2.0\n * @author Jim Jones\n * @copyright John Jones\n * @since 1962\n * @license Public Domain\n */\nfunction dewey(a) {\n  return a;\n}\n"
+    },
+    "errors": [],
+    "version": "1.2.0",
+    "author": "Jim Jones",
+    "copyright": "John Jones",
+    "since": "1962",
+    "license": "Public Domain",
+    "name": "dewey",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 9
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "dewey"
+    ]
+  }
+]

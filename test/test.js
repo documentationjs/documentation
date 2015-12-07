@@ -114,7 +114,7 @@ test('html', function (tt) {
           var clean = result.sort(function (a, b) {
             return a.path > b.path;
           }).filter(function (r) {
-            return (!r.path.match(/json$/));
+            return !r.path.match(/(json|woff)$/);
           }).map(function (r) {
             return r.contents;
           }).join('\n');
