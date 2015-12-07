@@ -1,0 +1,45 @@
+[
+  {
+    "description": "With ES6, built-in types are extensible!",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      },
+      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n"
+    },
+    "errors": [],
+    "name": "SpecialArray",
+    "augments": [
+      {
+        "title": "augments",
+        "name": "Array"
+      }
+    ],
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "SpecialArray"
+    ]
+  }
+]

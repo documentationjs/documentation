@@ -15,6 +15,24 @@
       "type": "paragraph",
       "children": [
         {
+          "type": "strong",
+          "children": [
+            {
+              "type": "text",
+              "value": "Extends "
+            },
+            {
+              "type": "text",
+              "value": "Foo, Bar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
           "type": "text",
           "value": "This function returns the number one.",
           "position": {

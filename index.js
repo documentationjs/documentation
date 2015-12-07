@@ -12,6 +12,7 @@ var sort = require('./lib/sort'),
   hierarchy = require('./lib/hierarchy'),
   inferName = require('./lib/infer/name'),
   inferKind = require('./lib/infer/kind'),
+  inferAugments = require('./lib/infer/augments'),
   inferParams = require('./lib/infer/params'),
   inferProperties = require('./lib/infer/properties'),
   inferMembership = require('./lib/infer/membership'),
@@ -102,6 +103,7 @@ module.exports = function (indexes, options, callback) {
               }, [])
               .map(pipeline(
                 inferName(),
+                inferAugments(),
                 inferKind(),
                 inferParams(),
                 inferProperties(),
@@ -160,6 +162,7 @@ module.exports.lint = function lint(indexes, options, callback) {
           .map(pipeline(
             lintComments,
             inferName(),
+            inferAugments(),
             inferKind(),
             inferParams(),
             inferProperties(),

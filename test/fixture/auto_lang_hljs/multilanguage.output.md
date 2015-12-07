@@ -1,5 +1,7 @@
 # multilanguage.input
 
+**Extends Foo, Bar**
+
 This function returns the number one.
 
 **Examples**
