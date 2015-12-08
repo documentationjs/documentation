@@ -68,6 +68,9 @@ Klass.isBuffer = function (buf, size) {
  *
  * @param {Array<Buffer>} buffers some buffers
  * @returns {number} how many
+ * @example
+ * var k = new Klass();
+ * k.isArrayOfBuffers();
  */
 Klass.isArrayOfBuffers = function (buffers) {
   return buffers.length;
