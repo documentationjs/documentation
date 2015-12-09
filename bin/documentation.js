@@ -67,6 +67,13 @@ function parseArgs() {
   var command = argv._[0],
     inputs = argv._.slice(1);
 
+  if (!commands[command]) {
+    yargs.showHelp();
+    var suggestion = [argv['$0'], 'build'].concat(process.argv.slice(2)).join(' ');
+    process.stderr.write('Unknown command: ' + command + '.  Did you mean "' + suggestion + '"?\n');
+    process.exit(1);
+  }
+
   if (inputs.length == 0) {
     try {
       var p = require(path.resolve('package.json'));

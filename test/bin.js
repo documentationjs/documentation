@@ -122,6 +122,14 @@ test('invalid arguments', function (group) {
     });
   }, options);
 
+  group.test('bad command', function (t) {
+    documentation(['-f html fixture/internal.input.js'], function (err, stdout, stderr) {
+      t.ok(err.code, 'exits nonzero');
+      t.ok(stderr.match(/Unknown command/), 'reports unknown command');
+      t.end();
+    });
+  });
+
   group.end();
 });
 
