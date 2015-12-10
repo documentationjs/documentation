@@ -34,7 +34,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
     },
     "errors": [],
     "params": [
@@ -129,7 +129,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
     },
     "errors": [],
     "params": [
@@ -174,26 +174,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 17,
+        "line": 25,
         "column": 0
       },
       "end": {
-        "line": 19,
+        "line": 27,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 20,
+          "line": 28,
           "column": 0
         },
         "end": {
-          "line": 27,
+          "line": 35,
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
     },
     "errors": [],
     "name": "Foo",
@@ -216,26 +216,26 @@
           ],
           "loc": {
             "start": {
-              "line": 21,
+              "line": 29,
               "column": 2
             },
             "end": {
-              "line": 24,
+              "line": 32,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 25,
+                "line": 33,
                 "column": 2
               },
               "end": {
-                "line": 26,
+                "line": 34,
                 "column": 3
               }
             },
-            "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+            "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
           },
           "errors": [],
           "params": [
@@ -268,6 +268,74 @@
     },
     "path": [
       "Foo"
+    ]
+  },
+  {
+    "description": "This method has a type in the description and a default in the code",
+    "tags": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 2,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "default": "2"
+        },
+        "name": "x"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 17,
+        "column": 0
+      },
+      "end": {
+        "line": 20,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 2,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "default": "2"
+        },
+        "name": "x"
+      }
+    ],
+    "name": "withDefault",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "withDefault"
     ]
   }
 ]

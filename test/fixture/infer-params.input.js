@@ -15,6 +15,14 @@ function fishesAndFoxes({ fishes, foxes }) {
 }
 
 /**
+ * This method has a type in the description and a default in the code
+ * @param {number} x
+ */
+function withDefault(x = 2) {
+  return x;
+}
+
+/**
  * This is foo's documentation
  */
 class Foo {

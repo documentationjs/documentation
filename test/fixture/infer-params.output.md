@@ -33,3 +33,11 @@ The method
 **Parameters**
 
 -   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Param to method
+
+# withDefault
+
+This method has a type in the description and a default in the code
+
+**Parameters**
+
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** 
