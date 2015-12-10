@@ -112,6 +112,9 @@ you'll see are:
 * @example - you can use the @example tag to add code examples of how to
   use some thing inline with the thing itself
 
+It'll help to remember the available tags if your text editor highlights correct tags: if it
+doesn't, try [using a plugin for JSDoc](https://github.com/documentationjs/documentation/wiki/Text-editor-plugins).
+
 ## Flow type annotations
 
 Alternatively, [Flow](http://flowtype.org/) type annotations allows for a compacter syntax:
