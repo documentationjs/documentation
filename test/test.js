@@ -62,25 +62,6 @@ test('external modules option', function (t) {
   });
 });
 
-test('parse', function (tt) {
-  glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test(path.basename(file), function (t) {
-      documentation([file], null, function (err, result) {
-        t.ifError(err);
-        normalize(result);
-        var outputfile = file.replace('.input.js', '.output.json');
-        if (UPDATE) {
-          fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
-        }
-        var expect = require(outputfile);
-        t.deepEqual(makePOJO(result), expect);
-        t.end();
-      });
-    });
-  });
-  tt.end();
-});
-
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
@@ -132,41 +113,54 @@ test('html', function (tt) {
   tt.end();
 });
 
-test('markdown', function (tt) {
+test('outputs', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    tt.test(path.basename(file), function (t) {
+    ttt.test(path.basename(file), function (tt) {
       documentation([file], null, function (err, result) {
-        t.ifError(err);
-        outputMarkdown(result, null, function (err, result) {
-          t.ifError(err);
-          var outputfile = file.replace('.input.js', '.output.md');
-          if (UPDATE) {
-            fs.writeFileSync(outputfile, result, 'utf8');
-          }
-          var expect = fs.readFileSync(outputfile, 'utf8');
-          t.equal(result.toString(), expect, 'markdown output correct');
-          t.end();
-        });
-      });
-    });
+        tt.ifError(err);
 
-    tt.test(path.basename(file), function (t) {
-      documentation([file], null, function (err, result) {
-        t.ifError(err);
-        outputMarkdownAST(result, null, function (err, result) {
-          t.ifError(err);
-          var outputfile = file.replace('.input.js', '.output.md.json');
+        tt.test('markdown', function (t) {
+          outputMarkdown(result, null, function (err, result) {
+            t.ifError(err);
+            var outputfile = file.replace('.input.js', '.output.md');
+            if (UPDATE) {
+              fs.writeFileSync(outputfile, result, 'utf8');
+            }
+            var expect = fs.readFileSync(outputfile, 'utf8');
+            t.equal(result.toString(), expect, 'markdown output correct');
+            t.end();
+          });
+        });
+
+        tt.test('markdown AST', function (t) {
+          outputMarkdownAST(result, null, function (err, result) {
+            t.ifError(err);
+            var outputfile = file.replace('.input.js', '.output.md.json');
+            if (UPDATE) {
+              fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
+            }
+            var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
+            t.deepEqual(result, expect, 'markdown AST output correct');
+            t.end();
+          });
+        });
+
+        tt.test('JSON', function (t) {
+          normalize(result);
+          var outputfile = file.replace('.input.js', '.output.json');
           if (UPDATE) {
-            fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
+            fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
           }
-          var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
-          t.deepEqual(result, expect, 'markdown AST output correct');
+          var expect = require(outputfile);
+          t.deepEqual(makePOJO(result), expect);
           t.end();
         });
+
+        tt.end();
       });
     });
   });
-  tt.end();
+  ttt.end();
 });
 
 test('highlightAuto md output', function (t) {
