@@ -716,6 +716,10 @@
                     {
                       "type": "text",
                       "value": "="
+                    },
+                    {
+                      "type": "text",
+                      "value": "(default 2)"
                     }
                   ]
                 },
