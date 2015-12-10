@@ -45,7 +45,7 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 
 ## Documentation
 
-* [Getting_Started](docs/GETTING_STARTED.md): start here
+* [Getting Started](docs/GETTING_STARTED.md): start here
 * [Usage](docs/USAGE.md): how to use documentation.js
 * [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
 * [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
