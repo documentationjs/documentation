@@ -1,5 +1,66 @@
 [
   {
+    "description": "",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 0,
+        "type": null,
+        "name": "Foo"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 17
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 10,
+          "column": 43
+        }
+      },
+      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n\n/** @class Foo */\nmodule.exports = class Foo extends Bar { };\n"
+    },
+    "errors": [
+      {
+        "message": "@memberof reference to module not found",
+        "commentLineNumber": 0
+      }
+    ],
+    "class": {
+      "name": "Foo"
+    },
+    "name": "Foo",
+    "augments": [
+      {
+        "title": "augments",
+        "name": "Bar"
+      }
+    ],
+    "kind": "class",
+    "memberof": "module",
+    "scope": "static",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "Foo"
+    ]
+  },
+  {
     "description": "With ES6, built-in types are extensible!",
     "tags": [],
     "loc": {
@@ -23,7 +84,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n"
+      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n\n/** @class Foo */\nmodule.exports = class Foo extends Bar { };\n"
     },
     "errors": [],
     "name": "SpecialArray",

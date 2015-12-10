@@ -5,3 +5,6 @@ class SpecialArray extends Array {
   additionalMethod() {
   }
 }
+
+/** @class Foo */
+module.exports = class Foo extends Bar { };

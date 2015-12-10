@@ -1,3 +1,7 @@
+# Foo
+
+**Extends Bar**
+
 # SpecialArray
 
 **Extends Array**
