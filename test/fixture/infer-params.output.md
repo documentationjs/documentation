@@ -21,3 +21,15 @@ This method has partially inferred params
 -   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `$0.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
     -   `$0.foxes`  
+
+# Foo
+
+This is foo's documentation
+
+## method
+
+The method
+
+**Parameters**
+
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Param to method

@@ -13,3 +13,15 @@ function addThem(a, b, c, { d, e, f }) {
 function fishesAndFoxes({ fishes, foxes }) {
   return fishes + foxes;
 }
+
+/**
+ * This is foo's documentation
+ */
+class Foo {
+  /**
+   * The method
+   * @param {number} x Param to method
+   */
+  method(x) {
+  }
+}

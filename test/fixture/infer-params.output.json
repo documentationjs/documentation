@@ -34,7 +34,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
     },
     "errors": [],
     "params": [
@@ -129,7 +129,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n"
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
     },
     "errors": [],
     "params": [
@@ -167,6 +167,107 @@
     },
     "path": [
       "fishesAndFoxes"
+    ]
+  },
+  {
+    "description": "This is foo's documentation",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 17,
+        "column": 0
+      },
+      "end": {
+        "line": 19,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+    },
+    "errors": [],
+    "name": "Foo",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "The method",
+          "tags": [
+            {
+              "title": "param",
+              "description": "Param to method",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "x"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 21,
+              "column": 2
+            },
+            "end": {
+              "line": 24,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 2
+              },
+              "end": {
+                "line": 26,
+                "column": 3
+              }
+            },
+            "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n"
+          },
+          "errors": [],
+          "params": [
+            {
+              "title": "param",
+              "description": "Param to method",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "x"
+            }
+          ],
+          "name": "method",
+          "kind": "function",
+          "memberof": "Foo",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "Foo",
+            "method"
+          ]
+        }
+      ],
+      "static": []
+    },
+    "path": [
+      "Foo"
     ]
   }
 ]
