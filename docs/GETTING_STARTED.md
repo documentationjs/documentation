@@ -109,7 +109,7 @@ you'll see are:
 * @private - along with @public and @protected, you can use @private to document
   something for yourself without including it in generated documentation,
   since it isn't part of the public API
-* @example - you can us the @example tag to add code examples of how to
+* @example - you can use the @example tag to add code examples of how to
   use some thing inline with the thing itself
 
 ## Flow type annotations
