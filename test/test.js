@@ -165,24 +165,6 @@ test('markdown', function (tt) {
         });
       });
     });
-
-    tt.test(path.basename(file) + ' custom', function (t) {
-      documentation([file], null, function (err, result) {
-        t.ifError(err);
-        outputMarkdown(result, {
-          theme: path.join(__dirname, '/misc/')
-        }, function (err, result) {
-          t.ifError(err);
-          var outputfile = file.replace('.input.js', '.output.custom.md');
-          if (UPDATE) {
-            fs.writeFileSync(outputfile, result, 'utf8');
-          }
-          var expect = fs.readFileSync(outputfile, 'utf8');
-          t.equal(result.toString(), expect, 'custom output correct');
-          t.end();
-        });
-      });
-    });
   });
   tt.end();
 });
