@@ -135,7 +135,7 @@ you want to read the code for yourself, here's a summary of how it connects
 to your task as a developer.
 
 **Inference**: JSDoc lets you specify absolutely everything about your code:
-use @name to say what something is called @kind for whether it's a function
+use @name to say what something is called, @kind for whether it's a function
 or a class, @param for its parameters, and so on. But writing all of that
 explicitly is tedious, so where it can, `documentation` can automatically
 fill in @name, @kind, and @memberof tags based on its reading of the source
