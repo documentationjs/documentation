@@ -68,6 +68,6 @@
   "scripts": {
     "lint": "eslint bin lib index.js test",
     "doc": "documentation index.js -f md > docs/NODE_API.md",
-    "test": "npm run lint && tap -t 120 --coverage test/*.js test/lib test/misc test/streams"
+    "test": "npm run lint && tap -t 120 --coverage test/*.js test/lib test/streams"
   }
 }
