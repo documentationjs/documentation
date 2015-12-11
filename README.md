@@ -52,7 +52,7 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 * [FAQ](docs/FAQ.md)
 
 * [Theming](docs/THEMING.md): tips for theming documentation output in HTML
-* [See also](docs/SEE_ALSO.md): a list of projects similar to documentation.js
+* [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
 
 ## User Guide
 
