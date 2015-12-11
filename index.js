@@ -57,7 +57,7 @@ function expandInputs(indexes, options, callback) {
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
- * @name documentation
+ * @alias documentation
  * @param {Array<string>|string} indexes files to process
  * @param {Object} options options
  * @param {Array<string>} options.external a string regex / glob match pattern
@@ -70,6 +70,8 @@ function expandInputs(indexes, options, callback) {
  * even in JavaScript code. With the polyglot option set, this has no effect.
  * @param {Array<string|Object>} [options.order=[]] optional array that
  * defines sorting order of documentation
+ * @param {Array<string>} [options.access=[]] an array of access levels
+ * to output in documentation
  * @param {Object} [options.hljs] hljs optional options
  * @param {boolean} [options.hljs.highlightAuto=false] hljs automatically detect language
  * @param {Array} [options.hljs.languages] languages for hljs to choose from
@@ -85,6 +87,10 @@ module.exports = function (indexes, options, callback) {
     indexes = [indexes];
   }
 
+  if (!options.access) {
+    options.access = ['public', 'undefined', 'protected'];
+  }
+
   var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
   return expandInputs(indexes, options, function (error, inputs) {
@@ -93,8 +99,7 @@ module.exports = function (indexes, options, callback) {
     }
     try {
       callback(null,
-        filterAccess(
-          options.private ? [] : undefined,
+        filterAccess(options.access,
           hierarchy(
             inputs
               .filter(filterJS(options.extension))

@@ -189,6 +189,22 @@ test('with an invalid command', function (t) {
   });
 }, options);
 
+test('--access flag', function (t) {
+  documentation(['build --shallow fixture/internal.input.js -a public'], {}, function (err, data) {
+    t.error(err);
+    t.equal(data, '[]');
+    t.end();
+  }, false);
+});
+
+test('--private flag', function (t) {
+  documentation(['build fixture/internal.input.js --private'], {}, function (err, data) {
+    t.error(err);
+    t.ok(data.length > 2, 'outputs docs');
+    t.end();
+  }, false);
+});
+
 test('write to file', function (t) {
 
   var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());

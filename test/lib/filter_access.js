@@ -3,24 +3,39 @@
 var test = require('tap').test,
   filterAccess = require('../../lib/filter_access');
 
-test('filterAccess default', function (t) {
-  t.deepEqual(filterAccess(null, [{
+test('filterAccess public, protected, undefined, no private', function (t) {
+  t.deepEqual(filterAccess(['public', 'protected', 'undefined'], [{
+    access: 'public'
+  }, {
+    access: 'protected'
+  }, {
+    foo: 2
+  }, {
     access: 'private'
-  }]), []);
+  }]), [{
+    access: 'public'
+  }, {
+    access: 'protected'
+  }, {
+    foo: 2
+  }]);
   t.end();
 });
 
-test('filterAccess public', function (t) {
-  t.deepEqual(filterAccess(null, [{
-    access: 'public'
-  }]), [{
+test('filterAccess explicit public', function (t) {
+  t.deepEqual(filterAccess(['public'], [
+    { access: 'public' },
+    { access: 'protected' },
+    { foo: 2 },
+    { access: 'private' }]),
+  [{
     access: 'public'
   }]);
   t.end();
 });
 
 test('filterAccess override', function (t) {
-  t.deepEqual(filterAccess([], [{
+  t.deepEqual(filterAccess(['private'], [{
     access: 'private'
   }]), [{
     access: 'private'
@@ -29,7 +44,7 @@ test('filterAccess override', function (t) {
 });
 
 test('filterAccess nesting', function (t) {
-  t.deepEqual(filterAccess(null, [{
+  t.deepEqual(filterAccess(['public', 'protected', 'undefined'], [{
     access: 'public',
     members: {
       static: [{

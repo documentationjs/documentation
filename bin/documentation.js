@@ -51,6 +51,13 @@ function parseArgs() {
       default: false,
       alias: 'p'
     })
+    .option('access', {
+      describe: 'Include only comments with a given access level, out of private, ' +
+        'protected, public, undefined. By default, public, protected, and undefined access ' +
+        'levels are included',
+      choices: ['public', 'private', 'protected', 'undefined'],
+      alias: 'a'
+    })
     .option('github', {
       type: 'boolean',
       describe: 'infer links to github in documentation',
@@ -63,6 +70,14 @@ function parseArgs() {
     options = loadConfig(argv.config);
   }
   options = extend(options, argv);
+
+  if (typeof options.access === 'string') {
+    options.access = [options.access];
+  }
+
+  if (options.private) {
+    options.access = (options.access || ['public', 'undefined', 'protected']).concat(['private']);
+  }
 
   var command = argv._[0],
     inputs = argv._.slice(1);
