@@ -1,10 +1,10 @@
 # documentation
 
 [![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation/tree/master)
-[![Coverage Status](https://coveralls.io/repos/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/r/documentationjs/documentation?branch=master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![David](https://david-dm.org/documentationjs/documentation.svg)](https://david-dm.org/documentationjs/documentation)
+[![codecov.io](https://codecov.io/github/documentationjs/documentation/coverage.svg?branch=master)](https://codecov.io/github/documentationjs/documentation?branch=master)
 
 A **documentation generation system** that's
 _beautiful_ by default, _flexible_ across formats and styles, and
