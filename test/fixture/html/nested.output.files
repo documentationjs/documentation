@@ -1786,6 +1786,11 @@ h4:hover .anchorjs-link {
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
+  
+  
+  
+  
+  
   <p>Get an instance of <a href="#Klass">Klass</a>. Will make
 a <a href="#Klass">klass instance multiword</a>,
 like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> input.</p>
@@ -1803,6 +1808,11 @@ like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozil
   <h2 id='bar' class='mt0'>
     bar<span class='gray'>(toys)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>Rest property function</p>
 
     <h4>Parameters</h4>
@@ -1829,6 +1839,11 @@ like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozil
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
+  
+  
+  
+  
+  
   <p>Get an instance of <a href="#Klass">Klass</a>. Will make
 a <a href="#Klass">klass instance multiword</a>,
 like a <a href="#Klass">klass</a></p>
@@ -1846,6 +1861,11 @@ like a <a href="#Klass">klass</a></p>
   <h2 id='Klass' class='mt0'>
     Klass<span class='gray'>(foo)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>Creates a new Klass</p>
 
     <h4>Parameters</h4>
@@ -1873,6 +1893,11 @@ like a <a href="#Klass">klass</a></p>
   <h2 id='Klass.event' class='mt0'>
     event<span class='gray'></span>
   </h2>
+  
+  
+  
+  
+  
   <p>Klass event</p>
 
 </section>
@@ -1893,6 +1918,11 @@ like a <a href="#Klass">klass</a></p>
   <h2 id='Klass.isArrayOfBuffers' class='mt0'>
     isArrayOfBuffers<span class='gray'>(buffers)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>This method takes an array of buffers and counts them</p>
 
     <h4>Parameters</h4>
@@ -1938,6 +1968,11 @@ k.isArrayOfBuffers();</pre>
   <h2 id='Klass.isBuffer' class='mt0'>
     isBuffer<span class='gray'>(buf, [size])</span>
   </h2>
+  
+  
+  
+  
+  
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
     <h4>Parameters</h4>
@@ -1992,6 +2027,11 @@ This is a link to something that does not exist</p>
   <h2 id='Klass.isClass' class='mt0'>
     isClass<span class='gray'>(other, also)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>Decide whether an object is a Klass instance
 This is a klasssic
 This is a link to something that does not exist</p>
@@ -2040,6 +2080,11 @@ the referenced class type</p>
   <h2 id='Klass.isWeird' class='mt0'>
     isWeird<span class='gray'>(other)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>A function that triggers the case where the autolinker doesn't find
 the referenced class type</p>
 
@@ -2079,6 +2124,11 @@ the referenced class type</p>
   <h2 id='Klass.MAGIC_NUMBER' class='mt0'>
     MAGIC_NUMBER<span class='gray'></span>
   </h2>
+  
+  
+  
+  
+  
   <p>A magic number that identifies this Klass.</p>
 
 </section>
@@ -2100,6 +2150,11 @@ the referenced class type</p>
   <h2 id='Klass.getFoo' class='mt0'>
     getFoo<span class='gray'></span>
   </h2>
+  
+  
+  
+  
+  
   <p>Get this Klass's foo</p>
 
       <h4>Returns</h4>
@@ -2130,6 +2185,11 @@ the referenced class type</p>
   <h2 id='Klass.withOptions' class='mt0'>
     withOptions<span class='gray'>(options, otherOptions)</span>
   </h2>
+  
+  
+  
+  
+  
   <p>A function with an options parameter</p>
 
     <h4>Parameters</h4>
