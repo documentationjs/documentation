@@ -28,7 +28,7 @@
     "jsdoc-inline-lex": "^1.0.1",
     "mdast": "^2.0.0",
     "mdast-toc": "^1.1.0",
-    "mdast-util-inject": "^1.0.0",
+    "mdast-util-inject": "^1.1.0",
     "micromatch": "^2.1.6",
     "mime": "^1.3.4",
     "module-deps": "^4.0.2",

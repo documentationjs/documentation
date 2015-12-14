@@ -87,6 +87,14 @@ test('readme command', function (group) {
       });
     });
 
+    group.test('errors if specified readme section is missing', function (t) {
+      documentation(['readme index.js -s DUMMY'], {cwd: d}, function (err, stdout, stderr) {
+        t.ok(err);
+        t.ok(err.code !== 0, 'exit nonzero');
+        t.end();
+      });
+    });
+
     group.end();
   });
 });
