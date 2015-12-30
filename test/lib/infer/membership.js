@@ -165,11 +165,11 @@ test('inferMembership - explicit', function (t) {
   
   t.deepEqual(_.pick(evaluate(function () {
     /** Foo */
-    function Foo(){
+    function Foo() {
       /** Test */
-      function bar(){}
+      function bar() {}
       return {
-          bar: bar
+        bar: bar
       };
     }
   })[1], ['memberof', 'scope']), {
