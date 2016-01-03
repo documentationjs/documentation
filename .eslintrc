@@ -15,6 +15,7 @@
     "no-lonely-if": 2,
     "max-len": [2, 120],
     "no-else-return": 2,
+    "no-trailing-spaces": 2,
     "new-cap": 2,
     "no-empty": 2,
     "consistent-return": 0,
