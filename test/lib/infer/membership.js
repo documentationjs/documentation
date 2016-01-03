@@ -162,7 +162,21 @@ test('inferMembership - explicit', function (t) {
     memberof: 'Foo',
     scope: 'instance'
   }, 'inferMembership - lends, instance, function');
-
+  
+  t.deepEqual(_.pick(evaluate(function () {
+    /** Foo */
+    function Foo() {
+      /** Test */
+      function bar() {}
+      return {
+        bar: bar
+      };
+    }
+  })[1], ['memberof', 'scope']), {
+    memberof: 'Foo',
+    scope: 'static'
+  }, 'inferMembership - revealing, static, function');
+  
   t.equal(evaluate(function () {
     lend(/** @lends Foo */{});
     /** Test */
