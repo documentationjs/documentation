@@ -112,6 +112,22 @@ test('flowDoctrine', function (t) {
       name: 'undefined'
     }, 'undefined');
 
+  t.deepEqual(flowDoctrine(toComment(
+      "/** add */function add(a: \"value\") { }"
+    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    {
+      type: 'StringLiteral',
+      name: 'value'
+    }, 'StringLiteral');
+
+  t.deepEqual(flowDoctrine(toComment(
+      "/** add */function add(a: 1) { }"
+    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    {
+      type: 'NumberLiteral',
+      name: '1'
+    }, 'NumberLiteral');
+
   t.end();
 });
 /* eslint-enable */
