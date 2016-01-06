@@ -128,6 +128,14 @@ test('flowDoctrine', function (t) {
       name: '1'
     }, 'NumberLiteral');
 
+  t.deepEqual(flowDoctrine(toComment(
+      "/** add */function add(a: true) { }"
+    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    {
+      type: 'BooleanLiteral',
+      name: true
+    }, 'BooleanLiteral');
+
   t.end();
 });
 /* eslint-enable */
