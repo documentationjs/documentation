@@ -1,0 +1,46 @@
+[
+  {
+    "description": "This function returns the number plus two.",
+    "tags": [
+      {
+        "title": "example",
+        "description": null,
+        "lineNumber": 3
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 5,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number plus two.\n *\n * @example\n */\nfunction returnTwo() {\n  return a + 2;\n}\n"
+    },
+    "errors": [],
+    "examples": [null],
+    "name": "returnTwo",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "returnTwo"
+    ]
+  }
+]
