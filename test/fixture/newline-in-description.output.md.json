@@ -6,7 +6,8 @@
       "type": "heading",
       "children": [
         {
-          "type": "text"
+          "type": "text",
+          "value": ""
         }
       ]
     },

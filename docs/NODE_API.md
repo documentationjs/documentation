@@ -18,7 +18,7 @@ Returns **string** potentially linked HTML
 
 # commentsToAST
 
-Given a hierarchy-nested set of comments, generate an mdast-compatible
+Given a hierarchy-nested set of comments, generate an remark-compatible
 Abstract Syntax Usable for generating Markdown output
 
 
@@ -583,7 +583,7 @@ split from the main function to handle hierarchially nested comments
 
 
 
-Returns **Object** mdast-compatible AST
+Returns **Object** remark-compatible AST
 
 
 
