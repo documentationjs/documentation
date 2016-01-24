@@ -38,6 +38,7 @@ test('readme command', function (group) {
       var before = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
       documentation(['readme index.js --diff-only -s API'], {cwd: d}, function (err, stdout, stderr) {
         var after = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
+        t.equal(stderr, '');
         t.ok(err);
         t.notEqual(err.code, 0, 'exit nonzero');
         t.same(after, before, 'readme unchanged');
