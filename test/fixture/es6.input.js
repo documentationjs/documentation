@@ -74,3 +74,10 @@ export default multiply;
  * @returns {Number} numberone
  */
 module.exports = () => (<p>hello</p>);
+
+/**
+ * This tests our support of optional parameters in ES6
+ */
+function veryImportantTransform(foo = 'bar') {
+  return "42";
+}

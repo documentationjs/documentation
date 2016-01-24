@@ -89,3 +89,11 @@ Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 # staticProp
 
 This is a property of the sink.
+
+# veryImportantTransform
+
+This tests our support of optional parameters in ES6
+
+**Parameters**
+
+-   `foo`   (optional, default `'bar'`)

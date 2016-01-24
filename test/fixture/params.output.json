@@ -1,0 +1,894 @@
+[
+  {
+    "description": "Represents an IPv6 address\n\nThis tests  our support of optional parameters",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 4,
+        "type": null,
+        "name": "Address6"
+      },
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "address"
+      },
+      {
+        "title": "param",
+        "description": "How many octets to parse",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "groups",
+        "default": "8"
+      },
+      {
+        "title": "param",
+        "description": "A third argument",
+        "lineNumber": 7,
+        "type": {
+          "type": "NullableType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "prefix": true
+        },
+        "name": "third"
+      },
+      {
+        "title": "param",
+        "description": "to properly be parsed",
+        "lineNumber": 8,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          }
+        },
+        "name": "foo",
+        "default": "[1]"
+      },
+      {
+        "title": "example",
+        "description": "var address = new Address6('2001::/32');",
+        "lineNumber": 9
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 37,
+        "column": 0
+      },
+      "end": {
+        "line": 48,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 49,
+          "column": 0
+        },
+        "end": {
+          "line": 49,
+          "column": 22
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "class": {
+      "name": "Address6"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 5,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "address"
+      },
+      {
+        "title": "param",
+        "description": "How many octets to parse",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "groups",
+        "default": "8"
+      },
+      {
+        "title": "param",
+        "description": "A third argument",
+        "lineNumber": 7,
+        "type": {
+          "type": "NullableType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "prefix": true
+        },
+        "name": "third"
+      },
+      {
+        "title": "param",
+        "description": "to properly be parsed",
+        "lineNumber": 8,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          }
+        },
+        "name": "foo",
+        "default": "[1]"
+      }
+    ],
+    "examples": [
+      "var address = new Address6('2001::/32');"
+    ],
+    "name": "Address6",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "Address6"
+    ]
+  },
+  {
+    "description": "This function returns the number one.",
+    "tags": [
+      {
+        "title": "param",
+        "description": "the second param",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "b"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 5
+      },
+      {
+        "title": "param",
+        "description": "the second param",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "b"
+      },
+      {
+        "title": "param",
+        "name": "c",
+        "lineNumber": 5
+      },
+      {
+        "title": "param",
+        "name": "$3",
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "properties": [
+          {
+            "title": "param",
+            "name": "$3.d",
+            "lineNumber": 5
+          },
+          {
+            "title": "param",
+            "name": "$3.e",
+            "lineNumber": 5
+          },
+          {
+            "title": "param",
+            "name": "$3.f",
+            "lineNumber": 5
+          }
+        ]
+      }
+    ],
+    "name": "addThem",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "addThem"
+    ]
+  },
+  {
+    "description": "This method has partially inferred params",
+    "tags": [
+      {
+        "title": "param",
+        "description": "number of kinds of fish",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "String"
+        },
+        "name": "$0.fishes"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 12,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 0
+        },
+        "end": {
+          "line": 15,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "$0",
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "properties": [
+          {
+            "title": "param",
+            "description": "number of kinds of fish",
+            "lineNumber": 2,
+            "type": {
+              "type": "NameExpression",
+              "name": "String"
+            },
+            "name": "$0.fishes"
+          },
+          {
+            "title": "param",
+            "name": "$0.foxes",
+            "lineNumber": 13
+          }
+        ]
+      }
+    ],
+    "name": "fishesAndFoxes",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "fishesAndFoxes"
+    ]
+  },
+  {
+    "description": "This is foo's documentation",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 25,
+        "column": 0
+      },
+      "end": {
+        "line": 27,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 28,
+          "column": 0
+        },
+        "end": {
+          "line": 35,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "name": "Foo",
+    "kind": "class",
+    "members": {
+      "instance": [
+        {
+          "description": "The method",
+          "tags": [
+            {
+              "title": "param",
+              "description": "Param to method",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "x"
+            }
+          ],
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 2
+            },
+            "end": {
+              "line": 32,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 2
+              },
+              "end": {
+                "line": 34,
+                "column": 3
+              }
+            },
+            "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+          },
+          "errors": [],
+          "params": [
+            {
+              "title": "param",
+              "description": "Param to method",
+              "lineNumber": 2,
+              "type": {
+                "type": "NameExpression",
+                "name": "number"
+              },
+              "name": "x"
+            }
+          ],
+          "name": "method",
+          "kind": "function",
+          "memberof": "Foo",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            "Foo",
+            "method"
+          ]
+        }
+      ],
+      "static": []
+    },
+    "path": [
+      "Foo"
+    ]
+  },
+  {
+    "description": "This tests our support of JSDoc param tags without type information,\nor any type information we could infer from annotations.",
+    "tags": [
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 4,
+        "type": null,
+        "name": "address"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 77,
+        "column": 0
+      },
+      "end": {
+        "line": 82,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 83,
+          "column": 0
+        },
+        "end": {
+          "line": 85,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": "An IPv6 address string",
+        "lineNumber": 4,
+        "type": null,
+        "name": "address"
+      }
+    ],
+    "name": "foo",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "foo"
+    ]
+  },
+  {
+    "description": "Create a GeoJSON data source instance given an options object\n\nThis tests our support of nested parameters",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 4,
+        "type": null,
+        "name": "GeoJSONSource"
+      },
+      {
+        "title": "param",
+        "description": "optional options",
+        "lineNumber": 5,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+            "lineNumber": 6,
+            "type": {
+              "type": "UnionType",
+              "elements": [
+                {
+                  "type": "NameExpression",
+                  "name": "Object"
+                },
+                {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              ]
+            },
+            "name": "options.data"
+          },
+          {
+            "title": "param",
+            "description": "Maximum zoom to preserve detail at.",
+            "lineNumber": 8,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.maxzoom",
+            "default": "14"
+          },
+          {
+            "title": "param",
+            "description": "Tile buffer on each side.",
+            "lineNumber": 9,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.buffer"
+          },
+          {
+            "title": "param",
+            "description": "Simplification tolerance (higher means simpler).",
+            "lineNumber": 10,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.tolerance"
+          }
+        ]
+      },
+      {
+        "title": "param",
+        "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+        "lineNumber": 6,
+        "type": {
+          "type": "UnionType",
+          "elements": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            },
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        },
+        "name": "options.data"
+      },
+      {
+        "title": "param",
+        "description": "Maximum zoom to preserve detail at.",
+        "lineNumber": 8,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.maxzoom",
+        "default": "14"
+      },
+      {
+        "title": "param",
+        "description": "Tile buffer on each side.",
+        "lineNumber": 9,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.buffer"
+      },
+      {
+        "title": "param",
+        "description": "Simplification tolerance (higher means simpler).",
+        "lineNumber": 10,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        "name": "options.tolerance"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 51,
+        "column": 0
+      },
+      "end": {
+        "line": 62,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 63,
+          "column": 0
+        },
+        "end": {
+          "line": 65,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "class": {
+      "name": "GeoJSONSource"
+    },
+    "params": [
+      {
+        "title": "param",
+        "description": "optional options",
+        "lineNumber": 5,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options",
+        "properties": [
+          {
+            "title": "param",
+            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+            "lineNumber": 6,
+            "type": {
+              "type": "UnionType",
+              "elements": [
+                {
+                  "type": "NameExpression",
+                  "name": "Object"
+                },
+                {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              ]
+            },
+            "name": "options.data"
+          },
+          {
+            "title": "param",
+            "description": "Maximum zoom to preserve detail at.",
+            "lineNumber": 8,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.maxzoom",
+            "default": "14"
+          },
+          {
+            "title": "param",
+            "description": "Tile buffer on each side.",
+            "lineNumber": 9,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.buffer"
+          },
+          {
+            "title": "param",
+            "description": "Simplification tolerance (higher means simpler).",
+            "lineNumber": 10,
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            },
+            "name": "options.tolerance"
+          }
+        ]
+      }
+    ],
+    "name": "GeoJSONSource",
+    "kind": "class",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "GeoJSONSource"
+    ]
+  },
+  {
+    "description": "This tests our support for parameters with explicit types but with default\nvalues specified in code.",
+    "tags": [
+      {
+        "title": "param",
+        "description": "an argument",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      },
+      {
+        "title": "returns",
+        "description": "some",
+        "lineNumber": 6,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 67,
+        "column": 0
+      },
+      "end": {
+        "line": 74,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 75,
+          "column": 0
+        },
+        "end": {
+          "line": 75,
+          "column": 37
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": "an argument",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        },
+        "name": "x"
+      }
+    ],
+    "returns": [
+      {
+        "title": "returns",
+        "description": "some",
+        "lineNumber": 6,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "name": "myfunc",
+    "kind": "constant",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "myfunc"
+    ]
+  },
+  {
+    "description": "This method has a type in the description and a default in the code",
+    "tags": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 2,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "default": "2"
+        },
+        "name": "x"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 17,
+        "column": 0
+      },
+      "end": {
+        "line": 20,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n * @param {number} b the second param\n */\nfunction addThem(a, b, c, { d, e, f }) {\n  return a + b + c + d + e + f;\n}\n\n/**\n * This method has partially inferred params\n * @param {String} $0.fishes number of kinds of fish\n */\nfunction fishesAndFoxes({ fishes, foxes }) {\n  return fishes + foxes;\n}\n\n/**\n * This method has a type in the description and a default in the code\n * @param {number} x\n */\nfunction withDefault(x = 2) {\n  return x;\n}\n\n/**\n * This is foo's documentation\n */\nclass Foo {\n  /**\n   * The method\n   * @param {number} x Param to method\n   */\n  method(x) {\n  }\n}\n\n/**\n * Represents an IPv6 address\n *\n * This tests  our support of optional parameters\n * @class Address6\n * @param {string} address - An IPv6 address string\n * @param {number} [groups=8] - How many octets to parse\n * @param {?number} third - A third argument\n * @param {Array} [foo=[1]] to properly be parsed\n * @example\n * var address = new Address6('2001::/32');\n */\nfunction Address6() {}\n\n/**\n * Create a GeoJSON data source instance given an options object\n *\n * This tests our support of nested parameters\n * @class GeoJSONSource\n * @param {Object} [options] optional options\n * @param {Object|string} options.data A GeoJSON data object or URL to it.\n * The latter is preferable in case of large GeoJSON files.\n * @param {number} [options.maxzoom=14] Maximum zoom to preserve detail at.\n * @param {number} [options.buffer] Tile buffer on each side.\n * @param {number} [options.tolerance] Simplification tolerance (higher means simpler).\n */\nfunction GeoJSONSource(options) {\n  this.options = options;\n}\n\n/**\n * This tests our support for parameters with explicit types but with default\n * values specified in code.\n *\n * @param {number} x an argument\n *\n * @returns {number} some\n */\nexport const myfunc = (x = 123) => x;\n\n/**\n * This tests our support of JSDoc param tags without type information,\n * or any type information we could infer from annotations.\n *\n * @param address - An IPv6 address string\n */\nfunction foo(address) {\n  return address;\n}\n"
+    },
+    "errors": [],
+    "params": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 2,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "default": "2"
+        },
+        "name": "x"
+      }
+    ],
+    "name": "withDefault",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "withDefault"
+    ]
+  }
+]
