@@ -1,15 +1,54 @@
-## 4.0.0
+## 4.0.0-beta
 
 **Revitalized documentation.js command line interface!**
 
 The `documentation` utility now takes commands:
 
 * `documentation build` extracts and formats documentation
-* `documentation serve` provides an auto-reloading server
+* `documentation serve` provides an auto-reloading server ([#236](https://github.com/documentationjs/documentation/pull/236))
 * `documentation lint` reviews files for inconsistencies
+* `documentation readme` patches API documentation into a readme ([#313](https://github.com/documentationjs/documentation/pull/313) by @anandthakker)
 
 This functionality was previously included in `dev-documentation` and has
 been folded into `documentation` proper.
+
+**Much more flexible themes**
+
+Themes are now much more customizable. In documentation.js 3.x and before, themes
+were required to use Handlebars templates and produce a single page. In
+documentation.js 4.x and beyond, they are JavaScript modules that can use
+any template engine and produce any number of files. See the
+[new theme documentation](https://github.com/documentationjs/documentation/blob/master/docs/THEMING.md) for
+details.
+
+**More precise traversal**
+
+Inference in 4.x is stricter than in 3.x: comments must be adjacent
+to the statements they document. This should make documentation generation
+much more predictable.
+
+**Support for the revealing module pattern**
+
+```js
+/** Foo */
+function Foo() {
+  /** Test */
+  function bar() {}
+  return {
+    bar: bar
+  };
+}
+````
+
+New support for the [JavaScript module pattern](http://www.macwright.org/2012/06/04/the-module-pattern.html)!
+This was implemented in [#324](https://github.com/documentationjs/documentation/pull/324)
+by [Charlie Brown](https://github.com/carbonrobot).
+
+**Breaking changes**
+
+* documentation.js now follows the [JSDoc standard's interpretation of the @name tag](http://usejsdoc.org/tags-name.html):
+  specifying a name tag will turn off inference. If you still want inference
+  but want to call code something else, use the [@alias tag](http://usejsdoc.org/tags-alias.html) instead.
 
 ## 3.0.4
 
