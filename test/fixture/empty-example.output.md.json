@@ -51,9 +51,9 @@
         }
       ]
     },
-    {                                           
-         "lang": "javascript",
-         "type": "code"
+    {
+      "lang": "javascript",
+      "type": "code"
     }
   ]
 }

@@ -32,7 +32,9 @@
       "code": "/**\n * This function returns the number plus two.\n *\n * @example\n */\nfunction returnTwo() {\n  return a + 2;\n}\n"
     },
     "errors": [],
-    "examples": [null],
+    "examples": [
+      null
+    ],
     "name": "returnTwo",
     "kind": "function",
     "members": {
