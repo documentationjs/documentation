@@ -259,7 +259,7 @@ test('write to html, highlightAuto', function (t) {
       var result = fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8');
       t.ok(result.indexOf('<span class="hljs-number">42</span>') > 0,
         'javascript is recognized by highlightjs');
-      t.ok(result.indexOf('<span class="hljs-attr_selector">[data-foo]</span>') > 0,
+      t.ok(result.indexOf('<span class="hljs-attr">[data-foo]</span>') > 0,
         'css is recognized by highlightjs');
       t.ok(result.indexOf('<span class="hljs-attribute">data-foo</span>') > 0,
         'html is recognized by highlightjs');
