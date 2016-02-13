@@ -28,7 +28,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
         fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
       }
       var expect = require(outputfile);
-      t.deepEqual(result, expect);
+      t.deepEqual(result, expect, 'produces correct JSON');
 
       outputMarkdown(result, null, function (err, result) {
         t.ifError(err);

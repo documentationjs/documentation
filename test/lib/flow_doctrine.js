@@ -16,7 +16,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: number) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'number'
@@ -24,7 +24,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: string) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'string'
@@ -32,14 +32,14 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: any) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'AllLiteral'
     }, 'all');
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: ?number) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'OptionalType',
       expression: {
@@ -50,7 +50,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: number | string) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'UnionType',
       elements: [
@@ -67,7 +67,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: Object) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'Object'
@@ -75,7 +75,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: Array) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'Array'
@@ -83,7 +83,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: Array<number>) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'TypeApplication',
       expression: {
@@ -98,7 +98,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: boolean) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'boolean'
@@ -106,7 +106,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: undefined) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NameExpression',
       name: 'undefined'
@@ -114,7 +114,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: \"value\") { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'StringLiteral',
       name: 'value'
@@ -122,7 +122,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: 1) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'NumberLiteral',
       name: '1'
@@ -130,7 +130,7 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: true) { }"
-    ).context.ast.value.params[0].typeAnnotation.typeAnnotation),
+    ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
       type: 'BooleanLiteral',
       name: true
