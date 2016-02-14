@@ -4,7 +4,7 @@
     "tags": [
       {
         "title": "example",
-        "description": null,
+        "description": "",
         "lineNumber": 3
       }
     ],
@@ -33,7 +33,11 @@
     },
     "errors": [],
     "examples": [
-      null
+      {
+        "title": "example",
+        "description": "",
+        "lineNumber": 3
+      }
     ],
     "name": "returnTwo",
     "kind": "function",

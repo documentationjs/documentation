@@ -95,7 +95,11 @@
       }
     ],
     "examples": [
-      "var result = returnTwo(4);\n// result is 6"
+      {
+        "title": "example",
+        "description": "var result = returnTwo(4);\n// result is 6",
+        "lineNumber": 6
+      }
     ],
     "name": "returnTwo",
     "kind": "function",

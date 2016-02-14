@@ -11,7 +11,7 @@ function Klass(foo) {
 /**
  * Get this Klass's foo
  * @returns {Number} foo
- * @example
+ * @example <caption>this shows you how to getFoo</caption>
  * foo.getFoo();
  */
 Klass.prototype.getFoo = function () {

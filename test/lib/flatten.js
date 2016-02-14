@@ -43,9 +43,13 @@ test('flatten', function (t) {
     /** @returns {number} test */
   })[0].returns[0].description, 'test', 'returns');
 
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @example test */
-  })[0].examples[0], 'test', 'example');
+  })[0].examples[0], {
+    lineNumber: 0,
+    title: 'example',
+    description: 'test'
+  }, 'example');
 
   t.equal(evaluate(function () {
     /** @throws {Object} exception */
