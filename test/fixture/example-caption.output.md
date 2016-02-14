@@ -1,0 +1,13 @@
+# foo
+
+This function returns the number one.
+
+**Examples**
+
+_demonstrates how to run foo_
+
+```javascript
+foo(1);
+```
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone

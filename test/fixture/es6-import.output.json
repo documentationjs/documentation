@@ -644,26 +644,26 @@
     ],
     "loc": {
       "start": {
-        "line": 3,
+        "line": 4,
         "column": 0
       },
       "end": {
-        "line": 6,
+        "line": 7,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 0
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 43
         }
       },
-      "code": "import multiply from \"./es6.input.js\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
+      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
     },
     "errors": [],
     "returns": [
@@ -683,7 +683,7 @@
       {
         "title": "param",
         "name": "a",
-        "lineNumber": 7
+        "lineNumber": 8
       }
     ],
     "members": {
