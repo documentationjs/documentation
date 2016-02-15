@@ -33,5 +33,15 @@ module.exports = {
         }
       }
     }
+  },
+  malformed: {
+    '/my': {
+      repository: {
+        path: {
+          '.git': {},
+          'index.js': 'module.exports = 42;'
+        }
+      }
+    }
   }
 };

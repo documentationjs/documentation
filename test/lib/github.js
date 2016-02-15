@@ -39,3 +39,22 @@ test('github', function (t) {
 
   t.end();
 });
+
+test('malformed repository', function (t) {
+
+  mock(mockRepo.malformed);
+
+  t.equal(evaluate(function () {
+    /**
+     * get one
+     * @returns {number} one
+     */
+    function getOne() {
+      return 1;
+    }
+  })[0].context.github, undefined, 'does not crash');
+
+  mock.restore();
+
+  t.end();
+});
