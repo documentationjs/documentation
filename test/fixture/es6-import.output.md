@@ -2,6 +2,11 @@
 
 This is a sink
 
+## aGetter
+
+This is a getter method: it should be documented
+as a property.
+
 ## constructor
 
 **Parameters**

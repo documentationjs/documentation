@@ -1621,6 +1621,16 @@ h4:hover .anchorjs-link {
             type='text' />
           <div id='toc'>
               <a
+                href='#Foo'
+                class='block bold'>
+                Foo
+              </a>
+                <a
+                  href='#Foo.bar'
+                  class='regular block'>
+                  #bar
+                </a>
+              <a
                 href='#bar'
                 class='block bold'>
                 bar
@@ -1686,6 +1696,44 @@ h4:hover .anchorjs-link {
       <div class='fix-margin-3'>
         <div class='px2'>
 <div class='py1'><section class='py2 clearfix'>
+  <h2 id='Foo' class='mt0'>
+    Foo<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This is Foo</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Foo.bar'>
+          <a href='#Foo.bar'>
+            <code>
+              #bar<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>This is bar</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Foo.bar' class='mt0'>
+    bar<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This is bar</p>
+
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>

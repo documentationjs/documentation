@@ -118,3 +118,13 @@ function bar() {
  */
 
 bar();
+
+/**
+ * This is Foo
+ */
+class Foo {
+  /**
+   * This is bar
+   */
+  get bar() { }
+}
