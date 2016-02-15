@@ -48,6 +48,51 @@
       "children": [
         {
           "type": "text",
+          "value": "aGetter"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a getter method: it should be documented\nas a property.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1
+            },
+            "end": {
+              "line": 2,
+              "column": 15
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1
+        },
+        "end": {
+          "line": 2,
+          "column": 15
+        },
+        "indent": [
+          1
+        ]
+      }
+    },
+    {
+      "depth": 2,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
           "value": "constructor"
         }
       ]

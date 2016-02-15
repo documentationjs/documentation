@@ -36,6 +36,18 @@ test('inferKind', function (t) {
     foo();
   })).kind, 'function', 'inferred var function');
 
+  t.equal(inferKind(toComment(
+    'class Foo { /** set b */ set b(v) { } }'
+  )).kind, 'member', 'member via set');
+
+  t.equal(inferKind(toComment(
+    'class Foo { /** get b */ get b() { } }'
+  )).kind, 'member', 'member via get');
+
+  t.equal(inferKind(toComment(
+    'class Foo { /** b */ b(v) { } }'
+  )).kind, 'function', 'normal function as part of class');
+
   t.equal(inferKind(toComment(function () {
     /** class */
     function Foo() { }

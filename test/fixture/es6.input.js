@@ -41,6 +41,14 @@ class Sink {
   }
 
   /**
+   * This is a getter method: it should be documented
+   * as a property.
+   */
+  get aGetter() {
+    return 42;
+  }
+
+  /**
    * @param {number} height the height of the thing
    * @param {number} width the width of the thing
    */
