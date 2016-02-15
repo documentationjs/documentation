@@ -2,10 +2,9 @@
   "root": true,
   "parser": "espree",
   "rules": {
-    "space-before-function-paren": 2,
     "space-in-parens": 2,
     "space-before-blocks": 2,
-    "space-after-keywords": 2,
+    "keyword-spacing": 2,
     "space-unary-ops": 2,
     "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
     "no-use-before-define": [2, "nofunc"],
