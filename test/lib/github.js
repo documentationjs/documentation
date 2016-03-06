@@ -58,3 +58,24 @@ test('malformed repository', function (t) {
 
   t.end();
 });
+
+test('enterprise repository', function (t) {
+
+  mock(mockRepo.enterprise);
+
+  t.equal(evaluate(function () {
+    /**
+     * get one
+     * @returns {number} one
+     */
+    function getOne() {
+      return 1;
+    }
+  })[0].context.github,
+  'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8',
+  'gets github enterprise url');
+
+  mock.restore();
+
+  t.end();
+});
