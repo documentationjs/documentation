@@ -82,6 +82,11 @@ test('inferName', function (t) {
   }).name, 'explicitName', 'explicit name');
 
   t.equal(evaluate(function () {
+    /** @alias explicitAlias */
+    function implicitName() {}
+  }).name, 'explicitAlias', 'explicit alias');
+
+  t.equal(evaluate(function () {
     /** @class ExplicitClass */
     function ImplicitClass() {}
     return ImplicitClass;
