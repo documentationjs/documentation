@@ -57,28 +57,21 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /** Test */
     function name() {}
-    return name;
   }).name, 'name', 'function declaration');
 
   t.equal(evaluate(function () {
     /** Test */
     var name = function () {};
-    return name;
   }).name, 'name', 'anonymous function expression');
 
   t.equal(evaluate(function () {
     /** Test */
     var name = function name2() {};
-    return name;
   }).name, 'name', 'named function expression');
 
   t.equal(evaluate(function () {
-    /**
-     * Test
-     * @name explicitName
-     */
+    /** @name explicitName */
     function implicitName() {}
-    return implicitName;
   }).name, 'explicitName', 'explicit name');
 
   t.equal(evaluate(function () {
@@ -89,67 +82,45 @@ test('inferName', function (t) {
   t.equal(evaluate(function () {
     /** @class ExplicitClass */
     function ImplicitClass() {}
-    return ImplicitClass;
   }).name, 'ExplicitClass', 'explicit class');
 
   t.equal(evaluate(function () {
     /** @class */
     function ImplicitClass() {}
-    return ImplicitClass;
   }).name, 'ImplicitClass', 'anonymous class');
 
   t.equal(evaluate(function () {
-    /**
-     * @event explicitEvent
-     */
+    /** @event explicitEvent */
     function implicitName() {}
-    return implicitName;
   }).name, 'explicitEvent', 'explicitEvent');
 
   t.equal(evaluate(function () {
-    /**
-     * @typedef {Object} ExplicitTypedef
-     */
+    /** @typedef {Object} ExplicitTypedef */
     function implicitName() {}
-    return implicitName;
   }).name, 'ExplicitTypedef', 'ExplicitTypedef');
 
   t.equal(evaluate(function () {
-    /**
-     * @callback explicitCallback
-     */
+    /** @callback explicitCallback */
     function implicitName() {}
-    return implicitName;
   }).name, 'explicitCallback', 'explicitCallback');
 
   t.equal(evaluate(function () {
-    /**
-     * @module explicitModule
-     */
+    /** @module explicitModule */
     function implicitName() {}
-    return implicitName;
   }).name, 'explicitModule');
 
   t.equal(evaluate(function () {
-    /**
-     * @module {Function} explicitModule
-     */
+    /** @module {Function} explicitModule */
     function implicitName() {}
-    return implicitName;
   }).name, 'explicitModule');
 
   t.equal(evaluate(function () {
-    /**
-     * @module
-     */
+    /** @module */
     function implicitName() {}
-    return implicitName;
   }, '/path/inferred-from-file.js').name, 'inferred-from-file');
 
   t.equal(evaluate(function () {
-    /**
-     * @module
-     */
+    /** @module */
   }, '/path/inferred-from-file.js').name, 'inferred-from-file');
 
   t.end();
