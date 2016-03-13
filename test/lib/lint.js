@@ -19,22 +19,22 @@ function evaluate(fn) {
 test('lintComments', function (t) {
   t.deepEqual(evaluate(function () {
     /**
-     * @param {String} foo
-     * @param {array} bar
      * @param {foo
      */
   }).errors, [
     { message: 'Braces are not balanced' },
-    { message: 'Missing or invalid tag name' },
-    { commentLineNumber: 1, message: 'type String found, string is standard' },
-    { commentLineNumber: 2, message: 'type array found, Array is standard' }],
-    'non-canonical');
+    { message: 'Missing or invalid tag name' }
+  ], 'doctrine error');
 
-  var comment = evaluate(function () {/**
+  t.deepEqual(evaluate(function () {
+    /**
      * @param {String} foo
      * @param {array} bar
      */
-  });
+  }).errors, [
+    { commentLineNumber: 1, message: 'type String found, string is standard' },
+    { commentLineNumber: 2, message: 'type array found, Array is standard' }
+  ], 'non-canonical');
 
   t.deepEqual(evaluate(function () {
     /**
@@ -47,7 +47,9 @@ test('lintComments', function (t) {
 
 test('formatLint', function (t) {
   var comment = evaluate(function () {
-    /**
+    // 2
+    // 3
+    /** 4
      * @param {String} foo
      * @param {array} bar
      * @param {foo
@@ -57,10 +59,10 @@ test('formatLint', function (t) {
   var formatted = formatLint([comment]);
 
   t.contains(formatted, 'input.js');
-  t.contains(formatted, /1:1[^\n]+Braces are not balanced/);
-  t.contains(formatted, /1:1[^\n]+Missing or invalid tag name/);
-  t.contains(formatted, /3:1[^\n]+type String found, string is standard/);
-  t.contains(formatted, /4:1[^\n]+type array found, Array is standard/);
+  t.contains(formatted, /4:1[^\n]+Braces are not balanced/);
+  t.contains(formatted, /4:1[^\n]+Missing or invalid tag name/);
+  t.contains(formatted, /5:1[^\n]+type String found, string is standard/);
+  t.contains(formatted, /6:1[^\n]+type array found, Array is standard/);
   t.contains(formatted, '4 warnings');
 
   t.end();
