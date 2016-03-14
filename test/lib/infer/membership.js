@@ -355,3 +355,20 @@ test('inferMembership - no @module', function (t) {
   t.equal(result[0].memberof, 'mod');
   t.end();
 });
+
+test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function (t) {
+  t.deepEqual(_.pick(evaluate(function () {
+    Foo.prototype = {
+      /** Test */
+      bar: function () {
+        lend();
+        lend();
+      }
+    };
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Foo',
+    scope: 'instance'
+  });
+
+  t.end();
+});
