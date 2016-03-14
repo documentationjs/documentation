@@ -164,5 +164,21 @@ test('flatten', function (t) {
     /** @summary test */
   })[0].summary, 'test', 'summary');
 
+  t.equal(evaluate(function () {
+    /** @copyright test */
+  })[0].copyright, 'test', 'copyright');
+
+  t.equal(evaluate(function () {
+    /** @deprecated test */
+  })[0].deprecated, 'test', 'deprecated');
+
+  t.equal(evaluate(function () {
+    /** @see test */
+  })[0].sees[0].description, 'test', 'see');
+
+  t.equal(evaluate(function () {
+    /** @todo test */
+  })[0].todos[0].description, 'test', 'see');
+
   t.end();
 });
