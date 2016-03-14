@@ -1,13 +1,13 @@
 /**
  * ONE
- * @return {number} something
+ * @returns {number} something
  */
 function fooBar() {
   return 1;
 }
 /**
  * TWO
- * @return {number} something
+ * @returns {number} something
  */
 function fooBaz() {
   return 2;

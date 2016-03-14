@@ -12,7 +12,7 @@ var area = function() {
 
   /**
    * Sets the chart data.
-   * @method
+   * @function
    */
   chart.data = function(_) {
   };

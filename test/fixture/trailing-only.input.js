@@ -3,5 +3,5 @@ function fooBaz() {
 }
 /**
  * this is a type
- * @return {number} nothing
+ * @returns {number} nothing
  */

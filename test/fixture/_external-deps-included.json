@@ -40,7 +40,7 @@
     "description": "This function returns the number one.",
     "tags": [
       {
-        "title": "returns",
+        "title": "return",
         "description": "numberone",
         "lineNumber": 2,
         "type": {
@@ -75,7 +75,7 @@
     "errors": [],
     "returns": [
       {
-        "title": "returns",
+        "title": "return",
         "description": "numberone",
         "lineNumber": 2,
         "type": {
@@ -128,7 +128,7 @@
           "column": 2
         }
       },
-      "code": "'use strict';\n\nvar otherDep = require('external2');\n\n/**\n * This function returns the number one.\n * @return {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return otherDep() - 1;\n};\n"
+      "code": "'use strict';\n\nvar otherDep = require('external2');\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return otherDep() - 1;\n};\n"
     },
     "errors": [],
     "returns": [
