@@ -142,7 +142,6 @@ test('hierarchy - anonymous', function (t) {
     /** Test */
   })[0];
 
-  t.equal(result.description, 'Test');
   t.deepEqual(result.errors, [{
     message: 'could not determine @name for hierarchy'
   }]);

@@ -1,6 +1,92 @@
 [
   {
-    "description": "Represents an IPv6 address\n\nThis tests  our support of optional parameters",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Represents an IPv6 address",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 27,
+                  "offset": 26
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 27,
+              "offset": 26
+            },
+            "indent": []
+          }
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This tests  our support of optional parameters",
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 1,
+                  "offset": 28
+                },
+                "end": {
+                  "line": 3,
+                  "column": 47,
+                  "offset": 74
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 47,
+              "offset": 74
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 47,
+          "offset": 74
+        }
+      }
+    },
     "tags": [
       {
         "title": "class",
@@ -96,33 +182,183 @@
     },
     "params": [
       {
-        "title": "param",
-        "description": "An IPv6 address string",
+        "name": "address",
         "lineNumber": 5,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "An IPv6 address string",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 23,
+                      "offset": 22
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 23,
+              "offset": 22
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "string"
-        },
-        "name": "address"
+        }
       },
       {
-        "title": "param",
-        "description": "How many octets to parse",
+        "name": "groups",
         "lineNumber": 6,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "How many octets to parse",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 25,
+                      "offset": 24
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 25,
+                  "offset": 24
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 25,
+              "offset": 24
+            }
+          }
+        },
         "type": {
           "type": "OptionalType",
           "expression": {
             "type": "NameExpression",
             "name": "number"
           }
-        },
-        "name": "groups",
-        "default": "8"
+        }
       },
       {
-        "title": "param",
-        "description": "A third argument",
+        "name": "third",
         "lineNumber": 7,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "A third argument",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 17,
+              "offset": 16
+            }
+          }
+        },
         "type": {
           "type": "NullableType",
           "expression": {
@@ -130,22 +366,70 @@
             "name": "number"
           },
           "prefix": true
-        },
-        "name": "third"
+        }
       },
       {
-        "title": "param",
-        "description": "to properly be parsed",
+        "name": "foo",
         "lineNumber": 8,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "to properly be parsed",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 22,
+                      "offset": 21
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 22,
+                  "offset": 21
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 22,
+              "offset": 21
+            }
+          }
+        },
         "type": {
           "type": "OptionalType",
           "expression": {
             "type": "NameExpression",
             "name": "Array"
           }
-        },
-        "name": "foo",
-        "default": "[1]"
+        }
       }
     ],
     "examples": [
@@ -164,7 +448,58 @@
     ]
   },
   {
-    "description": "This function returns the number one.",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This function returns the number one.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38,
+                  "offset": 37
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        }
+      }
+    },
     "tags": [
       {
         "title": "param",
@@ -208,14 +543,64 @@
         "lineNumber": 5
       },
       {
-        "title": "param",
-        "description": "the second param",
+        "name": "b",
         "lineNumber": 2,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "the second param",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 17,
+              "offset": 16
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "name": "b"
+        }
       },
       {
         "title": "param",
@@ -259,7 +644,58 @@
     ]
   },
   {
-    "description": "This method has partially inferred params",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This method has partially inferred params",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 42,
+                  "offset": 41
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 42,
+              "offset": 41
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 42,
+          "offset": 41
+        }
+      }
+    },
     "tags": [
       {
         "title": "param",
@@ -306,14 +742,64 @@
         },
         "properties": [
           {
-            "title": "param",
-            "description": "number of kinds of fish",
+            "name": "$0.fishes",
             "lineNumber": 2,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "number of kinds of fish",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 24,
+                          "offset": 23
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 24,
+                      "offset": 23
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 24,
+                  "offset": 23
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "String"
-            },
-            "name": "$0.fishes"
+            }
           },
           {
             "title": "param",
@@ -334,7 +820,58 @@
     ]
   },
   {
-    "description": "This is foo's documentation",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is foo's documentation",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 28,
+                  "offset": 27
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 28,
+              "offset": 27
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 28,
+          "offset": 27
+        }
+      }
+    },
     "tags": [],
     "loc": {
       "start": {
@@ -365,7 +902,58 @@
     "members": {
       "instance": [
         {
-          "description": "The method",
+          "description": {
+            "type": "root",
+            "children": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "The method",
+                    "position": {
+                      "start": {
+                        "line": 1,
+                        "column": 1,
+                        "offset": 0
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 11,
+                        "offset": 10
+                      },
+                      "indent": []
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 11,
+                    "offset": 10
+                  },
+                  "indent": []
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 11,
+                "offset": 10
+              }
+            }
+          },
           "tags": [
             {
               "title": "param",
@@ -404,14 +992,64 @@
           "errors": [],
           "params": [
             {
-              "title": "param",
-              "description": "Param to method",
+              "name": "x",
               "lineNumber": 2,
+              "description": {
+                "type": "root",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Param to method",
+                        "position": {
+                          "start": {
+                            "line": 1,
+                            "column": 1,
+                            "offset": 0
+                          },
+                          "end": {
+                            "line": 1,
+                            "column": 16,
+                            "offset": 15
+                          },
+                          "indent": []
+                        }
+                      }
+                    ],
+                    "position": {
+                      "start": {
+                        "line": 1,
+                        "column": 1,
+                        "offset": 0
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 16,
+                        "offset": 15
+                      },
+                      "indent": []
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 16,
+                    "offset": 15
+                  }
+                }
+              },
               "type": {
                 "type": "NameExpression",
                 "name": "number"
-              },
-              "name": "x"
+              }
             }
           ],
           "name": "method",
@@ -435,7 +1073,62 @@
     ]
   },
   {
-    "description": "This tests our support of JSDoc param tags without type information,\nor any type information we could infer from annotations.",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This tests our support of JSDoc param tags without type information,\nor any type information we could infer from annotations.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 57,
+                  "offset": 125
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 57,
+              "offset": 125
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 57,
+          "offset": 125
+        }
+      }
+    },
     "tags": [
       {
         "title": "param",
@@ -471,11 +1164,60 @@
     "errors": [],
     "params": [
       {
-        "title": "param",
-        "description": "An IPv6 address string",
+        "name": "address",
         "lineNumber": 4,
-        "type": null,
-        "name": "address"
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "An IPv6 address string",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 23,
+                      "offset": 22
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 23,
+              "offset": 22
+            }
+          }
+        }
       }
     ],
     "name": "foo",
@@ -489,7 +1231,93 @@
     ]
   },
   {
-    "description": "Create a GeoJSON data source instance given an options object\n\nThis tests our support of nested parameters",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Create a GeoJSON data source instance given an options object",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 62,
+                  "offset": 61
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 62,
+              "offset": 61
+            },
+            "indent": []
+          }
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This tests our support of nested parameters",
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 1,
+                  "offset": 63
+                },
+                "end": {
+                  "line": 3,
+                  "column": 44,
+                  "offset": 106
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 63
+            },
+            "end": {
+              "line": 3,
+              "column": 44,
+              "offset": 106
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 44,
+          "offset": 106
+        }
+      }
+    },
     "tags": [
       {
         "title": "class",
@@ -509,68 +1337,7 @@
             "name": "Object"
           }
         },
-        "name": "options",
-        "properties": [
-          {
-            "title": "param",
-            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
-            "lineNumber": 6,
-            "type": {
-              "type": "UnionType",
-              "elements": [
-                {
-                  "type": "NameExpression",
-                  "name": "Object"
-                },
-                {
-                  "type": "NameExpression",
-                  "name": "string"
-                }
-              ]
-            },
-            "name": "options.data"
-          },
-          {
-            "title": "param",
-            "description": "Maximum zoom to preserve detail at.",
-            "lineNumber": 8,
-            "type": {
-              "type": "OptionalType",
-              "expression": {
-                "type": "NameExpression",
-                "name": "number"
-              }
-            },
-            "name": "options.maxzoom",
-            "default": "14"
-          },
-          {
-            "title": "param",
-            "description": "Tile buffer on each side.",
-            "lineNumber": 9,
-            "type": {
-              "type": "OptionalType",
-              "expression": {
-                "type": "NameExpression",
-                "name": "number"
-              }
-            },
-            "name": "options.buffer"
-          },
-          {
-            "title": "param",
-            "description": "Simplification tolerance (higher means simpler).",
-            "lineNumber": 10,
-            "type": {
-              "type": "OptionalType",
-              "expression": {
-                "type": "NameExpression",
-                "name": "number"
-              }
-            },
-            "name": "options.tolerance"
-          }
-        ]
+        "name": "options"
       },
       {
         "title": "param",
@@ -661,9 +1428,60 @@
     },
     "params": [
       {
-        "title": "param",
-        "description": "optional options",
+        "name": "options",
         "lineNumber": 5,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "optional options",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 17,
+              "offset": 16
+            }
+          }
+        },
         "type": {
           "type": "OptionalType",
           "expression": {
@@ -671,12 +1489,66 @@
             "name": "Object"
           }
         },
-        "name": "options",
         "properties": [
           {
-            "title": "param",
-            "description": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+            "name": "options.data",
             "lineNumber": 6,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "A GeoJSON data object or URL to it.\nThe latter is preferable in case of large GeoJSON files.",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 2,
+                          "column": 57,
+                          "offset": 92
+                        },
+                        "indent": [
+                          1
+                        ]
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 57,
+                      "offset": 92
+                    },
+                    "indent": [
+                      1
+                    ]
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 57,
+                  "offset": 92
+                }
+              }
+            },
             "type": {
               "type": "UnionType",
               "elements": [
@@ -689,48 +1561,196 @@
                   "name": "string"
                 }
               ]
-            },
-            "name": "options.data"
+            }
           },
           {
-            "title": "param",
-            "description": "Maximum zoom to preserve detail at.",
-            "lineNumber": 8,
-            "type": {
-              "type": "OptionalType",
-              "expression": {
-                "type": "NameExpression",
-                "name": "number"
-              }
-            },
             "name": "options.maxzoom",
-            "default": "14"
+            "lineNumber": 8,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Maximum zoom to preserve detail at.",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 36,
+                          "offset": 35
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 36,
+                      "offset": 35
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 36,
+                  "offset": 35
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
           },
           {
-            "title": "param",
-            "description": "Tile buffer on each side.",
+            "name": "options.buffer",
             "lineNumber": 9,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Tile buffer on each side.",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 26,
+                          "offset": 25
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 26,
+                      "offset": 25
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 26,
+                  "offset": 25
+                }
+              }
+            },
             "type": {
               "type": "OptionalType",
               "expression": {
                 "type": "NameExpression",
                 "name": "number"
               }
-            },
-            "name": "options.buffer"
+            }
           },
           {
-            "title": "param",
-            "description": "Simplification tolerance (higher means simpler).",
+            "name": "options.tolerance",
             "lineNumber": 10,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Simplification tolerance (higher means simpler).",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 49,
+                          "offset": 48
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 49,
+                      "offset": 48
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 49,
+                  "offset": 48
+                }
+              }
+            },
             "type": {
               "type": "OptionalType",
               "expression": {
                 "type": "NameExpression",
                 "name": "number"
               }
-            },
-            "name": "options.tolerance"
+            }
           }
         ]
       }
@@ -746,7 +1766,62 @@
     ]
   },
   {
-    "description": "This tests our support for parameters with explicit types but with default\nvalues specified in code.",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This tests our support for parameters with explicit types but with default\nvalues specified in code.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 26,
+                  "offset": 100
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 26,
+              "offset": 100
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 26,
+          "offset": 100
+        }
+      }
+    },
     "tags": [
       {
         "title": "param",
@@ -794,21 +1869,120 @@
     "errors": [],
     "params": [
       {
-        "title": "param",
-        "description": "an argument",
+        "name": "x",
         "lineNumber": 4,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "an argument",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 12,
+                      "offset": 11
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 12,
+                  "offset": 11
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 12,
+              "offset": 11
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "name": "x"
+        }
       }
     ],
     "returns": [
       {
-        "title": "returns",
-        "description": "some",
-        "lineNumber": 6,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "some",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 5,
+                      "offset": 4
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 5,
+              "offset": 4
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "number"
@@ -826,19 +2000,66 @@
     ]
   },
   {
-    "description": "This method has a type in the description and a default in the code",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This method has a type in the description and a default in the code",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 68,
+                  "offset": 67
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 68,
+              "offset": 67
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 68,
+          "offset": 67
+        }
+      }
+    },
     "tags": [
       {
         "title": "param",
         "description": null,
         "lineNumber": 2,
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "number"
-          },
-          "default": "2"
+          "type": "NameExpression",
+          "name": "number"
         },
         "name": "x"
       }
@@ -869,8 +2090,7 @@
     "errors": [],
     "params": [
       {
-        "title": "param",
-        "description": null,
+        "name": "x",
         "lineNumber": 2,
         "type": {
           "type": "OptionalType",
@@ -879,8 +2099,7 @@
             "name": "number"
           },
           "default": "2"
-        },
-        "name": "x"
+        }
       }
     ],
     "name": "withDefault",

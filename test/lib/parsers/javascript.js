@@ -1,6 +1,7 @@
 'use strict';
 
 var test = require('tap').test,
+  remark = require('remark'),
   parse = require('../../../lib/parsers/javascript');
 
 function toComments(fn, filename) {
@@ -17,7 +18,7 @@ test('parse - leading comment', function (t) {
     function two() {}
   }).map(function (c) {
     return c.description;
-  }), ['one', 'two']);
+  }), [remark.parse('one'), remark.parse('two')]);
   t.end();
 });
 
@@ -28,7 +29,7 @@ test('parse - trailing comment', function (t) {
     /** two */
   }).map(function (c) {
     return c.description;
-  }), ['one', 'two']);
+  }), [remark.parse('one'), remark.parse('two')]);
   t.end();
 });
 

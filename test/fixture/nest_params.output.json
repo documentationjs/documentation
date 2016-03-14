@@ -19,29 +19,7 @@
             }
           ]
         },
-        "name": "employees",
-        "properties": [
-          {
-            "title": "param",
-            "description": "The name of an employee.",
-            "lineNumber": 2,
-            "type": {
-              "type": "NameExpression",
-              "name": "string"
-            },
-            "name": "employees[].name"
-          },
-          {
-            "title": "param",
-            "description": "The employee's department.",
-            "lineNumber": 3,
-            "type": {
-              "type": "NameExpression",
-              "name": "string"
-            },
-            "name": "employees[].department"
-          }
-        ]
+        "name": "employees"
       },
       {
         "title": "param",
@@ -90,9 +68,60 @@
     "errors": [],
     "params": [
       {
-        "title": "param",
-        "description": "The employees who are responsible for the project.",
+        "name": "employees",
         "lineNumber": 1,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The employees who are responsible for the project.",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 51,
+                      "offset": 50
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 51,
+                  "offset": 50
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 51,
+              "offset": 50
+            }
+          }
+        },
         "type": {
           "type": "TypeApplication",
           "expression": {
@@ -106,27 +135,126 @@
             }
           ]
         },
-        "name": "employees",
         "properties": [
           {
-            "title": "param",
-            "description": "The name of an employee.",
+            "name": "employees[].name",
             "lineNumber": 2,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The name of an employee.",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 25,
+                          "offset": 24
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 25,
+                      "offset": 24
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 25,
+                  "offset": 24
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "string"
-            },
-            "name": "employees[].name"
+            }
           },
           {
-            "title": "param",
-            "description": "The employee's department.",
+            "name": "employees[].department",
             "lineNumber": 3,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The employee's department.",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 27,
+                          "offset": 26
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 27,
+                      "offset": 26
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 27,
+                  "offset": 26
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "string"
-            },
-            "name": "employees[].department"
+            }
           }
         ]
       },
@@ -163,19 +291,7 @@
           "type": "NameExpression",
           "name": "Object"
         },
-        "name": "options",
-        "properties": [
-          {
-            "title": "param",
-            "description": "how much",
-            "lineNumber": 3,
-            "type": {
-              "type": "NameExpression",
-              "name": "number"
-            },
-            "name": "options.much"
-          }
-        ]
+        "name": "options"
       },
       {
         "title": "param",
@@ -205,39 +321,7 @@
           "type": "NameExpression",
           "name": "Object"
         },
-        "name": "theTime",
-        "properties": [
-          {
-            "title": "property",
-            "description": null,
-            "lineNumber": 6,
-            "type": {
-              "type": "NameExpression",
-              "name": "number"
-            },
-            "name": "theTime.hours"
-          },
-          {
-            "title": "property",
-            "description": null,
-            "lineNumber": 7,
-            "type": {
-              "type": "NameExpression",
-              "name": "number"
-            },
-            "name": "theTime.minutes"
-          },
-          {
-            "title": "property",
-            "description": null,
-            "lineNumber": 8,
-            "type": {
-              "type": "NameExpression",
-              "name": "number"
-            },
-            "name": "theTime.seconds"
-          }
-        ]
+        "name": "theTime"
       },
       {
         "title": "property",
@@ -305,87 +389,330 @@
     "name": "foo",
     "params": [
       {
-        "title": "param",
-        "description": "some options",
+        "name": "options",
         "lineNumber": 2,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "some options",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 13,
+              "offset": 12
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "Object"
         },
-        "name": "options",
         "properties": [
           {
-            "title": "param",
-            "description": "how much",
+            "name": "options.much",
             "lineNumber": 3,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "how much",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 9,
+                          "offset": 8
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 9,
+                      "offset": 8
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "number"
-            },
-            "name": "options.much"
+            }
           }
         ]
       },
       {
-        "title": "param",
-        "description": "something else",
+        "name": "bar",
         "lineNumber": 4,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "something else",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15,
+                  "offset": 14
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "name": "bar"
+        }
       }
     ],
     "properties": [
       {
-        "title": "property",
-        "description": "the current time",
+        "name": "theTime",
         "lineNumber": 5,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "the current time",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 17,
+              "offset": 16
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "Object"
         },
-        "name": "theTime",
         "properties": [
           {
-            "title": "property",
-            "description": null,
+            "name": "theTime.hours",
             "lineNumber": 6,
             "type": {
               "type": "NameExpression",
               "name": "number"
-            },
-            "name": "theTime.hours"
+            }
           },
           {
-            "title": "property",
-            "description": null,
+            "name": "theTime.minutes",
             "lineNumber": 7,
             "type": {
               "type": "NameExpression",
               "name": "number"
-            },
-            "name": "theTime.minutes"
+            }
           },
           {
-            "title": "property",
-            "description": null,
+            "name": "theTime.seconds",
             "lineNumber": 8,
             "type": {
               "type": "NameExpression",
               "name": "number"
-            },
-            "name": "theTime.seconds"
+            }
           }
         ]
       }
     ],
     "returns": [
       {
-        "title": "returns",
-        "description": "foo something else",
-        "lineNumber": 9,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "foo something else",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 19,
+                      "offset": 18
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 19,
+                  "offset": 18
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 19,
+              "offset": 18
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "Object"

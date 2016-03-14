@@ -22,7 +22,7 @@
     "debounce": "^1.0.0",
     "disparity": "^2.0.0",
     "doctrine": "^1.1.0",
-    "documentation-theme-default": "3.0.0-beta",
+    "documentation-theme-default": "documentationjs/documentation-theme-default#markdown",
     "documentation-theme-utils": "^2.0.2",
     "events": "^1.1.0",
     "extend": "^3.0.0",
@@ -30,7 +30,6 @@
     "git-url-parse": "^6.0.1",
     "highlight.js": "^9.1.0",
     "js-yaml": "^3.3.1",
-    "jsdoc-inline-lex": "^1.0.1",
     "mdast-util-inject": "^1.1.0",
     "micromatch": "^2.1.6",
     "mime": "^1.3.4",
@@ -60,7 +59,8 @@
     "lodash": "^4.3.0",
     "mock-fs": "^3.5.0",
     "tap": "^5.4.4",
-    "tmp": "0.0.28"
+    "tmp": "0.0.28",
+    "unist-util-visit": "^1.0.1"
   },
   "keywords": [
     "documentation",

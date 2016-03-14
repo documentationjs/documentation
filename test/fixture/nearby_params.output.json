@@ -1,6 +1,57 @@
 [
   {
-    "description": "Attempt to establish a cookie-based session in exchange for credentials.",
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Attempt to establish a cookie-based session in exchange for credentials.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 73,
+                  "offset": 72
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 73,
+              "offset": 72
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 73,
+          "offset": 72
+        }
+      }
+    },
     "tags": [
       {
         "title": "function",
@@ -22,29 +73,7 @@
           "type": "NameExpression",
           "name": "object"
         },
-        "name": "credentials",
-        "properties": [
-          {
-            "title": "param",
-            "description": "Login username. Also accepted as `username` or `email`.",
-            "lineNumber": 4,
-            "type": {
-              "type": "NameExpression",
-              "name": "string"
-            },
-            "name": "credentials.name"
-          },
-          {
-            "title": "param",
-            "description": "Login password",
-            "lineNumber": 5,
-            "type": {
-              "type": "NameExpression",
-              "name": "string"
-            },
-            "name": "credentials.password"
-          }
-        ]
+        "name": "credentials"
       },
       {
         "title": "param",
@@ -117,56 +146,355 @@
     "name": "sessions.create",
     "params": [
       {
-        "title": "param",
-        "description": null,
+        "name": "credentials",
         "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "object"
         },
-        "name": "credentials",
         "properties": [
           {
-            "title": "param",
-            "description": "Login username. Also accepted as `username` or `email`.",
+            "name": "credentials.name",
             "lineNumber": 4,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Login username. Also accepted as ",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 34,
+                          "offset": 33
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "username",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 34,
+                          "offset": 33
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 44,
+                          "offset": 43
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "value": " or ",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 44,
+                          "offset": 43
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 48,
+                          "offset": 47
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "email",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 48,
+                          "offset": 47
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 55,
+                          "offset": 54
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "value": ".",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 55,
+                          "offset": 54
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 56,
+                          "offset": 55
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 56,
+                      "offset": 55
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 56,
+                  "offset": 55
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "string"
-            },
-            "name": "credentials.name"
+            }
           },
           {
-            "title": "param",
-            "description": "Login password",
+            "name": "credentials.password",
             "lineNumber": 5,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Login password",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 15,
+                          "offset": 14
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15,
+                  "offset": 14
+                }
+              }
+            },
             "type": {
               "type": "NameExpression",
               "name": "string"
-            },
-            "name": "credentials.password"
+            }
           }
         ]
       },
       {
-        "title": "param",
-        "description": "Gets passed `(err, { success:Boolean })`.",
+        "name": "callback",
         "lineNumber": 6,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Gets passed ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    },
+                    "indent": []
+                  }
+                },
+                {
+                  "type": "inlineCode",
+                  "value": "(err, { success:Boolean })",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 41,
+                      "offset": 40
+                    },
+                    "indent": []
+                  }
+                },
+                {
+                  "type": "text",
+                  "value": ".",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 41,
+                      "offset": 40
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 42,
+                      "offset": 41
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 42,
+                  "offset": 41
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 42,
+              "offset": 41
+            }
+          }
+        },
         "type": {
           "type": "OptionalType",
           "expression": {
             "type": "NameExpression",
             "name": "function"
           }
-        },
-        "name": "callback"
+        }
       }
     ],
     "returns": [
       {
-        "title": "returns",
-        "description": "promise, to be resolved on success or rejected on failure",
-        "lineNumber": 7,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "promise, to be resolved on success or rejected on failure",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 58,
+                      "offset": 57
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 58,
+                  "offset": 57
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 58,
+              "offset": 57
+            }
+          }
+        },
         "type": {
           "type": "NameExpression",
           "name": "Promise"

@@ -1,13 +1,22 @@
 'use strict';
 
 var test = require('tap').test,
-  parse = require('../../lib/parsers/javascript');
+  parse = require('../../lib/parsers/javascript'),
+  remark = require('remark'),
+  visit = require('unist-util-visit');
 
 function evaluate(fn, filename) {
   return parse({
     file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
   });
+}
+
+function removePosition(tree) {
+  visit(tree, function (node) {
+    delete node.position;
+  });
+  return tree;
 }
 
 test('parse - @abstract', function (t) {
@@ -79,10 +88,9 @@ test('parse - @class', function (t) {
 });
 
 test('parse - @classdesc', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @classdesc test */
-  })[0].classdesc, 'test', 'classdesc');
-
+  })[0].classdesc, remark.parse('test'));
 
   t.end();
 });
@@ -96,7 +104,6 @@ test('parse - @constant', function (t) {
     /** @constant name */
   })[0].constant.name, 'name', 'constant');
 
-
   t.end();
 });
 
@@ -109,9 +116,9 @@ test('parse - @constructs', function (t) {
 });
 
 test('parse - @copyright', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @copyright test */
-  })[0].copyright, 'test', 'copyright');
+  })[0].copyright, remark.parse('test'));
 
   t.end();
 });
@@ -125,21 +132,33 @@ test('parse - @defaultvalue', function (t) {
 });
 
 test('parse - @deprecated', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @deprecated test */
-  })[0].deprecated, 'test', 'deprecated');
+  })[0].deprecated, remark.parse('test'));
 
   t.end();
 });
 
 test('parse - @desc', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** @desc test */
+  })[0].description, remark.parse('test'));
+
   t.end();
 });
 
 test('parse - @description', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @description test */
-  })[0].description, 'test', 'description');
+  })[0].description, remark.parse('test'));
+
+  t.end();
+});
+
+test('parse - description', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** test */
+  })[0].description, remark.parse('test'));
 
   t.end();
 });
@@ -185,7 +204,7 @@ test('parse - @example', function (t) {
      */
   })[0].examples[0], {
     description: 'a\nb',
-    caption: 'caption'
+    caption: remark.parse('caption')
   }, 'with caption');
 
   t.deepEqual(evaluate(function () {
@@ -414,9 +433,35 @@ test('parse - @overview', function (t) {
 });
 
 test('parse - @param', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @param test */
-  })[0].params[0].name, 'test', 'param');
+  })[0].params[0], {
+    name: 'test',
+    lineNumber: 0
+  }, 'name');
+
+  t.deepEqual(evaluate(function () {
+    /** @param {number} test */
+  })[0].params[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    lineNumber: 0
+  }, 'name and type');
+
+  t.deepEqual(evaluate(function () {
+    /** @param {number} test - desc */
+  })[0].params[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    description: remark.parse('desc'),
+    lineNumber: 0
+  }, 'complete');
 
   t.end();
 });
@@ -430,13 +475,55 @@ test('parse - @private', function (t) {
 });
 
 test('parse - @prop', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** @prop {number} test */
+  })[0].properties[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    lineNumber: 0
+  }, 'name and type');
+
+  t.deepEqual(evaluate(function () {
+    /** @prop {number} test - desc */
+  })[0].properties[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    description: remark.parse('desc'),
+    lineNumber: 0
+  }, 'complete');
+
   t.end();
 });
 
 test('parse - @property', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @property {number} test */
-  })[0].properties[0].name, 'test', 'property');
+  })[0].properties[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    lineNumber: 0
+  }, 'name and type');
+
+  t.deepEqual(evaluate(function () {
+    /** @property {number} test - desc */
+  })[0].properties[0], {
+    name: 'test',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    },
+    description: remark.parse('desc'),
+    lineNumber: 0
+  }, 'complete');
 
   t.end();
 });
@@ -468,23 +555,59 @@ test('parse - @requires', function (t) {
 test('parse - @return', function (t) {
   t.deepEqual(evaluate(function () {
     /** @return test */
-  })[0].returns[0].description, 'test', 'return');
+  })[0].returns[0], {
+    description: remark.parse('test')
+  }, 'description');
+
+  t.deepEqual(evaluate(function () {
+    /** @return {number} test */
+  })[0].returns[0], {
+    description: remark.parse('test'),
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  }, 'description and type');
 
   t.end();
 });
 
 test('parse - @returns', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
+    /** @returns test */
+  })[0].returns[0], {
+    description: remark.parse('test')
+  }, 'description');
+
+  t.deepEqual(evaluate(function () {
     /** @returns {number} test */
-  })[0].returns[0].description, 'test', 'returns');
+  })[0].returns[0], {
+    description: remark.parse('test'),
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  }, 'description and type');
 
   t.end();
 });
 
 test('parse - @see', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @see test */
-  })[0].sees[0], 'test', 'see');
+  })[0].sees, [
+    remark.parse('test')
+  ], 'single');
+
+  t.deepEqual(evaluate(function () {
+    /**
+     * @see a
+     * @see b
+     */
+  })[0].sees, [
+    remark.parse('a'),
+    remark.parse('b')
+  ], 'multiple');
 
   t.end();
 });
@@ -502,9 +625,9 @@ test('parse - @static', function (t) {
 });
 
 test('parse - @summary', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @summary test */
-  })[0].summary, 'test', 'summary');
+  })[0].summary, remark.parse('test'));
 
   t.end();
 });
@@ -514,17 +637,61 @@ test('parse - @this', function (t) {
 });
 
 test('parse - @throws', function (t) {
-  t.equal(evaluate(function () {
-    /** @throws {Object} exception */
-  })[0].throws[0].description, 'exception', 'throws');
+  t.deepEqual(evaluate(function () {
+    /** @throws desc */
+  })[0].throws[0], {
+    description: remark.parse('desc')
+  }, 'description');
+
+  t.deepEqual(evaluate(function () {
+    /** @throws {Error} */
+  })[0].throws[0], {
+    type: {
+      name: 'Error',
+      type: 'NameExpression'
+    }
+  }, 'type');
+
+  t.deepEqual(evaluate(function () {
+    /** @throws {Error} desc */
+  })[0].throws[0], {
+    type: {
+      name: 'Error',
+      type: 'NameExpression'
+    },
+    description: remark.parse('desc')
+  }, 'type and description');
+
+  t.deepEqual(evaluate(function () {
+    /**
+     * @throws a
+     * @throws b
+     */
+  })[0].throws, [{
+    description: remark.parse('a')
+  }, {
+    description: remark.parse('b')
+  }], 'multiple');
 
   t.end();
 });
 
 test('parse - @todo', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /** @todo test */
-  })[0].todos[0], 'test', 'see');
+  })[0].todos, [
+    remark.parse('test')
+  ], 'single');
+
+  t.deepEqual(evaluate(function () {
+    /**
+     * @todo a
+     * @todo b
+     */
+  })[0].todos, [
+    remark.parse('a'),
+    remark.parse('b')
+  ], 'multiple');
 
   t.end();
 });
@@ -558,7 +725,7 @@ test('parse - @var', function (t) {
 test('parse - @variation', function (t) {
   t.equal(evaluate(function () {
     /** @variation 1 */
-  })[0].variation, 1, 'see');
+  })[0].variation, 1, 'variation');
 
   t.end();
 });
@@ -580,4 +747,78 @@ test('parse - unknown tag', function (t) {
   });
 
   t.end();
+});
+
+test('parse - {@link}', function (t) {
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@link Foo} */
+  })[0].description), removePosition(remark.parse('[Foo](Foo)')));
+
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@link Foo|text} */
+  })[0].description), removePosition(remark.parse('[text](Foo)')));
+
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@link Foo text} */
+  })[0].description), removePosition(remark.parse('[text](Foo)')));
+
+  t.done();
+});
+
+test('parse - {@tutorial}', function (t) {
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@tutorial id} */
+  })[0].description), {
+    type: 'root',
+    children: [{
+      type: 'paragraph',
+      children: [{
+        type: 'tutorial',
+        url: 'id',
+        title: null,
+        children: [{
+          type: 'text',
+          value: 'id'
+        }]
+      }]
+    }]
+  });
+
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@tutorial id|text} */
+  })[0].description), {
+    type: 'root',
+    children: [{
+      type: 'paragraph',
+      children: [{
+        type: 'tutorial',
+        url: 'id',
+        title: null,
+        children: [{
+          type: 'text',
+          value: 'text'
+        }]
+      }]
+    }]
+  });
+
+  t.deepEqual(removePosition(evaluate(function () {
+    /** {@tutorial id text} */
+  })[0].description), {
+    type: 'root',
+    children: [{
+      type: 'paragraph',
+      children: [{
+        type: 'tutorial',
+        url: 'id',
+        title: null,
+        children: [{
+          type: 'text',
+          value: 'text'
+        }]
+      }]
+    }]
+  });
+
+  t.done();
 });

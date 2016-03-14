@@ -239,23 +239,6 @@
                     },
                     "indent": []
                   }
-                },
-                {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": " (optional, default "
-                    },
-                    {
-                      "type": "inlineCode",
-                      "value": "8"
-                    },
-                    {
-                      "type": "text",
-                      "value": ")"
-                    }
-                  ]
                 }
               ]
             }
@@ -410,23 +393,6 @@
                     },
                     "indent": []
                   }
-                },
-                {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": " (optional, default "
-                    },
-                    {
-                      "type": "inlineCode",
-                      "value": "[1]"
-                    },
-                    {
-                      "type": "text",
-                      "value": ")"
-                    }
-                  ]
                 }
               ]
             }
@@ -1577,23 +1543,6 @@
                             },
                             "indent": []
                           }
-                        },
-                        {
-                          "type": "paragraph",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": " (optional, default "
-                            },
-                            {
-                              "type": "inlineCode",
-                              "value": "14"
-                            },
-                            {
-                              "type": "text",
-                              "value": ")"
-                            }
-                          ]
                         }
                       ]
                     }

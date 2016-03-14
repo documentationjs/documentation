@@ -1742,9 +1742,9 @@ h4:hover .anchorjs-link {
   
   
   
-  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
-a <a href="#Klass">klass instance multiword</a>,
-like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> input.</p>
+  <p>Get an instance of <a href="undefined">Klass</a>. Will make
+a <a href="undefined">klass instance multiword</a>,
+like a <a href="undefined">klass</a>. This needs a <a href="undefined">number</a> input.</p>
 
       <h4>Returns</h4>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
@@ -1773,7 +1773,7 @@ like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozil
  <strong>toys</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
     </ul>
@@ -1795,12 +1795,12 @@ like a <a href="#Klass">klass</a>. This needs a <a href="https://developer.mozil
   
   
   
-  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
-a <a href="#Klass">klass instance multiword</a>,
-like a <a href="#Klass">klass</a></p>
+  <p>Get an instance of <a href="undefined">Klass</a>. Will make
+a <a href="undefined">klass instance multiword</a>,
+like a <a href="undefined">klass</a></p>
 
       <h4>Returns</h4>
-      <code>Klass
+      <code><a href="#Klass">Klass</a>
 </code>
       :
       <div class='force-inline'>
@@ -1824,7 +1824,7 @@ like a <a href="#Klass">klass</a></p>
         <li> <strong>foo</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
     </ul>
@@ -1879,9 +1879,9 @@ like a <a href="#Klass">klass</a></p>
     <h4>Parameters</h4>
     <ul class='suppress-p-margin'>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
-.<
+.&lt;
 <a href="https://nodejs.org/api/buffer.html">Buffer</a>
->
+&gt;
  <strong>buffers</strong>
           :
           <div class='force-inline'>
@@ -1937,13 +1937,12 @@ k.isArrayOfBuffers();</pre>
  <strong>buf</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
 =
  <strong>size</strong>
-            (default <code>0</code>)
           :
           <div class='force-inline'>
             <p>size</p>
@@ -1969,8 +1968,8 @@ k.isArrayOfBuffers();</pre>
             </code>
             <div class='force-inline'>
               <p>Decide whether an object is a Klass instance
-This is a klasssic
-This is a link to something that does not exist</p>
+This is a [klasssic]<a href="undefined">Klass</a>
+This is a [link to something that does not exist]<a href="undefined">DoesNot</a></p>
 
             </div>
           </a>
@@ -1985,8 +1984,8 @@ This is a link to something that does not exist</p>
   
   
   <p>Decide whether an object is a Klass instance
-This is a klasssic
-This is a link to something that does not exist</p>
+This is a [klasssic]<a href="undefined">Klass</a>
+This is a [link to something that does not exist]<a href="undefined">DoesNot</a></p>
 
     <h4>Parameters</h4>
     <ul class='suppress-p-margin'>
@@ -1994,14 +1993,14 @@ This is a link to something that does not exist</p>
  <strong>other</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
         <li>Any
  <strong>also</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
     </ul>
@@ -2022,7 +2021,7 @@ This is a link to something that does not exist</p>
               .isWeird<span class='gray'>(other)</span>
             </code>
             <div class='force-inline'>
-              <p>A function that triggers the case where the autolinker doesn't find
+              <p>A function that triggers the case where the autolinker doesn&#x27;t find
 the referenced class type</p>
 
             </div>
@@ -2037,7 +2036,7 @@ the referenced class type</p>
   
   
   
-  <p>A function that triggers the case where the autolinker doesn't find
+  <p>A function that triggers the case where the autolinker doesn&#x27;t find
 the referenced class type</p>
 
     <h4>Parameters</h4>
@@ -2046,7 +2045,7 @@ the referenced class type</p>
  <strong>other</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
     </ul>
@@ -2093,7 +2092,7 @@ the referenced class type</p>
               #getFoo<span class='gray'></span>
             </code>
             <div class='force-inline'>
-              <p>Get this Klass's foo</p>
+              <p>Get this Klass&#x27;s foo</p>
 
             </div>
           </a>
@@ -2107,7 +2106,7 @@ the referenced class type</p>
   
   
   
-  <p>Get this Klass's foo</p>
+  <p>Get this Klass&#x27;s foo</p>
 
       <h4>Returns</h4>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
@@ -2152,15 +2151,15 @@ the referenced class type</p>
  <strong>options</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
             <ul>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
  options.foo
-                  </li>
+                  undefined</li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
  options.bar
-                  </li>
+                  undefined</li>
             </ul>
         </li>
         <li>?
@@ -2168,7 +2167,7 @@ the referenced class type</p>
  <strong>otherOptions</strong>
           :
           <div class='force-inline'>
-            
+            undefined
           </div>
         </li>
     </ul>

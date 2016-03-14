@@ -7,9 +7,9 @@ This tests  our support of optional parameters
 **Parameters**
 
 -   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** An IPv6 address string
--   `groups` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** How many octets to parse (optional, default `8`)
+-   `groups` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** How many octets to parse
 -   `third` **?[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** A third argument
--   `foo` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)=** to properly be parsed (optional, default `[1]`)
+-   `foo` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)=** to properly be parsed
 
 **Examples**
 
@@ -73,7 +73,7 @@ This tests our support of nested parameters
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=** optional options
     -   `options.data` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)\|[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** A GeoJSON data object or URL to it.
         The latter is preferable in case of large GeoJSON files.
-    -   `options.maxzoom` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Maximum zoom to preserve detail at. (optional, default `14`)
+    -   `options.maxzoom` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Maximum zoom to preserve detail at.
     -   `options.buffer` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Tile buffer on each side.
     -   `options.tolerance` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Simplification tolerance (higher means simpler).
 
