@@ -3,10 +3,10 @@
 var test = require('tap').test,
   fs = require('fs'),
   path = require('path'),
-  polyglot = require('../../lib/parsers/polyglot');
+  polyglot = require('../../../lib/parsers/polyglot');
 
 test('polyglot', function (t) {
-  var file = path.resolve(path.join(__dirname, '../fixture/polyglot/blend.cpp'));
+  var file = path.resolve(path.join(__dirname, '../../fixture/polyglot/blend.cpp'));
   var result = polyglot({
     file: file,
     source: fs.readFileSync(file, 'utf8')

@@ -10,7 +10,19 @@ function evaluate(fn, filename) {
   });
 }
 
-test('flatten', function (t) {
+test('parse - normalizes tags', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** @return test */
+  })[0].returns[0].description, 'test', 'return');
+
+  t.deepEqual(evaluate(function () {
+    /** @extends Foo */
+  })[0].augments[0].name, 'Foo', 'extends');
+
+  t.end();
+});
+
+test('parse - flattens tags', function (t) {
   t.equal(evaluate(function () {
     /** @name test */
   })[0].name, 'test', 'name');
