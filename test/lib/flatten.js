@@ -174,11 +174,11 @@ test('flatten', function (t) {
 
   t.equal(evaluate(function () {
     /** @see test */
-  })[0].sees[0].description, 'test', 'see');
+  })[0].sees[0], 'test', 'see');
 
   t.equal(evaluate(function () {
     /** @todo test */
-  })[0].todos[0].description, 'test', 'see');
+  })[0].todos[0], 'test', 'see');
 
   t.end();
 });
