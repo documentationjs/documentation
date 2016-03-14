@@ -156,5 +156,13 @@ test('flatten', function (t) {
     }
   }, 'namespace');
 
+  t.equal(evaluate(function () {
+    /** @description test */
+  })[0].description, 'test', 'description');
+
+  t.equal(evaluate(function () {
+    /** @summary test */
+  })[0].summary, 'test', 'summary');
+
   t.end();
 });
