@@ -10,6 +10,14 @@ function evaluate(fn, filename) {
   });
 }
 
+test('parse - @abstract', function (t) {
+  t.equal(evaluate(function () {
+    /** @abstract */
+  })[0].abstract, true);
+
+  t.end();
+});
+
 test('parse - @access', function (t) {
   t.equal(evaluate(function () {
     /** @access public */
