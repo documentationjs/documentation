@@ -499,6 +499,14 @@ test('parse - @var', function (t) {
   t.end();
 });
 
+test('parse - @variation', function (t) {
+  t.equal(evaluate(function () {
+    /** @variation 1 */
+  })[0].variation, 1, 'see');
+
+  t.end();
+});
+
 test('parse - @version', function (t) {
   t.end();
 });
