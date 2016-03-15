@@ -570,3 +570,14 @@ test('parse - @version', function (t) {
 test('parse - @virtual', function (t) {
   t.end();
 });
+
+test('parse - unknown tag', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** @unknown */
+  })[0].errors[0], {
+    message: 'unknown tag @unknown',
+    commentLineNumber: 0
+  });
+
+  t.end();
+});
