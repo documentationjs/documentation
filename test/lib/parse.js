@@ -58,6 +58,10 @@ test('parse - @author', function (t) {
   t.end();
 });
 
+test('parse - @borrows', function (t) {
+  t.end();
+});
+
 test('parse - @callback', function (t) {
   t.equal(evaluate(function () {
     /** @callback name */
@@ -100,11 +104,19 @@ test('parse - @constructor', function (t) {
   t.end();
 });
 
+test('parse - @constructs', function (t) {
+  t.end();
+});
+
 test('parse - @copyright', function (t) {
   t.equal(evaluate(function () {
     /** @copyright test */
   })[0].copyright, 'test', 'copyright');
 
+  t.end();
+});
+
+test('parse - @default', function (t) {
   t.end();
 });
 
@@ -133,6 +145,10 @@ test('parse - @description', function (t) {
 });
 
 test('parse - @emits', function (t) {
+  t.end();
+});
+
+test('parse - @enum', function (t) {
   t.end();
 });
 
@@ -186,6 +202,10 @@ test('parse - @exception', function (t) {
   t.end();
 });
 
+test('parse - @exports', function (t) {
+  t.end();
+});
+
 test('parse - @extends', function (t) {
   t.deepEqual(evaluate(function () {
     /** @extends Foo */
@@ -211,6 +231,10 @@ test('parse - @file', function (t) {
 });
 
 test('parse - @fileoverview', function (t) {
+  t.end();
+});
+
+test('parse - @fires', function (t) {
   t.end();
 });
 
@@ -243,6 +267,14 @@ test('parse - @ignore', function (t) {
     /** @ignore */
   })[0].ignore, true);
 
+  t.end();
+});
+
+test('parse - @implements', function (t) {
+  t.end();
+});
+
+test('parse - @inheritdoc', function (t) {
   t.end();
 });
 
@@ -302,6 +334,10 @@ test('parse - @linkplain', function (t) {
   t.end();
 });
 
+test('parse - @listens', function (t) {
+  t.end();
+});
+
 test('parse - @member', function (t) {
   t.equal(evaluate(function () {
     /** @member name */
@@ -319,6 +355,10 @@ test('parse - @memberof', function (t) {
 });
 
 test('parse - @method', function (t) {
+  t.end();
+});
+
+test('parse - @mixes', function (t) {
   t.end();
 });
 
@@ -421,6 +461,10 @@ test('parse - @readonly', function (t) {
   t.end();
 });
 
+test('parse - @requires', function (t) {
+  t.end();
+});
+
 test('parse - @return', function (t) {
   t.deepEqual(evaluate(function () {
     /** @return test */
@@ -465,6 +509,10 @@ test('parse - @summary', function (t) {
   t.end();
 });
 
+test('parse - @this', function (t) {
+  t.end();
+});
+
 test('parse - @throws', function (t) {
   t.equal(evaluate(function () {
     /** @throws {Object} exception */
@@ -478,6 +526,14 @@ test('parse - @todo', function (t) {
     /** @todo test */
   })[0].todos[0], 'test', 'see');
 
+  t.end();
+});
+
+test('parse - @tutorial', function (t) {
+  t.end();
+});
+
+test('parse - @type', function (t) {
   t.end();
 });
 
