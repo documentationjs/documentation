@@ -254,6 +254,18 @@ test('parse - @instance', function (t) {
   t.end();
 });
 
+test('parse - @interface', function (t) {
+  t.deepEqual(evaluate(function () {
+    /** @interface */
+  })[0].interface, true, 'anonymous');
+
+  t.deepEqual(evaluate(function () {
+    /** @interface Foo */
+  })[0].name, 'Foo', 'named');
+
+  t.end();
+});
+
 test('parse - @kind', function (t) {
   t.equal(evaluate(function () {
     /** @kind class */
