@@ -150,9 +150,7 @@
     ],
     "examples": [
       {
-        "title": "example",
-        "description": "var address = new Address6('2001::/32');",
-        "lineNumber": 9
+        "description": "var address = new Address6('2001::/32');"
       }
     ],
     "name": "Address6",

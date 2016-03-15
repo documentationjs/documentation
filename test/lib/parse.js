@@ -140,10 +140,36 @@ test('parse - @example', function (t) {
   t.deepEqual(evaluate(function () {
     /** @example test */
   })[0].examples[0], {
-    lineNumber: 0,
-    title: 'example',
     description: 'test'
-  }, 'example');
+  }, 'single line');
+
+  t.deepEqual(evaluate(function () {
+    /**
+     * @example
+     * a
+     * b
+     */
+  })[0].examples[0], {
+    description: 'a\nb'
+  }, 'multiline');
+
+  t.deepEqual(evaluate(function () {
+    /**
+     * @example <caption>caption</caption>
+     * a
+     * b
+     */
+  })[0].examples[0], {
+    description: 'a\nb',
+    caption: 'caption'
+  }, 'with caption');
+
+  t.deepEqual(evaluate(function () {
+    /** @example */
+  })[0].errors[0], {
+    message: '@example without code',
+    commentLineNumber: 0
+  }, 'missing description');
 
   t.end();
 });

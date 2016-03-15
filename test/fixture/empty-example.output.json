@@ -31,12 +31,10 @@
       },
       "code": "/**\n * This function returns the number plus two.\n *\n * @example\n */\nfunction returnTwo() {\n  return a + 2;\n}\n"
     },
-    "errors": [],
-    "examples": [
+    "errors": [
       {
-        "title": "example",
-        "description": "",
-        "lineNumber": 3
+        "message": "@example without code",
+        "commentLineNumber": 3
       }
     ],
     "name": "returnTwo",

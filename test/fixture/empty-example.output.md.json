@@ -41,20 +41,6 @@
         },
         "indent": []
       }
-    },
-    {
-      "type": "strong",
-      "children": [
-        {
-          "type": "text",
-          "value": "Examples"
-        }
-      ]
-    },
-    {
-      "lang": "javascript",
-      "type": "code",
-      "value": ""
     }
   ]
 }

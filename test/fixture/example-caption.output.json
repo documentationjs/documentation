@@ -55,9 +55,7 @@
     ],
     "examples": [
       {
-        "title": "example",
         "description": "foo(1);",
-        "lineNumber": 3,
         "caption": "demonstrates how to run foo"
       }
     ],

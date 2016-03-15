@@ -91,14 +91,10 @@
     ],
     "examples": [
       {
-        "title": "example",
-        "description": "foo(1);",
-        "lineNumber": 3
+        "description": "foo(1);"
       },
       {
-        "title": "example",
-        "description": "foo(2);",
-        "lineNumber": 5
+        "description": "foo(2);"
       }
     ],
     "throws": [
