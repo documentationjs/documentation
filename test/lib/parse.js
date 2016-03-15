@@ -238,6 +238,14 @@ test('parse - @host', function (t) {
   t.end();
 });
 
+test('parse - @ignore', function (t) {
+  t.equal(evaluate(function () {
+    /** @ignore */
+  })[0].ignore, true);
+
+  t.end();
+});
+
 test('parse - @inner', function (t) {
   t.equal(evaluate(function () {
     /** @inner*/

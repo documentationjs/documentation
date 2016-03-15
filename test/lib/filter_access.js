@@ -3,6 +3,14 @@
 var test = require('tap').test,
   filterAccess = require('../../lib/filter_access');
 
+test('filterAccess ignore', function (t) {
+  t.deepEqual(filterAccess(['public', 'protected', 'undefined'], [{
+    access: 'public',
+    ignore: true
+  }]), []);
+  t.end();
+});
+
 test('filterAccess public, protected, undefined, no private', function (t) {
   t.deepEqual(filterAccess(['public', 'protected', 'undefined'], [{
     access: 'public'
