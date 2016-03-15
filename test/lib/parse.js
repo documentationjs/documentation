@@ -341,6 +341,14 @@ test('parse - @namespace', function (t) {
   t.end();
 });
 
+test('parse - @override', function (t) {
+  t.equal(evaluate(function () {
+    /** @override */
+  })[0].override, true);
+
+  t.end();
+});
+
 test('parse - @overview', function (t) {
   t.end();
 });
@@ -382,6 +390,14 @@ test('parse - @protected', function (t) {
 });
 
 test('parse - @public', function (t) {
+  t.end();
+});
+
+test('parse - @readonly', function (t) {
+  t.equal(evaluate(function () {
+    /** @readonly */
+  })[0].readonly, true);
+
   t.end();
 });
 
