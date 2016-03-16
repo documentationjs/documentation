@@ -98,10 +98,10 @@ test('external modules option', function (t) {
 });
 
 test('extension option', function (t) {
-  documentation(['build fixture/extension/jsx.jsx ' +
-    '--extension=jsx'], function (err, data) {
+  documentation(['build fixture/extension/index.otherextension ' +
+    '--extension=otherextension'], function (err, data) {
     t.ifError(err);
-    t.equal(data.length, 1, 'includes jsx file');
+    t.equal(data.length, 1, 'includes a file with an arbitrary extension');
     t.end();
   });
 });
