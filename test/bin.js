@@ -58,6 +58,28 @@ test('defaults to parsing package.json main', function (t) {
   });
 }, options);
 
+test('polyglot mode', function (t) {
+  documentation(['build fixture/polyglot/blend.cpp --polyglot'],
+    function (err, data) {
+      t.ifError(err);
+      if (process.env.UPDATE) {
+        fs.writeFileSync(
+          path.resolve(__dirname,
+            'fixture',
+            'polyglot/blend.json'), JSON.stringify(normalize(data), null, 2), 'utf8');
+      }
+      var expected = fs.readFileSync(
+        path.resolve(__dirname,
+          'fixture',
+          'polyglot/blend.json'), 'utf8');
+      t.deepEqual(
+        normalize(data),
+        JSON.parse(expected),
+        'parsed C++ file');
+      t.end();
+    });
+}, options);
+
 test('accepts config file', function (t) {
   documentation(['build fixture/sorting/input.js -c fixture/config.json'],
     function (err, data) {

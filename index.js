@@ -102,7 +102,7 @@ module.exports = function (indexes, options, callback) {
         filterAccess(options.access,
           hierarchy(
             inputs
-              .filter(filterJS(options.extension))
+              .filter(filterJS(options.extension, options.polyglot))
               .reduce(function (memo, file) {
                 return memo.concat(parseFn(file));
               }, [])
@@ -160,7 +160,7 @@ module.exports.lint = function lint(indexes, options, callback) {
     callback(null,
       formatLint(hierarchy(
         inputs
-          .filter(filterJS(options.extension))
+          .filter(filterJS(options.extension, options.polyglot))
           .reduce(function (memo, file) {
             return memo.concat(parseFn(file));
           }, [])
