@@ -20,11 +20,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 32
+              "column": 32,
+              "offset": 31
             },
             "indent": []
           }
@@ -33,11 +35,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 32
+          "column": 32,
+          "offset": 31
         },
         "indent": []
       }
@@ -74,6 +78,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -97,11 +102,13 @@
                       "position": {
                         "start": {
                           "line": 1,
-                          "column": 1
+                          "column": 1,
+                          "offset": 0
                         },
                         "end": {
                           "line": 1,
-                          "column": 28
+                          "column": 28,
+                          "offset": 27
                         },
                         "indent": []
                       }
@@ -110,11 +117,13 @@
                   "position": {
                     "start": {
                       "line": 1,
-                      "column": 1
+                      "column": 1,
+                      "offset": 0
                     },
                     "end": {
                       "line": 1,
-                      "column": 28
+                      "column": 28,
+                      "offset": 27
                     },
                     "indent": []
                   }
@@ -144,11 +153,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 18
+              "column": 18,
+              "offset": 17
             },
             "indent": []
           }
@@ -157,11 +168,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 18
+          "column": 18,
+          "offset": 17
         },
         "indent": []
       }
@@ -198,6 +211,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
                       "type": "link",
                       "children": [
                         {
@@ -221,11 +235,13 @@
                       "position": {
                         "start": {
                           "line": 1,
-                          "column": 1
+                          "column": 1,
+                          "offset": 0
                         },
                         "end": {
                           "line": 1,
-                          "column": 26
+                          "column": 26,
+                          "offset": 25
                         },
                         "indent": []
                       }
@@ -234,11 +250,13 @@
                   "position": {
                     "start": {
                       "line": 1,
-                      "column": 1
+                      "column": 1,
+                      "offset": 0
                     },
                     "end": {
                       "line": 1,
-                      "column": 26
+                      "column": 26,
+                      "offset": 25
                     },
                     "indent": []
                   }
@@ -261,6 +279,7 @@
           "children": [
             {
               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
               "type": "link",
               "children": [
                 {
@@ -284,11 +303,13 @@
               "position": {
                 "start": {
                   "line": 1,
-                  "column": 1
+                  "column": 1,
+                  "offset": 0
                 },
                 "end": {
                   "line": 1,
-                  "column": 10
+                  "column": 10,
+                  "offset": 9
                 },
                 "indent": []
               }
@@ -297,11 +318,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 10
+              "column": 10,
+              "offset": 9
             },
             "indent": []
           }
@@ -327,11 +350,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 14
+              "column": 14,
+              "offset": 13
             },
             "indent": []
           }
@@ -340,11 +365,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 14
+          "column": 14,
+          "offset": 13
         },
         "indent": []
       }
@@ -361,6 +388,7 @@
           "children": [
             {
               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
               "type": "link",
               "children": [
                 {
@@ -384,11 +412,13 @@
               "position": {
                 "start": {
                   "line": 1,
-                  "column": 1
+                  "column": 1,
+                  "offset": 0
                 },
                 "end": {
                   "line": 1,
-                  "column": 26
+                  "column": 26,
+                  "offset": 25
                 },
                 "indent": []
               }
@@ -397,11 +427,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 26
+              "column": 26,
+              "offset": 25
             },
             "indent": []
           }

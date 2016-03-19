@@ -20,11 +20,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 38
+              "column": 38,
+              "offset": 37
             },
             "indent": []
           }
@@ -33,11 +35,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 38
+          "column": 38,
+          "offset": 37
         },
         "indent": []
       }
@@ -105,6 +109,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
                       "type": "link",
                       "children": [
                         {
@@ -142,6 +147,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
                       "type": "link",
                       "children": [
                         {
@@ -183,6 +189,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
                       "type": "link",
                       "children": [
                         {
@@ -197,6 +204,7 @@
                     },
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -238,6 +246,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "type": "link",
                       "children": [
                         {
@@ -301,6 +310,7 @@
           "children": [
             {
               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
               "type": "link",
               "children": [
                 {
@@ -336,11 +346,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 12
+              "column": 12,
+              "offset": 11
             },
             "indent": []
           }
@@ -349,11 +361,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 12
+          "column": 12,
+          "offset": 11
         },
         "indent": []
       }
@@ -390,6 +404,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -413,11 +428,13 @@
                       "position": {
                         "start": {
                           "line": 1,
-                          "column": 1
+                          "column": 1,
+                          "offset": 0
                         },
                         "end": {
                           "line": 1,
-                          "column": 15
+                          "column": 15,
+                          "offset": 14
                         },
                         "indent": []
                       }
@@ -426,11 +443,13 @@
                   "position": {
                     "start": {
                       "line": 1,
-                      "column": 1
+                      "column": 1,
+                      "offset": 0
                     },
                     "end": {
                       "line": 1,
-                      "column": 15
+                      "column": 15,
+                      "offset": 14
                     },
                     "indent": []
                   }
@@ -458,6 +477,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -495,6 +515,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "type": "link",
                       "children": [
                         {
@@ -534,6 +555,7 @@
                           "children": [
                             {
                               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
                               "type": "link",
                               "children": [
                                 {
@@ -575,6 +597,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "type": "link",
                       "children": [
                         {
@@ -614,6 +637,7 @@
                           "children": [
                             {
                               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                               "type": "link",
                               "children": [
                                 {
@@ -653,6 +677,7 @@
                                   "children": [
                                     {
                                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                                       "type": "link",
                                       "children": [
                                         {
@@ -700,11 +725,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 38
+              "column": 38,
+              "offset": 37
             },
             "indent": []
           }
@@ -713,11 +740,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 38
+          "column": 38,
+          "offset": 37
         },
         "indent": []
       }
@@ -741,11 +770,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 40
+              "column": 40,
+              "offset": 39
             },
             "indent": []
           }
@@ -754,11 +785,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 40
+          "column": 40,
+          "offset": 39
         },
         "indent": []
       }
@@ -795,6 +828,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -832,6 +866,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -871,11 +906,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 25
+              "column": 25,
+              "offset": 24
             },
             "indent": []
           }
@@ -884,11 +921,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 25
+          "column": 25,
+          "offset": 24
         },
         "indent": []
       }
@@ -925,6 +964,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
                       "type": "link",
                       "children": [
                         {
@@ -939,6 +979,7 @@
                     },
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
                       "type": "link",
                       "children": [
                         {
@@ -980,6 +1021,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "type": "link",
                       "children": [
                         {
@@ -1033,6 +1075,7 @@
           "children": [
             {
               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
               "type": "link",
               "children": [
                 {

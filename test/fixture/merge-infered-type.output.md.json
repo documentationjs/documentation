@@ -20,11 +20,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 13
+              "column": 13,
+              "offset": 12
             },
             "indent": []
           }
@@ -35,11 +37,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 13
+              "column": 13,
+              "offset": 12
             },
             "end": {
               "line": 1,
-              "column": 16
+              "column": 16,
+              "offset": 15
             },
             "indent": []
           }
@@ -50,11 +54,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 16
+              "column": 16,
+              "offset": 15
             },
             "end": {
               "line": 1,
-              "column": 17
+              "column": 17,
+              "offset": 16
             },
             "indent": []
           }
@@ -63,11 +69,13 @@
       "position": {
         "start": {
           "line": 1,
-          "column": 1
+          "column": 1,
+          "offset": 0
         },
         "end": {
           "line": 1,
-          "column": 17
+          "column": 17,
+          "offset": 16
         },
         "indent": []
       }
@@ -104,6 +112,7 @@
                   "children": [
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
                       "children": [
                         {
@@ -127,11 +136,13 @@
                       "position": {
                         "start": {
                           "line": 1,
-                          "column": 1
+                          "column": 1,
+                          "offset": 0
                         },
                         "end": {
                           "line": 1,
-                          "column": 27
+                          "column": 27,
+                          "offset": 26
                         },
                         "indent": []
                       }
@@ -140,11 +151,13 @@
                   "position": {
                     "start": {
                       "line": 1,
-                      "column": 1
+                      "column": 1,
+                      "offset": 0
                     },
                     "end": {
                       "line": 1,
-                      "column": 27
+                      "column": 27,
+                      "offset": 26
                     },
                     "indent": []
                   }
@@ -167,6 +180,7 @@
           "children": [
             {
               "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
               "type": "link",
               "children": [
                 {
@@ -190,11 +204,13 @@
               "position": {
                 "start": {
                   "line": 1,
-                  "column": 1
+                  "column": 1,
+                  "offset": 0
                 },
                 "end": {
                   "line": 1,
-                  "column": 13
+                  "column": 13,
+                  "offset": 12
                 },
                 "indent": []
               }
@@ -203,11 +219,13 @@
           "position": {
             "start": {
               "line": 1,
-              "column": 1
+              "column": 1,
+              "offset": 0
             },
             "end": {
               "line": 1,
-              "column": 13
+              "column": 13,
+              "offset": 12
             },
             "indent": []
           }

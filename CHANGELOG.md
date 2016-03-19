@@ -1,3 +1,20 @@
+## 4.0.0-beta1
+
+**Now using Babel 6!**
+
+Much long-awaited upgrade makes documentation.js compatible with fresh
+new Babel-using codebases.
+
+And also:
+
+* GitHub Enterprise support
+* New tag support: abstract, override, readonly, interface, variation, see, todo
+  (only in parsing phase, not yet in all outputs)
+* Parses jsx and es6 extensions by default, as well as .js
+* Fixes polyglot mode
+* Now shows the `@throws` tag content in Markdown output
+* Support for example captions
+
 ## 4.0.0-beta
 
 **Revitalized documentation.js command line interface!**
