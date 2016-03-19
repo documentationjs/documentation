@@ -14,14 +14,23 @@ commands[parsedArgs.command](documentation, parsedArgs);
 
 function parseArgs() {
 
-  var commandArgv = addCommands(yargs)
+  var rawArgv = addCommands(yargs)
     .version(function () {
       return require('../package').version;
     })
     .argv;
 
-  var argv = commands[commandArgv._[0]]
-    .parseArgs(yargs.reset()).argv;
+  var command = rawArgv._[0];
+
+  if (!commands[command]) {
+    yargs.showHelp();
+    var suggestion = [rawArgv['$0'], 'build'].concat(process.argv.slice(2)).join(' ');
+    process.stderr.write('Unknown command: ' + command + '.  Did you mean "' + suggestion + '"?\n');
+    process.exit(1);
+  }
+
+  var argv = commands[command].parseArgs(yargs.reset()).argv;
+  var inputs = argv._.slice(1);
 
   var options = {};
   if (argv.config) {
@@ -35,16 +44,6 @@ function parseArgs() {
 
   if (options.private) {
     options.access = (options.access || ['public', 'undefined', 'protected']).concat(['private']);
-  }
-
-  var command = argv._[0],
-    inputs = argv._.slice(1);
-
-  if (!commands[command]) {
-    yargs.showHelp();
-    var suggestion = [argv['$0'], 'build'].concat(process.argv.slice(2)).join(' ');
-    process.stderr.write('Unknown command: ' + command + '.  Did you mean "' + suggestion + '"?\n');
-    process.exit(1);
   }
 
   if (inputs.length == 0) {
@@ -66,8 +65,8 @@ function parseArgs() {
   };
 }
 
-function addCommands(parser, descriptionOnly) {
-  return Object.keys(commands).reduce(function(parser, cmd) {
+function addCommands(parser) {
+  return Object.keys(commands).reduce(function (parser, cmd) {
     return parser.command(cmd, commands[cmd].description);
   }, parser.demand(1)).help('help');
 }
