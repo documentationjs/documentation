@@ -70,6 +70,8 @@ function functionWithRest(...someParams) {
 function functionWithRestAndType(...someParams: number) {
 }
 
+// FUNCTION TYPES
+
 /**
  * This is an async method
  */
@@ -89,3 +91,29 @@ module.exports = () => (<p>hello</p>);
 function veryImportantTransform(foo = 'bar') {
   return "42";
 }
+
+// ACCESS LEVELS
+
+/**
+ * A private function
+ * @private
+ */
+function iAmPrivate() { }
+
+/**
+ * A protected function
+ * @protected
+ */
+function iAmProtected() { }
+
+/**
+ * A public function
+ * @public
+ */
+function iAmPublic() { }
+
+/**
+ * A private function using the access tag
+ * @access private
+ */
+function iAmAccessPrivate() { }

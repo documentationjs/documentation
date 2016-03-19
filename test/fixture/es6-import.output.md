@@ -70,6 +70,14 @@ So does this one, with types
 
 -   `someParams` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
+# iAmProtected
+
+A protected function
+
+# iAmPublic
+
+A public function
+
 # multiply
 
 This function returns the number one.

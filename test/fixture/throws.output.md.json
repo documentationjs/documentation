@@ -140,6 +140,76 @@
       "value": "var result = returnTwo(4);\n// result is 6"
     },
     {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Throws "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Error"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "if number is 3",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 15
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15
+                    },
+                    "indent": []
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "children": [
         {
