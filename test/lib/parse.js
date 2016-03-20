@@ -345,14 +345,6 @@ test('parse - @license', function (t) {
   t.end();
 });
 
-test('parse - @linkcode', function (t) {
-  t.end();
-});
-
-test('parse - @linkplain', function (t) {
-  t.end();
-});
-
 test('parse - @listens', function (t) {
   t.end();
 });
@@ -763,6 +755,14 @@ test('parse - {@link}', function (t) {
   })[0].description), removePosition(remark.parse('[text](Foo)')));
 
   t.done();
+});
+
+test('parse - {@linkcode}', function (t) {
+  t.end();
+});
+
+test('parse - {@linkplain}', function (t) {
+  t.end();
 });
 
 test('parse - {@tutorial}', function (t) {
