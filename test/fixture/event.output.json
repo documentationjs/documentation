@@ -111,7 +111,8 @@
       }
     },
     "errors": [],
-    "event": "Map#mousemove",
+    "kind": "event",
+    "name": "Map#mousemove",
     "properties": [
       {
         "name": "point",
@@ -234,8 +235,6 @@
         }
       }
     ],
-    "name": "Map#mousemove",
-    "kind": "event",
     "members": {
       "instance": [],
       "static": []

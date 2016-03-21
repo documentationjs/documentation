@@ -39,9 +39,7 @@
         "commentLineNumber": 0
       }
     ],
-    "class": {
-      "name": "Foo"
-    },
+    "kind": "class",
     "name": "Foo",
     "augments": [
       {
@@ -49,7 +47,6 @@
         "name": "Bar"
       }
     ],
-    "kind": "class",
     "memberof": "module",
     "scope": "static",
     "members": {

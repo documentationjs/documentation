@@ -95,9 +95,8 @@
       "code": "/**\n * This is my class, a demo thing.\n * @class MyClass\n * @property {number} howMany how many things it contains\n */\nfunction MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };\n"
     },
     "errors": [],
-    "class": {
-      "name": "MyClass"
-    },
+    "kind": "class",
+    "name": "MyClass",
     "properties": [
       {
         "name": "howMany",
@@ -160,8 +159,6 @@
         }
       }
     ],
-    "name": "MyClass",
-    "kind": "class",
     "members": {
       "instance": [
         {

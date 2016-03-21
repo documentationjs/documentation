@@ -192,11 +192,8 @@
       "code": "/**\n * an area chart generator\n * @returns {area} chart\n */\nvar area = function() {\n\n  /**\n   * @class area\n   */\n  var chart = function(selection) {\n  };\n\n  /**\n   * Sets the chart data.\n   * @function\n   */\n  chart.data = function(_) {\n  };\n\n  return chart;\n};\n"
     },
     "errors": [],
-    "class": {
-      "name": "area"
-    },
-    "name": "area",
     "kind": "class",
+    "name": "area",
     "params": [
       {
         "title": "param",
@@ -302,9 +299,8 @@
         "commentLineNumber": 0
       }
     ],
-    "function": null,
-    "name": "data",
     "kind": "function",
+    "name": "data",
     "params": [
       {
         "title": "param",

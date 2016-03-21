@@ -17,13 +17,6 @@ test('inferKind', function (t) {
     tags: []
   }).kind, 'class', 'explicit');
 
-  ['class', 'constant', 'event', 'external', 'file',
-    'function', 'member', 'mixin', 'module', 'namespace', 'typedef'].forEach(function (tag) {
-      var comment = { tags: [] };
-      comment[tag] = true;
-      t.equal(inferKind(comment).kind, tag, 'from ' + tag + ' keyword');
-    });
-
   t.equal(inferKind(toComment(function () {
     /** function */
     function foo() { }

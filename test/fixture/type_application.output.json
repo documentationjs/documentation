@@ -103,9 +103,8 @@
       }
     },
     "errors": [],
-    "class": {
-      "name": "Address6"
-    },
+    "kind": "class",
+    "name": "Address6",
     "params": [
       {
         "name": "address",
@@ -177,8 +176,6 @@
         }
       }
     ],
-    "name": "Address6",
-    "kind": "class",
     "members": {
       "instance": [],
       "static": []

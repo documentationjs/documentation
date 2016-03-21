@@ -95,12 +95,9 @@
         "commentLineNumber": 4
       }
     ],
-    "class": {
-      "name": "MyClass"
-    },
-    "memberof": "com.Test",
-    "name": "MyClass",
     "kind": "class",
+    "name": "MyClass",
+    "memberof": "com.Test",
     "members": {
       "instance": [
         {

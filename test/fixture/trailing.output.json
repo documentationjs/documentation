@@ -400,11 +400,8 @@
       }
     },
     "errors": [],
-    "class": {
-      "name": "Something"
-    },
-    "name": "Something",
     "kind": "class",
+    "name": "Something",
     "members": {
       "instance": [],
       "static": []

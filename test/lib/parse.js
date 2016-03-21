@@ -3,7 +3,8 @@
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
   remark = require('remark'),
-  visit = require('unist-util-visit');
+  visit = require('unist-util-visit'),
+  _ = require('lodash');
 
 function evaluate(fn, filename) {
   return parse({
@@ -72,17 +73,44 @@ test('parse - @borrows', function (t) {
 });
 
 test('parse - @callback', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
     /** @callback name */
-  })[0].callback, 'name', 'callback');
+  })[0], 'kind', 'name', 'type'), {
+    name: 'name',
+    kind: 'typedef',
+    type: {
+      type: 'NameExpression',
+      name: 'Function'
+    }
+  });
 
   t.end();
 });
 
 test('parse - @class', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @class */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'class'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @class name */
-  })[0].class.name, 'name', 'class');
+  })[0], 'kind', 'name', 'type'), {
+    name: 'name',
+    kind: 'class'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @class {Object} name */
+  })[0], 'kind', 'name', 'type'), {
+    name: 'name',
+    kind: 'class',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
 
   t.end();
 });
@@ -100,9 +128,40 @@ test('parse - @const', function (t) {
 });
 
 test('parse - @constant', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @constant */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'constant'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @constant name */
-  })[0].constant.name, 'name', 'constant');
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'constant',
+    name: 'name'
+  });
+
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @constant {Object} */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'constant',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @constant {Object} name */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'constant',
+    name: 'name',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
 
   t.end();
 });
@@ -172,9 +231,12 @@ test('parse - @enum', function (t) {
 });
 
 test('parse - @event', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
     /** @event name */
-  })[0].event, 'name', 'event');
+  })[0], 'kind', 'name'), {
+    kind: 'event',
+    name: 'name'
+  });
 
   t.end();
 });
@@ -234,17 +296,29 @@ test('parse - @extends', function (t) {
 });
 
 test('parse - @external', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
     /** @external name */
-  })[0].external, 'name', 'external');
+  })[0], 'kind', 'name'), {
+    kind: 'external',
+    name: 'name'
+  });
 
   t.end();
 });
 
 test('parse - @file', function (t) {
-  t.equal(evaluate(function () {
-    /** @file name */
-  })[0].file, 'name', 'file');
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @file */
+  })[0], 'kind'), {
+    kind: 'file'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @file desc */
+  })[0], 'kind', 'description'), {
+    kind: 'file',
+    description: remark.parse('desc')
+  });
 
   t.end();
 });
@@ -262,9 +336,18 @@ test('parse - @func', function (t) {
 });
 
 test('parse - @function', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @function */
+  })[0], 'kind', 'name'), {
+    kind: 'function'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @function name */
-  })[0].function, 'name', 'function');
+  })[0], 'kind', 'name'), {
+    kind: 'function',
+    name: 'name'
+  });
 
   t.end();
 });
@@ -350,9 +433,39 @@ test('parse - @listens', function (t) {
 });
 
 test('parse - @member', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @member */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'member'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @member name */
-  })[0].member.name, 'name', 'member');
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'member',
+    name: 'name'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @member {Object} */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'member',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @member {Object} name */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'member',
+    name: 'name',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
 
   t.end();
 });
@@ -374,24 +487,46 @@ test('parse - @mixes', function (t) {
 });
 
 test('parse - @mixin', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @mixin */
+  })[0], 'kind', 'name'), {
+    kind: 'mixin'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @mixin name */
-  })[0].mixin, 'name', 'mixin');
+  })[0], 'kind', 'name'), {
+    kind: 'mixin',
+    name: 'name'
+  });
 
   t.end();
 });
 
 test('parse - @module', function (t) {
-  t.equal(evaluate(function () {
-    /** @module name */
-  })[0].module.name, 'name', 'module');
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @module */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'module'
+  });
 
-  t.deepEqual(evaluate(function () {
-    /** @module {string} name */
-  })[0].module.type, {
-    type: 'NameExpression',
-    name: 'string'
-  }, 'typed name');
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @module name */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'module',
+    name: 'name'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @module {Object} name */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'module',
+    name: 'name',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
 
   t.end();
 });
@@ -405,9 +540,29 @@ test('parse - @name', function (t) {
 });
 
 test('parse - @namespace', function (t) {
-  t.equal(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @namespace */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'namespace'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
     /** @namespace name */
-  })[0].namespace.name, 'name', 'namespace');
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'namespace',
+    name: 'name'
+  });
+
+  t.deepEqual(_.pick(evaluate(function () {
+    /** @namespace {Object} name */
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'namespace',
+    name: 'name',
+    type: {
+      type: 'NameExpression',
+      name: 'Object'
+    }
+  });
 
   t.end();
 });
@@ -697,15 +852,16 @@ test('parse - @type', function (t) {
 });
 
 test('parse - @typedef', function (t) {
-  t.deepEqual(evaluate(function () {
+  t.deepEqual(_.pick(evaluate(function () {
     /** @typedef {Object} name */
-  })[0].typedef, {
+  })[0], 'kind', 'name', 'type'), {
+    kind: 'typedef',
     name: 'name',
     type: {
       type: 'NameExpression',
       name: 'Object'
     }
-  }, 'namespace');
+  });
 
   t.end();
 });

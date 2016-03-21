@@ -114,12 +114,10 @@
     },
     "errors": [],
     "name": "MyType",
-    "typedef": {
-      "name": "MyType",
-      "type": {
-        "type": "NameExpression",
-        "name": "Object"
-      }
+    "kind": "typedef",
+    "type": {
+      "type": "NameExpression",
+      "name": "Object"
     },
     "properties": [
       {
