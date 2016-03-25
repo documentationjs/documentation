@@ -1,3 +1,11 @@
+## 4.0.0-beta2
+
+Minor fixes
+
+* Fixes `export { foo } from './bar'` style export
+* Fixed CLI usage examples to simply say `documentation` instead of `/usr/bin/documentation` or
+  similar.
+
 ## 4.0.0-beta1
 
 **Now using Babel 6!**
