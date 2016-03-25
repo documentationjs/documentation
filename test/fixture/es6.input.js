@@ -117,3 +117,8 @@ function iAmPublic() { }
  * @access private
  */
 function iAmAccessPrivate() { }
+
+/**
+ * This is re-exported
+ */
+export { execute } from 'external-module';
