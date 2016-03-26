@@ -186,6 +186,14 @@ test('lint command', function (group) {
     }, false);
   }, options);
 
+  group.test('generates no memberof error on a good file', function (t) {
+    documentation(['lint fixture/lint/memberof.input.js'], {}, function (err, data) {
+      t.equal(err, null);
+      t.equal(data, '', 'no output');
+      t.end();
+    }, false);
+  }, options);
+
   group.test('exposes syntax error on a bad file', function (t) {
     documentation(['lint fixture/bad/syntax.input.js'], {}, function (err, data) {
       t.ok(err.code > 0, 'exits with a > 0 exit code');
