@@ -22,7 +22,7 @@
     "debounce": "^1.0.0",
     "disparity": "^2.0.0",
     "doctrine": "^1.1.0",
-    "documentation-theme-default": "documentationjs/documentation-theme-default#markdown",
+    "documentation-theme-default": "3.0.0-beta1",
     "documentation-theme-utils": "^2.0.2",
     "events": "^1.1.0",
     "extend": "^3.0.0",
