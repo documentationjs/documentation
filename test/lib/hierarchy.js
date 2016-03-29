@@ -147,3 +147,36 @@ test('hierarchy - anonymous', function (t) {
   }]);
   t.end();
 });
+
+test('hierarchy - object prototype member names', function (t) {
+  var comments = evaluate(function () {
+    /**
+     * @name should
+     * @function
+     */
+
+    /**
+     * @name Assertion
+     * @class
+     * @memberof should
+     */
+
+    /**
+     * @name hasOwnProperty
+     * @memberof should.Assertion
+     * @instance
+     * @function
+     **/
+
+    /**
+     * @name otherMethod
+     * @memberof should.Assertion
+     * @instance
+     * @function
+     **/
+  });
+
+  t.deepEqual(_.map(comments[0].members.static[0].members.instance, 'name'), [ 'hasOwnProperty', 'otherMethod' ]);
+
+  t.end();
+});
