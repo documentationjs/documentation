@@ -128,6 +128,13 @@ test('extension option', function (t) {
   });
 });
 
+test('extension option', function (t) {
+  documentation(['build fixture/extension.jsx'], function (err, data) {
+    t.ifError(err);
+    t.end();
+  });
+});
+
 test('invalid arguments', function (group) {
   group.test('bad -f option', function (t) {
     documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
