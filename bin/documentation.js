@@ -53,7 +53,7 @@ function parseArgs() {
       inputs = [p.main || 'index.js'];
     }
   } catch (e) {
-
+    // Continue regardless of error
   }
 
   if (inputs.length == 0) {
