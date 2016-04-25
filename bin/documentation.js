@@ -46,15 +46,19 @@ function parseArgs() {
     options.access = (options.access || ['public', 'undefined', 'protected']).concat(['private']);
   }
 
-  if (inputs.length == 0) {
-    try {
-      var p = require(path.resolve('package.json'));
-      options.package = p;
+  try {
+    var p = require(path.resolve('package.json'));
+    options.package = p;
+    if (inputs.length == 0) {
       inputs = [p.main || 'index.js'];
-    } catch (e) {
-      yargs.showHelp();
-      throw new Error('documentation was given no files and was not run in a module directory');
     }
+  } catch (e) {
+
+  }
+
+  if (inputs.length == 0) {
+    yargs.showHelp();
+    throw new Error('documentation was given no files and was not run in a module directory');
   }
 
   return {
