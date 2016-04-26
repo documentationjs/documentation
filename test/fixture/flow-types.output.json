@@ -8,170 +8,6 @@
           "children": [
             {
               "type": "text",
-              "value": "This function returns the number one.",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 38,
-                  "offset": 37
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 38,
-              "offset": 37
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 38,
-          "offset": 37
-        }
-      }
-    },
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 1,
-        "column": 0
-      },
-      "end": {
-        "line": 3,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 0
-        },
-        "end": {
-          "line": 6,
-          "column": 1
-        }
-      },
-      "code": "/**\n * This function returns the number one.\n */\nfunction addThem(a: Point, b: string, c: ?boolean, d: Array<number>, e: Object, f: Named): number {\n  return a + b + c + d + e;\n}\n\n/**\n * A 2D point.\n *\n * @property {number} x this is a prop\n */\ntype Point = {\n  x: number,\n  y: number,\n  rgb: {\n    hex: string\n  },\n  props: {\n    radius: {\n      x: number\n    }\n  }\n};\n\n/**\n * A type with entirely derived properties\n */\ntype Two = {\n  x: number,\n  y: number\n};\n\n/**\n * Just an alias for an array of strings\n */\ntype T = Array<string>;\n\n/**\n * Very Important Transform\n */\nfunction veryImportantTransform(\n  input: Array<string>,\n  options: Object = {}\n): string {\n  return \"42\";\n}\n"
-    },
-    "errors": [],
-    "name": "addThem",
-    "kind": "function",
-    "params": [
-      {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 4,
-        "type": {
-          "type": "NameExpression",
-          "name": "Point"
-        }
-      },
-      {
-        "title": "param",
-        "name": "b",
-        "lineNumber": 4,
-        "type": {
-          "type": "NameExpression",
-          "name": "string"
-        }
-      },
-      {
-        "title": "param",
-        "name": "c",
-        "lineNumber": 4,
-        "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "boolean"
-          }
-        }
-      },
-      {
-        "title": "param",
-        "name": "d",
-        "lineNumber": 4,
-        "type": {
-          "type": "TypeApplication",
-          "expression": {
-            "type": "NameExpression",
-            "name": "Array"
-          },
-          "applications": [
-            {
-              "type": "NameExpression",
-              "name": "number"
-            }
-          ]
-        }
-      },
-      {
-        "title": "param",
-        "name": "e",
-        "lineNumber": 4,
-        "type": {
-          "type": "NameExpression",
-          "name": "Object"
-        }
-      },
-      {
-        "title": "param",
-        "name": "f",
-        "lineNumber": 4,
-        "type": {
-          "type": "NameExpression",
-          "name": "Named"
-        }
-      }
-    ],
-    "returns": [
-      {
-        "type": {
-          "type": "NameExpression",
-          "name": "number"
-        }
-      }
-    ],
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "addThem"
-    ]
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
               "value": "A 2D point.",
               "position": {
                 "start": {
@@ -393,94 +229,6 @@
           "children": [
             {
               "type": "text",
-              "value": "Just an alias for an array of strings",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 38,
-                  "offset": 37
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 38,
-              "offset": 37
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 38,
-          "offset": 37
-        }
-      }
-    },
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 34,
-        "column": 0
-      },
-      "end": {
-        "line": 36,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 37,
-          "column": 0
-        },
-        "end": {
-          "line": 37,
-          "column": 23
-        }
-      },
-      "code": "/**\n * This function returns the number one.\n */\nfunction addThem(a: Point, b: string, c: ?boolean, d: Array<number>, e: Object, f: Named): number {\n  return a + b + c + d + e;\n}\n\n/**\n * A 2D point.\n *\n * @property {number} x this is a prop\n */\ntype Point = {\n  x: number,\n  y: number,\n  rgb: {\n    hex: string\n  },\n  props: {\n    radius: {\n      x: number\n    }\n  }\n};\n\n/**\n * A type with entirely derived properties\n */\ntype Two = {\n  x: number,\n  y: number\n};\n\n/**\n * Just an alias for an array of strings\n */\ntype T = Array<string>;\n\n/**\n * Very Important Transform\n */\nfunction veryImportantTransform(\n  input: Array<string>,\n  options: Object = {}\n): string {\n  return \"42\";\n}\n"
-    },
-    "errors": [],
-    "name": "T",
-    "kind": "typedef",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "T"
-    ]
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
               "value": "A type with entirely derived properties",
               "position": {
                 "start": {
@@ -578,6 +326,258 @@
     },
     "path": [
       "Two"
+    ]
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Just an alias for an array of strings",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38,
+                  "offset": 37
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 34,
+        "column": 0
+      },
+      "end": {
+        "line": 36,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 37,
+          "column": 0
+        },
+        "end": {
+          "line": 37,
+          "column": 23
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n */\nfunction addThem(a: Point, b: string, c: ?boolean, d: Array<number>, e: Object, f: Named): number {\n  return a + b + c + d + e;\n}\n\n/**\n * A 2D point.\n *\n * @property {number} x this is a prop\n */\ntype Point = {\n  x: number,\n  y: number,\n  rgb: {\n    hex: string\n  },\n  props: {\n    radius: {\n      x: number\n    }\n  }\n};\n\n/**\n * A type with entirely derived properties\n */\ntype Two = {\n  x: number,\n  y: number\n};\n\n/**\n * Just an alias for an array of strings\n */\ntype T = Array<string>;\n\n/**\n * Very Important Transform\n */\nfunction veryImportantTransform(\n  input: Array<string>,\n  options: Object = {}\n): string {\n  return \"42\";\n}\n"
+    },
+    "errors": [],
+    "name": "T",
+    "kind": "typedef",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "T"
+    ]
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This function returns the number one.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38,
+                  "offset": 37
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function returns the number one.\n */\nfunction addThem(a: Point, b: string, c: ?boolean, d: Array<number>, e: Object, f: Named): number {\n  return a + b + c + d + e;\n}\n\n/**\n * A 2D point.\n *\n * @property {number} x this is a prop\n */\ntype Point = {\n  x: number,\n  y: number,\n  rgb: {\n    hex: string\n  },\n  props: {\n    radius: {\n      x: number\n    }\n  }\n};\n\n/**\n * A type with entirely derived properties\n */\ntype Two = {\n  x: number,\n  y: number\n};\n\n/**\n * Just an alias for an array of strings\n */\ntype T = Array<string>;\n\n/**\n * Very Important Transform\n */\nfunction veryImportantTransform(\n  input: Array<string>,\n  options: Object = {}\n): string {\n  return \"42\";\n}\n"
+    },
+    "errors": [],
+    "name": "addThem",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "Point"
+        }
+      },
+      {
+        "title": "param",
+        "name": "b",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      },
+      {
+        "title": "param",
+        "name": "c",
+        "lineNumber": 4,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "boolean"
+          }
+        }
+      },
+      {
+        "title": "param",
+        "name": "d",
+        "lineNumber": 4,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "number"
+            }
+          ]
+        }
+      },
+      {
+        "title": "param",
+        "name": "e",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        }
+      },
+      {
+        "title": "param",
+        "name": "f",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "Named"
+        }
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "addThem"
     ]
   },
   {

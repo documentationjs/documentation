@@ -1,7 +1,6 @@
 'use strict';
 
 var test = require('tap').test,
-  _ = require('lodash'),
   parse = require('../../../lib/parsers/javascript'),
   inferMembership = require('../../../lib/infer/membership')();
 
@@ -12,6 +11,15 @@ function toComment(fn, file) {
   });
 }
 
+function pick(obj, props) {
+  return props.reduce(function (memo, prop) {
+    if (obj[prop] !== undefined) {
+      memo[prop] = obj[prop];
+    }
+    return memo;
+  }, {});
+}
+
 function evaluate(fn, file) {
   return toComment(fn, file).map(inferMembership);
 }
@@ -20,7 +28,7 @@ function Foo() {}
 function lend() {}
 
 test('inferMembership - explicit', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /**
      * Test
      * @memberof Bar
@@ -32,7 +40,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'explicit');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     Foo.bar = 0;
   })[0], ['memberof', 'scope']), {
@@ -40,7 +48,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'implicit');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     Foo.prototype.bar = 0;
   })[0], ['memberof', 'scope']), {
@@ -48,7 +56,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   }, 'instance');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     Foo.bar.baz = 0;
   })[0], ['memberof', 'scope']), {
@@ -56,12 +64,12 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'compound');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     (0).baz = 0;
   })[0], ['memberof', 'scope']), { }, 'unknown');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     Foo.bar = {
       /** Test */
       baz: 0
@@ -71,7 +79,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'static object assignment');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     Foo.prototype = {
       /** Test */
       bar: 0
@@ -81,7 +89,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   }, 'instance object assignment');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     Foo.prototype = {
       /**
        * Test
@@ -93,7 +101,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   }, 'instance object assignment, function');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     var Foo = {
       /** Test */
       baz: 0
@@ -104,7 +112,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'variable object assignment');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     var Foo = {
       /** Test */
       baz: function () {}
@@ -115,7 +123,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'variable object assignment, function');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     module.exports = function () {};
   })[0], ['memberof', 'scope']), {
@@ -123,7 +131,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'simple');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     lend(/** @lends Foo */{
       /** Test */
       bar: 0
@@ -133,7 +141,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'lends, static');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     lend(/** @lends Foo */{
       /** Test */
       bar: function () {}
@@ -143,7 +151,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'static'
   }, 'inferMembership - lends, static, function');
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     lend(/** @lends Foo.prototype */{
       /** Test */
       bar: 0
@@ -153,7 +161,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     lend(/** @lends Foo.prototype */{
       /** Test */
       bar: function () {}
@@ -163,7 +171,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   }, 'inferMembership - lends, instance, function');
 
-  // t.deepEqual(_.pick(evaluate(function () {
+  // t.deepEqual(pick(evaluate(function () {
   //   /** Foo */
   //   function Foo() {
   //     /** Test */
@@ -357,7 +365,7 @@ test('inferMembership - no @module', function (t) {
 });
 
 test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     Foo.prototype = {
       /** Test */
       bar: function () {

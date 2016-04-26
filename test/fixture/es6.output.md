@@ -1,6 +1,55 @@
+# destructure
+
+Similar, but with an array
+
+**Parameters**
+
+-   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+    -   `$0.a`  
+    -   `$0.b`  
+    -   `$0.c`  
+
+# destructure
+
+This function destructures with defaults.
+
+**Parameters**
+
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+    -   `$0.phoneNumbers`   (optional, default `[]`)
+    -   `$0.emailAddresses`   (optional, default `[]`)
+    -   `$0.params` **...** 
+
+# iAmProtected
+
+A protected function
+
+# iAmPublic
+
+A public function
+
+# execute
+
+This is re-exported
+
+# multiply
+
+This function returns the number one.
+
+**Parameters**
+
+-   `a` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an array of numbers
+-   `b`  
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
+
 # Sink
 
 This is a sink
+
+## empty
+
+Is it empty
 
 ## aGetter
 
@@ -14,49 +63,13 @@ as a property.
 -   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the height of the thing
 -   `width` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the width of the thing
 
-## empty
-
-Is it empty
-
 ## hello
 
 This method says hello
 
-# destructure
+# staticProp
 
-This function destructures with defaults.
-
-**Parameters**
-
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
-    -   `$0.phoneNumbers`   (optional, default `[]`)
-    -   `$0.emailAddresses`   (optional, default `[]`)
-    -   `$0.params` **...** 
-
-# destructure
-
-Similar, but with an array
-
-**Parameters**
-
--   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
-    -   `$0.a`  
-    -   `$0.b`  
-    -   `$0.c`  
-
-# es6.input
-
-This function returns the number one.
-
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
-
-# execute
-
-This is re-exported
-
-# foo
-
-This is an async method
+This is a property of the sink.
 
 # functionWithRest
 
@@ -74,28 +87,15 @@ So does this one, with types
 
 -   `someParams` **...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
-# iAmProtected
+# foo
 
-A protected function
+This is an async method
 
-# iAmPublic
-
-A public function
-
-# multiply
+# es6.input
 
 This function returns the number one.
 
-**Parameters**
-
--   `a` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an array of numbers
--   `b`  
-
 Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
-
-# staticProp
-
-This is a property of the sink.
 
 # veryImportantTransform
 

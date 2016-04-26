@@ -3,8 +3,19 @@
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
   remark = require('remark'),
-  visit = require('unist-util-visit'),
-  _ = require('lodash');
+  visit = require('unist-util-visit');
+
+function pick(obj, props) {
+  if (Array.isArray(props)) {
+    return props.reduce(function (memo, prop) {
+      if (obj[prop] !== undefined) {
+        memo[prop] = obj[prop];
+      }
+      return memo;
+    }, {});
+  }
+  return obj[props];
+}
 
 function evaluate(fn, filename) {
   return parse({
@@ -73,9 +84,9 @@ test('parse - @borrows', function (t) {
 });
 
 test('parse - @callback', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @callback name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     name: 'name',
     kind: 'typedef',
     type: {
@@ -88,22 +99,22 @@ test('parse - @callback', function (t) {
 });
 
 test('parse - @class', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @class */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'class'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @class name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     name: 'name',
     kind: 'class'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @class {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     name: 'name',
     kind: 'class',
     type: {
@@ -128,23 +139,23 @@ test('parse - @const', function (t) {
 });
 
 test('parse - @constant', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @constant */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'constant'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @constant name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'constant',
     name: 'name'
   });
 
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @constant {Object} */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'constant',
     type: {
       type: 'NameExpression',
@@ -152,9 +163,9 @@ test('parse - @constant', function (t) {
     }
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @constant {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'constant',
     name: 'name',
     type: {
@@ -231,9 +242,9 @@ test('parse - @enum', function (t) {
 });
 
 test('parse - @event', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @event name */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'event',
     name: 'name'
   });
@@ -296,9 +307,9 @@ test('parse - @extends', function (t) {
 });
 
 test('parse - @external', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @external name */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'external',
     name: 'name'
   });
@@ -307,15 +318,15 @@ test('parse - @external', function (t) {
 });
 
 test('parse - @file', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @file */
-  })[0], 'kind'), {
+  })[0], ['kind']), {
     kind: 'file'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @file desc */
-  })[0], 'kind', 'description'), {
+  })[0], ['kind', 'description']), {
     kind: 'file',
     description: remark.parse('desc')
   });
@@ -336,15 +347,15 @@ test('parse - @func', function (t) {
 });
 
 test('parse - @function', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @function */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'function'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @function name */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'function',
     name: 'name'
   });
@@ -433,22 +444,22 @@ test('parse - @listens', function (t) {
 });
 
 test('parse - @member', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @member */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'member'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @member name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'member',
     name: 'name'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @member {Object} */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'member',
     type: {
       type: 'NameExpression',
@@ -456,9 +467,9 @@ test('parse - @member', function (t) {
     }
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @member {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'member',
     name: 'name',
     type: {
@@ -487,15 +498,15 @@ test('parse - @mixes', function (t) {
 });
 
 test('parse - @mixin', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @mixin */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'mixin'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @mixin name */
-  })[0], 'kind', 'name'), {
+  })[0], ['kind', 'name']), {
     kind: 'mixin',
     name: 'name'
   });
@@ -504,22 +515,22 @@ test('parse - @mixin', function (t) {
 });
 
 test('parse - @module', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @module */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'module'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @module name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'module',
     name: 'name'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @module {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'module',
     name: 'name',
     type: {
@@ -540,22 +551,22 @@ test('parse - @name', function (t) {
 });
 
 test('parse - @namespace', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @namespace */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'namespace'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @namespace name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'namespace',
     name: 'name'
   });
 
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @namespace {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'namespace',
     name: 'name',
     type: {
@@ -852,9 +863,9 @@ test('parse - @type', function (t) {
 });
 
 test('parse - @typedef', function (t) {
-  t.deepEqual(_.pick(evaluate(function () {
+  t.deepEqual(pick(evaluate(function () {
     /** @typedef {Object} name */
-  })[0], 'kind', 'name', 'type'), {
+  })[0], ['kind', 'name', 'type']), {
     kind: 'typedef',
     name: 'name',
     type: {

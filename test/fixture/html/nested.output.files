@@ -1621,16 +1621,6 @@ h4:hover .anchorjs-link {
             type='text' />
           <div id='toc'>
               <a
-                href='#Foo'
-                class='block bold'>
-                Foo
-              </a>
-                <a
-                  href='#Foo.bar'
-                  class='regular block'>
-                  #bar
-                </a>
-              <a
                 href='#bar'
                 class='block bold'>
                 bar
@@ -1656,16 +1646,6 @@ h4:hover .anchorjs-link {
                   .event
                 </a>
                 <a
-                  href='#Klass.isArrayOfBuffers'
-                  class='regular block'>
-                  .isArrayOfBuffers
-                </a>
-                <a
-                  href='#Klass.isBuffer'
-                  class='regular block'>
-                  .isBuffer
-                </a>
-                <a
                   href='#Klass.isClass'
                   class='regular block'>
                   .isClass
@@ -1674,6 +1654,16 @@ h4:hover .anchorjs-link {
                   href='#Klass.isWeird'
                   class='regular block'>
                   .isWeird
+                </a>
+                <a
+                  href='#Klass.isBuffer'
+                  class='regular block'>
+                  .isBuffer
+                </a>
+                <a
+                  href='#Klass.isArrayOfBuffers'
+                  class='regular block'>
+                  .isArrayOfBuffers
                 </a>
                 <a
                   href='#Klass.MAGIC_NUMBER'
@@ -1690,50 +1680,22 @@ h4:hover .anchorjs-link {
                   class='regular block'>
                   #withOptions
                 </a>
+              <a
+                href='#Foo'
+                class='block bold'>
+                Foo
+              </a>
+                <a
+                  href='#Foo.bar'
+                  class='regular block'>
+                  #bar
+                </a>
           </div>
         </div>
       </div>
       <div class='fix-margin-3'>
         <div class='px2'>
 <div class='py1'><section class='py2 clearfix'>
-  <h2 id='Foo' class='mt0'>
-    Foo<span class='gray'></span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>This is Foo</p>
-
-      <h4>Instance members</h4>
-        <div class='collapsible' id='Foo.bar'>
-          <a href='#Foo.bar'>
-            <code>
-              #bar<span class='gray'></span>
-            </code>
-            <div class='force-inline'>
-              <p>This is bar</p>
-
-            </div>
-          </a>
-          <div class='collapser border px2'>
-<section class='py2 clearfix'>
-  <h2 id='Foo.bar' class='mt0'>
-    bar<span class='gray'></span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>This is bar</p>
-
-</section>
-          </div>
-        </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
   <h2 id='bar' class='mt0'>
     bar<span class='gray'></span>
   </h2>
@@ -1752,6 +1714,28 @@ like a <a href="undefined">klass</a>. This needs a <a href="undefined">number</a
       :
       <div class='force-inline'>
         <p>nothing</p>
+
+      </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='bar' class='mt0'>
+    bar<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>Get an instance of <a href="undefined">Klass</a>. Will make
+a <a href="undefined">klass instance multiword</a>,
+like a <a href="undefined">klass</a></p>
+
+      <h4>Returns</h4>
+      <code><a href="#Klass">Klass</a>
+</code>
+      :
+      <div class='force-inline'>
+        <p>that class</p>
 
       </div>
 </section>
@@ -1783,28 +1767,6 @@ like a <a href="undefined">klass</a>. This needs a <a href="undefined">number</a
       :
       <div class='force-inline'>
         <p>nothing</p>
-
-      </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
-  <h2 id='bar' class='mt0'>
-    bar<span class='gray'></span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>Get an instance of <a href="undefined">Klass</a>. Will make
-a <a href="undefined">klass instance multiword</a>,
-like a <a href="undefined">klass</a></p>
-
-      <h4>Returns</h4>
-      <code><a href="#Klass">Klass</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>that class</p>
 
       </div>
 </section>
@@ -1851,113 +1813,6 @@ like a <a href="undefined">klass</a></p>
   
   <p>Klass event</p>
 
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isArrayOfBuffers'>
-          <a href='#Klass.isArrayOfBuffers'>
-            <code>
-              .isArrayOfBuffers<span class='gray'>(buffers)</span>
-            </code>
-            <div class='force-inline'>
-              <p>This method takes an array of buffers and counts them</p>
-
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isArrayOfBuffers' class='mt0'>
-    isArrayOfBuffers<span class='gray'>(buffers)</span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>This method takes an array of buffers and counts them</p>
-
-    <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
-.&lt;
-<a href="https://nodejs.org/api/buffer.html">Buffer</a>
-&gt;
- <strong>buffers</strong>
-          :
-          <div class='force-inline'>
-            <p>some buffers</p>
-
-          </div>
-        </li>
-    </ul>
-      <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>how many</p>
-
-      </div>
-    <h4>Examples</h4>
-
-    <pre class='overflow-auto'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
-k.isArrayOfBuffers();</pre>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isBuffer'>
-          <a href='#Klass.isBuffer'>
-            <code>
-              .isBuffer<span class='gray'>(buf, [size])</span>
-            </code>
-            <div class='force-inline'>
-              <p>This method takes a Buffer object that will be linked to nodejs.org</p>
-
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isBuffer' class='mt0'>
-    isBuffer<span class='gray'>(buf, [size])</span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>This method takes a Buffer object that will be linked to nodejs.org</p>
-
-    <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li>(
-<a href="https://nodejs.org/api/buffer.html">Buffer</a>
-|
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-)
- <strong>buf</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
-        </li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-=
- <strong>size</strong>
-          :
-          <div class='force-inline'>
-            <p>size</p>
-
-          </div>
-        </li>
-    </ul>
-      <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>whether the other thing is a Klass</p>
-
-      </div>
 </section>
           </div>
         </div>
@@ -2057,6 +1912,113 @@ the referenced class type</p>
         <p>whether the other thing is a Klass</p>
 
       </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Klass.isBuffer'>
+          <a href='#Klass.isBuffer'>
+            <code>
+              .isBuffer<span class='gray'>(buf, [size])</span>
+            </code>
+            <div class='force-inline'>
+              <p>This method takes a Buffer object that will be linked to nodejs.org</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2 m2'>
+<section class='py2 clearfix'>
+  <h2 id='Klass.isBuffer' class='mt0'>
+    isBuffer<span class='gray'>(buf, [size])</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This method takes a Buffer object that will be linked to nodejs.org</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li>(
+<a href="https://nodejs.org/api/buffer.html">Buffer</a>
+|
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+)
+ <strong>buf</strong>
+          :
+          <div class='force-inline'>
+            undefined
+          </div>
+        </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+=
+ <strong>size</strong>
+          :
+          <div class='force-inline'>
+            <p>size</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+</code>
+      :
+      <div class='force-inline'>
+        <p>whether the other thing is a Klass</p>
+
+      </div>
+</section>
+          </div>
+        </div>
+        <div class='collapsible' id='Klass.isArrayOfBuffers'>
+          <a href='#Klass.isArrayOfBuffers'>
+            <code>
+              .isArrayOfBuffers<span class='gray'>(buffers)</span>
+            </code>
+            <div class='force-inline'>
+              <p>This method takes an array of buffers and counts them</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2 m2'>
+<section class='py2 clearfix'>
+  <h2 id='Klass.isArrayOfBuffers' class='mt0'>
+    isArrayOfBuffers<span class='gray'>(buffers)</span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This method takes an array of buffers and counts them</p>
+
+    <h4>Parameters</h4>
+    <ul class='suppress-p-margin'>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+.&lt;
+<a href="https://nodejs.org/api/buffer.html">Buffer</a>
+&gt;
+ <strong>buffers</strong>
+          :
+          <div class='force-inline'>
+            <p>some buffers</p>
+
+          </div>
+        </li>
+    </ul>
+      <h4>Returns</h4>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+</code>
+      :
+      <div class='force-inline'>
+        <p>how many</p>
+
+      </div>
+    <h4>Examples</h4>
+
+    <pre class='overflow-auto'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
+k.isArrayOfBuffers();</pre>
 </section>
           </div>
         </div>
@@ -2171,6 +2133,44 @@ the referenced class type</p>
           </div>
         </li>
     </ul>
+</section>
+          </div>
+        </div>
+</section>
+</div><div class='py1'><section class='py2 clearfix'>
+  <h2 id='Foo' class='mt0'>
+    Foo<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This is Foo</p>
+
+      <h4>Instance members</h4>
+        <div class='collapsible' id='Foo.bar'>
+          <a href='#Foo.bar'>
+            <code>
+              #bar<span class='gray'></span>
+            </code>
+            <div class='force-inline'>
+              <p>This is bar</p>
+
+            </div>
+          </a>
+          <div class='collapser border px2'>
+<section class='py2 clearfix'>
+  <h2 id='Foo.bar' class='mt0'>
+    bar<span class='gray'></span>
+  </h2>
+  
+  
+  
+  
+  
+  <p>This is bar</p>
+
 </section>
           </div>
         </div>

@@ -85,8 +85,8 @@
         }
       },
       "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n",
-      "path": "test/fixture/simple.input.js",
-      "github": "[github]"
+      "github": "[github]",
+      "path": "test/fixture/simple.input.js"
     },
     "errors": [],
     "returns": [

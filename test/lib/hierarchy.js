@@ -2,8 +2,7 @@
 
 var test = require('tap').test,
   parse = require('../../lib/parsers/javascript'),
-  hierarchy = require('../../lib/hierarchy'),
-  _ = require('lodash');
+  hierarchy = require('../../lib/hierarchy');
 
 function toComments(fn, filename) {
   return parse({
@@ -14,6 +13,12 @@ function toComments(fn, filename) {
 
 function evaluate(fn, callback) {
   return hierarchy(toComments(fn, callback));
+}
+
+function map(arr, prop) {
+  return arr.map(function (item) {
+    return item[prop];
+  });
 }
 
 test('hierarchy', function (t) {
@@ -48,12 +53,12 @@ test('hierarchy', function (t) {
      */
   });
 
-  t.deepEqual(_.map(comments, 'name'), ['Class']);
+  t.deepEqual(map(comments, 'name'), ['Class']);
 
   var classMembers = comments[0].members;
 
-  t.deepEqual(_.map(classMembers.static, 'name'), ['isClass', 'MAGIC_NUMBER']);
-  t.deepEqual(_.map(classMembers.instance, 'name'), ['getFoo', 'event']);
+  t.deepEqual(map(classMembers.static, 'name'), ['isClass', 'MAGIC_NUMBER']);
+  t.deepEqual(map(classMembers.instance, 'name'), ['getFoo', 'event']);
 
   t.deepEqual(classMembers.static[0].path, ['Class', 'isClass']);
   t.deepEqual(classMembers.instance[0].path, ['Class', 'getFoo']);
@@ -85,13 +90,13 @@ test('hierarchy - nesting', function (t) {
      */
   });
 
-  t.deepEqual(_.map(comments, 'name'), ['Parent']);
+  t.deepEqual(map(comments, 'name'), ['Parent']);
 
   var classMembers = comments[0].members;
-  t.deepEqual(_.map(classMembers.static, 'name'), ['enum']);
+  t.deepEqual(map(classMembers.static, 'name'), ['enum']);
 
   var enumMembers = classMembers.static[0].members;
-  t.deepEqual(_.map(enumMembers.static, 'name'), ['Parent', 'Child']);
+  t.deepEqual(map(enumMembers.static, 'name'), ['Parent', 'Child']);
   t.deepEqual(enumMembers.static[0].path, ['Parent', 'enum', 'Parent']);
   t.deepEqual(enumMembers.static[1].path, ['Parent', 'enum', 'Child']);
 
@@ -118,7 +123,7 @@ test('hierarchy - multisignature', function (t) {
      */
   });
 
-  t.deepEqual(_.map(comments[0].members.instance, 'name'), ['foo', 'foo']);
+  t.deepEqual(map(comments[0].members.instance, 'name'), ['foo', 'foo']);
   t.end();
 });
 
@@ -176,7 +181,7 @@ test('hierarchy - object prototype member names', function (t) {
      **/
   });
 
-  t.deepEqual(_.map(comments[0].members.static[0].members.instance, 'name'), [ 'hasOwnProperty', 'otherMethod' ]);
+  t.deepEqual(map(comments[0].members.static[0].members.instance, 'name'), [ 'hasOwnProperty', 'otherMethod' ]);
 
   t.end();
 });

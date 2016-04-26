@@ -1,3 +1,33 @@
+# fishesAndFoxes
+
+This method has partially inferred params
+
+**Parameters**
+
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `$0.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
+    -   `$0.foxes`  
+
+# withDefault
+
+This method has a type in the description and a default in the code
+
+**Parameters**
+
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=(default 2)** 
+
+# Foo
+
+This is foo's documentation
+
+## method
+
+The method
+
+**Parameters**
+
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Param to method
+
 # Address6
 
 Represents an IPv6 address
@@ -31,37 +61,6 @@ This function returns the number one.
     -   `$3.e`  
     -   `$3.f`  
 
-# fishesAndFoxes
-
-This method has partially inferred params
-
-**Parameters**
-
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$0.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
-    -   `$0.foxes`  
-
-# Foo
-
-This is foo's documentation
-
-## method
-
-The method
-
-**Parameters**
-
--   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Param to method
-
-# foo
-
-This tests our support of JSDoc param tags without type information,
-or any type information we could infer from annotations.
-
-**Parameters**
-
--   `address`  An IPv6 address string
-
 # GeoJSONSource
 
 Create a GeoJSON data source instance given an options object
@@ -88,10 +87,11 @@ values specified in code.
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** some
 
-# withDefault
+# foo
 
-This method has a type in the description and a default in the code
+This tests our support of JSDoc param tags without type information,
+or any type information we could infer from annotations.
 
 **Parameters**
 
--   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=(default 2)** 
+-   `address`  An IPv6 address string
