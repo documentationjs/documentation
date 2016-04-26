@@ -3,9 +3,6 @@ var walk = require('../lib/walk'),
 
 module.exports = function (comments) {
   return walk(comments, function (comment) {
-    if (comment.context.ast) {
-      traverse.removeProperties(comment.context.ast);
-    }
     var hasGithub = !!comment.context.github;
     var path = comment.context.path;
     comment.context = {
