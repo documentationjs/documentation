@@ -6,6 +6,7 @@ module.exports = function (comments) {
     if (comment.context.ast) {
       traverse.removeProperties(comment.context.ast);
     }
+    delete comment.context.ast;
     delete comment.context.file;
     if (comment.context.github) {
       comment.context.github = '[github]';

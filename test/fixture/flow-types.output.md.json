@@ -7,332 +7,6 @@
       "children": [
         {
           "type": "text",
-          "value": "addThem"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "This function returns the number one.",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 38,
-              "offset": 37
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 38,
-          "offset": 37
-        },
-        "indent": []
-      }
-    },
-    {
-      "type": "strong",
-      "children": [
-        {
-          "type": "text",
-          "value": "Parameters"
-        }
-      ]
-    },
-    {
-      "ordered": false,
-      "type": "list",
-      "children": [
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "a"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "Point"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "b"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "string"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "c"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "boolean"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "="
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "d"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Array"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "value": ".<"
-                    },
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "number"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "value": ">"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "e"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Object"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "f"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "Named"
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Returns "
-        },
-        {
-          "type": "strong",
-          "children": [
-            {
-              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-              "type": "link",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "number"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "value": " "
-        }
-      ]
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
           "value": "Point"
         }
       ]
@@ -712,51 +386,6 @@
       "children": [
         {
           "type": "text",
-          "value": "T"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Just an alias for an array of strings",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 38,
-              "offset": 37
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 38,
-          "offset": 37
-        },
-        "indent": []
-      }
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
           "value": "Two"
         }
       ]
@@ -884,6 +513,377 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "T"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Just an alias for an array of strings",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "addThem"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This function returns the number one.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
+        {
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Point"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "b"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "c"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "boolean"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "="
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "d"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": ".<"
+                    },
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "number"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": ">"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "e"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Object"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "f"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Named"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
+          "children": [
+            {
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
         }
       ]
     },
