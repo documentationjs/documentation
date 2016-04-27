@@ -100,7 +100,8 @@
           "column": 3
         }
       },
-      "file": "[path]"
+      "file": "[path]",
+      "sortKey": "fixture/polyglot/blend.cpp!35"
     },
     "name": "hexToUInt32Color",
     "params": [

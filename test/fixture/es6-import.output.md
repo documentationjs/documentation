@@ -1,13 +1,3 @@
-# multiplyTwice
-
-This function returns the number one.
-
-**Parameters**
-
--   `a`  
-
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
-
 # destructure
 
 Similar, but with an array
@@ -114,3 +104,13 @@ This tests our support of optional parameters in ES6
 **Parameters**
 
 -   `foo`   (optional, default `'bar'`)
+
+# multiplyTwice
+
+This function returns the number one.
+
+**Parameters**
+
+-   `a`  
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone

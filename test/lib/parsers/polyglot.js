@@ -13,6 +13,7 @@ test('polyglot', function (t) {
     source: fs.readFileSync(file, 'utf8')
   });
   delete result[0].context.file;
+  delete result[0].context.sortKey;
   t.deepEqual(result, [{
     errors: [],
     context: {

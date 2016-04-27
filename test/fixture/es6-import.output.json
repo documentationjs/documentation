@@ -8,171 +8,6 @@
           "children": [
             {
               "type": "text",
-              "value": "This function returns the number one.",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 38,
-                  "offset": 37
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 38,
-              "offset": 37
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 38,
-          "offset": 37
-        }
-      }
-    },
-    "tags": [
-      {
-        "title": "returns",
-        "description": "numberone",
-        "lineNumber": 2,
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
-        }
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 4,
-        "column": 0
-      },
-      "end": {
-        "line": 7,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 8,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 43
-        }
-      },
-      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
-    },
-    "errors": [],
-    "returns": [
-      {
-        "description": {
-          "type": "root",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "numberone",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1,
-                      "offset": 0
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10,
-                      "offset": 9
-                    },
-                    "indent": []
-                  }
-                }
-              ],
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 10,
-                  "offset": 9
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 10,
-              "offset": 9
-            }
-          }
-        },
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
-        }
-      }
-    ],
-    "name": "multiplyTwice",
-    "kind": "function",
-    "params": [
-      {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 8
-      }
-    ],
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "multiplyTwice"
-    ]
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
               "value": "Similar, but with an array",
               "position": {
                 "start": {
@@ -2104,6 +1939,171 @@
     },
     "path": [
       "veryImportantTransform"
+    ]
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This function returns the number one.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38,
+                  "offset": 37
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 4,
+        "column": 0
+      },
+      "end": {
+        "line": 7,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 43
+        }
+      },
+      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "numberone",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 10,
+                      "offset": 9
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 10,
+              "offset": 9
+            }
+          }
+        },
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "multiplyTwice",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 8
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      "multiplyTwice"
     ]
   }
 ]

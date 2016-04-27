@@ -34,6 +34,10 @@ test('inferKind', function (t) {
   )).kind, 'member', 'member via set');
 
   t.equal(inferKind(toComment(
+    'var foo = { /** thing */ b: function(v) { } }'
+  )).kind, 'function', 'function via set');
+
+  t.equal(inferKind(toComment(
     'class Foo { /** get b */ get b() { } }'
   )).kind, 'member', 'member via get');
 
