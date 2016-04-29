@@ -118,8 +118,12 @@
       "static": []
     },
     "path": [
-      "foo"
-    ]
+      {
+        "name": "foo",
+        "kind": "function"
+      }
+    ],
+    "namespace": "foo"
   },
   {
     "description": {
@@ -276,8 +280,12 @@
       "static": []
     },
     "path": [
-      "main"
-    ]
+      {
+        "name": "main",
+        "kind": "function"
+      }
+    ],
+    "namespace": "main"
   },
   {
     "description": {
@@ -434,7 +442,11 @@
       "static": []
     },
     "path": [
-      "index"
-    ]
+      {
+        "name": "index",
+        "kind": "function"
+      }
+    ],
+    "namespace": "index"
   }
 ]

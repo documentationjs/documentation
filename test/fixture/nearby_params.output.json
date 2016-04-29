@@ -506,7 +506,11 @@
       "static": []
     },
     "path": [
-      "sessions.create"
-    ]
+      {
+        "name": "sessions.create",
+        "kind": "function"
+      }
+    ],
+    "namespace": "sessions.create"
   }
 ]

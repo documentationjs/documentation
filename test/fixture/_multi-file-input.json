@@ -236,8 +236,12 @@
       "static": []
     },
     "path": [
-      "returnTwo"
-    ]
+      {
+        "name": "returnTwo",
+        "kind": "function"
+      }
+    ],
+    "namespace": "returnTwo"
   },
   {
     "description": {
@@ -394,7 +398,11 @@
       "static": []
     },
     "path": [
-      "simple.input"
-    ]
+      {
+        "name": "simple.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "simple.input"
   }
 ]

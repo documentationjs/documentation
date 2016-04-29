@@ -1,3 +1,17 @@
+# addThem
+
+This function returns the number one.
+
+**Parameters**
+
+-   `a`  
+-   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
+-   `c`  
+-   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `$3.d`  
+    -   `$3.e`  
+    -   `$3.f`  
+
 # fishesAndFoxes
 
 This method has partially inferred params
@@ -14,7 +28,7 @@ This method has a type in the description and a default in the code
 
 **Parameters**
 
--   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=(default 2)** 
+-   `x` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)](default 2)** 
 
 # Foo
 
@@ -37,29 +51,15 @@ This tests  our support of optional parameters
 **Parameters**
 
 -   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** An IPv6 address string
--   `groups` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** How many octets to parse
+-   `groups` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** How many octets to parse
 -   `third` **?[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** A third argument
--   `foo` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)=** to properly be parsed
+-   `foo` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** to properly be parsed
 
 **Examples**
 
 ```javascript
 var address = new Address6('2001::/32');
 ```
-
-# addThem
-
-This function returns the number one.
-
-**Parameters**
-
--   `a`  
--   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
--   `c`  
--   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$3.d`  
-    -   `$3.e`  
-    -   `$3.f`  
 
 # GeoJSONSource
 
@@ -69,12 +69,12 @@ This tests our support of nested parameters
 
 **Parameters**
 
--   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)=** optional options
-    -   `options.data` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)\|[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** A GeoJSON data object or URL to it.
+-   `options` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** optional options
+    -   `options.data` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** A GeoJSON data object or URL to it.
         The latter is preferable in case of large GeoJSON files.
-    -   `options.maxzoom` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Maximum zoom to preserve detail at.
-    -   `options.buffer` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Tile buffer on each side.
-    -   `options.tolerance` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)=** Simplification tolerance (higher means simpler).
+    -   `options.maxzoom` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Maximum zoom to preserve detail at.
+    -   `options.buffer` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Tile buffer on each side.
+    -   `options.tolerance` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Simplification tolerance (higher means simpler).
 
 # myfunc
 

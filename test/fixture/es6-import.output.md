@@ -10,17 +10,6 @@ Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 # destructure
 
-Similar, but with an array
-
-**Parameters**
-
--   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
-    -   `$0.a`  
-    -   `$0.b`  
-    -   `$0.c`  
-
-# destructure
-
 This function destructures with defaults.
 
 **Parameters**
@@ -30,17 +19,16 @@ This function destructures with defaults.
     -   `$0.emailAddresses`   (optional, default `[]`)
     -   `$0.params` **...** 
 
-# iAmProtected
+# destructure
 
-A protected function
+Similar, but with an array
 
-# iAmPublic
+**Parameters**
 
-A public function
-
-# execute
-
-This is re-exported
+-   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+    -   `$0.a`  
+    -   `$0.b`  
+    -   `$0.c`  
 
 # multiply
 
@@ -48,7 +36,7 @@ This function returns the number one.
 
 **Parameters**
 
--   `a` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an array of numbers
+-   `a` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>** an array of numbers
 -   `b`  
 
 Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
@@ -114,3 +102,15 @@ This tests our support of optional parameters in ES6
 **Parameters**
 
 -   `foo`   (optional, default `'bar'`)
+
+# iAmProtected
+
+A protected function
+
+# iAmPublic
+
+A public function
+
+# execute
+
+This is re-exported

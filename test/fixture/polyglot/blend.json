@@ -178,7 +178,10 @@
       "static": []
     },
     "path": [
-      "hexToUInt32Color"
-    ]
+      {
+        "name": "hexToUInt32Color"
+      }
+    ],
+    "namespace": "hexToUInt32Color"
   }
 ]

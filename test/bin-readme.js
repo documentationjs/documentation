@@ -22,6 +22,8 @@ function documentation(args, options, callback, parseJSON) {
   exec(args.join(' '), options, callback);
 }
 
+var UPDATE = !!process.env.UPDATE;
+
 test('readme command', function (group) {
   var fixtures = path.join(__dirname, 'fixture/readme');
   var sourceFile = path.join(fixtures, 'index.js');
@@ -46,12 +48,19 @@ test('readme command', function (group) {
     });
 
     var expectedFile = path.join(fixtures, 'README.output.md');
+    var expectedPath = path.join(fixtures, 'README.output.md');
     var expected = fs.readFileSync(expectedFile, 'utf-8');
 
     group.test('updates README.md', function (t) {
       documentation(['readme index.js -s API'], {cwd: d}, function (err, stdout) {
+        var outputPath = path.join(d, 'README.md');
         t.error(err);
-        var actual = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
+
+        if (UPDATE) {
+          fs.writeFileSync(expectedPath, fs.readFileSync(outputPath, 'utf-8'));
+        }
+
+        var actual = fs.readFileSync(outputPath, 'utf-8');
         t.same(actual, expected, 'generated readme output');
         t.end();
       });

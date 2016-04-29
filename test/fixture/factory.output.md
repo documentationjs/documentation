@@ -1,14 +1,14 @@
 # area
 
-**Parameters**
-
--   `selection`  
-
-# area
-
 an area chart generator
 
 Returns **area** chart
+
+# area
+
+**Parameters**
+
+-   `selection`  
 
 # data
 

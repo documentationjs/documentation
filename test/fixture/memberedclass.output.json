@@ -329,9 +329,17 @@
             "static": []
           },
           "path": [
-            "MyClass",
-            "getFoo"
-          ]
+            {
+              "name": "MyClass",
+              "kind": "class"
+            },
+            {
+              "name": "getFoo",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "MyClass#getFoo"
         }
       ],
       "static": [
@@ -490,14 +498,27 @@
             "static": []
           },
           "path": [
-            "MyClass",
-            "getUndefined"
-          ]
+            {
+              "name": "MyClass",
+              "kind": "class"
+            },
+            {
+              "name": "getUndefined",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "MyClass.getUndefined"
         }
-      ]
+      ],
+      "events": []
     },
     "path": [
-      "MyClass"
-    ]
+      {
+        "name": "MyClass",
+        "kind": "class"
+      }
+    ],
+    "namespace": "MyClass"
   }
 ]

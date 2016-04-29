@@ -161,8 +161,12 @@
       "static": []
     },
     "path": [
-      "getTheTime"
-    ]
+      {
+        "name": "getTheTime",
+        "kind": "function"
+      }
+    ],
+    "namespace": "getTheTime"
   },
   {
     "description": {
@@ -389,7 +393,11 @@
       "static": []
     },
     "path": [
-      "getTheTime"
-    ]
+      {
+        "name": "getTheTime",
+        "kind": "function"
+      }
+    ],
+    "namespace": "getTheTime"
   }
 ]

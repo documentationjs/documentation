@@ -181,7 +181,11 @@
       "static": []
     },
     "path": [
-      "Address6"
-    ]
+      {
+        "name": "Address6",
+        "kind": "class"
+      }
+    ],
+    "namespace": "Address6"
   }
 ]

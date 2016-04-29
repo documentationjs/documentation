@@ -257,7 +257,11 @@
       "static": []
     },
     "path": [
-      "addFive"
-    ]
+      {
+        "name": "addFive",
+        "kind": "function"
+      }
+    ],
+    "namespace": "addFive"
   }
 ]

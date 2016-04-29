@@ -118,7 +118,7 @@ module.exports = function (indexes, options, callback) {
                 options.github && github
               ))
               .filter(Boolean)
-              .sort(sort.bind(undefined, options.order)))));
+              .sort(sort))));
     } catch (e) {
       callback(e);
     }

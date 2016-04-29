@@ -24,6 +24,13 @@ function evaluate(fn, filename) {
   });
 }
 
+function addJSDocTag(tree) {
+  visit(tree, 'link', function (node) {
+    node.jsdoc = true;
+  });
+  return tree;
+}
+
 function removePosition(tree) {
   visit(tree, function (node) {
     delete node.position;
@@ -911,15 +918,15 @@ test('parse - unknown tag', function (t) {
 test('parse - {@link}', function (t) {
   t.deepEqual(removePosition(evaluate(function () {
     /** {@link Foo} */
-  })[0].description), removePosition(remark.parse('[Foo](Foo)')));
+  })[0].description), addJSDocTag(removePosition(remark.parse('[Foo](Foo)'))));
 
   t.deepEqual(removePosition(evaluate(function () {
     /** {@link Foo|text} */
-  })[0].description), removePosition(remark.parse('[text](Foo)')));
+  })[0].description), addJSDocTag(removePosition(remark.parse('[text](Foo)'))));
 
   t.deepEqual(removePosition(evaluate(function () {
     /** {@link Foo text} */
-  })[0].description), removePosition(remark.parse('[text](Foo)')));
+  })[0].description), addJSDocTag(removePosition(remark.parse('[text](Foo)'))));
 
   t.done();
 });
@@ -942,6 +949,7 @@ test('parse - {@tutorial}', function (t) {
       children: [{
         type: 'tutorial',
         url: 'id',
+        jsdoc: true,
         title: null,
         children: [{
           type: 'text',
@@ -960,6 +968,7 @@ test('parse - {@tutorial}', function (t) {
       children: [{
         type: 'tutorial',
         url: 'id',
+        jsdoc: true,
         title: null,
         children: [{
           type: 'text',
@@ -978,6 +987,7 @@ test('parse - {@tutorial}', function (t) {
       children: [{
         type: 'tutorial',
         url: 'id',
+        jsdoc: true,
         title: null,
         children: [{
           type: 'text',

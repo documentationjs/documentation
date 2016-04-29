@@ -1,1602 +1,3 @@
-Copyright 2010, 2012, 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-
-This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
-
-
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
-
-
-# Source Sans Pro
-
-Source Sans Pro is a set of OpenType fonts that have been designed to work well
-in user interface (UI) environments. In addition to a functional OpenType font, this open
-source project provides all of the source files that were used to build this OpenType font
-by using the AFDKO makeotf tool.
-
-## Font installation instructions
-
-* [Mac OS X](http://support.apple.com/kb/HT2509)
-* [Windows](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts)
-* [Linux/Unix-based systems](https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-8967116)
-
-## Getting Involved
-
-Send suggestions for changes to the Source Sans OpenType font project maintainer, [Paul D. Hunt](mailto:opensourcefonts@adobe.com?subject=[GitHub] Source Sans Pro), for consideration.
-
-## Further information
-
-For information about the design and background of Source Sans, please refer to the [official font readme file](http://www.adobe.com/products/type/font-information/source-sans-pro-readme.html).
-
-/*
-
-    Basscss v7.0.3
-    Low-level CSS toolkit
-    http://basscss.com
-
-    14.88 kB
-    3.38 kB Gzipped
-    286 Rules
-    328 Selectors
-    441 Declarations
-    95 Properties
-
-*/
-
-
-
-body { margin: 0 }
-img { max-width: 100% }
-svg { max-height: 100% }
-
-input,
-select,
-textarea,
-fieldset {
-  font-family: inherit;
-  font-size: 1rem;
-  box-sizing: border-box;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-label {
-  vertical-align: middle;
-}
-
-input[type=text],
-input[type=date],
-input[type=datetime],
-input[type=datetime-local],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=time],
-input[type=url],
-input[type=week] {
-  height: 2.25rem;
-  padding: .5rem .5rem;
-  vertical-align: middle;
-  -webkit-appearance: none;
-}
-
-select {
-  line-height: 1.75;
-  padding: .5rem .5rem;
-}
-
-select:not([multiple]) {
-  height: 2.25rem;
-  vertical-align: middle;
-}
-
-textarea {
-  line-height: 1.75;
-  padding: .5rem .5rem;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  max-width: 100%;
-  width: 100%;
-}
-
-th {
-  text-align: left;
-  font-weight: bold;
-}
-
-th,
-td {
-  padding: .25rem 1rem;
-  line-height: inherit;
-}
-
-th { vertical-align: bottom }
-td { vertical-align: top }
-
-body {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  line-height: 1.5;
-  font-size: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: bold;
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-dl, ol, ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-pre, code, samp {
-  font-family: 'Source Code Pro', Consolas, monospace;
-  font-size: inherit;
-}
-
-pre {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  overflow-x: scroll;
-}
-
-h1 { font-size: 2rem }
-h2 { font-size: 1.5rem }
-h3 { font-size: 1.25rem }
-h4 { font-size: 1rem }
-h5 { font-size: .875rem }
-h6 { font-size: .75rem }
-
-body {
-  color: #111;
-  background-color: #fff;
-}
-
-a {
-  color: #0074d9;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-pre, code {
-  background-color: transparent;
-  border-radius: 3px;
-}
-
-hr {
-  border: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0,0,0,.125);
-}
-
-.field {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0,0,0,.125);
-  border-radius: 3px;
-}
-
-.field:focus,
-.field.is-focused {
-  outline: none;
-  border-color: #0074d9;
-  box-shadow: 0 0 0 2px rgba(0, 116, 217, 0.5);
-}
-
-.field:disabled,
-.field.is-disabled {
-  background-color: rgba(0,0,0,.125);
-  opacity: .5;
-}
-
-.field:read-only:not(select),
-.field.is-read-only {
-  background-color: rgba(0,0,0,.125);
-}
-
-
-.field.is-success {
-  border-color: #2ecc40;
-}
-
-.field.is-success:focus,
-.field.is-success.is-focused {
-  box-shadow: 0 0 0 2px rgba(46, 204, 64, 0.5);
-}
-
-.field.is-warning {
-  border-color: #ffdc00;
-}
-
-.field.is-warning:focus,
-.field.is-warning.is-focused {
-  box-shadow: 0 0 0 2px rgba(255, 220, 0, 0.5);
-}
-
-.field:invalid,
-.field.is-error {
-  border-color: #ff4136;
-}
-
-.field:invalid:focus,
-.field:invalid.is-focused,
-.field.is-error:focus,
-.field.is-error.is-focused {
-  box-shadow: 0 0 0 2px rgba(255, 65, 54, 0.5);
-}
-
-.table-light th,
-.table-light td {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(0,0,0,.125);
-}
-
-.table-light tr:last-child td {
-  border-bottom: 0;
-}
-
-.btn {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1.125rem;
-  padding: .5rem 1rem;
-  margin: 0;
-  height: auto;
-  border: 1px solid transparent;
-  vertical-align: middle;
-  -webkit-appearance: none;
-  color: inherit;
-  background-color: transparent;
-}
-
-.btn:hover {
-  text-decoration: none;
-}
-
-.btn:focus {
-  outline: none;
-  border-color: rgba(0,0,0,.125);
-  box-shadow: 0 0 0 3px rgba(0,0,0,.25);
-}
-
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #0074d9;
-  border-radius: 3px;
-}
-
-.btn-primary:hover {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
-}
-
-.btn-primary:active {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
-    inset 0 3px 4px 0 rgba(0,0,0,.25),
-    0 0 1px rgba(0,0,0,.125);
-}
-
-.btn-primary:disabled,
-.btn-primary.is-disabled {
-  opacity: .5;
-}
-
-.btn-outline,
-.btn-outline:hover {
-  border-color: currentcolor;
-}
-
-.btn-outline {
-  border-radius: 3px;
-}
-
-.btn-outline:hover {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
-}
-
-.btn-outline:active {
-  box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
-    inset 0 3px 4px 0 rgba(0,0,0,.25),
-    0 0 1px rgba(0,0,0,.125);
-}
-
-.btn-outline:disabled,
-.btn-outline.is-disabled {
-  opacity: .5;
-}
-
-.h1 { font-size: 2rem }
-.h2 { font-size: 1.5rem }
-.h3 { font-size: 1.25rem }
-.h4 { font-size: 1rem }
-.h5 { font-size: .875rem }
-.h6 { font-size: .75rem }
-
-.bold    { font-weight: bold }
-.regular { font-weight: normal }
-.italic  { font-style: italic }
-.caps    { text-transform: uppercase; letter-spacing: .2em; }
-
-.left-align   { text-align: left }
-.center       { text-align: center }
-.right-align  { text-align: right }
-.justify      { text-align: justify }
-
-.nowrap { white-space: nowrap }
-.break-word { word-wrap: break-word }
-
-.truncate {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.list-reset {
-  list-style: none;
-  padding-left: 0;
-}
-
-.inline       { display: inline }
-.block        { display: block }
-.inline-block { display: inline-block }
-.table        { display: table }
-.table-cell   { display: table-cell }
-
-.overflow-hidden { overflow: hidden }
-.overflow-scroll { overflow: scroll }
-.overflow-auto   { overflow: auto }
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table
-}
-.clearfix:after { clear: both }
-
-.left  { float: left }
-.right { float: right }
-
-.fit { max-width: 100% }
-
-.border-box { box-sizing: border-box }
-
-.align-baseline { vertical-align: baseline }
-.align-top      { vertical-align: top }
-.align-middle   { vertical-align: middle }
-.align-bottom   { vertical-align: bottom }
-
-.m0  { margin:        0 }
-.mt0 { margin-top:    0 }
-.mr0 { margin-right:  0 }
-.mb0 { margin-bottom: 0 }
-.ml0 { margin-left:   0 }
-
-.m1  { margin: .5rem }
-.mt1 { margin-top: .5rem }
-.mr1 { margin-right: .5rem }
-.mb1 { margin-bottom: .5rem }
-.ml1 { margin-left: .5rem }
-
-.m2  { margin: 1rem }
-.mt2 { margin-top: 1rem }
-.mr2 { margin-right: 1rem }
-.mb2 { margin-bottom: 1rem }
-.ml2 { margin-left: 1rem }
-
-.m3  { margin: 2rem }
-.mt3 { margin-top: 2rem }
-.mr3 { margin-right: 2rem }
-.mb3 { margin-bottom: 2rem }
-.ml3 { margin-left: 2rem }
-
-.m4  { margin: 4rem }
-.mt4 { margin-top: 4rem }
-.mr4 { margin-right: 4rem }
-.mb4 { margin-bottom: 4rem }
-.ml4 { margin-left: 4rem }
-
-.mxn1 { margin-left: -.5rem; margin-right: -.5rem; }
-.mxn2 { margin-left: -1rem; margin-right: -1rem; }
-.mxn3 { margin-left: -2rem; margin-right: -2rem; }
-.mxn4 { margin-left: -4rem; margin-right: -4rem; }
-
-.mx-auto { margin-left: auto; margin-right: auto; }
-.p0 { padding: 0 }
-
-.p1  { padding: .5rem }
-.py1 { padding-top: .5rem; padding-bottom: .5rem }
-.px1 { padding-left: .5rem; padding-right: .5rem }
-
-.p2  { padding: 1rem }
-.py2 { padding-top: 1rem; padding-bottom: 1rem }
-.px2 { padding-left: 1rem; padding-right: 1rem }
-
-.p3  { padding: 2rem }
-.py3 { padding-top: 2rem; padding-bottom: 2rem }
-.px3 { padding-left: 2rem; padding-right: 2rem }
-
-.p4  { padding: 4rem }
-.py4 { padding-top: 4rem; padding-bottom: 4rem }
-.px4 { padding-left: 4rem; padding-right: 4rem }
-
-.relative { position: relative }
-.absolute { position: absolute }
-.fixed    { position: fixed }
-
-.top-0    { top: 0 }
-.right-0  { right: 0 }
-.bottom-0 { bottom: 0 }
-.left-0   { left: 0 }
-
-.z1 { z-index: 1 }
-.z2 { z-index: 2 }
-.z3 { z-index: 3 }
-.z4 { z-index: 4 }
-
-.sm-show, .md-show, .lg-show {
-  display: none !important
-}
-
-@media (min-width: 40em) {
-  .sm-show { display: block !important }
-}
-
-@media (min-width: 52em) {
-  .md-show { display: block !important }
-}
-
-@media (min-width: 64em) {
-  .lg-show { display: block !important }
-}
-
-
-@media (min-width: 40em) {
-  .sm-hide { display: none !important }
-}
-
-@media (min-width: 52em) {
-  .md-hide { display: none !important }
-}
-
-@media (min-width: 64em) {
-  .lg-hide { display: none !important }
-}
-
-.display-none { display: none !important }
-
-.hide {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.container {
-  max-width: 64em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.col {
-  float: left;
-  box-sizing: border-box;
-}
-
-.col-right {
-  float: right;
-  box-sizing: border-box;
-}
-
-.col-1 {
-  width: 8.33333%;
-}
-
-.col-2 {
-  width: 16.66667%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-4 {
-  width: 33.33333%;
-}
-
-.col-5 {
-  width: 41.66667%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-7 {
-  width: 58.33333%;
-}
-
-.col-8 {
-  width: 66.66667%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-10 {
-  width: 83.33333%;
-}
-
-.col-11 {
-  width: 91.66667%;
-}
-
-.col-12 {
-  width: 100%;
-}
-@media (min-width: 40em) {
-
-  .sm-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .sm-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .sm-col-1 {
-    width: 8.33333%;
-  }
-
-  .sm-col-2 {
-    width: 16.66667%;
-  }
-
-  .sm-col-3 {
-    width: 25%;
-  }
-
-  .sm-col-4 {
-    width: 33.33333%;
-  }
-
-  .sm-col-5 {
-    width: 41.66667%;
-  }
-
-  .sm-col-6 {
-    width: 50%;
-  }
-
-  .sm-col-7 {
-    width: 58.33333%;
-  }
-
-  .sm-col-8 {
-    width: 66.66667%;
-  }
-
-  .sm-col-9 {
-    width: 75%;
-  }
-
-  .sm-col-10 {
-    width: 83.33333%;
-  }
-
-  .sm-col-11 {
-    width: 91.66667%;
-  }
-
-  .sm-col-12 {
-    width: 100%;
-  }
-
-}
-@media (min-width: 52em) {
-
-  .md-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .md-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .md-col-1 {
-    width: 8.33333%;
-  }
-
-  .md-col-2 {
-    width: 16.66667%;
-  }
-
-  .md-col-3 {
-    width: 25%;
-  }
-
-  .md-col-4 {
-    width: 33.33333%;
-  }
-
-  .md-col-5 {
-    width: 41.66667%;
-  }
-
-  .md-col-6 {
-    width: 50%;
-  }
-
-  .md-col-7 {
-    width: 58.33333%;
-  }
-
-  .md-col-8 {
-    width: 66.66667%;
-  }
-
-  .md-col-9 {
-    width: 75%;
-  }
-
-  .md-col-10 {
-    width: 83.33333%;
-  }
-
-  .md-col-11 {
-    width: 91.66667%;
-  }
-
-  .md-col-12 {
-    width: 100%;
-  }
-
-}
-@media (min-width: 64em) {
-
-  .lg-col {
-    float: left;
-    box-sizing: border-box;
-  }
-
-  .lg-col-right {
-    float: right;
-    box-sizing: border-box;
-  }
-
-  .lg-col-1 {
-    width: 8.33333%;
-  }
-
-  .lg-col-2 {
-    width: 16.66667%;
-  }
-
-  .lg-col-3 {
-    width: 25%;
-  }
-
-  .lg-col-4 {
-    width: 33.33333%;
-  }
-
-  .lg-col-5 {
-    width: 41.66667%;
-  }
-
-  .lg-col-6 {
-    width: 50%;
-  }
-
-  .lg-col-7 {
-    width: 58.33333%;
-  }
-
-  .lg-col-8 {
-    width: 66.66667%;
-  }
-
-  .lg-col-9 {
-    width: 75%;
-  }
-
-  .lg-col-10 {
-    width: 83.33333%;
-  }
-
-  .lg-col-11 {
-    width: 91.66667%;
-  }
-
-  .lg-col-12 {
-    width: 100%;
-  }
-
-}
-
-.flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-
-.flex-column  { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column }
-.flex-wrap    { -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap }
-
-.flex-center   { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center }
-.flex-baseline { -webkit-box-align: baseline; -webkit-align-items: baseline; -ms-flex-align: baseline; align-items: baseline }
-.flex-stretch  { -webkit-box-align: stretch; -webkit-align-items: stretch; -ms-flex-align: stretch; align-items: stretch }
-.flex-start    { -webkit-box-align: start; -webkit-align-items: flex-start; -ms-flex-align: start; align-items: flex-start }
-.flex-end      { -webkit-box-align: end; -webkit-align-items: flex-end; -ms-flex-align: end; align-items: flex-end }
-
-.flex-justify  { -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between }
-
-.flex-auto {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-}
-.flex-grow { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto }
-.flex-none { -webkit-box-flex: 0; -webkit-flex: none; -ms-flex: none; flex: none }
-
-.flex-first { -webkit-box-ordinal-group: 0; -webkit-order: -1; -ms-flex-order: -1; order: -1 }
-.flex-last  { -webkit-box-ordinal-group: 100000; -webkit-order: 99999; -ms-flex-order: 99999; order: 99999 }
-@media (min-width: 40em) {
-  .sm-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-}
-@media (min-width: 52em) {
-  .md-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-}
-@media (min-width: 64em) {
-  .lg-flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex }
-}
-
-.border {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(0,0,0,.125);
-}
-
-.border-top {
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: rgba(0,0,0,.125);
-}
-
-.border-right {
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-right-color: rgba(0,0,0,.125);
-}
-
-.border-bottom {
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0,0,0,.125);
-}
-
-.border-left {
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-left-color: rgba(0,0,0,.125);
-}
-
-.border-none { border: 0 }
-
-.rounded { border-radius: 3px }
-.circle  { border-radius: 50% }
-
-.rounded-top    { border-radius: 3px 3px 0 0 }
-.rounded-right  { border-radius: 0 3px 3px 0 }
-.rounded-bottom { border-radius: 0 0 3px 3px }
-.rounded-left   { border-radius: 3px 0 0 3px }
-
-.not-rounded { border-radius: 0 }
-
-.black  { color: #111 }
-.gray   { color: #aaa }
-.silver { color: #ddd }
-.white  { color: #fff }
-
-.aqua  { color: #7fdbff }
-.blue  { color: #0074d9 }
-.navy  { color: #001f3f }
-.teal  { color: #39cccc }
-.green { color: #2ecc40 }
-.olive { color: #3d9970 }
-.lime  { color: #01ff70 }
-
-.yellow  { color: #ffdc00 }
-.orange  { color: #ff851b }
-.red     { color: #ff4136 }
-.fuchsia { color: #f012be }
-.purple  { color: #b10dc9 }
-.maroon  { color: #85144b }
-
-.color-inherit { color: inherit }
-.muted { opacity: .5 }
-
-.bg-black  { background-color: #111 }
-.bg-gray   { background-color: #aaa }
-.bg-silver { background-color: #ddd }
-.bg-white  { background-color: #fff }
-
-.bg-aqua  { background-color: #7fdbff }
-.bg-blue  { background-color: #0074d9 }
-.bg-navy  { background-color: #001f3f }
-.bg-teal  { background-color: #39cccc }
-.bg-green { background-color: #2ecc40 }
-.bg-olive { background-color: #3d9970 }
-.bg-lime  { background-color: #01ff70 }
-
-.bg-yellow  { background-color: #ffdc00 }
-.bg-orange  { background-color: #ff851b }
-.bg-red     { background-color: #ff4136 }
-.bg-fuchsia { background-color: #f012be }
-.bg-purple  { background-color: #b10dc9 }
-.bg-maroon  { background-color: #85144b }
-
-.bg-darken-1 { background-color: rgba(0,0,0,.0625) }
-.bg-darken-2 { background-color: rgba(0,0,0,.125) }
-.bg-darken-3 { background-color: rgba(0,0,0,.25) }
-.bg-darken-4 { background-color: rgba(0,0,0,.5) }
-
-.bg-lighten-1 { background-color: rgba(255,255,255,.0625) }
-.bg-lighten-2 { background-color: rgba(255,255,255,.125) }
-.bg-lighten-3 { background-color: rgba(255,255,255,.25) }
-.bg-lighten-4 { background-color: rgba(255,255,255,.5) }
-
-
-
-/*!
- * AnchorJS - v1.2.1 - 2015-07-02
- * https://github.com/bryanbraun/anchorjs
- * Copyright (c) 2015 Bryan Braun; Licensed MIT
- */
-
-function AnchorJS(options) {
-  'use strict';
-
-  this.options = options || {};
-
-  this._applyRemainingDefaultOptions = function(opts) {
-    this.options.icon = this.options.hasOwnProperty('icon') ? opts.icon : '\ue9cb'; // Accepts characters (and also URLs?), like  '#', '¶', '❡', or '§'.
-    this.options.visible = this.options.hasOwnProperty('visible') ? opts.visible : 'hover'; // Also accepts 'always'
-    this.options.placement = this.options.hasOwnProperty('placement') ? opts.placement : 'right'; // Also accepts 'left'
-    this.options.class = this.options.hasOwnProperty('class') ? opts.class : ''; // Accepts any class name.
-  };
-
-  this._applyRemainingDefaultOptions(options);
-
-  this.add = function(selector) {
-    var elements,
-        elsWithIds,
-        idList,
-        elementID,
-        i,
-        roughText,
-        tidyText,
-        index,
-        count,
-        newTidyText,
-        readableID,
-        anchor;
-
-    this._applyRemainingDefaultOptions(this.options);
-
-    // Provide a sensible default selector, if none is given.
-    if (!selector) {
-      selector = 'h1, h2, h3, h4, h5, h6';
-    } else if (typeof selector !== 'string') {
-      throw new Error('The selector provided to AnchorJS was invalid.');
-    }
-
-    elements = document.querySelectorAll(selector);
-    if (elements.length === 0) {
-      return false;
-    }
-
-    this._addBaselineStyles();
-
-    // We produce a list of existing IDs so we don't generate a duplicate.
-    elsWithIds = document.querySelectorAll('[id]');
-    idList = [].map.call(elsWithIds, function assign(el) {
-      return el.id;
-    });
-
-    for (i = 0; i < elements.length; i++) {
-
-      if (elements[i].hasAttribute('id')) {
-        elementID = elements[i].getAttribute('id');
-      } else {
-        roughText = elements[i].textContent;
-
-        // Refine it so it makes a good ID. Strip out non-safe characters, replace
-        // spaces with hyphens, truncate to 32 characters, and make toLowerCase.
-        //
-        // Example string:                                // '⚡⚡⚡ Unicode icons are cool--but they definitely don't belong in a URL fragment.'
-        tidyText = roughText.replace(/[^\w\s-]/gi, '')    // ' Unicode icons are cool--but they definitely dont belong in a URL fragment'
-                                .replace(/\s+/g, '-')     // '-Unicode-icons-are-cool--but-they-definitely-dont-belong-in-a-URL-fragment'
-                                .replace(/-{2,}/g, '-')   // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL-fragment'
-                                .substring(0, 64)         // '-Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
-                                .replace(/^-+|-+$/gm, '') // 'Unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-URL'
-                                .toLowerCase();           // 'unicode-icons-are-cool-but-they-definitely-dont-belong-in-a-url'
-
-        // Compare our generated ID to existing IDs (and increment it if needed)
-        // before we add it to the page.
-        newTidyText = tidyText;
-        count = 0;
-        do {
-          if (index !== undefined) {
-            newTidyText = tidyText + '-' + count;
-          }
-          // .indexOf is supported in IE9+.
-          index = idList.indexOf(newTidyText);
-          count += 1;
-        } while (index !== -1);
-        index = undefined;
-        idList.push(newTidyText);
-
-        // Assign it to our element.
-        // Currently the setAttribute element is only supported in IE9 and above.
-        elements[i].setAttribute('id', newTidyText);
-
-        elementID = newTidyText;
-      }
-
-      readableID = elementID.replace(/-/g, ' ');
-
-      // The following code builds the following DOM structure in a more effiecient (albeit opaque) way.
-      // '<a class="anchorjs-link ' + this.options.class + '" href="#' + elementID + '" aria-label="Anchor link for: ' + readableID + '" data-anchorjs-icon="' + this.options.icon + '"></a>';
-      anchor = document.createElement('a');
-      anchor.className = 'anchorjs-link ' + this.options.class;
-      anchor.href = '#' + elementID;
-      anchor.setAttribute('aria-label', 'Anchor link for: ' + readableID);
-      anchor.setAttribute('data-anchorjs-icon', this.options.icon);
-
-      if (this.options.visible === 'always') {
-        anchor.style.opacity = '1';
-      }
-
-      if (this.options.icon === '\ue9cb') {
-        anchor.style.fontFamily = 'anchorjs-icons';
-        anchor.style.fontStyle = 'normal';
-        anchor.style.fontVariant = 'normal';
-        anchor.style.fontWeight = 'normal';
-        anchor.style.lineHeight = 1;
-      }
-
-      if (this.options.placement === 'left') {
-        anchor.style.position = 'absolute';
-        anchor.style.marginLeft = '-1em';
-        anchor.style.paddingRight = '0.5em';
-        elements[i].insertBefore(anchor, elements[i].firstChild);
-      } else { // if the option provided is `right` (or anything else).
-        anchor.style.paddingLeft = '0.375em';
-        elements[i].appendChild(anchor);
-      }
-    }
-
-    return this;
-  };
-
-  this.remove = function(selector) {
-    var domAnchor,
-        elements = document.querySelectorAll(selector);
-    for (var i = 0; i < elements.length; i++) {
-      domAnchor = elements[i].querySelector('.anchorjs-link');
-      if (domAnchor) {
-        elements[i].removeChild(domAnchor);
-      }
-    }
-    return this;
-  };
-
-  this._addBaselineStyles = function() {
-    // We don't want to add global baseline styles if they've been added before.
-    if (document.head.querySelector('style.anchorjs') !== null) {
-      return;
-    }
-
-    var style = document.createElement('style'),
-        linkRule =
-        ' .anchorjs-link {'                       +
-        '   opacity: 0;'                          +
-        '   text-decoration: none;'               +
-        '   -webkit-font-smoothing: antialiased;' +
-        '   -moz-osx-font-smoothing: grayscale;'  +
-        ' }',
-        hoverRule =
-        ' *:hover > .anchorjs-link,'              +
-        ' .anchorjs-link:focus  {'                +
-        '   opacity: 1;'                          +
-        ' }',
-        anchorjsLinkFontFace =
-        ' @font-face {'                           +
-        '   font-family: "anchorjs-icons";'       +
-        '   font-style: normal;'                  +
-        '   font-weight: normal;'                 + // Icon from icomoon; 10px wide & 10px tall; 2 empty below & 4 above
-        '   src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBTUAAAC8AAAAYGNtYXAWi9QdAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zgq29TcAAAF4AAABNGhlYWQEZM3pAAACrAAAADZoaGVhBhUDxgAAAuQAAAAkaG10eASAADEAAAMIAAAAFGxvY2EAKACuAAADHAAAAAxtYXhwAAgAVwAAAygAAAAgbmFtZQ5yJ3cAAANIAAAB2nBvc3QAAwAAAAAFJAAAACAAAwJAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpywPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6cv//f//AAAAAAAg6cv//f//AAH/4xY5AAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACADEARAJTAsAAKwBUAAABIiYnJjQ/AT4BMzIWFxYUDwEGIicmND8BNjQnLgEjIgYPAQYUFxYUBw4BIwciJicmND8BNjIXFhQPAQYUFx4BMzI2PwE2NCcmNDc2MhcWFA8BDgEjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAEAAAABAACiToc1Xw889QALBAAAAAAA0XnFFgAAAADRecUWAAAAAAJTAsAAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAlMAAQAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAACAAAAAoAAMQAAAAAACgAUAB4AmgABAAAABQBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADgAAAAEAAAAAAAIABwCfAAEAAAAAAAMADgBLAAEAAAAAAAQADgC0AAEAAAAAAAUACwAqAAEAAAAAAAYADgB1AAEAAAAAAAoAGgDeAAMAAQQJAAEAHAAOAAMAAQQJAAIADgCmAAMAAQQJAAMAHABZAAMAAQQJAAQAHADCAAMAAQQJAAUAFgA1AAMAAQQJAAYAHACDAAMAAQQJAAoANAD4YW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzUmVndWxhcgBSAGUAZwB1AGwAYQByYW5jaG9yanMtaWNvbnMAYQBuAGMAaABvAHIAagBzAC0AaQBjAG8AbgBzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("truetype");' +
-        ' }',
-        pseudoElContent =
-        ' [data-anchorjs-icon]::after {'          +
-        '   content: attr(data-anchorjs-icon);'   +
-        ' }',
-        firstStyleEl;
-
-    style.className = 'anchorjs';
-    style.appendChild(document.createTextNode('')); // Necessary for Webkit.
-
-    // We place it in the head with the other style tags, if possible, so as to
-    // not look out of place. We insert before the others so these styles can be
-    // overridden if necessary.
-    firstStyleEl = document.head.querySelector('[rel="stylesheet"], style');
-    if (firstStyleEl === undefined) {
-      document.head.appendChild(style);
-    } else {
-      document.head.insertBefore(style, firstStyleEl);
-    }
-
-    style.sheet.insertRule(linkRule, style.sheet.cssRules.length);
-    style.sheet.insertRule(hoverRule, style.sheet.cssRules.length);
-    style.sheet.insertRule(pseudoElContent, style.sheet.cssRules.length);
-    style.sheet.insertRule(anchorjsLinkFontFace, style.sheet.cssRules.length);
-  };
-}
-
-var anchors = new AnchorJS();
-
-
-/* global anchors */
-
-// add anchor links to headers
-anchors.options.placement = 'left';
-anchors.add().remove('.no-anchor');
-
-// Filter UI
-var tocElements = document.getElementById('toc').getElementsByTagName('a');
-document.getElementById('filter-input').addEventListener('keyup', function(e) {
-
-  var i, element;
-
-  // enter key
-  if (e.keyCode === 13) {
-    // go to the first displayed item in the toc
-    for (i = 0; i < tocElements.length; i++) {
-      element = tocElements[i];
-      if (!element.classList.contains('hide')) {
-        location.replace(element.href);
-        return e.preventDefault();
-      }
-    }
-  }
-
-  var match = function() { return true; },
-    value = this.value.toLowerCase();
-
-  if (!value.match(/^\s*$/)) {
-    match = function(text) { return text.toLowerCase().indexOf(value) !== -1; };
-  }
-
-  for (i = 0; i < tocElements.length; i++) {
-    element = tocElements[i];
-    if (match(element.innerHTML)) {
-      element.classList.remove('hide');
-    } else {
-      element.classList.add('hide');
-    }
-  }
-});
-
-
-
-Copyright 2010, 2012 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-
-This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
-
-
------------------------------------------------------------
-SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
------------------------------------------------------------
-
-PREAMBLE
-The goals of the Open Font License (OFL) are to stimulate worldwide
-development of collaborative font projects, to support the font creation
-efforts of academic and linguistic communities, and to provide a free and
-open framework in which fonts may be shared and improved in partnership
-with others.
-
-The OFL allows the licensed fonts to be used, studied, modified and
-redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
-redistributed and/or sold with any software provided that any reserved
-names are not used by derivative works. The fonts and derivatives,
-however, cannot be released under any other type of license. The
-requirement for fonts to remain under this license does not apply
-to any document created using the fonts or their derivatives.
-
-DEFINITIONS
-"Font Software" refers to the set of files released by the Copyright
-Holder(s) under this license and clearly marked as such. This may
-include source files, build scripts and documentation.
-
-"Reserved Font Name" refers to any names specified as such after the
-copyright statement(s).
-
-"Original Version" refers to the collection of Font Software components as
-distributed by the Copyright Holder(s).
-
-"Modified Version" refers to any derivative made by adding to, deleting,
-or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to a
-new environment.
-
-"Author" refers to any designer, engineer, programmer, technical
-writer or other person who contributed to the Font Software.
-
-PERMISSION & CONDITIONS
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of the Font Software, to use, study, copy, merge, embed, modify,
-redistribute, and sell modified and unmodified copies of the Font
-Software, subject to the following conditions:
-
-1) Neither the Font Software nor any of its individual components,
-in Original or Modified Versions, may be sold by itself.
-
-2) Original or Modified Versions of the Font Software may be bundled,
-redistributed and/or sold with any software, provided that each copy
-contains the above copyright notice and this license. These can be
-included either as stand-alone text files, human-readable headers or
-in the appropriate machine-readable metadata fields within text or
-binary files as long as those fields can be easily viewed by the user.
-
-3) No Modified Version of the Font Software may use the Reserved Font
-Name(s) unless explicit written permission is granted by the corresponding
-Copyright Holder. This restriction only applies to the primary font name as
-presented to the users.
-
-4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
-Software shall not be used to promote, endorse or advertise any
-Modified Version, except to acknowledge the contribution(s) of the
-Copyright Holder(s) and the Author(s) or with their explicit written
-permission.
-
-5) The Font Software, modified or unmodified, in part or in whole,
-must be distributed entirely under this license, and must not be
-distributed under any other license. The requirement for fonts to
-remain under this license does not apply to any document created
-using the Font Software.
-
-TERMINATION
-This license becomes null and void if any of the above conditions are
-not met.
-
-DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
-OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
-COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
-DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
-OTHER DEALINGS IN THE FONT SOFTWARE.
-
-# Source Code Pro
-
-Source Code Pro is a set of OpenType fonts that have been designed to work well
-in user interface (UI) environments. In addition to a functional OpenType font, this open
-source project provides all of the source files that were used to build this OpenType font
-by using the AFDKO makeotf tool.
-
-## Font installation instructions
-
-* [Mac OS X](http://support.apple.com/kb/HT2509)
-* [Windows](http://windows.microsoft.com/en-us/windows-vista/install-or-uninstall-fonts)
-* [Linux/Unix-based systems](https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-8967116)
-
-## Getting Involved
-
-Send suggestions for changes to the Source Code OpenType font project maintainer, [Paul D. Hunt](mailto:opensourcefonts@adobe.com?subject=[GitHub] Source Code Pro), for consideration.
-
-## Further information
-
-For information about the design and background of Source Code, please refer to the [official font readme file](http://www.adobe.com/products/type/font-information/source-code-pro-readme.html).
-
-
-@font-face{
-    font-family: 'Source Code Pro';
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceCodePro-Regular.otf.woff') format('woff');
-}
-
-@font-face{
-    font-family: 'Source Code Pro';
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceCodePro-Medium.otf.woff') format('woff');
-}
-
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-  -webkit-text-size-adjust: none;
-}
-
-.hljs-comment,
-.diff .hljs-header,
-.hljs-javadoc {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.css .rule .hljs-keyword,
-.hljs-winutils,
-.nginx .hljs-title,
-.hljs-subst,
-.hljs-request,
-.hljs-status {
-  color: #1184CE;
-}
-
-.hljs-number,
-.hljs-hexcolor,
-.ruby .hljs-constant {
-  color: #ed225d;
-}
-
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-phpdoc,
-.hljs-dartdoc,
-.tex .hljs-formula {
-  color: #ed225d;
-}
-
-.hljs-title,
-.hljs-id,
-.scss .hljs-preprocessor {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-list .hljs-keyword,
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-class .hljs-title,
-.hljs-type,
-.vhdl .hljs-literal,
-.tex .hljs-command {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-tag .hljs-title,
-.hljs-rules .hljs-property,
-.django .hljs-tag .hljs-keyword {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-attribute,
-.hljs-variable,
-.lisp .hljs-body {
-  color: #008080;
-}
-
-.hljs-regexp {
-  color: #009926;
-}
-
-.hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.lisp .hljs-keyword,
-.clojure .hljs-keyword,
-.scheme .hljs-keyword,
-.tex .hljs-special,
-.hljs-prompt {
-  color: #990073;
-}
-
-.hljs-built_in {
-  color: #0086b3;
-}
-
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-pi,
-.hljs-doctype,
-.hljs-shebang,
-.hljs-cdata {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.diff .hljs-change {
-  background: #0086b3;
-}
-
-.hljs-chunk {
-  color: #aaa;
-}
-
-
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff');
-}
-
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff');
-}
-
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff');
-}
-
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 700;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff');
-}
-
-
-
-@import url(fonts/source-sans-pro/source-sans-pro.css);
-@import url(fonts/source-code-pro/source-code-pro.css);
-
-.documentation a {
-  color: #1184CE;
-}
-
-.documentation .suppress-p-margin p {
-  margin:0;
-}
-
-.force-inline, .force-inline p {
-  display: inline;
-  color: #222;
-}
-
-.container-small {
-  max-width: 58rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.max-height-100 {
-  max-height: 100%;
-}
-
-.fade {
-  opacity:0.50;
-}
-
-.button-indent {
-  padding: .25rem 1.5rem;
-  font-size: 90%;
-}
-
-.section-indent {
-  border-left: 2px solid #eee;
-}
-
-.bg-cloudy {
-  background: #fafafa;
-}
-
-.force-inline * {
-  display:inline;
-}
-
-section:target h3 {
-  font-weight:700;
-}
-
-.documentation,
-.documentation h1,
-.documentation h2,
-.documentation h3,
-.documentation h4,
-.documentation h5,
-.documentation h6 {
-    font-family: 'Source Sans Pro', Helvetica, sans-serif;
-}
-
-.documentation pre,
-.documentation code,
-.documentation samp {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 90%;
-}
-
-.documentation td,
-.documentation th {
-    padding: .25rem .25rem;
-}
-
-h1:hover .anchorjs-link,
-h2:hover .anchorjs-link,
-h3:hover .anchorjs-link,
-h4:hover .anchorjs-link {
-  opacity: 1;
-}
-
-.collapsible .collapser {
-  display:none;
-}
-
-.collapsible:target .collapser {
-  display: block;
-}
-
-.fix-3 {
-  width: 25%;
-  max-width: 244px;
-}
-
-@media (min-width: 52em) {
-  .fix-margin-3 {
-    margin-left: 25%;
-  }
-}
-
 <!doctype html>
 <html>
 <head>
@@ -1608,574 +9,1001 @@ h4:hover .anchorjs-link {
   <link href='assets/github.css' type='text/css' rel='stylesheet' />
 </head>
 <body class='documentation'>
-  <div class='container'>
+  <div class='max-width-4 mx-auto'>
     <div class='clearfix md-mxn2'>
-      <div class='fixed md-show fix-3 overflow-auto max-height-100'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'></h3>
           <div class='mb1'><code></code></div>
           <input
             placeholder='Filter'
             id='filter-input'
-            class='col12 block field'
+            class='col12 block input'
             type='text' />
           <div id='toc'>
-              <a
-                href='#bar'
-                class='block bold'>
-                bar
-              </a>
-              <a
-                href='#bar'
-                class='block bold'>
-                bar
-              </a>
-              <a
-                href='#bar'
-                class='block bold'>
-                bar
-              </a>
-              <a
-                href='#Klass'
-                class='block bold'>
-                Klass
-              </a>
-                <a
-                  href='#Klass.event'
-                  class='regular block'>
-                  .event
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#Klass'
+                  
+                  class='toggle-sibling'
+                  
+                  >
+                  Klass
+                  <span class='icon'>▸</span>
                 </a>
-                <a
-                  href='#Klass.isClass'
-                  class='regular block'>
-                  .isClass
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'>Static members</li>
+                    
+                      <li><a
+                        href='#Klass.isClass'
+                        class='regular pre-open'>
+                        .isClass
+                      </a></li>
+                    
+                      <li><a
+                        href='#Klass.isWeird'
+                        class='regular pre-open'>
+                        .isWeird
+                      </a></li>
+                    
+                      <li><a
+                        href='#Klass.isBuffer'
+                        class='regular pre-open'>
+                        .isBuffer
+                      </a></li>
+                    
+                      <li><a
+                        href='#Klass.isArrayOfBuffers'
+                        class='regular pre-open'>
+                        .isArrayOfBuffers
+                      </a></li>
+                    
+                      <li><a
+                        href='#Klass.MAGIC_NUMBER'
+                        class='regular pre-open'>
+                        .MAGIC_NUMBER
+                      </a></li>
+                    
+                      <li><a
+                        href='#Klass.event:event'
+                        class='regular pre-open'>
+                        .event
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'>Instance members</li>
+                      
+                      <li><a
+                        href='#Klass#getFoo'
+                        class='regular pre-open'>
+                        #getFoo
+                      </a></li>
+                      
+                      <li><a
+                        href='#Klass#withOptions'
+                        class='regular pre-open'>
+                        #withOptions
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#bar'
+                  
+                  >
+                  bar
+                  
                 </a>
-                <a
-                  href='#Klass.isWeird'
-                  class='regular block'>
-                  .isWeird
+                
+                </li>
+              
+                
+                <li><a
+                  href='#bar'
+                  
+                  >
+                  bar
+                  
                 </a>
-                <a
-                  href='#Klass.isBuffer'
-                  class='regular block'>
-                  .isBuffer
+                
+                </li>
+              
+                
+                <li><a
+                  href='#bar'
+                  
+                  >
+                  bar
+                  
                 </a>
-                <a
-                  href='#Klass.isArrayOfBuffers'
-                  class='regular block'>
-                  .isArrayOfBuffers
+                
+                </li>
+              
+                
+                <li><a
+                  href='#Foo'
+                  
+                  class='toggle-sibling'
+                  
+                  >
+                  Foo
+                  <span class='icon'>▸</span>
                 </a>
-                <a
-                  href='#Klass.MAGIC_NUMBER'
-                  class='regular block'>
-                  .MAGIC_NUMBER
-                </a>
-                <a
-                  href='#Klass.getFoo'
-                  class='regular block'>
-                  #getFoo
-                </a>
-                <a
-                  href='#Klass.withOptions'
-                  class='regular block'>
-                  #withOptions
-                </a>
-              <a
-                href='#Foo'
-                class='block bold'>
-                Foo
-              </a>
-                <a
-                  href='#Foo.bar'
-                  class='regular block'>
-                  #bar
-                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'>Instance members</li>
+                      
+                      <li><a
+                        href='#Foo#bar'
+                        class='regular pre-open'>
+                        #bar
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
+            </ul>
           </div>
         </div>
       </div>
       <div class='fix-margin-3'>
         <div class='px2'>
-<div class='py1'><section class='py2 clearfix'>
-  <h2 id='bar' class='mt0'>
-    bar<span class='gray'></span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>Get an instance of <a href="undefined">Klass</a>. Will make
-a <a href="undefined">klass instance multiword</a>,
-like a <a href="undefined">klass</a>. This needs a <a href="undefined">number</a> input.</p>
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
-      <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>nothing</p>
+  <h3 id='Klass' class='mt0'>
+    Klass
+  </h3>
 
-      </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
-  <h2 id='bar' class='mt0'>
-    bar<span class='gray'></span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>Get an instance of <a href="undefined">Klass</a>. Will make
-a <a href="undefined">klass instance multiword</a>,
-like a <a href="undefined">klass</a></p>
-
-      <h4>Returns</h4>
-      <code><a href="#Klass">Klass</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>that class</p>
-
-      </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
-  <h2 id='bar' class='mt0'>
-    bar<span class='gray'>(toys)</span>
-  </h2>
-  
-  
-  
-  
-  
-  <p>Rest property function</p>
-
-    <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li>...
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
- <strong>toys</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
-        </li>
-    </ul>
-      <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>nothing</p>
-
-      </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
-  <h2 id='Klass' class='mt0'>
-    Klass<span class='gray'>(foo)</span>
-  </h2>
-  
-  
-  
-  
-  
   <p>Creates a new Klass</p>
 
+
+  <div class='pre p1 fill-light'>new Klass(foo: )</div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li> <strong>foo</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+    <ol class='my1'>
+      
+        <li><code>foo</code> <em>()</em>: 
+          
         </li>
-    </ul>
-      <h4>Static members</h4>
-        <div class='collapsible' id='Klass.event'>
-          <a href='#Klass.event'>
-            <code>
-              .event<span class='gray'></span>
-            </code>
-            <div class='force-inline'>
-              <p>Klass event</p>
+      
+    </ol>
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.event' class='mt0'>
-    event<span class='gray'></span>
-  </h2>
   
-  
-  
-  
-  
-  <p>Klass event</p>
 
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isClass'>
-          <a href='#Klass.isClass'>
-            <code>
-              .isClass<span class='gray'>(other, also)</span>
-            </code>
-            <div class='force-inline'>
-              <p>Decide whether an object is a Klass instance
-This is a [klasssic]<a href="undefined">Klass</a>
-This is a [link to something that does not exist]<a href="undefined">DoesNot</a></p>
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isClass' class='mt0'>
-    isClass<span class='gray'>(other, also)</span>
-  </h2>
   
+
   
+
   
-  
-  
+    <h4>Static members</h4>
+    <div class="clearfix">
+      <div class="sm-col sm-col-7 h5">Method</div>
+      <div class="sm-col sm-col-5 h5">Description</div>
+      
+	<div id='Klass.isClass'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Decide whether an object is a Klass instance
+This is a 
+[klasssic]
+<a href="#Klass">Klass</a>
+
+This is a 
+[link to something that does not exist]
+<a href="#DoesNot">DoesNot</a>
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.isClass' class='mt0'>
+    isClass
+  </h3>
+
   <p>Decide whether an object is a Klass instance
-This is a [klasssic]<a href="undefined">Klass</a>
-This is a [link to something that does not exist]<a href="undefined">DoesNot</a></p>
+This is a [klasssic]<a href="##Klass">Klass</a>
+This is a [link to something that does not exist]<a href="##DoesNot">DoesNot</a></p>
 
+
+  <div class='pre p1 fill-light'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
- <strong>other</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+    <ol class='my1'>
+      
+        <li><code>other</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</em>: 
+          
         </li>
-        <li>Any
- <strong>also</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+      
+        <li><code>also</code> <em>(Any)</em>: 
+          
         </li>
-    </ul>
+      
+    </ol>
+  
+
+  
+
+  
+    
       <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>whether the other thing is a Klass</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+        whether the other thing is a Klass
 
-      </div>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isWeird'>
-          <a href='#Klass.isWeird'>
-            <code>
-              .isWeird<span class='gray'>(other)</span>
-            </code>
-            <div class='force-inline'>
-              <p>A function that triggers the case where the autolinker doesn&#x27;t find
-the referenced class type</p>
+      
+    
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isWeird' class='mt0'>
-    isWeird<span class='gray'>(other)</span>
-  </h2>
   
+
   
+
   
+
   
+
   
+
+	  </div>
+	</div>
+      
+	<div id='Klass.isWeird'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isWeird(other: Weird): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A function that triggers the case where the autolinker doesn&#x27;t find
+the referenced class type
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.isWeird' class='mt0'>
+    isWeird
+  </h3>
+
   <p>A function that triggers the case where the autolinker doesn&#x27;t find
 the referenced class type</p>
 
+
+  <div class='pre p1 fill-light'>isWeird(other: Weird): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li>Weird
- <strong>other</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+    <ol class='my1'>
+      
+        <li><code>other</code> <em>(Weird)</em>: 
+          
         </li>
-    </ul>
+      
+    </ol>
+  
+
+  
+
+  
+    
       <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>whether the other thing is a Klass</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+        whether the other thing is a Klass
 
-      </div>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isBuffer'>
-          <a href='#Klass.isBuffer'>
-            <code>
-              .isBuffer<span class='gray'>(buf, [size])</span>
-            </code>
-            <div class='force-inline'>
-              <p>This method takes a Buffer object that will be linked to nodejs.org</p>
+      
+    
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isBuffer' class='mt0'>
-    isBuffer<span class='gray'>(buf, [size])</span>
-  </h2>
   
+
   
+
   
+
   
+
   
+
+	  </div>
+	</div>
+      
+	<div id='Klass.isBuffer'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This method takes a Buffer object that will be linked to nodejs.org
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.isBuffer' class='mt0'>
+    isBuffer
+  </h3>
+
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
+
+  <div class='pre p1 fill-light'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li>(
-<a href="https://nodejs.org/api/buffer.html">Buffer</a>
-|
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-)
- <strong>buf</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+    <ol class='my1'>
+      
+        <li><code>buf</code> <em>((<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>))</em>: 
+          
         </li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-=
- <strong>size</strong>
-          :
-          <div class='force-inline'>
-            <p>size</p>
+      
+        <li><code>size</code> <em>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>])</em>: size
 
-          </div>
+          
         </li>
-    </ul>
+      
+    </ol>
+  
+
+  
+
+  
+    
       <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>whether the other thing is a Klass</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+        whether the other thing is a Klass
 
-      </div>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.isArrayOfBuffers'>
-          <a href='#Klass.isArrayOfBuffers'>
-            <code>
-              .isArrayOfBuffers<span class='gray'>(buffers)</span>
-            </code>
-            <div class='force-inline'>
-              <p>This method takes an array of buffers and counts them</p>
+      
+    
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.isArrayOfBuffers' class='mt0'>
-    isArrayOfBuffers<span class='gray'>(buffers)</span>
-  </h2>
   
+
   
+
   
+
   
+
   
+
+	  </div>
+	</div>
+      
+	<div id='Klass.isArrayOfBuffers'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This method takes an array of buffers and counts them
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.isArrayOfBuffers' class='mt0'>
+    isArrayOfBuffers
+  </h3>
+
   <p>This method takes an array of buffers and counts them</p>
 
+
+  <div class='pre p1 fill-light'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
-.&lt;
-<a href="https://nodejs.org/api/buffer.html">Buffer</a>
-&gt;
- <strong>buffers</strong>
-          :
-          <div class='force-inline'>
-            <p>some buffers</p>
+    <ol class='my1'>
+      
+        <li><code>buffers</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;)</em>: some buffers
 
-          </div>
+          
         </li>
-    </ul>
+      
+    </ol>
+  
+
+  
+
+  
+    
       <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>how many</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>:
+        how many
 
-      </div>
+      
+    
+  
+
+  
+
+  
     <h4>Examples</h4>
-
-    <pre class='overflow-auto'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
+    
+      
+      <pre class='p1 overflow-auto fill-light'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
 k.isArrayOfBuffers();</pre>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.MAGIC_NUMBER'>
-          <a href='#Klass.MAGIC_NUMBER'>
-            <code>
-              .MAGIC_NUMBER<span class='gray'></span>
-            </code>
-            <div class='force-inline'>
-              <p>A magic number that identifies this Klass.</p>
+    
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2 m2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.MAGIC_NUMBER' class='mt0'>
-    MAGIC_NUMBER<span class='gray'></span>
-  </h2>
   
+
   
+
   
-  
-  
+
+	  </div>
+	</div>
+      
+	<div id='Klass.MAGIC_NUMBER'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>MAGIC_NUMBER</span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A magic number that identifies this Klass.
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.MAGIC_NUMBER' class='mt0'>
+    MAGIC_NUMBER
+  </h3>
+
   <p>A magic number that identifies this Klass.</p>
 
-</section>
-          </div>
-        </div>
-      <h4>Instance members</h4>
-        <div class='collapsible' id='Klass.getFoo'>
-          <a href='#Klass.getFoo'>
-            <code>
-              #getFoo<span class='gray'></span>
-            </code>
-            <div class='force-inline'>
-              <p>Get this Klass&#x27;s foo</p>
 
-            </div>
-          </a>
-          <div class='collapser border px2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.getFoo' class='mt0'>
-    getFoo<span class='gray'></span>
-  </h2>
+  <div class='pre p1 fill-light'>MAGIC_NUMBER</div>
+
+  
+
+  
+
   
   
   
   
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	  </div>
+	</div>
+      
+	<div id='Klass.event:event'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>event</span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Klass event
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass.event:event' class='mt0'>
+    event
+  </h3>
+
+  <p>Klass event</p>
+
+
+  <div class='pre p1 fill-light'>event</div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	  </div>
+	</div>
+      
+    </div>
+  
+
+  
+    <h4>Instance members</h4>
+    <div class="clearfix">
+      <div class="sm-col sm-col-7 h5">Method</div>
+      <div class="sm-col sm-col-5 h5">Description</div>
+      
+	<div id='Klass#getFoo'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>getFoo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Get this Klass&#x27;s foo
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass#getFoo' class='mt0'>
+    getFoo
+  </h3>
+
   <p>Get this Klass&#x27;s foo</p>
 
+
+  <div class='pre p1 fill-light'>getFoo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
       <h4>Returns</h4>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
-</code>
-      :
-      <div class='force-inline'>
-        <p>foo</p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>:
+        foo
 
-      </div>
+      
+    
+  
+
+  
+
+  
     <h4>Examples</h4>
-<p><p>this shows you how to getFoo</p>
+    
+      <p><p>this shows you how to getFoo</p>
 </p>
-    <pre class='overflow-auto'>foo.getFoo();</pre>
-</section>
-          </div>
-        </div>
-        <div class='collapsible' id='Klass.withOptions'>
-          <a href='#Klass.withOptions'>
-            <code>
-              #withOptions<span class='gray'>(options, otherOptions)</span>
-            </code>
-            <div class='force-inline'>
-              <p>A function with an options parameter</p>
+      <pre class='p1 overflow-auto fill-light'>foo.getFoo();</pre>
+    
+  
 
-            </div>
-          </a>
-          <div class='collapser border px2'>
-<section class='py2 clearfix'>
-  <h2 id='Klass.withOptions' class='mt0'>
-    withOptions<span class='gray'>(options, otherOptions)</span>
-  </h2>
   
+
   
+
   
-  
-  
+
+	  </div>
+	</div>
+      
+	<div id='Klass#withOptions'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: ?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A function with an options parameter
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Klass#withOptions' class='mt0'>
+    withOptions
+  </h3>
+
   <p>A function with an options parameter</p>
 
+
+  <div class='pre p1 fill-light'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: ?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
     <h4>Parameters</h4>
-    <ul class='suppress-p-margin'>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
- <strong>options</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+    <ol class='my1'>
+      
+        <li><code>options</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</em>: 
+          
             <ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
- options.foo
-                  undefined</li>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
- options.bar
-                  undefined</li>
+              
+                <li><code>options.foo</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</em>
+                  
+                  </li>
+              
+                <li><code>options.bar</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</em>
+                  
+                  </li>
+              
             </ul>
+          
         </li>
-        <li>?
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
- <strong>otherOptions</strong>
-          :
-          <div class='force-inline'>
-            undefined
-          </div>
+      
+        <li><code>otherOptions</code> <em>(?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</em>: 
+          
         </li>
-    </ul>
-</section>
-          </div>
-        </div>
-</section>
-</div><div class='py1'><section class='py2 clearfix'>
-  <h2 id='Foo' class='mt0'>
-    Foo<span class='gray'></span>
-  </h2>
+      
+    </ol>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	  </div>
+	</div>
+      
+    </div>
+  
+
+  
+</div>
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h3 id='bar' class='mt0'>
+    bar
+  </h3>
+
+  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
+a <a href="#Klass">klass instance multiword</a>,
+like a <a href="#Klass">klass</a></p>
+
+
+  <div class='pre p1 fill-light'>bar: <a href="#Klass">Klass</a></div>
+
+  
+
+  
+
   
   
   
   
   
+
+  
+
+  
+
+  
+    
+      <h4>Returns</h4>
+      <a href="#Klass">Klass</a>:
+        that class
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h3 id='bar' class='mt0'>
+    bar
+  </h3>
+
+  <p>Rest property function</p>
+
+
+  <div class='pre p1 fill-light'>bar(toys: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <h4>Parameters</h4>
+    <ol class='my1'>
+      
+        <li><code>toys</code> <em>(...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</em>: 
+          
+        </li>
+      
+    </ol>
+  
+
+  
+
+  
+    
+      <h4>Returns</h4>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>:
+        nothing
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h3 id='bar' class='mt0'>
+    bar
+  </h3>
+
+  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
+a <a href="#Klass">klass instance multiword</a>,
+like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> input.</p>
+
+
+  <div class='pre p1 fill-light'>bar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <h4>Returns</h4>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>:
+        nothing
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h3 id='Foo' class='mt0'>
+    Foo
+  </h3>
+
   <p>This is Foo</p>
 
-      <h4>Instance members</h4>
-        <div class='collapsible' id='Foo.bar'>
-          <a href='#Foo.bar'>
-            <code>
-              #bar<span class='gray'></span>
-            </code>
-            <div class='force-inline'>
-              <p>This is bar</p>
 
-            </div>
-          </a>
-          <div class='collapser border px2'>
-<section class='py2 clearfix'>
-  <h2 id='Foo.bar' class='mt0'>
-    bar<span class='gray'></span>
-  </h2>
+  <div class='pre p1 fill-light'>new Foo</div>
+
+  
+
+  
+
   
   
   
   
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <h4>Instance members</h4>
+    <div class="clearfix">
+      <div class="sm-col sm-col-7 h5">Method</div>
+      <div class="sm-col sm-col-5 h5">Description</div>
+      
+	<div id='Foo#bar'>
+	  <div class="clearfix toggle-sibling">
+	    <div class="py1 keyline-top sm-col sm-col-7">
+	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>bar</span>
+	    </div>
+	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This is bar
+</div>
+	  </div>
+	  <div class="clearfix display-none toggle-target">
+	    <section class='py2 clearfix'>
+
+  <h3 id='Foo#bar' class='mt0'>
+    bar
+  </h3>
+
   <p>This is bar</p>
 
-</section>
-          </div>
-        </div>
-</section>
+
+  <div class='pre p1 fill-light'>bar</div>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	  </div>
+	</div>
+      
+    </div>
+  
+
+  
 </div>
+          
         </div>
       </div>
     </div>

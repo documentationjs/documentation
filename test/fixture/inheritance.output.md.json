@@ -7,34 +7,6 @@
       "children": [
         {
           "type": "text",
-          "value": "Foo"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "strong",
-          "children": [
-            {
-              "type": "text",
-              "value": "Extends "
-            },
-            {
-              "type": "text",
-              "value": "Bar"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
           "value": "SpecialArray"
         }
       ]
@@ -91,6 +63,34 @@
         },
         "indent": []
       }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "Foo"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "strong",
+          "children": [
+            {
+              "type": "text",
+              "value": "Extends "
+            },
+            {
+              "type": "text",
+              "value": "Bar"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
