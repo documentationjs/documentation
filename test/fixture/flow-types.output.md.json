@@ -146,6 +146,10 @@
                   "type": "strong",
                   "children": [
                     {
+                      "type": "text",
+                      "value": "["
+                    },
+                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
                       "type": "link",
@@ -158,7 +162,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "="
+                      "value": "]"
                     }
                   ]
                 },
@@ -200,7 +204,7 @@
                     },
                     {
                       "type": "text",
-                      "value": ".<"
+                      "value": "<"
                     },
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
@@ -975,7 +979,7 @@
                     },
                     {
                       "type": "text",
-                      "value": ".<"
+                      "value": "<"
                     },
                     {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
@@ -1020,6 +1024,10 @@
                   "type": "strong",
                   "children": [
                     {
+                      "type": "text",
+                      "value": "["
+                    },
+                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
                       "type": "link",
@@ -1032,7 +1040,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "="
+                      "value": "]"
                     }
                   ]
                 },
