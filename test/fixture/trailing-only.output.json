@@ -155,7 +155,8 @@
       "static": []
     },
     "path": [
-      null
-    ]
+      {}
+    ],
+    "namespace": "undefined"
   }
 ]

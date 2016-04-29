@@ -58,11 +58,11 @@ test('hierarchy', function (t) {
   var classMembers = comments[0].members;
 
   t.deepEqual(map(classMembers.static, 'name'), ['isClass', 'MAGIC_NUMBER']);
-  t.deepEqual(map(classMembers.instance, 'name'), ['getFoo', 'event']);
+  t.deepEqual(map(classMembers.instance, 'name'), ['getFoo']);
 
-  t.deepEqual(classMembers.static[0].path, ['Class', 'isClass']);
-  t.deepEqual(classMembers.instance[0].path, ['Class', 'getFoo']);
-  t.deepEqual(classMembers.instance[1].path, ['Class', 'event']);
+  t.deepEqual(map(classMembers.static[0].path, 'name'), ['Class', 'isClass']);
+  t.deepEqual(map(classMembers.instance[0].path, 'name'), ['Class', 'getFoo']);
+  t.deepEqual(map(classMembers.events[0].path, 'name'), ['Class', 'event']);
 
   t.end();
 });
@@ -97,8 +97,8 @@ test('hierarchy - nesting', function (t) {
 
   var enumMembers = classMembers.static[0].members;
   t.deepEqual(map(enumMembers.static, 'name'), ['Parent', 'Child']);
-  t.deepEqual(enumMembers.static[0].path, ['Parent', 'enum', 'Parent']);
-  t.deepEqual(enumMembers.static[1].path, ['Parent', 'enum', 'Child']);
+  t.deepEqual(map(enumMembers.static[0].path, 'name'), ['Parent', 'enum', 'Parent']);
+  t.deepEqual(map(enumMembers.static[1].path, 'name'), ['Parent', 'enum', 'Child']);
 
   t.end();
 });

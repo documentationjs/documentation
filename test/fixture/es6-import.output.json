@@ -8,7 +8,7 @@
           "children": [
             {
               "type": "text",
-              "value": "Similar, but with an array",
+              "value": "This function returns the number one.",
               "position": {
                 "start": {
                   "line": 1,
@@ -17,8 +17,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 27,
-                  "offset": 26
+                  "column": 38,
+                  "offset": 37
                 },
                 "indent": []
               }
@@ -32,8 +32,8 @@
             },
             "end": {
               "line": 1,
-              "column": 27,
-              "offset": 26
+              "column": 38,
+              "offset": 37
             },
             "indent": []
           }
@@ -47,63 +47,113 @@
         },
         "end": {
           "line": 1,
-          "column": 27,
-          "offset": 26
+          "column": 38,
+          "offset": 37
         }
       }
     },
-    "tags": [],
+    "tags": [
+      {
+        "title": "returns",
+        "description": "numberone",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
     "loc": {
       "start": {
-        "line": 7,
+        "line": 4,
         "column": 0
       },
       "end": {
-        "line": 9,
+        "line": 7,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 10,
+          "line": 8,
           "column": 0
         },
         "end": {
-          "line": 11,
-          "column": 1
+          "line": 8,
+          "column": 43
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
     },
     "errors": [],
-    "name": "destructure",
+    "returns": [
+      {
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "numberone",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 10,
+                      "offset": 9
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 10,
+              "offset": 9
+            }
+          }
+        },
+        "type": {
+          "type": "NameExpression",
+          "name": "Number"
+        }
+      }
+    ],
+    "name": "multiplyTwice",
     "kind": "function",
     "params": [
       {
         "title": "param",
-        "name": "$0",
-        "type": {
-          "type": "NameExpression",
-          "name": "Array"
-        },
-        "properties": [
-          {
-            "title": "param",
-            "name": "$0.a",
-            "lineNumber": 10
-          },
-          {
-            "title": "param",
-            "name": "$0.b",
-            "lineNumber": 10
-          },
-          {
-            "title": "param",
-            "name": "$0.c",
-            "lineNumber": 10
-          }
-        ]
+        "name": "a",
+        "lineNumber": 8
       }
     ],
     "members": {
@@ -111,8 +161,12 @@
       "static": []
     },
     "path": [
-      "destructure"
-    ]
+      {
+        "name": "multiplyTwice",
+        "kind": "function"
+      }
+    ],
+    "namespace": "multiplyTwice"
   },
   {
     "description": {
@@ -230,103 +284,12 @@
       "static": []
     },
     "path": [
-      "destructure"
-    ]
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
-              "value": "A protected function",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 21,
-                  "offset": 20
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 21,
-              "offset": 20
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 21,
-          "offset": 20
-        }
-      }
-    },
-    "tags": [
       {
-        "title": "protected",
-        "description": null,
-        "lineNumber": 2
+        "name": "destructure",
+        "kind": "function"
       }
     ],
-    "loc": {
-      "start": {
-        "line": 103,
-        "column": 0
-      },
-      "end": {
-        "line": 106,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 107,
-          "column": 0
-        },
-        "end": {
-          "line": 107,
-          "column": 27
-        }
-      },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
-    },
-    "errors": [],
-    "access": "protected",
-    "name": "iAmProtected",
-    "kind": "function",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "iAmProtected"
-    ]
+    "namespace": "destructure"
   },
   {
     "description": {
@@ -337,7 +300,7 @@
           "children": [
             {
               "type": "text",
-              "value": "A public function",
+              "value": "Similar, but with an array",
               "position": {
                 "start": {
                   "line": 1,
@@ -346,8 +309,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 18,
-                  "offset": 17
+                  "column": 27,
+                  "offset": 26
                 },
                 "indent": []
               }
@@ -361,8 +324,8 @@
             },
             "end": {
               "line": 1,
-              "column": 18,
-              "offset": 17
+              "column": 27,
+              "offset": 26
             },
             "indent": []
           }
@@ -376,139 +339,76 @@
         },
         "end": {
           "line": 1,
-          "column": 18,
-          "offset": 17
-        }
-      }
-    },
-    "tags": [
-      {
-        "title": "public",
-        "description": null,
-        "lineNumber": 2
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 109,
-        "column": 0
-      },
-      "end": {
-        "line": 112,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 113,
-          "column": 0
-        },
-        "end": {
-          "line": 113,
-          "column": 24
-        }
-      },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
-    },
-    "errors": [],
-    "access": "public",
-    "name": "iAmPublic",
-    "kind": "function",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "iAmPublic"
-    ]
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
-              "value": "This is re-exported",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 20,
-                  "offset": 19
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 20,
-              "offset": 19
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 20,
-          "offset": 19
+          "column": 27,
+          "offset": 26
         }
       }
     },
     "tags": [],
     "loc": {
       "start": {
-        "line": 121,
+        "line": 7,
         "column": 0
       },
       "end": {
-        "line": 123,
+        "line": 9,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 124,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 124,
-          "column": 42
+          "line": 11,
+          "column": 1
         }
       },
       "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
-    "name": "execute",
+    "name": "destructure",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "$0",
+        "type": {
+          "type": "NameExpression",
+          "name": "Array"
+        },
+        "properties": [
+          {
+            "title": "param",
+            "name": "$0.a",
+            "lineNumber": 10
+          },
+          {
+            "title": "param",
+            "name": "$0.b",
+            "lineNumber": 10
+          },
+          {
+            "title": "param",
+            "name": "$0.c",
+            "lineNumber": 10
+          }
+        ]
+      }
+    ],
     "members": {
       "instance": [],
       "static": []
     },
     "path": [
-      "execute"
-    ]
+      {
+        "name": "destructure",
+        "kind": "function"
+      }
+    ],
+    "namespace": "destructure"
   },
   {
     "description": {
@@ -760,8 +660,12 @@
       "static": []
     },
     "path": [
-      "multiply"
-    ]
+      {
+        "name": "multiply",
+        "kind": "function"
+      }
+    ],
+    "namespace": "multiply"
   },
   {
     "description": {
@@ -932,9 +836,17 @@
             "static": []
           },
           "path": [
-            "Sink",
-            "empty"
-          ]
+            {
+              "name": "Sink",
+              "kind": "class"
+            },
+            {
+              "name": "empty",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Sink#empty"
         },
         {
           "description": {
@@ -1027,9 +939,17 @@
             "static": []
           },
           "path": [
-            "Sink",
-            "aGetter"
-          ]
+            {
+              "name": "Sink",
+              "kind": "class"
+            },
+            {
+              "name": "aGetter",
+              "kind": "member",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Sink#aGetter"
         },
         {
           "description": "",
@@ -1210,9 +1130,17 @@
             "static": []
           },
           "path": [
-            "Sink",
-            "constructor"
-          ]
+            {
+              "name": "Sink",
+              "kind": "class"
+            },
+            {
+              "name": "constructor",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Sink#constructor"
         }
       ],
       "static": [
@@ -1303,15 +1231,28 @@
             "static": []
           },
           "path": [
-            "Sink",
-            "hello"
-          ]
+            {
+              "name": "Sink",
+              "kind": "class"
+            },
+            {
+              "name": "hello",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "Sink.hello"
         }
-      ]
+      ],
+      "events": []
     },
     "path": [
-      "Sink"
-    ]
+      {
+        "name": "Sink",
+        "kind": "class"
+      }
+    ],
+    "namespace": "Sink"
   },
   {
     "description": {
@@ -1397,8 +1338,11 @@
       "static": []
     },
     "path": [
-      "staticProp"
-    ]
+      {
+        "name": "staticProp"
+      }
+    ],
+    "namespace": "staticProp"
   },
   {
     "description": {
@@ -1495,8 +1439,12 @@
       "static": []
     },
     "path": [
-      "functionWithRest"
-    ]
+      {
+        "name": "functionWithRest",
+        "kind": "function"
+      }
+    ],
+    "namespace": "functionWithRest"
   },
   {
     "description": {
@@ -1597,8 +1545,12 @@
       "static": []
     },
     "path": [
-      "functionWithRestAndType"
-    ]
+      {
+        "name": "functionWithRestAndType",
+        "kind": "function"
+      }
+    ],
+    "namespace": "functionWithRestAndType"
   },
   {
     "description": {
@@ -1685,8 +1637,12 @@
       "static": []
     },
     "path": [
-      "foo"
-    ]
+      {
+        "name": "foo",
+        "kind": "function"
+      }
+    ],
+    "namespace": "foo"
   },
   {
     "description": {
@@ -1843,8 +1799,12 @@
       "static": []
     },
     "path": [
-      "es6.input"
-    ]
+      {
+        "name": "es6.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "es6.input"
   },
   {
     "description": {
@@ -1938,8 +1898,12 @@
       "static": []
     },
     "path": [
-      "veryImportantTransform"
-    ]
+      {
+        "name": "veryImportantTransform",
+        "kind": "function"
+      }
+    ],
+    "namespace": "veryImportantTransform"
   },
   {
     "description": {
@@ -1950,7 +1914,7 @@
           "children": [
             {
               "type": "text",
-              "value": "This function returns the number one.",
+              "value": "A protected function",
               "position": {
                 "start": {
                   "line": 1,
@@ -1959,8 +1923,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 38,
-                  "offset": 37
+                  "column": 21,
+                  "offset": 20
                 },
                 "indent": []
               }
@@ -1974,8 +1938,8 @@
             },
             "end": {
               "line": 1,
-              "column": 38,
-              "offset": 37
+              "column": 21,
+              "offset": 20
             },
             "indent": []
           }
@@ -1989,72 +1953,67 @@
         },
         "end": {
           "line": 1,
-          "column": 38,
-          "offset": 37
+          "column": 21,
+          "offset": 20
         }
       }
     },
     "tags": [
       {
-        "title": "returns",
-        "description": "numberone",
-        "lineNumber": 2,
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
-        }
+        "title": "protected",
+        "description": null,
+        "lineNumber": 2
       }
     ],
     "loc": {
       "start": {
-        "line": 4,
+        "line": 103,
         "column": 0
       },
       "end": {
-        "line": 7,
+        "line": 106,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 8,
+          "line": 107,
           "column": 0
         },
         "end": {
-          "line": 8,
-          "column": 43
+          "line": 107,
+          "column": 27
         }
       },
-      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
+      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
-    "returns": [
+    "access": "protected",
+    "name": "iAmProtected",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
       {
-        "description": {
-          "type": "root",
+        "name": "iAmProtected",
+        "kind": "function"
+      }
+    ],
+    "namespace": "iAmProtected"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "numberone",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1,
-                      "offset": 0
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 10,
-                      "offset": 9
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "A public function",
               "position": {
                 "start": {
                   "line": 1,
@@ -2063,8 +2022,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 10,
-                  "offset": 9
+                  "column": 18,
+                  "offset": 17
                 },
                 "indent": []
               }
@@ -2078,32 +2037,160 @@
             },
             "end": {
               "line": 1,
-              "column": 10,
-              "offset": 9
-            }
+              "column": 18,
+              "offset": 17
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
         },
-        "type": {
-          "type": "NameExpression",
-          "name": "Number"
+        "end": {
+          "line": 1,
+          "column": 18,
+          "offset": 17
         }
       }
-    ],
-    "name": "multiplyTwice",
-    "kind": "function",
-    "params": [
+    },
+    "tags": [
       {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 8
+        "title": "public",
+        "description": null,
+        "lineNumber": 2
       }
     ],
+    "loc": {
+      "start": {
+        "line": 109,
+        "column": 0
+      },
+      "end": {
+        "line": 112,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 113,
+          "column": 0
+        },
+        "end": {
+          "line": 113,
+          "column": 24
+        }
+      },
+      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+    },
+    "errors": [],
+    "access": "public",
+    "name": "iAmPublic",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": []
     },
     "path": [
-      "multiplyTwice"
-    ]
+      {
+        "name": "iAmPublic",
+        "kind": "function"
+      }
+    ],
+    "namespace": "iAmPublic"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is re-exported",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 20,
+                  "offset": 19
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 20,
+              "offset": 19
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 20,
+          "offset": 19
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 121,
+        "column": 0
+      },
+      "end": {
+        "line": 123,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 124,
+          "column": 0
+        },
+        "end": {
+          "line": 124,
+          "column": 42
+        }
+      },
+      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+    },
+    "errors": [],
+    "name": "execute",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "execute"
+      }
+    ],
+    "namespace": "execute"
   }
 ]

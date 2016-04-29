@@ -246,7 +246,11 @@
       "static": []
     },
     "path": [
-      "MyType"
-    ]
+      {
+        "name": "MyType",
+        "kind": "typedef"
+      }
+    ],
+    "namespace": "MyType"
   }
 ]

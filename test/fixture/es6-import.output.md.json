@@ -7,7 +7,7 @@
       "children": [
         {
           "type": "text",
-          "value": "destructure"
+          "value": "multiplyTwice"
         }
       ]
     },
@@ -16,7 +16,7 @@
       "children": [
         {
           "type": "text",
-          "value": "Similar, but with an array",
+          "value": "This function returns the number one.",
           "position": {
             "start": {
               "line": 1,
@@ -25,8 +25,8 @@
             },
             "end": {
               "line": 1,
-              "column": 27,
-              "offset": 26
+              "column": 38,
+              "offset": 37
             },
             "indent": []
           }
@@ -40,8 +40,8 @@
         },
         "end": {
           "line": 1,
-          "column": 27,
-          "offset": 26
+          "column": 38,
+          "offset": 37
         },
         "indent": []
       }
@@ -67,107 +67,83 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "$0"
+                  "value": "a"
                 },
                 {
                   "type": "text",
                   "value": " "
                 },
                 {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Array"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
                   "type": "text",
                   "value": " "
-                }
-              ]
-            },
-            {
-              "ordered": false,
-              "type": "list",
-              "children": [
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "$0.a"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "$0.b"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "listItem",
-                  "children": [
-                    {
-                      "type": "paragraph",
-                      "children": [
-                        {
-                          "type": "inlineCode",
-                          "value": "$0.c"
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        },
-                        {
-                          "type": "text",
-                          "value": " "
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Returns "
+        },
+        {
+          "type": "strong",
+          "children": [
+            {
+              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Number"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "numberone",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 10,
+              "offset": 9
+            },
+            "indent": []
+          }
         }
       ]
     },
@@ -407,7 +383,7 @@
       "children": [
         {
           "type": "text",
-          "value": "iAmProtected"
+          "value": "destructure"
         }
       ]
     },
@@ -416,7 +392,7 @@
       "children": [
         {
           "type": "text",
-          "value": "A protected function",
+          "value": "Similar, but with an array",
           "position": {
             "start": {
               "line": 1,
@@ -425,8 +401,8 @@
             },
             "end": {
               "line": 1,
-              "column": 21,
-              "offset": 20
+              "column": 27,
+              "offset": 26
             },
             "indent": []
           }
@@ -440,101 +416,136 @@
         },
         "end": {
           "line": 1,
-          "column": 21,
-          "offset": 20
+          "column": 27,
+          "offset": 26
         },
         "indent": []
       }
     },
     {
-      "depth": 1,
-      "type": "heading",
+      "type": "strong",
       "children": [
         {
           "type": "text",
-          "value": "iAmPublic"
+          "value": "Parameters"
         }
       ]
     },
     {
-      "type": "paragraph",
+      "ordered": false,
+      "type": "list",
       "children": [
         {
-          "type": "text",
-          "value": "A public function",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "$0"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
             },
-            "end": {
-              "line": 1,
-              "column": 18,
-              "offset": 17
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 18,
-          "offset": 17
-        },
-        "indent": []
-      }
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "execute"
+            {
+              "ordered": false,
+              "type": "list",
+              "children": [
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "$0.a"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "$0.b"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
+                          "value": "$0.c"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "This is re-exported",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 20,
-              "offset": 19
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 20,
-          "offset": 19
-        },
-        "indent": []
-      }
     },
     {
       "depth": 1,
@@ -1626,7 +1637,7 @@
       "children": [
         {
           "type": "text",
-          "value": "multiplyTwice"
+          "value": "iAmProtected"
         }
       ]
     },
@@ -1635,7 +1646,7 @@
       "children": [
         {
           "type": "text",
-          "value": "This function returns the number one.",
+          "value": "A protected function",
           "position": {
             "start": {
               "line": 1,
@@ -1644,8 +1655,8 @@
             },
             "end": {
               "line": 1,
-              "column": 38,
-              "offset": 37
+              "column": 21,
+              "offset": 20
             },
             "indent": []
           }
@@ -1659,46 +1670,19 @@
         },
         "end": {
           "line": 1,
-          "column": 38,
-          "offset": 37
+          "column": 21,
+          "offset": 20
         },
         "indent": []
       }
     },
     {
-      "type": "strong",
+      "depth": 1,
+      "type": "heading",
       "children": [
         {
           "type": "text",
-          "value": "Parameters"
-        }
-      ]
-    },
-    {
-      "ordered": false,
-      "type": "list",
-      "children": [
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "a"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
+          "value": "iAmPublic"
         }
       ]
     },
@@ -1707,49 +1691,7 @@
       "children": [
         {
           "type": "text",
-          "value": "Returns "
-        },
-        {
-          "type": "strong",
-          "children": [
-            {
-              "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-              "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-              "type": "link",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "Number"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "value": " "
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
-              "value": "numberone",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 10,
-                  "offset": 9
-                },
-                "indent": []
-              }
-            }
-          ],
+          "value": "A public function",
           "position": {
             "start": {
               "line": 1,
@@ -1758,13 +1700,71 @@
             },
             "end": {
               "line": 1,
-              "column": 10,
-              "offset": 9
+              "column": 18,
+              "offset": 17
             },
             "indent": []
           }
         }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 18,
+          "offset": 17
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "execute"
+        }
       ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is re-exported",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 20,
+              "offset": 19
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 20,
+          "offset": 19
+        },
+        "indent": []
+      }
     }
   ]
 }

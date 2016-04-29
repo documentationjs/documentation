@@ -173,7 +173,11 @@
       "static": []
     },
     "path": [
-      "dewey"
-    ]
+      {
+        "name": "dewey",
+        "kind": "function"
+      }
+    ],
+    "namespace": "dewey"
   }
 ]

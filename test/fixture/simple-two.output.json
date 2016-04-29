@@ -236,7 +236,11 @@
       "static": []
     },
     "path": [
-      "returnTwo"
-    ]
+      {
+        "name": "returnTwo",
+        "kind": "function"
+      }
+    ],
+    "namespace": "returnTwo"
   }
 ]

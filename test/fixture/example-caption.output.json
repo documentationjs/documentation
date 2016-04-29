@@ -217,7 +217,11 @@
       "static": []
     },
     "path": [
-      "foo"
-    ]
+      {
+        "name": "foo",
+        "kind": "function"
+      }
+    ],
+    "namespace": "foo"
   }
 ]

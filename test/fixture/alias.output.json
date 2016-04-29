@@ -115,7 +115,11 @@
       "static": []
     },
     "path": [
-      "nixon"
-    ]
+      {
+        "name": "nixon",
+        "kind": "function"
+      }
+    ],
+    "namespace": "nixon"
   }
 ]

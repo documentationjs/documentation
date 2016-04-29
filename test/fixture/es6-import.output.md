@@ -1,13 +1,12 @@
-# destructure
+# multiplyTwice
 
-Similar, but with an array
+This function returns the number one.
 
 **Parameters**
 
--   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
-    -   `$0.a`  
-    -   `$0.b`  
-    -   `$0.c`  
+-   `a`  
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
 
 # destructure
 
@@ -20,17 +19,16 @@ This function destructures with defaults.
     -   `$0.emailAddresses`   (optional, default `[]`)
     -   `$0.params` **...** 
 
-# iAmProtected
+# destructure
 
-A protected function
+Similar, but with an array
 
-# iAmPublic
+**Parameters**
 
-A public function
-
-# execute
-
-This is re-exported
+-   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+    -   `$0.a`  
+    -   `$0.b`  
+    -   `$0.c`  
 
 # multiply
 
@@ -105,12 +103,14 @@ This tests our support of optional parameters in ES6
 
 -   `foo`   (optional, default `'bar'`)
 
-# multiplyTwice
+# iAmProtected
 
-This function returns the number one.
+A protected function
 
-**Parameters**
+# iAmPublic
 
--   `a`  
+A public function
 
-Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
+# execute
+
+This is re-exported

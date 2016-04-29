@@ -240,7 +240,11 @@
       "static": []
     },
     "path": [
-      "Map#mousemove"
-    ]
+      {
+        "name": "Map#mousemove",
+        "kind": "event"
+      }
+    ],
+    "namespace": ".event:Map#mousemove"
   }
 ]

@@ -1,3 +1,17 @@
+# addThem
+
+This function returns the number one.
+
+**Parameters**
+
+-   `a`  
+-   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
+-   `c`  
+-   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `$3.d`  
+    -   `$3.e`  
+    -   `$3.f`  
+
 # fishesAndFoxes
 
 This method has partially inferred params
@@ -46,20 +60,6 @@ This tests  our support of optional parameters
 ```javascript
 var address = new Address6('2001::/32');
 ```
-
-# addThem
-
-This function returns the number one.
-
-**Parameters**
-
--   `a`  
--   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
--   `c`  
--   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
-    -   `$3.d`  
-    -   `$3.e`  
-    -   `$3.f`  
 
 # GeoJSONSource
 

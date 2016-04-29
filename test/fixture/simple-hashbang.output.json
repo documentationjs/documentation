@@ -154,7 +154,11 @@
       "static": []
     },
     "path": [
-      "simple-hashbang.input"
-    ]
+      {
+        "name": "simple-hashbang.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "simple-hashbang.input"
   }
 ]

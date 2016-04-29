@@ -10,13 +10,13 @@ test('sort stream alphanumeric', function (t) {
 
   t.deepEqual([
     apples, carrot, banana
-  ].sort(sort.bind(undefined, null)), [
+  ].sort(sort), [
     apples, carrot, banana
   ], 'sort stream alphanumeric');
 
   t.deepEqual([
     carrot, apples, banana
-  ].sort(sort.bind(undefined, null)), [
+  ].sort(sort), [
     apples, carrot, banana
   ], 'sort stream alphanumeric');
 

@@ -101,7 +101,7 @@
         }
       },
       "file": "[path]",
-      "sortKey": "fixture/polyglot/blend.cpp!35"
+      "sortKey": "fixture/polyglot/blend.cpp 35"
     },
     "name": "hexToUInt32Color",
     "params": [
@@ -179,7 +179,10 @@
       "static": []
     },
     "path": [
-      "hexToUInt32Color"
-    ]
+      {
+        "name": "hexToUInt32Color"
+      }
+    ],
+    "namespace": "hexToUInt32Color"
   }
 ]

@@ -338,7 +338,11 @@
       "static": []
     },
     "path": [
-      "multiexample.input"
-    ]
+      {
+        "name": "multiexample.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "multiexample.input"
   }
 ]

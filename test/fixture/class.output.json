@@ -390,9 +390,17 @@
             "static": []
           },
           "path": [
-            "MyClass",
-            "getFoo"
-          ]
+            {
+              "name": "MyClass",
+              "kind": "class"
+            },
+            {
+              "name": "getFoo",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "MyClass#getFoo"
         },
         {
           "description": {
@@ -549,15 +557,28 @@
             "static": []
           },
           "path": [
-            "MyClass",
-            "getUndefined"
-          ]
+            {
+              "name": "MyClass",
+              "kind": "class"
+            },
+            {
+              "name": "getUndefined",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "MyClass#getUndefined"
         }
       ],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
-      "MyClass"
-    ]
+      {
+        "name": "MyClass",
+        "kind": "class"
+      }
+    ],
+    "namespace": "MyClass"
   }
 ]

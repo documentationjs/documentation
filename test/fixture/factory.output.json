@@ -1,57 +1,5 @@
 [
   {
-    "description": "",
-    "tags": [
-      {
-        "title": "class",
-        "description": null,
-        "lineNumber": 1,
-        "type": null,
-        "name": "area"
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 7,
-        "column": 2
-      },
-      "end": {
-        "line": 9,
-        "column": 5
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 10,
-          "column": 2
-        },
-        "end": {
-          "line": 11,
-          "column": 4
-        }
-      },
-      "code": "/**\n * an area chart generator\n * @returns {area} chart\n */\nvar area = function() {\n\n  /**\n   * @class area\n   */\n  var chart = function(selection) {\n  };\n\n  /**\n   * Sets the chart data.\n   * @function\n   */\n  chart.data = function(_) {\n  };\n\n  return chart;\n};\n"
-    },
-    "errors": [],
-    "kind": "class",
-    "name": "area",
-    "params": [
-      {
-        "title": "param",
-        "name": "selection",
-        "lineNumber": 10
-      }
-    ],
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      "area"
-    ]
-  },
-  {
     "description": {
       "type": "root",
       "children": [
@@ -206,8 +154,68 @@
       "static": []
     },
     "path": [
-      "area"
-    ]
+      {
+        "name": "area",
+        "kind": "function"
+      }
+    ],
+    "namespace": "area"
+  },
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 1,
+        "type": null,
+        "name": "area"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 7,
+        "column": 2
+      },
+      "end": {
+        "line": 9,
+        "column": 5
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 2
+        },
+        "end": {
+          "line": 11,
+          "column": 4
+        }
+      },
+      "code": "/**\n * an area chart generator\n * @returns {area} chart\n */\nvar area = function() {\n\n  /**\n   * @class area\n   */\n  var chart = function(selection) {\n  };\n\n  /**\n   * Sets the chart data.\n   * @function\n   */\n  chart.data = function(_) {\n  };\n\n  return chart;\n};\n"
+    },
+    "errors": [],
+    "kind": "class",
+    "name": "area",
+    "params": [
+      {
+        "title": "param",
+        "name": "selection",
+        "lineNumber": 10
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "area",
+        "kind": "class"
+      }
+    ],
+    "namespace": "area"
   },
   {
     "description": {
@@ -315,7 +323,12 @@
       "static": []
     },
     "path": [
-      "data"
-    ]
+      {
+        "name": "data",
+        "kind": "function",
+        "scope": "static"
+      }
+    ],
+    "namespace": ".data"
   }
 ]

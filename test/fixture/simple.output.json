@@ -154,7 +154,11 @@
       "static": []
     },
     "path": [
-      "simple.input"
-    ]
+      {
+        "name": "simple.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "simple.input"
   }
 ]
