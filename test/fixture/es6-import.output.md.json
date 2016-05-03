@@ -553,6 +553,72 @@
       "children": [
         {
           "type": "text",
+          "value": "Destructuring Function"
+        }
+      ]
+    },
+    {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a destructuring function, and this is the prose section\nthat divides these two bits of functionality.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 46,
+                  "offset": 109
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 46,
+              "offset": 109
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 46,
+          "offset": 109
+        }
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
           "value": "multiply"
         }
       ]

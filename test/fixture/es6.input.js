@@ -5,6 +5,12 @@ function destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {
 }
 
 /**
+ * @note Destructuring Function
+ * This is a destructuring function, and this is the prose section
+ * that divides these two bits of functionality.
+ */
+
+/**
  * Similar, but with an array
  */
 function destructure([a, b, c]) {

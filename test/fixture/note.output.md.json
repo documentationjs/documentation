@@ -1,0 +1,386 @@
+{
+  "type": "root",
+  "children": [
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "before"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a function BEFORE the note",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 35,
+              "offset": 34
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 35,
+          "offset": 34
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "Destructuring Function"
+        }
+      ]
+    },
+    {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a destructuring function, and this is the prose section\nthat divides these two bits of functionality.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 46,
+                  "offset": 109
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 46,
+              "offset": 109
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 46,
+          "offset": 109
+        }
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "after"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a function AFTER the note",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 34,
+              "offset": 33
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 34,
+          "offset": 33
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
+        {
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "b"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "Postfix note"
+        }
+      ]
+    },
+    {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a note where the description comes before the note tag.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 64,
+                  "offset": 63
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 64,
+              "offset": 63
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 64,
+          "offset": 63
+        }
+      }
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "zen"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a function AFTER the note",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 34,
+              "offset": 33
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 34,
+          "offset": 33
+        },
+        "indent": []
+      }
+    },
+    {
+      "type": "strong",
+      "children": [
+        {
+          "type": "text",
+          "value": "Parameters"
+        }
+      ]
+    },
+    {
+      "ordered": false,
+      "type": "list",
+      "children": [
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "c"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "b"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
