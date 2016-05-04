@@ -101,6 +101,7 @@ module.exports = function (indexes, options, callback) {
       callback(null,
         filterAccess(options.access,
           hierarchy(
+            sort(
             inputs
               .filter(filterJS(options.extension, options.polyglot))
               .reduce(function (memo, file) {
@@ -117,8 +118,7 @@ module.exports = function (indexes, options, callback) {
                 nest,
                 options.github && github
               ))
-              .filter(Boolean)
-              .sort(sort))));
+              .filter(Boolean), options))));
     } catch (e) {
       callback(e);
     }
