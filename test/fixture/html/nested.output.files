@@ -26,10 +26,7 @@
                 
                 <li><a
                   href='#Klass'
-                  
-                  class='toggle-sibling'
-                  
-                  >
+                  class=" toggle-sibling">
                   Klass
                   <span class='icon'>▸</span>
                 </a>
@@ -103,8 +100,7 @@
                 
                 <li><a
                   href='#bar'
-                  
-                  >
+                  class="">
                   bar
                   
                 </a>
@@ -114,8 +110,7 @@
                 
                 <li><a
                   href='#bar'
-                  
-                  >
+                  class="">
                   bar
                   
                 </a>
@@ -125,8 +120,7 @@
                 
                 <li><a
                   href='#bar'
-                  
-                  >
+                  class="">
                   bar
                   
                 </a>
@@ -136,10 +130,7 @@
                 
                 <li><a
                   href='#Foo'
-                  
-                  class='toggle-sibling'
-                  
-                  >
+                  class=" toggle-sibling">
                   Foo
                   <span class='icon'>▸</span>
                 </a>
@@ -170,7 +161,8 @@
       <div class='fix-margin-3'>
         <div class='px2'>
           
-            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+            
+              <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
   <h3 id='Klass' class='mt0'>
     Klass
@@ -401,7 +393,9 @@ the referenced class type</p>
           
         </li>
       
-        <li><code>size</code> <em>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>])</em>: size
+        <li><code>size</code> <em>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
+          (default <code>0</code>)
+        )</em>: size
 
           
         </li>
@@ -758,8 +752,10 @@ k.isArrayOfBuffers();</pre>
 
   
 </div>
+            
           
-            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+            
+              <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
   <h3 id='bar' class='mt0'>
     bar
@@ -806,8 +802,10 @@ like a <a href="#Klass">klass</a></p>
 
   
 </div>
+            
           
-            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+            
+              <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
   <h3 id='bar' class='mt0'>
     bar
@@ -861,8 +859,10 @@ like a <a href="#Klass">klass</a></p>
 
   
 </div>
+            
           
-            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+            
+              <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
   <h3 id='bar' class='mt0'>
     bar
@@ -909,8 +909,10 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
 
   
 </div>
+            
           
-            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+            
+              <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
   <h3 id='Foo' class='mt0'>
     Foo
@@ -1003,6 +1005,7 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
 
   
 </div>
+            
           
         </div>
       </div>

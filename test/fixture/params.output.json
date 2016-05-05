@@ -1064,7 +1064,8 @@
             "type": "NameExpression",
             "name": "number"
           }
-        }
+        },
+        "default": "8"
       },
       {
         "name": "third",
@@ -1191,7 +1192,8 @@
             "type": "NameExpression",
             "name": "Array"
           }
-        }
+        },
+        "default": "[1]"
       }
     ],
     "examples": [
@@ -1604,7 +1606,8 @@
                 "type": "NameExpression",
                 "name": "number"
               }
-            }
+            },
+            "default": "14"
           },
           {
             "name": "options.buffer",

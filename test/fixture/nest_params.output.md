@@ -6,6 +6,7 @@
     -   `employees[].name` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The name of an employee.
     -   `employees[].department` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The employee's department.
 -   `employee`  
+-   `type` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** The employee's type. (optional, default `minion`)
 
 # foo
 

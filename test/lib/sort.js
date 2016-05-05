@@ -8,15 +8,15 @@ test('sort stream alphanumeric', function (t) {
   var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   var banana = { context: { sortKey: 'c' }, name: 'bananas' };
 
-  t.deepEqual([
+  t.deepEqual(sort([
     apples, carrot, banana
-  ].sort(sort), [
+  ]), [
     apples, carrot, banana
   ], 'sort stream alphanumeric');
 
-  t.deepEqual([
+  t.deepEqual(sort([
     carrot, apples, banana
-  ].sort(sort), [
+  ]), [
     apples, carrot, banana
   ], 'sort stream alphanumeric');
 
