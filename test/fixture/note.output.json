@@ -1,0 +1,502 @@
+[
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a function BEFORE the note",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 35,
+                  "offset": 34
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 35,
+              "offset": 34
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 35,
+          "offset": 34
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 20
+        }
+      },
+      "code": "/**\n * This is a function BEFORE the note\n */\nfunction before() {}\n\n/**\n * @note Destructuring Function\n *\n * This is a destructuring function, and this is the prose section\n * that divides these two bits of functionality.\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction after(a, b) {}\n\n/**\n * This is a note where the description comes before the note tag.\n *\n * @note Postfix note\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction zen(c, b) {}\n"
+    },
+    "errors": [],
+    "name": "before",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "before",
+        "kind": "function"
+      }
+    ],
+    "namespace": "before"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a destructuring function, and this is the prose section\nthat divides these two bits of functionality.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 46,
+                  "offset": 109
+                },
+                "indent": [
+                  1
+                ]
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 46,
+              "offset": 109
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 46,
+          "offset": 109
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "note",
+        "description": "Destructuring Function\n\nThis is a destructuring function, and this is the prose section\nthat divides these two bits of functionality.",
+        "lineNumber": 1
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 6,
+        "column": 0
+      },
+      "end": {
+        "line": 11,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 23
+        }
+      },
+      "code": "/**\n * This is a function BEFORE the note\n */\nfunction before() {}\n\n/**\n * @note Destructuring Function\n *\n * This is a destructuring function, and this is the prose section\n * that divides these two bits of functionality.\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction after(a, b) {}\n\n/**\n * This is a note where the description comes before the note tag.\n *\n * @note Postfix note\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction zen(c, b) {}\n"
+    },
+    "errors": [],
+    "kind": "note",
+    "name": "Destructuring Function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "Destructuring Function",
+        "kind": "note"
+      }
+    ],
+    "namespace": "Destructuring Function"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a function AFTER the note",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 34,
+                  "offset": 33
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 34,
+              "offset": 33
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 34,
+          "offset": 33
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 13,
+        "column": 0
+      },
+      "end": {
+        "line": 15,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 16,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 23
+        }
+      },
+      "code": "/**\n * This is a function BEFORE the note\n */\nfunction before() {}\n\n/**\n * @note Destructuring Function\n *\n * This is a destructuring function, and this is the prose section\n * that divides these two bits of functionality.\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction after(a, b) {}\n\n/**\n * This is a note where the description comes before the note tag.\n *\n * @note Postfix note\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction zen(c, b) {}\n"
+    },
+    "errors": [],
+    "name": "after",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 16
+      },
+      {
+        "title": "param",
+        "name": "b",
+        "lineNumber": 16
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "after",
+        "kind": "function"
+      }
+    ],
+    "namespace": "after"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a note where the description comes before the note tag.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 64,
+                  "offset": 63
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 64,
+              "offset": 63
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 64,
+          "offset": 63
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "note",
+        "description": "Postfix note",
+        "lineNumber": 3
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 18,
+        "column": 0
+      },
+      "end": {
+        "line": 22,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 21
+        }
+      },
+      "code": "/**\n * This is a function BEFORE the note\n */\nfunction before() {}\n\n/**\n * @note Destructuring Function\n *\n * This is a destructuring function, and this is the prose section\n * that divides these two bits of functionality.\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction after(a, b) {}\n\n/**\n * This is a note where the description comes before the note tag.\n *\n * @note Postfix note\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction zen(c, b) {}\n"
+    },
+    "errors": [],
+    "kind": "note",
+    "name": "Postfix note",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "Postfix note",
+        "kind": "note"
+      }
+    ],
+    "namespace": "Postfix note"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is a function AFTER the note",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 34,
+                  "offset": 33
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 34,
+              "offset": 33
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 34,
+          "offset": 33
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 24,
+        "column": 0
+      },
+      "end": {
+        "line": 26,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 21
+        }
+      },
+      "code": "/**\n * This is a function BEFORE the note\n */\nfunction before() {}\n\n/**\n * @note Destructuring Function\n *\n * This is a destructuring function, and this is the prose section\n * that divides these two bits of functionality.\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction after(a, b) {}\n\n/**\n * This is a note where the description comes before the note tag.\n *\n * @note Postfix note\n */\n\n/**\n * This is a function AFTER the note\n */\nfunction zen(c, b) {}\n"
+    },
+    "errors": [],
+    "name": "zen",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "c",
+        "lineNumber": 27
+      },
+      {
+        "title": "param",
+        "name": "b",
+        "lineNumber": 27
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "zen",
+        "kind": "function"
+      }
+    ],
+    "namespace": "zen"
+  }
+]

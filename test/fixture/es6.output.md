@@ -20,6 +20,12 @@ Similar, but with an array
     -   `$0.b`  
     -   `$0.c`  
 
+# Destructuring Function
+
+This is a destructuring function, and this is the prose section
+that divides these two bits of functionality.
+
+
 # multiply
 
 This function returns the number one.
