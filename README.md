@@ -43,6 +43,12 @@ sections of code it refers to in a GitHub repository.
 The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
 lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 
+## Examples
+
+* [HTML output with default template](http://documentation.js.org/demo/demo-documentation/)
+* [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
+* [JSON](https://github.com/documentationjs/demo/blob/gh-pages/demo-documentation.json)
+
 ## Documentation
 
 * [Getting Started](docs/GETTING_STARTED.md): start here
@@ -50,7 +56,6 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 * [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
 * [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
 * [FAQ](docs/FAQ.md)
-
 * [Theming](docs/THEMING.md): tips for theming documentation output in HTML
 * [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
 
