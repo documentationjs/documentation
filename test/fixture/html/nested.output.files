@@ -162,36 +162,42 @@
         <div class='px2'>
           
             
-              <div class='keyline-top-not py2'><section class='py2 clearfix'>
+              <section class='py2 clearfix'>
 
-  <h3 id='Klass' class='mt0'>
-    Klass
-  </h3>
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='Klass'>
+      Klass
+    </h2>
+    
+  </div>
+  
 
   <p>Creates a new Klass</p>
 
 
-  <div class='pre p1 fill-light'>new Klass(foo: )</div>
+  <div class='pre p1 fill-light'>Klass(foo: )</div>
 
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>foo</code> <em>()</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>foo</span> <code class='quiet'>()</code> 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
@@ -203,36 +209,25 @@
   
 
   
-    <h4>Static members</h4>
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
-      <div class="sm-col sm-col-7 h5">Method</div>
-      <div class="sm-col sm-col-5 h5">Description</div>
-      
-	<div id='Klass.isClass'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Decide whether an object is a Klass instance
-This is a 
-[klasssic]
-<a href="#Klass">Klass</a>
+  
+    <div class='keyline-bottom' id='Klass.isClass'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isClass</span>
+            <span class='quiet code space-right2'>(other, also)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-This is a 
-[link to something that does not exist]
-<a href="#DoesNot">DoesNot</a>
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
-
-  <h3 id='Klass.isClass' class='mt0'>
-    isClass
-  </h3>
+  
 
   <p>Decide whether an object is a Klass instance
-This is a [klasssic]<a href="##Klass">Klass</a>
-This is a [link to something that does not exist]<a href="##DoesNot">DoesNot</a></p>
+This is a [klasssic]<a href="#Klass">Klass</a>
+This is a [link to something that does not exist]<a href="#DoesNot">DoesNot</a></p>
 
 
   <div class='pre p1 fill-light'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
@@ -240,34 +235,38 @@ This is a [link to something that does not exist]<a href="##DoesNot">DoesNot</a>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>other</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>other</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code> 
+          </div>
           
-        </li>
+        </div>
       
-        <li><code>also</code> <em>(Any)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>also</span> <code class='quiet'>(Any)</code> 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -283,25 +282,23 @@ This is a [link to something that does not exist]<a href="##DoesNot">DoesNot</a>
   
 
   
+</section>
 
-	  </div>
-	</div>
-      
-	<div id='Klass.isWeird'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isWeird(other: Weird): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A function that triggers the case where the autolinker doesn&#x27;t find
-the referenced class type
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass.isWeird'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isWeird</span>
+            <span class='quiet code space-right2'>(other)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Klass.isWeird' class='mt0'>
-    isWeird
-  </h3>
+  
 
   <p>A function that triggers the case where the autolinker doesn&#x27;t find
 the referenced class type</p>
@@ -312,30 +309,31 @@ the referenced class type</p>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>other</code> <em>(Weird)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>other</span> <code class='quiet'>(Weird)</code> 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -351,24 +349,23 @@ the referenced class type</p>
   
 
   
+</section>
 
-	  </div>
-	</div>
-      
-	<div id='Klass.isBuffer'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This method takes a Buffer object that will be linked to nodejs.org
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass.isBuffer'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isBuffer</span>
+            <span class='quiet code space-right2'>(buf, [size])</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Klass.isBuffer' class='mt0'>
-    isBuffer
-  </h3>
+  
 
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
@@ -378,37 +375,41 @@ the referenced class type</p>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>buf</code> <em>((<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>))</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>buf</span> <code class='quiet'>((<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>))</code> 
+          </div>
           
-        </li>
+        </div>
       
-        <li><code>size</code> <em>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
-          (default <code>0</code>)
-        )</em>: size
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>size</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]
+            (default <code>0</code>)
+            )</code> size
 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -424,24 +425,23 @@ the referenced class type</p>
   
 
   
+</section>
 
-	  </div>
-	</div>
-      
-	<div id='Klass.isArrayOfBuffers'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This method takes an array of buffers and counts them
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass.isArrayOfBuffers'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isArrayOfBuffers</span>
+            <span class='quiet code space-right2'>(buffers)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Klass.isArrayOfBuffers' class='mt0'>
-    isArrayOfBuffers
-  </h3>
+  
 
   <p>This method takes an array of buffers and counts them</p>
 
@@ -451,31 +451,32 @@ the referenced class type</p>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>buffers</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;)</em>: some buffers
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>buffers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;)</code> some buffers
 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         how many
 
       
@@ -485,10 +486,10 @@ the referenced class type</p>
   
 
   
-    <h4>Examples</h4>
+    <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto fill-light'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">var</span> k = <span class="hljs-keyword">new</span> Klass();
 k.isArrayOfBuffers();</pre>
     
   
@@ -498,24 +499,23 @@ k.isArrayOfBuffers();</pre>
   
 
   
+</section>
 
-	  </div>
-	</div>
-      
-	<div id='Klass.MAGIC_NUMBER'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>MAGIC_NUMBER</span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A magic number that identifies this Klass.
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass.MAGIC_NUMBER'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>MAGIC_NUMBER</span>
+            <span class='quiet code space-right2'></span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Klass.MAGIC_NUMBER' class='mt0'>
-    MAGIC_NUMBER
-  </h3>
+  
 
   <p>A magic number that identifies this Klass.</p>
 
@@ -525,13 +525,9 @@ k.isArrayOfBuffers();</pre>
   
 
   
-
   
   
   
-  
-  
-
   
 
   
@@ -548,23 +544,24 @@ k.isArrayOfBuffers();</pre>
 
   
 
-	  </div>
-	</div>
-      
-	<div id='Klass.event:event'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>event</span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Klass event
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+  
+</section>
 
-  <h3 id='Klass.event:event' class='mt0'>
-    event
-  </h3>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass.event:event'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>event</span>
+            <span class='quiet code space-right2'></span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
 
   <p>Klass event</p>
 
@@ -574,13 +571,9 @@ k.isArrayOfBuffers();</pre>
   
 
   
-
   
   
   
-  
-  
-
   
 
   
@@ -597,39 +590,37 @@ k.isArrayOfBuffers();</pre>
 
   
 
-	  </div>
-	</div>
-      
+  
+</section>
+
+      </div>
     </div>
   
+</div>
 
   
-    <h4>Instance members</h4>
-    <div class="clearfix">
-      <div class="sm-col sm-col-7 h5">Method</div>
-      <div class="sm-col sm-col-5 h5">Description</div>
-      
-	<div id='Klass#getFoo'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>getFoo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">Get this Klass&#x27;s foo
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
 
-  <h3 id='Klass#getFoo' class='mt0'>
-    getFoo
-  </h3>
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class="clearfix">
+  
+    <div class='keyline-bottom' id='Klass#getFoo'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>getFoo</span>
+            <span class='quiet code space-right2'>()</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
+
+  
 
   <p>Get this Klass&#x27;s foo</p>
 
 
-  <div class='pre p1 fill-light'>getFoo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
-
-  
+  <div class='pre p1 fill-light'>getFoo(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
 
   
 
@@ -645,8 +636,8 @@ k.isArrayOfBuffers();</pre>
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></code>:
         foo
 
       
@@ -656,11 +647,11 @@ k.isArrayOfBuffers();</pre>
   
 
   
-    <h4>Examples</h4>
+    <div class='py1 quiet mt1 prose-big'>Example</div>
     
       <p><p>this shows you how to getFoo</p>
 </p>
-      <pre class='p1 overflow-auto fill-light'>foo.getFoo();</pre>
+      <pre class='p1 overflow-auto round fill-light'>foo.getFoo();</pre>
     
   
 
@@ -669,24 +660,23 @@ k.isArrayOfBuffers();</pre>
   
 
   
+</section>
 
-	  </div>
-	</div>
-      
-	<div id='Klass#withOptions'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: ?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">A function with an options parameter
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+      </div>
+    </div>
+  
+    <div class='keyline-bottom' id='Klass#withOptions'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>withOptions</span>
+            <span class='quiet code space-right2'>(options, otherOptions)</span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Klass#withOptions' class='mt0'>
-    withOptions
-  </h3>
+  
 
   <p>A function with an options parameter</p>
 
@@ -696,79 +686,105 @@ k.isArrayOfBuffers();</pre>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>options</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code> 
+          </div>
           
-            <ul>
+          <table class='mt1 mb2 fixed-table h5'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <td>Name</td>
+                <td>Description</td>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
               
-                <li><code>options.foo</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</em>
-                  
-                  </li>
+                <tr>
+                  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
               
-                <li><code>options.bar</code> <em>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</em>
-                  
-                  </li>
+                <tr>
+                  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
               
-            </ul>
+            </tbody>
+          </table>
           
-        </li>
+        </div>
       
-        <li><code>otherOptions</code> <em>(?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>otherOptions</span> <code class='quiet'>(?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code> 
+          </div>
           
-        </li>
-      
-    </ol>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-	  </div>
-	</div>
+        </div>
       
     </div>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
 </div>
+
+  
+
+  
+</section>
+
             
           
             
-              <div class='keyline-top-not py2'><section class='py2 clearfix'>
+              <section class='py2 clearfix'>
 
-  <h3 id='bar' class='mt0'>
-    bar
-  </h3>
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='bar'>
+      bar
+    </h2>
+    
+  </div>
+  
 
   <p>Get an instance of <a href="#Klass">Klass</a>. Will make
 a <a href="#Klass">klass instance multiword</a>,
 like a <a href="#Klass">klass</a></p>
 
 
-  <div class='pre p1 fill-light'>bar: <a href="#Klass">Klass</a></div>
-
-  
+  <div class='pre p1 fill-light'>bar(): <a href="#Klass">Klass</a></div>
 
   
 
@@ -784,8 +800,8 @@ like a <a href="#Klass">klass</a></p>
 
   
     
-      <h4>Returns</h4>
-      <a href="#Klass">Klass</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#Klass">Klass</a></code>:
         that class
 
       
@@ -801,15 +817,21 @@ like a <a href="#Klass">klass</a></p>
   
 
   
-</div>
+</section>
+
             
           
             
-              <div class='keyline-top-not py2'><section class='py2 clearfix'>
+              <section class='py2 clearfix'>
 
-  <h3 id='bar' class='mt0'>
-    bar
-  </h3>
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='bar'>
+      bar
+    </h2>
+    
+  </div>
+  
 
   <p>Rest property function</p>
 
@@ -819,30 +841,31 @@ like a <a href="#Klass">klass</a></p>
   
 
   
+  
+  
+  
+  
 
   
-  
-  
-  
-  
-
-  
-    <h4>Parameters</h4>
-    <ol class='my1'>
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
       
-        <li><code>toys</code> <em>(...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</em>: 
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>toys</span> <code class='quiet'>(...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code> 
+          </div>
           
-        </li>
+        </div>
       
-    </ol>
+    </div>
   
 
   
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></code>:
         nothing
 
       
@@ -858,24 +881,28 @@ like a <a href="#Klass">klass</a></p>
   
 
   
-</div>
+</section>
+
             
           
             
-              <div class='keyline-top-not py2'><section class='py2 clearfix'>
+              <section class='py2 clearfix'>
 
-  <h3 id='bar' class='mt0'>
-    bar
-  </h3>
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='bar'>
+      bar
+    </h2>
+    
+  </div>
+  
 
   <p>Get an instance of <a href="#Klass">Klass</a>. Will make
 a <a href="#Klass">klass instance multiword</a>,
 like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> input.</p>
 
 
-  <div class='pre p1 fill-light'>bar: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
-
-  
+  <div class='pre p1 fill-light'>bar(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
 
   
 
@@ -891,8 +918,8 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
 
   
     
-      <h4>Returns</h4>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>:
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></code>:
         nothing
 
       
@@ -908,35 +935,33 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   
 
   
-</div>
+</section>
+
             
           
             
-              <div class='keyline-top-not py2'><section class='py2 clearfix'>
+              <section class='py2 clearfix'>
 
-  <h3 id='Foo' class='mt0'>
-    Foo
-  </h3>
+  
+  <div class='clearfix'>
+    <h2 class='fl' id='Foo'>
+      Foo
+    </h2>
+    
+  </div>
+  
 
   <p>This is Foo</p>
 
 
-  <div class='pre p1 fill-light'>new Foo</div>
+  <div class='pre p1 fill-light'>Foo()</div>
 
   
 
   
-
   
   
   
-  
-  
-
-  
-
-  
-
   
 
   
@@ -946,25 +971,27 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   
 
   
-    <h4>Instance members</h4>
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
-      <div class="sm-col sm-col-7 h5">Method</div>
-      <div class="sm-col sm-col-5 h5">Description</div>
-      
-	<div id='Foo#bar'>
-	  <div class="clearfix toggle-sibling">
-	    <div class="py1 keyline-top sm-col sm-col-7">
-	      <a class='h6 toggle-step-sibling icon'>▸</a> <span class='pre'>bar</span>
-	    </div>
-	    <div class="py1 keyline-top sm-col sm-col-5 h5 truncate">This is bar
-</div>
-	  </div>
-	  <div class="clearfix display-none toggle-target">
-	    <section class='py2 clearfix'>
+  
+    <div class='keyline-bottom' id='Foo#bar'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="pad1y contain">
+            <a class='icon pin-right pad1y dark-link caret-right'></a>
+            <span class='code strong strong truncate'>bar</span>
+            <span class='quiet code space-right2'></span>
+        </div>
+      </div>
+      <div class="clearfix hidden toggle-target">
+        <section class='py2 clearfix'>
 
-  <h3 id='Foo#bar' class='mt0'>
-    bar
-  </h3>
+  
 
   <p>This is bar</p>
 
@@ -974,13 +1001,9 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   
 
   
-
   
   
   
-  
-  
-
   
 
   
@@ -997,14 +1020,19 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
 
   
 
-	  </div>
-	</div>
-      
+  
+</section>
+
+      </div>
     </div>
   
+</div>
 
   
-</div>
+
+  
+</section>
+
             
           
         </div>

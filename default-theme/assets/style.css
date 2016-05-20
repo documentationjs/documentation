@@ -85,7 +85,7 @@ h4:hover .anchorjs-link {
   }
 }
 
-.pre, pre, code {
+.pre, pre, code, .code {
   font-family: Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
   font-size: 14px;
 }
@@ -117,4 +117,27 @@ ul {
   font-size: .875rem;
   border-radius: 3px;
   box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.prose table th,
+.prose table td {
+  padding:8px;
+  border:1px solid #ddd;
+}
+
+.prose table {
+  border:1px solid #ddd;
+}
+
+.prose-big {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.quiet {
+  opacity: 0.7;
 }

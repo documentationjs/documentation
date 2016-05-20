@@ -18,25 +18,47 @@ module.exports = function (comments, options, callback) {
   });
 
   var imports = {
-    signature: function (section) {
+    shortSignature: function (section, hasSectionName) {
+      var prefix = '';
+      if (section.kind === 'class') {
+        prefix = 'new ';
+      }
+      if (section.kind !== 'function' && !hasSectionName) {
+        return '';
+      }
+      if (hasSectionName) {
+        return prefix + section.name + formatParameters(section, true);
+      } else if (!hasSectionName && formatParameters(section)) {
+        return formatParameters(section, true);
+      }
+      return '()';
+    },
+    signature: function (section, hasSectionName) {
       var returns = '';
       var prefix = '';
       if (section.kind === 'class') {
         prefix = 'new ';
+      } else if (section.kind !== 'function') {
+        return section.name;
       }
       if (section.returns) {
         returns = ': ' +
           formatMarkdown.type(section.returns[0].type, namespaces);
       }
-      return prefix + section.name +
-        formatParameters(section) + returns;
+      if (hasSectionName) {
+        return prefix + section.name +
+          formatParameters(section) + returns;
+      } else if (!hasSectionName && formatParameters(section)) {
+        return section.name + formatParameters(section) + returns;
+      }
+      return section.name + '()' + returns;
     },
     md: function (ast, inline) {
       if (inline && ast && ast.children.length && ast.children[0].type === 'paragraph') {
-        return formatMarkdown({
+        ast = {
           type: 'root',
-          children: ast.children[0].children
-        }, namespaces);
+          children: ast.children[0].children.concat(ast.children.slice(1))
+        };
       }
       return formatMarkdown(ast, namespaces);
     },
@@ -57,6 +79,9 @@ module.exports = function (comments, options, callback) {
         imports: imports
       }),
       renderNote: _.template(fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'), {
+        imports: imports
+      }),
+      renderSectionList: _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), {
         imports: imports
       }),
       highlight: function (str) {

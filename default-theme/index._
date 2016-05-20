@@ -80,7 +80,11 @@
         <div class='px2'>
           <% docs.forEach(function(s) { %>
             <% if (s.kind !== 'note') { %>
-              <div class='keyline-top-not py2'><%=renderSection({ section: s, renderSection: renderSection })%></div>
+              <%= renderSection({
+                section: s,
+                renderSection: renderSection,
+                renderSectionList: renderSectionList
+              }) %>
             <% } else { %>
               <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
             <% } %>
