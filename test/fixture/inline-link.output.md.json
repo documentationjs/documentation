@@ -257,7 +257,7 @@
         },
         {
           "type": "text",
-          "value": " to do the math.",
+          "value": " to do the math. This demonstrates\n",
           "position": {
             "start": {
               "line": 2,
@@ -265,9 +265,80 @@
               "offset": 74
             },
             "end": {
-              "line": 2,
-              "column": 31,
-              "offset": 90
+              "line": 3,
+              "column": 1,
+              "offset": 109
+            },
+            "indent": [
+              1
+            ]
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://en.wikipedia.org/wiki/Addition",
+          "title": null,
+          "jsdoc": true,
+          "children": [
+            {
+              "type": "text",
+              "value": "Addition"
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 109
+            },
+            "end": {
+              "line": 3,
+              "column": 56,
+              "offset": 164
+            },
+            "indent": []
+          }
+        },
+        {
+          "type": "text",
+          "value": "\nand ",
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 56,
+              "offset": 164
+            },
+            "end": {
+              "line": 4,
+              "column": 5,
+              "offset": 169
+            },
+            "indent": [
+              1
+            ]
+          }
+        },
+        {
+          "type": "link",
+          "url": "https://en.wikipedia.org/wiki/Addition",
+          "title": null,
+          "jsdoc": true,
+          "children": [
+            {
+              "type": "text",
+              "value": "https://en.wikipedia.org/wiki/Addition"
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 4,
+              "column": 5,
+              "offset": 169
+            },
+            "end": {
+              "line": 4,
+              "column": 51,
+              "offset": 215
             },
             "indent": []
           }
@@ -280,11 +351,13 @@
           "offset": 0
         },
         "end": {
-          "line": 2,
-          "column": 31,
-          "offset": 90
+          "line": 4,
+          "column": 51,
+          "offset": 215
         },
         "indent": [
+          1,
+          1,
           1
         ]
       }

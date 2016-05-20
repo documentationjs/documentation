@@ -94,7 +94,7 @@
           "column": 1
         }
       },
-      "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
+      "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math. This demonstrates\n * {@link https://en.wikipedia.org/wiki/Addition Addition}\n * and {@link https://en.wikipedia.org/wiki/Addition}\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
     },
     "errors": [],
     "params": [
@@ -286,7 +286,7 @@
             },
             {
               "type": "text",
-              "value": " to do the math.",
+              "value": " to do the math. This demonstrates\n",
               "position": {
                 "start": {
                   "line": 2,
@@ -294,9 +294,80 @@
                   "offset": 74
                 },
                 "end": {
-                  "line": 2,
-                  "column": 31,
-                  "offset": 90
+                  "line": 3,
+                  "column": 1,
+                  "offset": 109
+                },
+                "indent": [
+                  1
+                ]
+              }
+            },
+            {
+              "type": "link",
+              "url": "https://en.wikipedia.org/wiki/Addition",
+              "title": null,
+              "jsdoc": true,
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Addition"
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 1,
+                  "offset": 109
+                },
+                "end": {
+                  "line": 3,
+                  "column": 56,
+                  "offset": 164
+                },
+                "indent": []
+              }
+            },
+            {
+              "type": "text",
+              "value": "\nand ",
+              "position": {
+                "start": {
+                  "line": 3,
+                  "column": 56,
+                  "offset": 164
+                },
+                "end": {
+                  "line": 4,
+                  "column": 5,
+                  "offset": 169
+                },
+                "indent": [
+                  1
+                ]
+              }
+            },
+            {
+              "type": "link",
+              "url": "https://en.wikipedia.org/wiki/Addition",
+              "title": null,
+              "jsdoc": true,
+              "children": [
+                {
+                  "type": "text",
+                  "value": "https://en.wikipedia.org/wiki/Addition"
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 4,
+                  "column": 5,
+                  "offset": 169
+                },
+                "end": {
+                  "line": 4,
+                  "column": 51,
+                  "offset": 215
                 },
                 "indent": []
               }
@@ -309,11 +380,13 @@
               "offset": 0
             },
             "end": {
-              "line": 2,
-              "column": 31,
-              "offset": 90
+              "line": 4,
+              "column": 51,
+              "offset": 215
             },
             "indent": [
+              1,
+              1,
               1
             ]
           }
@@ -326,9 +399,9 @@
           "offset": 0
         },
         "end": {
-          "line": 2,
-          "column": 31,
-          "offset": 90
+          "line": 4,
+          "column": 51,
+          "offset": 215
         }
       }
     },
@@ -336,7 +409,7 @@
       {
         "title": "param",
         "description": "the input",
-        "lineNumber": 3,
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "number"
@@ -346,7 +419,7 @@
       {
         "title": "returns",
         "description": "numberone",
-        "lineNumber": 4,
+        "lineNumber": 6,
         "type": {
           "type": "NameExpression",
           "name": "number"
@@ -359,28 +432,28 @@
         "column": 0
       },
       "end": {
-        "line": 15,
+        "line": 17,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 16,
+          "line": 18,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 20,
           "column": 2
         }
       },
-      "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math.\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
+      "code": "/**\n * Adds one to a number\n * @param {number} a the input\n * @returns {number} the output\n */\nfunction addOne(a) {\n  return a + 1;\n}\n\n/**\n * This function returns the number one. Internally, this uses\n * {@link addOne} to do the math. This demonstrates\n * {@link https://en.wikipedia.org/wiki/Addition Addition}\n * and {@link https://en.wikipedia.org/wiki/Addition}\n * @param {number} a the input\n * @returns {number} numberone\n */\nmodule.exports = function (a) {\n  return addOne(a);\n};\n"
     },
     "errors": [],
     "params": [
       {
         "name": "a",
-        "lineNumber": 3,
+        "lineNumber": 5,
         "description": {
           "type": "root",
           "children": [

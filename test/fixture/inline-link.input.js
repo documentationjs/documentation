@@ -9,7 +9,9 @@ function addOne(a) {
 
 /**
  * This function returns the number one. Internally, this uses
- * {@link addOne} to do the math.
+ * {@link addOne} to do the math. This demonstrates
+ * {@link https://en.wikipedia.org/wiki/Addition Addition}
+ * and {@link https://en.wikipedia.org/wiki/Addition}
  * @param {number} a the input
  * @returns {number} numberone
  */

@@ -57,7 +57,6 @@ function expandInputs(indexes, options, callback) {
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
- * @alias documentation
  * @param {Array<string>|string} indexes files to process
  * @param {Object} options options
  * @param {Array<string>} options.external a string regex / glob match pattern
@@ -78,8 +77,9 @@ function expandInputs(indexes, options, callback) {
  * @param {Function} callback to be called when the documentation generation
  * is complete, with (err, result) argumentsj
  * @returns {undefined} calls callback
+ * @public
  */
-module.exports = function (indexes, options, callback) {
+module.exports.build = function (indexes, options, callback) {
   options = options || {};
   options.hljs = options.hljs || {};
 
@@ -143,6 +143,7 @@ module.exports = function (indexes, options, callback) {
  * @param {Function} callback to be called when the documentation generation
  * is complete, with (err, result) argumentsj
  * @returns {undefined} calls callback
+ * @public
  */
 module.exports.lint = function lint(indexes, options, callback) {
   options = options || {};
