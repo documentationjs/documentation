@@ -20,7 +20,7 @@ function makePOJO(ast) {
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', function (t) {
     var file = path.join(__dirname, './fixture/simple.input.js');
-    documentation([file], { github: true }, function (err, result) {
+    documentation.build([file], { github: true }, function (err, result) {
       t.ifError(err);
       normalize(result);
       var outputfile = file.replace('.input.js', '.output.github.json');
@@ -45,7 +45,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
 }
 
 test('external modules option', function (t) {
-  documentation([
+  documentation.build([
     path.join(__dirname, 'fixture', 'external.input.js')
   ], {
     external: '(external|external/node_modules/*)'
@@ -65,7 +65,7 @@ test('external modules option', function (t) {
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation([file], null, function (error, res) {
+      documentation.build([file], null, function (error, res) {
         t.equal(res, undefined);
         // make error a serializable object
         error = JSON.parse(JSON.stringify(error));
@@ -88,7 +88,7 @@ test('bad input', function (tt) {
 test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation([file], null, function (err, result) {
+      documentation.build([file], null, function (err, result) {
         t.ifError(err);
         outputHtml(result, null, function (err, result) {
           t.ifError(err);
@@ -116,7 +116,7 @@ test('html', function (tt) {
 test('outputs', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     ttt.test(path.basename(file), function (tt) {
-      documentation([file], null, function (err, result) {
+      documentation.build([file], null, function (err, result) {
         tt.ifError(err);
 
         tt.test('markdown', function (t) {
@@ -167,7 +167,7 @@ test('highlightAuto md output', function (t) {
   var file = path.join(__dirname, 'fixture/auto_lang_hljs/multilanguage.input.js'),
     hljsConfig = {hljs: {highlightAuto: true, languages: ['js', 'css', 'html']}};
 
-  documentation(file, null, function (err, result) {
+  documentation.build(file, null, function (err, result) {
     t.ifError(err);
     outputMarkdown(result, hljsConfig, function (err, result) {
       t.ifError(err);
@@ -183,7 +183,7 @@ test('highlightAuto md output', function (t) {
 });
 
 test('multi-file input', function (t) {
-  documentation([
+  documentation.build([
     path.join(__dirname, 'fixture', 'simple.input.js'),
     path.join(__dirname, 'fixture', 'simple-two.input.js')
   ], null, function (err, result) {
@@ -201,7 +201,7 @@ test('multi-file input', function (t) {
 
 test('accepts simple relative paths', function (t) {
   chdir(__dirname, function () {
-    documentation('fixture/simple.input.js', null, function (err, data) {
+    documentation.build('fixture/simple.input.js', null, function (err, data) {
       t.ifError(err);
       t.equal(data.length, 1, 'simple has no dependencies');
       t.end();
