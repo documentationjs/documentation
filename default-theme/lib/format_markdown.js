@@ -15,7 +15,7 @@ function getHref(paths) {
 
 function rerouteLinks(ast) {
   visit(ast, 'link', function (node) {
-    if (node.jsdoc) {
+    if (node.jsdoc && !node.url.match(/^(http|https|\.)/)) {
       node.url = '#' + node.url;
     }
   });
