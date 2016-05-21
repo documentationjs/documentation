@@ -25,6 +25,26 @@ test('shallow deps multi', function (t) {
   });
 });
 
+test('shallow deps directory', function (t) {
+  shallow([
+    path.resolve(path.join(__dirname, '../../fixture/html'))
+  ], {}, function (err, deps) {
+    t.ifError(err);
+    t.equal(deps.length, 1);
+    t.ok(deps[0].file.match(/input.js/), 'is the input file');
+    t.end();
+  });
+});
+
+test('shallow deps not found', function (t) {
+  t.throws(function () {
+    shallow([
+      'not-found-file'
+    ], {});
+  }, 'not found');
+  t.end();
+});
+
 test('shallow deps literal', function (t) {
   var obj = {
     file: 'foo.js',
