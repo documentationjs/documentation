@@ -163,6 +163,54 @@ test('outputs', function (ttt) {
   ttt.end();
 });
 
+test('outputs - sync', function (ttt) {
+  glob.sync(path.join(__dirname, 'fixture/sync', '*.input.js')).forEach(function (file) {
+    ttt.test(path.basename(file), function (tt) {
+      var result = documentation.buildSync([file]);
+
+      tt.test('markdown', function (t) {
+        outputMarkdown(result, null, function (err, result) {
+          t.ifError(err);
+          var outputfile = file.replace('.input.js', '.output.md');
+          if (UPDATE) {
+            fs.writeFileSync(outputfile, result, 'utf8');
+          }
+          var expect = fs.readFileSync(outputfile, 'utf8');
+          t.equal(result.toString(), expect, 'markdown output correct');
+          t.end();
+        });
+      });
+
+      tt.test('markdown AST', function (t) {
+        outputMarkdownAST(result, null, function (err, result) {
+          t.ifError(err);
+          var outputfile = file.replace('.input.js', '.output.md.json');
+          if (UPDATE) {
+            fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
+          }
+          var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
+          t.deepEqual(result, expect, 'markdown AST output correct');
+          t.end();
+        });
+      });
+
+      tt.test('JSON', function (t) {
+        normalize(result);
+        var outputfile = file.replace('.input.js', '.output.json');
+        if (UPDATE) {
+          fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
+        }
+        var expect = require(outputfile);
+        t.deepEqual(makePOJO(result), expect);
+        t.end();
+      });
+
+      tt.end();
+    });
+  });
+  ttt.end();
+});
+
 test('highlightAuto md output', function (t) {
   var file = path.join(__dirname, 'fixture/auto_lang_hljs/multilanguage.input.js'),
     hljsConfig = {hljs: {highlightAuto: true, languages: ['js', 'css', 'html']}};

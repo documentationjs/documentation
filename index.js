@@ -1,6 +1,7 @@
 'use strict';
 
-var sort = require('./lib/sort'),
+var fs = require('fs'),
+  sort = require('./lib/sort'),
   nest = require('./lib/nest'),
   filterAccess = require('./lib/filter_access'),
   filterJS = require('./lib/filter_js'),
@@ -81,11 +82,51 @@ function expandInputs(indexes, options, callback) {
  */
 module.exports.build = function (indexes, options, callback) {
   options = options || {};
-  options.hljs = options.hljs || {};
 
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
+
+  return expandInputs(indexes, options, function (error, inputs) {
+    if (error) {
+      return callback(error);
+    }
+    try {
+      callback(null, buildSync(inputs, options));
+    } catch (e) {
+      callback(e);
+    }
+  });
+};
+
+/**
+ * Generate JavaScript documentation given a list of inputs. This internal
+ * method does not support require-following and it returns its results
+ * synchronously, rather than by calling a callback.
+ *
+ * @param {Array<string>} indexes files to process
+ * @param {Object} options options
+ * @param {Array<string>} options.external a string regex / glob match pattern
+ * that defines what external modules will be whitelisted and included in the
+ * generated documentation.
+ * @param {boolean} [options.polyglot=false] parse comments with a regex rather than
+ * a proper parser. This enables support of non-JavaScript languages but
+ * reduces documentation's ability to infer structure of code.
+ * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
+ * even in JavaScript code. With the polyglot option set, this has no effect.
+ * @param {Array<string|Object>} [options.order=[]] optional array that
+ * defines sorting order of documentation
+ * @param {Array<string>} [options.access=[]] an array of access levels
+ * to output in documentation
+ * @param {Object} [options.hljs] hljs optional options
+ * @param {boolean} [options.hljs.highlightAuto=false] hljs automatically detect language
+ * @param {Array} [options.hljs.languages] languages for hljs to choose from
+ * @returns {Object} list of results
+ * @public
+ */
+function buildSync(indexes, options) {
+  options = options || {};
+  options.hljs = options.hljs || {};
 
   if (!options.access) {
     options.access = ['public', 'undefined', 'protected'];
@@ -93,37 +134,33 @@ module.exports.build = function (indexes, options, callback) {
 
   var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
-  return expandInputs(indexes, options, function (error, inputs) {
-    if (error) {
-      return callback(error);
-    }
-    try {
-      callback(null,
-        filterAccess(options.access,
-          hierarchy(
-            sort(
-            inputs
-              .filter(filterJS(options.extension, options.polyglot))
-              .reduce(function (memo, file) {
-                return memo.concat(parseFn(file));
-              }, [])
-              .map(pipeline(
-                inferName(),
-                inferAugments(),
-                inferKind(),
-                inferParams(),
-                inferProperties(),
-                inferReturn(),
-                inferMembership(),
-                nest,
-                options.github && github
-              ))
-              .filter(Boolean), options))));
-    } catch (e) {
-      callback(e);
-    }
-  });
-};
+  return filterAccess(options.access,
+    hierarchy(
+      sort(indexes.map(function (index) {
+        if (typeof index === 'string') {
+          return {
+            source: fs.readFileSync(index, 'utf8'),
+            file: index
+          };
+        }
+        return index;
+      }).filter(filterJS(options.extension, options.polyglot))
+        .reduce(function (memo, file) {
+          return memo.concat(parseFn(file));
+        }, [])
+        .map(pipeline(
+          inferName(),
+          inferAugments(),
+          inferKind(),
+          inferParams(),
+          inferProperties(),
+          inferReturn(),
+          inferMembership(),
+          nest,
+          options.github && github
+        ))
+        .filter(Boolean), options)));
+}
 
 /**
  * Lint files for non-standard or incorrect documentation
@@ -180,6 +217,7 @@ module.exports.lint = function lint(indexes, options, callback) {
 };
 
 module.exports.expandInputs = expandInputs;
+module.exports.buildSync = buildSync;
 
 module.exports.formats = {
   html: require('./lib/output/html'),
