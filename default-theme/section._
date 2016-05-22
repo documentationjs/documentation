@@ -21,7 +21,9 @@
     <p>
       Extends
       <% if (section.augments) { %>
-        <%= autolink(section.name) %>
+        <%= section.augments.map(function(tag) {
+	  return autolink(tag.name);
+	}).join(', ') %>
       <% } %>
     </p>
   <% } %>
