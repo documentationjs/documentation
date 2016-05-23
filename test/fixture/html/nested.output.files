@@ -179,6 +179,13 @@
   <div class='pre p1 fill-light'>Klass(foo: )</div>
 
   
+    <p>
+      Extends
+      
+        <a href="https://nodejs.org/api/stream.html#stream_class_stream_writable">Stream.Writable</a>
+      
+    </p>
+  
 
   
   

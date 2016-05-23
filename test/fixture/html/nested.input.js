@@ -2,6 +2,7 @@
 
 /**
  * Creates a new Klass
+ * @extends Stream.Writable
  * @class
  */
 function Klass(foo) {
