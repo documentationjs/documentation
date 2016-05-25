@@ -4,11 +4,12 @@ var test = require('tap').test,
   remark = require('remark'),
   parse = require('../../../lib/parsers/javascript');
 
-function toComments(fn, filename) {
+function toComments(source, filename, opts) {
+  source = typeof source === 'string' ? source :  '(' + source.toString() + ')';
   return parse({
     file: filename || 'test.js',
-    source: '(' + fn.toString() + ')'
-  });
+    source: source
+  }, opts);
 }
 
 test('parse - leading comment', function (t) {
@@ -46,5 +47,20 @@ test('parse - error', function (t) {
   })[0].errors, [
     { message: 'Braces are not balanced' },
     { message: 'Missing or invalid tag name' }]);
+  t.end();
+});
+
+test('parse - document exported', function (t) {
+  t.equal(toComments(`
+    export class C {}
+  `).length, 0);
+  t.equal(toComments(`
+    export class C {}
+  `, 'test.js', {documentExported: true}).length, 1);
+  t.equal(toComments(`
+    export class C {
+      method() {}
+    }
+  `, 'test.js', {documentExported: true}).length, 2);
   t.end();
 });

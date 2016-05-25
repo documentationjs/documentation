@@ -1,5 +1,4 @@
-var walk = require('../lib/walk'),
-  traverse = require('babel-traverse').default;
+var walk = require('../lib/walk');
 
 module.exports = function (comments) {
   return walk(comments, function (comment) {

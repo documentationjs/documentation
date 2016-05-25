@@ -295,3 +295,22 @@ test('.lint with bad input', function (t) {
     });
   });
 });
+
+test('document exported', function (t) {
+  documentation.build([
+    path.join(__dirname, 'fixture', 'document-exported.input.js')
+  ], {
+    documentExported: true
+  }, function (err, result) {
+    t.ifError(err);
+    normalize(result);
+    var outputfile = path.join(__dirname, 'fixture', 'document-exported.output.enabled.json');
+    var resultString = JSON.stringify(result, null ,2);
+    if (UPDATE) {
+      fs.writeFileSync(outputfile, resultString);
+    }
+    var expect = fs.readFileSync(outputfile, 'utf-8');
+    t.equal(resultString, expect);
+    t.end();
+  });
+});
