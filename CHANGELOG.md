@@ -1,3 +1,10 @@
+## 4.0.0-beta3
+
+* Updates theme to a much-improved design
+* Fix augments tag display in HTML
+* Improve name detection of ES6-exported methods and variables
+* Allow documentation of Object.prototype methods
+
 ## 4.0.0-beta2
 
 Minor fixes
