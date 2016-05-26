@@ -1852,6 +1852,10 @@
                   "type": "strong",
                   "children": [
                     {
+                      "type": "text",
+                      "value": "["
+                    },
+                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
@@ -1861,6 +1865,14 @@
                           "value": "number"
                         }
                       ]
+                    },
+                    {
+                      "type": "text",
+                      "value": "]"
+                    },
+                    {
+                      "type": "text",
+                      "value": "(default 123)"
                     }
                   ]
                 },
