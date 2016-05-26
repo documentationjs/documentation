@@ -55,7 +55,9 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 * [Usage](docs/USAGE.md): how to use documentation.js
 * [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
 * [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
+* [Configuring documentation.js](docs/CONFIG.md)
 * [FAQ](docs/FAQ.md)
+* [Troubleshooting](docs/TROUBLESHOOTING.md)
 * [Theming](docs/THEMING.md): tips for theming documentation output in HTML
 * [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
 
