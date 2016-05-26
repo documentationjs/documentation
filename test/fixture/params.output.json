@@ -1909,8 +1909,12 @@
           }
         },
         "type": {
-          "type": "NameExpression",
-          "name": "number"
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "default": "123"
         }
       }
     ],
