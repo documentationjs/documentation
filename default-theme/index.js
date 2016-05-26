@@ -83,10 +83,7 @@ module.exports = function (comments, options, callback) {
       }),
       renderSectionList: _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), {
         imports: imports
-      }),
-      highlight: function (str) {
-        return highlight(str);
-      }
+      })
     }
   });
 

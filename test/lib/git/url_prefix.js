@@ -3,7 +3,8 @@
 var test = require('tap').test,
   mock = require('mock-fs'),
   mockRepo = require('./mock_repo'),
-  getGithubURLPrefix = require('../../../lib/git/url_prefix');
+  getGithubURLPrefix = require('../../../lib/git/url_prefix'),
+  parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
 
 test('getGithubURLPrefix', function (t) {
 
@@ -27,7 +28,14 @@ test('getGithubURLPrefix', function (t) {
 
   mock.restore();
 
+  t.end();
+});
 
-
+test('parsePackedRefs', function (t) {
+  var input = '# pack-refs with: peeled fully-peeled\n' +
+    '4acd658617928bd17ae7364ef2512630d97c007a refs/heads/babel-6\n' +
+    '11826ad98c6c08d00f4af77f64d3e2687e0f7dba refs/remotes/origin/flow-types';
+  t.equal(parsePackedRefs(input, 'refs/heads/babel-6'),
+    '4acd658617928bd17ae7364ef2512630d97c007a', 'Finds babel 6 ref');
   t.end();
 });
