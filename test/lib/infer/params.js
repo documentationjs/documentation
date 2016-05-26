@@ -21,15 +21,11 @@ test('inferParams', function (t) {
     function f(x) {}
   }).params, [{lineNumber: 3, name: 'x', title: 'param'}]);
 
-  t.deepEqual(evaluate(`
-    /** Test */
-    export function f(x) {}
-  `).params, [{lineNumber: 3, name: 'x', title: 'param'}]);
+  t.deepEqual(evaluate('/** Test */ export function f(x) {}').params,
+    [{lineNumber: 1, name: 'x', title: 'param'}]);
 
-  t.deepEqual(evaluate(`
-    /** Test */
-    export default function f(x) {}
-  `).params, [{lineNumber: 3, name: 'x', title: 'param'}]);
+  t.deepEqual(evaluate('/** Test */ export default function f(x) {}').params,
+   [{lineNumber: 1, name: 'x', title: 'param'}]);
 
   t.end();
 });
