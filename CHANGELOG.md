@@ -1,3 +1,7 @@
+## 4.0.0-beta4
+
+* Fix minor dependency mistake
+
 ## 4.0.0-beta3
 
 * Updates theme to a much-improved design
