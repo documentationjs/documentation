@@ -74,6 +74,9 @@
               <% }) %>
             </ul>
           </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
         </div>
       </div>
       <div class='fix-margin-3'>
