@@ -80,6 +80,11 @@ async function foo() { }
 export default multiply;
 
 /**
+ * @public
+ */
+export default (thisIsTheArgument) => {};
+
+/**
  * This function returns the number one.
  * @returns {Number} numberone
  */
