@@ -228,6 +228,23 @@ test('--private flag', function (t) {
   }, false);
 });
 
+test('--infer-private flag', function (t) {
+  documentation(['build fixture/infer-private.input.js --infer-private ^_'], {}, function (err, data) {
+    t.error(err);
+
+    // This uses JSON.parse with a reviver used as a visitor.
+    JSON.parse(data, function (n, v) {
+      // Make sure we do not see any names that match `^_`.
+      if (n === 'name') {
+        t.equal(typeof v, 'string');
+        t.ok(!/_$/.test(v));
+      }
+      return v;
+    });
+    t.end();
+  }, false);
+});
+
 test('write to file', function (t) {
 
   var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
