@@ -1,3 +1,10 @@
+## 4.0.0-beta5
+
+* Add decorator support (zacharygolba)
+* Add support to infer whether functions are private based on their name,
+  like starting with `_` (arv)
+* Improve internal documentation
+
 ## 4.0.0-beta4
 
 * Fix minor dependency mistake
