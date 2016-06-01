@@ -1,6 +1,8 @@
 'use strict';
 
 var test = require('tap').test,
+  documentationSchema = require('documentation-schema'),
+  validate = require('json-schema'),
   documentation = require('../'),
   outputMarkdown = require('../lib/output/markdown.js'),
   outputMarkdownAST = require('../lib/output/markdown_ast.js'),
@@ -147,6 +149,11 @@ test('outputs', function (ttt) {
 
         tt.test('JSON', function (t) {
           normalize(result);
+          result.forEach(function (comment) {
+            validate(comment, documentationSchema.jsonSchema).errors.forEach(function (error) {
+              t.ifError(error);
+            });
+          });
           var outputfile = file.replace('.input.js', '.output.json');
           if (UPDATE) {
             fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
