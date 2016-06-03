@@ -1,1 +1,1 @@
-var required = require('./extension-required');
+var required = require('./extension/extension-required');
