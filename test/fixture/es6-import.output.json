@@ -65,26 +65,26 @@
     ],
     "loc": {
       "start": {
-        "line": 4,
+        "line": 5,
         "column": 0
       },
       "end": {
-        "line": 7,
+        "line": 8,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 0
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 43
         }
       },
-      "code": "import multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
+      "code": "import hasEx6 from './es6-ext';\nimport multiply from \"./es6.input.js\";\nimport * as foo from \"some-other-module\";\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nvar multiplyTwice = (a) => a * multiply(a);\n\nexport default multiplyTwice;\n"
     },
     "errors": [],
     "returns": [
@@ -153,7 +153,7 @@
       {
         "title": "param",
         "name": "a",
-        "lineNumber": 8
+        "lineNumber": 9
       }
     ],
     "members": {
@@ -167,6 +167,96 @@
       }
     ],
     "namespace": "multiplyTwice"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This is the default export frogs!",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 34,
+                  "offset": 33
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 34,
+              "offset": 33
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 34,
+          "offset": 33
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 18
+        }
+      },
+      "code": "/**\n * This is the default export frogs!\n */\nexport default 10;\n"
+    },
+    "errors": [],
+    "name": "es6-ext",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "es6-ext"
+      }
+    ],
+    "namespace": "es6-ext"
   },
   {
     "description": {
