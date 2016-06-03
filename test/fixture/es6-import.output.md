@@ -8,6 +8,10 @@ This function returns the number one.
 
 Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** numberone
 
+# es6-ext
+
+This is the default export frogs!
+
 # destructure
 
 This function destructures with defaults.

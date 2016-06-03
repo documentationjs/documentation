@@ -1,3 +1,4 @@
+import hasEx6 from './es6-ext';
 import multiply from "./es6.input.js";
 import * as foo from "some-other-module";
 
