@@ -2,7 +2,7 @@
 
 an area chart generator
 
-Returns **area** chart
+Returns **[area](#area)** chart
 
 # area
 

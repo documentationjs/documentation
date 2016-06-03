@@ -11,6 +11,7 @@ var test = require('tap').test,
   glob = require('glob'),
   path = require('path'),
   fs = require('fs'),
+  _ = require('lodash'),
   chdir = require('chdir');
 
 var UPDATE = !!process.env.UPDATE;
@@ -32,7 +33,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
       var expect = require(outputfile);
       t.deepEqual(result, expect, 'produces correct JSON');
 
-      outputMarkdown(result, null, function (err, result) {
+      outputMarkdown(result, {}, function (err, result) {
         t.ifError(err);
         var outputfile = file.replace('.input.js', '.output.github.md');
         if (UPDATE) {
@@ -67,7 +68,7 @@ test('external modules option', function (t) {
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], null, function (error, res) {
+      documentation.build([file], {}, function (error, res) {
         t.equal(res, undefined);
         // make error a serializable object
         error = JSON.parse(JSON.stringify(error));
@@ -90,7 +91,7 @@ test('bad input', function (tt) {
 test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], null, function (err, result) {
+      documentation.build([file], {}, function (err, result) {
         t.ifError(err);
         outputHtml(result, null, function (err, result) {
           t.ifError(err);
@@ -118,11 +119,11 @@ test('html', function (tt) {
 test('outputs', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     ttt.test(path.basename(file), function (tt) {
-      documentation.build([file], null, function (err, result) {
+      documentation.build([file], {}, function (err, result) {
         tt.ifError(err);
 
         tt.test('markdown', function (t) {
-          outputMarkdown(result, null, function (err, result) {
+          outputMarkdown(_.cloneDeep(result), {}, function (err, result) {
             t.ifError(err);
             var outputfile = file.replace('.input.js', '.output.md');
             if (UPDATE) {
@@ -135,7 +136,7 @@ test('outputs', function (ttt) {
         });
 
         tt.test('markdown AST', function (t) {
-          outputMarkdownAST(result, null, function (err, result) {
+          outputMarkdownAST(_.cloneDeep(result), {}, function (err, result) {
             t.ifError(err);
             var outputfile = file.replace('.input.js', '.output.md.json');
             if (UPDATE) {
@@ -176,7 +177,7 @@ test('outputs - sync', function (ttt) {
       var result = documentation.buildSync([file]);
 
       tt.test('markdown', function (t) {
-        outputMarkdown(result, null, function (err, result) {
+        outputMarkdown(result, {}, function (err, result) {
           t.ifError(err);
           var outputfile = file.replace('.input.js', '.output.md');
           if (UPDATE) {
@@ -189,7 +190,7 @@ test('outputs - sync', function (ttt) {
       });
 
       tt.test('markdown AST', function (t) {
-        outputMarkdownAST(result, null, function (err, result) {
+        outputMarkdownAST(result, {}, function (err, result) {
           t.ifError(err);
           var outputfile = file.replace('.input.js', '.output.md.json');
           if (UPDATE) {
