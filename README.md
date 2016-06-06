@@ -46,9 +46,9 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 
 ## Examples
 
-* [HTML output with default template](http://documentation.js.org/demo/demo-documentation/)
+* [HTML output with default template](http://documentation.js.org/html-example/)
 * [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
-* [JSON](https://github.com/documentationjs/demo/blob/gh-pages/demo-documentation.json)
+* [JSON](http://documentation.js.org/html-example/index.json)
 
 ## Documentation
 
