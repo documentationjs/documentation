@@ -41,12 +41,12 @@ test('flowDoctrine', function (t) {
       "/** add */function add(a: ?number) { }"
     ).context.ast.node.params[0].typeAnnotation.typeAnnotation),
     {
-      type: 'OptionalType',
+      type: 'NullableType',
       expression: {
         type: 'NameExpression',
         name: 'number'
       }
-    }, 'optional');
+    }, 'nullable');
 
   t.deepEqual(flowDoctrine(toComment(
       "/** add */function add(a: number | string) { }"
