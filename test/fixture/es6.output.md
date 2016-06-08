@@ -35,6 +35,10 @@ Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 This is a sink
 
+## staticProp
+
+This is a property of the sink.
+
 ## empty
 
 Is it empty
@@ -54,10 +58,6 @@ as a property.
 ## hello
 
 This method says hello
-
-# staticProp
-
-This is a property of the sink.
 
 # functionWithRest
 
