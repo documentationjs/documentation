@@ -11,7 +11,7 @@ Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 # inline-link.input
 
 This function returns the number one. Internally, this uses
-[addOne](addOne) to do the math. This demonstrates
+[addOne](#addone) to do the math. This demonstrates
 [Addition](https://en.wikipedia.org/wiki/Addition)
 and <https://en.wikipedia.org/wiki/Addition>
 

@@ -57,8 +57,15 @@
           "type": "strong",
           "children": [
             {
-              "type": "text",
-              "value": "area"
+              "href": "#area",
+              "url": "#area",
+              "type": "link",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "area"
+                }
+              ]
             }
           ]
         },

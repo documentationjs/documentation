@@ -1,11 +1,16 @@
 .documentation {
-    font-family: Helvetica, sans-serif;
-    color: #666;
-    line-height: 1.5;
+  font-family: Helvetica, sans-serif;
+  color: #666;
+  line-height: 1.5;
+  background: #f5f5f5;
 }
 
 .black {
   color: #666;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 
 h4 {
@@ -16,20 +21,8 @@ h4 {
   color: #000;
 }
 
-.keyline-top {
-  border-top: 1px solid #ccc;
-}
-
-.keyline-top-not {
-  border-top: 1px solid #ccc;
-}
-
-.keyline-top-not:first-child {
-  border-top: none;
-}
-
-.keyline-right {
-  border-right: 1px solid #ccc;
+.border-bottom {
+  border-color: #ddd;
 }
 
 a {
@@ -125,9 +118,13 @@ table {
 
 .prose table th,
 .prose table td {
+  text-align: left;
   padding:8px;
   border:1px solid #ddd;
 }
+
+.prose table th:nth-child(1) { border-right: none; }
+.prose table th:nth-child(2) { border-left: none; }
 
 .prose table {
   border:1px solid #ddd;
@@ -140,4 +137,8 @@ table {
 
 .quiet {
   opacity: 0.7;
+}
+
+.minishadow {
+  box-shadow: 2px 2px 10px #f3f3f3;
 }

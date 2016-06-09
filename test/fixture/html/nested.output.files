@@ -25,7 +25,7 @@
               
                 
                 <li><a
-                  href='#Klass'
+                  href='#klass'
                   class=" toggle-sibling">
                   Klass
                   <span class='icon'>▸</span>
@@ -129,7 +129,7 @@
               
                 
                 <li><a
-                  href='#Foo'
+                  href='#foo'
                   class=" toggle-sibling">
                   Foo
                   <span class='icon'>▸</span>
@@ -154,6 +154,33 @@
                 
                 </li>
               
+                
+                <li><a
+                  href='#customstreams'
+                  class=" toggle-sibling">
+                  customStreams
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'>Static members</li>
+                    
+                      <li><a
+                        href='#customStreams.passthrough'
+                        class='regular pre-open'>
+                        .passthrough
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -162,16 +189,15 @@
         </div>
       </div>
       <div class='fix-margin-3'>
-        <div class='px2'>
+        
           
-            
-              <section class='py2 clearfix'>
+            <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
-    <h2 class='fl' id='Klass'>
+    <h3 class='fl m0' id='klass'>
       Klass
-    </h2>
+    </h3>
     
   </div>
   
@@ -179,7 +205,7 @@
   <p>Creates a new Klass</p>
 
 
-  <div class='pre p1 fill-light'>Klass(foo: )</div>
+  <div class='pre p1 fill-light mt0'>new Klass(foo: Any)</div>
 
   
     <p>
@@ -202,7 +228,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>foo</span> <code class='quiet'>()</code> 
+            <span class='code bold'>foo</span> <code class='quiet'>(Any)</code> 
           </div>
           
         </div>
@@ -222,25 +248,24 @@
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class="clearfix">
   
-    <div class='keyline-bottom' id='Klass.isClass'>
+    <div class='border-bottom' id='Klass.isClass'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>isClass</span>
-            <span class='quiet code space-right2'>(other, also)</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isClass(other, also)</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>Decide whether an object is a Klass instance
-This is a [klasssic]<a href="#Klass">Klass</a>
-This is a [link to something that does not exist]<a href="#DoesNot">DoesNot</a></p>
+This is a [klasssic]<a href="#klass">Klass</a>
+This is a [link to something that does not exist]<a href="">DoesNot</a></p>
 
 
-  <div class='pre p1 fill-light'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
 
   
 
@@ -297,16 +322,15 @@ This is a [link to something that does not exist]<a href="#DoesNot">DoesNot</a><
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass.isWeird'>
+    <div class='border-bottom' id='Klass.isWeird'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>isWeird</span>
-            <span class='quiet code space-right2'>(other)</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isWeird(other)</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
@@ -314,7 +338,7 @@ This is a [link to something that does not exist]<a href="#DoesNot">DoesNot</a><
 the referenced class type</p>
 
 
-  <div class='pre p1 fill-light'>isWeird(other: Weird): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isWeird(other: Weird): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
 
   
 
@@ -364,23 +388,22 @@ the referenced class type</p>
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass.isBuffer'>
+    <div class='border-bottom' id='Klass.isBuffer'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>isBuffer</span>
-            <span class='quiet code space-right2'>(buf, [size])</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isBuffer(buf, [size])</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
 
-  <div class='pre p1 fill-light'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>]): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
 
   
 
@@ -440,23 +463,22 @@ the referenced class type</p>
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass.isArrayOfBuffers'>
+    <div class='border-bottom' id='Klass.isArrayOfBuffers'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>isArrayOfBuffers</span>
-            <span class='quiet code space-right2'>(buffers)</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>isArrayOfBuffers(buffers)</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>This method takes an array of buffers and counts them</p>
 
 
-  <div class='pre p1 fill-light'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
 
   
 
@@ -514,23 +536,22 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass.MAGIC_NUMBER'>
+    <div class='border-bottom' id='Klass.MAGIC_NUMBER'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
             <span class='code strong strong truncate'>MAGIC_NUMBER</span>
-            <span class='quiet code space-right2'></span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>A magic number that identifies this Klass.</p>
 
 
-  <div class='pre p1 fill-light'>MAGIC_NUMBER</div>
+  <div class='pre p1 fill-light mt0'>MAGIC_NUMBER</div>
 
   
 
@@ -560,23 +581,22 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass.event:event'>
+    <div class='border-bottom' id='Klass.event:event'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
             <span class='code strong strong truncate'>event</span>
-            <span class='quiet code space-right2'></span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>Klass event</p>
 
 
-  <div class='pre p1 fill-light'>event</div>
+  <div class='pre p1 fill-light mt0'>event</div>
 
   
 
@@ -614,23 +634,22 @@ k.isArrayOfBuffers();</pre>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='keyline-bottom' id='Klass#getFoo'>
+    <div class='border-bottom' id='Klass#getFoo'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>getFoo</span>
-            <span class='quiet code space-right2'>()</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>getFoo()</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>Get this Klass&#x27;s foo</p>
 
 
-  <div class='pre p1 fill-light'>getFoo(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+  <div class='pre p1 fill-light mt0'>getFoo(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
 
   
 
@@ -675,23 +694,22 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='keyline-bottom' id='Klass#withOptions'>
+    <div class='border-bottom' id='Klass#withOptions'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
-            <span class='code strong strong truncate'>withOptions</span>
-            <span class='quiet code space-right2'>(options, otherOptions)</span>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>withOptions(options, otherOptions)</span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>A function with an options parameter</p>
 
 
-  <div class='pre p1 fill-light'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: ?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  <div class='pre p1 fill-light mt0'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: ?<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
 
   
 
@@ -710,15 +728,15 @@ k.isArrayOfBuffers();</pre>
             <span class='code bold'>options</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code> 
           </div>
           
-          <table class='mt1 mb2 fixed-table h5'>
+          <table class='mt1 mb2 fixed-table h5 col-12'>
             <colgroup>
               <col width='30%' />
               <col width='70%' />
             </colgroup>
             <thead>
               <tr class='bold fill-light'>
-                <td>Name</td>
-                <td>Description</td>
+                <th>Name</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody class='mt1'>
@@ -775,26 +793,26 @@ k.isArrayOfBuffers();</pre>
   
 </section>
 
-            
           
-            
-              <section class='py2 clearfix'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
-    <h2 class='fl' id='bar'>
+    <h3 class='fl m0' id='bar'>
       bar
-    </h2>
+    </h3>
     
   </div>
   
 
-  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
-a <a href="#Klass">klass instance multiword</a>,
-like a <a href="#Klass">klass</a></p>
+  <p>Get an instance of <a href="#klass">Klass</a>. Will make
+a <a href="#klass">klass instance multiword</a>,
+like a <a href="#klass">klass</a></p>
 
 
-  <div class='pre p1 fill-light'>bar(): <a href="#Klass">Klass</a></div>
+  <div class='pre p1 fill-light mt0'>bar(): <a href="#klass">Klass</a></div>
 
   
 
@@ -811,7 +829,7 @@ like a <a href="#Klass">klass</a></p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#Klass">Klass</a></code>:
+      <code><a href="#klass">Klass</a></code>:
         that class
 
       
@@ -829,16 +847,16 @@ like a <a href="#Klass">klass</a></p>
   
 </section>
 
-            
           
-            
-              <section class='py2 clearfix'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
-    <h2 class='fl' id='bar'>
+    <h3 class='fl m0' id='bar'>
       bar
-    </h2>
+    </h3>
     
   </div>
   
@@ -846,7 +864,7 @@ like a <a href="#Klass">klass</a></p>
   <p>Rest property function</p>
 
 
-  <div class='pre p1 fill-light'>bar(toys: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
+  <div class='pre p1 fill-light mt0'>bar(toys: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
 
   
 
@@ -893,26 +911,26 @@ like a <a href="#Klass">klass</a></p>
   
 </section>
 
-            
           
-            
-              <section class='py2 clearfix'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
-    <h2 class='fl' id='bar'>
+    <h3 class='fl m0' id='bar'>
       bar
-    </h2>
+    </h3>
     
   </div>
   
 
-  <p>Get an instance of <a href="#Klass">Klass</a>. Will make
-a <a href="#Klass">klass instance multiword</a>,
-like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> input.</p>
+  <p>Get an instance of <a href="#klass">Klass</a>. Will make
+a <a href="#klass">klass instance multiword</a>,
+like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> input.</p>
 
 
-  <div class='pre p1 fill-light'>bar(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
+  <div class='pre p1 fill-light mt0'>bar(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
 
   
 
@@ -947,16 +965,16 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   
 </section>
 
-            
           
-            
-              <section class='py2 clearfix'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
   <div class='clearfix'>
-    <h2 class='fl' id='Foo'>
+    <h3 class='fl m0' id='foo'>
       Foo
-    </h2>
+    </h3>
     
   </div>
   
@@ -964,7 +982,7 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   <p>This is Foo</p>
 
 
-  <div class='pre p1 fill-light'>Foo()</div>
+  <div class='pre p1 fill-light mt0'>new Foo()</div>
 
   
 
@@ -990,23 +1008,22 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='keyline-bottom' id='Foo#bar'>
+    <div class='border-bottom' id='Foo#bar'>
       <div class="clearfix small pointer toggle-sibling">
-        <div class="pad1y contain">
-            <a class='icon pin-right pad1y dark-link caret-right'></a>
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
             <span class='code strong strong truncate'>bar</span>
-            <span class='quiet code space-right2'></span>
         </div>
       </div>
-      <div class="clearfix hidden toggle-target">
-        <section class='py2 clearfix'>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
 
   <p>This is bar</p>
 
 
-  <div class='pre p1 fill-light'>bar</div>
+  <div class='pre p1 fill-light mt0'>bar</div>
 
   
 
@@ -1043,9 +1060,103 @@ like a <a href="#Klass">klass</a>. This needs a <a href="#number">number</a> inp
   
 </section>
 
-            
           
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='customstreams'>
+      customStreams
+    </h3>
+    
+  </div>
+  
+
+  <p>I am the container of stream types</p>
+
+
+  <div class='pre p1 fill-light mt0'>customStreams</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='customStreams.passthrough'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <span class='code strong strong truncate'>new passthrough()</span>
         </div>
+      </div>
+      <div class="clearfix hide toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>I am a passthrough stream that belongs to customStreams</p>
+
+
+  <div class='pre p1 fill-light mt0'>new passthrough()</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
       </div>
     </div>
   </div>

@@ -129,3 +129,17 @@ class Foo {
    */
   get bar() { }
 }
+
+/**
+ * I am the container of stream types
+ */
+var customStreams = { };
+
+/**
+ * I am a passthrough stream that belongs to customStreams
+ *
+ * @kind class
+ */
+customStreams.passthrough = function () {
+  this.custom = true;
+};

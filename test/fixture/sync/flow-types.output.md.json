@@ -77,8 +77,15 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "Point"
+                      "href": "#point",
+                      "url": "#point",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Point"
+                        }
+                      ]
                     }
                   ]
                 },

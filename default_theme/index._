@@ -25,7 +25,7 @@
               <% docs.forEach(function(doc) { %>
                 <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
                 <li><a
-                  href='#<%=doc.namespace%>'
+                  href='#<%=slug(doc.namespace)%>'
                   class="<% if (doc.kind === 'note') { %>h5 bold black caps<% } %><% if (hasMembers) { %> toggle-sibling<% } %>">
                   <%- doc.name %>
                   <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
@@ -80,19 +80,17 @@
         </div>
       </div>
       <div class='fix-margin-3'>
-        <div class='px2'>
-          <% docs.forEach(function(s) { %>
-            <% if (s.kind !== 'note') { %>
-              <%= renderSection({
-                section: s,
-                renderSection: renderSection,
-                renderSectionList: renderSectionList
-              }) %>
-            <% } else { %>
-              <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
-            <% } %>
-          <% }) %>
-        </div>
+        <% docs.forEach(function(s) { %>
+          <% if (s.kind !== 'note') { %>
+            <%= renderSection({
+              section: s,
+              renderSection: renderSection,
+              renderSectionList: renderSectionList
+            }) %>
+          <% } else { %>
+            <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
+          <% } %>
+        <% }) %>
       </div>
     </div>
   </div>

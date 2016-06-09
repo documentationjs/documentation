@@ -14,14 +14,15 @@ This is the default export frogs!
 
 # destructure
 
-This function destructures with defaults.
+This function destructures with defaults. It should not
+have any parameter descriptions.
 
 **Parameters**
 
 -   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `$0.phoneNumbers`   (optional, default `[]`)
     -   `$0.emailAddresses`   (optional, default `[]`)
-    -   `$0.params` **...** 
+    -   `$0.params` **...Any** 
 
 # destructure
 
@@ -33,6 +34,12 @@ Similar, but with an array
     -   `$0.a`  
     -   `$0.b`  
     -   `$0.c`  
+
+**Examples**
+
+```javascript
+destructure([1, 2, 3])
+```
 
 # multiply
 
@@ -73,13 +80,26 @@ as a property.
 
 This method says hello
 
+# makeABasket
+
+This method returns a basket. The type should not be linked.
+
+Returns **Basket** a basket
+
+# makeASink
+
+This method returns a [sink](#sink). The type should be linked.
+It takes a [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) which should also be linked.
+
+Returns **[Sink](#sink)** a sink
+
 # functionWithRest
 
 This function takes rest params
 
 **Parameters**
 
--   `someParams` **...** 
+-   `someParams` **...Any** 
 
 # functionWithRestAndType
 
