@@ -267,7 +267,7 @@
           "children": [
             {
               "type": "text",
-              "value": "This function destructures with defaults.",
+              "value": "This function destructures with defaults. It should not\nhave any parameter descriptions.",
               "position": {
                 "start": {
                   "line": 1,
@@ -275,11 +275,13 @@
                   "offset": 0
                 },
                 "end": {
-                  "line": 1,
-                  "column": 42,
-                  "offset": 41
+                  "line": 2,
+                  "column": 33,
+                  "offset": 88
                 },
-                "indent": []
+                "indent": [
+                  1
+                ]
               }
             }
           ],
@@ -290,11 +292,13 @@
               "offset": 0
             },
             "end": {
-              "line": 1,
-              "column": 42,
-              "offset": 41
+              "line": 2,
+              "column": 33,
+              "offset": 88
             },
-            "indent": []
+            "indent": [
+              1
+            ]
           }
         }
       ],
@@ -305,9 +309,9 @@
           "offset": 0
         },
         "end": {
-          "line": 1,
-          "column": 42,
-          "offset": 41
+          "line": 2,
+          "column": 33,
+          "offset": 88
         }
       }
     },
@@ -318,22 +322,22 @@
         "column": 0
       },
       "end": {
-        "line": 3,
+        "line": 4,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 0
         },
         "end": {
-          "line": 5,
+          "line": 6,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "destructure",
@@ -361,7 +365,7 @@
           {
             "title": "param",
             "name": "$0.params",
-            "lineNumber": 4,
+            "lineNumber": 5,
             "type": {
               "type": "RestType"
             }
@@ -434,31 +438,42 @@
         }
       }
     },
-    "tags": [],
+    "tags": [
+      {
+        "title": "example",
+        "description": "destructure([1, 2, 3])",
+        "lineNumber": 2
+      }
+    ],
     "loc": {
       "start": {
-        "line": 7,
+        "line": 8,
         "column": 0
       },
       "end": {
-        "line": 9,
+        "line": 12,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 10,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 14,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
+    "examples": [
+      {
+        "description": "destructure([1, 2, 3])"
+      }
+    ],
     "name": "destructure",
     "kind": "function",
     "params": [
@@ -473,17 +488,17 @@
           {
             "title": "param",
             "name": "$0.a",
-            "lineNumber": 10
+            "lineNumber": 13
           },
           {
             "title": "param",
             "name": "$0.b",
-            "lineNumber": 10
+            "lineNumber": 13
           },
           {
             "title": "param",
             "name": "$0.c",
-            "lineNumber": 10
+            "lineNumber": 13
           }
         ]
       }
@@ -585,26 +600,26 @@
     ],
     "loc": {
       "start": {
-        "line": 13,
+        "line": 16,
         "column": 0
       },
       "end": {
-        "line": 17,
+        "line": 20,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 18,
+          "line": 21,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 21,
           "column": 31
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "params": [
@@ -680,7 +695,7 @@
       {
         "title": "param",
         "name": "b",
-        "lineNumber": 18
+        "lineNumber": 21
       }
     ],
     "returns": [
@@ -813,26 +828,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 20,
+        "line": 23,
         "column": 0
       },
       "end": {
-        "line": 22,
+        "line": 25,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 0
         },
         "end": {
-          "line": 59,
+          "line": 62,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "Sink",
@@ -895,26 +910,26 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 24,
+              "line": 27,
               "column": 2
             },
             "end": {
-              "line": 26,
+              "line": 29,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 27,
+                "line": 30,
                 "column": 2
               },
               "end": {
-                "line": 27,
+                "line": 30,
                 "column": 18
               }
             },
-            "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+            "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
           },
           "errors": [],
           "name": "staticProp",
@@ -994,26 +1009,26 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 29,
+              "line": 32,
               "column": 2
             },
             "end": {
-              "line": 31,
+              "line": 34,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 32,
+                "line": 35,
                 "column": 2
               },
               "end": {
-                "line": 34,
+                "line": 37,
                 "column": 3
               }
             },
-            "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+            "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
           },
           "errors": [],
           "name": "empty",
@@ -1097,26 +1112,26 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 43,
+              "line": 46,
               "column": 2
             },
             "end": {
-              "line": 46,
+              "line": 49,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 47,
+                "line": 50,
                 "column": 2
               },
               "end": {
-                "line": 49,
+                "line": 52,
                 "column": 3
               }
             },
-            "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+            "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
           },
           "errors": [],
           "name": "aGetter",
@@ -1166,26 +1181,26 @@
           ],
           "loc": {
             "start": {
-              "line": 51,
+              "line": 54,
               "column": 2
             },
             "end": {
-              "line": 54,
+              "line": 57,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 55,
+                "line": 58,
                 "column": 2
               },
               "end": {
-                "line": 58,
+                "line": 61,
                 "column": 3
               }
             },
-            "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+            "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
           },
           "errors": [],
           "params": [
@@ -1389,26 +1404,26 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 36,
+              "line": 39,
               "column": 2
             },
             "end": {
-              "line": 38,
+              "line": 41,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 39,
+                "line": 42,
                 "column": 2
               },
               "end": {
-                "line": 41,
+                "line": 44,
                 "column": 3
               }
             },
-            "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+            "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
           },
           "errors": [],
           "name": "hello",
@@ -1442,6 +1457,418 @@
       }
     ],
     "namespace": "Sink"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This method returns a basket. The type should not be linked.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 61,
+                  "offset": 60
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 61,
+              "offset": 60
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 61,
+          "offset": 60
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "returns",
+        "description": "a basket",
+        "lineNumber": 3,
+        "type": {
+          "type": "NameExpression",
+          "name": "Basket"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 64,
+        "column": 0
+      },
+      "end": {
+        "line": 68,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 69,
+          "column": 0
+        },
+        "end": {
+          "line": 70,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a basket",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 9,
+                      "offset": 8
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 9,
+              "offset": 8
+            }
+          }
+        },
+        "type": {
+          "type": "NameExpression",
+          "name": "Basket"
+        }
+      }
+    ],
+    "name": "makeABasket",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "makeABasket",
+        "kind": "function"
+      }
+    ],
+    "namespace": "makeABasket"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This method returns a ",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                },
+                "indent": []
+              }
+            },
+            {
+              "type": "link",
+              "url": "Sink",
+              "title": null,
+              "jsdoc": true,
+              "children": [
+                {
+                  "type": "text",
+                  "value": "sink"
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                },
+                "end": {
+                  "line": 1,
+                  "column": 40,
+                  "offset": 39
+                },
+                "indent": []
+              }
+            },
+            {
+              "type": "text",
+              "value": ". The type should be linked.\nIt takes a ",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 40,
+                  "offset": 39
+                },
+                "end": {
+                  "line": 2,
+                  "column": 12,
+                  "offset": 79
+                },
+                "indent": [
+                  1
+                ]
+              }
+            },
+            {
+              "type": "link",
+              "url": "number",
+              "title": null,
+              "jsdoc": true,
+              "children": [
+                {
+                  "type": "text",
+                  "value": "number"
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 12,
+                  "offset": 79
+                },
+                "end": {
+                  "line": 2,
+                  "column": 26,
+                  "offset": 93
+                },
+                "indent": []
+              }
+            },
+            {
+              "type": "text",
+              "value": " which should also be linked.",
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 26,
+                  "offset": 93
+                },
+                "end": {
+                  "line": 2,
+                  "column": 55,
+                  "offset": 122
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 55,
+              "offset": 122
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 55,
+          "offset": 122
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "returns",
+        "description": "a sink",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "Sink"
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 72,
+        "column": 0
+      },
+      "end": {
+        "line": 77,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 78,
+          "column": 0
+        },
+        "end": {
+          "line": 79,
+          "column": 1
+        }
+      },
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+    },
+    "errors": [],
+    "returns": [
+      {
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a sink",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 7,
+                      "offset": 6
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 7,
+                  "offset": 6
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 7,
+              "offset": 6
+            }
+          }
+        },
+        "type": {
+          "type": "NameExpression",
+          "name": "Sink"
+        }
+      }
+    ],
+    "name": "makeASink",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "makeASink",
+        "kind": "function"
+      }
+    ],
+    "namespace": "makeASink"
   },
   {
     "description": {
@@ -1499,26 +1926,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 61,
+        "line": 81,
         "column": 0
       },
       "end": {
-        "line": 63,
+        "line": 83,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 64,
+          "line": 84,
           "column": 0
         },
         "end": {
-          "line": 65,
+          "line": 85,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "functionWithRest",
@@ -1527,7 +1954,7 @@
       {
         "title": "param",
         "name": "someParams",
-        "lineNumber": 64,
+        "lineNumber": 84,
         "type": {
           "type": "RestType"
         }
@@ -1601,26 +2028,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 67,
+        "line": 87,
         "column": 0
       },
       "end": {
-        "line": 69,
+        "line": 89,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 70,
+          "line": 90,
           "column": 0
         },
         "end": {
-          "line": 71,
+          "line": 91,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "functionWithRestAndType",
@@ -1629,7 +2056,7 @@
       {
         "title": "param",
         "name": "someParams",
-        "lineNumber": 70,
+        "lineNumber": 90,
         "type": {
           "type": "RestType",
           "expression": {
@@ -1707,26 +2134,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 75,
+        "line": 95,
         "column": 0
       },
       "end": {
-        "line": 77,
+        "line": 97,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 78,
+          "line": 98,
           "column": 0
         },
         "end": {
-          "line": 78,
+          "line": 98,
           "column": 24
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "foo",
@@ -1754,26 +2181,26 @@
     ],
     "loc": {
       "start": {
-        "line": 82,
+        "line": 102,
         "column": 0
       },
       "end": {
-        "line": 84,
+        "line": 104,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 85,
+          "line": 105,
           "column": 0
         },
         "end": {
-          "line": 85,
+          "line": 105,
           "column": 41
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "access": "public",
@@ -1782,7 +2209,7 @@
       {
         "title": "param",
         "name": "thisIsTheArgument",
-        "lineNumber": 85
+        "lineNumber": 105
       }
     ],
     "members": {
@@ -1862,26 +2289,26 @@
     ],
     "loc": {
       "start": {
-        "line": 87,
+        "line": 107,
         "column": 0
       },
       "end": {
-        "line": 90,
+        "line": 110,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 91,
+          "line": 111,
           "column": 0
         },
         "end": {
-          "line": 91,
+          "line": 111,
           "column": 38
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "returns": [
@@ -2014,26 +2441,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 93,
+        "line": 113,
         "column": 0
       },
       "end": {
-        "line": 95,
+        "line": 115,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 96,
+          "line": 116,
           "column": 0
         },
         "end": {
-          "line": 98,
+          "line": 118,
           "column": 1
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "veryImportantTransform",
@@ -2119,26 +2546,26 @@
     ],
     "loc": {
       "start": {
-        "line": 108,
+        "line": 128,
         "column": 0
       },
       "end": {
-        "line": 111,
+        "line": 131,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 112,
+          "line": 132,
           "column": 0
         },
         "end": {
-          "line": 112,
+          "line": 132,
           "column": 27
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "access": "protected",
@@ -2218,26 +2645,26 @@
     ],
     "loc": {
       "start": {
-        "line": 114,
+        "line": 134,
         "column": 0
       },
       "end": {
-        "line": 117,
+        "line": 137,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 118,
+          "line": 138,
           "column": 0
         },
         "end": {
-          "line": 118,
+          "line": 138,
           "column": 24
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "access": "public",
@@ -2311,26 +2738,26 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 126,
+        "line": 146,
         "column": 0
       },
       "end": {
-        "line": 128,
+        "line": 148,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 129,
+          "line": 149,
           "column": 0
         },
         "end": {
-          "line": 129,
+          "line": 149,
           "column": 42
         }
       },
-      "code": "/**\n * This function destructures with defaults.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
+      "code": "/**\n * This function destructures with defaults. It should not\n * have any parameter descriptions.\n */\nfunction destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {\n}\n\n/**\n * Similar, but with an array\n * @example\n * destructure([1, 2, 3])\n */\nfunction destructure([a, b, c]) {\n}\n\n/**\n * This function returns the number one.\n * @param {Array<Number>} a an array of numbers\n * @returns {Number} numberone\n */\nvar multiply = (a, b) => a * b;\n\n/**\n * This is a sink\n */\nclass Sink {\n  /**\n   * This is a property of the sink.\n   */\n  staticProp = 42;\n\n  /**\n   * Is it empty\n   */\n  empty() {\n    return 1;\n  }\n\n  /**\n   * This method says hello\n   */\n  static hello() {\n    return 'hello';\n  }\n\n  /**\n   * This is a getter method: it should be documented\n   * as a property.\n   */\n  get aGetter() {\n    return 42;\n  }\n\n  /**\n   * @param {number} height the height of the thing\n   * @param {number} width the width of the thing\n   */\n  constructor(height, width) {\n    this.height = height;\n    this.width = width;\n  }\n}\n\n/**\n * This method returns a basket. The type should not be linked.\n *\n * @returns {Basket} a basket\n */\nfunction makeABasket() {\n}\n\n/**\n * This method returns a {@link Sink sink}. The type should be linked.\n * It takes a {@link number} which should also be linked.\n *\n * @returns {Sink} a sink\n */\nfunction makeASink() {\n}\n\n/**\n * This function takes rest params\n */\nfunction functionWithRest(...someParams) {\n}\n\n/**\n * So does this one, with types\n */\nfunction functionWithRestAndType(...someParams: number) {\n}\n\n// FUNCTION TYPES\n\n/**\n * This is an async method\n */\nasync function foo() { }\n\nexport default multiply;\n\n/**\n * @public\n */\nexport default (thisIsTheArgument) => {};\n\n/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = () => (<p>hello</p>);\n\n/**\n * This tests our support of optional parameters in ES6\n */\nfunction veryImportantTransform(foo = 'bar') {\n  return \"42\";\n}\n\n// ACCESS LEVELS\n\n/**\n * A private function\n * @private\n */\nfunction iAmPrivate() { }\n\n/**\n * A protected function\n * @protected\n */\nfunction iAmProtected() { }\n\n/**\n * A public function\n * @public\n */\nfunction iAmPublic() { }\n\n/**\n * A private function using the access tag\n * @access private\n */\nfunction iAmAccessPrivate() { }\n\n/**\n * This is re-exported\n */\nexport { execute } from 'external-module';\n"
     },
     "errors": [],
     "name": "execute",

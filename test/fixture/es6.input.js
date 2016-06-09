@@ -1,11 +1,14 @@
 /**
- * This function destructures with defaults.
+ * This function destructures with defaults. It should not
+ * have any parameter descriptions.
  */
 function destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {
 }
 
 /**
  * Similar, but with an array
+ * @example
+ * destructure([1, 2, 3])
  */
 function destructure([a, b, c]) {
 }
@@ -56,6 +59,23 @@ class Sink {
     this.height = height;
     this.width = width;
   }
+}
+
+/**
+ * This method returns a basket. The type should not be linked.
+ *
+ * @returns {Basket} a basket
+ */
+function makeABasket() {
+}
+
+/**
+ * This method returns a {@link Sink sink}. The type should be linked.
+ * It takes a {@link number} which should also be linked.
+ *
+ * @returns {Sink} a sink
+ */
+function makeASink() {
 }
 
 /**

@@ -20,7 +20,8 @@ var fs = require('fs'),
   inferReturn = require('./lib/infer/return'),
   inferAccess = require('./lib/infer/access'),
   formatLint = require('./lib/lint').formatLint,
-  lintComments = require('./lib/lint').lintComments;
+  lintComments = require('./lib/lint').lintComments,
+  markdownAST = require('./lib/output/markdown_ast');
 
 /**
  * Build a pipeline of comment handlers.
@@ -222,9 +223,24 @@ module.exports.lint = function lint(indexes, options, callback) {
 module.exports.expandInputs = expandInputs;
 module.exports.buildSync = buildSync;
 
+/**
+ * Documentation's formats are modular methods that take comments
+ * and options as input and call a callback with writable objects,
+ * like stringified JSON, markdown strings, or Vinyl objects for HTML
+ * output.
+ */
 module.exports.formats = {
   html: require('./lib/output/html'),
   md: require('./lib/output/markdown'),
-  remark: require('./lib/output/markdown_ast'),
+  remark: function (comments, options, callback) {
+    markdownAST(comments, options, function (err, res) {
+      callback(err, JSON.stringify(res, null, 2));
+    });
+  },
   json: require('./lib/output/json')
+};
+
+module.exports.util = {
+  createFormatters: require('./lib/output/util/formatters'),
+  createLinkerStack: require('./lib/output/util/linker_stack')
 };

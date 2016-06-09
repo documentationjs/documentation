@@ -232,7 +232,7 @@
         },
         {
           "type": "link",
-          "url": "addOne",
+          "url": "#addone",
           "title": null,
           "jsdoc": true,
           "children": [
