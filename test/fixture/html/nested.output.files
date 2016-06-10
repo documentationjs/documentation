@@ -34,8 +34,8 @@
                 <div class='toggle-target display-none'>
                   
                   <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'>Static members</li>
-                    
+                    <li class='h5'><span>Static members</span></li>
+
                       <li><a
                         href='#Klass.isClass'
                         class='regular pre-open'>
@@ -76,8 +76,8 @@
                   
                   
                     <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'>Instance members</li>
-                      
+                      <li class='h5'><span>Instance members</span></li>
+
                       <li><a
                         href='#Klass#getFoo'
                         class='regular pre-open'>
@@ -139,8 +139,8 @@
                   
                   
                     <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'>Instance members</li>
-                      
+                      <li class='h5'><span>Instance members</span></li>
+
                       <li><a
                         href='#Foo#bar'
                         class='regular pre-open'>
@@ -165,8 +165,8 @@
                 <div class='toggle-target display-none'>
                   
                   <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'>Static members</li>
-                    
+                    <li class='h5'><span>Static members</span></li>
+
                       <li><a
                         href='#customStreams.passthrough'
                         class='regular pre-open'>
