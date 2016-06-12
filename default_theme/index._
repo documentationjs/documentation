@@ -34,7 +34,7 @@
                 <div class='toggle-target display-none'>
                   <% if (doc.members.static && doc.members.static.length) { %>
                   <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'>Static members</li>
+                    <li class='h5'><span>Static members</span></li>
                     <% doc.members.static.forEach(function(member) { %>
                       <li><a
                         href='#<%=member.namespace%>'
@@ -46,7 +46,7 @@
                   <% } %>
                   <% if (doc.members.instance && doc.members.instance.length) { %>
                     <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'>Instance members</li>
+                      <li class='h5'><span>Instance members</span></li>
                       <% doc.members.instance.forEach(function(member) { %>
                       <li><a
                         href='#<%=member.namespace%>'

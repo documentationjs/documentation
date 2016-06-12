@@ -11,7 +11,7 @@ var tocElements = document.getElementById('toc')
 document.getElementById('filter-input')
   .addEventListener('keyup', function (e) {
 
-    var i, element;
+    var i, element, children;
 
     // enter key
     if (e.keyCode === 13) {
@@ -32,14 +32,15 @@ document.getElementById('filter-input')
     var value = this.value.toLowerCase();
 
     if (!value.match(/^\s*$/)) {
-      match = function (text) {
-        return text.toLowerCase().indexOf(value) !== -1;
+      match = function (element) {
+        return element.firstChild.innerHTML.toLowerCase().indexOf(value) !== -1;
       };
     }
 
     for (i = 0; i < tocElements.length; i++) {
       element = tocElements[i];
-      if (match(element.firstChild.innerHTML)) {
+      children = Array.from(element.getElementsByTagName('li'));
+      if (match(element) || children.some(match)) {
         element.classList.remove('display-none');
       } else {
         element.classList.add('display-none');
@@ -71,7 +72,7 @@ for (var j = 0; j < items.length; j++) {
 
 function toggleSibling() {
   var stepSibling = this.parentNode.getElementsByClassName('toggle-target')[0];
-  var icon = this.getElementsByClassName('icon')[0]
+  var icon = this.getElementsByClassName('icon')[0];
   var klass = 'display-none';
   if (stepSibling.classList.contains(klass)) {
     stepSibling.classList.remove(klass);
