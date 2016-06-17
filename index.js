@@ -81,6 +81,21 @@ function expandInputs(indexes, options, callback) {
  * is complete, with (err, result) argumentsj
  * @returns {undefined} calls callback
  * @public
+ * @example
+ * var documentation = require('documentation');
+ *
+ * documentation.build(['index.js'], {
+ *
+ *   // only output comments with an explicit @public tag
+ *   access: ['public']
+ *
+ * }, function (err, res) {
+ *
+ *   // res is an array of parsed comments with inferred properties
+ *   // and more: everything you need to build documentation or
+ *   // any other kind of code data.
+ *
+ * });
  */
 module.exports.build = function (indexes, options, callback) {
   options = options || {};
@@ -125,6 +140,13 @@ module.exports.build = function (indexes, options, callback) {
  * @param {Array} [options.hljs.languages] languages for hljs to choose from
  * @returns {Object} list of results
  * @public
+ * @example
+ * var documentation = require('documentation');
+ *
+ * var results = documentation.buildSync(['index.js']);
+ * // results is an array of parsed comments with inferred properties
+ * // and more: everything you need to build documentation or
+ * // any other kind of code data.
  */
 function buildSync(indexes, options) {
   options = options || {};
@@ -228,6 +250,7 @@ module.exports.buildSync = buildSync;
  * and options as input and call a callback with writable objects,
  * like stringified JSON, markdown strings, or Vinyl objects for HTML
  * output.
+ * @public
  */
 module.exports.formats = {
   html: require('./lib/output/html'),
