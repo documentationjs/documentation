@@ -3,7 +3,7 @@
 var test = require('tap').test,
   get = require('../utils').get,
   File = require('vinyl'),
-  Server = require('../../lib/server');
+  Server = require('../../lib/serve/server');
 
 var jsFile = new File({
   cwd: '/',

@@ -70,4 +70,3 @@ function addCommands(parser) {
     return parser.command(cmd, commands[cmd].description);
   }, parser.demand(1)).help('help');
 }
-
