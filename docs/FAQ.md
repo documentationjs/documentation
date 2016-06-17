@@ -58,6 +58,21 @@ documentation.
   makes it possible to require documentation as part of your linting step,
   ensuring that new code doesn't lower documentation coverage.
 
+## Which files does documentation.js include?
+
+By default, `documentation.js` follows dependencies within your source tree
+and excludes `node_modules` from results. This is meant to include your application
+code automatically but avoid documenting the random npm modules you're
+using.
+
+This means that if you point `documentation.js` at your `index.js` file and
+that file uses `require` or `import` to include other source files,
+those source files will be documented too.
+
+You can customize this behavior by specifying the `--shallow` command-line
+option. With `--shallow` specified, dependendencies aren't followed: documentation.js
+documents only the files you explicitly name.
+
 ## Will adding JSDoc comments slow down my code?
 
 The short answer is "no".
