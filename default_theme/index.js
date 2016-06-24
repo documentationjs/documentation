@@ -72,18 +72,18 @@ module.exports = function (comments, options, callback) {
     }
   };
   
-  imports.renderSectionList =  _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), {
-    imports: imports
+  sharedImports.renderSectionList =  _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), {
+    imports: sharedImports
   });
-  imports.renderSection = _.template(fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'), {
-    imports: imports
+  sharedImports.renderSection = _.template(fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'), {
+    imports: sharedImports
   });
-  imports.renderNote = _.template(fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'), {
-    imports: imports
+  sharedImports.renderNote = _.template(fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'), {
+    imports: sharedImports
   });
 
   var pageTemplate = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'), {
-    imports: imports
+    imports: sharedImports
   });
 
   // push assets into the pipeline as well.
