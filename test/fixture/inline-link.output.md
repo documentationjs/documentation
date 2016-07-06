@@ -15,6 +15,8 @@ This function returns the number one. Internally, this uses
 [Addition](https://en.wikipedia.org/wiki/Addition)
 and <https://en.wikipedia.org/wiki/Addition>
 
+This link refers to nothing: [nothing](nothing)
+
 **Parameters**
 
 -   `a` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the input
