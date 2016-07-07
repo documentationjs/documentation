@@ -174,8 +174,6 @@ test('sort an already-sorted stream containing a section/description', function 
 
   var sortOnce = sort([apples, carrot, bananas], config);
   var sortTwice = sort(sortOnce, config);
-  console.log(sortOnce.map(x => x.name))
-  console.log(sortTwice.map(x => x.name))
   t.deepEqual(sortTwice, [carrot, sectionMarkdown, bananas, apples]);
   t.end();
 });
