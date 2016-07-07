@@ -71,21 +71,20 @@ module.exports = function (comments, options, callback) {
       }
     }
   };
+  
+  sharedImports.renderSectionList =  _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), {
+    imports: sharedImports
+  });
+  sharedImports.renderSection = _.template(fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'), {
+    imports: sharedImports
+  });
+  sharedImports.renderNote = _.template(fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'), {
+    imports: sharedImports
+  });
 
-  var pageTemplate = _.template(
-    fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'), {
-      imports: _.assign({}, sharedImports.imports, {
-        renderSection: _.template(
-          fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'),
-          sharedImports),
-        renderNote: _.template(
-          fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'),
-          sharedImports),
-        renderSectionList: _.template(
-          fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'),
-          sharedImports)
-      })
-    });
+  var pageTemplate = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'), {
+    imports: sharedImports
+  });
 
   // push assets into the pipeline as well.
   vfs.src([__dirname + '/assets/**'], { base: __dirname })
