@@ -7,7 +7,7 @@
             <span class='code strong strong truncate'><%= shortSignature(member) %></span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <%= renderSection({
           section: member,
           renderSection: renderSection,
