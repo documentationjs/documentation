@@ -255,7 +255,7 @@
             <span class='code strong strong truncate'>isClass(other, also)</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -329,7 +329,7 @@ This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></
             <span class='code strong strong truncate'>isWeird(other)</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -395,7 +395,7 @@ the referenced class type</p>
             <span class='code strong strong truncate'>isBuffer(buf, [size])</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -470,7 +470,7 @@ the referenced class type</p>
             <span class='code strong strong truncate'>isArrayOfBuffers(buffers)</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -543,7 +543,7 @@ k.isArrayOfBuffers();</pre>
             <span class='code strong strong truncate'>MAGIC_NUMBER</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -588,7 +588,7 @@ k.isArrayOfBuffers();</pre>
             <span class='code strong strong truncate'>event</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -641,7 +641,7 @@ k.isArrayOfBuffers();</pre>
             <span class='code strong strong truncate'>getFoo()</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -701,7 +701,7 @@ k.isArrayOfBuffers();</pre>
             <span class='code strong strong truncate'>withOptions(options, otherOptions)</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1015,7 +1015,7 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
             <span class='code strong strong truncate'>bar</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1108,7 +1108,7 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
             <span class='code strong strong truncate'>new passthrough()</span>
         </div>
       </div>
-      <div class="clearfix hide toggle-target">
+      <div class="clearfix display-none toggle-target">
         <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
