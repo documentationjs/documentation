@@ -26,8 +26,18 @@ var indexFile = new File({
   contents: new Buffer('<html>')
 });
 
+test('server - throws on bad port', function (t) {
+  t.throws(function () {
+    var server = new Server('4001');
+  }, 'port must be a number');
+  t.throws(function () {
+    var server = new Server();
+  }, 'port must be provided');
+  t.end();
+});
+
 test('server', function (t) {
-  var server = new Server();
+  var server = new Server(4001);
   t.ok(server, 'server is initialized');
   server.start(function () {
 

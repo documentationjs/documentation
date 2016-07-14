@@ -53,6 +53,18 @@ test('provides index.html', function (t) {
   });
 }, options);
 
+test('accepts port argument', function (t) {
+  var docProcess = documentation(['serve', 'fixture/simple.input.js', '--port=4004']);
+  docProcess.stdout.on('data', function (data) {
+    t.equal(data.toString().trim(), 'documentation.js serving on port 4004', 'shows listening message');
+    get('http://localhost:4004/', function (text) {
+      t.ok(text.match(/<html>/), 'sends an html index file');
+      docProcess.kill();
+      t.end();
+    });
+  });
+}, options);
+
 test('--watch', function (t) {
   var tmpFile = path.join(os.tmpdir(), '/simple.js');
   fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
