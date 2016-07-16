@@ -102,6 +102,25 @@ test('accepts config file', function (t) {
     });
 }, options);
 
+test('accepts config file - reports failures', function (t) {
+  documentation(['build fixture/sorting/input.js -c fixture/config-bad.yml'], {},
+    function (err, data, stderr) {
+      t.error(err);
+      if (process.env.UPDATE) {
+        fs.writeFileSync(
+          path.resolve(__dirname,
+            'fixture',
+            'sorting/output-bad.txt'), stderr, 'utf8');
+      }
+      var expected = fs.readFileSync(
+        path.resolve(__dirname,
+          'fixture',
+          'sorting/output-bad.txt'), 'utf8');
+      t.equal(stderr, expected, 'reported a missing toc entry');
+      t.end();
+    }, false);
+}, options);
+
 test('--shallow option', function (t) {
   documentation(['build --shallow fixture/internal.input.js'], function (err, data) {
     t.error(err);

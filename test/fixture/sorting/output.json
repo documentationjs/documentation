@@ -8,98 +8,6 @@
           "children": [
             {
               "type": "text",
-              "value": "Apples are red",
-              "position": {
-                "start": {
-                  "line": 1,
-                  "column": 1,
-                  "offset": 0
-                },
-                "end": {
-                  "line": 1,
-                  "column": 15,
-                  "offset": 14
-                },
-                "indent": []
-              }
-            }
-          ],
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 15,
-              "offset": 14
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 15,
-          "offset": 14
-        }
-      }
-    },
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 1,
-        "column": 0
-      },
-      "end": {
-        "line": 3,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 0
-        },
-        "end": {
-          "line": 6,
-          "column": 2
-        }
-      },
-      "file": "[path]",
-      "code": "/**\n * Apples are red\n */\nvar apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};\n"
-    },
-    "name": "apples",
-    "kind": "function",
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "apples",
-        "kind": "function"
-      }
-    ],
-    "namespace": "apples"
-  },
-  {
-    "description": {
-      "type": "root",
-      "children": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "type": "text",
               "value": "Bananas are yellow",
               "position": {
                 "start": {
@@ -274,5 +182,97 @@
       }
     ],
     "namespace": "carrots"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Apples are red",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15,
+                  "offset": 14
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 15,
+          "offset": 14
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 2
+        }
+      },
+      "file": "[path]",
+      "code": "/**\n * Apples are red\n */\nvar apples = function() {\n  return 'red';\n};\n\n/**\n * Bananas are yellow\n */\nvar bananas = function() {\n  return 'yellow';\n};\n\n/**\n * Carrots are awesome\n */\nvar carrots = function() {\n  return 'awesome';\n};\n"
+    },
+    "name": "apples",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "apples",
+        "kind": "function"
+      }
+    ],
+    "namespace": "apples"
   }
 ]

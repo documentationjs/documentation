@@ -97,7 +97,7 @@ function expandInputs(indexes, options, callback) {
  *
  * });
  */
-module.exports.build = function (indexes, options, callback) {
+function build(indexes, options, callback) {
   options = options || {};
 
   if (typeof indexes === 'string') {
@@ -114,7 +114,8 @@ module.exports.build = function (indexes, options, callback) {
       callback(e);
     }
   });
-};
+}
+
 
 /**
  * Generate JavaScript documentation given a list of inputs. This internal
@@ -244,6 +245,7 @@ module.exports.lint = function lint(indexes, options, callback) {
 
 module.exports.expandInputs = expandInputs;
 module.exports.buildSync = buildSync;
+module.exports.build = build;
 
 /**
  * Documentation's formats are modular methods that take comments
