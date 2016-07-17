@@ -63,7 +63,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "Number"
+                  "value": "number"
                 }
               ]
             }

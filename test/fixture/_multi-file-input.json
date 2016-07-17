@@ -303,7 +303,7 @@
         "lineNumber": 2,
         "type": {
           "type": "NameExpression",
-          "name": "Number"
+          "name": "number"
         }
       }
     ],
@@ -328,7 +328,7 @@
           "column": 2
         }
       },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
+      "code": "/**\n * This function returns the number one.\n * @returns {number} numberone\n */\nmodule.exports = function () {\n  // this returns 1\n  return 1;\n};\n"
     },
     "errors": [],
     "returns": [
@@ -387,7 +387,7 @@
         },
         "type": {
           "type": "NameExpression",
-          "name": "Number"
+          "name": "number"
         }
       }
     ],
