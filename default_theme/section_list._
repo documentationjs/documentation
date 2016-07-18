@@ -3,7 +3,7 @@
     <div class='border-bottom' id='<%- member.namespace %>'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'><%= shortSignature(member) %></span>
         </div>
       </div>

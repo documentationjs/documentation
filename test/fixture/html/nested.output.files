@@ -251,7 +251,7 @@
     <div class='border-bottom' id='Klass.isClass'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>isClass(other, also)</span>
         </div>
       </div>
@@ -325,7 +325,7 @@ This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></
     <div class='border-bottom' id='Klass.isWeird'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>isWeird(other)</span>
         </div>
       </div>
@@ -391,7 +391,7 @@ the referenced class type</p>
     <div class='border-bottom' id='Klass.isBuffer'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>isBuffer(buf, [size])</span>
         </div>
       </div>
@@ -466,7 +466,7 @@ the referenced class type</p>
     <div class='border-bottom' id='Klass.isArrayOfBuffers'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>isArrayOfBuffers(buffers)</span>
         </div>
       </div>
@@ -539,7 +539,7 @@ k.isArrayOfBuffers();</pre>
     <div class='border-bottom' id='Klass.MAGIC_NUMBER'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>MAGIC_NUMBER</span>
         </div>
       </div>
@@ -584,7 +584,7 @@ k.isArrayOfBuffers();</pre>
     <div class='border-bottom' id='Klass.event:event'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>event</span>
         </div>
       </div>
@@ -637,7 +637,7 @@ k.isArrayOfBuffers();</pre>
     <div class='border-bottom' id='Klass#getFoo'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>getFoo()</span>
         </div>
       </div>
@@ -697,7 +697,7 @@ k.isArrayOfBuffers();</pre>
     <div class='border-bottom' id='Klass#withOptions'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>withOptions(options, otherOptions)</span>
         </div>
       </div>
@@ -1011,7 +1011,7 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
     <div class='border-bottom' id='Foo#bar'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>bar</span>
         </div>
       </div>
@@ -1104,7 +1104,7 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
     <div class='border-bottom' id='customStreams.passthrough'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'></a>
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
             <span class='code strong strong truncate'>new passthrough()</span>
         </div>
       </div>
