@@ -48,7 +48,7 @@
     "unist-builder": "^1.0.0",
     "unist-util-visit": "^1.0.1",
     "vfile": "^1.1.2",
-    "vfile-reporter": "^1.4.1",
+    "vfile-reporter": "^2.0.0",
     "vfile-sort": "^1.0.0",
     "vinyl": "^1.1.0",
     "vinyl-fs": "^2.3.1",
@@ -56,13 +56,13 @@
   },
   "devDependencies": {
     "chdir": "0.0.0",
-    "eslint": "^2.0.0",
+    "eslint": "^3.1.0",
     "fs-extra": "^0.30.0",
     "documentation-schema": "0.0.1",
     "glob": "^7.0.0",
     "json-schema": "0.2.2",
     "mock-fs": "^3.5.0",
-    "tap": "^5.4.4",
+    "tap": "^6.2.0",
     "tmp": "0.0.28"
   },
   "keywords": [
