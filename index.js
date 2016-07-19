@@ -208,7 +208,7 @@ function buildSync(indexes, options) {
  * @returns {undefined} calls callback
  * @public
  */
-module.exports.lint = function lint(indexes, options, callback) {
+function lint(indexes, options, callback) {
   options = options || {};
 
   if (typeof indexes === 'string') {
@@ -241,11 +241,7 @@ module.exports.lint = function lint(indexes, options, callback) {
             nest))
           .filter(Boolean))));
   });
-};
-
-module.exports.expandInputs = expandInputs;
-module.exports.buildSync = buildSync;
-module.exports.build = build;
+}
 
 /**
  * Documentation's formats are modular methods that take comments
@@ -254,7 +250,7 @@ module.exports.build = build;
  * output.
  * @public
  */
-module.exports.formats = {
+var formats = {
   html: require('./lib/output/html'),
   md: require('./lib/output/markdown'),
   remark: function (comments, options, callback) {
@@ -264,6 +260,12 @@ module.exports.formats = {
   },
   json: require('./lib/output/json')
 };
+
+module.exports.lint = lint;
+module.exports.expandInputs = expandInputs;
+module.exports.buildSync = buildSync;
+module.exports.build = build;
+module.exports.formats = formats;
 
 module.exports.util = {
   createFormatters: require('./lib/output/util/formatters'),
