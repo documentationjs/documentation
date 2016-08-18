@@ -21,7 +21,7 @@ test('formatType', function (t) {
     ['Foo', 'Foo'],
     ['null', 'null'],
     ['null', 'null'],
-    ['*', 'Any'],
+    ['*', 'any'],
     ['Array|undefined', '([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \\| [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined))'],
     ['Array<number>', '[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>'],
     ['number!', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)!'],
@@ -57,7 +57,7 @@ test('formatType', function (t) {
     sloppy: true
   }).tags[0].type)), '[Foo](FOO)', 'with custom linker');
 
-  t.deepEqual(stringify(formatType()), 'Any', 'empty case');
+  t.deepEqual(stringify(formatType()), 'any', 'empty case');
 
   t.throws(function () {
     formatType({});
