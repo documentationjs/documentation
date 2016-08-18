@@ -34,14 +34,14 @@ function normalize(result) {
 
 var options = { timeout: 1000 * 120 };
 
-test('harness', function (t) {
+test('harness', options, function (t) {
   var docProcess = documentation(['fixture/simple.input.js', '--serve']);
   t.ok(docProcess, 'creates a subprocess object');
   docProcess.kill();
   t.end();
-}, options);
+});
 
-test('provides index.html', function (t) {
+test('provides index.html', options, function (t) {
   var docProcess = documentation(['serve', 'fixture/simple.input.js']);
   docProcess.stdout.on('data', function (data) {
     t.equal(data.toString().trim(), 'documentation.js serving on port 4001', 'shows listening message');
@@ -51,9 +51,9 @@ test('provides index.html', function (t) {
       t.end();
     });
   });
-}, options);
+});
 
-test('accepts port argument', function (t) {
+test('accepts port argument', options, function (t) {
   var docProcess = documentation(['serve', 'fixture/simple.input.js', '--port=4004']);
   docProcess.stdout.on('data', function (data) {
     t.equal(data.toString().trim(), 'documentation.js serving on port 4004', 'shows listening message');
@@ -63,9 +63,9 @@ test('accepts port argument', function (t) {
       t.end();
     });
   });
-}, options);
+});
 
-test('--watch', function (t) {
+test('--watch', options, function (t) {
   var tmpFile = path.join(os.tmpdir(), '/simple.js');
   fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
   var docProcess = documentation(['serve', tmpFile, '--watch']);
@@ -82,9 +82,9 @@ test('--watch', function (t) {
       }, 1000);
     });
   });
-}, options);
+});
 
-test('--watch', function (t) {
+test('--watch', options, function (t) {
   var tmpDir = os.tmpdir();
   var a = path.join(tmpDir, '/simple.js');
   var b = path.join(tmpDir, '/required.js');
@@ -104,9 +104,9 @@ test('--watch', function (t) {
       }, 1000);
     });
   });
-}, options);
+});
 
-test('error page', function (t) {
+test('error page', options, function (t) {
   var tmpDir = os.tmpdir();
   var a = path.join(tmpDir, '/simple.js');
   fs.writeFileSync(a, '**');
@@ -118,4 +118,4 @@ test('error page', function (t) {
       t.end();
     });
   });
-}, options);
+});

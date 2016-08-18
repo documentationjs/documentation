@@ -42,23 +42,23 @@ function normalize(result) {
 
 var options = { timeout: 1000 * 120 };
 
-test('documentation binary', function (t) {
+test('documentation binary', options, function (t) {
   documentation(['build fixture/simple.input.js'], function (err, data) {
     t.error(err);
     t.equal(data.length, 1, 'simple has no dependencies');
     t.end();
   });
-}, options);
+});
 
-test('defaults to parsing package.json main', function (t) {
+test('defaults to parsing package.json main', options, function (t) {
   documentation(['build'], { cwd: path.join(__dirname, '..') }, function (err, data) {
     t.error(err);
     t.ok(data.length, 'we document ourself');
     t.end();
   });
-}, options);
+});
 
-test('polyglot mode', function (t) {
+test('polyglot mode', options, function (t) {
   documentation(['build fixture/polyglot/blend.cpp --polyglot'],
     function (err, data) {
       t.ifError(err);
@@ -78,9 +78,9 @@ test('polyglot mode', function (t) {
         'parsed C++ file');
       t.end();
     });
-}, options);
+});
 
-test('accepts config file', function (t) {
+test('accepts config file', options, function (t) {
   documentation(['build fixture/sorting/input.js -c fixture/config.json'],
     function (err, data) {
       t.error(err);
@@ -100,9 +100,9 @@ test('accepts config file', function (t) {
         'respected sort order from config file');
       t.end();
     });
-}, options);
+});
 
-test('accepts config file - reports failures', function (t) {
+test('accepts config file - reports failures', options, function (t) {
   documentation(['build fixture/sorting/input.js -c fixture/config-bad.yml'], {},
     function (err, data, stderr) {
       t.error(err);
@@ -119,7 +119,7 @@ test('accepts config file - reports failures', function (t) {
       t.equal(stderr, expected, 'reported a missing toc entry');
       t.end();
     }, false);
-}, options);
+});
 
 test('--shallow option', function (t) {
   documentation(['build --shallow fixture/internal.input.js'], function (err, data) {
@@ -127,7 +127,7 @@ test('--shallow option', function (t) {
     t.equal(data.length, 0, 'should not check dependencies');
     t.end();
   });
-}, options);
+});
 
 test('external modules option', function (t) {
   documentation(['build fixture/external.input.js ' +
@@ -155,21 +155,21 @@ test('extension option', function (t) {
 });
 
 test('invalid arguments', function (group) {
-  group.test('bad -f option', function (t) {
+  group.test('bad -f option', options, function (t) {
     documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
       t.ok(err, 'returns error');
       t.end();
     });
-  }, options);
+  });
 
-  group.test('html with no destination', function (t) {
+  group.test('html with no destination', options, function (t) {
     documentation(['build -f html fixture/internal.input.js'], function (err) {
       t.ok(err.toString()
         .match(/The HTML output mode requires a destination directory set with -o/),
         'needs dest for html');
       t.end();
     });
-  }, options);
+  });
 
   group.test('bad command', function (t) {
     documentation(['-f html fixture/internal.input.js'], function (err, stdout, stderr) {
@@ -182,16 +182,16 @@ test('invalid arguments', function (group) {
   group.end();
 });
 
-test('--version', function (t) {
+test('--version', options, function (t) {
   documentation(['--version'], {}, function (err, output) {
     t.ok(output, 'outputs version');
     t.end();
   }, false);
-}, options);
+});
 
 test('lint command', function (group) {
 
-  group.test('generates lint output', function (t) {
+  group.test('generates lint output', options, function (t) {
     documentation(['lint fixture/lint/lint.input.js'], function (err, data) {
       var output = path.join(__dirname, 'fixture/lint/lint.output.js');
       data = data.toString().split('\n').slice(2).join('\n');
@@ -202,41 +202,41 @@ test('lint command', function (group) {
       t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
       t.end();
     });
-  }, options);
+  });
 
-  group.test('generates no output on a good file', function (t) {
+  group.test('generates no output on a good file', options, function (t) {
     documentation(['lint fixture/simple.input.js'], {}, function (err, data) {
       t.equal(err, null);
       t.equal(data, '', 'no output');
       t.end();
     }, false);
-  }, options);
+  });
 
-  group.test('exposes syntax error on a bad file', function (t) {
+  group.test('exposes syntax error on a bad file', options, function (t) {
     documentation(['lint fixture/bad/syntax.input.js'], {}, function (err, data) {
       t.ok(err.code > 0, 'exits with a > 0 exit code');
       t.end();
     }, false);
-  }, options);
+  });
 
   group.end();
 });
 
-test('given no files', function (t) {
+test('given no files', options, function (t) {
   documentation(['build'], function (err) {
     t.ok(err.toString()
       .match(/documentation was given no files and was not run in a module directory/),
       'no files given');
     t.end();
   });
-}, options);
+});
 
-test('with an invalid command', function (t) {
+test('with an invalid command', options, function (t) {
   documentation(['invalid'], function (err) {
     t.ok(err, 'returns error');
     t.end();
   });
-}, options);
+});
 
 test('--access flag', function (t) {
   documentation(['build --shallow fixture/internal.input.js -a public'], {}, function (err, data) {
@@ -271,7 +271,7 @@ test('--infer-private flag', function (t) {
   }, false);
 });
 
-test('write to file', function (t) {
+test('write to file', options, function (t) {
 
   var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
 
@@ -281,9 +281,9 @@ test('write to file', function (t) {
     t.ok(fs.existsSync(dst), 'created file');
     t.end();
   }, false);
-}, options);
+});
 
-test('write to html', function (t) {
+test('write to html', options, function (t) {
 
   var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dstDir);
@@ -295,9 +295,9 @@ test('write to html', function (t) {
       t.ok(fs.existsSync(path.join(dstDir, 'index.html')), 'created index.html');
       t.end();
     }, false);
-}, options);
+});
 
-test('write to html with custom theme', function (t) {
+test('write to html with custom theme', options, function (t) {
 
   var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dstDir);
@@ -309,9 +309,9 @@ test('write to html with custom theme', function (t) {
       t.ok(fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8'), 'Hello world');
       t.end();
     }, false);
-}, options);
+});
 
-test('write to html, highlightAuto', function (t) {
+test('write to html, highlightAuto', options, function (t) {
 
   var fixture = 'fixture/auto_lang_hljs/multilanguage.input.js',
     config = 'fixture/auto_lang_hljs/config.yml',
@@ -331,13 +331,13 @@ test('write to html, highlightAuto', function (t) {
         'html is recognized by highlightjs');
       t.end();
     }, false);
-}, options);
+});
 
-test('fatal error', function (t) {
+test('fatal error', options, function (t) {
 
   documentation(['build --shallow fixture/bad/syntax.input.js'], {},
     function (err) {
       t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
       t.end();
     }, false);
-}, options);
+});
