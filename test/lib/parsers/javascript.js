@@ -5,7 +5,7 @@ var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript');
 
 function toComments(source, filename, opts) {
-  source = typeof source === 'string' ? source :  '(' + source.toString() + ')';
+  source = typeof source === 'string' ? source : '(' + source.toString() + ')';
   return parse({
     file: filename || 'test.js',
     source: source
