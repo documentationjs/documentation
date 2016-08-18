@@ -83,6 +83,6 @@
     "lint": "eslint bin lib index.js test",
     "doc": "documentation index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint",
-    "test": "npm run lint && npm run self-lint && tap -t 120 --coverage test/*.js test/lib test/streams"
+    "test": "npm run lint && npm run self-lint && tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
   }
 }
