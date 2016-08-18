@@ -205,7 +205,7 @@
   <p>Creates a new Klass</p>
 
 
-  <div class='pre p1 fill-light mt0'>new Klass(foo: Any)</div>
+  <div class='pre p1 fill-light mt0'>new Klass(foo: any)</div>
 
   
     <p>
@@ -228,7 +228,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>foo</span> <code class='quiet'>(Any)</code> 
+            <span class='code bold'>foo</span> <code class='quiet'>(any)</code> 
           </div>
           
         </div>
@@ -265,7 +265,7 @@ This is a [klasssic]<a href="#klass">Klass</a>
 This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></p>
 
 
-  <div class='pre p1 fill-light mt0'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
 
   
 
@@ -288,7 +288,7 @@ This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>also</span> <code class='quiet'>(Any)</code> 
+            <span class='code bold'>also</span> <code class='quiet'>(any)</code> 
           </div>
           
         </div>

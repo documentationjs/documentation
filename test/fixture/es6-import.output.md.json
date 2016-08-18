@@ -412,7 +412,7 @@
                             },
                             {
                               "type": "text",
-                              "value": "Any"
+                              "value": "any"
                             }
                           ]
                         },
@@ -1632,7 +1632,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "Any"
+                      "value": "any"
                     }
                   ]
                 },

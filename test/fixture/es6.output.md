@@ -8,7 +8,7 @@ have any parameter descriptions.
 -   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
     -   `$0.phoneNumbers`   (optional, default `[]`)
     -   `$0.emailAddresses`   (optional, default `[]`)
-    -   `$0.params` **...Any** 
+    -   `$0.params` **...any** 
 
 # destructure
 
@@ -85,7 +85,7 @@ This function takes rest params
 
 **Parameters**
 
--   `someParams` **...Any** 
+-   `someParams` **...any** 
 
 # functionWithRestAndType
 
