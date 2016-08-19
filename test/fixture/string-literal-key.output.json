@@ -29,8 +29,7 @@
           "line": 11,
           "column": 1
         }
-      },
-      "code": "/**\n * @alias MyContainerObject\n */\nconst obj = {\n  /**\n   * The foo property\n   */\n  'foo': {\n    bar: 0\n  }\n}\n"
+      }
     },
     "errors": [],
     "alias": "MyContainerObject",
@@ -122,8 +121,7 @@
           "line": 10,
           "column": 3
         }
-      },
-      "code": "/**\n * @alias MyContainerObject\n */\nconst obj = {\n  /**\n   * The foo property\n   */\n  'foo': {\n    bar: 0\n  }\n}\n"
+      }
     },
     "errors": [],
     "name": "foo",

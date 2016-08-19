@@ -84,8 +84,7 @@
           "line": 8,
           "column": 1
         }
-      },
-      "code": "/**\n * This is a method that has an alias tag: so it should\n * be referred to as nixon, but should still have inference.\n * @alias nixon\n */\nfunction dewey(a: number): number {\n  return a;\n}\n"
+      }
     },
     "errors": [],
     "alias": "nixon",

@@ -86,8 +86,7 @@
           "line": 29,
           "column": 2
         }
-      },
-      "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+      }
     },
     "errors": [
       {
@@ -194,8 +193,7 @@
                 "line": 21,
                 "column": 5
               }
-            },
-            "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+            }
           },
           "errors": [],
           "params": [
@@ -426,8 +424,7 @@
                 "line": 28,
                 "column": 28
               }
-            },
-            "code": "/**\n * This is my class, a demo thing.\n *\n * @class MyClass\n * @memberof com.Test\n */\ncom.Test.MyClass = class {\n\n    constructor() {\n        this.howMany = 2;\n    }\n\n    /**\n     * Get the number 42\n     *\n     * @param {boolean} getIt whether to get the number\n     * @returns {number} forty-two\n     */\n    getFoo(getIt) {\n        return getIt ? 42 : 0;\n    }\n\n    /**\n     * Get undefined\n     *\n     * @returns {undefined} does not return anything.\n     */\n    static getUndefined() {}\n};\n"
+            }
           },
           "errors": [],
           "returns": [

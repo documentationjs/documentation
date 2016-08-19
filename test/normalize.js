@@ -6,8 +6,7 @@ module.exports = function (comments) {
     var hasGithub = !!comment.context.github;
     var path = comment.context.path;
     comment.context = {
-      loc: comment.context.loc,
-      code: comment.context.code
+      loc: comment.context.loc
     };
     if (hasGithub) {
       comment.context.github = '[github]';

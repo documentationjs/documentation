@@ -107,8 +107,7 @@
           "line": 13,
           "column": 1
         }
-      },
-      "code": "require('external');\nrequire('external2');\nrequire('module-not-found');\n// non-js require\nrequire('./polyglot/blend.cpp');\n\n/**\n * I am in `external.input.js`.\n */\nfunction foo() {\n  'use strict';\n  return 'bar';\n}\n\nmodule.exports = foo;\n"
+      }
     },
     "errors": [],
     "name": "foo",

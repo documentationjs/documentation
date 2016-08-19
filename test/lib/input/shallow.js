@@ -8,7 +8,7 @@ test('shallow deps', function (t) {
   shallow([path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))], {}, function (err, deps) {
     t.ifError(err);
     t.equal(deps.length, 1);
-    t.ok(deps[0].file, 'has file');
+    t.ok(deps[0], 'has path');
     t.end();
   });
 });
@@ -20,7 +20,7 @@ test('shallow deps multi', function (t) {
   ], {}, function (err, deps) {
     t.ifError(err);
     t.equal(deps.length, 2);
-    t.ok(deps[0].file, 'has file');
+    t.ok(deps[0], 'has path');
     t.end();
   });
 });
@@ -31,7 +31,7 @@ test('shallow deps directory', function (t) {
   ], {}, function (err, deps) {
     t.ifError(err);
     t.equal(deps.length, 1);
-    t.ok(deps[0].file.match(/input.js/), 'is the input file');
+    t.ok(deps[0].match(/input.js/), 'is the input file');
     t.end();
   });
 });

@@ -80,8 +80,7 @@
           "line": 6,
           "column": 1
         }
-      },
-      "code": "/**\n * Cheesoid!\n * @name cheese\n */\nfunction petrol(): string {\n}\n"
+      }
     },
     "errors": [],
     "name": "cheese",
