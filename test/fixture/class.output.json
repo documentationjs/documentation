@@ -91,8 +91,7 @@
           "line": 8,
           "column": 1
         }
-      },
-      "code": "/**\n * This is my class, a demo thing.\n * @class MyClass\n * @property {number} howMany how many things it contains\n */\nfunction MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };\n"
+      }
     },
     "errors": [],
     "kind": "class",
@@ -255,8 +254,7 @@
                 "line": 17,
                 "column": 2
               }
-            },
-            "code": "/**\n * This is my class, a demo thing.\n * @class MyClass\n * @property {number} howMany how many things it contains\n */\nfunction MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };\n"
+            }
           },
           "errors": [],
           "params": [
@@ -485,8 +483,7 @@
                 "line": 23,
                 "column": 49
               }
-            },
-            "code": "/**\n * This is my class, a demo thing.\n * @class MyClass\n * @property {number} howMany how many things it contains\n */\nfunction MyClass() {\n  this.howMany = 2;\n}\n\n/**\n * Get the number 42\n * @param {boolean} getIt whether to get the number\n * @returns {number} forty-two\n */\nMyClass.prototype.getFoo = function (getIt) {\n  return getIt ? 42 : 0;\n};\n\n/**\n * Get undefined\n * @returns {undefined} does not return anything.\n */\nMyClass.prototype.getUndefined = function () { };\n"
+            }
           },
           "errors": [],
           "returns": [

@@ -99,8 +99,7 @@
           "line": 11,
           "column": 1
         }
-      },
-      "code": "/**\n * This function has a lot of metadata\n * @version 1.2.0\n * @author Jim Jones\n * @copyright John Jones\n * @since 1962\n * @license Public Domain\n */\nfunction dewey(a) {\n  return a;\n}\n"
+      }
     },
     "errors": [],
     "version": "1.2.0",

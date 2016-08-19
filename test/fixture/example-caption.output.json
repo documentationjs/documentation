@@ -89,8 +89,7 @@
           "line": 10,
           "column": 1
         }
-      },
-      "code": "/**\n * This function returns the number one.\n * @returns {Number} numberone\n * @example <caption>demonstrates how to run foo</caption>\n * foo(1);\n */\nfunction foo() {\n  // this returns 1\n  return 1;\n}\n"
+      }
     },
     "errors": [],
     "returns": [

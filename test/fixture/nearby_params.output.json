@@ -138,8 +138,7 @@
           "line": 14,
           "column": 3
         }
-      },
-      "code": "/** Attempt to establish a cookie-based session in exchange for credentials.\n *  @function\n *  @name sessions.create\n *  @param {object} credentials\n *  @param {string} credentials.name        Login username. Also accepted as `username` or `email`.\n *  @param {string} credentials.password    Login password\n *  @param {function} [callback]            Gets passed `(err, { success:Boolean })`.\n *  @returns {Promise} promise, to be resolved on success or rejected on failure\n */\nsessions.addMethod('create', 'POST / form', {\n    // normalize request body params\n    before({ body }) {\n    }\n});\n"
+      }
     },
     "errors": [],
     "kind": "function",

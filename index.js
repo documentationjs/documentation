@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs'),
+  _ = require('lodash'),
   sort = require('./lib/sort'),
   nest = require('./lib/nest'),
   filterAccess = require('./lib/filter_access'),
@@ -20,6 +21,7 @@ var fs = require('fs'),
   inferReturn = require('./lib/infer/return'),
   inferAccess = require('./lib/infer/access'),
   formatLint = require('./lib/lint').formatLint,
+  garbageCollect = require('./lib/garbage_collect'),
   lintComments = require('./lib/lint').lintComments,
   markdownAST = require('./lib/output/markdown_ast');
 
@@ -116,7 +118,6 @@ function build(indexes, options, callback) {
   });
 }
 
-
 /**
  * Generate JavaScript documentation given a list of inputs. This internal
  * method does not support require-following and it returns its results
@@ -159,32 +160,42 @@ function buildSync(indexes, options) {
 
   var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
+  var buildPipeline = pipeline(
+    inferName(),
+    inferAccess(options.inferPrivate),
+    inferAugments(),
+    inferKind(),
+    inferParams(),
+    inferProperties(),
+    inferReturn(),
+    inferMembership(),
+    nest,
+    options.github && github,
+    garbageCollect);
+
+  var jsFilterer = filterJS(options.extension, options.polyglot);
+
   return filterAccess(options.access,
     hierarchy(
-      sort(indexes.map(function (index) {
-        if (typeof index === 'string') {
-          return {
-            source: fs.readFileSync(index, 'utf8'),
-            file: index
-          };
-        }
-        return index;
-      }).filter(filterJS(options.extension, options.polyglot))
-        .reduce(function (memo, file) {
-          return memo.concat(parseFn(file));
-        }, [])
-        .map(pipeline(
-          inferName(),
-          inferAccess(options.inferPrivate),
-          inferAugments(),
-          inferKind(),
-          inferParams(),
-          inferProperties(),
-          inferReturn(),
-          inferMembership(),
-          nest,
-          options.github && github
-        ))
+      sort(
+        _.flatMap(indexes, function (index) {
+          var indexObject = null;
+
+          if (typeof index === 'string') {
+            indexObject = {
+              source: fs.readFileSync(index, 'utf8'),
+              file: index
+            };
+          } else {
+            indexObject = index;
+          }
+
+          if (!jsFilterer(indexObject)) {
+            return [];
+          }
+
+          return parseFn(indexObject).map(buildPipeline);
+        })
         .filter(Boolean), options)));
 }
 
@@ -204,7 +215,7 @@ function buildSync(indexes, options) {
  * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
  * even in JavaScript code. With the polyglot option set, this has no effect.
  * @param {Function} callback to be called when the documentation generation
- * is complete, with (err, result) argumentsj
+ * is complete, with (err, result) arguments
  * @returns {undefined} calls callback
  * @public
  */
@@ -217,6 +228,18 @@ function lint(indexes, options, callback) {
 
   var parseFn = (options.polyglot) ? polyglot : parseJavaScript;
 
+  var lintPipeline = pipeline(
+    lintComments,
+    inferName(),
+    inferAccess(options.inferPrivate),
+    inferAugments(),
+    inferKind(),
+    inferParams(),
+    inferProperties(),
+    inferReturn(),
+    inferMembership(),
+    nest);
+
   return expandInputs(indexes, options, function (error, inputs) {
     if (error) {
       return callback(error);
@@ -226,19 +249,8 @@ function lint(indexes, options, callback) {
         inputs
           .filter(filterJS(options.extension, options.polyglot))
           .reduce(function (memo, file) {
-            return memo.concat(parseFn(file));
+            return memo.concat(parseFn(file).map(lintPipeline));
           }, [])
-          .map(pipeline(
-            lintComments,
-            inferName(),
-            inferAccess(options.inferPrivate),
-            inferAugments(),
-            inferKind(),
-            inferParams(),
-            inferProperties(),
-            inferReturn(),
-            inferMembership(),
-            nest))
           .filter(Boolean))));
   });
 }

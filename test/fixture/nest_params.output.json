@@ -76,8 +76,7 @@
           "line": 8,
           "column": 1
         }
-      },
-      "code": "/**\n * @param {Object[]} employees - The employees who are responsible for the project.\n * @param {string} employees[].name - The name of an employee.\n * @param {string} employees[].department - The employee's department.\n * @param {string} [type=minion] - The employee's type.\n */\nfunction foo(employee, type) {\n}\n\n/**\n * @name foo\n * @param {Object} options some options\n * @param {number} options.much how much\n * @param {number} bar something else\n * @property {Object} theTime the current time\n * @property {number} theTime.hours\n * @property {number} theTime.minutes\n * @property {number} theTime.seconds\n * @returns {Object} foo something else\n */\n"
+      }
     },
     "errors": [],
     "params": [

@@ -124,8 +124,7 @@
           "line": 9,
           "column": 1
         }
-      },
-      "code": "/**\n * Add five to `x`.\n *\n * @param x The number to add five to.\n * @returns {number} x plus five.\n */\nfunction addFive(x: number): number {\n  return x + 5;\n}\n"
+      }
     },
     "errors": [],
     "params": [

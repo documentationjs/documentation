@@ -83,8 +83,7 @@
           "line": 19,
           "column": 1
         }
-      },
-      "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}\n"
+      }
     },
     "errors": [],
     "returns": [
@@ -261,8 +260,7 @@
           "line": 19,
           "column": 1
         }
-      },
-      "code": "var theTime;\n\n/**\n * Get the time\n * @returns {Date} the current date\n */\n\n/**\n * Set the time\n * @param {Date} time the current time\n * @returns {undefined} nothing\n */\nfunction getTheTime(time) {\n  if (arguments.length === 0) {\n    return new Date();\n  } else {\n    theTime = time;\n  }\n}\n"
+      }
     },
     "errors": [],
     "params": [

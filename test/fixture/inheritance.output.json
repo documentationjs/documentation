@@ -73,8 +73,7 @@
           "line": 7,
           "column": 1
         }
-      },
-      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n\n/** @class Foo */\nmodule.exports = class Foo extends Bar { };\n"
+      }
     },
     "errors": [],
     "name": "SpecialArray",
@@ -128,8 +127,7 @@
           "line": 10,
           "column": 43
         }
-      },
-      "code": "/**\n * With ES6, built-in types are extensible!\n */\nclass SpecialArray extends Array {\n  additionalMethod() {\n  }\n}\n\n/** @class Foo */\nmodule.exports = class Foo extends Bar { };\n"
+      }
     },
     "errors": [
       {
