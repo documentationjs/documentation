@@ -70,7 +70,11 @@ test('readme command', function (group) {
       fs.copySync(path.join(fixtures, 'README.input.md'), path.join(d, 'other.md'));
       documentation(['readme index.js -s API --readme-file other.md'], {cwd: d}, function (err, stdout) {
         t.error(err);
-        var actual = fs.readFileSync(path.join(d, 'other.md'), 'utf-8');
+        var actualPath = path.join(d, 'other.md');
+        if (UPDATE) {
+          fs.writeFileSync(actualPath, expected);
+        }
+        var actual = fs.readFileSync(actualPath, 'utf-8');
         t.same(actual, expected, 'generated readme output');
         t.end();
       });
