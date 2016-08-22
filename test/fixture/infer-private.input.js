@@ -1,3 +1,5 @@
+// Options: {"inferPrivate": "^_"}
+
 /**
  * _p description
  */

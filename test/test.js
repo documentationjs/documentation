@@ -20,6 +20,18 @@ function makePOJO(ast) {
   return JSON.parse(JSON.stringify(ast));
 }
 
+function readOptionsFromFile(file) {
+  var s = fs.readFileSync(file, 'utf-8');
+  var lines = s.split(/\n/, 20);
+  for (var i = 0; i < lines.length; i++) {
+    var m = lines[i].match(/^\/\/\s+Options:\s*(.+)$/);
+    if (m) {
+      return JSON.parse(m[1]);
+    }
+  }
+  return {};
+}
+
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', function (t) {
     var file = path.join(__dirname, './fixture/simple.input.js');
@@ -68,7 +80,7 @@ test('external modules option', function (t) {
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], {}, function (error, res) {
+      documentation.build([file], readOptionsFromFile(file), function (error, res) {
         t.equal(res, undefined);
         // make error a serializable object
         error = JSON.parse(JSON.stringify(error));
@@ -91,7 +103,7 @@ test('bad input', function (tt) {
 test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], {}, function (err, result) {
+      documentation.build([file], readOptionsFromFile(file), function (err, result) {
         t.ifError(err);
         outputHtml(result, null, function (err, result) {
           t.ifError(err);
@@ -119,7 +131,7 @@ test('html', function (tt) {
 test('outputs', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     ttt.test(path.basename(file), function (tt) {
-      documentation.build([file], {}, function (err, result) {
+      documentation.build([file], readOptionsFromFile(file), function (err, result) {
         tt.ifError(err);
 
         tt.test('markdown', function (t) {
@@ -174,7 +186,7 @@ test('outputs', function (ttt) {
 test('outputs - sync', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture/sync', '*.input.js')).forEach(function (file) {
     ttt.test(path.basename(file), function (tt) {
-      var result = documentation.buildSync([file]);
+      var result = documentation.buildSync([file], readOptionsFromFile(file));
 
       tt.test('markdown', function (t) {
         outputMarkdown(result, {}, function (err, result) {
