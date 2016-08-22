@@ -340,14 +340,14 @@ test('fatal error', options, function (t) {
       t.ok(err.toString().match(/Unexpected token/), 'reports syntax error');
       t.end();
     }, false);
-}, options);
+});
 
 test('build --document-exported', function (t) {
 
   documentation(['build fixture/document-exported.input.js --document-exported -f md'], {}, function (err, data) {
     t.error(err);
 
-    var outputfile = path.join(__dirname, 'fixture', 'document-exported.output.enabled.md');
+    var outputfile = path.join(__dirname, 'fixture', 'document-exported.output.md');
     if (process.env.UPDATE) {
       fs.writeFileSync(outputfile, data, 'utf8');
     }
@@ -356,4 +356,4 @@ test('build --document-exported', function (t) {
     t.equal(data, expect);
     t.end();
   }, false);
-});
+}, options);

@@ -1,3 +1,5 @@
+// Options: {"documentExported": true}
+
 export class Class {
   classMethod() {}
   get classGetter() {}

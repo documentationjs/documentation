@@ -1,1 +1,589 @@
-[]
+[
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 7
+      },
+      "end": {
+        "line": 10,
+        "column": 1
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 7
+        },
+        "end": {
+          "line": 10,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "Class",
+    "members": {
+      "instance": [
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 2
+            },
+            "end": {
+              "line": 4,
+              "column": 18
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 2
+              },
+              "end": {
+                "line": 4,
+                "column": 18
+              }
+            }
+          },
+          "errors": [],
+          "name": "classMethod",
+          "kind": "function",
+          "memberof": "Class",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "classMethod",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Class#classMethod"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 2
+            },
+            "end": {
+              "line": 5,
+              "column": 22
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 2
+              },
+              "end": {
+                "line": 5,
+                "column": 22
+              }
+            }
+          },
+          "errors": [],
+          "name": "classGetter",
+          "kind": "member",
+          "memberof": "Class",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "classGetter",
+              "kind": "member",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Class#classGetter"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 2
+            },
+            "end": {
+              "line": 6,
+              "column": 23
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 2
+              },
+              "end": {
+                "line": 6,
+                "column": 23
+              }
+            }
+          },
+          "errors": [],
+          "name": "classSetter",
+          "kind": "member",
+          "params": [
+            {
+              "title": "param",
+              "name": "v",
+              "lineNumber": 6
+            }
+          ],
+          "memberof": "Class",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "classSetter",
+              "kind": "member",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Class#classSetter"
+        }
+      ],
+      "static": [
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 2
+            },
+            "end": {
+              "line": 7,
+              "column": 26
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 2
+              },
+              "end": {
+                "line": 7,
+                "column": 26
+              }
+            }
+          },
+          "errors": [],
+          "name": "staticMethod",
+          "kind": "function",
+          "memberof": "Class",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "staticMethod",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "Class.staticMethod"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 2
+            },
+            "end": {
+              "line": 8,
+              "column": 30
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 2
+              },
+              "end": {
+                "line": 8,
+                "column": 30
+              }
+            }
+          },
+          "errors": [],
+          "name": "staticGetter",
+          "kind": "member",
+          "memberof": "Class",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "staticGetter",
+              "kind": "member",
+              "scope": "static"
+            }
+          ],
+          "namespace": "Class.staticGetter"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 2
+            },
+            "end": {
+              "line": 9,
+              "column": 31
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 2
+              },
+              "end": {
+                "line": 9,
+                "column": 31
+              }
+            }
+          },
+          "errors": [],
+          "name": "staticSetter",
+          "kind": "member",
+          "params": [
+            {
+              "title": "param",
+              "name": "v",
+              "lineNumber": 9
+            }
+          ],
+          "memberof": "Class",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Class"
+            },
+            {
+              "name": "staticSetter",
+              "kind": "member",
+              "scope": "static"
+            }
+          ],
+          "namespace": "Class.staticSetter"
+        }
+      ],
+      "events": []
+    },
+    "path": [
+      {
+        "name": "Class"
+      }
+    ],
+    "namespace": "Class"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 12,
+        "column": 7
+      },
+      "end": {
+        "line": 18,
+        "column": 2
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 7
+        },
+        "end": {
+          "line": 18,
+          "column": 2
+        }
+      }
+    },
+    "errors": [],
+    "name": "object",
+    "members": {
+      "instance": [],
+      "static": [
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 16,
+              "column": 2
+            },
+            "end": {
+              "line": 16,
+              "column": 10
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 16,
+                "column": 2
+              },
+              "end": {
+                "line": 16,
+                "column": 10
+              }
+            }
+          },
+          "errors": [],
+          "name": "prop",
+          "memberof": "object",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "prop",
+              "scope": "static"
+            }
+          ],
+          "namespace": "object.prop"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 2
+            },
+            "end": {
+              "line": 17,
+              "column": 21
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 17,
+                "column": 2
+              },
+              "end": {
+                "line": 17,
+                "column": 21
+              }
+            }
+          },
+          "errors": [],
+          "name": "func",
+          "kind": "function",
+          "memberof": "object",
+          "scope": "static",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "func",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "object.func"
+        }
+      ]
+    },
+    "path": [
+      {
+        "name": "object"
+      }
+    ],
+    "namespace": "object"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 13,
+        "column": 2
+      },
+      "end": {
+        "line": 13,
+        "column": 13
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 13,
+          "column": 2
+        },
+        "end": {
+          "line": 13,
+          "column": 13
+        }
+      }
+    },
+    "errors": [],
+    "name": "method",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "method",
+        "kind": "function"
+      }
+    ],
+    "namespace": "method"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 14,
+        "column": 2
+      },
+      "end": {
+        "line": 14,
+        "column": 17
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": 17
+        }
+      }
+    },
+    "errors": [],
+    "name": "getter",
+    "kind": "member",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "getter",
+        "kind": "member"
+      }
+    ],
+    "namespace": "getter"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 15,
+        "column": 2
+      },
+      "end": {
+        "line": 15,
+        "column": 18
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 15,
+          "column": 2
+        },
+        "end": {
+          "line": 15,
+          "column": 18
+        }
+      }
+    },
+    "errors": [],
+    "name": "setter",
+    "kind": "member",
+    "params": [
+      {
+        "title": "param",
+        "name": "v",
+        "lineNumber": 15
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "setter",
+        "kind": "member"
+      }
+    ],
+    "namespace": "setter"
+  }
+]
