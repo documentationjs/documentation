@@ -194,7 +194,7 @@ function buildSync(indexes, options) {
             return [];
           }
 
-          return parseFn(indexObject).map(buildPipeline);
+          return parseFn(indexObject, options).map(buildPipeline);
         })
         .filter(Boolean), options)));
 }
@@ -249,7 +249,7 @@ function lint(indexes, options, callback) {
         inputs
           .filter(filterJS(options.extension, options.polyglot))
           .reduce(function (memo, file) {
-            return memo.concat(parseFn(file).map(lintPipeline));
+            return memo.concat(parseFn(file, options).map(lintPipeline));
           }, [])
           .filter(Boolean))));
   });
