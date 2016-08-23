@@ -1931,6 +1931,7 @@
     "errors": [],
     "access": "public",
     "name": "es6.input",
+    "kind": "function",
     "params": [
       {
         "title": "param",
@@ -1944,7 +1945,8 @@
     },
     "path": [
       {
-        "name": "es6.input"
+        "name": "es6.input",
+        "kind": "function"
       }
     ],
     "namespace": "es6.input"
