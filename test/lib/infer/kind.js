@@ -17,6 +17,24 @@ test('inferKind', function (t) {
     tags: []
   }).kind, 'class', 'explicit');
 
+  t.equal(inferKind(toComment(
+    '/**' +
+    ' * Class' +
+    ' */' +
+    'class C {}')).kind, 'class', 'es6 syntax');
+
+  t.equal(inferKind(toComment(
+    '/**' +
+    ' * Exported class' +
+    ' */' +
+    'export class C {}')).kind, 'class', 'es6 syntax with export');
+
+  t.equal(inferKind(toComment(
+    '/**' +
+    ' * Export default class' +
+    ' */' +
+    'export default class C {}')).kind, 'class', 'es6 syntax with default export');
+
   t.equal(inferKind(toComment(function () {
     /** function */
     function foo() { }
@@ -28,6 +46,14 @@ test('inferKind', function (t) {
     var foo = function () { };
     foo();
   })).kind, 'function', 'inferred var function');
+
+  t.equal(inferKind(toComment(
+    '/** Exported function */' +
+    'export function foo() {}')).kind, 'function', 'inferred exported function');
+
+  t.equal(inferKind(toComment(
+    '/** Export default function */' +
+    'export default function foo() {}')).kind, 'function', 'inferred exported function');
 
   t.equal(inferKind(toComment(
     'class Foo { /** set b */ set b(v) { } }'
@@ -59,5 +85,12 @@ test('inferKind', function (t) {
     ' * This is a constant called foo' +
     ' */' +
     'const foo = "bar";')).kind, 'constant', 'constant via const');
+
+  t.equal(inferKind(toComment(
+    '/**' +
+    ' * Exported constant' +
+    ' */' +
+    'export const foo = "bar";')).kind, 'constant', 'constant via export const');
+
   t.end();
 });
