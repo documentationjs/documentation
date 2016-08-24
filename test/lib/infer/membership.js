@@ -380,3 +380,40 @@ test('inferMembership - https://github.com/documentationjs/documentation/issues/
 
   t.end();
 });
+
+test('inferMembership - export', function (t) {
+  t.deepEqual(pick(evaluate(
+    'export default class {' +
+    '  /** */' +
+    '  method() {}' +
+    '}',
+    'test-file'
+  )[0], ['memberof', 'scope']), {
+    memberof: 'test-file',
+    scope: 'instance'
+  });
+
+  t.deepEqual(pick(evaluate(
+    'export default class C {' +
+    '  /** */' +
+    '  method() {}' +
+    '}',
+    'test-file'
+  )[0], ['memberof', 'scope']), {
+    memberof: 'C',
+    scope: 'instance'
+  });
+
+  t.deepEqual(pick(evaluate(
+    'export class C {' +
+    '  /** */' +
+    '  method() {}' +
+    '}',
+    'test-file'
+  )[0], ['memberof', 'scope']), {
+    memberof: 'C',
+    scope: 'instance'
+  });
+
+  t.end();
+});
