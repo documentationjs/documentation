@@ -125,12 +125,21 @@ test('inferName', function (t) {
 
   t.equal(evaluate('/** Test */ export function exported() {}').name, 'exported');
 
-  t.equal(evaluate('/** Test */ export default function exported() {}',
+  t.equal(evaluate('/** Test */ export default function() {}',
     '/path/inferred-from-file.js').name, 'inferred-from-file');
+
+  t.equal(evaluate('/** Test */ export default function exported() {}',
+    '/path/inferred-from-file.js').name, 'exported');
 
   t.equal(evaluate('/** Test */ export var life = 42;').name, 'life');
 
   t.equal(evaluate('/** Test */ export class Wizard {}').name, 'Wizard');
+
+  t.equal(evaluate('/** Test */ export default class Warlock {}',
+    '/path/inferred-from-file.js').name, 'Warlock');
+
+  t.equal(evaluate('/** Test */ export default class {}',
+    '/path/inferred-from-file.js').name, 'inferred-from-file');
 
   t.end();
 });
