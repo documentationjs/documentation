@@ -26,6 +26,7 @@
     },
     "errors": [],
     "name": "Class",
+    "kind": "class",
     "members": {
       "instance": [
         {
@@ -64,7 +65,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "classMethod",
@@ -110,7 +112,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "classGetter",
@@ -163,7 +166,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "classSetter",
@@ -211,7 +215,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "staticMethod",
@@ -257,7 +262,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "staticGetter",
@@ -310,7 +316,8 @@
           },
           "path": [
             {
-              "name": "Class"
+              "name": "Class",
+              "kind": "class"
             },
             {
               "name": "staticSetter",
@@ -325,7 +332,8 @@
     },
     "path": [
       {
-        "name": "Class"
+        "name": "Class",
+        "kind": "class"
       }
     ],
     "namespace": "Class"
