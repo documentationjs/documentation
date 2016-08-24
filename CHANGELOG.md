@@ -1,3 +1,10 @@
+## 4.0.0-beta10
+
+* Lower memory consumption when dealing with large codebases
+* Better support for detecting names and kinds of ES6-exported values
+* New `document-exported` flag allows you to automatically document
+  ES6-exported values, without even a comment! [490](https://github.com/documentationjs/documentation/pull/490)
+
 ## 4.0.0-beta5
 
 * Add decorator support (zacharygolba)
