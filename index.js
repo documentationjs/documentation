@@ -20,6 +20,7 @@ var fs = require('fs'),
   inferMembership = require('./lib/infer/membership'),
   inferReturn = require('./lib/infer/return'),
   inferAccess = require('./lib/infer/access'),
+  inferTypedef = require('./lib/infer/typedef'),
   formatLint = require('./lib/lint').formatLint,
   garbageCollect = require('./lib/garbage_collect'),
   lintComments = require('./lib/lint').lintComments,
@@ -169,6 +170,7 @@ function buildSync(indexes, options) {
     inferProperties(),
     inferReturn(),
     inferMembership(),
+    inferTypedef(),
     nest,
     options.github && github,
     garbageCollect);
@@ -238,6 +240,7 @@ function lint(indexes, options, callback) {
     inferProperties(),
     inferReturn(),
     inferMembership(),
+    inferTypedef(),
     nest);
 
   return expandInputs(indexes, options, function (error, inputs) {
