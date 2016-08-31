@@ -378,6 +378,10 @@
     ],
     "name": "Point",
     "kind": "typedef",
+    "type": {
+      "type": "NameExpression",
+      "name": "Object"
+    },
     "members": {
       "instance": [],
       "static": []
@@ -501,6 +505,10 @@
         }
       }
     ],
+    "type": {
+      "type": "NameExpression",
+      "name": "Object"
+    },
     "members": {
       "instance": [],
       "static": []
@@ -592,6 +600,19 @@
     "errors": [],
     "name": "T",
     "kind": "typedef",
+    "type": {
+      "type": "TypeApplication",
+      "expression": {
+        "type": "NameExpression",
+        "name": "Array"
+      },
+      "applications": [
+        {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      ]
+    },
     "members": {
       "instance": [],
       "static": []

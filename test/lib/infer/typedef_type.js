@@ -3,7 +3,7 @@
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
   inferKind = require('../../../lib/infer/kind')(),
-  inferTypedef = require('../../../lib/infer/typedef')();
+  inferTypedefType = require('../../../lib/infer/typedef_type')();
 
 function toComment(code) {
   return parse({
@@ -12,10 +12,10 @@ function toComment(code) {
 }
 
 function evaluate(code) {
-  return inferTypedef(inferKind(toComment(code)));
+  return inferTypedefType(inferKind(toComment(code)));
 }
 
-test('inferTypedef', function (t) {
+test('inferTypedefType', function (t) {
   t.deepEqual(evaluate(
     '/** @typedef {T} V */'
   ).type, {
