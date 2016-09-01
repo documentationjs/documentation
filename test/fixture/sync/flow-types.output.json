@@ -329,8 +329,17 @@
         "name": "rgb",
         "lineNumber": 16,
         "type": {
-          "type": "NameExpression",
-          "name": "Object"
+          "type": "RecordType",
+          "fields": [
+            {
+              "type": "FieldType",
+              "key": "hex",
+              "value": {
+                "type": "NameExpression",
+                "name": "string"
+              }
+            }
+          ]
         },
         "properties": [
           {
@@ -349,8 +358,26 @@
         "name": "props",
         "lineNumber": 19,
         "type": {
-          "type": "NameExpression",
-          "name": "Object"
+          "type": "RecordType",
+          "fields": [
+            {
+              "type": "FieldType",
+              "key": "radius",
+              "value": {
+                "type": "RecordType",
+                "fields": [
+                  {
+                    "type": "FieldType",
+                    "key": "x",
+                    "value": {
+                      "type": "NameExpression",
+                      "name": "number"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         },
         "properties": [
           {
@@ -358,8 +385,17 @@
             "name": "props.radius",
             "lineNumber": 20,
             "type": {
-              "type": "NameExpression",
-              "name": "Object"
+              "type": "RecordType",
+              "fields": [
+                {
+                  "type": "FieldType",
+                  "key": "x",
+                  "value": {
+                    "type": "NameExpression",
+                    "name": "number"
+                  }
+                }
+              ]
             },
             "properties": [
               {
@@ -379,8 +415,68 @@
     "name": "Point",
     "kind": "typedef",
     "type": {
-      "type": "NameExpression",
-      "name": "Object"
+      "type": "RecordType",
+      "fields": [
+        {
+          "type": "FieldType",
+          "key": "x",
+          "value": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "y",
+          "value": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "rgb",
+          "value": {
+            "type": "RecordType",
+            "fields": [
+              {
+                "type": "FieldType",
+                "key": "hex",
+                "value": {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "props",
+          "value": {
+            "type": "RecordType",
+            "fields": [
+              {
+                "type": "FieldType",
+                "key": "radius",
+                "value": {
+                  "type": "RecordType",
+                  "fields": [
+                    {
+                      "type": "FieldType",
+                      "key": "x",
+                      "value": {
+                        "type": "NameExpression",
+                        "name": "number"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
     },
     "members": {
       "instance": [],
@@ -506,8 +602,36 @@
       }
     ],
     "type": {
-      "type": "NameExpression",
-      "name": "Object"
+      "type": "RecordType",
+      "fields": [
+        {
+          "type": "FieldType",
+          "key": "x",
+          "value": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "y",
+          "value": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "z",
+          "value": {
+            "type": "NullableType",
+            "expression": {
+              "type": "NameExpression",
+              "name": "number"
+            }
+          }
+        }
+      ]
     },
     "members": {
       "instance": [],
@@ -860,5 +984,231 @@
       }
     ],
     "namespace": "optionalFunc"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Function with object parameter.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 32,
+                  "offset": 31
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 32,
+              "offset": 31
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 32,
+          "offset": 31
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 56,
+        "column": 0
+      },
+      "end": {
+        "line": 58,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 59,
+          "column": 0
+        },
+        "end": {
+          "line": 59,
+          "column": 43
+        }
+      }
+    },
+    "errors": [],
+    "name": "objectParamFn",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "x",
+        "lineNumber": 59,
+        "type": {
+          "type": "RecordType",
+          "fields": [
+            {
+              "type": "FieldType",
+              "key": "a",
+              "value": {
+                "type": "NameExpression",
+                "name": "number"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "objectParamFn",
+        "kind": "function"
+      }
+    ],
+    "namespace": "objectParamFn"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "hi",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 3,
+                  "offset": 2
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 3,
+              "offset": 2
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 3,
+          "offset": 2
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 61,
+        "column": 0
+      },
+      "end": {
+        "line": 61,
+        "column": 9
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 62,
+          "column": 0
+        },
+        "end": {
+          "line": 62,
+          "column": 44
+        }
+      }
+    },
+    "errors": [],
+    "name": "objectParamFn",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "x",
+        "lineNumber": 62,
+        "type": {
+          "type": "FunctionType",
+          "params": [
+            {
+              "type": "ParameterType",
+              "name": "y",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Foo"
+              }
+            }
+          ],
+          "result": {
+            "type": "NameExpression",
+            "name": "Bar"
+          }
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "objectParamFn",
+        "kind": "function"
+      }
+    ],
+    "namespace": "objectParamFn"
   }
 ]
