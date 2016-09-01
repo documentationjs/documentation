@@ -17,7 +17,6 @@ function toDoctrineType(flowType) {
     ).context.ast.node.params[0].typeAnnotation.typeAnnotation);
 }
 
-/* eslint-disable */
 test('flowDoctrine', function (t) {
 
   t.deepEqual(toDoctrineType('number'),
@@ -99,38 +98,37 @@ test('flowDoctrine', function (t) {
       }]
     }, 'number[]');
 
-    t.deepEqual(toDoctrineType('[]'),
-      {
-        type: 'ArrayType',
-        elements: []
-      }, '[]');
+  t.deepEqual(toDoctrineType('[]'),
+    {
+      type: 'ArrayType',
+      elements: []
+    }, '[]');
 
-    t.deepEqual(toDoctrineType('[number]'),
-      {
-        type: 'ArrayType',
-        elements: [
-          {
-            type: 'NameExpression',
-            name: 'number'
-          }
-        ]
-      }, '[number]');
+  t.deepEqual(toDoctrineType('[number]'),
+    {
+      type: 'ArrayType',
+      elements: [
+        {
+          type: 'NameExpression',
+          name: 'number'
+        }
+      ]
+    }, '[number]');
 
-    t.deepEqual(toDoctrineType('[string, boolean]'),
-      {
-        type: 'ArrayType',
-        elements: [
-          {
-            type: 'NameExpression',
-            name: 'string'
-          },
-          {
-            type: 'NameExpression',
-            name: 'boolean'
-          }
-        ]
-      }, '[string, boolean]');
-
+  t.deepEqual(toDoctrineType('[string, boolean]'),
+    {
+      type: 'ArrayType',
+      elements: [
+        {
+          type: 'NameExpression',
+          name: 'string'
+        },
+        {
+          type: 'NameExpression',
+          name: 'boolean'
+        }
+      ]
+    }, '[string, boolean]');
 
   t.deepEqual(toDoctrineType('boolean'),
     {
@@ -162,13 +160,21 @@ test('flowDoctrine', function (t) {
       name: true
     }, 'BooleanLiteral');
 
-  t.deepEqual(toDoctrineType('true'),
+  t.deepEqual(toDoctrineType('false'),
     {
       type: 'BooleanLiteral',
-      name: true
+      name: false
     }, 'BooleanLiteral');
 
+  t.deepEqual(toDoctrineType('null'),
+    {
+      type: 'NullLiteral',
+    }, 'NullLiteral');
+
+  t.deepEqual(toDoctrineType('void'),
+    {
+      type: 'VoidLiteral',
+    }, 'VoidLiteral');
 
   t.end();
 });
-/* eslint-enable */
