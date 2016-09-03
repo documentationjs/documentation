@@ -1,0 +1,189 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 1,
+        "type": {
+          "type": "UnionType",
+          "elements": [
+            {
+              "type": "StringLiteralType",
+              "value": "a"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": "b"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": ""
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 0
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 42
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 3.14
+            }
+          ]
+        },
+        "name": "x"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 16
+        }
+      }
+    },
+    "errors": [],
+    "params": [
+      {
+        "name": "x",
+        "lineNumber": 1,
+        "type": {
+          "type": "UnionType",
+          "elements": [
+            {
+              "type": "StringLiteralType",
+              "value": "a"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": "b"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": ""
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 0
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 42
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 3.14
+            }
+          ]
+        }
+      }
+    ],
+    "name": "f",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "f",
+        "kind": "function"
+      }
+    ],
+    "namespace": "f"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 6,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 6
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 48
+        }
+      }
+    },
+    "errors": [],
+    "name": "g",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "x",
+        "lineNumber": 7,
+        "type": {
+          "type": "UnionType",
+          "elements": [
+            {
+              "type": "StringLiteralType",
+              "value": "a"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": "b"
+            },
+            {
+              "type": "StringLiteralType",
+              "value": ""
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 0
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 42
+            },
+            {
+              "type": "NumericLiteralType",
+              "value": 3.14
+            }
+          ]
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "g",
+        "kind": "function"
+      }
+    ],
+    "namespace": "g"
+  }
+]
