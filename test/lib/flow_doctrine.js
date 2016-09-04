@@ -101,8 +101,8 @@ test('flowDoctrine', function (t) {
         type: 'FieldType',
         key: 'a',
         value: {
-          type: 'NumberLiteral',
-          name: 1
+          type: 'NumericLiteralType',
+          value: 1
         }
       }]
     }, 'object with properties');
@@ -190,27 +190,27 @@ test('flowDoctrine', function (t) {
 
   t.deepEqual(toDoctrineType('"value"'),
     {
-      type: 'StringLiteral',
-      name: 'value'
-    }, 'StringLiteral');
+      type: 'StringLiteralType',
+      value: 'value'
+    }, 'StringLiteralType');
 
   t.deepEqual(toDoctrineType('1'),
     {
-      type: 'NumberLiteral',
-      name: '1'
-    }, 'NumberLiteral');
+      type: 'NumericLiteralType',
+      value: '1'
+    }, 'NumericLiteralType');
 
   t.deepEqual(toDoctrineType('true'),
     {
-      type: 'BooleanLiteral',
-      name: true
-    }, 'BooleanLiteral');
+      type: 'BooleanLiteralType',
+      value: true
+    }, 'BooleanLiteralType');
 
   t.deepEqual(toDoctrineType('false'),
     {
-      type: 'BooleanLiteral',
-      name: false
-    }, 'BooleanLiteral');
+      type: 'BooleanLiteralType',
+      value: false
+    }, 'BooleanLiteralType');
 
   t.deepEqual(toDoctrineType('null'),
     {
