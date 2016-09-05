@@ -55,7 +55,12 @@ function pipeline() {
  * @returns {undefined}
  */
 function expandInputs(indexes, options, callback) {
-  var inputFn = (options.polyglot || options.shallow) ? shallow : dependency;
+  var inputFn;
+  if (options.polyglot || options.shallow || options.documentExported) {
+    inputFn = shallow;
+  } else {
+    inputFn = dependency;
+  }
   inputFn(indexes, options, callback);
 }
 
