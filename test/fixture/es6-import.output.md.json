@@ -1808,53 +1808,6 @@
       ]
     },
     {
-      "type": "strong",
-      "children": [
-        {
-          "type": "text",
-          "value": "Parameters"
-        }
-      ]
-    },
-    {
-      "ordered": false,
-      "type": "list",
-      "children": [
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
-                  "value": "thisIsTheArgument"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "es6.input"
-        }
-      ]
-    },
-    {
       "type": "paragraph",
       "children": [
         {

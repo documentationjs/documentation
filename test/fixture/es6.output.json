@@ -1898,60 +1898,6 @@
     "namespace": "foo"
   },
   {
-    "description": "",
-    "tags": [
-      {
-        "title": "public",
-        "description": null,
-        "lineNumber": 1
-      }
-    ],
-    "loc": {
-      "start": {
-        "line": 102,
-        "column": 0
-      },
-      "end": {
-        "line": 104,
-        "column": 3
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 105,
-          "column": 0
-        },
-        "end": {
-          "line": 105,
-          "column": 41
-        }
-      }
-    },
-    "errors": [],
-    "access": "public",
-    "name": "es6.input",
-    "kind": "function",
-    "params": [
-      {
-        "title": "param",
-        "name": "thisIsTheArgument",
-        "lineNumber": 105
-      }
-    ],
-    "members": {
-      "instance": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "es6.input",
-        "kind": "function"
-      }
-    ],
-    "namespace": "es6.input"
-  },
-  {
     "description": {
       "type": "root",
       "children": [
@@ -2017,22 +1963,22 @@
     ],
     "loc": {
       "start": {
-        "line": 107,
+        "line": 102,
         "column": 0
       },
       "end": {
-        "line": 110,
+        "line": 105,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 111,
+          "line": 106,
           "column": 0
         },
         "end": {
-          "line": 111,
+          "line": 106,
           "column": 38
         }
       }
@@ -2168,22 +2114,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 113,
+        "line": 108,
         "column": 0
       },
       "end": {
-        "line": 115,
+        "line": 110,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 116,
+          "line": 111,
           "column": 0
         },
         "end": {
-          "line": 118,
+          "line": 113,
           "column": 1
         }
       }
@@ -2272,22 +2218,22 @@
     ],
     "loc": {
       "start": {
-        "line": 128,
+        "line": 123,
         "column": 0
       },
       "end": {
-        "line": 131,
+        "line": 126,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 132,
+          "line": 127,
           "column": 0
         },
         "end": {
-          "line": 132,
+          "line": 127,
           "column": 27
         }
       }
@@ -2370,22 +2316,22 @@
     ],
     "loc": {
       "start": {
-        "line": 134,
+        "line": 129,
         "column": 0
       },
       "end": {
-        "line": 137,
+        "line": 132,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 138,
+          "line": 133,
           "column": 0
         },
         "end": {
-          "line": 138,
+          "line": 133,
           "column": 24
         }
       }
@@ -2462,22 +2408,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 146,
+        "line": 141,
         "column": 0
       },
       "end": {
-        "line": 148,
+        "line": 143,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 149,
+          "line": 144,
           "column": 0
         },
         "end": {
-          "line": 149,
+          "line": 144,
           "column": 42
         }
       }
