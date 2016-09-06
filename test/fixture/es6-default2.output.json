@@ -1,0 +1,56 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "public",
+        "description": null,
+        "lineNumber": 1
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 41
+        }
+      }
+    },
+    "errors": [],
+    "access": "public",
+    "name": "es6-default2.input",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "thisIsTheArgument",
+        "lineNumber": 4
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "es6-default2.input",
+        "kind": "function"
+      }
+    ],
+    "namespace": "es6-default2.input"
+  }
+]
