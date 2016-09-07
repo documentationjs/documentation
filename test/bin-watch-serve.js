@@ -73,13 +73,17 @@ test('--watch', options, function (t) {
     get('http://localhost:4001/', function (text) {
       t.ok(text.match(/apples/), 'sends an html index file');
       fs.writeFileSync(tmpFile, '/** a function */function bananas() {}');
-      setTimeout(function () {
+      function doGet() {
         get('http://localhost:4001/', function (text) {
-          t.ok(text.match(/bananas/), 'updates the file content');
-          docProcess.kill();
-          t.end();
+          if (text.match(/bananas/)) {
+            docProcess.kill();
+            t.end();
+          } else {
+            setTimeout(doGet, 100);
+          }
         });
-      }, 1000);
+      }
+      doGet();
     });
   });
 });
@@ -95,13 +99,17 @@ test('--watch', options, function (t) {
     get('http://localhost:4001/', function (text) {
       t.ok(text.match(/soup/), 'sends an html index file');
       fs.writeFileSync(b, '/** nuts */function nuts() {}');
-      setTimeout(function () {
+      function doGet() {
         get('http://localhost:4001/', function (text) {
-          t.ok(text.match(/nuts/), 'updates the file content even behind a require');
-          docProcess.kill();
-          t.end();
+          if (text.match(/nuts/)) {
+            docProcess.kill();
+            t.end();
+          } else {
+            setTimeout(doGet, 100);
+          }
         });
-      }, 1000);
+      }
+      doGet();
     });
   });
 });
