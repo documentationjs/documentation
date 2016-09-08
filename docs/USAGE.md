@@ -45,6 +45,8 @@ Options:
   --document-exported  Generate documentation for all exported bindings and
                        members even if there is no JSDoc for them
                                                       [boolean] [default: false]
+  --sort-order         The order to sort the documentation
+                                [choices: "source", "alpha"] [default: "source"]
   --theme, -t          specify a theme: this must be a valid theme module
   --name               project name. by default, inferred from package.json
   --watch, -w          watch input files and rebuild documentation when they
