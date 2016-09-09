@@ -27,7 +27,7 @@
             },
             {
               "type": "NumericLiteralType",
-              "value": 42
+              "value": -42
             },
             {
               "type": "NumericLiteralType",
@@ -86,7 +86,7 @@
             },
             {
               "type": "NumericLiteralType",
-              "value": 42
+              "value": -42
             },
             {
               "type": "NumericLiteralType",
@@ -131,7 +131,7 @@
         },
         "end": {
           "line": 7,
-          "column": 48
+          "column": 49
         }
       }
     },
@@ -164,7 +164,7 @@
             },
             {
               "type": "NumericLiteralType",
-              "value": 42
+              "value": -42
             },
             {
               "type": "NumericLiteralType",
