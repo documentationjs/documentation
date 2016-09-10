@@ -21,6 +21,22 @@ test('inferParams', function (t) {
     function f(x) {}
   }).params, [{lineNumber: 3, name: 'x', title: 'param'}]);
 
+  t.deepEqual(evaluate(function () {
+    /** Test */
+    var f = function (x) {};
+  }).params, [{lineNumber: 3, name: 'x', title: 'param'}]);
+
+  t.deepEqual(evaluate('/** Test */ var f = (x) => {}').params,
+    [{lineNumber: 1, name: 'x', title: 'param'}]);
+
+  t.deepEqual(evaluate(function () {
+    var x = 1,
+      g = function (y) {},
+      /** Test */
+      f = function (x) {};
+  }).params, [{lineNumber: 5, name: 'x', title: 'param'}]);
+
+
   t.deepEqual(evaluate('/** Test */ export function f(x) {}').params,
     [{lineNumber: 1, name: 'x', title: 'param'}]);
 
