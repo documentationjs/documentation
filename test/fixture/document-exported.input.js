@@ -63,3 +63,17 @@ type T3 = string;
 export type {T2, T3 as T4};
 
 export type {T5} from './document-exported/x.js';
+
+export var f4 = function(x: X) {}
+
+var f5 = function(y: Y) {}
+export {f5};
+
+export var o1 = {
+  om1() {}
+}
+
+var o2 = {
+  om2() {}
+}
+export {o2};
