@@ -107,5 +107,29 @@ test('inferType', function (t) {
     type: 'NameExpression'
   });
 
+  t.deepEqual(evaluate(
+    '/** */' +
+    'const x = 42;'
+  ).type, {
+    name: 'number',
+    type: 'NameExpression'
+  });
+
+  t.deepEqual(evaluate(
+    '/** */' +
+    'const x = "abc";'
+  ).type, {
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  t.deepEqual(evaluate(
+    '/** */' +
+    'const x = true;'
+  ).type, {
+    name: 'boolean',
+    type: 'NameExpression'
+  });
+
   t.end();
 });
