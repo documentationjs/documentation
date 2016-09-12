@@ -4,7 +4,7 @@
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'><%= shortSignature(member) %></span>
+            <span class='code strong strong truncate'><%= formatters.shortSignature(member) %></span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">

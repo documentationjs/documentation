@@ -25,7 +25,7 @@
               <% docs.forEach(function(doc) { %>
                 <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
                 <li><a
-                  href='#<%=slug(doc.namespace)%>'
+                  href='#<%- doc.namespace %>'
                   class="<% if (doc.kind === 'note') { %>h5 bold black caps<% } %><% if (hasMembers) { %> toggle-sibling<% } %>">
                   <%- doc.name %>
                   <% if (hasMembers) { %><span class='icon'>▸</span><% } %>

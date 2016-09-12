@@ -2,7 +2,7 @@
 
   <% if (typeof nested === 'undefined') { %>
   <div class='clearfix'>
-    <h3 class='fl m0' id='<%- slug(section.namespace) %>'>
+    <h3 class='fl m0' id='<%- section.namespace %>'>
       <%- section.name %>
     </h3>
     <% if (section.context && section.context.github) { %>
@@ -13,9 +13,9 @@
   </div>
   <% } %>
 
-  <%= md(section.description) %>
+  <%= formatters.md(section.description) %>
 
-  <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
+  <div class='pre p1 fill-light mt0'><%= formatters.signature(section) %></div>
 
   <% if (section.augments) { %>
     <p>
@@ -40,9 +40,9 @@
       <% section.params.forEach(function(param) { %>
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'><%- param.name%></span> <code class='quiet'>(<%= formatType(param.type) %><% if (param.default) { %>
+            <span class='code bold'><%- param.name%></span> <code class='quiet'>(<%= formatters.type(param.type) %><% if (param.default) { %>
             (default <code><%- param.default %></code>)
-            <% } %>)</code> <%= md(param.description, true) %>
+            <% } %>)</code> <%= formatters.md(param.description, true) %>
           </div>
           <% if (param.properties) { %>
           <table class='mt1 mb2 fixed-table h5 col-12'>
@@ -59,11 +59,11 @@
             <tbody class='mt1'>
               <% param.properties.forEach(function(property) { %>
                 <tr>
-                  <td class='break-word'><span class='code bold'><%- property.name %></span> <code class='quiet'><%= formatType(property.type) %></code>
+                  <td class='break-word'><span class='code bold'><%- property.name %></span> <code class='quiet'><%= formatters.type(property.type) %></code>
                   <% if (property.default) { %>
                     (default <code><%- property.default %></code>)
                   <% } %></td>
-                  <td class='break-word'><span><%= md(property.description, true) %></span></td>
+                  <td class='break-word'><span><%= formatters.md(property.description, true) %></span></td>
                 </tr>
               <% }) %>
             </tbody>
@@ -79,20 +79,20 @@
     <div>
       <% section.properties.forEach(function(property) { %>
         <div class='space-bottom0'>
-          <span class='code bold'><%- property.name%></span> <code class='quiet'>(<%= formatType(property.type) %>)</code>
+          <span class='code bold'><%- property.name%></span> <code class='quiet'>(<%= formatters.type(property.type) %>)</code>
           <% if (property.default) { %>
             (default <code><%- property.default %></code>)
           <% } %><% if (property.description) {
-	    %>: <%= md(property.description, true) %><%
+	    %>: <%= formatters.md(property.description, true) %><%
 	  } %>
           <% if (property.properties) { %>
             <ul>
               <% property.properties.forEach(function(property) { %>
-                <li><code><%- name%></code> <%= formatType(property.type) %>
+                <li><code><%- name%></code> <%= formatters.type(property.type) %>
                   <% if (property.default) { %>
                     (default <code><%- property.default %></code>)
                   <% } %>
-                  <%= md(property.description) %></li>
+                  <%= formatters.md(property.description) %></li>
               <% }) %>
             </ul>
           <% } %>
@@ -104,8 +104,8 @@
   <% if (section.returns) { %>
     <% section.returns.forEach(function(ret) { %>
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><%= formatType(ret.type) %></code><% if (ret.description) { %>:
-        <%= md(ret.description, true) %>
+      <code><%= formatters.type(ret.type) %></code><% if (ret.description) { %>:
+        <%= formatters.md(ret.description, true) %>
       <% }%>
     <% }) %>
   <% } %>
@@ -114,7 +114,7 @@
     <div class='py1 quiet mt1 prose-big'>Throws</div>
     <ul>
       <% section.throws.forEach(function(throws) { %>
-        <li><%= formatType(throws.type) %>: <%= md(throws.description, true) %></li>
+        <li><%= formatters.type(throws.type) %>: <%= formatters.md(throws.description, true) %></li>
       <% }); %>
     </ul>
   <% } %>
@@ -122,8 +122,8 @@
   <% if (section.examples) { %>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     <% section.examples.forEach(function(example) { %>
-      <% if (example.caption) { %><p><%= md(example.caption) %></p><% } %>
-      <pre class='p1 overflow-auto round fill-light'><%= highlight(example.description) %></pre>
+      <% if (example.caption) { %><p><%= formatters.md(example.caption) %></p><% } %>
+      <pre class='p1 overflow-auto round fill-light'><%= formatters.highlight(example.description) %></pre>
     <% }) %>
   <% } %>
 

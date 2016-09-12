@@ -16,7 +16,7 @@ function parseArgs() {
 
   var rawArgv = addCommands(yargs)
     .version(function () {
-      return require('../package').version;
+      return documentation.version;
     })
     .argv;
 
