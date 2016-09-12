@@ -48,38 +48,21 @@ document.getElementById('filter-input')
     }
   });
 
-var toggles = document.getElementsByClassName('toggle-step-sibling');
-for (var i = 0; i < toggles.length; i++) {
-  toggles[i].addEventListener('click', toggleStepSibling);
+var toggleLinks = document.querySelectorAll('[data-namespacetarget]');
+for (var i = 0; i < toggleLinks.length; i++) {
+  toggleLinks[i].addEventListener('click', toggle);
 }
 
-function toggleStepSibling() {
-  var stepSibling = this.parentNode.parentNode.parentNode.getElementsByClassName('toggle-target')[0];
+function toggle() {
+  var target = document.querySelector('[data-namespacecontent="' + this.dataset.namespacetarget + '"]');
+  var caret = this.getElementsByClassName('caret')[0];
   var klass = 'display-none';
-  if (stepSibling.classList.contains(klass)) {
-    stepSibling.classList.remove(klass);
-    stepSibling.innerHTML = '▾';
+  if (target.classList.contains(klass)) {
+    target.classList.remove(klass);
+    caret.innerHTML = '-';
   } else {
-    stepSibling.classList.add(klass);
-    stepSibling.innerHTML = '▸';
-  }
-}
-
-var items = document.getElementsByClassName('toggle-sibling');
-for (var j = 0; j < items.length; j++) {
-  items[j].addEventListener('click', toggleSibling);
-}
-
-function toggleSibling() {
-  var stepSibling = this.parentNode.getElementsByClassName('toggle-target')[0];
-  var icon = this.getElementsByClassName('icon')[0];
-  var klass = 'display-none';
-  if (stepSibling.classList.contains(klass)) {
-    stepSibling.classList.remove(klass);
-    icon.innerHTML = '▾';
-  } else {
-    stepSibling.classList.add(klass);
-    icon.innerHTML = '▸';
+    target.classList.add(klass);
+    caret.innerHTML = '+';
   }
 }
 
