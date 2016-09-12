@@ -104,13 +104,10 @@ h4:hover .anchorjs-link {
   box-sizing: border-box;
 }
 
-.hide-target {
-  display: none;
-}
-
-.section-nested .hide-target {
-  display: block;
-}
+.hide-target { display: none; }
+.section-nested .hide-target { display: block; }
+.show-target { display: inline; }
+.section-nested .show-target { display: none; }
 
 .section-nested {
   padding-bottom: 10px;

@@ -16,7 +16,7 @@
       <% } %>
     <% } else { %>
       <div data-namespacetarget='<%- section.namespace %>' class='no-select py1 small pointer'>
-        <a class='caret'>+</a>
+        <a class='caret'><span class='hide-target'>-</span><span class='show-target'>+</span></a>
         <span class='code truncate bold-target'><%= formatters.shortSignature(section) %></span>
       </div>
     <% } %>

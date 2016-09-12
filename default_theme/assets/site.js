@@ -54,28 +54,46 @@ for (var i = 0; i < toggleLinks.length; i++) {
 }
 
 function toggle() {
-  var target = document.querySelector('[data-namespacecontent="' + this.dataset.namespacetarget + '"]');
-  var caret = this.getElementsByClassName('caret')[0];
+  toggleSection(this.dataset.namespacetarget);
+}
+
+function toggleSection(id, yn) {
+  var target = document.querySelector('[data-namespacecontent="' + id + '"]');
+  if (!target) {
+    return;
+  }
   var klass = 'section-nested';
-  if (target.classList.contains(klass)) {
+  yn = typeof yn === 'boolean' ? yn : target.classList.contains(klass);
+  if (yn) {
     target.classList.remove(klass);
-    caret.innerHTML = '+';
   } else {
     target.classList.add(klass);
-    caret.innerHTML = '-';
+  }
+}
+
+var items = document.getElementsByClassName('toggle-sibling');
+for (var j = 0; j < items.length; j++) {
+  items[j].addEventListener('click', toggleSibling);
+}
+
+function toggleSibling() {
+  var stepSibling = this.parentNode.getElementsByClassName('toggle-target')[0];
+  var icon = this.getElementsByClassName('icon')[0];
+  var klass = 'display-none';
+  if (stepSibling.classList.contains(klass)) {
+    stepSibling.classList.remove(klass);
+    icon.innerHTML = '▾';
+  } else {
+    stepSibling.classList.add(klass);
+    icon.innerHTML = '▸';
   }
 }
 
 function showHashTarget(targetId) {
-  var hashTarget = document.getElementById(targetId);
-  // new target is hidden
-  if (hashTarget && hashTarget.offsetHeight === 0 &&
-    hashTarget.parentNode.parentNode.classList.contains('display-none')) {
-    hashTarget.parentNode.parentNode.classList.remove('display-none');
-  }
+  toggleSection(targetId, false);
 }
 
-window.addEventListener('hashchange', function() {
+window.addEventListener('hashchange', function () {
   showHashTarget(location.hash.substring(1));
 });
 
