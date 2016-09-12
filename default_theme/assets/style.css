@@ -122,6 +122,18 @@ h4:hover .anchorjs-link {
   font-weight: bold;
 }
 
+.section-nested .caret {
+  color: #eee;
+  background-color: #555;
+}
+
+.no-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
 table {
   border-collapse: collapse;
 }
