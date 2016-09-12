@@ -104,6 +104,24 @@ h4:hover .anchorjs-link {
   box-sizing: border-box;
 }
 
+.hide-target {
+  display: none;
+}
+
+.section-nested .hide-target {
+  display: block;
+}
+
+.section-nested {
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.section-nested .bold-target {
+  font-weight: bold;
+}
+
 table {
   border-collapse: collapse;
 }

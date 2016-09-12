@@ -1,7 +1,7 @@
 <% if (typeof nested === 'undefined') { %>
 <section class='py2 mb2 clearfix bg-white'>
 <% } else { %>
-<section class='py1 clearfix bg-white'>
+<section data-namespacecontent='<%- section.namespace %>' class='clearfix bg-white'>
 <% } %>
 
   <div class='px2'>
@@ -17,12 +17,12 @@
     <% } else { %>
       <div data-namespacetarget='<%- section.namespace %>' class='py1 small pointer'>
         <a class='caret'>+</a>
-        <span class='code truncate'><%= formatters.shortSignature(section) %></span>
+        <span class='code truncate bold-target'><%= formatters.shortSignature(section) %></span>
       </div>
     <% } %>
   </div>
 
-  <div <% if (typeof nested !== 'undefined') { %>class='display-none'<% } %> data-namespacecontent='<%- section.namespace %>'>
+  <div <% if (typeof nested !== 'undefined') { %>class='hide-target'<% } %>>
     <div class='px2'>
       <%= formatters.md(section.description) %>
 

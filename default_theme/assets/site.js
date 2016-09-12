@@ -56,13 +56,13 @@ for (var i = 0; i < toggleLinks.length; i++) {
 function toggle() {
   var target = document.querySelector('[data-namespacecontent="' + this.dataset.namespacetarget + '"]');
   var caret = this.getElementsByClassName('caret')[0];
-  var klass = 'display-none';
+  var klass = 'section-nested';
   if (target.classList.contains(klass)) {
     target.classList.remove(klass);
-    caret.innerHTML = '-';
+    caret.innerHTML = '+';
   } else {
     target.classList.add(klass);
-    caret.innerHTML = '+';
+    caret.innerHTML = '-';
   }
 }
 
