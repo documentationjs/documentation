@@ -11,6 +11,36 @@
       "children": [
         {
           "type": "text",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "b"
+        }
+      ]
+    },
+    {
+      "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "C"
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
           "value": "A"
         }
       ]
@@ -21,52 +51,12 @@
       "children": [
         {
           "type": "text",
-          "value": "X"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "x"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "Y"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "y"
-        }
-      ]
-    },
-    {
-      "depth": 1,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
           "value": "a"
         }
       ]
     },
     {
-      "depth": 1,
+      "depth": 2,
       "type": "heading",
       "children": [
         {
@@ -81,42 +71,52 @@
       "children": [
         {
           "type": "text",
-          "value": "X"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "x"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "Y"
-        }
-      ]
-    },
-    {
-      "depth": 2,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "y"
+          "value": "b"
         }
       ]
     },
     {
       "depth": 1,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "D"
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "A"
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "depth": 2,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "B"
+        }
+      ]
+    },
+    {
+      "depth": 2,
       "type": "heading",
       "children": [
         {
