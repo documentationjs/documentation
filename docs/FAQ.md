@@ -73,6 +73,10 @@ You can customize this behavior by specifying the `--shallow` command-line
 option. With `--shallow` specified, dependendencies aren't followed: documentation.js
 documents only the files you explicitly name.
 
+If you're using ES modules, you enable the option `--document-exported` to automatically
+document all exported bindings in your project, even if they don't have JSDoc comments.
+This also ignores non-exported items, even if they are commented.
+
 ## Will adding JSDoc comments slow down my code?
 
 The short answer is "no".
