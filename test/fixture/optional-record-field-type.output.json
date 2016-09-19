@@ -1,0 +1,89 @@
+[
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 1,
+        "column": 6
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 2
+        }
+      }
+    },
+    "errors": [],
+    "name": "Record",
+    "kind": "typedef",
+    "properties": [
+      {
+        "title": "property",
+        "name": "opt",
+        "lineNumber": 3,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "number"
+          }
+        }
+      },
+      {
+        "title": "property",
+        "name": "req",
+        "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
+    "type": {
+      "type": "RecordType",
+      "fields": [
+        {
+          "type": "FieldType",
+          "key": "opt",
+          "value": {
+            "type": "OptionalType",
+            "expression": {
+              "type": "NameExpression",
+              "name": "number"
+            }
+          }
+        },
+        {
+          "type": "FieldType",
+          "key": "req",
+          "value": {
+            "type": "NameExpression",
+            "name": "string"
+          }
+        }
+      ]
+    },
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "Record",
+        "kind": "typedef"
+      }
+    ],
+    "namespace": "Record"
+  }
+]
