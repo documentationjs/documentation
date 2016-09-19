@@ -1132,5 +1132,261 @@
       }
     ],
     "namespace": "T4"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 67,
+        "column": 0
+      },
+      "end": {
+        "line": 67,
+        "column": 33
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 67,
+          "column": 0
+        },
+        "end": {
+          "line": 67,
+          "column": 33
+        }
+      }
+    },
+    "errors": [],
+    "name": "f4",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "x",
+        "lineNumber": 67,
+        "type": {
+          "type": "NameExpression",
+          "name": "X"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "f4",
+        "kind": "function"
+      }
+    ],
+    "namespace": "f4"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 69,
+        "column": 4
+      },
+      "end": {
+        "line": 69,
+        "column": 26
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 69,
+          "column": 4
+        },
+        "end": {
+          "line": 69,
+          "column": 26
+        }
+      }
+    },
+    "errors": [],
+    "name": "f5",
+    "params": [
+      {
+        "title": "param",
+        "name": "y",
+        "lineNumber": 69,
+        "type": {
+          "type": "NameExpression",
+          "name": "Y"
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "f5"
+      }
+    ],
+    "namespace": "f5"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 72,
+        "column": 0
+      },
+      "end": {
+        "line": 74,
+        "column": 1
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 72,
+          "column": 0
+        },
+        "end": {
+          "line": 74,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "o1",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "o1"
+      }
+    ],
+    "namespace": "o1"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 73,
+        "column": 2
+      },
+      "end": {
+        "line": 73,
+        "column": 10
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 73,
+          "column": 2
+        },
+        "end": {
+          "line": 73,
+          "column": 10
+        }
+      }
+    },
+    "errors": [],
+    "name": "om1",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "om1",
+        "kind": "function"
+      }
+    ],
+    "namespace": "om1"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 76,
+        "column": 4
+      },
+      "end": {
+        "line": 78,
+        "column": 1
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 76,
+          "column": 4
+        },
+        "end": {
+          "line": 78,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "o2",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "o2"
+      }
+    ],
+    "namespace": "o2"
+  },
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 77,
+        "column": 2
+      },
+      "end": {
+        "line": 77,
+        "column": 10
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 77,
+          "column": 2
+        },
+        "end": {
+          "line": 77,
+          "column": 10
+        }
+      }
+    },
+    "errors": [],
+    "name": "om2",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "om2",
+        "kind": "function"
+      }
+    ],
+    "namespace": "om2"
   }
 ]

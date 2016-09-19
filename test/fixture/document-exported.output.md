@@ -71,3 +71,23 @@ Returns **void**
 # T2
 
 # T4
+
+# f4
+
+**Parameters**
+
+-   `x` **X** 
+
+# f5
+
+**Parameters**
+
+-   `y` **Y** 
+
+# o1
+
+# om1
+
+# o2
+
+# om2
