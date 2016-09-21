@@ -89,11 +89,6 @@
     "errors": [],
     "params": [
       {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 5
-      },
-      {
         "name": "b",
         "lineNumber": 2,
         "description": {
@@ -152,6 +147,11 @@
           "type": "NameExpression",
           "name": "number"
         }
+      },
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 5
       },
       {
         "title": "param",

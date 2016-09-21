@@ -272,11 +272,6 @@
         ]
       },
       {
-        "title": "param",
-        "name": "employee",
-        "lineNumber": 7
-      },
-      {
         "name": "type",
         "lineNumber": 4,
         "description": {

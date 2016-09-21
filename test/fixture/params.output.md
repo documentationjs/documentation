@@ -6,8 +6,8 @@ This function returns the number one.
 
 **Parameters**
 
--   `a`  
 -   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
+-   `a`  
 -   `c`  
 -   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `$3.d`  

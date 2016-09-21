@@ -71,28 +71,6 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "a"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
                   "value": "b"
                 },
                 {
@@ -153,6 +131,28 @@
                     },
                     "indent": []
                   }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
+                  "value": "a"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
                 }
               ]
             }

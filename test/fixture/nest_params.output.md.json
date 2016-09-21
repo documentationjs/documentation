@@ -280,28 +280,6 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "employee"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
                   "value": "type"
                 },
                 {

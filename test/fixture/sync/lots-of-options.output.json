@@ -1,0 +1,1292 @@
+[
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Global spectra deconvolution",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 29,
+                  "offset": 28
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 29,
+              "offset": 28
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 29,
+          "offset": 28
+        }
+      }
+    },
+    "tags": [
+      {
+        "title": "param",
+        "description": "Independent variable",
+        "lineNumber": 2,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Number"
+            }
+          ]
+        },
+        "name": "x"
+      },
+      {
+        "title": "param",
+        "description": "Dependent variable",
+        "lineNumber": 3,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Number"
+            }
+          ]
+        },
+        "name": "yIn"
+      },
+      {
+        "title": "param",
+        "description": "Options object",
+        "lineNumber": 4,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options"
+      },
+      {
+        "title": "param",
+        "description": "Options object for Savitzky-Golay filter. See https://github.com/mljs/savitzky-golay-generalized#options",
+        "lineNumber": 5,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "name": "options.sgOptions"
+      },
+      {
+        "title": "param",
+        "description": "Threshold to determine if a given peak should be considered as a noise",
+        "lineNumber": 6,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Number"
+          }
+        },
+        "name": "options.minMaxRatio",
+        "default": "0.00025"
+      },
+      {
+        "title": "param",
+        "description": "If `broadRatio` is higher than 0, then all the peaks which second derivative\nsmaller than `broadRatio * maxAbsSecondDerivative` will be marked with the soft mask equal to true.",
+        "lineNumber": 7,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Number"
+          }
+        },
+        "name": "options.broadRatio",
+        "default": "0.00"
+      },
+      {
+        "title": "param",
+        "description": "Noise threshold in spectrum units",
+        "lineNumber": 9,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Number"
+          }
+        },
+        "name": "options.noiseLevel",
+        "default": "3"
+      },
+      {
+        "title": "param",
+        "description": "Peaks are local maximum(true) or minimum(false)",
+        "lineNumber": 10,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Boolean"
+          }
+        },
+        "name": "options.maxCriteria",
+        "default": "true"
+      },
+      {
+        "title": "param",
+        "description": "Select the peak intensities from a smoothed version of the independent variables",
+        "lineNumber": 11,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Boolean"
+          }
+        },
+        "name": "options.smoothY",
+        "default": "true"
+      },
+      {
+        "title": "param",
+        "description": "Use a quadratic optimizations with the peak and its 3 closest neighbors\nto determine the true x,y values of the peak?",
+        "lineNumber": 12,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Boolean"
+          }
+        },
+        "name": "options.realTopDetection",
+        "default": "false"
+      },
+      {
+        "title": "param",
+        "description": "Factor to multiply the calculated height (usually 2)",
+        "lineNumber": 14,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Number"
+          }
+        },
+        "name": "options.heightFactor",
+        "default": "0"
+      },
+      {
+        "title": "param",
+        "description": "Return also the inflection points of the peaks",
+        "lineNumber": 15,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Boolean"
+          }
+        },
+        "name": "options.boundaries",
+        "default": "false"
+      },
+      {
+        "title": "param",
+        "description": "Filters based on the amplitude of the first derivative",
+        "lineNumber": 16,
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Number"
+          }
+        },
+        "name": "options.derivativeThreshold",
+        "default": "0"
+      },
+      {
+        "title": "return",
+        "description": null,
+        "lineNumber": 17,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            }
+          ]
+        }
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 19,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "params": [
+      {
+        "name": "x",
+        "lineNumber": 2,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Independent variable",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 21,
+                      "offset": 20
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 21,
+                  "offset": 20
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 21,
+              "offset": 20
+            }
+          }
+        },
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Number"
+            }
+          ]
+        }
+      },
+      {
+        "name": "yIn",
+        "lineNumber": 3,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Dependent variable",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 19,
+                      "offset": 18
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 19,
+                  "offset": 18
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 19,
+              "offset": 18
+            }
+          }
+        },
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Number"
+            }
+          ]
+        }
+      },
+      {
+        "name": "options",
+        "lineNumber": 4,
+        "description": {
+          "type": "root",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Options object",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 15,
+                      "offset": 14
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 15,
+                  "offset": 14
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 15,
+              "offset": 14
+            }
+          }
+        },
+        "type": {
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
+        },
+        "properties": [
+          {
+            "name": "options.sgOptions",
+            "lineNumber": 5,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Options object for Savitzky-Golay filter. See ",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 47,
+                          "offset": 46
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "link",
+                      "title": null,
+                      "url": "https://github.com/mljs/savitzky-golay-generalized#options",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "https://github.com/mljs/savitzky-golay-generalized#options",
+                          "position": {
+                            "start": {
+                              "line": 1,
+                              "column": 47,
+                              "offset": 46
+                            },
+                            "end": {
+                              "line": 1,
+                              "column": 105,
+                              "offset": 104
+                            },
+                            "indent": []
+                          }
+                        }
+                      ],
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 47,
+                          "offset": 46
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 105,
+                          "offset": 104
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 105,
+                      "offset": 104
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 105,
+                  "offset": 104
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Object"
+              }
+            }
+          },
+          {
+            "name": "options.minMaxRatio",
+            "lineNumber": 6,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Threshold to determine if a given peak should be considered as a noise",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 71,
+                          "offset": 70
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 71,
+                      "offset": 70
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 71,
+                  "offset": 70
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Number"
+              }
+            },
+            "default": "0.00025"
+          },
+          {
+            "name": "options.broadRatio",
+            "lineNumber": 7,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "If ",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 4,
+                          "offset": 3
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "broadRatio",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 4,
+                          "offset": 3
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 16,
+                          "offset": 15
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "value": " is higher than 0, then all the peaks which second derivative\nsmaller than ",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 16,
+                          "offset": 15
+                        },
+                        "end": {
+                          "line": 2,
+                          "column": 14,
+                          "offset": 90
+                        },
+                        "indent": [
+                          1
+                        ]
+                      }
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "broadRatio * maxAbsSecondDerivative",
+                      "position": {
+                        "start": {
+                          "line": 2,
+                          "column": 14,
+                          "offset": 90
+                        },
+                        "end": {
+                          "line": 2,
+                          "column": 51,
+                          "offset": 127
+                        },
+                        "indent": []
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "value": " will be marked with the soft mask equal to true.",
+                      "position": {
+                        "start": {
+                          "line": 2,
+                          "column": 51,
+                          "offset": 127
+                        },
+                        "end": {
+                          "line": 2,
+                          "column": 100,
+                          "offset": 176
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 100,
+                      "offset": 176
+                    },
+                    "indent": [
+                      1
+                    ]
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 100,
+                  "offset": 176
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Number"
+              }
+            },
+            "default": "0.00"
+          },
+          {
+            "name": "options.noiseLevel",
+            "lineNumber": 9,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Noise threshold in spectrum units",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 34,
+                          "offset": 33
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 34,
+                      "offset": 33
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 34,
+                  "offset": 33
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Number"
+              }
+            },
+            "default": "3"
+          },
+          {
+            "name": "options.maxCriteria",
+            "lineNumber": 10,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Peaks are local maximum(true) or minimum(false)",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 48,
+                          "offset": 47
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 48,
+                      "offset": 47
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 48,
+                  "offset": 47
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Boolean"
+              }
+            },
+            "default": "true"
+          },
+          {
+            "name": "options.smoothY",
+            "lineNumber": 11,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Select the peak intensities from a smoothed version of the independent variables",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 81,
+                          "offset": 80
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 81,
+                      "offset": 80
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 81,
+                  "offset": 80
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Boolean"
+              }
+            },
+            "default": "true"
+          },
+          {
+            "name": "options.realTopDetection",
+            "lineNumber": 12,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use a quadratic optimizations with the peak and its 3 closest neighbors\nto determine the true x,y values of the peak?",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 2,
+                          "column": 46,
+                          "offset": 117
+                        },
+                        "indent": [
+                          1
+                        ]
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 46,
+                      "offset": 117
+                    },
+                    "indent": [
+                      1
+                    ]
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 2,
+                  "column": 46,
+                  "offset": 117
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Boolean"
+              }
+            },
+            "default": "false"
+          },
+          {
+            "name": "options.heightFactor",
+            "lineNumber": 14,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Factor to multiply the calculated height (usually 2)",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 53,
+                          "offset": 52
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 53,
+                      "offset": 52
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 53,
+                  "offset": 52
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Number"
+              }
+            },
+            "default": "0"
+          },
+          {
+            "name": "options.boundaries",
+            "lineNumber": 15,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Return also the inflection points of the peaks",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 47,
+                          "offset": 46
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 47,
+                      "offset": 46
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 47,
+                  "offset": 46
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Boolean"
+              }
+            },
+            "default": "false"
+          },
+          {
+            "name": "options.derivativeThreshold",
+            "lineNumber": 16,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Filters based on the amplitude of the first derivative",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 55,
+                          "offset": 54
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 55,
+                      "offset": 54
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 55,
+                  "offset": 54
+                }
+              }
+            },
+            "type": {
+              "type": "OptionalType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "Number"
+              }
+            },
+            "default": "0"
+          }
+        ]
+      }
+    ],
+    "returns": [
+      {
+        "description": {
+          "type": "root",
+          "children": [],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            }
+          }
+        },
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "Object"
+            }
+          ]
+        }
+      }
+    ],
+    "name": "gsd",
+    "kind": "function",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "gsd",
+        "kind": "function"
+      }
+    ],
+    "namespace": "gsd"
+  }
+]
