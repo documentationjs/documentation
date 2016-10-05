@@ -146,6 +146,44 @@ test('inferMembership - explicit', function (t) {
   }, 'variable object assignment, function');
 
   t.deepEqual(pick(evaluate(function () {
+    function Foo() {
+      {
+        /** */
+        this.bar = 0;
+      }
+    }
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Foo',
+    scope: 'instance'
+  }, 'constructor function declaration assignment');
+
+  t.deepEqual(pick(evaluate(function () {
+    var Foo = function Bar() {
+      {
+        /** */
+        this.baz = 0;
+      }
+    };
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Bar',
+    scope: 'instance'
+  }, 'constructor function expression assignment');
+
+  t.deepEqual(pick(evaluate(function () {
+    class Foo {
+      constructor() {
+        {
+          /** */
+          this.bar = 0;
+        }
+      }
+    }
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Foo',
+    scope: 'instance'
+  }, 'constructor assignment');
+
+  t.deepEqual(pick(evaluate(function () {
     /** Test */
     module.exports = function () {};
   })[0], ['memberof', 'scope']), {
