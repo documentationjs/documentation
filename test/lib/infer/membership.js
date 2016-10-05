@@ -38,7 +38,29 @@ test('inferMembership - explicit', function (t) {
   })[0], ['memberof', 'scope']), {
     memberof: 'Bar',
     scope: 'static'
-  }, 'explicit');
+  }, 'explicit, static');
+
+  t.deepEqual(pick(evaluate(function () {
+    /**
+     * Test
+     * @memberof Bar#
+     */
+    Foo.bar = 0;
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Bar',
+    scope: 'instance'
+  }, 'explicit, instance');
+
+  t.deepEqual(pick(evaluate(function () {
+    /**
+     * Test
+     * @memberof Bar.prototype
+     */
+    Foo.bar = 0;
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Bar',
+    scope: 'instance'
+  }, 'explicit, prototype');
 
   t.deepEqual(pick(evaluate(function () {
     /** Test */
