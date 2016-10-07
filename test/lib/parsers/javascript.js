@@ -19,7 +19,7 @@ test('parse - leading comment', function (t) {
     function two() {}
   }).map(function (c) {
     return c.description;
-  }), [remark.parse('one'), remark.parse('two')]);
+  }), [remark().parse('one'), remark().parse('two')]);
   t.end();
 });
 
@@ -30,7 +30,7 @@ test('parse - trailing comment', function (t) {
     /** two */
   }).map(function (c) {
     return c.description;
-  }), [remark.parse('one'), remark.parse('two')]);
+  }), [remark().parse('one'), remark().parse('two')]);
   t.end();
 });
 

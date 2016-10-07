@@ -7,7 +7,7 @@ test('main', function (t) {
     {
       path: [],
       context: {},
-      description: remark.parse('test'),
+      description: remark().parse('test'),
       members: {
         static: [],
         instance: []

@@ -334,7 +334,7 @@ This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></
 
   
 
-  <p>A function that triggers the case where the autolinker doesn&#x27;t find
+  <p>A function that triggers the case where the autolinker doesn't find
 the referenced class type</p>
 
 
@@ -478,7 +478,7 @@ the referenced class type</p>
   <p>This method takes an array of buffers and counts them</p>
 
 
-  <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://nodejs.org/api/buffer.html">Buffer</a>>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
 
   
 
@@ -494,7 +494,7 @@ the referenced class type</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>buffers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="https://nodejs.org/api/buffer.html">Buffer</a>&gt;)</code> some buffers
+            <span class='code bold'>buffers</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://nodejs.org/api/buffer.html">Buffer</a>>)</code> some buffers
 
           </div>
           
@@ -646,7 +646,7 @@ k.isArrayOfBuffers();</pre>
 
   
 
-  <p>Get this Klass&#x27;s foo</p>
+  <p>Get this Klass's foo</p>
 
 
   <div class='pre p1 fill-light mt0'>getFoo(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>

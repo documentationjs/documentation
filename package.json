@@ -37,8 +37,8 @@
     "mime": "^1.3.4",
     "module-deps-sortable": "4.0.6",
     "parse-filepath": "^0.6.3",
-    "remark": "^4.1.2",
-    "remark-html": "3.0.0",
+    "remark": "^6.0.1",
+    "remark-html": "5.0.1",
     "remark-toc": "^3.0.0",
     "remote-origin-url": "0.4.0",
     "resolve": "^1.1.6",
@@ -47,23 +47,23 @@
     "tiny-lr": "^0.2.1",
     "unist-builder": "^1.0.0",
     "unist-util-visit": "^1.0.1",
-    "vfile": "^1.1.2",
-    "vfile-reporter": "^2.0.0",
-    "vfile-sort": "^1.0.0",
-    "vinyl": "^1.1.0",
+    "vfile": "^2.0.0",
+    "vfile-reporter": "^3.0.0",
+    "vfile-sort": "^2.0.0",
+    "vinyl": "^2.0.0",
     "vinyl-fs": "^2.3.1",
-    "yargs": "^4.3.1"
+    "yargs": "^6.0.0"
   },
   "devDependencies": {
     "chdir": "0.0.0",
+    "documentation-schema": "0.0.1",
     "eslint": "^3.1.0",
     "fs-extra": "^0.30.0",
-    "documentation-schema": "0.0.1",
     "glob": "^7.0.0",
-    "json-schema": "0.2.2",
+    "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
-    "tap": "^6.2.0",
-    "tmp": "0.0.28"
+    "tap": "^7.1.2",
+    "tmp": "0.0.29"
   },
   "keywords": [
     "documentation",
