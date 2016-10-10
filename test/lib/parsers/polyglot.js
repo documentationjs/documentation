@@ -18,13 +18,13 @@ test('polyglot', function (t) {
     errors: [],
     context: {
       loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } } },
-    description: remark.parse('This method moves a hex to a color'),
+    description: remark().parse('This method moves a hex to a color'),
     loc: { end: { column: 3, line: 40 }, start: { column: 1, line: 35 } },
     name: 'hexToUInt32Color', params: [
       { lineNumber: 3, name: 'hex', type: { name: 'string', type: 'NameExpression' } } ],
     returns: [
       {
-        description: remark.parse('color'),
+        description: remark().parse('color'),
         type: { name: 'number', type: 'NameExpression' } } ],
     tags: [ { description: null, lineNumber: 2, name: 'hexToUInt32Color', title: 'name' },
       { description: null, lineNumber: 3, name: 'hex', title: 'param', type: {

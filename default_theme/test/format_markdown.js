@@ -3,7 +3,7 @@ var remark = require('remark');
 var formatMarkdown = require('../lib/format_markdown');
 
 test('main', function (t) {
-  t.deepEqual(formatMarkdown(remark.parse('Converts from `Result<T>` to `?Error`')),
+  t.deepEqual(formatMarkdown(remark().parse('Converts from `Result<T>` to `?Error`')),
     '<p>Converts from <code>Result&lt;T&gt;</code> to <code>?Error</code></p>\n');
   t.done();
 });

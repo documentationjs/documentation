@@ -9,6 +9,7 @@ var test = require('tap').test,
 
 function documentation(args, options, callback, parseJSON) {
   if (!callback) {
+    parseJSON = callback;
     callback = options;
     options = {};
   }
@@ -156,10 +157,10 @@ test('extension option', function (t) {
 
 test('invalid arguments', function (group) {
   group.test('bad -f option', options, function (t) {
-    documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], function (err) {
+    documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], {}, function (err) {
       t.ok(err, 'returns error');
       t.end();
-    });
+    }, false);
   });
 
   group.test('html with no destination', options, function (t) {
@@ -172,11 +173,10 @@ test('invalid arguments', function (group) {
   });
 
   group.test('bad command', function (t) {
-    documentation(['-f html fixture/internal.input.js'], function (err, stdout, stderr) {
+    documentation(['-f html fixture/internal.input.js'], {}, function (err, stdout, stderr) {
       t.ok(err.code, 'exits nonzero');
-      t.ok(stderr.match(/Unknown command/), 'reports unknown command');
       t.end();
-    });
+    }, false);
   });
 
   group.end();
@@ -232,10 +232,10 @@ test('given no files', options, function (t) {
 });
 
 test('with an invalid command', options, function (t) {
-  documentation(['invalid'], function (err) {
+  documentation(['invalid'], {}, function (err) {
     t.ok(err, 'returns error');
     t.end();
-  });
+  }, false);
 });
 
 test('--access flag', function (t) {
