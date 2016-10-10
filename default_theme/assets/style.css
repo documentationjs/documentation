@@ -21,8 +21,8 @@ h4 {
   color: #000;
 }
 
-.border-bottom {
-  border-color: #ddd;
+.border-bottom, .border-top {
+  border-color: #8a8a8a;
 }
 
 a {
@@ -104,6 +104,33 @@ h4:hover .anchorjs-link {
   box-sizing: border-box;
 }
 
+.hide-target { display: none; }
+.section-nested .hide-target { display: block; }
+.show-target { display: inline; }
+.section-nested .show-target { display: none; }
+
+.section-nested {
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.section-nested .bold-target {
+  font-weight: bold;
+}
+
+.section-nested .caret {
+  color: #eee;
+  background-color: #555;
+}
+
+.no-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -132,5 +159,17 @@ table {
 }
 
 .minishadow {
-  box-shadow: 2px 2px 10px #f3f3f3;
+  box-shadow: 1px 1px 10px #dedede;
+}
+
+.caret {
+  color: #8a8a8a;
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+  background: #eee;
+  border-radius: 1em;
+  height: 1em;
+  padding: 0;
+  line-height: 1em;
 }

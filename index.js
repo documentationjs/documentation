@@ -291,3 +291,5 @@ module.exports.util = {
   createFormatters: require('./lib/output/util/formatters'),
   createLinkerStack: require('./lib/output/util/linker_stack')
 };
+
+module.exports.version = require('./package').version;
