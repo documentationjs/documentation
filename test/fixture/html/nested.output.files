@@ -195,9 +195,11 @@
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='klass'>
       Klass
     </h3>
+    
     
   </div>
   
@@ -800,9 +802,11 @@ k.isArrayOfBuffers();</pre>
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='bar'>
       bar
     </h3>
+    
     
   </div>
   
@@ -854,9 +858,11 @@ like a <a href="#klass">klass</a></p>
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='bar'>
       bar
     </h3>
+    
     
   </div>
   
@@ -918,9 +924,11 @@ like a <a href="#klass">klass</a></p>
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='bar'>
       bar
     </h3>
+    
     
   </div>
   
@@ -972,9 +980,11 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='foo'>
       Foo
     </h3>
+    
     
   </div>
   
@@ -1067,9 +1077,11 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
 
   
   <div class='clearfix'>
+    
     <h3 class='fl m0' id='customstreams'>
       customStreams
     </h3>
+    
     
   </div>
   

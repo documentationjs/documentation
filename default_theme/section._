@@ -1,10 +1,12 @@
 <section class='p2 mb2 clearfix bg-white minishadow'>
 
-  <% if (typeof nested === 'undefined') { %>
+  <% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
   <div class='clearfix'>
+    <% if (typeof nested === 'undefined') { %>
     <h3 class='fl m0' id='<%- slug(section.namespace) %>'>
       <%- section.name %>
     </h3>
+    <% } %>
     <% if (section.context && section.context.github) { %>
       <a class='fr fill-darken0 round round pad1x quiet h5' href='<%= section.context.github %>'>
       <span><%= section.context.path %></span>
