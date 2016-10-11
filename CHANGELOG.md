@@ -1,3 +1,12 @@
+## 4.0.0-beta11
+
+* Improved support for Flow: function types, object types, mixed types, null,
+  void, typedefs
+* New option: [sort-order](https://github.com/documentationjs/documentation/pull/535)
+* Updates to Babylon 6.10.x
+* Updates to dependencies, including yargs.
+* [`document-exported` now traverses only exported code](https://github.com/documentationjs/documentation/pull/533).
+
 ## 4.0.0-beta10
 
 * Lower memory consumption when dealing with large codebases
