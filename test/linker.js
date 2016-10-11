@@ -17,5 +17,31 @@ test('linkerStack', function (t) {
     'http://geojson.org/geojson-spec.html#point',
     'Custom hardcoded path for a GeoJSON type');
 
+
+  t.equal(createLinkerStack({
+    paths: {
+      Image: 'http://custom.com/'
+    }
+  }).link('Image'),
+    'http://custom.com/',
+    'Prefers config link to native.');
+
+
+  var linker = createLinkerStack({
+    paths: {
+      Image: 'http://custom.com/'
+    }
+  });
+
+  linker.namespaceResolver([{
+    namespace: 'Image',
+  }], function (namespace) {
+    return '#' + namespace;
+  });
+
+  t.equal(linker.link('Image'),
+    '#Image',
+    'Prefers local link over all.');
+
   t.end();
 });
