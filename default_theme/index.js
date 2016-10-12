@@ -6,7 +6,6 @@ var fs = require('fs'),
   vfs = require('vinyl-fs'),
   _ = require('lodash'),
   concat = require('concat-stream'),
-  GithubSlugger = require('github-slugger'),
   createFormatters = require('../').util.createFormatters,
   createLinkerStack = require('../').util.createLinkerStack,
   hljs = require('highlight.js');
@@ -15,8 +14,7 @@ module.exports = function (comments, options, callback) {
 
   var linkerStack = createLinkerStack(options)
     .namespaceResolver(comments, function (namespace) {
-      var slugger = new GithubSlugger();
-      return '#' + slugger.slug(namespace);
+      return '#' + namespace;
     });
 
   var formatters = createFormatters(linkerStack.link);
@@ -25,10 +23,6 @@ module.exports = function (comments, options, callback) {
 
   var sharedImports = {
     imports: {
-      slug: function (str) {
-        var slugger = new GithubSlugger();
-        return slugger.slug(str);
-      },
       shortSignature: function (section) {
         var prefix = '';
         if (section.kind === 'class') {
@@ -71,12 +65,12 @@ module.exports = function (comments, options, callback) {
       }
     }
   };
-  
+
   sharedImports.imports.renderSectionList =  _.template(fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'), sharedImports);
   sharedImports.imports.renderSection = _.template(fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'), sharedImports);
   sharedImports.imports.renderNote = _.template(fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'), sharedImports);
 
-  var pageTemplate = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'),  sharedImports);
+  var pageTemplate = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'), sharedImports);
 
   // push assets into the pipeline as well.
   vfs.src([__dirname + '/assets/**'], { base: __dirname })

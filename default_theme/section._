@@ -2,7 +2,7 @@
 
   <% if (typeof nested === 'undefined') { %>
   <div class='clearfix'>
-    <h3 class='fl m0' id='<%- slug(section.namespace) %>'>
+    <h3 class='fl m0' id='<%- section.namespace %>'>
       <%- section.name %>
     </h3>
     <% if (section.context && section.context.github) { %>
