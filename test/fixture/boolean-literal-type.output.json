@@ -1,0 +1,79 @@
+[
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 1,
+        "column": 6
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "f",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "t",
+        "lineNumber": 2,
+        "type": {
+          "type": "BooleanLiteralType",
+          "value": true
+        }
+      },
+      {
+        "title": "param",
+        "name": "f",
+        "lineNumber": 2,
+        "type": {
+          "type": "BooleanLiteralType",
+          "value": false
+        }
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "type": "ArrayType",
+          "elements": [
+            {
+              "type": "BooleanLiteralType",
+              "value": true
+            },
+            {
+              "type": "BooleanLiteralType",
+              "value": false
+            }
+          ]
+        }
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "f",
+        "kind": "function"
+      }
+    ],
+    "namespace": "f"
+  }
+]
