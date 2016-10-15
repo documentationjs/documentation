@@ -47,7 +47,7 @@ var notExportedObject =  {
   func: function() {},
 };
 
-export {x, y3 as y4} from './document-exported/x.js';
+export {x, y3 as y4} from './document-exported/x';
 export z from  './document-exported/z.js';
 export y2Default from  './document-exported/y.js';
 
