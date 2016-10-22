@@ -30,6 +30,15 @@ Klass.prototype.withOptions = function (options, otherOptions) {
 };
 
 /**
+ * @typedef CustomError
+ * @name CustomError
+ * @description a typedef with nested properties
+ * @property {object} error An error
+ * @property {string} error.code The error's code
+ * @property {string} error.description The error's description
+ */
+
+/**
  * Decide whether an object is a Klass instance
  * This is a [klasssic]{@link Klass}
  * This is a [link to something that does not exist]{@link DoesNot}

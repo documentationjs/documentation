@@ -99,6 +99,16 @@
               
                 
                 <li><a
+                  href='#customerror'
+                  class="">
+                  CustomError
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#bar'
                   class="">
                   bar
@@ -789,6 +799,78 @@ k.isArrayOfBuffers();</pre>
     </div>
   
 </div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='customerror'>
+      CustomError
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>a typedef with nested properties</p>
+
+
+  <div class='pre p1 fill-light mt0'>CustomError</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>error</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+          : An error
+
+          
+            <ul>
+              
+                <li><code>error.code</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The error's code</p>
+</li>
+              
+                <li><code>error.description</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The error's description</p>
+</li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
