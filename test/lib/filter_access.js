@@ -36,9 +36,9 @@ test('filterAccess explicit public', function (t) {
     { access: 'protected' },
     { foo: 2 },
     { access: 'private' }]),
-  [{
-    access: 'public'
-  }]);
+    [{
+      access: 'public'
+    }]);
   t.end();
 });
 
