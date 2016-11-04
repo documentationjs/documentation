@@ -1,3 +1,10 @@
+## 4.0.0-beta12
+
+* Update Doctrine to handle more JSDoc types
+* Fix ReferenceError in default theme
+* Show GitHub link for nested elements in default theme
+* Fix linking resolution order
+
 ## 4.0.0-beta11
 
 * Improved support for Flow: function types, object types, mixed types, null,
