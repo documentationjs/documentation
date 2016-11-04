@@ -225,6 +225,7 @@ test('flowDoctrine', function (t) {
   // TODO: remove all these types
   t.deepEqual(types, [
     'IntersectionTypeAnnotation',
+    'EmptyTypeAnnotation',
     'ThisTypeAnnotation',
     'TypeofTypeAnnotation'
   ], 'Type coverage');
