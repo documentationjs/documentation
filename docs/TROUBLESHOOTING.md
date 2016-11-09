@@ -1,3 +1,9 @@
+## Installing documentation with npm v1 or v2 yields a gigantic `node_modules`
+
+Unfortunately, we need to recommend: use **yarn or npm v3** to install documentation.
+npm v1 and v2 are unable to properly de-duplicate dependencies, so they will
+create wastefully large `node_modules` directories under documentation.
+
 ## Error: watch ENOSPC
 
 Linux systems can have a low limit of 'watchable files'. To increase this
