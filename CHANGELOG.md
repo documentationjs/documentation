@@ -1,3 +1,7 @@
+## 4.0.0-beta13
+
+* Fix linker null reference error
+
 ## 4.0.0-beta12
 
 * Update Doctrine to handle more JSDoc types
