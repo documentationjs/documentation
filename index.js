@@ -85,6 +85,12 @@ function expandInputs(indexes, options, callback) {
  * @param {Object} [options.hljs] hljs optional options
  * @param {boolean} [options.hljs.highlightAuto=false] hljs automatically detect language
  * @param {Array} [options.hljs.languages] languages for hljs to choose from
+ * @param {string} [options.inferPrivate] a valid regular expression string
+ * to infer whether a code element should be private, given its naming structure.
+ * For instance, you can specify `inferPrivate: '^_'` to automatically treat
+ * methods named like `_myMethod` as private.
+ * @param {string|Array<string>} [options.extension] treat additional file extensions
+ * as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
  * @param {Function} callback to be called when the documentation generation
  * is complete, with (err, result) argumentsj
  * @returns {undefined} calls callback
@@ -146,6 +152,12 @@ function build(indexes, options, callback) {
  * @param {Object} [options.hljs] hljs optional options
  * @param {boolean} [options.hljs.highlightAuto=false] hljs automatically detect language
  * @param {Array} [options.hljs.languages] languages for hljs to choose from
+ * @param {string} [options.inferPrivate] a valid regular expression string
+ * to infer whether a code element should be private, given its naming structure.
+ * For instance, you can specify `inferPrivate: '^_'` to automatically treat
+ * methods named like `_myMethod` as private.
+ * @param {string|Array<string>} [options.extension] treat additional file extensions
+ * as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
  * @returns {Object} list of results
  * @public
  * @example
@@ -221,6 +233,12 @@ function buildSync(indexes, options) {
  * reduces documentation's ability to infer structure of code.
  * @param {boolean} [options.shallow=false] whether to avoid dependency parsing
  * even in JavaScript code. With the polyglot option set, this has no effect.
+ * @param {string} [options.inferPrivate] a valid regular expression string
+ * to infer whether a code element should be private, given its naming structure.
+ * For instance, you can specify `inferPrivate: '^_'` to automatically treat
+ * methods named like `_myMethod` as private.
+ * @param {string|Array<string>} [options.extension] treat additional file extensions
+ * as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
  * @param {Function} callback to be called when the documentation generation
  * is complete, with (err, result) arguments
  * @returns {undefined} calls callback

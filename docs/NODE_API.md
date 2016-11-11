@@ -24,6 +24,12 @@ comments, given a root file as a path.
     -   `options.hljs` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** hljs optional options
         -   `options.hljs.highlightAuto` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** hljs automatically detect language (optional, default `false`)
         -   `options.hljs.languages` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** languages for hljs to choose from
+    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+        to infer whether a code element should be private, given its naming structure.
+        For instance, you can specify `inferPrivate: '^_'` to automatically treat
+        methods named like `_myMethod` as private.
+    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+        as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** to be called when the documentation generation
     is complete, with (err, result) argumentsj
 
@@ -73,6 +79,12 @@ synchronously, rather than by calling a callback.
     -   `options.hljs` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** hljs optional options
         -   `options.hljs.highlightAuto` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** hljs automatically detect language (optional, default `false`)
         -   `options.hljs.languages` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** languages for hljs to choose from
+    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+        to infer whether a code element should be private, given its naming structure.
+        For instance, you can specify `inferPrivate: '^_'` to automatically treat
+        methods named like `_myMethod` as private.
+    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+        as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 
 **Examples**
 
@@ -105,6 +117,12 @@ of lint information intended for human-readable output.
         reduces documentation's ability to infer structure of code. (optional, default `false`)
     -   `options.shallow` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** whether to avoid dependency parsing
         even in JavaScript code. With the polyglot option set, this has no effect. (optional, default `false`)
+    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+        to infer whether a code element should be private, given its naming structure.
+        For instance, you can specify `inferPrivate: '^_'` to automatically treat
+        methods named like `_myMethod` as private.
+    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+        as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** to be called when the documentation generation
     is complete, with (err, result) arguments
 
