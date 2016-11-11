@@ -225,6 +225,18 @@ function buildSync(indexes, options) {
  * is complete, with (err, result) arguments
  * @returns {undefined} calls callback
  * @public
+ * @example
+ * documentation.lint('file.js', {}, function (err, lintOutput) {
+ *   if (err) {
+ *     throw err;
+ *   }
+ *   if (lintOutput) {
+ *     console.log(lintOutput);
+ *     process.exit(1);
+ *   } else {
+ *     process.exit(0);
+ *   }
+ * });
  */
 function lint(indexes, options, callback) {
   options = options || {};

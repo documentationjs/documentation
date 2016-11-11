@@ -108,6 +108,22 @@ of lint information intended for human-readable output.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** to be called when the documentation generation
     is complete, with (err, result) arguments
 
+**Examples**
+
+```javascript
+documentation.lint('file.js', {}, function (err, lintOutput) {
+  if (err) {
+    throw err;
+  }
+  if (lintOutput) {
+    console.log(lintOutput);
+    process.exit(1);
+  } else {
+    process.exit(0);
+  }
+});
+```
+
 Returns **[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)** calls callback
 
 # formats
