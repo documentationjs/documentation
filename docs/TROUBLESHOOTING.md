@@ -4,6 +4,16 @@ Unfortunately, we need to recommend: use **yarn or npm v3** to install documenta
 npm v1 and v2 are unable to properly de-duplicate dependencies, so they will
 create wastefully large `node_modules` directories under documentation.
 
+## documentation is inferring _too much_ about my code
+
+If you've written very dynamic JavaScript, all of documentation's intelligence
+might not understand it. If:
+
+* documentation is **wrong** in a clear way, please [open a descriptive issue](https://github.com/documentationjs/documentation/issues) with a code snippet and we can help!
+* if it's **right** technically but you want to control your docs entirely,
+  use the `@name` tag to declare the name of the thing (function, variable, etc)
+  you're referring to, and the tool will not try to infer anything at all.
+
 ## Error: watch ENOSPC
 
 Linux systems can have a low limit of 'watchable files'. To increase this
