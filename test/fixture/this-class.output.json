@@ -1,0 +1,361 @@
+[
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "module",
+        "description": null,
+        "lineNumber": 0,
+        "type": null,
+        "name": "bookshelf"
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 1,
+        "column": 24
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "kind": "module",
+    "name": "bookshelf",
+    "params": [
+      {
+        "title": "param",
+        "name": "title",
+        "lineNumber": 4
+      }
+    ],
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "bookshelf",
+        "kind": "module"
+      }
+    ],
+    "namespace": "bookshelf"
+  },
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 0,
+        "name": null
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 13
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "kind": "class",
+    "name": "Book",
+    "params": [
+      {
+        "title": "param",
+        "name": "title",
+        "lineNumber": 4
+      }
+    ],
+    "members": {
+      "instance": [
+        {
+          "description": {
+            "type": "root",
+            "children": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "The title of the book.",
+                    "position": {
+                      "start": {
+                        "line": 1,
+                        "column": 1,
+                        "offset": 0
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 23,
+                        "offset": 22
+                      },
+                      "indent": []
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 23,
+                    "offset": 22
+                  },
+                  "indent": []
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 23,
+                "offset": 22
+              }
+            }
+          },
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 4
+            },
+            "end": {
+              "line": 5,
+              "column": 33
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 3
+              },
+              "end": {
+                "line": 6,
+                "column": 22
+              }
+            }
+          },
+          "errors": [],
+          "name": "title",
+          "memberof": "Book",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "Book",
+              "kind": "class"
+            },
+            {
+              "name": "title",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "Book#title"
+        }
+      ],
+      "static": [],
+      "events": []
+    },
+    "path": [
+      {
+        "name": "Book",
+        "kind": "class"
+      }
+    ],
+    "namespace": "Book"
+  },
+  {
+    "description": "",
+    "tags": [
+      {
+        "title": "class",
+        "description": null,
+        "lineNumber": 0,
+        "name": null
+      }
+    ],
+    "loc": {
+      "start": {
+        "line": 9,
+        "column": 0
+      },
+      "end": {
+        "line": 9,
+        "column": 13
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 13,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "kind": "class",
+    "name": "BookShelf",
+    "params": [
+      {
+        "title": "param",
+        "name": "title",
+        "lineNumber": 10
+      }
+    ],
+    "members": {
+      "instance": [
+        {
+          "description": {
+            "type": "root",
+            "children": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "The title of the bookshelf.",
+                    "position": {
+                      "start": {
+                        "line": 1,
+                        "column": 1,
+                        "offset": 0
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 28,
+                        "offset": 27
+                      },
+                      "indent": []
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 28,
+                    "offset": 27
+                  },
+                  "indent": []
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 28,
+                "offset": 27
+              }
+            }
+          },
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 4
+            },
+            "end": {
+              "line": 11,
+              "column": 38
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 12,
+                "column": 3
+              },
+              "end": {
+                "line": 12,
+                "column": 22
+              }
+            }
+          },
+          "errors": [],
+          "name": "title",
+          "memberof": "BookShelf",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "BookShelf",
+              "kind": "class"
+            },
+            {
+              "name": "title",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "BookShelf#title"
+        }
+      ],
+      "static": [],
+      "events": []
+    },
+    "path": [
+      {
+        "name": "BookShelf",
+        "kind": "class"
+      }
+    ],
+    "namespace": "BookShelf"
+  }
+]
