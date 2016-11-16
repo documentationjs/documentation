@@ -165,7 +165,7 @@ test('inferMembership - explicit', function (t) {
       }
     };
   })[0], ['memberof', 'scope']), {
-    memberof: 'Bar',
+    memberof: 'Foo',
     scope: 'instance'
   }, 'constructor function expression assignment');
 
