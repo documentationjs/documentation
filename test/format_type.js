@@ -33,7 +33,7 @@ test('formatType', function (t) {
     ['{myNum: number, myObject}', '{myNum: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), myObject}'],
     ['[string,]', '\\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]'],
     ['number?', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'],
-    ['?number', '?[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'],
+    ['number', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'],
     ['?', '?'],
     ['void', 'void'],
     ['function(a:b)', 'function (a: b)'],

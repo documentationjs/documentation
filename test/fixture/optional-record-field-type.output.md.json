@@ -46,10 +46,6 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "["
-                    },
-                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
                       "type": "link",
@@ -62,7 +58,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "]"
+                      "value": "?"
                     }
                   ]
                 },

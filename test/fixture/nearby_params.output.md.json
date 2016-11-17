@@ -339,10 +339,6 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "["
-                    },
-                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function",
                       "type": "link",
@@ -355,7 +351,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "]"
+                      "value": "?"
                     }
                   ]
                 },

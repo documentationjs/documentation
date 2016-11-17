@@ -30,7 +30,7 @@ This method has a type in the description and a default in the code
 
 **Parameters**
 
--   `x` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)](default 2)** 
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 2** 
 
 # Foo
 
@@ -53,9 +53,9 @@ This tests  our support of optional parameters
 **Parameters**
 
 -   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** An IPv6 address string
--   `groups` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** How many octets to parse (optional, default `8`)
--   `third` **?[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** A third argument
--   `foo` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** to properly be parsed (optional, default `[1]`)
+-   `groups` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** How many octets to parse (optional, default `8`)
+-   `third` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** A third argument
+-   `foo` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)?** to properly be parsed (optional, default `[1]`)
 
 **Examples**
 
@@ -71,12 +71,12 @@ This tests our support of nested parameters
 
 **Parameters**
 
--   `options` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** optional options
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?** optional options
     -   `options.data` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** A GeoJSON data object or URL to it.
         The latter is preferable in case of large GeoJSON files.
-    -   `options.maxzoom` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Maximum zoom to preserve detail at. (optional, default `14`)
-    -   `options.buffer` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Tile buffer on each side.
-    -   `options.tolerance` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]** Simplification tolerance (higher means simpler).
+    -   `options.maxzoom` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Maximum zoom to preserve detail at. (optional, default `14`)
+    -   `options.buffer` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Tile buffer on each side.
+    -   `options.tolerance` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Simplification tolerance (higher means simpler).
 
 # myfunc
 
@@ -85,7 +85,7 @@ values specified in code.
 
 **Parameters**
 
--   `x` **\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)](default 123)** an argument
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 123** an argument
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** some
 
