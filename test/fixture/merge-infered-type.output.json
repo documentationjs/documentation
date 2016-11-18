@@ -98,10 +98,7 @@
         "title": "returns",
         "description": "x plus five.",
         "lineNumber": 4,
-        "type": {
-          "type": "NameExpression",
-          "name": "number"
-        }
+        "type": null
       }
     ],
     "loc": {
