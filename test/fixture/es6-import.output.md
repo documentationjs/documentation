@@ -140,3 +140,15 @@ A public function
 # execute
 
 This is re-exported
+
+# isArrayEqualWith
+
+Regression check for #498
+
+**Parameters**
+
+-   `array1` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
+-   `array2` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
+-   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a: T, b: T): boolean => a === b`)
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
