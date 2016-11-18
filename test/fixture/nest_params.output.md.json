@@ -290,10 +290,6 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "["
-                    },
-                    {
                       "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
                       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
                       "type": "link",
@@ -306,7 +302,7 @@
                     },
                     {
                       "type": "text",
-                      "value": "]"
+                      "value": "?"
                     }
                   ]
                 },

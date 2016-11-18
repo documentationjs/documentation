@@ -43,8 +43,8 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'><%- param.name%></span> <code class='quiet'>(<%= formatType(param.type) %><% if (param.default) { %>
-            (default <code><%- param.default %></code>)
-            <% } %>)</code> <%= md(param.description, true) %>
+            = <code><%- param.default %></code><% } %>)</code>
+	    <%= md(param.description, true) %>
           </div>
           <% if (param.properties) { %>
           <table class='mt1 mb2 fixed-table h5 col-12'>

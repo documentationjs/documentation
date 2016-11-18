@@ -33,12 +33,12 @@ test('formatType', function (t) {
     ['{myNum: number, myObject}', '{myNum: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), myObject}'],
     ['[string,]', '\\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]'],
     ['number?', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'],
-    ['?number', '?[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'],
+    ['number', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'],
     ['?', '?'],
     ['void', 'void'],
     ['function(a:b)', 'function (a: b)'],
     ['function(a):void', 'function (a): void'],
-    ['number=', '\\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]'],
+    ['number=', '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'],
     ['...number', '...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'],
     ['undefined', '[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)']
   ].forEach(function (example) {
@@ -49,7 +49,7 @@ test('formatType', function (t) {
 
   t.deepEqual(stringify(formatType(
     parse('@param {number} [a=1]', { sloppy: true }).tags[0].type)
-  ), '\\[[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)]', 'default');
+  ), '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?', 'default');
 
   t.deepEqual(stringify(_formatType(function (str) {
     return str.toUpperCase();
