@@ -142,3 +142,12 @@ function iAmAccessPrivate() { }
  * This is re-exported
  */
 export { execute } from 'external-module';
+
+/** Regression check for #498 */
+export function isArrayEqualWith<T>(
+  array1: T[],
+  array2: T[],
+  compareFunction: (a: T, b: T) => boolean = (a: T, b: T): boolean => a === b
+): boolean {
+  return true;
+}
