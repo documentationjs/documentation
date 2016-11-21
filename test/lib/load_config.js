@@ -16,5 +16,17 @@ test('loadConfig', function (t) {
   t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config_comments.json')),
     { foo: 'bar' }, 'config with comments');
 
+  t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config.yaml')),
+    { foo: 'bar' }, 'config.yaml');
+
+  t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config.yml')),
+    { foo: 'bar' }, 'config.yml');
+
+  t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config')),
+    { foo: 'bar' }, 'config in yaml without extension');
+
+  t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config_links.yml')),
+    { foo: 'hello [link](https://github.com/my/link) world' }, 'config with markdown link');
+
   t.end();
 });
