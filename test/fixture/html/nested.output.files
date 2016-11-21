@@ -698,7 +698,7 @@ k.isArrayOfBuffers();</pre>
     
       <p><p>this shows you how to getFoo</p>
 </p>
-      <pre class='p1 overflow-auto round fill-light'>foo.getFoo();</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">var</span> x = foo.getFoo();</pre>
     
   
 

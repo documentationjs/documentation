@@ -189,7 +189,6 @@ test('--config', options, function (t) {
   var expectedOutputPath = path.join(__dirname, 'fixture/html/nested.config-output.html');
   documentation(['build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
     dst], function (err) {
-      console.log(err);
     t.notOk(err);
     var output = fs.readFileSync(outputIndex, 'utf8');
     if (process.env.UPDATE) {
