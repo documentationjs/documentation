@@ -1,0 +1,2 @@
+foo: >-
+  hello [link](https://github.com/my/link) world
