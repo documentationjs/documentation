@@ -25,6 +25,16 @@
               
                 
                 <li><a
+                  href='#highlighted-section'
+                  class="h5 bold black caps">
+                  Highlighted section
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#klass'
                   class=" toggle-sibling">
                   Klass
@@ -199,6 +209,34 @@
         </div>
       </div>
       <div class='fix-margin-3'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='Highlighted section' class='mt0'>
+    Highlighted section
+  </h2>
+
+  
+    <p>The public key is a base64 encoded string of a protobuf containing an RSA DER
+buffer. This uses a node buffer to pass the base64 encoded public key protobuf
+to the multihash for ID generation.</p>
+<pre class='hljs'><span class="hljs-keyword">var</span> PeerId = <span class="hljs-built_in">require</span>(<span class="hljs-string">'peer-id'</span>)
+
+PeerId.create({ <span class="hljs-attr">bits</span>: <span class="hljs-number">1024</span> }, (err, id) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(id.toJSON(), <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>)
+})</pre>
+<pre><code>{
+  "id": "Qma9T5YraSnpRDZqRR4krcSJabThc8nwZuJV3LercPHufi",
+  "privKey": "CAAS4AQwggJcAgEAAoGBAMBgbIqyOL26oV3nGPBYrdpbv..",
+  "pubKey": "CAASogEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMBgbIqyOL26oV3nGPBYrdpbvzCY..."
+}
+</code></pre>
+
+  
+</section>
+</div>
+          
         
           
             <section class='p2 mb2 clearfix bg-white minishadow'>
