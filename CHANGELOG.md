@@ -1,3 +1,14 @@
+## 4.0.0-beta14
+
+* Highlight all Markdown, not just examples. Fixes #610
+* Fix for `--config` only strip comments on json files (#611)
+* Merge inferred return type like we do for params. Refs #359 (#604)
+* Support webpack's System.import with nice handy babel plugin (#603)
+* Format optional types with ? instead of [] (#538)
+* Fix membership assignment for old-fashioned prototype members (#599)
+* Update Node API documentation to include only exposed API surface
+* Add too-much-inference troubleshooting topic
+
 ## 4.0.0-beta13
 
 * Fix linker null reference error
