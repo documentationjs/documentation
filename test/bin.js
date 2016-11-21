@@ -182,6 +182,25 @@ test('invalid arguments', function (group) {
   group.end();
 });
 
+test('--config', options, function (t) {
+  var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  fs.mkdirSync(dst);
+  var outputIndex = path.join(dst, 'index.html');
+  var expectedOutputPath = path.join(__dirname, 'fixture/html/nested.config-output.html');
+  documentation(['build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
+    dst], function (err) {
+      console.log(err);
+    t.notOk(err);
+    var output = fs.readFileSync(outputIndex, 'utf8');
+    if (process.env.UPDATE) {
+      fs.writeFileSync(expectedOutputPath, output);
+    }
+    var expectedOutput = fs.readFileSync(expectedOutputPath, 'utf8');
+    t.equal(expectedOutput, output, 'generates correct output');
+    t.end();
+  }, false);
+});
+
 test('--version', options, function (t) {
   documentation(['--version'], {}, function (err, output) {
     t.ok(output, 'outputs version');
