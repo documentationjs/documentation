@@ -177,3 +177,53 @@ test('sort an already-sorted stream containing a section/description', function 
   t.deepEqual(sortTwice, [carrot, sectionMarkdown, bananas, apples]);
   t.end();
 });
+
+test('sort toc with files', function (t) {
+  var apples = { context: { sortKey: 'a' }, name: 'apples' };
+  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+
+  var snowflake = {
+    name: 'snowflake',
+    file: 'test/fixture/snowflake.md'
+  };
+
+  var processedSnowflake = {
+    name: 'snowflake',
+    kind: 'note',
+    description: {
+      children: [{
+        children: [{
+          position: {
+            end: {column: 16, line: 1, offset: 15},
+            indent: [],
+            start: {column: 3, line: 1, offset: 2}
+          },
+          type: 'text',
+          value: 'The Snowflake'
+        }],
+        depth: 1,
+        position: {
+          end: {column: 16, line: 1, offset: 15},
+          indent: [],
+          start: {column: 1, line: 1, offset: 0}
+        },
+        type: 'heading'
+      }],
+      position: {
+        end: {column: 1, line: 2, offset: 16},
+        start: {column: 1, line: 1, offset: 0}
+      },
+      type: 'root'
+    }
+  };
+  t.deepEqual(sort([
+    apples, carrot, bananas
+  ], {
+    toc: [snowflake]
+  }), [
+    processedSnowflake, apples, carrot, bananas
+  ], 'with configuration');
+
+  t.end();
+});
