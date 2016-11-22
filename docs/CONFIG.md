@@ -27,7 +27,7 @@ This puts the top level API documentation for the `Map`, `LngLat`, and `LngLatBo
 items in the given order, and inserts a narrative item titled `Geography`
 after the section on maps. The `description` property of that narrative item
 is interpreted as Markdown.
-If you would like reuse your existing markdown files or just keep the content separate from the configuration you can use the `file` property. It is a filename that will be resolved against `process.cwd()`.
+If you would like reuse your existing markdown files or just keep the content separate from the configuration you can use the `file` property. It is a filename it will be resolved against the directory that the `documentation.yml` file resides in.
 
 So with a `documentation.yml` file like this
 

@@ -28,5 +28,12 @@ test('loadConfig', function (t) {
   t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config_links.yml')),
     { foo: 'hello [link](https://github.com/my/link) world' }, 'config with markdown link');
 
+  t.deepEqual(loadConfig(path.join(__dirname, '../config_fixture/config_file.yml')),{
+    toc: [{
+      name: 'snowflake',
+      file: path.join(__dirname, '../fixture/snowflake.md')
+    }]
+  }, 'config with file reference');
+
   t.end();
 });
