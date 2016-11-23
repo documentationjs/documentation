@@ -1,3 +1,16 @@
+<a name="4.0.0-beta15"></a>
+# [4.0.0-beta15](https://github.com/documentationjs/documentation/compare/v4.0.0-beta14...v4.0.0-beta15) (2016-11-23)
+
+### Fixes
+
+* Infer class augments tag in cases like `Foo extends React.Component`
+
+### Features
+
+* **config:** add file property for notes ([#614](https://github.com/documentationjs/documentation/issues/614)) ([d96aa47](https://github.com/documentationjs/documentation/commit/d96aa47)), closes [#609](https://github.com/documentationjs/documentation/issues/609)
+
+
+
 ## 4.0.0-beta14
 
 * Highlight all Markdown, not just examples. Fixes #610

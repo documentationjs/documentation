@@ -24,6 +24,22 @@ Declaring formal releases remains the prerogative of the project maintainer.
 
 This is an experiment and feedback is welcome! This document may also be subject to pull-requests or changes by contributors where you believe you have something valuable to add or change.
 
------------------------------------------
-
 [this approach is totally cribbed from the excellent LevelUP project](https://github.com/rvagg/node-levelup/blob/master/CONTRIBUTING.md)
+
+----
+
+## Releasing
+
+documentation aims to **release often**. We use [standard-changelog](https://github.com/conventional-changelog/standard-changelog)
+to generate CHANGELOG.md entries and [commitizen](https://github.com/commitizen/cz-cli) to standardize
+commit messages. Pull Request messages should be standardized to commitizen syntax (aka angular standard)
+before merge.
+
+Release process:
+
+* Confirm that `master` passes CI tests
+* Bump version in `package.json`
+* Run `npm run changelog`
+* Add updated CHANGELOG.md to master
+* Push commits
+* npm publish
