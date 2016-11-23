@@ -4,4 +4,20 @@
 
 **Extends React.Component**
 
-This will fail.
+This is my component. This is from issue #458
+
+# Bar
+
+Does nothing. This is from issue #556
+
+## constructor
+
+Creates a new instance
+
+**Parameters**
+
+-   `str` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+## bar
+
+A useless property
