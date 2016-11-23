@@ -7,7 +7,7 @@
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
-    "ansi-html": "0.0.5",
+    "ansi-html": "^0.0.6",
     "babel-core": "^6.17.0",
     "babel-generator": "6.19.0",
     "babel-plugin-system-import-transformer": "2.4.0",
@@ -24,8 +24,7 @@
     "concat-stream": "^1.5.0",
     "debounce": "^1.0.0",
     "disparity": "^2.0.0",
-    "doctrine": "^1.5.0",
-    "events": "^1.1.0",
+    "doctrine": "^2.0.0",
     "extend": "^3.0.0",
     "get-comments": "^1.0.1",
     "git-url-parse": "^6.0.1",
@@ -47,7 +46,7 @@
     "standard-changelog": "0.0.1",
     "stream-array": "^1.1.0",
     "strip-json-comments": "^2.0.0",
-    "tiny-lr": "^0.2.1",
+    "tiny-lr": "^1.0.3",
     "unist-builder": "^1.0.0",
     "unist-util-visit": "^1.0.1",
     "vfile": "^2.0.0",
@@ -62,12 +61,12 @@
     "cz-conventional-changelog": "1.2.0",
     "documentation-schema": "0.0.1",
     "eslint": "^3.1.0",
-    "fs-extra": "^0.30.0",
+    "fs-extra": "^1.0.0",
     "glob": "^7.0.0",
     "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
-    "tap": "^7.1.2",
-    "tmp": "0.0.29"
+    "tap": "^8.0.0",
+    "tmp": "^0.0.29"
   },
   "keywords": [
     "documentation",
