@@ -60,3 +60,13 @@ function objectParamFn(x: { a: number }) {}
 
 /** hi */
 function objectParamFn(x: (y:Foo) => Bar) {}
+
+/** My type */
+export type T = number;
+
+/**
+ * Define my object API
+ */
+export type SomeObjectAPI = {
+  method: (param: string) => boolean
+}

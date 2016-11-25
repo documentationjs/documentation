@@ -4,6 +4,8 @@
 
 A type definition.
 
+Type: [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 **Properties**
 
 -   `prop1` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** one property

@@ -51,6 +51,26 @@
       }
     },
     {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "Object"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "strong",
       "children": [
         {

@@ -227,6 +227,26 @@
       ]
     },
     {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "boolean"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "depth": 1,
       "type": "heading",
       "children": [
@@ -484,6 +504,26 @@
       ]
     },
     {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "number"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "depth": 1,
       "type": "heading",
       "children": [
@@ -494,12 +534,52 @@
       ]
     },
     {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "depth": 1,
       "type": "heading",
       "children": [
         {
           "type": "text",
           "value": "T4"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
         }
       ]
     },

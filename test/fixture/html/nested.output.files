@@ -220,6 +220,8 @@
   <div class='pre p1 fill-light mt0'>new Klass(foo: any)</div>
 
   
+
+  
     <p>
       Extends
       
@@ -279,6 +281,8 @@ This is a [link to something that does not exist]<a href="DoesNot">DoesNot</a></
 
 
   <div class='pre p1 fill-light mt0'>isClass(other: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, also: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+
+  
 
   
 
@@ -358,6 +362,8 @@ the referenced class type</p>
   
 
   
+
+  
   
   
   
@@ -420,6 +426,8 @@ the referenced class type</p>
 
 
   <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+
+  
 
   
 
@@ -500,6 +508,8 @@ the referenced class type</p>
   
 
   
+
+  
   
   
   
@@ -574,6 +584,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
   
   
   
@@ -615,6 +627,8 @@ k.isArrayOfBuffers();</pre>
 
 
   <div class='pre p1 fill-light mt0'>event</div>
+
+  
 
   
 
@@ -668,6 +682,8 @@ k.isArrayOfBuffers();</pre>
 
 
   <div class='pre p1 fill-light mt0'>getFoo(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></div>
+
+  
 
   
 
@@ -728,6 +744,8 @@ k.isArrayOfBuffers();</pre>
 
 
   <div class='pre p1 fill-light mt0'>withOptions(options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, otherOptions: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</div>
+
+  
 
   
 
@@ -837,6 +855,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
   
   
   
@@ -911,6 +931,8 @@ like a <a href="#klass">klass</a></p>
   
 
   
+
+  
   
   
   
@@ -961,6 +983,8 @@ like a <a href="#klass">klass</a></p>
 
 
   <div class='pre p1 fill-light mt0'>bar(toys: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></div>
+
+  
 
   
 
@@ -1034,6 +1058,8 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
   
 
   
+
+  
   
   
   
@@ -1088,6 +1114,8 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
   
 
   
+
+  
   
   
   
@@ -1125,6 +1153,8 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
 
 
   <div class='pre p1 fill-light mt0'>bar</div>
+
+  
 
   
 
@@ -1185,6 +1215,8 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
   
 
   
+
+  
   
   
   
@@ -1220,6 +1252,8 @@ like a <a href="#klass">klass</a>. This needs a <a href="https://developer.mozil
 
 
   <div class='pre p1 fill-light mt0'>new passthrough()</div>
+
+  
 
   
 
