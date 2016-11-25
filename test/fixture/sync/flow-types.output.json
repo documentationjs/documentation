@@ -758,6 +758,101 @@
           "children": [
             {
               "type": "text",
+              "value": "My type",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 8,
+                  "offset": 7
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 8,
+              "offset": 7
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 8,
+          "offset": 7
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 64,
+        "column": 0
+      },
+      "end": {
+        "line": 64,
+        "column": 14
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 65,
+          "column": 0
+        },
+        "end": {
+          "line": 65,
+          "column": 23
+        }
+      }
+    },
+    "errors": [],
+    "name": "T",
+    "kind": "typedef",
+    "type": {
+      "type": "NameExpression",
+      "name": "number"
+    },
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "T",
+        "kind": "typedef"
+      }
+    ],
+    "namespace": "T"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
               "value": "Very Important Transform",
               "position": {
                 "start": {
@@ -1210,5 +1305,122 @@
       }
     ],
     "namespace": "objectParamFn"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Define my object API",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 21,
+                  "offset": 20
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 21,
+              "offset": 20
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 21,
+          "offset": 20
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 67,
+        "column": 0
+      },
+      "end": {
+        "line": 69,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 70,
+          "column": 0
+        },
+        "end": {
+          "line": 72,
+          "column": 1
+        }
+      }
+    },
+    "errors": [],
+    "name": "SomeObjectAPI",
+    "kind": "typedef",
+    "type": {
+      "type": "RecordType",
+      "fields": [
+        {
+          "type": "FieldType",
+          "key": "method",
+          "value": {
+            "type": "FunctionType",
+            "params": [
+              {
+                "type": "ParameterType",
+                "name": "param",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "string"
+                }
+              }
+            ],
+            "result": {
+              "type": "NameExpression",
+              "name": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "SomeObjectAPI",
+        "kind": "typedef"
+      }
+    ],
+    "namespace": "SomeObjectAPI"
   }
 ]

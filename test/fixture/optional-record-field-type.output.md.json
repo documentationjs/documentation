@@ -16,6 +16,61 @@
       ]
     },
     {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Type: "
+        },
+        {
+          "type": "text",
+          "value": "{"
+        },
+        {
+          "type": "text",
+          "value": "opt: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "number"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "?"
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "text",
+          "value": "req: "
+        },
+        {
+          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+          "type": "link",
+          "children": [
+            {
+              "type": "text",
+              "value": "string"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "}"
+        }
+      ]
+    },
+    {
       "type": "strong",
       "children": [
         {
