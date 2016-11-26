@@ -375,3 +375,20 @@ test('build --document-exported', function (t) {
     t.end();
   }, false);
 }, options);
+
+test('build large file without error (no deoptimized styling error)', function (t) {
+
+  var dstFile = path.join(os.tmpdir(), (Date.now() + Math.random()).toString()) + '.js';
+  var contents = '';
+  for (var i = 0; i < 4e4; i++) {
+    contents += '/* - */\n';
+  }
+  fs.writeFileSync(dstFile, contents, 'utf8');
+
+  documentation(['build ' + dstFile], {}, function (err, data, stderr) {
+    t.error(err);
+    t.equal(stderr, '');
+    fs.unlinkSync(dstFile);
+    t.end();
+  }, false);
+}, options);
