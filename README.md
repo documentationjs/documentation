@@ -101,7 +101,8 @@ Options:
   -f, --format                 [choices: "json", "md", "html"] [default: "json"]
 
 Examples:
-  documentation foo.js  parse documentation in a given file
+  documentation foo.js         parse documentation in a given file
+  documentation foo.js bar.js  parse documentation in two files
 ```
 
 ## [Contributing](CONTRIBUTING.md)
