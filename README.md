@@ -76,32 +76,38 @@ human-readable documentation. First run `documentation` with the `-h`
 option for help:
 
 ```sh
-$ documentation -h
-Usage: documentation <command> [options]
+Usage:
+
+# generate markdown docs for index.js and files it references
+bin/documentation.js build index.js -f md
+
+# generate html docs for all files in src
+bin/documentation.js build src/** -f html -o docs
+
+# document index.js, ignoring any files it requires or imports
+bin/documentation.js build index.js -f md --shallow
+
+# build, serve, and live-update html docs for app.js
+bin/documentation.js serve app.js
+
+# validate JSDoc syntax in util.js
+bin/documentation.js lint util.js
+
+# update the API section of README.md with docs from index.js
+bin/documentation.js readme index.js --section=API
+
+# build docs for all values exported by index.js
+bin/documentation.js build --document-exported index.js
+
+Commands:
+  serve [input..]   generate, update, and display HTML documentation
+  build [input..]   build documentation
+  lint [input..]    check for common style and uniformity mistakes
+  readme [input..]  inject documentation into your README.md
 
 Options:
-  --lint             check output for common style and uniformity mistakes
-                                                                       [boolean]
-  -t, --theme        specify a theme: this must be a valid theme module
-  -p, --private      generate documentation tagged as private          [boolean]
-  --version          Show version number                               [boolean]
-  --name             project name. by default, inferred from package.json
-  --project-version  project version. by default, inferred from package.json
-  --shallow          shallow mode turns off dependency resolution, only
-                     processing the specified files (or the main script
-                     specified in package.json)       [boolean] [default: false]
-  --polyglot         polyglot mode turns off dependency resolution and enables
-                     multi-language support. use this to document c++  [boolean]
-  -g, --github       infer links to github in documentation            [boolean]
-  -o, --output       output location. omit for stdout, otherwise is a filename
-                     for single-file outputs and a directory name for multi-file
-                     outputs like html                       [default: "stdout"]
-  -c, --config       configuration file. an array defining explicit sort order
-  -h, --help         Show help                                         [boolean]
-  -f, --format                 [choices: "json", "md", "html"] [default: "json"]
-
-Examples:
-  documentation foo.js  parse documentation in a given file
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]
 ```
 
 ## [Contributing](CONTRIBUTING.md)
