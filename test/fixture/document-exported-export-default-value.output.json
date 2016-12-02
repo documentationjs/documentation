@@ -1,0 +1,40 @@
+[
+  {
+    "description": "",
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 3,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 18
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 18
+        }
+      }
+    },
+    "errors": [],
+    "name": "document-exported-export-default-value.input",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "document-exported-export-default-value.input"
+      }
+    ],
+    "namespace": "document-exported-export-default-value.input"
+  }
+]
