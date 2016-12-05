@@ -24,7 +24,8 @@ var fs = require('fs'),
   formatLint = require('./lib/lint').formatLint,
   garbageCollect = require('./lib/garbage_collect'),
   lintComments = require('./lib/lint').lintComments,
-  markdownAST = require('./lib/output/markdown_ast');
+  markdownAST = require('./lib/output/markdown_ast'),
+  loadConfig = require('./lib/load_config');
 
 /**
  * Build a pipeline of comment handlers.
@@ -62,6 +63,19 @@ function expandInputs(indexes, options, callback) {
     inputFn = dependency;
   }
   inputFn(indexes, options, callback);
+}
+
+/**
+ * Given an options object, it expands the `config` field
+ * if it exists.
+ *
+ * @param {Object} options - options to process
+ * @returns {undefined}
+ */
+function expandConfig(options) {
+  if (options && typeof options.config === 'string') {
+    Object.assign(options, loadConfig(options.config));
+  }
 }
 
 /**
@@ -114,6 +128,8 @@ function expandInputs(indexes, options, callback) {
 function build(indexes, options, callback) {
   options = options || {};
 
+  expandConfig(options);
+
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
@@ -122,11 +138,14 @@ function build(indexes, options, callback) {
     if (error) {
       return callback(error);
     }
+
+    var result;
     try {
-      callback(null, buildSync(inputs, options));
+      result = buildSync(inputs, options);
     } catch (e) {
-      callback(e);
+      return callback(e);
     }
+    callback(null, result);
   });
 }
 
@@ -137,6 +156,7 @@ function build(indexes, options, callback) {
  *
  * @param {Array<string>} indexes files to process
  * @param {Object} options options
+ * @param {string} config path to configuration file to load
  * @param {Array<string>} options.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
@@ -171,6 +191,8 @@ function build(indexes, options, callback) {
 function buildSync(indexes, options) {
   options = options || {};
   options.hljs = options.hljs || {};
+
+  expandConfig(options);
 
   if (!options.access) {
     options.access = ['public', 'undefined', 'protected'];
@@ -258,6 +280,8 @@ function buildSync(indexes, options) {
  */
 function lint(indexes, options, callback) {
   options = options || {};
+
+  expandConfig(options);
 
   if (typeof indexes === 'string') {
     indexes = [indexes];
