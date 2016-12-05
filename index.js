@@ -24,7 +24,8 @@ var fs = require('fs'),
   formatLint = require('./lib/lint').formatLint,
   garbageCollect = require('./lib/garbage_collect'),
   lintComments = require('./lib/lint').lintComments,
-  markdownAST = require('./lib/output/markdown_ast');
+  markdownAST = require('./lib/output/markdown_ast'),
+  loadConfig = require('./lib/load_config');
 
 /**
  * Build a pipeline of comment handlers.
@@ -137,6 +138,7 @@ function build(indexes, options, callback) {
  *
  * @param {Array<string>} indexes files to process
  * @param {Object} options options
+ * @param {string} config path to configuration file to load
  * @param {Array<string>} options.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
@@ -171,6 +173,10 @@ function build(indexes, options, callback) {
 function buildSync(indexes, options) {
   options = options || {};
   options.hljs = options.hljs || {};
+
+  if (typeof options.config === 'string') {
+    Object.assign(options, loadConfig(options.config));
+  }
 
   if (!options.access) {
     options.access = ['public', 'undefined', 'protected'];

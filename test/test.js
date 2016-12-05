@@ -250,6 +250,22 @@ test('highlightAuto md output', function (t) {
   });
 });
 
+test('config', function (t) {
+  var file = path.join(__dirname, 'fixture', 'class.input.js');
+  var result = fs.readFileSync(path.join(__dirname, 'fixture', 'class.config.output.md')).toString();
+  documentation.build([file], {
+    config: path.join(__dirname, 'fixture', 'simple.config.yml')
+  }, function (err, out) {
+    t.ifError(err);
+    outputMarkdown(out, {}, function (err, md) {
+      t.ifError(err);
+
+      t.equal(md, result, 'rendered markdown is equal');
+      t.end();
+    });
+  });
+});
+
 test('multi-file input', function (t) {
   documentation.build([
     path.join(__dirname, 'fixture', 'simple.input.js'),
