@@ -66,6 +66,19 @@ function expandInputs(indexes, options, callback) {
 }
 
 /**
+ * Given an options object, it expands the `config` field
+ * if it exists.
+ *
+ * @param {Object} options - options to process
+ * @returns {undefined}
+ */
+function expandConfig(options) {
+  if (options && typeof options.config === 'string') {
+    Object.assign(options, loadConfig(options.config));
+  }
+}
+
+/**
  * Generate JavaScript documentation as a list of parsed JSDoc
  * comments, given a root file as a path.
  *
@@ -115,6 +128,8 @@ function expandInputs(indexes, options, callback) {
 function build(indexes, options, callback) {
   options = options || {};
 
+  expandConfig(options);
+
   if (typeof indexes === 'string') {
     indexes = [indexes];
   }
@@ -123,11 +138,14 @@ function build(indexes, options, callback) {
     if (error) {
       return callback(error);
     }
+
+    var result;
     try {
-      callback(null, buildSync(inputs, options));
+      result = buildSync(inputs, options);
     } catch (e) {
-      callback(e);
+      return callback(e);
     }
+    callback(null, result);
   });
 }
 
@@ -174,9 +192,7 @@ function buildSync(indexes, options) {
   options = options || {};
   options.hljs = options.hljs || {};
 
-  if (typeof options.config === 'string') {
-    Object.assign(options, loadConfig(options.config));
-  }
+  expandConfig(options);
 
   if (!options.access) {
     options.access = ['public', 'undefined', 'protected'];
@@ -264,6 +280,8 @@ function buildSync(indexes, options) {
  */
 function lint(indexes, options, callback) {
   options = options || {};
+
+  expandConfig(options);
 
   if (typeof indexes === 'string') {
     indexes = [indexes];
