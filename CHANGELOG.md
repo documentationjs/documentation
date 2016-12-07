@@ -1,3 +1,21 @@
+<a name="4.0.0-beta16"></a>
+# [4.0.0-beta16](https://github.com/documentationjs/documentation/compare/v4.0.0-beta15...v4.0.0-beta16) (2016-12-07)
+
+
+### Bug Fixes
+
+* **bin:** Remove dead code in documentation.js command (#627) ([ab16a20](https://github.com/documentationjs/documentation/commit/ab16a20))
+* **extractors:** Document export default value (#623) ([363a108](https://github.com/documentationjs/documentation/commit/363a108)), closes [#543](https://github.com/documentationjs/documentation/issues/543)
+* **parser:** Avoid error about deoptimization on very large files (#621) ([846ab94](https://github.com/documentationjs/documentation/commit/846ab94))
+
+### Features
+
+* **build:** load passed in config option (#625) ([89fb67f](https://github.com/documentationjs/documentation/commit/89fb67f))
+* **output:** Display type information for typedefs in Markdown and HTML ([8b04029](https://github.com/documentationjs/documentation/commit/8b04029))
+
+
+
+
 <a name="4.0.0-beta15"></a>
 # [4.0.0-beta15](https://github.com/documentationjs/documentation/compare/v4.0.0-beta14...v4.0.0-beta15) (2016-11-23)
 
