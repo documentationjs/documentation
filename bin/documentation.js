@@ -50,8 +50,3 @@ if (!argv._handled) {
   yargs.showHelp('error');
   process.exit(1);
 }
-
-
-if (!yargs.argv._.length) {
-  yargs.showHelp();
-}
