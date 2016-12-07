@@ -1,6 +1,6 @@
 # Getting Started
 
-Assuming that you've installed the `documentation` application, how do you
+Assuming that you've installed the `documentation` application (`npm install -g documentation` if you haven't), how do you
 get started actually using it to document your code?
 
 Traditionally you might write documentation by creating a new Markdown
