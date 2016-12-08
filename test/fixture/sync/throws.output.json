@@ -301,7 +301,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

@@ -66,12 +66,6 @@
                         .MAGIC_NUMBER
                       </a></li>
                     
-                      <li><a
-                        href='#Klass.event:event'
-                        class='regular pre-open'>
-                        .event
-                      </a></li>
-                    
                     </ul>
                   
                   
@@ -92,6 +86,17 @@
                       
                     </ul>
                   
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'>Events</li>
+                      
+                        <li><a
+                          href='#Klass.event:event'
+                          class='regular pre-open'>
+                          ⓔ event
+                        </a></li>
+                      
+                    </ul>
                   
                 </div>
                 
@@ -599,51 +604,6 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass.event:event'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>event</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Klass event</p>
-
-
-  <div class='pre p1 fill-light mt0'>event</div>
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
 </div>
 
   
@@ -809,6 +769,57 @@ k.isArrayOfBuffers();</pre>
 </div>
 
   
+
+  
+    <div class='py1 quiet mt1 prose-big'>Events</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='Klass.event:event'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>event</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Klass event</p>
+
+
+  <div class='pre p1 fill-light mt0'>event</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 </section>

@@ -188,7 +188,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -367,7 +368,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -483,7 +485,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -730,7 +733,8 @@
           "scope": "instance",
           "members": {
             "instance": [],
-            "static": []
+            "static": [],
+            "events": []
           },
           "path": [
             {
@@ -1197,7 +1201,8 @@
     ],
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -1733,7 +1738,8 @@
     ],
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -1974,7 +1980,8 @@
     "kind": "constant",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -2135,7 +2142,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

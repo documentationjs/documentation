@@ -49,7 +49,6 @@ test('hierarchy', function (t) {
      * @name event
      * @memberof Class
      * @kind event
-     * @instance
      */
   });
 

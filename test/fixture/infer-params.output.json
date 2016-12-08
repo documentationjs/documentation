@@ -87,6 +87,7 @@
     "name": "addThem",
     "kind": "function",
     "members": {
+      "events": [],
       "instance": [],
       "static": []
     },
@@ -162,6 +163,7 @@
     "name": "fishesAndFoxes",
     "kind": "function",
     "members": {
+      "events": [],
       "instance": [],
       "static": []
     },
@@ -255,6 +257,7 @@
           "memberof": "Foo",
           "scope": "instance",
           "members": {
+            "events": [],
             "instance": [],
             "static": []
           },
@@ -331,6 +334,7 @@
     "name": "withDefault",
     "kind": "function",
     "members": {
+      "events": [],
       "instance": [],
       "static": []
     },

@@ -28,7 +28,8 @@
     "name": "document-exported-export-default-object.input",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -66,7 +67,8 @@
     "name": "x",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
