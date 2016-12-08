@@ -28,7 +28,8 @@
     "name": "document-exported-export-default-value.input",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

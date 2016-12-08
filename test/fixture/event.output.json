@@ -237,7 +237,8 @@
     ],
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

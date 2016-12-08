@@ -86,7 +86,8 @@
     "name": "cheese",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

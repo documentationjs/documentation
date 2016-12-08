@@ -86,7 +86,8 @@
     "kind": "class",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -281,7 +282,8 @@
           "scope": "instance",
           "members": {
             "instance": [],
-            "static": []
+            "static": [],
+            "events": []
           },
           "path": [
             {
@@ -388,7 +390,8 @@
           "scope": "instance",
           "members": {
             "instance": [],
-            "static": []
+            "static": [],
+            "events": []
           },
           "path": [
             {

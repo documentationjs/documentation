@@ -150,7 +150,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -311,7 +312,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -410,7 +412,8 @@
     "name": "Something",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

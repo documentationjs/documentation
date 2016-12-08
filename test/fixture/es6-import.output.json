@@ -157,7 +157,8 @@
     ],
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -247,7 +248,8 @@
     "name": "es6-ext",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -407,7 +409,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {

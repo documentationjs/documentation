@@ -157,7 +157,8 @@
     ],
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
@@ -388,7 +389,8 @@
     "kind": "function",
     "members": {
       "instance": [],
-      "static": []
+      "static": [],
+      "events": []
     },
     "path": [
       {
