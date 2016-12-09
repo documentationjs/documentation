@@ -27,11 +27,11 @@ test('polyglot', function (t) {
         description: remark().parse('color'),
         type: { name: 'number', type: 'NameExpression' } } ],
     tags: [ { description: null, lineNumber: 2, name: 'hexToUInt32Color', title: 'name' },
-    { description: null, lineNumber: 3, name: 'hex', title: 'param', type: {
-      name: 'string', type: 'NameExpression'
-    } },
-    { description: 'color', lineNumber: 4, title: 'returns', type: {
-      name: 'number', type: 'NameExpression'
-    } } ] } ], 'polyglot parser');
+      { description: null, lineNumber: 3, name: 'hex', title: 'param', type: {
+        name: 'string', type: 'NameExpression'
+      } },
+      { description: 'color', lineNumber: 4, title: 'returns', type: {
+        name: 'number', type: 'NameExpression'
+      } } ] } ], 'polyglot parser');
   t.end();
 });
