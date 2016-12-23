@@ -1,3 +1,17 @@
+<a name="4.0.0-beta.17"></a>
+# [4.0.0-beta.17](https://github.com/documentationjs/documentation/compare/v4.0.0-beta16...v4.0.0-beta.17) (2016-12-23)
+
+This release also fixes a mistake I was making with semver: pre-v4 beta
+releases will be called `beta.17` and `beta.18` and so on, rather than
+non-standard `beta16` without the `.`.
+
+
+### Bug Fixes
+
+* **hierarchy:** collect events from static and instance members (#628) ([f1e0267](https://github.com/documentationjs/documentation/commit/f1e0267)), closes [#486](https://github.com/documentationjs/documentation/issues/486)
+
+
+
 <a name="4.0.0-beta16"></a>
 # [4.0.0-beta16](https://github.com/documentationjs/documentation/compare/v4.0.0-beta15...v4.0.0-beta16) (2016-12-07)
 

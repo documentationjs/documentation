@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "4.0.0-beta16",
+  "version": "4.0.0-beta.17",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -85,7 +85,7 @@
   "scripts": {
     "lint": "eslint bin lib index.js test",
     "doc": "documentation build index.js -f md --access=public > docs/NODE_API.md",
-    "changelog": "standard-changelog -i CHANGELOG.md -s",
+    "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
     "test": "npm run lint && npm run self-lint && tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
   },
