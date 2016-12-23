@@ -43,7 +43,6 @@
     "remark-toc": "^3.0.0",
     "remote-origin-url": "0.4.0",
     "resolve": "^1.1.6",
-    "standard-changelog": "0.0.1",
     "stream-array": "^1.1.0",
     "strip-json-comments": "^2.0.0",
     "tiny-lr": "^1.0.3",
@@ -58,6 +57,7 @@
   },
   "devDependencies": {
     "chdir": "0.0.0",
+    "standard-changelog": "0.0.1",
     "cz-conventional-changelog": "1.2.0",
     "documentation-schema": "0.0.1",
     "eslint": "^3.1.0",
