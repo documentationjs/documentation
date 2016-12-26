@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![David](https://david-dm.org/documentationjs/documentation.svg)](https://david-dm.org/documentationjs/documentation)
-[![codecov.io](https://codecov.io/github/documentationjs/documentation/coverage.svg?branch=master)](https://codecov.io/github/documentationjs/documentation?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/github/documentationjs/documentation?branch=master)
 [![Inline docs](http://inch-ci.org/github/documentationjs/documentation.svg?branch=master&style=flat-square)](http://inch-ci.org/github/documentationjs/documentation)
 
 A **documentation generation system** that's
