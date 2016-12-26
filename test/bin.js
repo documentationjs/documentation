@@ -141,7 +141,20 @@ test('external modules option', function (t) {
 
 test('extension option', function (t) {
   documentation(['build fixture/extension/index.otherextension ' +
-    '--extension=otherextension'], function (err, data) {
+    '--requireExtension=otherextension --parseExtension=otherextension'], function (err, data) {
+    t.ifError(err);
+    t.equal(data.length, 1, 'includes a file with an arbitrary extension');
+    t.end();
+  });
+});
+
+/*
+ * This tests that parseExtension adds extensions to smartGlob's
+ * look through directories.
+ */
+test('polyglot + parseExtension + smartGlob', function (t) {
+  documentation(['build fixture/polyglot ' +
+    '--polyglot --parseExtension=cpp'], function (err, data) {
     t.ifError(err);
     t.equal(data.length, 1, 'includes a file with an arbitrary extension');
     t.end();

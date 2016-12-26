@@ -45,6 +45,15 @@ test('shallow deps not found', function (t) {
   t.end();
 });
 
+test('throws on non-string or object input', function (t) {
+  t.throws(function () {
+    shallow([
+      true
+    ], {});
+  }, 'indexes should be either strings or objects');
+  t.end();
+});
+
 test('shallow deps literal', function (t) {
   var obj = {
     file: 'foo.js',
