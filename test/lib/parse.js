@@ -82,6 +82,26 @@ test('parse - @augments', function (t) {
   t.end();
 });
 
+/*
+ * Dossier-style augments tag
+ * https://github.com/google/closure-library/issues/746
+ */
+test('parse - @augments in dossier style', function (t) {
+  t.equal(evaluate(function () {
+    /** @augments {Foo} */
+  })[0].augments[0].name, 'Foo', 'augments');
+
+  t.end();
+});
+
+test('parse - @augments of complex passes through', function (t) {
+  t.deepEqual(evaluate(function () {
+  /** @augments {function()} */
+  })[0].augments, []);
+
+  t.end();
+});
+
 test('parse - @author', function (t) {
   t.end();
 });

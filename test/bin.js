@@ -139,6 +139,14 @@ test('external modules option', function (t) {
   });
 });
 
+test('when a file is specified both in a glob and explicitly, it is only documented once', function (t) {
+  documentation(['build fixture/simple.input.js fixture/simple.input.*'], function (err, data) {
+    t.ifError(err);
+    t.equal(data.length, 1, 'File is documented only once');
+    t.end();
+  });
+});
+
 test('extension option', function (t) {
   documentation(['build fixture/extension/index.otherextension ' +
     '--requireExtension=otherextension --parseExtension=otherextension'], function (err, data) {
