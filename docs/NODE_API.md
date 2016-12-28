@@ -12,23 +12,23 @@ comments, given a root file as a path.
     -   `options.external` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-    -   `options.polyglot` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** parse comments with a regex rather than
+    -   `options.polyglot` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** parse comments with a regex rather than
         a proper parser. This enables support of non-JavaScript languages but
         reduces documentation's ability to infer structure of code. (optional, default `false`)
-    -   `options.shallow` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** whether to avoid dependency parsing
+    -   `options.shallow` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** whether to avoid dependency parsing
         even in JavaScript code. With the polyglot option set, this has no effect. (optional, default `false`)
-    -   `options.order` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>]** optional array that
+    -   `options.order` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>?** optional array that
         defines sorting order of documentation (optional, default `[]`)
-    -   `options.access` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>]** an array of access levels
+    -   `options.access` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>?** an array of access levels
         to output in documentation (optional, default `[]`)
-    -   `options.hljs` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** hljs optional options
-        -   `options.hljs.highlightAuto` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** hljs automatically detect language (optional, default `false`)
-        -   `options.hljs.languages` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** languages for hljs to choose from
-    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+    -   `options.hljs` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?** hljs optional options
+        -   `options.hljs.highlightAuto` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** hljs automatically detect language (optional, default `false`)
+        -   `options.hljs.languages` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)?** languages for hljs to choose from
+    -   `options.inferPrivate` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
         methods named like `_myMethod` as private.
-    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+    -   `options.extension` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)?** treat additional file extensions
         as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** to be called when the documentation generation
     is complete, with (err, result) argumentsj
@@ -67,24 +67,25 @@ synchronously, rather than by calling a callback.
     -   `options.external` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-    -   `options.polyglot` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** parse comments with a regex rather than
+    -   `options.polyglot` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** parse comments with a regex rather than
         a proper parser. This enables support of non-JavaScript languages but
         reduces documentation's ability to infer structure of code. (optional, default `false`)
-    -   `options.shallow` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** whether to avoid dependency parsing
+    -   `options.shallow` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** whether to avoid dependency parsing
         even in JavaScript code. With the polyglot option set, this has no effect. (optional, default `false`)
-    -   `options.order` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>]** optional array that
+    -   `options.order` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))>?** optional array that
         defines sorting order of documentation (optional, default `[]`)
-    -   `options.access` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>]** an array of access levels
+    -   `options.access` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>?** an array of access levels
         to output in documentation (optional, default `[]`)
-    -   `options.hljs` **\[[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)]** hljs optional options
-        -   `options.hljs.highlightAuto` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** hljs automatically detect language (optional, default `false`)
-        -   `options.hljs.languages` **\[[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)]** languages for hljs to choose from
-    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+    -   `options.hljs` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?** hljs optional options
+        -   `options.hljs.highlightAuto` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** hljs automatically detect language (optional, default `false`)
+        -   `options.hljs.languages` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)?** languages for hljs to choose from
+    -   `options.inferPrivate` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
         methods named like `_myMethod` as private.
-    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+    -   `options.extension` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)?** treat additional file extensions
         as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
+-   `config` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** path to configuration file to load
 
 **Examples**
 
@@ -112,16 +113,16 @@ of lint information intended for human-readable output.
     -   `options.external` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-    -   `options.polyglot` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** parse comments with a regex rather than
+    -   `options.polyglot` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** parse comments with a regex rather than
         a proper parser. This enables support of non-JavaScript languages but
         reduces documentation's ability to infer structure of code. (optional, default `false`)
-    -   `options.shallow` **\[[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)]** whether to avoid dependency parsing
+    -   `options.shallow` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** whether to avoid dependency parsing
         even in JavaScript code. With the polyglot option set, this has no effect. (optional, default `false`)
-    -   `options.inferPrivate` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** a valid regular expression string
+    -   `options.inferPrivate` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
         methods named like `_myMethod` as private.
-    -   `options.extension` **\[([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)]** treat additional file extensions
+    -   `options.extension` **([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>)?** treat additional file extensions
         as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** to be called when the documentation generation
     is complete, with (err, result) arguments
@@ -159,7 +160,7 @@ Formats documentation as HTML.
 
 -   `comments` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** parsed comments
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options that can customize the output
-    -   `options.theme` **\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
+    -   `options.theme` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** Called with array of results as vinyl-fs objects.
 
 **Examples**
@@ -170,7 +171,7 @@ var streamArray = require('stream-array');
 var vfs = require('vinyl-fs');
 
 documentation.build(['index.js'], {}, function (err, res) {
-  documentation.formats.html(res, {}, function(output) {
+  documentation.formats.html(res, {}, function(err, output) {
     streamArray(output).pipe(vfs.dest('./output-directory'));
   });
 });
@@ -196,7 +197,7 @@ var documentation = require('documentation');
 var fs = require('fs');
 
 documentation.build(['index.js'], {}, function (err, res) {
-  documentation.formats.md(res, {}, function(output) {
+  documentation.formats.md(res, {}, function(err, output) {
     // output is a string of JSON data
     fs.writeFileSync('./output.md', output);
   });
@@ -222,7 +223,7 @@ var documentation = require('documentation');
 var fs = require('fs');
 
 documentation.build(['index.js'], {}, function (err, res) {
-  documentation.formats.json(res, {}, function(output) {
+  documentation.formats.json(res, {}, function(err, output) {
     // output is a string of JSON data
     fs.writeFileSync('./output.json', output);
   });
