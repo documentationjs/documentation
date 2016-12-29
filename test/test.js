@@ -157,7 +157,7 @@ test('outputs', function (ttt) {
 
         if (file.match(/es6.input.js/)) {
           tt.test('no markdown TOC', function (t) {
-            outputMarkdown(_.cloneDeep(result), { 'no-markdown-toc': true }, function (err, result) {
+            outputMarkdown(_.cloneDeep(result), { markdownToc: false }, function (err, result) {
               t.ifError(err);
               var outputfile = file.replace('.input.js', '.output-toc.md');
               if (UPDATE) {
