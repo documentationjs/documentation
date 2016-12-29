@@ -59,6 +59,14 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
   });
 }
 
+test('document-exported error', function (t) {
+  var file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
+  documentation.build([file], { documentExported: true }, function (err, result) {
+    t.match(err.message, /Unable to find the value x/g, 'Produces a descriptive error');
+    t.end();
+  });
+});
+
 test('external modules option', function (t) {
   documentation.build([
     path.join(__dirname, 'fixture', 'external.input.js')

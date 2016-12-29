@@ -12,6 +12,9 @@ var argv = yargs
   .command(commands.build)
   .command(commands.lint)
   .command(commands.readme)
+  .fail(function (msg, error) {
+    throw error;
+  })
   .version(function () {
     return require('../package').version;
   })
