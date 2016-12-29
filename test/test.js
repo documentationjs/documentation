@@ -147,6 +147,21 @@ test('outputs', function (ttt) {
           });
         });
 
+        if (file.match(/es6.input.js/)) {
+          tt.test('no markdown TOC', function (t) {
+            outputMarkdown(_.cloneDeep(result), { 'no-markdown-toc': true }, function (err, result) {
+              t.ifError(err);
+              var outputfile = file.replace('.input.js', '.output-toc.md');
+              if (UPDATE) {
+                fs.writeFileSync(outputfile, result, 'utf8');
+              }
+              var expect = fs.readFileSync(outputfile, 'utf8');
+              t.equal(result.toString(), expect, 'markdown output correct');
+              t.end();
+            });
+          });
+        }
+
         tt.test('markdown AST', function (t) {
           outputMarkdownAST(_.cloneDeep(result), {}, function (err, result) {
             t.ifError(err);
