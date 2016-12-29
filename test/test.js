@@ -143,7 +143,7 @@ test('outputs', function (ttt) {
         tt.ifError(err);
 
         tt.test('markdown', function (t) {
-          outputMarkdown(_.cloneDeep(result), {}, function (err, result) {
+          outputMarkdown(_.cloneDeep(result), { markdownToc: true }, function (err, result) {
             t.ifError(err);
             var outputfile = file.replace('.input.js', '.output.md');
             if (UPDATE) {
@@ -212,7 +212,7 @@ test('outputs - sync', function (ttt) {
       var result = documentation.buildSync([file], readOptionsFromFile(file));
 
       tt.test('markdown', function (t) {
-        outputMarkdown(result, {}, function (err, result) {
+        outputMarkdown(result, { markdownToc: true }, function (err, result) {
           t.ifError(err);
           var outputfile = file.replace('.input.js', '.output.md');
           if (UPDATE) {
