@@ -13,7 +13,13 @@ var argv = yargs
   .command(commands.lint)
   .command(commands.readme)
   .fail(function (msg, error) {
-    throw error;
+    if (error) {
+      throw error;
+    } else {
+      yargs.showHelp('error');
+      console.error(msg);
+      return yargs.exit(1);
+    }
   })
   .version(function () {
     return require('../package').version;
