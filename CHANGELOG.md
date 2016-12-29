@@ -1,3 +1,23 @@
+<a name="4.0.0-beta.18"></a>
+# [4.0.0-beta.18](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.17...v4.0.0-beta.18) (2016-12-29)
+
+
+### Bug Fixes
+
+* **cli:** Fix error reporting in the CLI ([88c8f9a](https://github.com/documentationjs/documentation/commit/88c8f9a))
+* **markdown:** Start headings in Markdown at h2 (#644) ([2ae5d8f](https://github.com/documentationjs/documentation/commit/2ae5d8f))
+
+### Features
+
+* **bin:** Support globs on windows and use smarter recursion (#629) ([cb8fdfa](https://github.com/documentationjs/documentation/commit/cb8fdfa)), closes [#607](https://github.com/documentationjs/documentation/issues/607)
+* **markdown:** Add table of contents support for Markdown mode (#645) ([4c66fb1](https://github.com/documentationjs/documentation/commit/4c66fb1))
+
+### Performance Improvements
+
+* **dependencies:** Move standard-changelog to devDependencies (#636) ([7a66b3f](https://github.com/documentationjs/documentation/commit/7a66b3f))
+
+
+
 <a name="4.0.0-beta.17"></a>
 # [4.0.0-beta.17](https://github.com/documentationjs/documentation/compare/v4.0.0-beta16...v4.0.0-beta.17) (2016-12-23)
 
