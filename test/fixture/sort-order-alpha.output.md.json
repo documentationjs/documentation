@@ -13,16 +13,7 @@
           "type": "text",
           "value": "a"
         }
-      ],
-      "data": {
-        "id": "a",
-        "htmlAttributes": {
-          "id": "a"
-        },
-        "hProperties": {
-          "id": "a"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -32,16 +23,7 @@
           "type": "text",
           "value": "b"
         }
-      ],
-      "data": {
-        "id": "b",
-        "htmlAttributes": {
-          "id": "b"
-        },
-        "hProperties": {
-          "id": "b"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -51,73 +33,7 @@
           "type": "text",
           "value": "C"
         }
-      ],
-      "data": {
-        "id": "c",
-        "htmlAttributes": {
-          "id": "c"
-        },
-        "hProperties": {
-          "id": "c"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "A"
-        }
-      ],
-      "data": {
-        "id": "a-1",
-        "htmlAttributes": {
-          "id": "a-1"
-        },
-        "hProperties": {
-          "id": "a-1"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "a"
-        }
-      ],
-      "data": {
-        "id": "a-2",
-        "htmlAttributes": {
-          "id": "a-2"
-        },
-        "hProperties": {
-          "id": "a-2"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "B"
-        }
-      ],
-      "data": {
-        "id": "b-1",
-        "htmlAttributes": {
-          "id": "b-1"
-        },
-        "hProperties": {
-          "id": "b-1"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -127,16 +43,37 @@
           "type": "text",
           "value": "b"
         }
-      ],
-      "data": {
-        "id": "b-2",
-        "htmlAttributes": {
-          "id": "b-2"
-        },
-        "hProperties": {
-          "id": "b-2"
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "B"
         }
-      }
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "A"
+        }
+      ]
     },
     {
       "depth": 2,
@@ -146,73 +83,7 @@
           "type": "text",
           "value": "D"
         }
-      ],
-      "data": {
-        "id": "d",
-        "htmlAttributes": {
-          "id": "d"
-        },
-        "hProperties": {
-          "id": "d"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "A"
-        }
-      ],
-      "data": {
-        "id": "a-3",
-        "htmlAttributes": {
-          "id": "a-3"
-        },
-        "hProperties": {
-          "id": "a-3"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "a"
-        }
-      ],
-      "data": {
-        "id": "a-4",
-        "htmlAttributes": {
-          "id": "a-4"
-        },
-        "hProperties": {
-          "id": "a-4"
-        }
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "B"
-        }
-      ],
-      "data": {
-        "id": "b-3",
-        "htmlAttributes": {
-          "id": "b-3"
-        },
-        "hProperties": {
-          "id": "b-3"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -222,16 +93,37 @@
           "type": "text",
           "value": "b"
         }
-      ],
-      "data": {
-        "id": "b-4",
-        "htmlAttributes": {
-          "id": "b-4"
-        },
-        "hProperties": {
-          "id": "b-4"
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "B"
         }
-      }
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "a"
+        }
+      ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "A"
+        }
+      ]
     }
   ]
 }

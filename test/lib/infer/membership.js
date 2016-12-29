@@ -6,9 +6,9 @@ var test = require('tap').test,
 
 function toComment(fn, file) {
   return parse({
-    file: file,
+    file,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  });
+  }, {});
 }
 
 function pick(obj, props) {
@@ -111,6 +111,7 @@ test('inferMembership - explicit', function (t) {
     scope: 'instance'
   }, 'instance object assignment');
 
+  /* eslint object-shorthand: 0 */
   t.deepEqual(pick(evaluate(function () {
     Foo.prototype = {
       /**
@@ -122,6 +123,18 @@ test('inferMembership - explicit', function (t) {
     memberof: 'Foo',
     scope: 'instance'
   }, 'instance object assignment, function');
+
+  t.deepEqual(pick(evaluate(function () {
+    Foo.prototype = {
+      /**
+       * Test
+       */
+      bar() {}
+    };
+  })[0], ['memberof', 'scope']), {
+    memberof: 'Foo',
+    scope: 'instance'
+  }, 'instance object assignment, shorthand function');
 
   t.deepEqual(pick(evaluate(function () {
     var Foo = {
@@ -252,7 +265,7 @@ test('inferMembership - explicit', function (t) {
 
   t.equal(evaluate(function () {
     lend(/** @lends Foo */{});
-  })[0], undefined, 'inferMembership - drops lends');
+  })[0].memberof, undefined, 'inferMembership - drops lends');
 
   t.end();
 });
@@ -288,7 +301,7 @@ test('inferMembership - exports', function (t) {
     /** @module mod */
     exports.foo = {
       /** bar */
-      bar: function () {}
+      bar() {}
     };
   })[1].memberof, 'mod.foo');
 
@@ -302,7 +315,7 @@ test('inferMembership - exports', function (t) {
     /** @module mod */
     exports.foo.prototype = {
       /** bar */
-      bar: function () {}
+      bar() {}
     };
   })[1].memberof, 'mod.foo');
 
@@ -340,7 +353,7 @@ test('inferMembership - module.exports', function (t) {
     /** @module mod */
     module.exports.foo = {
       /** bar */
-      bar: function () {}
+      bar() {}
     };
   })[1].memberof, 'mod.foo');
 
@@ -354,7 +367,7 @@ test('inferMembership - module.exports', function (t) {
     /** @module mod */
     module.exports.prototype = {
       /** bar */
-      bar: function () {}
+      bar() {}
     };
   })[1].memberof, 'mod');
 
@@ -428,7 +441,7 @@ test('inferMembership - https://github.com/documentationjs/documentation/issues/
   t.deepEqual(pick(evaluate(function () {
     Foo.prototype = {
       /** Test */
-      bar: function () {
+      bar() {
         lend();
         lend();
       }

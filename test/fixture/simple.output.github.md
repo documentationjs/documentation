@@ -2,7 +2,7 @@
 
 ## simple.input
 
-[test/fixture/simple.input.js:5-8]([github] "Source code on GitHub")
+[undefined:5-8](<> "Source code on GitHub")
 
 This function returns the number one.
 

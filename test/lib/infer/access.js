@@ -2,13 +2,13 @@
 
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
-  inferName = require('../../../lib/infer/name')(),
+  inferName = require('../../../lib/infer/name'),
   inferAccess = require('../../../lib/infer/access');
 
 function toComment(fn) {
   return parse({
     source: '(' + fn.toString() + ')'
-  })[0];
+  }, {})[0];
 }
 
 function evaluate(fn, re) {

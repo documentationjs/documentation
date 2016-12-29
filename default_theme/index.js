@@ -8,12 +8,12 @@ var fs = require('fs'),
   concat = require('concat-stream'),
   GithubSlugger = require('github-slugger'),
   createFormatters = require('../').util.createFormatters,
-  createLinkerStack = require('../').util.createLinkerStack,
+  LinkerStack = require('../').util.LinkerStack,
   hljs = require('highlight.js');
 
-module.exports = function (comments, options, callback) {
+module.exports = function (comments/*: Array<Comment> */, config/*: DocumentationConfig */) {
 
-  var linkerStack = createLinkerStack(options)
+  var linkerStack = new LinkerStack(config)
     .namespaceResolver(comments, function (namespace) {
       var slugger = new GithubSlugger();
       return '#' + slugger.slug(namespace);
@@ -21,15 +21,15 @@ module.exports = function (comments, options, callback) {
 
   var formatters = createFormatters(linkerStack.link);
 
-  hljs.configure(options.hljs || {});
+  hljs.configure(config.hljs || {});
 
   var sharedImports = {
     imports: {
-      slug: function (str) {
+      slug(str) {
         var slugger = new GithubSlugger();
         return slugger.slug(str);
       },
-      shortSignature: function (section) {
+      shortSignature(section) {
         var prefix = '';
         if (section.kind === 'class') {
           prefix = 'new ';
@@ -38,7 +38,7 @@ module.exports = function (comments, options, callback) {
         }
         return prefix + section.name + formatters.parameters(section, true);
       },
-      signature: function (section) {
+      signature(section) {
         var returns = '';
         var prefix = '';
         if (section.kind === 'class') {
@@ -46,13 +46,13 @@ module.exports = function (comments, options, callback) {
         } else if (section.kind !== 'function') {
           return section.name;
         }
-        if (section.returns) {
+        if (section.returns.length) {
           returns = ': ' +
             formatters.type(section.returns[0].type);
         }
         return prefix + section.name + formatters.parameters(section) + returns;
       },
-      md: function (ast, inline) {
+      md(ast, inline) {
         if (inline && ast && ast.children.length && ast.children[0].type === 'paragraph') {
           ast = {
             type: 'root',
@@ -63,8 +63,8 @@ module.exports = function (comments, options, callback) {
       },
       formatType: formatters.type,
       autolink: formatters.autolink,
-      highlight: function (example) {
-        if (options.hljs && options.hljs.highlightAuto) {
+      highlight(example) {
+        if (config.hljs && config.hljs.highlightAuto) {
           return hljs.highlightAuto(example).value;
         }
         return hljs.highlight('js', example).value;
@@ -79,14 +79,16 @@ module.exports = function (comments, options, callback) {
   var pageTemplate = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'),  sharedImports);
 
   // push assets into the pipeline as well.
-  vfs.src([__dirname + '/assets/**'], { base: __dirname })
-    .pipe(concat(function (files) {
-      callback(null, files.concat(new File({
-        path: 'index.html',
-        contents: new Buffer(pageTemplate({
-          docs: comments,
-          options: options
-        }), 'utf8')
-      })));
-    }));
+  return new Promise(resolve => {
+    vfs.src([__dirname + '/assets/**'], { base: __dirname })
+      .pipe(concat(function (files) {
+        resolve(files.concat(new File({
+          path: 'index.html',
+          contents: new Buffer(pageTemplate({
+            docs: comments,
+            config: config
+          }), 'utf8')
+        })));
+      }));
+  });
 };

@@ -13,16 +13,7 @@
           "type": "text",
           "value": "z"
         }
-      ],
-      "data": {
-        "id": "z",
-        "htmlAttributes": {
-          "id": "z"
-        },
-        "hProperties": {
-          "id": "z"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -32,16 +23,7 @@
           "type": "text",
           "value": "zMethod"
         }
-      ],
-      "data": {
-        "id": "zmethod",
-        "htmlAttributes": {
-          "id": "zmethod"
-        },
-        "hProperties": {
-          "id": "zmethod"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -51,16 +33,7 @@
           "type": "text",
           "value": "x"
         }
-      ],
-      "data": {
-        "id": "x",
-        "htmlAttributes": {
-          "id": "x"
-        },
-        "hProperties": {
-          "id": "x"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -107,16 +80,7 @@
           "type": "text",
           "value": "Class"
         }
-      ],
-      "data": {
-        "id": "class",
-        "htmlAttributes": {
-          "id": "class"
-        },
-        "hProperties": {
-          "id": "class"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -126,16 +90,7 @@
           "type": "text",
           "value": "classMethod"
         }
-      ],
-      "data": {
-        "id": "classmethod",
-        "htmlAttributes": {
-          "id": "classmethod"
-        },
-        "hProperties": {
-          "id": "classmethod"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -145,16 +100,7 @@
           "type": "text",
           "value": "classGetter"
         }
-      ],
-      "data": {
-        "id": "classgetter",
-        "htmlAttributes": {
-          "id": "classgetter"
-        },
-        "hProperties": {
-          "id": "classgetter"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -164,16 +110,7 @@
           "type": "text",
           "value": "classSetter"
         }
-      ],
-      "data": {
-        "id": "classsetter",
-        "htmlAttributes": {
-          "id": "classsetter"
-        },
-        "hProperties": {
-          "id": "classsetter"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -220,16 +157,7 @@
           "type": "text",
           "value": "staticMethod"
         }
-      ],
-      "data": {
-        "id": "staticmethod",
-        "htmlAttributes": {
-          "id": "staticmethod"
-        },
-        "hProperties": {
-          "id": "staticmethod"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -239,16 +167,7 @@
           "type": "text",
           "value": "staticGetter"
         }
-      ],
-      "data": {
-        "id": "staticgetter",
-        "htmlAttributes": {
-          "id": "staticgetter"
-        },
-        "hProperties": {
-          "id": "staticgetter"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -258,16 +177,7 @@
           "type": "text",
           "value": "staticSetter"
         }
-      ],
-      "data": {
-        "id": "staticsetter",
-        "htmlAttributes": {
-          "id": "staticsetter"
-        },
-        "hProperties": {
-          "id": "staticsetter"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -314,16 +224,7 @@
           "type": "text",
           "value": "T5"
         }
-      ],
-      "data": {
-        "id": "t5",
-        "htmlAttributes": {
-          "id": "t5"
-        },
-        "hProperties": {
-          "id": "t5"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -353,16 +254,7 @@
           "type": "text",
           "value": "y2Default"
         }
-      ],
-      "data": {
-        "id": "y2default",
-        "htmlAttributes": {
-          "id": "y2default"
-        },
-        "hProperties": {
-          "id": "y2default"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -372,16 +264,7 @@
           "type": "text",
           "value": "y4"
         }
-      ],
-      "data": {
-        "id": "y4",
-        "htmlAttributes": {
-          "id": "y4"
-        },
-        "hProperties": {
-          "id": "y4"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -501,16 +384,7 @@
           "type": "text",
           "value": "object"
         }
-      ],
-      "data": {
-        "id": "object",
-        "htmlAttributes": {
-          "id": "object"
-        },
-        "hProperties": {
-          "id": "object"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -520,16 +394,7 @@
           "type": "text",
           "value": "prop"
         }
-      ],
-      "data": {
-        "id": "prop",
-        "htmlAttributes": {
-          "id": "prop"
-        },
-        "hProperties": {
-          "id": "prop"
-        }
-      }
+      ]
     },
     {
       "depth": 3,
@@ -539,16 +404,7 @@
           "type": "text",
           "value": "func"
         }
-      ],
-      "data": {
-        "id": "func",
-        "htmlAttributes": {
-          "id": "func"
-        },
-        "hProperties": {
-          "id": "func"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -558,16 +414,7 @@
           "type": "text",
           "value": "method"
         }
-      ],
-      "data": {
-        "id": "method",
-        "htmlAttributes": {
-          "id": "method"
-        },
-        "hProperties": {
-          "id": "method"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -577,16 +424,7 @@
           "type": "text",
           "value": "getter"
         }
-      ],
-      "data": {
-        "id": "getter",
-        "htmlAttributes": {
-          "id": "getter"
-        },
-        "hProperties": {
-          "id": "getter"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -596,16 +434,7 @@
           "type": "text",
           "value": "setter"
         }
-      ],
-      "data": {
-        "id": "setter",
-        "htmlAttributes": {
-          "id": "setter"
-        },
-        "hProperties": {
-          "id": "setter"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -652,16 +481,7 @@
           "type": "text",
           "value": "f1"
         }
-      ],
-      "data": {
-        "id": "f1",
-        "htmlAttributes": {
-          "id": "f1"
-        },
-        "hProperties": {
-          "id": "f1"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -671,16 +491,7 @@
           "type": "text",
           "value": "f3"
         }
-      ],
-      "data": {
-        "id": "f3",
-        "htmlAttributes": {
-          "id": "f3"
-        },
-        "hProperties": {
-          "id": "f3"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -690,16 +501,7 @@
           "type": "text",
           "value": "T"
         }
-      ],
-      "data": {
-        "id": "t",
-        "htmlAttributes": {
-          "id": "t"
-        },
-        "hProperties": {
-          "id": "t"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -729,16 +531,7 @@
           "type": "text",
           "value": "T2"
         }
-      ],
-      "data": {
-        "id": "t2",
-        "htmlAttributes": {
-          "id": "t2"
-        },
-        "hProperties": {
-          "id": "t2"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -768,16 +561,7 @@
           "type": "text",
           "value": "T4"
         }
-      ],
-      "data": {
-        "id": "t4",
-        "htmlAttributes": {
-          "id": "t4"
-        },
-        "hProperties": {
-          "id": "t4"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -807,16 +591,7 @@
           "type": "text",
           "value": "f4"
         }
-      ],
-      "data": {
-        "id": "f4",
-        "htmlAttributes": {
-          "id": "f4"
-        },
-        "hProperties": {
-          "id": "f4"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -872,16 +647,7 @@
           "type": "text",
           "value": "o1"
         }
-      ],
-      "data": {
-        "id": "o1",
-        "htmlAttributes": {
-          "id": "o1"
-        },
-        "hProperties": {
-          "id": "o1"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -891,16 +657,7 @@
           "type": "text",
           "value": "om1"
         }
-      ],
-      "data": {
-        "id": "om1",
-        "htmlAttributes": {
-          "id": "om1"
-        },
-        "hProperties": {
-          "id": "om1"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -910,16 +667,7 @@
           "type": "text",
           "value": "f5"
         }
-      ],
-      "data": {
-        "id": "f5",
-        "htmlAttributes": {
-          "id": "f5"
-        },
-        "hProperties": {
-          "id": "f5"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1010,16 +758,7 @@
           "type": "text",
           "value": "o2"
         }
-      ],
-      "data": {
-        "id": "o2",
-        "htmlAttributes": {
-          "id": "o2"
-        },
-        "hProperties": {
-          "id": "o2"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -1029,16 +768,7 @@
           "type": "text",
           "value": "om2"
         }
-      ],
-      "data": {
-        "id": "om2",
-        "htmlAttributes": {
-          "id": "om2"
-        },
-        "hProperties": {
-          "id": "om2"
-        }
-      }
+      ]
     }
   ]
 }

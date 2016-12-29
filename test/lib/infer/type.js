@@ -2,13 +2,13 @@
 
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
-  inferKind = require('../../../lib/infer/kind')(),
-  inferType = require('../../../lib/infer/type')();
+  inferKind = require('../../../lib/infer/kind'),
+  inferType = require('../../../lib/infer/type');
 
 function toComment(code) {
   return parse({
     source: code
-  })[0];
+  }, {})[0];
 }
 
 function evaluate(code) {

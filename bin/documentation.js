@@ -24,28 +24,29 @@ var argv = yargs
   .version(function () {
     return require('../package').version;
   })
-  .usage('Usage:\n\n' +
-    '# generate markdown docs for index.js and files it references\n' +
-    '$0 build index.js -f md\n\n' +
+  .usage(`Usage:
 
-    '# generate html docs for all files in src\n' +
-    '$0 build src/** -f html -o docs\n\n' +
+  # generate markdown docs for index.js and files it references 
+  $0 build index.js -f md 
 
-    '# document index.js, ignoring any files it requires or imports\n' +
-    '$0 build index.js -f md --shallow\n\n' +
+  # generate html docs for all files in src 
+  $0 build src/** -f html -o docs 
 
-    '# build, serve, and live-update html docs for app.js\n' +
-    '$0 serve app.js\n\n' +
+  # document index.js, ignoring any files it requires or imports 
+  $0 build index.js -f md --shallow 
 
-    '# validate JSDoc syntax in util.js\n' +
-    '$0 lint util.js\n\n' +
+  # build, serve, and live-update html docs for app.js 
+  $0 serve app.js 
 
-    '# update the API section of README.md with docs from index.js\n' +
-    '$0 readme index.js --section=API\n\n' +
+  # validate JSDoc syntax in util.js 
+  $0 lint util.js 
 
-    '# build docs for all values exported by index.js\n' +
-    '$0 build --document-exported index.js'
-  )
+  # update the API section of README.md with docs from index.js 
+  $0 readme index.js --section=API 
+
+  # build docs for all values exported by index.js 
+  $0 build --document-exported index.js
+`)
   .recommendCommands()
   .help()
   .argv;

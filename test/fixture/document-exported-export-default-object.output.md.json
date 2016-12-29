@@ -13,16 +13,7 @@
           "type": "text",
           "value": "document-exported-export-default-object.input"
         }
-      ],
-      "data": {
-        "id": "document-exported-export-default-objectinput",
-        "htmlAttributes": {
-          "id": "document-exported-export-default-objectinput"
-        },
-        "hProperties": {
-          "id": "document-exported-export-default-objectinput"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -32,16 +23,7 @@
           "type": "text",
           "value": "x"
         }
-      ],
-      "data": {
-        "id": "x",
-        "htmlAttributes": {
-          "id": "x"
-        },
-        "hProperties": {
-          "id": "x"
-        }
-      }
+      ]
     }
   ]
 }

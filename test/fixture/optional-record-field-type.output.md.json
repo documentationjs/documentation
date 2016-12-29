@@ -13,16 +13,7 @@
           "type": "text",
           "value": "Record"
         }
-      ],
-      "data": {
-        "id": "record",
-        "htmlAttributes": {
-          "id": "record"
-        },
-        "hProperties": {
-          "id": "record"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

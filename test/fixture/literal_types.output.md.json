@@ -13,16 +13,7 @@
           "type": "text",
           "value": "f"
         }
-      ],
-      "data": {
-        "id": "f",
-        "htmlAttributes": {
-          "id": "f"
-        },
-        "hProperties": {
-          "id": "f"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -126,16 +117,7 @@
           "type": "text",
           "value": "g"
         }
-      ],
-      "data": {
-        "id": "g",
-        "htmlAttributes": {
-          "id": "g"
-        },
-        "hProperties": {
-          "id": "g"
-        }
-      }
+      ]
     },
     {
       "type": "strong",

@@ -78,9 +78,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "employees",
         "lineNumber": 1,
         "description": {
@@ -150,6 +153,7 @@
         },
         "properties": [
           {
+            "title": "param",
             "name": "employees[].name",
             "lineNumber": 2,
             "description": {
@@ -210,6 +214,7 @@
             }
           },
           {
+            "title": "param",
             "name": "employees[].department",
             "lineNumber": 3,
             "description": {
@@ -272,6 +277,7 @@
         ]
       },
       {
+        "title": "param",
         "name": "type",
         "lineNumber": 4,
         "description": {
@@ -336,6 +342,11 @@
         "default": "minion"
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "foo",
     "kind": "function",
     "members": {
@@ -462,10 +473,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "foo",
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "options",
         "lineNumber": 2,
         "description": {
@@ -526,6 +539,7 @@
         },
         "properties": [
           {
+            "title": "param",
             "name": "options.much",
             "lineNumber": 3,
             "description": {
@@ -588,6 +602,7 @@
         ]
       },
       {
+        "title": "param",
         "name": "bar",
         "lineNumber": 4,
         "description": {
@@ -650,6 +665,7 @@
     ],
     "properties": [
       {
+        "title": "property",
         "name": "theTime",
         "lineNumber": 5,
         "description": {
@@ -710,6 +726,7 @@
         },
         "properties": [
           {
+            "title": "property",
             "name": "theTime.hours",
             "lineNumber": 6,
             "type": {
@@ -718,6 +735,7 @@
             }
           },
           {
+            "title": "property",
             "name": "theTime.minutes",
             "lineNumber": 7,
             "type": {
@@ -726,6 +744,7 @@
             }
           },
           {
+            "title": "property",
             "name": "theTime.seconds",
             "lineNumber": 8,
             "type": {
@@ -790,12 +809,17 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Object"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "foo",
     "members": {
       "instance": [],
       "static": [],

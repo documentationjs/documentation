@@ -85,7 +85,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -140,12 +144,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "simple.input",
     "kind": "function",
     "members": {

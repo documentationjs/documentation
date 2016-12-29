@@ -85,7 +85,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -140,12 +144,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "area"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "area",
     "kind": "function",
     "members": {
@@ -194,9 +202,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "area",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -204,6 +212,13 @@
         "lineNumber": 10
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "area",
     "members": {
       "instance": [],
       "static": [],
@@ -300,14 +315,14 @@
         }
       }
     },
+    "augments": [],
     "errors": [
       {
         "message": "@memberof reference to chart not found",
         "commentLineNumber": 0
       }
     ],
-    "kind": "function",
-    "name": "data",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -315,6 +330,13 @@
         "lineNumber": 17
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "function",
+    "name": "data",
     "memberof": "chart",
     "scope": "static",
     "members": {

@@ -110,11 +110,13 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "event",
-    "name": "Map#mousemove",
+    "examples": [],
+    "params": [],
     "properties": [
       {
+        "title": "property",
         "name": "point",
         "lineNumber": 5,
         "description": {
@@ -175,6 +177,7 @@
         }
       },
       {
+        "title": "property",
         "name": "originalEvent",
         "lineNumber": 6,
         "description": {
@@ -235,6 +238,12 @@
         }
       }
     ],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "event",
+    "name": "Map#mousemove",
     "members": {
       "instance": [],
       "static": [],

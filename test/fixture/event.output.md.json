@@ -13,16 +13,7 @@
           "type": "text",
           "value": "Map#mousemove"
         }
-      ],
-      "data": {
-        "id": "mapmousemove",
-        "htmlAttributes": {
-          "id": "mapmousemove"
-        },
-        "hProperties": {
-          "id": "mapmousemove"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

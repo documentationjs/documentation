@@ -102,9 +102,11 @@
       },
       "file": "[path]"
     },
-    "name": "hexToUInt32Color",
+    "augments": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "hex",
         "lineNumber": 3,
         "type": {
@@ -113,6 +115,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -167,12 +170,17 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "hexToUInt32Color",
     "members": {
       "instance": [],
       "static": [],

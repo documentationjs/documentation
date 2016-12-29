@@ -79,16 +79,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "destructure",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
         "name": "$0",
         "type": {
-          "type": "NameExpression",
-          "name": "Object"
+          "type": "AllLiteral"
         },
         "default": "{}",
         "properties": [
@@ -113,6 +112,13 @@
         ]
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "destructure",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -208,21 +214,19 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
     "examples": [
       {
         "description": "destructure([1, 2, 3])"
       }
     ],
-    "name": "destructure",
-    "kind": "function",
     "params": [
       {
         "title": "param",
         "name": "$0",
         "type": {
-          "type": "NameExpression",
-          "name": "Array"
+          "type": "AllLiteral"
         },
         "properties": [
           {
@@ -243,6 +247,13 @@
         ]
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "destructure",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -361,9 +372,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "a",
         "lineNumber": 2,
         "description": {
@@ -438,6 +452,7 @@
         "lineNumber": 21
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -492,12 +507,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "multiply",
     "kind": "function",
     "members": {
@@ -589,7 +608,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "Sink",
     "kind": "class",
     "members": {
@@ -670,7 +697,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "staticProp",
           "kind": "member",
           "memberof": "Sink",
@@ -769,7 +804,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "empty",
           "kind": "function",
           "memberof": "Sink",
@@ -872,7 +915,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "aGetter",
           "kind": "member",
           "memberof": "Sink",
@@ -941,9 +992,12 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
           "params": [
             {
+              "title": "param",
               "name": "height",
               "lineNumber": 1,
               "description": {
@@ -1004,6 +1058,7 @@
               }
             },
             {
+              "title": "param",
               "name": "width",
               "lineNumber": 2,
               "description": {
@@ -1064,6 +1119,11 @@
               }
             }
           ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "constructor",
           "kind": "function",
           "memberof": "Sink",
@@ -1164,7 +1224,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "hello",
           "kind": "function",
           "memberof": "Sink",
@@ -1284,7 +1352,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -1339,12 +1411,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Basket"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "makeABasket",
     "kind": "function",
     "members": {
@@ -1534,7 +1610,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -1589,12 +1669,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Sink"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "makeASink",
     "kind": "function",
     "members": {
@@ -1686,9 +1770,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "functionWithRest",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -1699,6 +1783,13 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "functionWithRest",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -1788,9 +1879,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "functionWithRestAndType",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -1805,6 +1896,13 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "functionWithRestAndType",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -1894,7 +1992,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "foo",
     "kind": "function",
     "members": {
@@ -1996,7 +2102,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -2051,12 +2161,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "es6.input",
     "kind": "function",
     "members": {
@@ -2148,9 +2262,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "veryImportantTransform",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -2158,6 +2272,13 @@
         "default": "'bar'"
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "veryImportantTransform",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -2253,7 +2374,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "access": "protected",
     "name": "iAmProtected",
     "kind": "function",
@@ -2352,7 +2481,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "access": "public",
     "name": "iAmPublic",
     "kind": "function",
@@ -2445,7 +2582,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "execute",
     "members": {
       "instance": [],
@@ -2535,9 +2680,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "isArrayEqualWith",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -2609,14 +2754,21 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "boolean"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "isArrayEqualWith",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],

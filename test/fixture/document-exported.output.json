@@ -24,7 +24,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "z",
     "kind": "class",
     "members": {
@@ -54,7 +62,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "zMethod",
           "kind": "function",
           "memberof": "z",
@@ -114,9 +130,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "x",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -124,6 +140,13 @@
         "lineNumber": 1
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "x",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -162,7 +185,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "Class",
     "kind": "class",
     "members": {
@@ -192,7 +223,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "classMethod",
           "kind": "function",
           "memberof": "Class",
@@ -240,7 +279,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "classGetter",
           "kind": "member",
           "memberof": "Class",
@@ -288,9 +335,9 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "classSetter",
-          "kind": "member",
+          "examples": [],
           "params": [
             {
               "title": "param",
@@ -298,6 +345,13 @@
               "lineNumber": 6
             }
           ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "classSetter",
+          "kind": "member",
           "memberof": "Class",
           "scope": "instance",
           "members": {
@@ -345,7 +399,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "staticMethod",
           "kind": "function",
           "memberof": "Class",
@@ -393,7 +455,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "staticGetter",
           "kind": "member",
           "memberof": "Class",
@@ -441,9 +511,9 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "staticSetter",
-          "kind": "member",
+          "examples": [],
           "params": [
             {
               "title": "param",
@@ -451,6 +521,13 @@
               "lineNumber": 9
             }
           ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "staticSetter",
+          "kind": "member",
           "memberof": "Class",
           "scope": "static",
           "members": {
@@ -507,7 +584,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "T5",
     "kind": "typedef",
     "type": {
@@ -552,7 +637,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "y2Default",
     "members": {
       "instance": [],
@@ -642,9 +735,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "y4",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -656,13 +749,20 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
+        "title": "returns",
         "type": {
           "type": "VoidLiteral"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "y4",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -701,7 +801,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "object",
     "members": {
       "instance": [],
@@ -731,7 +839,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "prop",
           "memberof": "object",
           "scope": "static",
@@ -776,7 +892,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "func",
           "kind": "function",
           "memberof": "object",
@@ -833,7 +957,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "method",
     "kind": "function",
     "members": {
@@ -874,7 +1006,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "getter",
     "kind": "member",
     "members": {
@@ -915,9 +1055,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "setter",
-    "kind": "member",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -925,6 +1065,13 @@
         "lineNumber": 15
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "setter",
+    "kind": "member",
     "members": {
       "instance": [],
       "static": [],
@@ -963,7 +1110,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "f1",
     "kind": "function",
     "members": {
@@ -1004,7 +1159,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "f3",
     "kind": "function",
     "members": {
@@ -1045,7 +1208,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "T",
     "kind": "typedef",
     "type": {
@@ -1090,7 +1261,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "T2",
     "kind": "typedef",
     "type": {
@@ -1135,7 +1314,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "T4",
     "kind": "typedef",
     "type": {
@@ -1180,9 +1367,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "f4",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -1194,6 +1381,13 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "f4",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -1232,7 +1426,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "o1",
     "members": {
       "instance": [],
@@ -1271,7 +1473,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "om1",
     "kind": "function",
     "members": {
@@ -1363,9 +1573,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "f5",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -1377,6 +1587,13 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "f5",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -1415,7 +1632,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "o2",
     "members": {
       "instance": [],
@@ -1454,7 +1679,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "om2",
     "kind": "function",
     "members": {

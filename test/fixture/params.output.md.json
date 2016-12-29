@@ -13,16 +13,7 @@
           "type": "text",
           "value": "addThem"
         }
-      ],
-      "data": {
-        "id": "addthem",
-        "htmlAttributes": {
-          "id": "addthem"
-        },
-        "hProperties": {
-          "id": "addthem"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -207,15 +198,8 @@
                   "type": "strong",
                   "children": [
                     {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Object"
-                        }
-                      ]
+                      "type": "text",
+                      "value": "any"
                     }
                   ]
                 },
@@ -309,16 +293,7 @@
           "type": "text",
           "value": "fishesAndFoxes"
         }
-      ],
-      "data": {
-        "id": "fishesandfoxes",
-        "htmlAttributes": {
-          "id": "fishesandfoxes"
-        },
-        "hProperties": {
-          "id": "fishesandfoxes"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -386,15 +361,8 @@
                   "type": "strong",
                   "children": [
                     {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Object"
-                        }
-                      ]
+                      "type": "text",
+                      "value": "any"
                     }
                   ]
                 },
@@ -517,16 +485,7 @@
           "type": "text",
           "value": "withDefault"
         }
-      ],
-      "data": {
-        "id": "withdefault",
-        "htmlAttributes": {
-          "id": "withdefault"
-        },
-        "hProperties": {
-          "id": "withdefault"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -632,16 +591,7 @@
           "type": "text",
           "value": "Foo"
         }
-      ],
-      "data": {
-        "id": "foo",
-        "htmlAttributes": {
-          "id": "foo"
-        },
-        "hProperties": {
-          "id": "foo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -686,16 +636,7 @@
           "type": "text",
           "value": "method"
         }
-      ],
-      "data": {
-        "id": "method",
-        "htmlAttributes": {
-          "id": "method"
-        },
-        "hProperties": {
-          "id": "method"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -828,16 +769,7 @@
           "type": "text",
           "value": "Address6"
         }
-      ],
-      "data": {
-        "id": "address6",
-        "htmlAttributes": {
-          "id": "address6"
-        },
-        "hProperties": {
-          "id": "address6"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1284,16 +1216,7 @@
           "type": "text",
           "value": "GeoJSONSource"
         }
-      ],
-      "data": {
-        "id": "geojsonsource",
-        "htmlAttributes": {
-          "id": "geojsonsource"
-        },
-        "hProperties": {
-          "id": "geojsonsource"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1819,16 +1742,7 @@
           "type": "text",
           "value": "myfunc"
         }
-      ],
-      "data": {
-        "id": "myfunc",
-        "htmlAttributes": {
-          "id": "myfunc"
-        },
-        "hProperties": {
-          "id": "myfunc"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -2037,16 +1951,7 @@
           "type": "text",
           "value": "foo"
         }
-      ],
-      "data": {
-        "id": "foo-1",
-        "htmlAttributes": {
-          "id": "foo-1"
-        },
-        "hProperties": {
-          "id": "foo-1"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

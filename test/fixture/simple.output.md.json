@@ -13,16 +13,7 @@
           "type": "text",
           "value": "simple.input"
         }
-      ],
-      "data": {
-        "id": "simpleinput",
-        "htmlAttributes": {
-          "id": "simpleinput"
-        },
-        "hProperties": {
-          "id": "simpleinput"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

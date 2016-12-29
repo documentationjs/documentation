@@ -1,3 +1,4 @@
+'use strict';
 var walk = require('../lib/walk');
 
 module.exports = function (comments) {

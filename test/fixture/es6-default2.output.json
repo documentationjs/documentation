@@ -30,10 +30,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "access": "public",
-    "name": "es6-default2.input",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -41,6 +40,14 @@
         "lineNumber": 4
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "access": "public",
+    "name": "es6-default2.input",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],

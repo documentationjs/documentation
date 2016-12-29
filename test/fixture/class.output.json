@@ -93,11 +93,13 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "MyClass",
+    "examples": [],
+    "params": [],
     "properties": [
       {
+        "title": "property",
         "name": "howMany",
         "lineNumber": 3,
         "description": {
@@ -158,6 +160,12 @@
         }
       }
     ],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "MyClass",
     "members": {
       "instance": [
         {
@@ -256,9 +264,12 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
           "params": [
             {
+              "title": "param",
               "name": "getIt",
               "lineNumber": 2,
               "description": {
@@ -319,6 +330,7 @@
               }
             }
           ],
+          "properties": [],
           "returns": [
             {
               "description": {
@@ -373,12 +385,16 @@
                   }
                 }
               },
+              "title": "returns",
               "type": {
                 "type": "NameExpression",
                 "name": "number"
               }
             }
           ],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "getFoo",
           "kind": "function",
           "memberof": "MyClass",
@@ -486,7 +502,11 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
           "returns": [
             {
               "description": {
@@ -541,11 +561,15 @@
                   }
                 }
               },
+              "title": "returns",
               "type": {
                 "type": "UndefinedLiteral"
               }
             }
           ],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "getUndefined",
           "kind": "function",
           "memberof": "MyClass",

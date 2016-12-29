@@ -2,13 +2,13 @@
 
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
-  inferParams = require('../../../lib/infer/params')();
+  inferParams = require('../../../lib/infer/params');
 
 function toComment(fn, file) {
   return parse({
-    file: file,
+    file,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  })[0];
+  }, {})[0];
 }
 
 function evaluate(fn, file) {

@@ -13,16 +13,7 @@
           "type": "text",
           "value": "SpecialArray"
         }
-      ],
-      "data": {
-        "id": "specialarray",
-        "htmlAttributes": {
-          "id": "specialarray"
-        },
-        "hProperties": {
-          "id": "specialarray"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -85,16 +76,7 @@
           "type": "text",
           "value": "Foo"
         }
-      ],
-      "data": {
-        "id": "foo",
-        "htmlAttributes": {
-          "id": "foo"
-        },
-        "hProperties": {
-          "id": "foo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

@@ -8,13 +8,13 @@ function toComment(fn, filename) {
   return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  }).map(nest);
+  }, {}).map(nest);
 }
 
 test('nest params - no params', function (t) {
-  t.equal(toComment(function () {
+  t.deepEqual(toComment(function () {
     /** @name foo */
-  })[0].params, undefined, 'no params');
+  })[0].params, [], 'no params');
   t.end();
 });
 

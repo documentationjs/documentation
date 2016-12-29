@@ -9,7 +9,7 @@ function toComment(fn, filename) {
   return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  })[0];
+  }, {})[0];
 }
 
 function evaluate(fn) {

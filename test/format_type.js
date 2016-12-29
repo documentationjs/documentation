@@ -2,7 +2,7 @@
 'use strict';
 
 var _formatType = require('../lib/output/util/format_type'),
-  createLinkerStack = require('../lib/output/util/linker_stack'),
+  LinkerStack = require('../lib/output/util/linker_stack'),
   remark = require('remark'),
   parse = require('doctrine').parse,
   test = require('tap').test;
@@ -10,12 +10,12 @@ var _formatType = require('../lib/output/util/format_type'),
 function stringify(children) {
   return remark().stringify({
     type: 'paragraph',
-    children: children
+    children
   });
 }
 
 test('formatType', function (t) {
-  var linkerStack = createLinkerStack({});
+  var linkerStack = new LinkerStack({});
   var formatType = _formatType.bind(undefined, linkerStack.link);
   [
     ['Foo', 'Foo'],

@@ -29,8 +29,8 @@
     "get-comments": "^1.0.1",
     "git-url-parse": "^6.0.1",
     "github-slugger": "1.1.1",
-    "globals-docs": "^2.3.0",
     "glob": "^7.0.0",
+    "globals-docs": "^2.3.0",
     "highlight.js": "^9.1.0",
     "js-yaml": "^3.3.1",
     "lodash": "^4.11.1",
@@ -39,6 +39,8 @@
     "mime": "^1.3.4",
     "module-deps-sortable": "4.0.6",
     "parse-filepath": "^0.6.3",
+    "pify": "^2.3.0",
+    "read-pkg-up": "^2.0.0",
     "remark": "^6.0.1",
     "remark-html": "5.0.1",
     "remark-toc": "^3.0.0",
@@ -58,14 +60,18 @@
     "yargs": "^6.0.0"
   },
   "devDependencies": {
+    "are-we-flow-yet": "^1.0.0",
+    "babel-eslint": "^7.1.1",
     "chdir": "0.0.0",
-    "standard-changelog": "0.0.1",
     "cz-conventional-changelog": "1.2.0",
     "documentation-schema": "0.0.1",
     "eslint": "^3.12.2",
+    "eslint-plugin-flowtype": "^2.29.2",
+    "flow-bin": "^0.37.4",
     "fs-extra": "^1.0.0",
     "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
+    "standard-changelog": "0.0.1",
     "tap": "^8.0.0",
     "tmp": "^0.0.29"
   },
@@ -88,11 +94,15 @@
     "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
-    "test": "npm run lint && npm run self-lint && tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
+    "test": "are-we-flow-yet lib && flow check && npm run lint && npm run self-lint && npm run test-tap",
+    "test-tap": "tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "engines": {
+    "node": ">=4"
   }
 }

@@ -88,12 +88,20 @@
         }
       }
     },
+    "augments": [],
     "errors": [
       {
         "message": "@memberof reference to com.Test not found",
         "commentLineNumber": 4
       }
     ],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "kind": "class",
     "name": "MyClass",
     "memberof": "com.Test",
@@ -195,9 +203,12 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
           "params": [
             {
+              "title": "param",
               "name": "getIt",
               "lineNumber": 3,
               "description": {
@@ -258,6 +269,7 @@
               }
             }
           ],
+          "properties": [],
           "returns": [
             {
               "description": {
@@ -312,12 +324,16 @@
                   }
                 }
               },
+              "title": "returns",
               "type": {
                 "type": "NameExpression",
                 "name": "number"
               }
             }
           ],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "getFoo",
           "kind": "function",
           "memberof": "com.Test.MyClass",
@@ -427,7 +443,11 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
           "returns": [
             {
               "description": {
@@ -482,11 +502,15 @@
                   }
                 }
               },
+              "title": "returns",
               "type": {
                 "type": "UndefinedLiteral"
               }
             }
           ],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "getUndefined",
           "kind": "function",
           "memberof": "com.Test.MyClass",

@@ -2,13 +2,13 @@
 
 var test = require('tap').test,
   parse = require('../../../lib/parsers/javascript'),
-  inferName = require('../../../lib/infer/name')();
+  inferName = require('../../../lib/infer/name');
 
 function toComment(fn, file) {
   return parse({
-    file: file,
+    file,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  })[0];
+  }, {})[0];
 }
 
 function evaluate(fn, file) {
@@ -50,7 +50,7 @@ test('inferName', function (t) {
       //   Identifier (comment attached here)
       //   FunctionExpression
       /** Test */
-      name: function () {}
+      name() {}
     };
   }).name, 'name', 'property, function');
 

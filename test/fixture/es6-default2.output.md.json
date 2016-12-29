@@ -13,16 +13,7 @@
           "type": "text",
           "value": "es6-default2.input"
         }
-      ],
-      "data": {
-        "id": "es6-default2input",
-        "htmlAttributes": {
-          "id": "es6-default2input"
-        },
-        "hProperties": {
-          "id": "es6-default2input"
-        }
-      }
+      ]
     },
     {
       "type": "strong",

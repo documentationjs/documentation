@@ -75,14 +75,21 @@
         }
       }
     },
-    "errors": [],
-    "name": "SpecialArray",
     "augments": [
       {
         "title": "augments",
         "name": "Array"
       }
     ],
+    "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "SpecialArray",
     "kind": "class",
     "members": {
       "instance": [],
@@ -130,20 +137,27 @@
         }
       }
     },
-    "errors": [
-      {
-        "message": "@memberof reference to module not found",
-        "commentLineNumber": 0
-      }
-    ],
-    "kind": "class",
-    "name": "Foo",
     "augments": [
       {
         "title": "augments",
         "name": "Bar"
       }
     ],
+    "errors": [
+      {
+        "message": "@memberof reference to module not found",
+        "commentLineNumber": 0
+      }
+    ],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "Foo",
     "memberof": "module",
     "scope": "static",
     "members": {

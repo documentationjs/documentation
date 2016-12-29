@@ -13,16 +13,7 @@
           "type": "text",
           "value": "addFive"
         }
-      ],
-      "data": {
-        "id": "addfive",
-        "htmlAttributes": {
-          "id": "addfive"
-        },
-        "hProperties": {
-          "id": "addfive"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

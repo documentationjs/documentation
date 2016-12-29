@@ -13,16 +13,7 @@
           "type": "text",
           "value": "sessions.create"
         }
-      ],
-      "data": {
-        "id": "sessionscreate",
-        "htmlAttributes": {
-          "id": "sessionscreate"
-        },
-        "hProperties": {
-          "id": "sessionscreate"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

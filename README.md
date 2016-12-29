@@ -46,21 +46,21 @@ lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
 
 ## Examples
 
-* [HTML output with default template](http://documentation.js.org/html-example/)
-* [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
-* [JSON](http://documentation.js.org/html-example/index.json)
+-   [HTML output with default template](http://documentation.js.org/html-example/)
+-   [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
+-   [JSON](http://documentation.js.org/html-example/index.json)
 
 ## Documentation
 
-* [Getting Started](docs/GETTING_STARTED.md): start here
-* [Usage](docs/USAGE.md): how to use documentation.js
-* [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
-* [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
-* [Configuring documentation.js](docs/CONFIG.md)
-* [FAQ](docs/FAQ.md)
-* [Troubleshooting](docs/TROUBLESHOOTING.md)
-* [Theming](docs/THEMING.md): tips for theming documentation output in HTML
-* [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
+-   [Getting Started](docs/GETTING_STARTED.md): start here
+-   [Usage](docs/USAGE.md): how to use documentation.js
+-   [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
+-   [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
+-   [Configuring documentation.js](docs/CONFIG.md)
+-   [FAQ](docs/FAQ.md)
+-   [Troubleshooting](docs/TROUBLESHOOTING.md)
+-   [Theming](docs/THEMING.md): tips for theming documentation output in HTML
+-   [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
 
 ## User Guide
 
@@ -116,9 +116,9 @@ _We have plenty of
 [issues](https://github.com/documentationjs/documentation/issues) that we'd
 love help with._
 
-* Robust and complete `JSDoc` support, including typedefs.
-* Strong support for HTML and Markdown output
-* Documentation coverage, statistics, and validation
+-   Robust and complete `JSDoc` support, including typedefs.
+-   Strong support for HTML and Markdown output
+-   Documentation coverage, statistics, and validation
 
 documentation is an OPEN Open Source Project. This means that:
 

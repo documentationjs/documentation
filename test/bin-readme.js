@@ -1,3 +1,4 @@
+'use strict';
 var test = require('tap').test,
   path = require('path'),
   os = require('os'),
@@ -87,6 +88,16 @@ test('readme command', function (group) {
         {cwd: d}, function (err, stdout, stderr) {
           t.error(err);
           t.match(stdout, 'is up to date.');
+          t.end();
+        });
+    });
+
+    group.test('-s: not found', function (t) {
+      t.error(err);
+      fs.copySync(path.join(fixtures, 'README.output.md'), path.join(d, 'uptodate.md'));
+      documentation(['readme index.js --diff-only -s NOTFOUND --readme-file uptodate.md'],
+        {cwd: d}, function (err, stdout, stderr) {
+          t.ok(err);
           t.end();
         });
     });

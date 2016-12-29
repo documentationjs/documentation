@@ -32,9 +32,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "module",
-    "name": "bookshelf",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -42,6 +42,13 @@
         "lineNumber": 4
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "module",
+    "name": "bookshelf",
     "members": {
       "instance": [],
       "static": [],
@@ -87,9 +94,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "Book",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -97,6 +104,13 @@
         "lineNumber": 4
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "Book",
     "members": {
       "instance": [
         {
@@ -175,7 +189,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "title",
           "memberof": "Book",
           "scope": "instance",
@@ -240,9 +262,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "BookShelf",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -250,6 +272,13 @@
         "lineNumber": 10
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "BookShelf",
     "members": {
       "instance": [
         {
@@ -328,7 +357,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "title",
           "memberof": "BookShelf",
           "scope": "instance",

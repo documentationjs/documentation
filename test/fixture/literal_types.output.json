@@ -60,9 +60,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "x",
         "lineNumber": 1,
         "type": {
@@ -96,6 +99,11 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "f",
     "kind": "function",
     "members": {
@@ -136,9 +144,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "g",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -175,6 +183,13 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "g",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],

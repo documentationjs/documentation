@@ -24,7 +24,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "a",
     "kind": "function",
     "members": {
@@ -65,7 +73,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "b",
     "kind": "function",
     "members": {
@@ -106,7 +122,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "C",
     "kind": "class",
     "members": {
@@ -116,28 +140,36 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 17,
+              "line": 11,
               "column": 2
             },
             "end": {
-              "line": 17,
+              "line": 11,
               "column": 8
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 18,
+                "line": 12,
                 "column": 2
               },
               "end": {
-                "line": 18,
+                "line": 12,
                 "column": 8
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "A",
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "b",
           "kind": "function",
           "memberof": "C",
           "scope": "instance",
@@ -152,60 +184,12 @@
               "kind": "class"
             },
             {
-              "name": "A",
+              "name": "b",
               "kind": "function",
               "scope": "instance"
             }
           ],
-          "namespace": "C#A"
-        },
-        {
-          "description": "",
-          "tags": [],
-          "loc": {
-            "start": {
-              "line": 15,
-              "column": 2
-            },
-            "end": {
-              "line": 15,
-              "column": 8
-            }
-          },
-          "context": {
-            "loc": {
-              "start": {
-                "line": 16,
-                "column": 2
-              },
-              "end": {
-                "line": 16,
-                "column": 8
-              }
-            }
-          },
-          "errors": [],
-          "name": "a",
-          "kind": "function",
-          "memberof": "C",
-          "scope": "instance",
-          "members": {
-            "instance": [],
-            "static": [],
-            "events": []
-          },
-          "path": [
-            {
-              "name": "C",
-              "kind": "class"
-            },
-            {
-              "name": "a",
-              "kind": "function",
-              "scope": "instance"
-            }
-          ],
-          "namespace": "C#a"
+          "namespace": "C#b"
         },
         {
           "description": "",
@@ -232,7 +216,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "B",
           "kind": "function",
           "memberof": "C",
@@ -260,28 +252,36 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 11,
+              "line": 15,
               "column": 2
             },
             "end": {
-              "line": 11,
+              "line": 15,
               "column": 8
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 12,
+                "line": 16,
                 "column": 2
               },
               "end": {
-                "line": 12,
+                "line": 16,
                 "column": 8
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "b",
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "a",
           "kind": "function",
           "memberof": "C",
           "scope": "instance",
@@ -296,12 +296,68 @@
               "kind": "class"
             },
             {
-              "name": "b",
+              "name": "a",
               "kind": "function",
               "scope": "instance"
             }
           ],
-          "namespace": "C#b"
+          "namespace": "C#a"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 17,
+              "column": 2
+            },
+            "end": {
+              "line": 17,
+              "column": 8
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 18,
+                "column": 2
+              },
+              "end": {
+                "line": 18,
+                "column": 8
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "A",
+          "kind": "function",
+          "memberof": "C",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": [],
+            "events": []
+          },
+          "path": [
+            {
+              "name": "C",
+              "kind": "class"
+            },
+            {
+              "name": "A",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "C#A"
         }
       ],
       "static": [],
@@ -340,7 +396,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "D",
     "kind": "class",
     "members": {
@@ -350,28 +414,36 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 29,
+              "line": 23,
               "column": 2
             },
             "end": {
-              "line": 29,
+              "line": 23,
               "column": 8
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 30,
+                "line": 24,
                 "column": 2
               },
               "end": {
-                "line": 30,
+                "line": 24,
                 "column": 8
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "A",
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "b",
           "kind": "function",
           "memberof": "D",
           "scope": "instance",
@@ -386,60 +458,12 @@
               "kind": "class"
             },
             {
-              "name": "A",
+              "name": "b",
               "kind": "function",
               "scope": "instance"
             }
           ],
-          "namespace": "D#A"
-        },
-        {
-          "description": "",
-          "tags": [],
-          "loc": {
-            "start": {
-              "line": 27,
-              "column": 2
-            },
-            "end": {
-              "line": 27,
-              "column": 8
-            }
-          },
-          "context": {
-            "loc": {
-              "start": {
-                "line": 28,
-                "column": 2
-              },
-              "end": {
-                "line": 28,
-                "column": 8
-              }
-            }
-          },
-          "errors": [],
-          "name": "a",
-          "kind": "function",
-          "memberof": "D",
-          "scope": "instance",
-          "members": {
-            "instance": [],
-            "static": [],
-            "events": []
-          },
-          "path": [
-            {
-              "name": "D",
-              "kind": "class"
-            },
-            {
-              "name": "a",
-              "kind": "function",
-              "scope": "instance"
-            }
-          ],
-          "namespace": "D#a"
+          "namespace": "D#b"
         },
         {
           "description": "",
@@ -466,7 +490,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "B",
           "kind": "function",
           "memberof": "D",
@@ -494,28 +526,36 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 23,
+              "line": 27,
               "column": 2
             },
             "end": {
-              "line": 23,
+              "line": 27,
               "column": 8
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 24,
+                "line": 28,
                 "column": 2
               },
               "end": {
-                "line": 24,
+                "line": 28,
                 "column": 8
               }
             }
           },
+          "augments": [],
           "errors": [],
-          "name": "b",
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "a",
           "kind": "function",
           "memberof": "D",
           "scope": "instance",
@@ -530,12 +570,68 @@
               "kind": "class"
             },
             {
-              "name": "b",
+              "name": "a",
               "kind": "function",
               "scope": "instance"
             }
           ],
-          "namespace": "D#b"
+          "namespace": "D#a"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 2
+            },
+            "end": {
+              "line": 29,
+              "column": 8
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 30,
+                "column": 2
+              },
+              "end": {
+                "line": 30,
+                "column": 8
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "A",
+          "kind": "function",
+          "memberof": "D",
+          "scope": "instance",
+          "members": {
+            "instance": [],
+            "static": [],
+            "events": []
+          },
+          "path": [
+            {
+              "name": "D",
+              "kind": "class"
+            },
+            {
+              "name": "A",
+              "kind": "function",
+              "scope": "instance"
+            }
+          ],
+          "namespace": "D#A"
         }
       ],
       "static": [],

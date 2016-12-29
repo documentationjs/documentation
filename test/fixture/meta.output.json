@@ -8,7 +8,7 @@
           "children": [
             {
               "type": "text",
-              "value": "A type definition.",
+              "value": "This function returns the number one.",
               "position": {
                 "start": {
                   "line": 1,
@@ -17,8 +17,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 19,
-                  "offset": 18
+                  "column": 38,
+                  "offset": 37
                 },
                 "indent": []
               }
@@ -32,8 +32,8 @@
             },
             "end": {
               "line": 1,
-              "column": 19,
-              "offset": 18
+              "column": 38,
+              "offset": 37
             },
             "indent": []
           }
@@ -47,47 +47,40 @@
         },
         "end": {
           "line": 1,
-          "column": 19,
-          "offset": 18
+          "column": 38,
+          "offset": 37
         }
       }
     },
     "tags": [
       {
-        "title": "name",
-        "description": null,
+        "title": "returns",
+        "description": "numberone",
         "lineNumber": 2,
-        "name": "MyType"
-      },
-      {
-        "title": "typedef",
-        "description": null,
-        "lineNumber": 3,
-        "type": {
-          "type": "NameExpression",
-          "name": "Object"
-        },
-        "name": "MyType"
-      },
-      {
-        "title": "property",
-        "description": "one property",
-        "lineNumber": 4,
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "name": "prop1"
+        }
       },
       {
-        "title": "property",
-        "description": "another property",
-        "lineNumber": 5,
-        "type": {
-          "type": "NameExpression",
-          "name": "string"
-        },
-        "name": "prop2"
+        "title": "version",
+        "description": "1.0.0",
+        "lineNumber": 3
+      },
+      {
+        "title": "since",
+        "description": "2.0.0",
+        "lineNumber": 4
+      },
+      {
+        "title": "copyright",
+        "description": "Tom MacWright",
+        "lineNumber": 5
+      },
+      {
+        "title": "license",
+        "description": "BSD",
+        "lineNumber": 6
       }
     ],
     "loc": {
@@ -96,33 +89,29 @@
         "column": 0
       },
       "end": {
-        "line": 7,
+        "line": 8,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 1,
+          "line": 9,
           "column": 0
         },
         "end": {
-          "line": 9,
-          "column": 0
+          "line": 12,
+          "column": 2
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "MyType",
-    "kind": "typedef",
-    "type": {
-      "type": "NameExpression",
-      "name": "Object"
-    },
-    "properties": [
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [
       {
-        "name": "prop1",
-        "lineNumber": 4,
         "description": {
           "type": "root",
           "children": [
@@ -131,7 +120,7 @@
               "children": [
                 {
                   "type": "text",
-                  "value": "one property",
+                  "value": "numberone",
                   "position": {
                     "start": {
                       "line": 1,
@@ -140,8 +129,8 @@
                     },
                     "end": {
                       "line": 1,
-                      "column": 13,
-                      "offset": 12
+                      "column": 10,
+                      "offset": 9
                     },
                     "indent": []
                   }
@@ -155,8 +144,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 13,
-                  "offset": 12
+                  "column": 10,
+                  "offset": 9
                 },
                 "indent": []
               }
@@ -170,43 +159,32 @@
             },
             "end": {
               "line": 1,
-              "column": 13,
-              "offset": 12
+              "column": 10,
+              "offset": 9
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
-      },
-      {
-        "name": "prop2",
-        "lineNumber": 5,
-        "description": {
-          "type": "root",
+      }
+    ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "version": "1.0.0",
+    "since": "2.0.0",
+    "copyright": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
           "children": [
             {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "text",
-                  "value": "another property",
-                  "position": {
-                    "start": {
-                      "line": 1,
-                      "column": 1,
-                      "offset": 0
-                    },
-                    "end": {
-                      "line": 1,
-                      "column": 17,
-                      "offset": 16
-                    },
-                    "indent": []
-                  }
-                }
-              ],
+              "type": "text",
+              "value": "Tom MacWright",
               "position": {
                 "start": {
                   "line": 1,
@@ -215,8 +193,8 @@
                 },
                 "end": {
                   "line": 1,
-                  "column": 17,
-                  "offset": 16
+                  "column": 14,
+                  "offset": 13
                 },
                 "indent": []
               }
@@ -230,17 +208,29 @@
             },
             "end": {
               "line": 1,
-              "column": 17,
-              "offset": 16
-            }
+              "column": 14,
+              "offset": 13
+            },
+            "indent": []
           }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
         },
-        "type": {
-          "type": "NameExpression",
-          "name": "string"
+        "end": {
+          "line": 1,
+          "column": 14,
+          "offset": 13
         }
       }
-    ],
+    },
+    "license": "BSD",
+    "name": "meta.input",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],
@@ -248,10 +238,10 @@
     },
     "path": [
       {
-        "name": "MyType",
-        "kind": "typedef"
+        "name": "meta.input",
+        "kind": "function"
       }
     ],
-    "namespace": "MyType"
+    "namespace": "meta.input"
   }
 ]

@@ -5,8 +5,7 @@ var test = require('tap').test,
   shallow = require('../../../lib/input/shallow');
 
 test('shallow deps', function (t) {
-  shallow([path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))], {}, function (err, deps) {
-    t.ifError(err);
+  shallow([path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))], {}).then(deps => {
     t.equal(deps.length, 1);
     t.ok(deps[0], 'has path');
     t.end();
@@ -17,8 +16,7 @@ test('shallow deps multi', function (t) {
   shallow([
     path.resolve(path.join(__dirname, '../../fixture/es6.input.js')),
     path.resolve(path.join(__dirname, '../../fixture/es6.output.json'))
-  ], {}, function (err, deps) {
-    t.ifError(err);
+  ], {}).then(deps => {
     t.equal(deps.length, 2);
     t.ok(deps[0], 'has path');
     t.end();
@@ -28,30 +26,23 @@ test('shallow deps multi', function (t) {
 test('shallow deps directory', function (t) {
   shallow([
     path.resolve(path.join(__dirname, '../../fixture/html'))
-  ], {}, function (err, deps) {
-    t.ifError(err);
+  ], {}).then(deps => {
     t.equal(deps.length, 1);
-    t.ok(deps[0].match(/input.js/), 'is the input file');
+    t.ok(deps[0].file.match(/input.js/), 'is the input file');
+    t.end();
+  }).catch(err => {
+    t.fail(err);
     t.end();
   });
 });
 
-test('shallow deps not found', function (t) {
-  t.throws(function () {
-    shallow([
-      'not-found-file'
-    ], {});
-  }, 'not found');
-  t.end();
-});
-
 test('throws on non-string or object input', function (t) {
-  t.throws(function () {
-    shallow([
-      true
-    ], {});
-  }, 'indexes should be either strings or objects');
-  t.end();
+  shallow([
+    true
+  ], {}).catch(err => {
+    t.equal(err.message, 'Indexes should be either strings or objects');
+    t.end();
+  });
 });
 
 test('shallow deps literal', function (t) {
@@ -61,8 +52,7 @@ test('shallow deps literal', function (t) {
   };
   shallow([
     obj
-  ], {}, function (err, deps) {
-    t.ifError(err);
+  ], {}).then(deps => {
     t.equal(deps[0], obj);
     t.end();
   });
