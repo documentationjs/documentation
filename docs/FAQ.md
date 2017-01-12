@@ -32,7 +32,7 @@ application.
 `documentation` aims to modernize and simplify the process of generating JavaScript
 documentation.
 
-* Beatiful defaults for HTML & Markdown output
+* Beautiful defaults for HTML & Markdown output
 * Supports CommonJS `require()` syntax so that node modules can be documented
   by giving their `main` file
 * Extensively documented internally: all public and private functions in `documentation`
