@@ -1,15 +1,16 @@
-var createLinkerStack = require('../lib/output/util/linker_stack'),
+'use strict';
+var LinkerStack = require('../lib/output/util/linker_stack'),
   test = require('tap').test;
 
 test('linkerStack', function (t) {
 
-  var linkerStack = createLinkerStack({});
+  var linkerStack = new LinkerStack({});
 
   t.equal(linkerStack.link('string'),
     'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String',
     'Default global resolution of string');
 
-  t.equal(createLinkerStack({
+  t.equal(new LinkerStack({
     paths: {
       Point: 'http://geojson.org/geojson-spec.html#point'
     }
@@ -18,7 +19,7 @@ test('linkerStack', function (t) {
     'Custom hardcoded path for a GeoJSON type');
 
 
-  t.equal(createLinkerStack({
+  t.equal(new LinkerStack({
     paths: {
       Image: 'http://custom.com/'
     }
@@ -27,7 +28,7 @@ test('linkerStack', function (t) {
     'Prefers config link to native.');
 
 
-  var linker = createLinkerStack({
+  var linker = new LinkerStack({
     paths: {
       Image: 'http://custom.com/'
     }

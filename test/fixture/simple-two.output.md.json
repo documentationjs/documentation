@@ -13,16 +13,7 @@
           "type": "text",
           "value": "returnTwo"
         }
-      ],
-      "data": {
-        "id": "returntwo",
-        "htmlAttributes": {
-          "id": "returntwo"
-        },
-        "hProperties": {
-          "id": "returntwo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

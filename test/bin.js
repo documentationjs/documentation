@@ -122,6 +122,14 @@ test('accepts config file - reports failures', options, function (t) {
     }, false);
 });
 
+test('accepts config file - reports parse failures', options, function (t) {
+  documentation(['build fixture/sorting/input.js -c fixture/config-malformed.json'], {},
+    function (err, data, stderr) {
+      t.match(stderr, /SyntaxError/g, 'Reports a SyntaxError with bad config');
+      t.end();
+    }, false);
+});
+
 test('--shallow option', function (t) {
   documentation(['build --shallow fixture/internal.input.js'], function (err, data) {
     t.error(err);
@@ -253,6 +261,15 @@ test('lint command', function (group) {
 
   group.test('exposes syntax error on a bad file', options, function (t) {
     documentation(['lint fixture/bad/syntax.input.js'], {}, function (err, data) {
+      t.ok(err.code > 0, 'exits with a > 0 exit code');
+      t.end();
+    }, false);
+  });
+
+  group.test('lint with no inputs', options, function (t) {
+    documentation(['lint'], {
+      cwd: path.join(__dirname, 'fixture/bad')
+    }, function (err, data) {
       t.ok(err.code > 0, 'exits with a > 0 exit code');
       t.end();
     }, false);

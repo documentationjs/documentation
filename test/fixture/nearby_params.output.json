@@ -140,11 +140,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "function",
-    "name": "sessions.create",
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "credentials",
         "lineNumber": 3,
         "type": {
@@ -153,6 +154,7 @@
         },
         "properties": [
           {
+            "title": "param",
             "name": "credentials.name",
             "lineNumber": 4,
             "description": {
@@ -281,6 +283,7 @@
             }
           },
           {
+            "title": "param",
             "name": "credentials.password",
             "lineNumber": 5,
             "description": {
@@ -343,6 +346,7 @@
         ]
       },
       {
+        "title": "param",
         "name": "callback",
         "lineNumber": 6,
         "description": {
@@ -440,6 +444,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -494,12 +499,18 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Promise"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "function",
+    "name": "sessions.create",
     "members": {
       "instance": [],
       "static": [],

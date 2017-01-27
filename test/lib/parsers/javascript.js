@@ -8,8 +8,8 @@ function toComments(source, filename, opts) {
   source = typeof source === 'string' ? source : '(' + source.toString() + ')';
   return parse({
     file: filename || 'test.js',
-    source: source
-  }, opts);
+    source
+  }, opts || {});
 }
 
 test('parse - leading comment', function (t) {

@@ -12,7 +12,7 @@ function toComment(fn, filename) {
   return parse({
     file: filename,
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  }).map(github);
+  }, {}).map(github);
 }
 
 function evaluate(fn) {
@@ -23,7 +23,7 @@ test('github', function (t) {
 
   mock(mockRepo.master);
 
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /**
      * get one
      * @returns {number} one
@@ -31,9 +31,10 @@ test('github', function (t) {
     function getOne() {
       return 1;
     }
-  })[0].context.github,
-  'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8',
-  'gets github url');
+  })[0].context.github, {
+    path: 'index.js',
+    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
+  }, 'gets github url');
 
   mock.restore();
 
@@ -63,7 +64,7 @@ test('enterprise repository', function (t) {
 
   mock(mockRepo.enterprise);
 
-  t.equal(evaluate(function () {
+  t.deepEqual(evaluate(function () {
     /**
      * get one
      * @returns {number} one
@@ -71,9 +72,10 @@ test('enterprise repository', function (t) {
     function getOne() {
       return 1;
     }
-  })[0].context.github,
-  'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8',
-  'gets github enterprise url');
+  })[0].context.github, {
+    path: 'index.js',
+    url: 'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
+  }, 'gets github enterprise url');
 
   mock.restore();
 

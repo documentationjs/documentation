@@ -39,7 +39,7 @@ test('server - throws on bad port', function (t) {
 test('server', function (t) {
   var server = new Server(4001);
   t.ok(server, 'server is initialized');
-  server.start(function () {
+  server.start().then(function () {
 
     t.test('start can be called more than once, without a callback', function (tt) {
       server.start();
@@ -78,7 +78,7 @@ test('server', function (t) {
     });
 
     t.test('cleanup', function (tt) {
-      server.stop(function () {
+      server.stop().then(function () {
         tt.end();
       });
     });

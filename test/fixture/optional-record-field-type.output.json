@@ -24,9 +24,10 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "Record",
-    "kind": "typedef",
+    "examples": [],
+    "params": [],
     "properties": [
       {
         "title": "property",
@@ -50,6 +51,12 @@
         }
       }
     ],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "Record",
+    "kind": "typedef",
     "type": {
       "type": "RecordType",
       "fields": [

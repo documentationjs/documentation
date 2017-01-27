@@ -13,16 +13,7 @@
           "type": "text",
           "value": "getTheTime"
         }
-      ],
-      "data": {
-        "id": "getthetime",
-        "htmlAttributes": {
-          "id": "getthetime"
-        },
-        "hProperties": {
-          "id": "getthetime"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -168,16 +159,7 @@
           "type": "text",
           "value": "getTheTime"
         }
-      ],
-      "data": {
-        "id": "getthetime-1",
-        "htmlAttributes": {
-          "id": "getthetime-1"
-        },
-        "hProperties": {
-          "id": "getthetime-1"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

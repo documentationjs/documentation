@@ -123,9 +123,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "x",
         "lineNumber": 3,
         "description": {
@@ -186,6 +189,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -240,12 +244,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "addFive",
     "kind": "function",
     "members": {

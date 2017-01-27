@@ -13,16 +13,7 @@
           "type": "text",
           "value": "document-exported-export-default-value.input"
         }
-      ],
-      "data": {
-        "id": "document-exported-export-default-valueinput",
-        "htmlAttributes": {
-          "id": "document-exported-export-default-valueinput"
-        },
-        "hProperties": {
-          "id": "document-exported-export-default-valueinput"
-        }
-      }
+      ]
     }
   ]
 }

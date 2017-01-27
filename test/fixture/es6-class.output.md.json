@@ -13,16 +13,7 @@
           "type": "text",
           "value": "Foo"
         }
-      ],
-      "data": {
-        "id": "foo",
-        "htmlAttributes": {
-          "id": "foo"
-        },
-        "hProperties": {
-          "id": "foo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -85,16 +76,7 @@
           "type": "text",
           "value": "Bar"
         }
-      ],
-      "data": {
-        "id": "bar",
-        "htmlAttributes": {
-          "id": "bar"
-        },
-        "hProperties": {
-          "id": "bar"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -139,16 +121,7 @@
           "type": "text",
           "value": "constructor"
         }
-      ],
-      "data": {
-        "id": "constructor",
-        "htmlAttributes": {
-          "id": "constructor"
-        },
-        "hProperties": {
-          "id": "constructor"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -246,16 +219,7 @@
           "type": "text",
           "value": "bar"
         }
-      ],
-      "data": {
-        "id": "bar-1",
-        "htmlAttributes": {
-          "id": "bar-1"
-        },
-        "hProperties": {
-          "id": "bar-1"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

@@ -13,16 +13,7 @@
           "type": "text",
           "value": "simple-hashbang.input"
         }
-      ],
-      "data": {
-        "id": "simple-hashbanginput",
-        "htmlAttributes": {
-          "id": "simple-hashbanginput"
-        },
-        "hProperties": {
-          "id": "simple-hashbanginput"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

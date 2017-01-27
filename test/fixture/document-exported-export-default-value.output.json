@@ -24,7 +24,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "document-exported-export-default-value.input",
     "members": {
       "instance": [],

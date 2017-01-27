@@ -8,7 +8,7 @@ function toComments(fn, filename) {
   return parse({
     file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  });
+  }, {});
 }
 
 function evaluate(fn, callback) {

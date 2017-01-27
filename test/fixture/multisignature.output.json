@@ -85,7 +85,17 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "time",
+        "lineNumber": 13
+      }
+    ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -140,21 +150,18 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Date"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "getTheTime",
     "kind": "function",
-    "params": [
-      {
-        "title": "param",
-        "name": "time",
-        "lineNumber": 13
-      }
-    ],
     "members": {
       "instance": [],
       "static": [],
@@ -263,9 +270,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "time",
         "lineNumber": 2,
         "description": {
@@ -326,6 +336,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -380,11 +391,15 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "UndefinedLiteral"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "getTheTime",
     "kind": "function",
     "members": {

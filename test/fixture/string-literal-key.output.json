@@ -31,7 +31,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "alias": "MyContainerObject",
     "name": "MyContainerObject",
     "kind": "constant",
@@ -124,7 +132,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "foo",
     "members": {
       "instance": [],

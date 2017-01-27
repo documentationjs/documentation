@@ -13,16 +13,7 @@
           "type": "text",
           "value": "destructure"
         }
-      ],
-      "data": {
-        "id": "destructure",
-        "htmlAttributes": {
-          "id": "destructure"
-        },
-        "hProperties": {
-          "id": "destructure"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -94,15 +85,8 @@
                   "type": "strong",
                   "children": [
                     {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Object"
-                        }
-                      ]
+                      "type": "text",
+                      "value": "any"
                     }
                   ]
                 },
@@ -260,16 +244,7 @@
           "type": "text",
           "value": "destructure"
         }
-      ],
-      "data": {
-        "id": "destructure-1",
-        "htmlAttributes": {
-          "id": "destructure-1"
-        },
-        "hProperties": {
-          "id": "destructure-1"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -337,15 +312,8 @@
                   "type": "strong",
                   "children": [
                     {
-                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-                      "type": "link",
-                      "children": [
-                        {
-                          "type": "text",
-                          "value": "Array"
-                        }
-                      ]
+                      "type": "text",
+                      "value": "any"
                     }
                   ]
                 },
@@ -453,16 +421,7 @@
           "type": "text",
           "value": "multiply"
         }
-      ],
-      "data": {
-        "id": "multiply",
-        "htmlAttributes": {
-          "id": "multiply"
-        },
-        "hProperties": {
-          "id": "multiply"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -700,16 +659,7 @@
           "type": "text",
           "value": "Sink"
         }
-      ],
-      "data": {
-        "id": "sink",
-        "htmlAttributes": {
-          "id": "sink"
-        },
-        "hProperties": {
-          "id": "sink"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -754,16 +704,7 @@
           "type": "text",
           "value": "staticProp"
         }
-      ],
-      "data": {
-        "id": "staticprop",
-        "htmlAttributes": {
-          "id": "staticprop"
-        },
-        "hProperties": {
-          "id": "staticprop"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -808,16 +749,7 @@
           "type": "text",
           "value": "empty"
         }
-      ],
-      "data": {
-        "id": "empty",
-        "htmlAttributes": {
-          "id": "empty"
-        },
-        "hProperties": {
-          "id": "empty"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -862,16 +794,7 @@
           "type": "text",
           "value": "aGetter"
         }
-      ],
-      "data": {
-        "id": "agetter",
-        "htmlAttributes": {
-          "id": "agetter"
-        },
-        "hProperties": {
-          "id": "agetter"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -920,16 +843,7 @@
           "type": "text",
           "value": "constructor"
         }
-      ],
-      "data": {
-        "id": "constructor",
-        "htmlAttributes": {
-          "id": "constructor"
-        },
-        "hProperties": {
-          "id": "constructor"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -1100,16 +1014,7 @@
           "type": "text",
           "value": "hello"
         }
-      ],
-      "data": {
-        "id": "hello",
-        "htmlAttributes": {
-          "id": "hello"
-        },
-        "hProperties": {
-          "id": "hello"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1154,16 +1059,7 @@
           "type": "text",
           "value": "makeABasket"
         }
-      ],
-      "data": {
-        "id": "makeabasket",
-        "htmlAttributes": {
-          "id": "makeabasket"
-        },
-        "hProperties": {
-          "id": "makeabasket"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1265,16 +1161,7 @@
           "type": "text",
           "value": "makeASink"
         }
-      ],
-      "data": {
-        "id": "makeasink",
-        "htmlAttributes": {
-          "id": "makeasink"
-        },
-        "hProperties": {
-          "id": "makeasink"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1471,16 +1358,7 @@
           "type": "text",
           "value": "functionWithRest"
         }
-      ],
-      "data": {
-        "id": "functionwithrest",
-        "htmlAttributes": {
-          "id": "functionwithrest"
-        },
-        "hProperties": {
-          "id": "functionwithrest"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1575,16 +1453,7 @@
           "type": "text",
           "value": "functionWithRestAndType"
         }
-      ],
-      "data": {
-        "id": "functionwithrestandtype",
-        "htmlAttributes": {
-          "id": "functionwithrestandtype"
-        },
-        "hProperties": {
-          "id": "functionwithrestandtype"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1686,16 +1555,7 @@
           "type": "text",
           "value": "foo"
         }
-      ],
-      "data": {
-        "id": "foo",
-        "htmlAttributes": {
-          "id": "foo"
-        },
-        "hProperties": {
-          "id": "foo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1740,16 +1600,7 @@
           "type": "text",
           "value": "es6.input"
         }
-      ],
-      "data": {
-        "id": "es6input",
-        "htmlAttributes": {
-          "id": "es6input"
-        },
-        "hProperties": {
-          "id": "es6input"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1858,16 +1709,7 @@
           "type": "text",
           "value": "veryImportantTransform"
         }
-      ],
-      "data": {
-        "id": "veryimportanttransform",
-        "htmlAttributes": {
-          "id": "veryimportanttransform"
-        },
-        "hProperties": {
-          "id": "veryimportanttransform"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -1966,16 +1808,7 @@
           "type": "text",
           "value": "iAmProtected"
         }
-      ],
-      "data": {
-        "id": "iamprotected",
-        "htmlAttributes": {
-          "id": "iamprotected"
-        },
-        "hProperties": {
-          "id": "iamprotected"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -2020,16 +1853,7 @@
           "type": "text",
           "value": "iAmPublic"
         }
-      ],
-      "data": {
-        "id": "iampublic",
-        "htmlAttributes": {
-          "id": "iampublic"
-        },
-        "hProperties": {
-          "id": "iampublic"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -2074,16 +1898,7 @@
           "type": "text",
           "value": "execute"
         }
-      ],
-      "data": {
-        "id": "execute",
-        "htmlAttributes": {
-          "id": "execute"
-        },
-        "hProperties": {
-          "id": "execute"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -2128,16 +1943,7 @@
           "type": "text",
           "value": "isArrayEqualWith"
         }
-      ],
-      "data": {
-        "id": "isarrayequalwith",
-        "htmlAttributes": {
-          "id": "isarrayequalwith"
-        },
-        "hProperties": {
-          "id": "isarrayequalwith"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

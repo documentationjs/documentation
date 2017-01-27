@@ -24,9 +24,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "f",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -47,8 +47,10 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
+        "title": "returns",
         "type": {
           "type": "ArrayType",
           "elements": [
@@ -64,6 +66,11 @@
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "f",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],

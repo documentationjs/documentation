@@ -75,7 +75,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "C",
     "kind": "class",
     "members": {
@@ -156,7 +164,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "m",
           "kind": "function",
           "memberof": "C",

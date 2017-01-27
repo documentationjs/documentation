@@ -100,9 +100,16 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [
+      {
+        "description": "var result = returnTwo(4);\n// result is 6"
+      }
+    ],
     "params": [
       {
+        "title": "param",
         "name": "a",
         "lineNumber": 3,
         "description": {
@@ -163,6 +170,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -217,17 +225,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Number"
         }
       }
     ],
-    "examples": [
-      {
-        "description": "var result = returnTwo(4);\n// result is 6"
-      }
-    ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "returnTwo",
     "kind": "function",
     "members": {

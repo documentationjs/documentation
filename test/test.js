@@ -35,8 +35,7 @@ function readOptionsFromFile(file) {
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', function (t) {
     var file = path.join(__dirname, './fixture/simple.input.js');
-    documentation.build([file], { github: true }, function (err, result) {
-      t.ifError(err);
+    documentation.build([file], { github: true }).then(result => {
       normalize(result);
       var outputfile = file.replace('.input.js', '.output.github.json');
       if (UPDATE) {
@@ -45,8 +44,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
       var expect = require(outputfile);
       t.deepEqual(result, expect, 'produces correct JSON');
 
-      outputMarkdown(result, {}, function (err, result) {
-        t.ifError(err);
+      outputMarkdown(result, {}).then(result => {
         var outputfile = file.replace('.input.js', '.output.github.md');
         if (UPDATE) {
           fs.writeFileSync(outputfile, result, 'utf8');
@@ -61,7 +59,8 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
 
 test('document-exported error', function (t) {
   var file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
-  documentation.build([file], { documentExported: true }, function (err, result) {
+  documentation.build([file], { documentExported: true }).then(result => {
+  }, err => {
     t.match(err.message, /Unable to find the value x/g, 'Produces a descriptive error');
     t.end();
   });
@@ -72,8 +71,7 @@ test('external modules option', function (t) {
     path.join(__dirname, 'fixture', 'external.input.js')
   ], {
     external: '(external|external/node_modules/*)'
-  }, function (err, result) {
-    t.ifError(err);
+  }).then(result => {
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_external-deps-included.json');
     if (UPDATE) {
@@ -88,8 +86,9 @@ test('external modules option', function (t) {
 test('bad input', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], readOptionsFromFile(file), function (error, res) {
+      documentation.build([file], readOptionsFromFile(file)).then(res => {
         t.equal(res, undefined);
+      }).catch(error => {
         // make error a serializable object
         error = JSON.parse(JSON.stringify(error));
         // remove system-specific path
@@ -111,17 +110,13 @@ test('bad input', function (tt) {
 test('html', function (tt) {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
     tt.test(path.basename(file), function (t) {
-      documentation.build([file], readOptionsFromFile(file), function (err, result) {
-        t.ifError(err);
-        outputHtml(result, null, function (err, result) {
-          t.ifError(err);
-          var clean = result.sort(function (a, b) {
-            return a.path > b.path;
-          }).filter(function (r) {
-            return r.path.match(/(html)$/);
-          }).map(function (r) {
-            return r.contents;
-          }).join('\n');
+      documentation.build([file], readOptionsFromFile(file))
+        .then(result => outputHtml(result, {}))
+        .then(result => {
+          var clean = result.sort((a, b) => a.path > b.path)
+            .filter(r => r.path.match(/(html)$/))
+            .map(r => r.contents)
+            .join('\n');
           var outputfile = file.replace('.input.js', '.output.files');
           if (UPDATE) {
             fs.writeFileSync(outputfile, clean, 'utf8');
@@ -129,8 +124,10 @@ test('html', function (tt) {
           var expect = fs.readFileSync(outputfile, 'utf8');
           t.deepEqual(clean, expect);
           t.end();
+        })
+        .catch(err => {
+          t.fail(err);
         });
-      });
     });
   });
   tt.end();
@@ -139,12 +136,10 @@ test('html', function (tt) {
 test('outputs', function (ttt) {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
     ttt.test(path.basename(file), function (tt) {
-      documentation.build([file], readOptionsFromFile(file), function (err, result) {
-        tt.ifError(err);
+      documentation.build([file], readOptionsFromFile(file)).then(result => {
 
         tt.test('markdown', function (t) {
-          outputMarkdown(_.cloneDeep(result), { markdownToc: true }, function (err, result) {
-            t.ifError(err);
+          outputMarkdown(_.cloneDeep(result), { markdownToc: true }).then(result => {
             var outputfile = file.replace('.input.js', '.output.md');
             if (UPDATE) {
               fs.writeFileSync(outputfile, result, 'utf8');
@@ -152,13 +147,12 @@ test('outputs', function (ttt) {
             var expect = fs.readFileSync(outputfile, 'utf8');
             t.equal(result.toString(), expect, 'markdown output correct');
             t.end();
-          });
+          }).catch(error => t.ifError(error));
         });
 
         if (file.match(/es6.input.js/)) {
           tt.test('no markdown TOC', function (t) {
-            outputMarkdown(_.cloneDeep(result), { markdownToc: false }, function (err, result) {
-              t.ifError(err);
+            outputMarkdown(_.cloneDeep(result), { markdownToc: false }).then(result => {
               var outputfile = file.replace('.input.js', '.output-toc.md');
               if (UPDATE) {
                 fs.writeFileSync(outputfile, result, 'utf8');
@@ -166,13 +160,12 @@ test('outputs', function (ttt) {
               var expect = fs.readFileSync(outputfile, 'utf8');
               t.equal(result.toString(), expect, 'markdown output correct');
               t.end();
-            });
+            }).catch(error => t.ifError(error));
           });
         }
 
         tt.test('markdown AST', function (t) {
-          outputMarkdownAST(_.cloneDeep(result), {}, function (err, result) {
-            t.ifError(err);
+          outputMarkdownAST(_.cloneDeep(result), {}).then(result => {
             var outputfile = file.replace('.input.js', '.output.md.json');
             if (UPDATE) {
               fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
@@ -180,7 +173,7 @@ test('outputs', function (ttt) {
             var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
             t.deepEqual(result, expect, 'markdown AST output correct');
             t.end();
-          });
+          }).catch(error => t.ifError(error));
         });
 
         tt.test('JSON', function (t) {
@@ -206,62 +199,12 @@ test('outputs', function (ttt) {
   ttt.end();
 });
 
-test('outputs - sync', function (ttt) {
-  glob.sync(path.join(__dirname, 'fixture/sync', '*.input.js')).forEach(function (file) {
-    ttt.test(path.basename(file), function (tt) {
-      var result = documentation.buildSync([file], readOptionsFromFile(file));
-
-      tt.test('markdown', function (t) {
-        outputMarkdown(result, { markdownToc: true }, function (err, result) {
-          t.ifError(err);
-          var outputfile = file.replace('.input.js', '.output.md');
-          if (UPDATE) {
-            fs.writeFileSync(outputfile, result, 'utf8');
-          }
-          var expect = fs.readFileSync(outputfile, 'utf8');
-          t.equal(result.toString(), expect, 'markdown output correct');
-          t.end();
-        });
-      });
-
-      tt.test('markdown AST', function (t) {
-        outputMarkdownAST(result, {}, function (err, result) {
-          t.ifError(err);
-          var outputfile = file.replace('.input.js', '.output.md.json');
-          if (UPDATE) {
-            fs.writeFileSync(outputfile, JSON.stringify(result, null, 2), 'utf8');
-          }
-          var expect = JSON.parse(fs.readFileSync(outputfile, 'utf8'));
-          t.deepEqual(result, expect, 'markdown AST output correct');
-          t.end();
-        });
-      });
-
-      tt.test('JSON', function (t) {
-        normalize(result);
-        var outputfile = file.replace('.input.js', '.output.json');
-        if (UPDATE) {
-          fs.writeFileSync(outputfile, JSON.stringify(result, null, 2));
-        }
-        var expect = require(outputfile);
-        t.deepEqual(makePOJO(result), expect);
-        t.end();
-      });
-
-      tt.end();
-    });
-  });
-  ttt.end();
-});
-
 test('highlightAuto md output', function (t) {
   var file = path.join(__dirname, 'fixture/auto_lang_hljs/multilanguage.input.js'),
     hljsConfig = {hljs: {highlightAuto: true, languages: ['js', 'css', 'html']}};
 
-  documentation.build(file, null, function (err, result) {
-    t.ifError(err);
-    outputMarkdown(result, hljsConfig, function (err, result) {
-      t.ifError(err);
+  documentation.build(file, {}).then(result => {
+    outputMarkdown(result, hljsConfig).then(result => {
       var outputfile = file.replace('.input.js', '.output.md');
       if (UPDATE) {
         fs.writeFileSync(outputfile, result, 'utf8');
@@ -278,11 +221,8 @@ test('config', function (t) {
   var outputfile = path.join(__dirname, 'fixture', 'class.config.output.md');
   documentation.build([file], {
     config: path.join(__dirname, 'fixture', 'simple.config.yml')
-  }, function (err, out) {
-    t.ifError(err);
-    outputMarkdown(out, {}, function (err, md) {
-      t.ifError(err);
-
+  }).then(out => outputMarkdown(out, {}))
+    .then(md => {
       if (UPDATE) {
         fs.writeFileSync(outputfile, md);
       }
@@ -290,16 +230,17 @@ test('config', function (t) {
 
       t.equal(md, result, 'rendered markdown is equal');
       t.end();
+    })
+    .catch(err => {
+      t.fail(err);
     });
-  });
 });
 
 test('multi-file input', function (t) {
   documentation.build([
     path.join(__dirname, 'fixture', 'simple.input.js'),
     path.join(__dirname, 'fixture', 'simple-two.input.js')
-  ], null, function (err, result) {
-    t.ifError(err);
+  ], {}).then(result => {
     normalize(result);
     var outputfile = path.join(__dirname, 'fixture', '_multi-file-input.json');
     if (UPDATE) {
@@ -313,8 +254,7 @@ test('multi-file input', function (t) {
 
 test('accepts simple relative paths', function (t) {
   chdir(__dirname, function () {
-    documentation.build('fixture/simple.input.js', null, function (err, data) {
-      t.ifError(err);
+    documentation.build('test/fixture/simple.input.js', {}).then(data => {
       t.equal(data.length, 1, 'simple has no dependencies');
       t.end();
     });
@@ -323,8 +263,7 @@ test('accepts simple relative paths', function (t) {
 
 test('.lint', function (t) {
   chdir(__dirname, function () {
-    documentation.lint('fixture/simple.input.js', null, function (err, data) {
-      t.ifError(err);
+    documentation.lint('test/fixture/simple.input.js', {}).then(data => {
       t.equal(data, '', 'outputs lint information');
       t.end();
     });
@@ -333,7 +272,7 @@ test('.lint', function (t) {
 
 test('.lint with bad input', function (t) {
   chdir(__dirname, function () {
-    documentation.lint('fixture/bad/syntax.input.js', null, function (err, data) {
+    documentation.lint('test/fixture/bad/syntax.input.js', {}).catch(err => {
       t.ok(err, 'returns an error when syntax is incorrect');
       t.end();
     });

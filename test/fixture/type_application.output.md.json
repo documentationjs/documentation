@@ -13,16 +13,7 @@
           "type": "text",
           "value": "Address6"
         }
-      ],
-      "data": {
-        "id": "address6",
-        "htmlAttributes": {
-          "id": "address6"
-        },
-        "hProperties": {
-          "id": "address6"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

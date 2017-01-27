@@ -13,16 +13,7 @@
           "type": "text",
           "value": "multiplyTwice"
         }
-      ],
-      "data": {
-        "id": "multiplytwice",
-        "htmlAttributes": {
-          "id": "multiplytwice"
-        },
-        "hProperties": {
-          "id": "multiplytwice"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -168,16 +159,7 @@
           "type": "text",
           "value": "es6-ext"
         }
-      ],
-      "data": {
-        "id": "es6-ext",
-        "htmlAttributes": {
-          "id": "es6-ext"
-        },
-        "hProperties": {
-          "id": "es6-ext"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -222,16 +204,7 @@
           "type": "text",
           "value": "simple.input"
         }
-      ],
-      "data": {
-        "id": "simpleinput",
-        "htmlAttributes": {
-          "id": "simpleinput"
-        },
-        "hProperties": {
-          "id": "simpleinput"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

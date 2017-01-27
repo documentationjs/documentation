@@ -86,9 +86,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "b",
         "lineNumber": 2,
         "description": {
@@ -162,8 +165,7 @@
         "title": "param",
         "name": "$3",
         "type": {
-          "type": "NameExpression",
-          "name": "Object"
+          "type": "AllLiteral"
         },
         "properties": [
           {
@@ -184,6 +186,11 @@
         ]
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "addThem",
     "kind": "function",
     "members": {
@@ -286,17 +293,19 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
         "title": "param",
         "name": "$0",
         "type": {
-          "type": "NameExpression",
-          "name": "Object"
+          "type": "AllLiteral"
         },
         "properties": [
           {
+            "title": "param",
             "name": "$0.fishes",
             "lineNumber": 2,
             "description": {
@@ -364,6 +373,11 @@
         ]
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "fishesAndFoxes",
     "kind": "function",
     "members": {
@@ -466,9 +480,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "x",
         "lineNumber": 2,
         "type": {
@@ -481,6 +498,11 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "withDefault",
     "kind": "function",
     "members": {
@@ -572,7 +594,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "Foo",
     "kind": "class",
     "members": {
@@ -664,9 +694,12 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
           "params": [
             {
+              "title": "param",
               "name": "x",
               "lineNumber": 2,
               "description": {
@@ -727,6 +760,11 @@
               }
             }
           ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "method",
           "kind": "function",
           "memberof": "Foo",
@@ -937,11 +975,16 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "Address6",
+    "examples": [
+      {
+        "description": "var address = new Address6('2001::/32');"
+      }
+    ],
     "params": [
       {
+        "title": "param",
         "name": "address",
         "lineNumber": 5,
         "description": {
@@ -1002,6 +1045,7 @@
         }
       },
       {
+        "title": "param",
         "name": "groups",
         "lineNumber": 6,
         "description": {
@@ -1066,6 +1110,7 @@
         "default": "8"
       },
       {
+        "title": "param",
         "name": "third",
         "lineNumber": 7,
         "description": {
@@ -1130,6 +1175,7 @@
         }
       },
       {
+        "title": "param",
         "name": "foo",
         "lineNumber": 8,
         "description": {
@@ -1194,11 +1240,13 @@
         "default": "[1]"
       }
     ],
-    "examples": [
-      {
-        "description": "var address = new Address6('2001::/32');"
-      }
-    ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "Address6",
     "members": {
       "instance": [],
       "static": [],
@@ -1403,11 +1451,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "kind": "class",
-    "name": "GeoJSONSource",
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "options",
         "lineNumber": 5,
         "description": {
@@ -1471,6 +1520,7 @@
         },
         "properties": [
           {
+            "title": "param",
             "name": "options.data",
             "lineNumber": 6,
             "description": {
@@ -1544,6 +1594,7 @@
             }
           },
           {
+            "title": "param",
             "name": "options.maxzoom",
             "lineNumber": 8,
             "description": {
@@ -1608,6 +1659,7 @@
             "default": "14"
           },
           {
+            "title": "param",
             "name": "options.buffer",
             "lineNumber": 9,
             "description": {
@@ -1671,6 +1723,7 @@
             }
           },
           {
+            "title": "param",
             "name": "options.tolerance",
             "lineNumber": 10,
             "description": {
@@ -1736,6 +1789,13 @@
         ]
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "kind": "class",
+    "name": "GeoJSONSource",
     "members": {
       "instance": [],
       "static": [],
@@ -1849,9 +1909,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "x",
         "lineNumber": 4,
         "description": {
@@ -1916,6 +1979,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -1970,12 +2034,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "myfunc",
     "kind": "constant",
     "members": {
@@ -2079,9 +2147,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "address",
         "lineNumber": 4,
         "description": {
@@ -2138,6 +2209,11 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "foo",
     "kind": "function",
     "members": {

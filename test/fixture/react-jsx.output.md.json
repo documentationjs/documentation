@@ -13,16 +13,7 @@
           "type": "text",
           "value": "apples"
         }
-      ],
-      "data": {
-        "id": "apples",
-        "htmlAttributes": {
-          "id": "apples"
-        },
-        "hProperties": {
-          "id": "apples"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

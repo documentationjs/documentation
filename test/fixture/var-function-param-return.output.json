@@ -24,9 +24,9 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
-    "name": "f",
-    "kind": "function",
+    "examples": [],
     "params": [
       {
         "title": "param",
@@ -38,14 +38,21 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "boolean"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "f",
+    "kind": "function",
     "members": {
       "instance": [],
       "static": [],

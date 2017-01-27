@@ -86,13 +86,16 @@
         }
       }
     },
+    "augments": [],
     "errors": [
       {
         "message": "could not determine @name for hierarchy"
       }
     ],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "a",
         "lineNumber": 2,
         "description": {
@@ -159,14 +162,17 @@
         }
       }
     ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "members": {
       "instance": [],
       "static": [],
       "events": []
     },
-    "path": [
-      {}
-    ],
-    "namespace": "undefined"
+    "path": [],
+    "namespace": ""
   }
 ]

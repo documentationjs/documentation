@@ -13,16 +13,7 @@
           "type": "text",
           "value": "addOne"
         }
-      ],
-      "data": {
-        "id": "addone",
-        "htmlAttributes": {
-          "id": "addone"
-        },
-        "hProperties": {
-          "id": "addone"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -219,16 +210,7 @@
           "type": "text",
           "value": "inline-link.input"
         }
-      ],
-      "data": {
-        "id": "inline-linkinput",
-        "htmlAttributes": {
-          "id": "inline-linkinput"
-        },
-        "hProperties": {
-          "id": "inline-linkinput"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

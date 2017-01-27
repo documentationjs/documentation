@@ -13,16 +13,7 @@
           "type": "text",
           "value": "MyContainerObject"
         }
-      ],
-      "data": {
-        "id": "mycontainerobject",
-        "htmlAttributes": {
-          "id": "mycontainerobject"
-        },
-        "hProperties": {
-          "id": "mycontainerobject"
-        }
-      }
+      ]
     },
     {
       "depth": 2,
@@ -32,16 +23,7 @@
           "type": "text",
           "value": "foo"
         }
-      ],
-      "data": {
-        "id": "foo",
-        "htmlAttributes": {
-          "id": "foo"
-        },
-        "hProperties": {
-          "id": "foo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

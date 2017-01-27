@@ -13,16 +13,7 @@
           "type": "text",
           "value": "area"
         }
-      ],
-      "data": {
-        "id": "area",
-        "htmlAttributes": {
-          "id": "area"
-        },
-        "hProperties": {
-          "id": "area"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -131,16 +122,7 @@
           "type": "text",
           "value": "area"
         }
-      ],
-      "data": {
-        "id": "area-1",
-        "htmlAttributes": {
-          "id": "area-1"
-        },
-        "hProperties": {
-          "id": "area-1"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -187,16 +169,7 @@
           "type": "text",
           "value": "data"
         }
-      ],
-      "data": {
-        "id": "data",
-        "htmlAttributes": {
-          "id": "data"
-        },
-        "hProperties": {
-          "id": "data"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

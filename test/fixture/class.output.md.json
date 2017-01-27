@@ -13,16 +13,7 @@
           "type": "text",
           "value": "MyClass"
         }
-      ],
-      "data": {
-        "id": "myclass",
-        "htmlAttributes": {
-          "id": "myclass"
-        },
-        "hProperties": {
-          "id": "myclass"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -155,16 +146,7 @@
           "type": "text",
           "value": "getFoo"
         }
-      ],
-      "data": {
-        "id": "getfoo",
-        "htmlAttributes": {
-          "id": "getfoo"
-        },
-        "hProperties": {
-          "id": "getfoo"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -361,16 +343,7 @@
           "type": "text",
           "value": "getUndefined"
         }
-      ],
-      "data": {
-        "id": "getundefined",
-        "htmlAttributes": {
-          "id": "getundefined"
-        },
-        "hProperties": {
-          "id": "getundefined"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

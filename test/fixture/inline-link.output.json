@@ -95,9 +95,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "a",
         "lineNumber": 2,
         "description": {
@@ -158,6 +161,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -212,12 +216,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "addOne",
     "kind": "function",
     "members": {
@@ -508,9 +516,12 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
     "params": [
       {
+        "title": "param",
         "name": "a",
         "lineNumber": 8,
         "description": {
@@ -571,6 +582,7 @@
         }
       }
     ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -625,12 +637,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "inline-link.input",
     "kind": "function",
     "members": {

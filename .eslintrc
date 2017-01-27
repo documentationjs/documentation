@@ -1,6 +1,12 @@
 {
   "root": true,
-  "parser": "espree",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     "space-in-parens": 2,
     "space-before-blocks": 2,
@@ -21,8 +27,8 @@
     "no-new": 2,
     "key-spacing": 2,
     "no-multi-spaces": 2,
-    "valid-jsdoc": 2,
     "brace-style": 2,
+    "object-shorthand": ["error", "always", { "avoidQuotes": true }],
     "no-throw-literal": 2,
     "no-self-compare": 2,
     "no-void": 2,
@@ -32,13 +38,15 @@
     "quotes": [2, "single"],
     "indent": [2, 2],
     "curly": 2,
+    "strict": [2, "global"],
     "no-shadow": 0,
-    "no-undef": 2
+    "no-undef": 2,
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
   },
   "extends": "eslint:recommended",
   "env": {
     "node": true,
-    "es6": true,
-    "browser": true
+    "es6": true
   }
 }

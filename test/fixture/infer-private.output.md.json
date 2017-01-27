@@ -13,16 +13,7 @@
           "type": "text",
           "value": "C"
         }
-      ],
-      "data": {
-        "id": "c",
-        "htmlAttributes": {
-          "id": "c"
-        },
-        "hProperties": {
-          "id": "c"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -67,16 +58,7 @@
           "type": "text",
           "value": "m"
         }
-      ],
-      "data": {
-        "id": "m",
-        "htmlAttributes": {
-          "id": "m"
-        },
-        "hProperties": {
-          "id": "m"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

@@ -21,7 +21,7 @@ function evaluate(fn, filename) {
   return parse({
     file: filename || 'test.js',
     source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  });
+  }, {});
 }
 
 function addJSDocTag(tree) {
@@ -622,6 +622,7 @@ test('parse - @param', function (t) {
     /** @param test */
   })[0].params[0], {
     name: 'test',
+    title: 'param',
     lineNumber: 0
   }, 'name');
 
@@ -629,6 +630,7 @@ test('parse - @param', function (t) {
     /** @param {number} test */
   })[0].params[0], {
     name: 'test',
+    title: 'param',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -640,6 +642,7 @@ test('parse - @param', function (t) {
     /** @param {number} test - desc */
   })[0].params[0], {
     name: 'test',
+    title: 'param',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -664,6 +667,7 @@ test('parse - @prop', function (t) {
     /** @prop {number} test */
   })[0].properties[0], {
     name: 'test',
+    title: 'property',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -675,6 +679,7 @@ test('parse - @prop', function (t) {
     /** @prop {number} test - desc */
   })[0].properties[0], {
     name: 'test',
+    title: 'property',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -691,6 +696,7 @@ test('parse - @property', function (t) {
     /** @property {number} test */
   })[0].properties[0], {
     name: 'test',
+    title: 'property',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -702,6 +708,7 @@ test('parse - @property', function (t) {
     /** @property {number} test - desc */
   })[0].properties[0], {
     name: 'test',
+    title: 'property',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -741,6 +748,7 @@ test('parse - @return', function (t) {
   t.deepEqual(evaluate(function () {
     /** @return test */
   })[0].returns[0], {
+    title: 'returns',
     description: remark().parse('test')
   }, 'description');
 
@@ -748,6 +756,7 @@ test('parse - @return', function (t) {
     /** @return {number} test */
   })[0].returns[0], {
     description: remark().parse('test'),
+    title: 'returns',
     type: {
       name: 'number',
       type: 'NameExpression'
@@ -761,6 +770,7 @@ test('parse - @returns', function (t) {
   t.deepEqual(evaluate(function () {
     /** @returns test */
   })[0].returns[0], {
+    title: 'returns',
     description: remark().parse('test')
   }, 'description');
 
@@ -768,6 +778,7 @@ test('parse - @returns', function (t) {
     /** @returns {number} test */
   })[0].returns[0], {
     description: remark().parse('test'),
+    title: 'returns',
     type: {
       name: 'number',
       type: 'NameExpression'

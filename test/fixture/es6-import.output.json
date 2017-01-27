@@ -85,7 +85,17 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "a",
+        "lineNumber": 9
+      }
+    ],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -140,21 +150,18 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "Number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "multiplyTwice",
     "kind": "function",
-    "params": [
-      {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 9
-      }
-    ],
     "members": {
       "instance": [],
       "static": [],
@@ -244,7 +251,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "es6-ext",
     "members": {
       "instance": [],
@@ -344,7 +359,11 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
     "returns": [
       {
         "description": {
@@ -399,12 +418,16 @@
             }
           }
         },
+        "title": "returns",
         "type": {
           "type": "NameExpression",
           "name": "number"
         }
       }
     ],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "simple.input",
     "kind": "function",
     "members": {

@@ -1,3 +1,4 @@
+'use strict';
 var http = require('http'),
   concat = require('concat-stream');
 

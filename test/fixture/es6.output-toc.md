@@ -7,7 +7,7 @@ have any parameter descriptions.
 
 **Parameters**
 
--   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)**  (optional, default `{}`)
+-   `$0` **any**  (optional, default `{}`)
     -   `$0.phoneNumbers`   (optional, default `[]`)
     -   `$0.emailAddresses`   (optional, default `[]`)
     -   `$0.params` **...any** 
@@ -18,7 +18,7 @@ Similar, but with an array
 
 **Parameters**
 
--   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+-   `$0` **any** 
     -   `$0.a`  
     -   `$0.b`  
     -   `$0.c`  

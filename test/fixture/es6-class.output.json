@@ -75,14 +75,21 @@
         }
       }
     },
-    "errors": [],
-    "name": "Foo",
     "augments": [
       {
         "title": "augments",
         "name": "React.Component"
       }
     ],
+    "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "Foo",
     "kind": "class",
     "members": {
       "instance": [],
@@ -173,7 +180,15 @@
         }
       }
     },
+    "augments": [],
     "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "Bar",
     "kind": "class",
     "members": {
@@ -265,9 +280,12 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
           "params": [
             {
+              "title": "param",
               "name": "str",
               "lineNumber": 2,
               "type": {
@@ -276,6 +294,11 @@
               }
             }
           ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "constructor",
           "kind": "function",
           "memberof": "Bar",
@@ -384,7 +407,15 @@
               }
             }
           },
+          "augments": [],
           "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
           "name": "bar",
           "memberof": "Bar",
           "scope": "instance",

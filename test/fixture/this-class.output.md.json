@@ -13,16 +13,7 @@
           "type": "text",
           "value": "bookshelf"
         }
-      ],
-      "data": {
-        "id": "bookshelf",
-        "htmlAttributes": {
-          "id": "bookshelf"
-        },
-        "hProperties": {
-          "id": "bookshelf"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -69,16 +60,7 @@
           "type": "text",
           "value": "Book"
         }
-      ],
-      "data": {
-        "id": "book",
-        "htmlAttributes": {
-          "id": "book"
-        },
-        "hProperties": {
-          "id": "book"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -125,16 +107,7 @@
           "type": "text",
           "value": "title"
         }
-      ],
-      "data": {
-        "id": "title",
-        "htmlAttributes": {
-          "id": "title"
-        },
-        "hProperties": {
-          "id": "title"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",
@@ -179,16 +152,7 @@
           "type": "text",
           "value": "BookShelf"
         }
-      ],
-      "data": {
-        "id": "bookshelf-1",
-        "htmlAttributes": {
-          "id": "bookshelf-1"
-        },
-        "hProperties": {
-          "id": "bookshelf-1"
-        }
-      }
+      ]
     },
     {
       "type": "strong",
@@ -235,16 +199,7 @@
           "type": "text",
           "value": "title"
         }
-      ],
-      "data": {
-        "id": "title-1",
-        "htmlAttributes": {
-          "id": "title-1"
-        },
-        "hProperties": {
-          "id": "title-1"
-        }
-      }
+      ]
     },
     {
       "type": "paragraph",

@@ -76,6 +76,14 @@
       },
       "file": "[path]"
     },
+    "augments": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "bananas",
     "kind": "function",
     "members": {
@@ -168,6 +176,14 @@
       },
       "file": "[path]"
     },
+    "augments": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "carrots",
     "kind": "function",
     "members": {
@@ -260,6 +276,14 @@
       },
       "file": "[path]"
     },
+    "augments": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
     "name": "apples",
     "kind": "function",
     "members": {

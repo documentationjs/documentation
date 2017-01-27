@@ -1,3 +1,4 @@
+'use strict';
 var test = require('tap').test;
 var formatters = require('../../../../lib/output/util/formatters')(getHref);
 
