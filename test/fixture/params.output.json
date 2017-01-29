@@ -194,9 +194,11 @@
     "name": "addThem",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -381,9 +383,11 @@
     "name": "fishesAndFoxes",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -506,9 +510,11 @@
     "name": "withDefault",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -606,6 +612,8 @@
     "name": "Foo",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": {
@@ -770,9 +778,11 @@
           "memberof": "Foo",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -788,8 +798,8 @@
           "namespace": "Foo#method"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1248,9 +1258,11 @@
     "kind": "class",
     "name": "Address6",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1797,9 +1809,11 @@
     "kind": "class",
     "name": "GeoJSONSource",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2047,9 +2061,11 @@
     "name": "myfunc",
     "kind": "constant",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2217,9 +2233,11 @@
     "name": "foo",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

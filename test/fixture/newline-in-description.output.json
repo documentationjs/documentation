@@ -168,9 +168,11 @@
     "throws": [],
     "todos": [],
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [],
     "namespace": ""

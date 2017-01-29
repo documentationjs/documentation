@@ -512,9 +512,11 @@
     "kind": "function",
     "name": "sessions.create",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
