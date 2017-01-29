@@ -50,9 +50,11 @@
     "kind": "module",
     "name": "bookshelf",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -112,6 +114,8 @@
     "kind": "class",
     "name": "Book",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": {
@@ -202,9 +206,11 @@
           "memberof": "Book",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -219,8 +225,8 @@
           "namespace": "Book#title"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -280,6 +286,8 @@
     "kind": "class",
     "name": "BookShelf",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": {
@@ -370,9 +378,11 @@
           "memberof": "BookShelf",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -387,8 +397,8 @@
           "namespace": "BookShelf#title"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

@@ -36,6 +36,8 @@
     "name": "z",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": "",
@@ -76,9 +78,11 @@
           "memberof": "z",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -94,8 +98,8 @@
           "namespace": "z#zMethod"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -148,9 +152,11 @@
     "name": "x",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -197,6 +203,8 @@
     "name": "Class",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": "",
@@ -237,9 +245,11 @@
           "memberof": "Class",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -293,9 +303,11 @@
           "memberof": "Class",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -355,9 +367,11 @@
           "memberof": "Class",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -373,6 +387,7 @@
           "namespace": "Class#classSetter"
         }
       ],
+      "events": [],
       "static": [
         {
           "description": "",
@@ -413,9 +428,11 @@
           "memberof": "Class",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -469,9 +486,11 @@
           "memberof": "Class",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -531,9 +550,11 @@
           "memberof": "Class",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -548,8 +569,7 @@
           ],
           "namespace": "Class.staticSetter"
         }
-      ],
-      "events": []
+      ]
     },
     "path": [
       {
@@ -600,9 +620,11 @@
       "name": "boolean"
     },
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -648,9 +670,11 @@
     "todos": [],
     "name": "y2Default",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -764,9 +788,11 @@
     "name": "y4",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -812,7 +838,10 @@
     "todos": [],
     "name": "object",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
+      "events": [],
       "static": [
         {
           "description": "",
@@ -852,9 +881,11 @@
           "memberof": "object",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -906,9 +937,11 @@
           "memberof": "object",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -922,8 +955,7 @@
           ],
           "namespace": "object.func"
         }
-      ],
-      "events": []
+      ]
     },
     "path": [
       {
@@ -969,9 +1001,11 @@
     "name": "method",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1018,9 +1052,11 @@
     "name": "getter",
     "kind": "member",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1073,9 +1109,11 @@
     "name": "setter",
     "kind": "member",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1122,9 +1160,11 @@
     "name": "f1",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1171,9 +1211,11 @@
     "name": "f3",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1224,9 +1266,11 @@
       "name": "number"
     },
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1277,9 +1321,11 @@
       "name": "string"
     },
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1330,9 +1376,11 @@
       "name": "string"
     },
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1389,9 +1437,11 @@
     "name": "f4",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1437,9 +1487,11 @@
     "todos": [],
     "name": "o1",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1485,9 +1537,11 @@
     "name": "om1",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1595,9 +1649,11 @@
     "name": "f5",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1643,9 +1699,11 @@
     "todos": [],
     "name": "o2",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1691,9 +1749,11 @@
     "name": "om2",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

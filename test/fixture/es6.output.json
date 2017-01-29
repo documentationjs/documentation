@@ -120,9 +120,11 @@
     "name": "destructure",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -255,9 +257,11 @@
     "name": "destructure",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -520,9 +524,11 @@
     "name": "multiply",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -620,6 +626,8 @@
     "name": "Sink",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": {
@@ -711,9 +719,11 @@
           "memberof": "Sink",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -818,9 +828,11 @@
           "memberof": "Sink",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -929,9 +941,11 @@
           "memberof": "Sink",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -1129,9 +1143,11 @@
           "memberof": "Sink",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -1147,6 +1163,7 @@
           "namespace": "Sink#constructor"
         }
       ],
+      "events": [],
       "static": [
         {
           "description": {
@@ -1238,9 +1255,11 @@
           "memberof": "Sink",
           "scope": "static",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -1255,8 +1274,7 @@
           ],
           "namespace": "Sink.hello"
         }
-      ],
-      "events": []
+      ]
     },
     "path": [
       {
@@ -1424,9 +1442,11 @@
     "name": "makeABasket",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1682,9 +1702,11 @@
     "name": "makeASink",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1791,9 +1813,11 @@
     "name": "functionWithRest",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1874,7 +1898,7 @@
           "column": 0
         },
         "end": {
-          "line": 91,
+          "line": 98,
           "column": 1
         }
       }
@@ -1904,9 +1928,11 @@
     "name": "functionWithRestAndType",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -1972,22 +1998,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 95,
+        "line": 102,
         "column": 0
       },
       "end": {
-        "line": 97,
+        "line": 104,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 98,
+          "line": 105,
           "column": 0
         },
         "end": {
-          "line": 98,
+          "line": 105,
           "column": 24
         }
       }
@@ -2004,9 +2030,11 @@
     "name": "foo",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2082,22 +2110,22 @@
     ],
     "loc": {
       "start": {
-        "line": 102,
+        "line": 109,
         "column": 0
       },
       "end": {
-        "line": 105,
+        "line": 112,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 106,
+          "line": 113,
           "column": 0
         },
         "end": {
-          "line": 106,
+          "line": 113,
           "column": 38
         }
       }
@@ -2174,9 +2202,11 @@
     "name": "es6.input",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2242,22 +2272,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 108,
+        "line": 115,
         "column": 0
       },
       "end": {
-        "line": 110,
+        "line": 117,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 111,
+          "line": 118,
           "column": 0
         },
         "end": {
-          "line": 113,
+          "line": 120,
           "column": 1
         }
       }
@@ -2280,9 +2310,11 @@
     "name": "veryImportantTransform",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2354,22 +2386,22 @@
     ],
     "loc": {
       "start": {
-        "line": 123,
+        "line": 130,
         "column": 0
       },
       "end": {
-        "line": 126,
+        "line": 133,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 127,
+          "line": 134,
           "column": 0
         },
         "end": {
-          "line": 127,
+          "line": 134,
           "column": 27
         }
       }
@@ -2387,9 +2419,11 @@
     "name": "iAmProtected",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2461,22 +2495,22 @@
     ],
     "loc": {
       "start": {
-        "line": 129,
+        "line": 136,
         "column": 0
       },
       "end": {
-        "line": 132,
+        "line": 139,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 133,
+          "line": 140,
           "column": 0
         },
         "end": {
-          "line": 133,
+          "line": 140,
           "column": 24
         }
       }
@@ -2494,9 +2528,11 @@
     "name": "iAmPublic",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2562,22 +2598,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 141,
+        "line": 148,
         "column": 0
       },
       "end": {
-        "line": 143,
+        "line": 150,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 144,
+          "line": 151,
           "column": 0
         },
         "end": {
-          "line": 144,
+          "line": 151,
           "column": 42
         }
       }
@@ -2593,9 +2629,11 @@
     "todos": [],
     "name": "execute",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -2660,22 +2698,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 146,
+        "line": 153,
         "column": 0
       },
       "end": {
-        "line": 146,
+        "line": 153,
         "column": 32
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 147,
+          "line": 154,
           "column": 0
         },
         "end": {
-          "line": 153,
+          "line": 160,
           "column": 1
         }
       }
@@ -2687,7 +2725,7 @@
       {
         "title": "param",
         "name": "array1",
-        "lineNumber": 148,
+        "lineNumber": 155,
         "type": {
           "type": "TypeApplication",
           "expression": {
@@ -2705,7 +2743,7 @@
       {
         "title": "param",
         "name": "array2",
-        "lineNumber": 149,
+        "lineNumber": 156,
         "type": {
           "type": "TypeApplication",
           "expression": {
@@ -2770,9 +2808,11 @@
     "name": "isArrayEqualWith",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

@@ -36,9 +36,11 @@
     "name": "a",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -85,9 +87,11 @@
     "name": "b",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -134,6 +138,8 @@
     "name": "C",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": "",
@@ -174,9 +180,11 @@
           "memberof": "C",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -230,9 +238,11 @@
           "memberof": "C",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -286,9 +296,11 @@
           "memberof": "C",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -342,9 +354,11 @@
           "memberof": "C",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -360,8 +374,8 @@
           "namespace": "C#A"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -408,6 +422,8 @@
     "name": "D",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [
         {
           "description": "",
@@ -448,9 +464,11 @@
           "memberof": "D",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -504,9 +522,11 @@
           "memberof": "D",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -560,9 +580,11 @@
           "memberof": "D",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -616,9 +638,11 @@
           "memberof": "D",
           "scope": "instance",
           "members": {
+            "global": [],
+            "inner": [],
             "instance": [],
-            "static": [],
-            "events": []
+            "events": [],
+            "static": []
           },
           "path": [
             {
@@ -634,8 +658,8 @@
           "namespace": "D#A"
         }
       ],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

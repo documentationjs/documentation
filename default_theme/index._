@@ -56,6 +56,18 @@
                       <% }) %>
                     </ul>
                   <% } %>
+                  <% if (doc.members.inner && doc.members.inner.length) { %>
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Inner members</span></li>
+                      <% doc.members.inner.forEach(function(member) { %>
+                      <li><a
+                        href='#<%=member.namespace%>'
+                        class='regular pre-open'>
+                        #<%- member.name %>
+                      </a></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
                   <% if (doc.members.events && doc.members.events.length) { %>
                     <ul class='list-reset py1-ul pl1'>
                       <li class='h5'>Events</li>

@@ -35,9 +35,11 @@
     "todos": [],
     "name": "document-exported-export-default-object.input",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -82,9 +84,11 @@
     "todos": [],
     "name": "x",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

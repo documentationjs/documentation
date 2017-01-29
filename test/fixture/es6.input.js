@@ -88,6 +88,13 @@ function functionWithRest(...someParams) {
  * So does this one, with types
  */
 function functionWithRestAndType(...someParams: number) {
+
+  /**
+   * This is an inner member. We are still trying to figure out
+   * what these are for.
+   * @inner
+   */
+  var x = 10;
 }
 
 // FUNCTION TYPES

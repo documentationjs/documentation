@@ -92,9 +92,11 @@
     "name": "SpecialArray",
     "kind": "class",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -161,9 +163,11 @@
     "memberof": "module",
     "scope": "static",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

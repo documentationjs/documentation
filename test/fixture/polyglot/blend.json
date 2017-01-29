@@ -182,9 +182,11 @@
     "todos": [],
     "name": "hexToUInt32Color",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

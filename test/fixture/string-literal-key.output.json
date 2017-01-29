@@ -44,9 +44,11 @@
     "name": "MyContainerObject",
     "kind": "constant",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -143,9 +145,11 @@
     "todos": [],
     "name": "foo",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

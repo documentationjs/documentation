@@ -185,9 +185,11 @@
     "kind": "class",
     "name": "Address6",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {

@@ -71,7 +71,9 @@ declare type CommentTag = {
 declare type CommentMembers = {
   static: Array<Comment>,
   instance: Array<Comment>,
-  events: Array<Comment>
+  events: Array<Comment>,
+  global: Array<Comment>,
+  inner: Array<Comment>
 };
 
 declare type CommentExample = {
@@ -83,6 +85,8 @@ declare type Remark = {
   type: string,
   children: Array<Object>
 };
+
+declare type Scope = 'instance' | 'static' | 'inner' | 'global';
 
 declare type Comment = {
   errors: Array<CommentError>,
@@ -108,7 +112,7 @@ declare type Comment = {
   name?: string,
   kind?: string,
   memberof?: string,
-  scope?: string,
+  scope?: Scope,
   access?: string,
   alias?: string,
 
@@ -126,6 +130,12 @@ declare type Comment = {
 
   path?: Array<{
     name: string,
-    scope: string
+    scope: Scope
   }>
 };
+
+declare type ReducedComment = {
+  name: string,
+  kind: ?string,
+  scope?: ?Scope
+}

@@ -229,9 +229,11 @@
     "name": "addOne",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
@@ -650,9 +652,11 @@
     "name": "inline-link.input",
     "kind": "function",
     "members": {
+      "global": [],
+      "inner": [],
       "instance": [],
-      "static": [],
-      "events": []
+      "events": [],
+      "static": []
     },
     "path": [
       {
