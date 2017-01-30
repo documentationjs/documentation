@@ -11,6 +11,7 @@ var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
 var chdir = require('chdir');
+var pify = require('pify');
 var walk = require('../lib/walk');
 
 function normalize(comments) {
@@ -46,45 +47,42 @@ function readOptionsFromFile(file) {
 }
 
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
-  it('git option', function (done) {
+  it('git option', function () {
     var file = path.join(__dirname, './fixture/simple.input.js');
-    documentation.build([file], { github: true }).then(result => {
+    return documentation.build([file], { github: true }).then(result => {
       normalize(result);
       expect(result).toMatchSnapshot();
 
-      outputMarkdown(result, {}).then(result => {
+      return outputMarkdown(result, {}).then(result => {
         expect(result.toString()).toMatchSnapshot();
-        done();
       });
     });
   });
 }
 
-it('document-exported error', function (done) {
+it('document-exported error', function () {
   var file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
-  documentation.build([file], { documentExported: true }).then(result => {
+  return documentation.build([file], { documentExported: true }).then(result => {
   }, err => {
     expect(err.message).toMatch(/Unable to find the value x/g, 'Produces a descriptive error');
-    done();
   });
 });
 
-it('external modules option', function (done) {
-  documentation.build([
+it('external modules option', function () {
+  return documentation.build([
     path.join(__dirname, 'fixture', 'external.input.js')
   ], {
     external: '(external|external/node_modules/*)'
   }).then(result => {
     normalize(result);
     expect(result).toMatchSnapshot();
-    done();
   });
 });
 
-it('bad input', function (done) {
+it('bad input', function () {
   glob.sync(path.join(__dirname, 'fixture/bad', '*.input.js')).forEach(function (file) {
-    it(path.basename(file), function (done) {
-      documentation.build([file], readOptionsFromFile(file)).then(res => {
+    it(path.basename(file), function () {
+      return documentation.build([file], readOptionsFromFile(file)).then(res => {
         expect(res).toBe(undefined);
       }).catch(error => {
         // make error a serializable object
@@ -93,17 +91,15 @@ it('bad input', function (done) {
         delete error.filename;
         delete error.codeFrame;
         expect(error).toMatchSnapshot();
-        done();
       });
     });
   });
-  done();
 });
 
-it('html', function (done) {
+it('html', function () {
   glob.sync(path.join(__dirname, 'fixture/html', '*.input.js')).forEach(function (file) {
-    it(path.basename(file), function (t) {
-      documentation.build([file], readOptionsFromFile(file))
+    it(path.basename(file), function () {
+      return documentation.build([file], readOptionsFromFile(file))
         .then(result => outputHtml(result, {}))
         .then(result => {
           var clean = result.sort((a, b) => a.path > b.path)
@@ -111,45 +107,37 @@ it('html', function (done) {
             .map(r => r.contents)
             .join('\n');
           expect(clean).toMatchSnapshot();
-          done();
-        })
-        .catch(err => {
-          done.fail(err);
         });
     });
   });
-  done();
 });
 
-it('outputs', function (done) {
+describe('outputs', function () {
   glob.sync(path.join(__dirname, 'fixture', '*.input.js')).forEach(function (file) {
-    it(path.basename(file), function (tt) {
-      documentation.build([file], readOptionsFromFile(file)).then(result => {
+    it(path.basename(file), function () {
+      return documentation.build([file], readOptionsFromFile(file)).then(result => {
 
-        tt.test('markdown', function (t) {
-          outputMarkdown(_.cloneDeep(result), { markdownToc: true }).then(result => {
+        it('markdown', function () {
+          return outputMarkdown(_.cloneDeep(result), { markdownToc: true }).then(result => {
             expect(result.toString()).toMatchSnapshot();
-            done();
           }).catch(error => expect(error).toBeFalsy());
         });
 
         if (file.match(/es6.input.js/)) {
-          tt.test('no markdown TOC', function (t) {
-            outputMarkdown(_.cloneDeep(result), { markdownToc: false }).then(result => {
+          it('no markdown TOC', function () {
+            return outputMarkdown(_.cloneDeep(result), { markdownToc: false }).then(result => {
               expect(result.toString()).toMatchSnapshot();
-              done();
             }).catch(error => expect(error).toBeFalsy());
           });
         }
 
-        tt.test('markdown AST', function (t) {
-          outputMarkdownAST(_.cloneDeep(result), {}).then(result => {
+        it('markdown AST', function () {
+          return outputMarkdownAST(_.cloneDeep(result), {}).then(result => {
             expect(result).toMatchSnapshot();
-            done();
           }).catch(error => expect(error).toBeFalsy());
         });
 
-        tt.test('JSON', function (t) {
+        it('JSON', function () {
           normalize(result);
           result.forEach(function (comment) {
             validate(comment, documentationSchema.jsonSchema).errors.forEach(function (error) {
@@ -158,75 +146,63 @@ it('outputs', function (done) {
           });
           expect(makePOJO(result)).toMatchSnapshot();
         });
-
-        done();
       });
     });
   });
-  done();
 });
 
-it('highlightAuto md output', function (done) {
+it('highlightAuto md output', function () {
   var file = path.join(__dirname, 'fixture/auto_lang_hljs/multilanguage.input.js'),
     hljsConfig = {hljs: {highlightAuto: true, languages: ['js', 'css', 'html']}};
 
-  documentation.build(file, {}).then(result => {
-    outputMarkdown(result, hljsConfig).then(result => {
+  return documentation.build(file, {}).then(result => {
+    return outputMarkdown(result, hljsConfig).then(result => {
       expect(result.toString()).toMatchSnapshot();
-      done();
     });
   });
 });
 
-it('config', function (done) {
+it('config', function () {
   var file = path.join(__dirname, 'fixture', 'class.input.js');
   var outputfile = path.join(__dirname, 'fixture', 'class.config.output.md');
-  documentation.build([file], {
+  return documentation.build([file], {
     config: path.join(__dirname, 'fixture', 'simple.config.yml')
   }).then(out => outputMarkdown(out, {}))
     .then(md => {
       expect(md).toMatchSnapshot();
-      done();
-    })
-    .catch(err => {
-      done.fail(err);
     });
 });
 
-it('multi-file input', function (done) {
-  documentation.build([
+it('multi-file input', function () {
+  return documentation.build([
     path.join(__dirname, 'fixture', 'simple.input.js'),
     path.join(__dirname, 'fixture', 'simple-two.input.js')
   ], {}).then(result => {
     normalize(result);
     expect(result).toMatchSnapshot();
-    done();
   });
 });
 
-it('accepts simple relative paths', function (done) {
-  chdir(__dirname, function () {
-    documentation.build('test/fixture/simple.input.js', {}).then(data => {
+it('accepts simple relative paths', function () {
+  return pify(chdir)(__dirname).then(function () {
+    return documentation.build('test/fixture/simple.input.js', {}).then(data => {
       expect(data.length).toBe(1);
-      done();
     });
   });
 });
 
-it('.lint', function (done) {
-  chdir(__dirname, function () {
-    documentation.lint('test/fixture/simple.input.js', {}).then(data => {
+it('.lint', function () {
+  return pify(chdir)(__dirname).then(function () {
+    return documentation.lint('test/fixture/simple.input.js', {}).then(data => {
       expect(data).toBe('');
-      done();
     });
   });
 });
 
-it('.lint with bad input', function (done) {
-  chdir(__dirname, function () {
-    documentation.lint('test/fixture/bad/syntax.input.js', {}).catch(err => {
+it('.lint with bad input', function () {
+  return pify(chdir)(__dirname).then(function () {
+    return documentation.lint('test/fixture/bad/syntax.input.js', {}).catch(err => {
       expect(err).toBeTruthy();
-      done();
     });
   });
 });
