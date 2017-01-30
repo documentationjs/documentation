@@ -1,6 +1,9 @@
 'use strict';
 
-var get = require('../utils').get, File = require('vinyl'), Server = require('../../lib/serve/server');
+var got = require('got');
+var File = require('vinyl');
+var Server = require('../../lib/serve/server');
+var getPort = require('get-port');
 
 var jsFile = new File({
   cwd: '/',
@@ -32,58 +35,54 @@ it('server - throws on bad port', function () {
   }).toThrow();
 });
 
-it('server', function (done) {
-  var server = new Server(4001);
-  expect(server).toBeTruthy();
-  server.start().then(function () {
+describe('server', function () {
+  it('boots up the server', function () {
+    return getPort().then(port => {
+      var server = new Server(port, {
+        liveReload: false
+      });
+      expect(server).toBeTruthy();
+      return server.start().then(function () {
 
-    t.test('start can be called more than once, without a callback', function (tt) {
-      server.start();
-      tt.end();
-    });
+        it('start can be called more than once, without a callback', function () {
+          return server.start();
+        });
 
-    t.test('base path', function (tt) {
-      get('http://localhost:4001/file.coffee', function (code) {
-        tt.equal(code, 404, 'does not have a file, emits 404');
-        tt.end();
+        it('base path', function (done) {
+          return got(`http://localhost:${port}/file.coffee`).then(function (code) {
+            expect(code).toEqual(404);
+          });
+        });
+
+        it('base path', function (done) {
+          server.setFiles([coffeeFile]);
+          return got(`http://localhost:${port}/file.coffee`).then(function (text) {
+            expect(text).toEqual('test = 123');
+          });
+        });
+
+        it('reset files', function (done) {
+          server.setFiles([coffeeFile, jsFile]);
+          return got(`http://localhost:${port}/file.js`).then(function (text) {
+            expect(text).toEqual('var test = 123;');
+          });
+        });
+
+        it('index.html special case', function (done) {
+          server.setFiles([coffeeFile, indexFile, jsFile]);
+          return got(`http://localhost:${port}/`).then(function (text) {
+            expect(text).toEqual('<html>');
+          });
+        });
+
+        it('cleanup', function (tt) {
+          return server.stop();
+        });
+
+        it('stop can be called more than once, without a callback', function () {
+          server.stop();
+        });
       });
     });
-
-    t.test('base path', function (tt) {
-      server.setFiles([coffeeFile]);
-      get('http://localhost:4001/file.coffee', function (text) {
-        tt.equal(text, 'test = 123', 'emits response');
-        tt.end();
-      });
-    });
-
-    t.test('reset files', function (tt) {
-      server.setFiles([coffeeFile, jsFile]);
-      get('http://localhost:4001/file.js', function (text) {
-        tt.equal(text, 'var test = 123;', 'emits response');
-        tt.end();
-      });
-    });
-
-    t.test('index.html special case', function (tt) {
-      server.setFiles([coffeeFile, indexFile, jsFile]);
-      get('http://localhost:4001/', function (text) {
-        tt.equal(text, '<html>', 'sends index.html when / is requested');
-        tt.end();
-      });
-    });
-
-    t.test('cleanup', function (tt) {
-      server.stop().then(function () {
-        tt.end();
-      });
-    });
-
-    t.test('stop can be called more than once, without a callback', function (tt) {
-      server.stop();
-      tt.end();
-    });
-
-    done();
   });
 });

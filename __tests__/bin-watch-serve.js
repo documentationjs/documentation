@@ -1,6 +1,10 @@
 'use strict';
 
-var path = require('path'), os = require('os'), get = require('./utils').get, spawn = require('child_process').spawn, fs = require('fs');
+var path = require('path');
+var os = require('os');
+var got = require('got');
+var spawn = require('child_process').spawn;
+var fs = require('fs');
 
 function documentation(args, options, callback, parseJSON) {
   if (!callback) {
@@ -39,7 +43,7 @@ it('provides index.html', options, function (done) {
   var docProcess = documentation(['serve', 'fixture/simple.input.js']);
   docProcess.stdout.on('data', function (data) {
     expect(data.toString().trim()).toBe('documentation.js serving on port 4001');
-    get('http://localhost:4001/', function (text) {
+    got('http://localhost:4001/').then(function (text) {
       expect(text.match(/<html>/)).toBeTruthy();
       docProcess.kill();
       done();
@@ -51,7 +55,7 @@ it('accepts port argument', options, function (done) {
   var docProcess = documentation(['serve', 'fixture/simple.input.js', '--port=4004']);
   docProcess.stdout.on('data', function (data) {
     expect(data.toString().trim()).toBe('documentation.js serving on port 4004');
-    get('http://localhost:4004/', function (text) {
+    got('http://localhost:4004/').then(function (text) {
       expect(text.match(/<html>/)).toBeTruthy();
       docProcess.kill();
       done();
@@ -64,11 +68,11 @@ it('--watch', options, function (done) {
   fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
   var docProcess = documentation(['serve', tmpFile, '--watch']);
   docProcess.stdout.on('data', function (data) {
-    get('http://localhost:4001/', function (text) {
+    got('http://localhost:4001/').then(function (text) {
       expect(text.match(/apples/)).toBeTruthy();
       fs.writeFileSync(tmpFile, '/** a function */function bananas() {}');
       function doGet() {
-        get('http://localhost:4001/', function (text) {
+        got('http://localhost:4001/').then(function (text) {
           if (text.match(/bananas/)) {
             docProcess.kill();
             done();
@@ -90,11 +94,11 @@ it('--watch', options, function (done) {
   fs.writeFileSync(b, '/** soup */function soup() {}');
   var docProcess = documentation(['serve', a, '--watch']);
   docProcess.stdout.on('data', function (data) {
-    get('http://localhost:4001/', function (text) {
+    got('http://localhost:4001/').then(function (text) {
       expect(text.match(/soup/)).toBeTruthy();
       fs.writeFileSync(b, '/** nuts */function nuts() {}');
       function doGet() {
-        get('http://localhost:4001/', function (text) {
+        got('http://localhost:4001/').then(function (text) {
           if (text.match(/nuts/)) {
             docProcess.kill();
             done();
@@ -114,7 +118,7 @@ it('error page', options, function (done) {
   fs.writeFileSync(a, '**');
   var docProcess = documentation(['serve', a, '--watch']);
   docProcess.stdout.on('data', function (data) {
-    get('http://localhost:4001/', function (text) {
+    got('http://localhost:4001/').then(function (text) {
       expect(text.match(/Unexpected token/)).toBeTruthy();
       docProcess.kill();
       done();

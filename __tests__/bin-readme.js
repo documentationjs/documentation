@@ -24,7 +24,7 @@ function documentation(args, options, callback, parseJSON) {
 
 var UPDATE = !!process.env.UPDATE;
 
-it('readme command', function (done) {
+describe('readme command', function () {
   var fixtures = path.join(__dirname, 'fixture/readme');
   var sourceFile = path.join(fixtures, 'index.js');
 

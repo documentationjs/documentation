@@ -1,3 +1,12 @@
+declare type ServerOptions = {
+  liveReload: boolean
+};
+
+declare type ServerFile = {
+  relative: string,
+  contents: string
+};
+
 declare type DocumentationConfig = {
   polyglot?: boolean,
   inferPrivate?: boolean,

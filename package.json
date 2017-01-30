@@ -70,6 +70,8 @@
     "eslint-plugin-flowtype": "^2.29.2",
     "flow-bin": "^0.37.4",
     "fs-extra": "^1.0.0",
+    "get-port": "^2.1.0",
+    "got": "^6.7.1",
     "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
     "standard-changelog": "0.0.1",
@@ -106,6 +108,8 @@
     "node": ">=4"
   },
   "jest": {
-    "testPathIgnorePatterns": ["/fixture/"]
+    "testPathIgnorePatterns": [
+      "/fixture/"
+    ]
   }
 }

@@ -6,12 +6,28 @@ var documentation = require('../');
 var outputMarkdown = require('../lib/output/markdown.js');
 var outputMarkdownAST = require('../lib/output/markdown_ast.js');
 var outputHtml = require('../lib/output/html.js');
-var normalize = require('./normalize');
 var glob = require('glob');
 var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
 var chdir = require('chdir');
+var walk = require('../lib/walk');
+
+function normalize(comments) {
+  return walk(comments, function (comment) {
+    var hasGithub = !!comment.context.github;
+    var path = comment.context.path;
+    comment.context = {
+      loc: comment.context.loc
+    };
+    if (hasGithub) {
+      comment.context.github = '[github]';
+    }
+    if (path) {
+      comment.context.path = path;
+    }
+  });
+}
 
 function makePOJO(ast) {
   return JSON.parse(JSON.stringify(ast));
