@@ -1,14 +1,13 @@
 'use strict';
 
-var path = require('path'), os = require('os'), exec = require('child_process').exec, tmp = require('tmp'), fs = require('fs-extra');
+var path = require('path');
+var os = require('os');
+var exec = require('child_process').exec;
+var tmp = require('tmp');
+var fs = require('fs-extra');
 
-function documentation(args, options, callback, parseJSON) {
-  if (!callback) {
-    parseJSON = callback;
-    callback = options;
-    options = {};
-  }
-
+function documentation(args, options, parseJSON) {
+  options = options || {};
   if (!options.cwd) {
     options.cwd = __dirname;
   }
@@ -17,15 +16,25 @@ function documentation(args, options, callback, parseJSON) {
 
   args.unshift(path.join(__dirname, '../bin/documentation.js'));
 
-  exec(args.join(' '), options, function (err, stdout, stderr) {
-    if (err) {
-      return callback(err, stdout, stderr);
-    }
-    if (parseJSON === false) {
-      callback(err, stdout, stderr);
-    } else {
-      callback(err, JSON.parse(stdout), stderr);
-    }
+  return new Promise((resolve, reject) => {
+    exec(args.join(' '), options, function (err, stdout, stderr) {
+      if (err) {
+        return reject(stderr);
+      }
+      if (stderr) {
+        return reject(stderr);
+      }
+      if (parseJSON === false) {
+        resolve(stdout);
+      } else {
+        try {
+          resolve(JSON.parse(stdout));
+        } catch(err) {
+          console.log('Failed to parse ' + stdout + ' from args ' + args);
+          reject(err);
+        }
+      }
+    });
   });
 }
 
@@ -37,227 +46,183 @@ function normalize(result) {
 }
 
 describe('binary', function () {
-  it('documentation binary', function (done) {
-    documentation(['build fixture/simple.input.js'], function (err, data) {
-      expect(err).toBeFalsy();
+  it('documentation binary', function () {
+    return documentation(['build fixture/simple.input.js']).then(function (data) {
       expect(data.length).toBe(1);
-      done();
     });
   });
 
-  it('defaults to parsing package.json main', function (done) {
-    documentation(['build'], { cwd: path.join(__dirname, '..') }, function (err, data) {
-      expect(err).toBeFalsy();
+  it('defaults to parsing package.json main', function () {
+    return documentation(['build'], { cwd: path.join(__dirname, '..') }).then(function (data) {
       expect(data.length).toBeTruthy();
-      done();
     });
   });
 
-  it('polyglot mode', function (done) {
-    documentation(['build fixture/polyglot/blend.cpp --polyglot'],
-      function (err, data) {
-        expect(err).toBeFalsy();
-        expect(normalize(data)).toMatchSnapshot();
-        done();
-      });
+  it('polyglot mode', function () {
+    return documentation(['build fixture/polyglot/blend.cpp --polyglot']).then(data => {
+      expect(normalize(data)).toMatchSnapshot();
+    });
   });
 
-  it('accepts config file', function (done) {
-    documentation(['build fixture/sorting/input.js -c fixture/config.json'],
-      function (err, data) {
-        expect(err).toBeFalsy();
-        expect(normalize(data)).toMatchSnapshot();
-        done();
-      });
+  it('accepts config file', function () {
+    return documentation(['build fixture/sorting/input.js -c fixture/config.json']).then(data => {
+      expect(normalize(data)).toMatchSnapshot();
+    });
   });
 
-  it('accepts config file - reports failures', function (done) {
-    documentation(['build fixture/sorting/input.js -c fixture/config-bad.yml'], {},
-      function (err, data, stderr) {
-        expect(err).toBeFalsy();
-        expect(stderr).toMatchSnapshot();
-        done();
-      }, false);
+  it('accepts config file - reports failures', function () {
+    return documentation(['build fixture/sorting/input.js -c fixture/config-bad.yml'], false).catch(err => {
+      expect(err).toMatchSnapshot();
+    });
   });
 
-  it('accepts config file - reports parse failures', function (done) {
-    documentation(['build fixture/sorting/input.js -c fixture/config-malformed.json'], {},
-      function (err, data, stderr) {
-        expect(stderr).toMatch(/SyntaxError/g);
-        done();
-      }, false);
+  it('accepts config file - reports parse failures', function () {
+    return documentation(['build fixture/sorting/input.js -c fixture/config-malformed.json'], {}, false).catch(err => {
+      expect(err).toMatch(/SyntaxError/g);
+    });
   });
 
-  it('--shallow option', function (done) {
-    documentation(['build --shallow fixture/internal.input.js'], function (err, data) {
-      expect(err).toBeFalsy();
+  it('--shallow option', function () {
+    return documentation(['build --shallow fixture/internal.input.js']).then(data => {
       expect(data.length).toBe(0);
-      done();
     });
   });
 
-  it('external modules option', function (done) {
-    documentation(['build fixture/external.input.js ' +
-      '--external=external --external=external/node_modules'], function (err, data) {
-      expect(err).toBeFalsy();
-      expect(data.length).toBe(2);
-      done();
-    });
+  it('external modules option', function () {
+    return documentation(['build fixture/external.input.js ' +
+      '--external=external --external=external/node_modules']).then(data => {
+        expect(data.length).toBe(2);
+      });
   });
 
-  it('when a file is specified both in a glob and explicitly, it is only documented once', function (done) {
-    documentation(['build fixture/simple.input.js fixture/simple.input.*'], function (err, data) {
-      expect(err).toBeFalsy();
+  it('when a file is specified both in a glob and explicitly, it is only documented once', function () {
+    return documentation(['build fixture/simple.input.js fixture/simple.input.*']).then(data => {
       expect(data.length).toBe(1);
-      done();
     });
   });
 
-  it('extension option', function (done) {
+  it('extension option', function () {
     documentation(['build fixture/extension/index.otherextension ' +
-      '--requireExtension=otherextension --parseExtension=otherextension'], function (err, data) {
-      expect(err).toBeFalsy();
-      expect(data.length).toBe(1);
-      done();
-    });
+      '--requireExtension=otherextension --parseExtension=otherextension']).then(data => {
+        expect(data.length).toBe(1);
+      });
   });
 
   /*
    * This tests that parseExtension adds extensions to smartGlob's
    * look through directories.
    */
-  it('polyglot + parseExtension + smartGlob', function (done) {
-    documentation(['build fixture/polyglot ' +
-      '--polyglot --parseExtension=cpp'], function (err, data) {
-      expect(err).toBeFalsy();
-      expect(data.length).toBe(1);
-      done();
-    });
+  it('polyglot + parseExtension + smartGlob', function () {
+    return documentation(['build fixture/polyglot ' +
+      '--polyglot --parseExtension=cpp']).then(data => {
+        expect(data.length).toBe(1);
+      });
   });
 
-  it('extension option', function (done) {
-    documentation(['build fixture/extension.jsx'], function (err, data) {
-      expect(err).toBeFalsy();
-      done();
+  it('extension option', function () {
+    return documentation(['build fixture/extension.jsx']).then(data => {
+      expect(data).toEqual([]);
     });
   });
 
   describe('invalid arguments', function () {
-    it('bad -f option', function (done) {
-      documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], {}, function (err) {
-        expect(err).toBeTruthy();
-        done();
-      }, false);
+    it('bad -f option', function () {
+      return documentation(['build -f DOES-NOT-EXIST fixture/internal.input.js'], {}, false)
+        .catch(err => {
+          expect(err).toBeTruthy();
+        });
     });
 
-    it('html with no destination', function (done) {
-      documentation(['build -f html fixture/internal.input.js'], function (err) {
+    it('html with no destination', function () {
+      return documentation(['build -f html fixture/internal.input.js']).catch(err => {
         expect(err.toString()
           .match(/The HTML output mode requires a destination directory set with -o/)).toBeTruthy();
-        done();
       });
     });
 
-    it('bad command', function (done) {
-      documentation(['-f html fixture/internal.input.js'], {}, function (err, stdout, stderr) {
+    it('bad command', function () {
+      documentation(['-f html fixture/internal.input.js']).catch(err => {
         expect(err.code).toBeTruthy();
-        done();
       }, false);
     });
 
   });
 
-  it('--config', function (done) {
+  it('--config', function () {
     var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
     fs.mkdirSync(dst);
     var outputIndex = path.join(dst, 'index.html');
-    documentation(['build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
-      dst], function (err) {
-      expect(err).toBeFalsy();
-      var expectedOutput = fs.readFileSync(outputIndex, 'utf8');
-      expect(expectedOutput).toMatchSnapshot();
-      done();
-    }, false);
+    return documentation(['build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
+      dst], {}, false).then(() => {
+        var expectedOutput = fs.readFileSync(outputIndex, 'utf8');
+        expect(expectedOutput).toMatchSnapshot();
+      });
   });
 
-  it('--version', function (done) {
-    documentation(['--version'], {}, function (err, output) {
+  it('--version', function () {
+    return documentation(['--version'], {}, false).then(output => {
       expect(output).toBeTruthy();
-      done();
-    }, false);
+    });
   });
 
   describe('lint command', function () {
 
-    it('generates lint output', function (done) {
-      documentation(['lint fixture/lint/lint.input.js'], function (err, data) {
+    it('generates lint output', function () {
+      return documentation(['lint fixture/lint/lint.input.js']).then(data => {
         data = data.toString().split('\n').slice(2).join('\n');
-        expect(err.code).toBe(1);
         expect(data).toMatchSnapshot();
-        done();
       });
     });
 
-    it('generates no output on a good file', function (done) {
-      documentation(['lint fixture/simple.input.js'], {}, function (err, data) {
-        expect(err).toBe(null);
+    it('generates no output on a good file', function () {
+      documentation(['lint fixture/simple.input.js'], {}, false).then(data => {
         expect(data).toBe('');
-        done();
-      }, false);
+      });
     });
 
-    it('exposes syntax error on a bad file', function (done) {
-      documentation(['lint fixture/bad/syntax.input.js'], {}, function (err, data) {
+    it('exposes syntax error on a bad file', function () {
+      documentation(['lint fixture/bad/syntax.input.js'], {}, false).catch(err => {
         expect(err.code > 0).toBeTruthy();
-        done();
-      }, false);
+      });
     });
 
-    it('lint with no inputs', function (done) {
+    it('lint with no inputs', function () {
       documentation(['lint'], {
         cwd: path.join(__dirname, 'fixture/bad')
-      }, function (err, data) {
+      }, false).catch(err => {
         expect(err.code > 0).toBeTruthy();
-        done();
-      }, false);
+      });
     });
   });
 
-  it('given no files', function (done) {
-    documentation(['build'], function (err) {
+  it('given no files', function () {
+    return documentation(['build']).catch(function (err) {
       expect(err.toString()
         .match(/documentation was given no files and was not run in a module directory/)).toBeTruthy();
-      done();
     });
   });
 
-  it('with an invalid command', function (done) {
-    documentation(['invalid'], {}, function (err) {
+  it('with an invalid command', function () {
+    return documentation(['invalid'], {}, false).catch(function (err) {
       expect(err).toBeTruthy();
-      done();
-    }, false);
+    });
   });
 
-  it('--access flag', function (done) {
-    documentation(['build --shallow fixture/internal.input.js -a public'], {}, function (err, data) {
-      expect(err).toBeFalsy();
-      expect(data).toBe('[]');
-      done();
-    }, false);
+  it('--access flag', function () {
+    return documentation(['build --shallow fixture/internal.input.js -a public'], {}, false)
+      .then(data => {
+        expect(data).toBe('[]');
+      });
   });
 
-  it('--private flag', function (done) {
-    documentation(['build fixture/internal.input.js --private'], {}, function (err, data) {
-      expect(err).toBeFalsy();
+  it('--private flag', function () {
+    return documentation(['build fixture/internal.input.js --private'], {}).then(data => {
       expect(data.length > 2).toBeTruthy();
-      done();
-    }, false);
+    });
   });
 
-  it('--infer-private flag', function (done) {
-    documentation(['build fixture/infer-private.input.js --infer-private ^_'], {}, function (err, data) {
-      expect(err).toBeFalsy();
-
+  it('--infer-private flag', function () {
+    return documentation(['build fixture/infer-private.input.js --infer-private ^_'], {}, false).then(data => {
       // This uses JSON.parse with a reviver used as a visitor.
       JSON.parse(data, function (n, v) {
         // Make sure we do not see any names that match `^_`.
@@ -267,51 +232,45 @@ describe('binary', function () {
         }
         return v;
       });
-      done();
-    }, false);
+    });
   });
 
-  it('write to file', function (done) {
+  it('write to file', function () {
 
     var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
 
-    documentation(['build --shallow fixture/internal.input.js -o ' + dst], {}, function (err, data) {
-      expect(err).toBeFalsy();
+    return documentation(['build --shallow fixture/internal.input.js -o ' + dst], {}, false).then(data => {
       expect(data).toBe('');
       expect(fs.existsSync(dst)).toBeTruthy();
-      done();
-    }, false);
+    });
   });
 
-  it('write to html', function (done) {
+  it('write to html', function () {
 
     var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
     fs.mkdirSync(dstDir);
 
-    documentation(['build --shallow fixture/internal.input.js -f html -o ' + dstDir], {},
-      function (err, data) {
-        expect(err).toBeFalsy();
+    documentation(['build --shallow fixture/internal.input.js -f html -o ' + dstDir], {}, false)
+      .then(data => {
         expect(data).toBe('');
         expect(fs.existsSync(path.join(dstDir, 'index.html'))).toBeTruthy();
-        done();
-      }, false);
+      });
   });
 
-  it('write to html with custom theme', function (done) {
+  it('write to html with custom theme', function () {
 
     var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
     fs.mkdirSync(dstDir);
 
-    documentation(['build -t fixture/custom_theme --shallow fixture/internal.input.js -f html -o ' + dstDir], {},
-      function (err, data) {
-        expect(err).toBeFalsy();
+    return documentation(['build -t fixture/custom_theme --shallow fixture/internal.input.js -f html -o ' + dstDir],
+      {}, false)
+      .then(data => {
         expect(data).toBe('');
         expect(fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8')).toBeTruthy();
-        done();
-      }, false);
+      });
   });
 
-  it('write to html, highlightAuto', function (done) {
+  it('write to html, highlightAuto', function () {
 
     var fixture = 'fixture/auto_lang_hljs/multilanguage.input.js',
       config = 'fixture/auto_lang_hljs/config.yml',
@@ -319,37 +278,32 @@ describe('binary', function () {
 
     fs.mkdirSync(dstDir);
 
-    documentation(['build --shallow ' + fixture + ' -c ' + config + ' -f html -o ' + dstDir], {},
-      function (err) {
-        expect(err).toBeFalsy();
+    return documentation(['build --shallow ' + fixture + ' -c ' + config + ' -f html -o ' + dstDir], {}, false)
+      .catch(err => {
         var result = fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8');
         expect(result.indexOf('<span class="hljs-number">42</span>') > 0).toBeTruthy();
         expect(result.indexOf('<span class="hljs-selector-attr">[data-foo]</span>') > 0).toBeTruthy();
         expect(result.indexOf('<span class="hljs-attr">data-foo</span>') > 0).toBeTruthy();
-        done();
-      }, false);
+      });
   });
 
-  it('fatal error', function (done) {
+  it('fatal error', function () {
 
-    documentation(['build --shallow fixture/bad/syntax.input.js'], {},
-      function (err) {
+    return documentation(['build --shallow fixture/bad/syntax.input.js'], {}, false)
+      .catch(err => {
         expect(err.toString().match(/Unexpected token/)).toBeTruthy();
-        done();
-      }, false);
+      });
   });
 
-  it('build --document-exported', function (done) {
+  it('build --document-exported', function () {
 
-    documentation(['build fixture/document-exported.input.js --document-exported -f md'], {}, function (err, data) {
-      expect(err).toBeFalsy();
-
-      expect(data).toMatchSnapshot();
-      done();
-    }, false);
+    return documentation(['build fixture/document-exported.input.js --document-exported -f md'], {}, false)
+      .then(data => {
+        expect(data).toMatchSnapshot();
+      });
   });
 
-  it('build large file without error (no deoptimized styling error)', function (done) {
+  it('build large file without error (no deoptimized styling error)', function () {
 
     var dstFile = path.join(os.tmpdir(), (Date.now() + Math.random()).toString()) + '.js';
     var contents = '';
@@ -358,12 +312,9 @@ describe('binary', function () {
     }
     fs.writeFileSync(dstFile, contents, 'utf8');
 
-    documentation(['build ' + dstFile], {}, function (err, data, stderr) {
-      expect(err).toBeFalsy();
-      expect(stderr).toBe('');
+    return documentation(['build ' + dstFile], {}, function (err, data, stderr) {
       fs.unlinkSync(dstFile);
-      done();
-    }, false);
+    });
   });
 
 });
