@@ -6,7 +6,7 @@ var got = require('got');
 var spawn = require('child_process').spawn;
 var fs = require('fs');
 
-function documentation(args, options, callback, parseJSON) {
+function documentation(args, options, callback, parsejson) {
   if (!callback) {
     callback = options;
     options = {};
@@ -16,7 +16,7 @@ function documentation(args, options, callback, parseJSON) {
     options.cwd = __dirname;
   }
 
-  options.maxBuffer = 1024 * 1024;
+  options.maxbuffer = 1024 * 1024;
 
   return spawn(
     path.join(__dirname, '../bin/documentation.js'),
@@ -25,102 +25,100 @@ function documentation(args, options, callback, parseJSON) {
 }
 
 function normalize(result) {
-  result.forEach(function (item) {
+  result.foreach(function (item) {
     item.context.file = '[path]';
   });
   return result;
 }
 
-var options = { timeout: 1000 * 120 };
-
-it('harness', options, function () {
-  var docProcess = documentation(['fixture/simple.input.js', '--serve']);
-  expect(docProcess).toBeTruthy();
-  docProcess.kill();
+it('harness', function () {
+  var docprocess = documentation(['fixture/simple.input.js', '--serve']);
+  expect(docprocess).toBeTruthy();
+  docprocess.kill();
 });
 
-it('provides index.html', options, function (done) {
-  var docProcess = documentation(['serve', 'fixture/simple.input.js']);
-  docProcess.stdout.on('data', function (data) {
-    expect(data.toString().trim()).toBe('documentation.js serving on port 4001');
+it('provides index.html', function (done) {
+  var docprocess = documentation(['serve', 'fixture/simple.input.js']);
+  docprocess.stdout.on('data', function (data) {
+    expect(data.tostring().trim()).toBe('documentation.js serving on port 4001');
     got('http://localhost:4001/').then(function (text) {
       expect(text.match(/<html>/)).toBeTruthy();
-      docProcess.kill();
+      docprocess.kill();
       done();
     });
   });
 });
 
-it('accepts port argument', options, function (done) {
-  var docProcess = documentation(['serve', 'fixture/simple.input.js', '--port=4004']);
-  docProcess.stdout.on('data', function (data) {
-    expect(data.toString().trim()).toBe('documentation.js serving on port 4004');
+it('accepts port argument', function (done) {
+  var docprocess = documentation(['serve', 'fixture/simple.input.js', '--port=4004']);
+  docprocess.stdout.on('data', function (data) {
+    expect(data.tostring().trim()).toBe('documentation.js serving on port 4004');
     got('http://localhost:4004/').then(function (text) {
       expect(text.match(/<html>/)).toBeTruthy();
-      docProcess.kill();
+      docprocess.kill();
       done();
     });
   });
 });
 
-it('--watch', options, function (done) {
-  var tmpFile = path.join(os.tmpdir(), '/simple.js');
-  fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
-  var docProcess = documentation(['serve', tmpFile, '--watch']);
-  docProcess.stdout.on('data', function (data) {
+it('--watch', function (done) {
+  var tmpfile = path.join(os.tmpdir(), '/simple.js');
+  fs.writeFileSync(tmpfile, '/** a function */function apples() {}');
+  var docprocess = documentation(['serve', tmpfile, '--watch']);
+  docprocess.stdout.on('data', function (data) {
     got('http://localhost:4001/').then(function (text) {
       expect(text.match(/apples/)).toBeTruthy();
-      fs.writeFileSync(tmpFile, '/** a function */function bananas() {}');
-      function doGet() {
+      fs.writeFileSync(tmpfile, '/** a function */function bananas() {}');
+      function doget() {
         got('http://localhost:4001/').then(function (text) {
           if (text.match(/bananas/)) {
-            docProcess.kill();
+            docprocess.kill();
             done();
           } else {
-            setTimeout(doGet, 100);
+            setTimeout(doget, 100);
           }
         });
       }
-      doGet();
+      doget();
     });
   });
 });
 
-it('--watch', options, function (done) {
-  var tmpDir = os.tmpdir();
-  var a = path.join(tmpDir, '/simple.js');
-  var b = path.join(tmpDir, '/required.js');
+it('--watch', function (done) {
+  var tmpdir = os.tmpdir();
+  var a = path.join(tmpdir, '/simple.js');
+  var b = path.join(tmpdir, '/required.js');
   fs.writeFileSync(a, 'require("./required")');
   fs.writeFileSync(b, '/** soup */function soup() {}');
-  var docProcess = documentation(['serve', a, '--watch']);
-  docProcess.stdout.on('data', function (data) {
+  var docprocess = documentation(['serve', a, '--watch']);
+  docprocess.stdout.on('data', function (data) {
     got('http://localhost:4001/').then(function (text) {
       expect(text.match(/soup/)).toBeTruthy();
       fs.writeFileSync(b, '/** nuts */function nuts() {}');
-      function doGet() {
+      function doget() {
         got('http://localhost:4001/').then(function (text) {
           if (text.match(/nuts/)) {
-            docProcess.kill();
+            docprocess.kill();
             done();
           } else {
-            setTimeout(doGet, 100);
+            setTimeout(doget, 100);
           }
         });
       }
-      doGet();
+      doget();
     });
   });
 });
 
-it('error page', options, function (done) {
-  var tmpDir = os.tmpdir();
-  var a = path.join(tmpDir, '/simple.js');
+it('error page', function (done) {
+  var tmpdir = os.tmpdir();
+  var a = path.join(tmpdir, '/simple.js');
   fs.writeFileSync(a, '**');
-  var docProcess = documentation(['serve', a, '--watch']);
-  docProcess.stdout.on('data', function (data) {
+  var docprocess = documentation(['serve', a, '--watch']);
+  docprocess.stdout.on('data', function (data) {
     got('http://localhost:4001/').then(function (text) {
-      expect(text.match(/Unexpected token/)).toBeTruthy();
-      docProcess.kill();
+      expect(text.match(/unexpected token/)).toBeTruthy();
+      docprocess.kill();
       done();
     });
   });
