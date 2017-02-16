@@ -32,6 +32,7 @@
     "glob": "^7.0.0",
     "globals-docs": "^2.3.0",
     "highlight.js": "^9.1.0",
+    "jest": "^18.1.0",
     "js-yaml": "^3.3.1",
     "lodash": "^4.11.1",
     "mdast-util-inject": "^1.1.0",
@@ -69,6 +70,8 @@
     "eslint-plugin-flowtype": "^2.29.2",
     "flow-bin": "^0.37.4",
     "fs-extra": "^1.0.0",
+    "get-port": "^2.1.0",
+    "got": "^6.7.1",
     "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
     "standard-changelog": "0.0.1",
@@ -94,8 +97,7 @@
     "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
-    "test": "are-we-flow-yet lib && flow check && npm run lint && npm run self-lint && npm run test-tap",
-    "test-tap": "tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
+    "test": "are-we-flow-yet lib && flow check && npm run lint && npm run self-lint && jest"
   },
   "config": {
     "commitizen": {
@@ -104,5 +106,13 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./__tests__/setup.js",
+    "testPathIgnorePatterns": [
+      "/fixture/",
+      "/setup.js",
+      "/mock_repo.js"
+    ]
   }
 }
