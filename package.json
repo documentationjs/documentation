@@ -108,8 +108,10 @@
     "node": ">=4"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "./__tests__/setup.js",
     "testPathIgnorePatterns": [
       "/fixture/",
+      "/setup.js",
       "/mock_repo.js"
     ]
   }
