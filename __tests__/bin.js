@@ -53,8 +53,8 @@ describe('binary', function () {
   });
 
   it('defaults to parsing package.json main', function () {
-    return documentation(['build'], { cwd: path.join(__dirname, '..') }).then(function (data) {
-      expect(data.length).toBeTruthy();
+    return documentation(['build'], { cwd: path.join(__dirname, '/misc/') }).then(function (data) {
+      expect(data).toEqual([]);
     });
   });
 
@@ -168,14 +168,14 @@ describe('binary', function () {
   describe('lint command', function () {
 
     it('generates lint output', function () {
-      return documentation(['lint fixture/lint/lint.input.js']).then(data => {
+      return documentation(['lint fixture/lint/lint.input.js']).catch(data => {
         data = data.toString().split('\n').slice(2).join('\n');
         expect(data).toMatchSnapshot();
       });
     });
 
     it('generates no output on a good file', function () {
-      documentation(['lint fixture/simple.input.js'], {}, false).then(data => {
+      documentation(['lint fixture/simple.input.js'], {}, false).catch(data => {
         expect(data).toBe('');
       });
     });
@@ -215,9 +215,9 @@ describe('binary', function () {
       });
   });
 
-  it('--private flag', function () {
-    return documentation(['build fixture/internal.input.js --private'], {}).then(data => {
-      expect(data.length > 2).toBeTruthy();
+  it('-a private flag', function () {
+    return documentation(['build fixture/simple-private.input.js -a private'], {}).then(data => {
+      expect(data.length).toEqual(1);
     });
   });
 

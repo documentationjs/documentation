@@ -2,6 +2,8 @@
 
 var sort = require('../../lib/sort'), path = require('path');
 
+const testPath = '__tests__';
+
 it('sort stream alphanumeric', function () {
   var apples = { context: { sortKey: 'a' }, name: 'apples' };
   var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
@@ -177,7 +179,7 @@ it('sort toc with files', function () {
 
   var snowflake = {
     name: 'snowflake',
-    file: 'test/fixture/snowflake.md'
+    file: `${testPath}/fixture/snowflake.md`
   };
 
   var processedSnowflake = {

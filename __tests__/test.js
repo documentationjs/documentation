@@ -183,9 +183,11 @@ it('multi-file input', function () {
   });
 });
 
+const testPath = '__tests__';
+
 it('accepts simple relative paths', function () {
   return pify(chdir)(__dirname).then(function () {
-    return documentation.build('test/fixture/simple.input.js', {}).then(data => {
+    return documentation.build(`${testPath}/fixture/simple.input.js`, {}).then(data => {
       expect(data.length).toBe(1);
     });
   });
@@ -193,7 +195,7 @@ it('accepts simple relative paths', function () {
 
 it('.lint', function () {
   return pify(chdir)(__dirname).then(function () {
-    return documentation.lint('test/fixture/simple.input.js', {}).then(data => {
+    return documentation.lint(`${testPath}/fixture/simple.input.js`, {}).then(data => {
       expect(data).toBe('');
     });
   });
@@ -201,7 +203,7 @@ it('.lint', function () {
 
 it('.lint with bad input', function () {
   return pify(chdir)(__dirname).then(function () {
-    return documentation.lint('test/fixture/bad/syntax.input.js', {}).catch(err => {
+    return documentation.lint(`${testPath}/fixture/bad/syntax.input.js`, {}).catch(err => {
       expect(err).toBeTruthy();
     });
   });

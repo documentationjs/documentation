@@ -13,7 +13,7 @@ describe('shallow', function () {
   it('shallow deps multi', function () {
     return shallow([
       path.resolve(path.join(__dirname, '../../fixture/es6.input.js')),
-      path.resolve(path.join(__dirname, '../../fixture/es6.output.json'))
+      path.resolve(path.join(__dirname, '../../fixture/event.input.js'))
     ], {}).then(deps => {
       expect(deps.length).toBe(2);
       expect(deps[0]).toBeTruthy();

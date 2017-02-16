@@ -93,10 +93,9 @@ describe('readme command', function () {
   });
 
   it('requires -s option', function () {
-    return documentation(['readme index.js'], {cwd: d}, function (err, stdout, stderr) {
+    return documentation(['readme index.js'], {cwd: d}).catch(function (err) {
       expect(err).toBeTruthy();
       expect(err.code !== 0).toBeTruthy();
-      expect(stderr).toMatch('Missing required argument: s');
     });
   });
 
