@@ -181,6 +181,19 @@ test('flowDoctrine', function (t) {
       name: 'boolean'
     }, 'boolean');
 
+  t.deepEqual(toDoctrineType('any => any'),
+    {
+      type: 'FunctionType',
+      params: [
+        {
+          expression: {type: 'AllLiteral'},
+          name: '',
+          type: 'ParameterType'
+        }
+      ],
+      result: {type: 'AllLiteral'},
+    }, '');
+
   t.deepEqual(toDoctrineType('undefined'),
     {
       type: 'NameExpression',
