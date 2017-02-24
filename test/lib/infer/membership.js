@@ -209,7 +209,7 @@ test('inferMembership - explicit', function (t) {
       /** Test */
       bar: 0
     });
-  })[1], ['memberof', 'scope']), {
+  })[0], ['memberof', 'scope']), {
     memberof: 'Foo',
     scope: 'static'
   }, 'lends, static');
@@ -219,7 +219,7 @@ test('inferMembership - explicit', function (t) {
       /** Test */
       bar: function () {}
     });
-  })[1], ['memberof', 'scope']), {
+  })[0], ['memberof', 'scope']), {
     memberof: 'Foo',
     scope: 'static'
   }, 'inferMembership - lends, static, function');
@@ -229,7 +229,7 @@ test('inferMembership - explicit', function (t) {
       /** Test */
       bar: 0
     });
-  })[1], ['memberof', 'scope']), {
+  })[0], ['memberof', 'scope']), {
     memberof: 'Foo',
     scope: 'instance'
   });
@@ -239,7 +239,7 @@ test('inferMembership - explicit', function (t) {
       /** Test */
       bar: function () {}
     });
-  })[1], ['memberof', 'scope']), {
+  })[0], ['memberof', 'scope']), {
     memberof: 'Foo',
     scope: 'instance'
   }, 'inferMembership - lends, instance, function');
@@ -261,11 +261,7 @@ test('inferMembership - explicit', function (t) {
   t.equal(evaluate(function () {
     lend(/** @lends Foo */{});
     /** Test */
-  })[1].memberof, undefined, 'inferMembership - lends applies only to following object');
-
-  t.equal(evaluate(function () {
-    lend(/** @lends Foo */{});
-  })[0].memberof, undefined, 'inferMembership - drops lends');
+  })[0].memberof, undefined, 'inferMembership - lends applies only to following object');
 
   t.end();
 });
