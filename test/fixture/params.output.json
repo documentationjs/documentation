@@ -818,6 +818,221 @@
           "children": [
             {
               "type": "text",
+              "value": "Traditional object",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 19,
+                  "offset": 18
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 19,
+              "offset": 18
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 19,
+          "offset": 18
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 37,
+        "column": 0
+      },
+      "end": {
+        "line": 39,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 40,
+          "column": 0
+        },
+        "end": {
+          "line": 47,
+          "column": 2
+        }
+      }
+    },
+    "augments": [],
+    "errors": [],
+    "examples": [],
+    "params": [],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "TraditionalObject",
+    "members": {
+      "global": [],
+      "inner": [],
+      "instance": [],
+      "events": [],
+      "static": [
+        {
+          "description": {
+            "type": "root",
+            "children": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "This method should acquire the param x",
+                    "position": {
+                      "start": {
+                        "line": 1,
+                        "column": 1,
+                        "offset": 0
+                      },
+                      "end": {
+                        "line": 1,
+                        "column": 39,
+                        "offset": 38
+                      },
+                      "indent": []
+                    }
+                  }
+                ],
+                "position": {
+                  "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                  },
+                  "end": {
+                    "line": 1,
+                    "column": 39,
+                    "offset": 38
+                  },
+                  "indent": []
+                }
+              }
+            ],
+            "position": {
+              "start": {
+                "line": 1,
+                "column": 1,
+                "offset": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 39,
+                "offset": 38
+              }
+            }
+          },
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 41,
+              "column": 2
+            },
+            "end": {
+              "line": 43,
+              "column": 5
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 2
+              },
+              "end": {
+                "line": 46,
+                "column": 3
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [
+            {
+              "title": "param",
+              "name": "x",
+              "lineNumber": 44
+            }
+          ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "traditionalMethod",
+          "kind": "function",
+          "memberof": "TraditionalObject",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "TraditionalObject"
+            },
+            {
+              "name": "traditionalMethod",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "TraditionalObject.traditionalMethod"
+        }
+      ]
+    },
+    "path": [
+      {
+        "name": "TraditionalObject"
+      }
+    ],
+    "namespace": "TraditionalObject"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
               "value": "Represents an IPv6 address",
               "position": {
                 "start": {
@@ -965,22 +1180,22 @@
     ],
     "loc": {
       "start": {
-        "line": 37,
+        "line": 49,
         "column": 0
       },
       "end": {
-        "line": 48,
+        "line": 60,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 49,
+          "line": 61,
           "column": 0
         },
         "end": {
-          "line": 49,
+          "line": 61,
           "column": 22
         }
       }
@@ -1443,22 +1658,22 @@
     ],
     "loc": {
       "start": {
-        "line": 51,
+        "line": 63,
         "column": 0
       },
       "end": {
-        "line": 62,
+        "line": 74,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 63,
+          "line": 75,
           "column": 0
         },
         "end": {
-          "line": 65,
+          "line": 77,
           "column": 1
         }
       }
@@ -1903,22 +2118,22 @@
     ],
     "loc": {
       "start": {
-        "line": 67,
+        "line": 79,
         "column": 0
       },
       "end": {
-        "line": 74,
+        "line": 86,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 75,
+          "line": 87,
           "column": 0
         },
         "end": {
-          "line": 75,
+          "line": 87,
           "column": 37
         }
       }
@@ -2143,22 +2358,22 @@
     ],
     "loc": {
       "start": {
-        "line": 77,
+        "line": 89,
         "column": 0
       },
       "end": {
-        "line": 82,
+        "line": 94,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 83,
+          "line": 95,
           "column": 0
         },
         "end": {
-          "line": 85,
+          "line": 97,
           "column": 1
         }
       }

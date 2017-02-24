@@ -35,6 +35,18 @@ class Foo {
 }
 
 /**
+ * Traditional object
+ */
+var TraditionalObject = {
+  /**
+   * This method should acquire the param x
+   */
+  traditionalMethod: function (x) {
+    return x;
+  }
+};
+
+/**
  * Represents an IPv6 address
  *
  * This tests  our support of optional parameters
