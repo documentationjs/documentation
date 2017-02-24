@@ -454,14 +454,6 @@ test('parse - @kind', function (t) {
   t.end();
 });
 
-test('parse - @lends', function (t) {
-  t.equal(evaluate(function () {
-    /** @lends lendee */
-  })[0].lends, 'lendee', 'lends');
-
-  t.end();
-});
-
 test('parse - @license', function (t) {
   t.end();
 });

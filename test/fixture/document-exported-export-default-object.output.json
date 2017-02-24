@@ -74,7 +74,12 @@
       }
     },
     "augments": [],
-    "errors": [],
+    "errors": [
+      {
+        "message": "@memberof reference to document-exported-export-default-object.input not found",
+        "commentLineNumber": 0
+      }
+    ],
     "examples": [],
     "params": [],
     "properties": [],
@@ -83,6 +88,8 @@
     "throws": [],
     "todos": [],
     "name": "x",
+    "memberof": "document-exported-export-default-object.input",
+    "scope": "static",
     "members": {
       "global": [],
       "inner": [],
@@ -92,9 +99,10 @@
     },
     "path": [
       {
-        "name": "x"
+        "name": "x",
+        "scope": "static"
       }
     ],
-    "namespace": "x"
+    "namespace": ".x"
   }
 ]
