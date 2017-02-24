@@ -110,7 +110,7 @@ declare type Comment = {
   params: Array<CommentTag>,
   properties: Array<CommentTag>,
   returns: Array<CommentTag>,
-  sees: Array<CommentTag>,
+  sees: Array<Remark>,
   throws: Array<CommentTag>,
   todos: Array<CommentTag>,
 
