@@ -16,11 +16,11 @@
 -   [y2Default](#y2default)
 -   [y4](#y4)
 -   [object](#object)
+    -   [method](#method)
+    -   [getter](#getter)
+    -   [setter](#setter)
     -   [prop](#prop)
     -   [func](#func)
--   [method](#method)
--   [getter](#getter)
--   [setter](#setter)
 -   [f1](#f1)
 -   [f3](#f3)
 -   [T](#t)
@@ -28,10 +28,10 @@
 -   [T4](#t4)
 -   [f4](#f4)
 -   [o1](#o1)
--   [om1](#om1)
+    -   [om1](#om1)
 -   [f5](#f5)
 -   [o2](#o2)
--   [om2](#om2)
+    -   [om2](#om2)
 
 ## z
 
@@ -83,19 +83,19 @@ Returns **void**
 
 ## object
 
-### prop
+### method
 
-### func
+### getter
 
-## method
-
-## getter
-
-## setter
+### setter
 
 **Parameters**
 
 -   `v`  
+
+### prop
+
+### func
 
 ## f1
 
@@ -121,7 +121,7 @@ Type: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 ## o1
 
-## om1
+### om1
 
 ## f5
 
@@ -133,4 +133,4 @@ f5 comment
 
 ## o2
 
-## om2
+### om2

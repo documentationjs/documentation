@@ -7,6 +7,8 @@
 -   [withDefault](#withdefault)
 -   [Foo](#foo)
     -   [method](#method)
+-   [TraditionalObject](#traditionalobject)
+    -   [traditionalMethod](#traditionalmethod)
 -   [Address6](#address6)
 -   [GeoJSONSource](#geojsonsource)
 -   [myfunc](#myfunc)
@@ -55,6 +57,18 @@ The method
 **Parameters**
 
 -   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Param to method
+
+## TraditionalObject
+
+Traditional object
+
+### traditionalMethod
+
+This method should acquire the param x
+
+**Parameters**
+
+-   `x`  
 
 ## Address6
 

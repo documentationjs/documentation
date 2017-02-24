@@ -848,6 +848,183 @@
           "tags": [],
           "loc": {
             "start": {
+              "line": 13,
+              "column": 2
+            },
+            "end": {
+              "line": 13,
+              "column": 13
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 13,
+                "column": 2
+              },
+              "end": {
+                "line": 13,
+                "column": 13
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "method",
+          "kind": "function",
+          "memberof": "object",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "method",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "object.method"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 2
+            },
+            "end": {
+              "line": 14,
+              "column": 17
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 14,
+                "column": 2
+              },
+              "end": {
+                "line": 14,
+                "column": 17
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "getter",
+          "kind": "member",
+          "memberof": "object",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "getter",
+              "kind": "member",
+              "scope": "static"
+            }
+          ],
+          "namespace": "object.getter"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 15,
+              "column": 2
+            },
+            "end": {
+              "line": 15,
+              "column": 18
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 15,
+                "column": 2
+              },
+              "end": {
+                "line": 15,
+                "column": 18
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [
+            {
+              "title": "param",
+              "name": "v",
+              "lineNumber": 15
+            }
+          ],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "setter",
+          "kind": "member",
+          "memberof": "object",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "setter",
+              "kind": "member",
+              "scope": "static"
+            }
+          ],
+          "namespace": "object.setter"
+        },
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
               "line": 16,
               "column": 2
             },
@@ -963,165 +1140,6 @@
       }
     ],
     "namespace": "object"
-  },
-  {
-    "description": "",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 13,
-        "column": 2
-      },
-      "end": {
-        "line": 13,
-        "column": 13
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 2
-        },
-        "end": {
-          "line": 13,
-          "column": 13
-        }
-      }
-    },
-    "augments": [],
-    "errors": [],
-    "examples": [],
-    "params": [],
-    "properties": [],
-    "returns": [],
-    "sees": [],
-    "throws": [],
-    "todos": [],
-    "name": "method",
-    "kind": "function",
-    "members": {
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "events": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "method",
-        "kind": "function"
-      }
-    ],
-    "namespace": "method"
-  },
-  {
-    "description": "",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 14,
-        "column": 2
-      },
-      "end": {
-        "line": 14,
-        "column": 17
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 14,
-          "column": 2
-        },
-        "end": {
-          "line": 14,
-          "column": 17
-        }
-      }
-    },
-    "augments": [],
-    "errors": [],
-    "examples": [],
-    "params": [],
-    "properties": [],
-    "returns": [],
-    "sees": [],
-    "throws": [],
-    "todos": [],
-    "name": "getter",
-    "kind": "member",
-    "members": {
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "events": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "getter",
-        "kind": "member"
-      }
-    ],
-    "namespace": "getter"
-  },
-  {
-    "description": "",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 15,
-        "column": 2
-      },
-      "end": {
-        "line": 15,
-        "column": 18
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 15,
-          "column": 2
-        },
-        "end": {
-          "line": 15,
-          "column": 18
-        }
-      }
-    },
-    "augments": [],
-    "errors": [],
-    "examples": [],
-    "params": [
-      {
-        "title": "param",
-        "name": "v",
-        "lineNumber": 15
-      }
-    ],
-    "properties": [],
-    "returns": [],
-    "sees": [],
-    "throws": [],
-    "todos": [],
-    "name": "setter",
-    "kind": "member",
-    "members": {
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "events": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "setter",
-        "kind": "member"
-      }
-    ],
-    "namespace": "setter"
   },
   {
     "description": "",
@@ -1491,7 +1509,65 @@
       "inner": [],
       "instance": [],
       "events": [],
-      "static": []
+      "static": [
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 73,
+              "column": 2
+            },
+            "end": {
+              "line": 73,
+              "column": 10
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 73,
+                "column": 2
+              },
+              "end": {
+                "line": 73,
+                "column": 10
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "om1",
+          "kind": "function",
+          "memberof": "o1",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "o1"
+            },
+            {
+              "name": "om1",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "o1.om1"
+        }
+      ]
     },
     "path": [
       {
@@ -1499,57 +1575,6 @@
       }
     ],
     "namespace": "o1"
-  },
-  {
-    "description": "",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 73,
-        "column": 2
-      },
-      "end": {
-        "line": 73,
-        "column": 10
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 73,
-          "column": 2
-        },
-        "end": {
-          "line": 73,
-          "column": 10
-        }
-      }
-    },
-    "augments": [],
-    "errors": [],
-    "examples": [],
-    "params": [],
-    "properties": [],
-    "returns": [],
-    "sees": [],
-    "throws": [],
-    "todos": [],
-    "name": "om1",
-    "kind": "function",
-    "members": {
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "events": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "om1",
-        "kind": "function"
-      }
-    ],
-    "namespace": "om1"
   },
   {
     "description": {
@@ -1703,7 +1728,65 @@
       "inner": [],
       "instance": [],
       "events": [],
-      "static": []
+      "static": [
+        {
+          "description": "",
+          "tags": [],
+          "loc": {
+            "start": {
+              "line": 79,
+              "column": 4
+            },
+            "end": {
+              "line": 79,
+              "column": 12
+            }
+          },
+          "context": {
+            "loc": {
+              "start": {
+                "line": 79,
+                "column": 4
+              },
+              "end": {
+                "line": 79,
+                "column": 12
+              }
+            }
+          },
+          "augments": [],
+          "errors": [],
+          "examples": [],
+          "params": [],
+          "properties": [],
+          "returns": [],
+          "sees": [],
+          "throws": [],
+          "todos": [],
+          "name": "om2",
+          "kind": "function",
+          "memberof": "o2",
+          "scope": "static",
+          "members": {
+            "global": [],
+            "inner": [],
+            "instance": [],
+            "events": [],
+            "static": []
+          },
+          "path": [
+            {
+              "name": "o2"
+            },
+            {
+              "name": "om2",
+              "kind": "function",
+              "scope": "static"
+            }
+          ],
+          "namespace": "o2.om2"
+        }
+      ]
     },
     "path": [
       {
@@ -1711,56 +1794,5 @@
       }
     ],
     "namespace": "o2"
-  },
-  {
-    "description": "",
-    "tags": [],
-    "loc": {
-      "start": {
-        "line": 79,
-        "column": 4
-      },
-      "end": {
-        "line": 79,
-        "column": 12
-      }
-    },
-    "context": {
-      "loc": {
-        "start": {
-          "line": 79,
-          "column": 4
-        },
-        "end": {
-          "line": 79,
-          "column": 12
-        }
-      }
-    },
-    "augments": [],
-    "errors": [],
-    "examples": [],
-    "params": [],
-    "properties": [],
-    "returns": [],
-    "sees": [],
-    "throws": [],
-    "todos": [],
-    "name": "om2",
-    "kind": "function",
-    "members": {
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "events": [],
-      "static": []
-    },
-    "path": [
-      {
-        "name": "om2",
-        "kind": "function"
-      }
-    ],
-    "namespace": "om2"
   }
 ]
