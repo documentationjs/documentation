@@ -1,6 +1,6 @@
 # documentation
 
-[![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=svg)](https://circleci.com/gh/documentationjs/documentation/tree/master)
+[![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=shield)](https://circleci.com/gh/documentationjs/documentation/tree/master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![David](https://david-dm.org/documentationjs/documentation.svg)](https://david-dm.org/documentationjs/documentation)
