@@ -87,8 +87,11 @@ bin/documentation.js build src/** -f html -o docs
 # document index.js, ignoring any files it requires or imports
 bin/documentation.js build index.js -f md --shallow
 
-# build, serve, and live-update html docs for app.js
+# build and serve html docs for app.js
 bin/documentation.js serve app.js
+
+# build, serve, and live-update html docs for app.js
+bin/documentation.js serve --watch app.js
 
 # validate JSDoc syntax in util.js
 bin/documentation.js lint util.js
