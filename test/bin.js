@@ -20,7 +20,7 @@ function documentation(args, options, callback, parseJSON) {
 
   options.maxBuffer = 1024 * 1024;
 
-  args.unshift(path.join(__dirname, '../bin/documentation.js'));
+  args.unshift('node '+ path.join(__dirname, '..', 'bin', 'documentation.js'));
 
   exec(args.join(' '), options, function (err, stdout, stderr) {
     if (err) {
@@ -240,7 +240,7 @@ test('lint command', function (group) {
 
   group.test('generates lint output', options, function (t) {
     documentation(['lint fixture/lint/lint.input.js'], function (err, data) {
-      var output = path.join(__dirname, 'fixture/lint/lint.output.js');
+      var output = path.join(__dirname, 'fixture', 'lint', 'lint.output.js');
       data = data.toString().split('\n').slice(2).join('\n');
       if (process.env.UPDATE) {
         fs.writeFileSync(output, data);
