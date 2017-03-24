@@ -4,6 +4,7 @@
 
 var test = require('tap').test,
   mock = require('mock-fs'),
+  path = require('path'),
   mockRepo = require('./git/mock_repo'),
   parse = require('../../lib/parsers/javascript'),
   github = require('../../lib/github');
@@ -15,8 +16,10 @@ function toComment(fn, filename) {
   }, {}).map(github);
 }
 
+const root = path.parse(__dirname).root;
+
 function evaluate(fn) {
-  return toComment(fn, '/my/repository/path/index.js');
+  return toComment(fn, root + path.join('my', 'repository', 'path', 'index.js'));
 }
 
 test('github', function (t) {
