@@ -246,6 +246,9 @@ test('lint command', function (group) {
         fs.writeFileSync(output, data);
       }
       t.equal(err.code, 1);
+      if (os.type() === 'Windows_NT') {
+        data = data.replace('‼', '⚠');
+      }
       t.equal(data, fs.readFileSync(output, 'utf8'), 'outputs lint');
       t.end();
     });
