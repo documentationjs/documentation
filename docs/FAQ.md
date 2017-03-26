@@ -4,7 +4,7 @@
 in JavaScript. It exposes multiple interfaces for users:
 
 * with `npm i -g documentation`, it provides a binary for command-line usage
-* install `documentation` with `npm` to use the node-facing interace
+* install `documentation` with `npm` to use the node-facing interface
 
 `documentation` runs in [node.js](https://nodejs.org/) but supports JavaScript
 that runs in _any environment_. You can use it to document browser libraries,
@@ -51,7 +51,7 @@ documentation.
 * `documentation` can generate multiple formats. When you create a
   website, `documentation` can take your documentation and generate
   beautiful HTML output.
-* The JSDoc syntax exposes a powerful, standardized type syntax to, for example, 
+* The JSDoc syntax exposes a powerful, standardized type syntax to, for example,
   express parameter types like 'an array of strings'.
   as `Array<String>`, and to support custom object types with inter-linking
 * The [eslint valid-jsdoc rule](http://eslint.org/docs/rules/valid-jsdoc.html)
@@ -70,7 +70,7 @@ that file uses `require` or `import` to include other source files,
 those source files will be documented too.
 
 You can customize this behavior by specifying the `--shallow` command-line
-option. With `--shallow` specified, dependendencies aren't followed: documentation.js
+option. With `--shallow` specified, dependencies aren't followed: documentation.js
 processes only those files you explicitly name.
 
 If you're using ES modules, you enable the option `--document-exported` to automatically
