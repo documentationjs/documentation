@@ -1,132 +1,132 @@
 [
   {
-    "augments": [
-      {
-        "name": "Bar",
-        "title": "extends"
-      },
-      {
-        "name": "Baz",
-        "title": "extends"
-      }
-    ],
-    "context": {
-      "loc": {
-        "end": {
-          "column": 1,
-          "line": 7
-        },
-        "start": {
-          "column": 0,
-          "line": 4
-        }
-      }
-    },
     "description": {
+      "type": "root",
       "children": [
         {
+          "type": "paragraph",
           "children": [
             {
+              "type": "text",
+              "value": "This is my interface.",
               "position": {
-                "end": {
-                  "column": 22,
+                "start": {
                   "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 22,
                   "offset": 21
                 },
-                "indent": [],
-                "start": {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0
-                }
-              },
-              "type": "text",
-              "value": "This is my interface."
+                "indent": []
+              }
             }
           ],
           "position": {
-            "end": {
-              "column": 22,
+            "start": {
               "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 22,
               "offset": 21
             },
-            "indent": [],
-            "start": {
-              "column": 1,
-              "line": 1,
-              "offset": 0
-            }
-          },
-          "type": "paragraph"
+            "indent": []
+          }
         }
       ],
       "position": {
-        "end": {
-          "column": 22,
-          "line": 1,
-          "offset": 21
-        },
         "start": {
-          "column": 1,
           "line": 1,
+          "column": 1,
           "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 22,
+          "offset": 21
         }
-      },
-      "type": "root"
-    },
-    "errors": [],
-    "examples": [],
-    "kind": "interface",
-    "loc": {
-      "end": {
-        "column": 3,
-        "line": 3
-      },
-      "start": {
-        "column": 0,
-        "line": 1
       }
     },
-    "members": {
-      "events": [],
-      "global": [],
-      "inner": [],
-      "instance": [],
-      "static": []
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 3,
+        "column": 3
+      }
     },
-    "name": "Foo",
-    "namespace": "Foo",
-    "params": [],
-    "path": [
+    "context": {
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      }
+    },
+    "augments": [
       {
-        "kind": "interface",
-        "name": "Foo"
+        "title": "extends",
+        "name": "Bar"
+      },
+      {
+        "title": "extends",
+        "name": "Baz"
       }
     ],
+    "errors": [],
+    "examples": [],
+    "params": [],
     "properties": [
       {
-        "lineNumber": 5,
-        "name": "prop1",
         "title": "property",
+        "name": "prop1",
+        "lineNumber": 5,
         "type": {
-          "name": "number",
-          "type": "NameExpression"
+          "type": "NameExpression",
+          "name": "number"
         }
       },
       {
-        "lineNumber": 6,
-        "name": "prop2",
         "title": "property",
+        "name": "prop2",
+        "lineNumber": 6,
         "type": {
-          "name": "string",
-          "type": "NameExpression"
+          "type": "NameExpression",
+          "name": "string"
         }
       }
     ],
     "returns": [],
     "sees": [],
-    "tags": [],
     "throws": [],
-    "todos": []
+    "todos": [],
+    "name": "Foo",
+    "kind": "interface",
+    "members": {
+      "global": [],
+      "inner": [],
+      "instance": [],
+      "events": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "Foo",
+        "kind": "interface"
+      }
+    ],
+    "namespace": "Foo"
   }
 ]
