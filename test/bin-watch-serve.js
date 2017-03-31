@@ -18,9 +18,10 @@ function documentation(args, options, callback, parseJSON) {
   }
 
   options.maxBuffer = 1024 * 1024;
+  args.unshift(path.join(__dirname, '..', 'bin', 'documentation.js'));
 
   return spawn(
-    path.join(__dirname, '../bin/documentation.js'),
+    'node',
     args,
     options);
 }
