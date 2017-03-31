@@ -1,0 +1,132 @@
+[
+  {
+    "augments": [
+      {
+        "name": "Bar",
+        "title": "extends"
+      },
+      {
+        "name": "Baz",
+        "title": "extends"
+      }
+    ],
+    "context": {
+      "loc": {
+        "end": {
+          "column": 1,
+          "line": 7
+        },
+        "start": {
+          "column": 0,
+          "line": 4
+        }
+      }
+    },
+    "description": {
+      "children": [
+        {
+          "children": [
+            {
+              "position": {
+                "end": {
+                  "column": 22,
+                  "line": 1,
+                  "offset": 21
+                },
+                "indent": [],
+                "start": {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0
+                }
+              },
+              "type": "text",
+              "value": "This is my interface."
+            }
+          ],
+          "position": {
+            "end": {
+              "column": 22,
+              "line": 1,
+              "offset": 21
+            },
+            "indent": [],
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "type": "paragraph"
+        }
+      ],
+      "position": {
+        "end": {
+          "column": 22,
+          "line": 1,
+          "offset": 21
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "type": "root"
+    },
+    "errors": [],
+    "examples": [],
+    "kind": "interface",
+    "loc": {
+      "end": {
+        "column": 3,
+        "line": 3
+      },
+      "start": {
+        "column": 0,
+        "line": 1
+      }
+    },
+    "members": {
+      "events": [],
+      "global": [],
+      "inner": [],
+      "instance": [],
+      "static": []
+    },
+    "name": "Foo",
+    "namespace": "Foo",
+    "params": [],
+    "path": [
+      {
+        "kind": "interface",
+        "name": "Foo"
+      }
+    ],
+    "properties": [
+      {
+        "lineNumber": 5,
+        "name": "prop1",
+        "title": "property",
+        "type": {
+          "name": "number",
+          "type": "NameExpression"
+        }
+      },
+      {
+        "lineNumber": 6,
+        "name": "prop2",
+        "title": "property",
+        "type": {
+          "name": "string",
+          "type": "NameExpression"
+        }
+      }
+    ],
+    "returns": [],
+    "sees": [],
+    "tags": [],
+    "throws": [],
+    "todos": []
+  }
+]
