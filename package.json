@@ -67,10 +67,12 @@
     "documentation-schema": "0.0.1",
     "eslint": "^3.12.2",
     "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-prettier": "^2.0.1",
     "flow-bin": "^0.37.4",
     "fs-extra": "^1.0.0",
     "json-schema": "0.2.3",
     "mock-fs": "^3.5.0",
+    "prettier": "^0.22.0",
     "standard-changelog": "0.0.1",
     "tap": "^8.0.0",
     "tmp": "^0.0.29"
