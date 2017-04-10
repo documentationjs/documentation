@@ -1,2 +1,2 @@
 /** */
-var f = function(x: number): boolean {}
+var f = function(x: number): boolean {};

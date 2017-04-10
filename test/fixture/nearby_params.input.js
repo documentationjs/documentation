@@ -8,7 +8,6 @@
  *  @returns {Promise} promise, to be resolved on success or rejected on failure
  */
 sessions.addMethod('create', 'POST / form', {
-    // normalize request body params
-    before({ body }) {
-    }
+  // normalize request body params
+  before({ body }) {}
 });

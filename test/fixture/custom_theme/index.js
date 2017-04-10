@@ -5,9 +5,11 @@ var File = require('vinyl');
  * support.
  */
 module.exports = function(comments, options, callback) {
-  return Promise.resolve([new File({
-    base: '/',
-    path: '/index.html',
-    contents: new Buffer('Hello world')
-  })]);
+  return Promise.resolve([
+    new File({
+      base: '/',
+      path: '/index.html',
+      contents: new Buffer('Hello world')
+    })
+  ]);
 };

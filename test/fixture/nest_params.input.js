@@ -4,8 +4,7 @@
  * @param {string} employees[].department - The employee's department.
  * @param {string} [type=minion] - The employee's type.
  */
-function foo(employees, type) {
-}
+function foo(employees, type) {}
 
 /**
  * @name foo

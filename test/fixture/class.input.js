@@ -12,7 +12,7 @@ function MyClass() {
  * @param {boolean} getIt whether to get the number
  * @returns {number} forty-two
  */
-MyClass.prototype.getFoo = function (getIt) {
+MyClass.prototype.getFoo = function(getIt) {
   return getIt ? 42 : 0;
 };
 
@@ -20,4 +20,4 @@ MyClass.prototype.getFoo = function (getIt) {
  * Get undefined
  * @returns {undefined} does not return anything.
  */
-MyClass.prototype.getUndefined = function () { };
+MyClass.prototype.getUndefined = function() {};

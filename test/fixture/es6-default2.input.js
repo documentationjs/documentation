@@ -1,4 +1,4 @@
 /**
  * @public
  */
-export default (thisIsTheArgument) => {};
+export default thisIsTheArgument => {};

@@ -2,9 +2,8 @@
  * With ES6, built-in types are extensible!
  */
 class SpecialArray extends Array {
-  additionalMethod() {
-  }
+  additionalMethod() {}
 }
 
 /** @class Foo */
-module.exports = class Foo extends Bar { };
+module.exports = class Foo extends Bar {};

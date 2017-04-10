@@ -18,6 +18,6 @@ function addOne(a) {
  * @param {number} a the input
  * @returns {number} numberone
  */
-module.exports = function (a) {
+module.exports = function(a) {
   return addOne(a);
 };

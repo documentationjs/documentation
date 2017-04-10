@@ -23,4 +23,4 @@ export default TheClass(
       return word + 1;
     }
   }
-)
+);

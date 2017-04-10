@@ -1,5 +1,5 @@
 /** */
 type Record = {
   opt?: number,
-  req: string,
+  req: string
 };

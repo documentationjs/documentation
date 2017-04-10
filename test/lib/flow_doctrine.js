@@ -6,16 +6,17 @@ var flowDoctrine = require('../../lib/flow_doctrine.js'),
   test = require('tap').test;
 
 function toComment(fn, filename) {
-  return parse({
-    file: filename,
-    source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-  }, {})[0];
+  return parse(
+    {
+      file: filename,
+      source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
+    },
+    {}
+  )[0];
 }
 
-
-test('flowDoctrine', function (t) {
-
-  var types = FLOW_TYPES.filter(function (type) {
+test('flowDoctrine', function(t) {
+  var types = FLOW_TYPES.filter(function(type) {
     return type.match(/\wTypeAnnotation$/);
   });
 
@@ -29,50 +30,68 @@ test('flowDoctrine', function (t) {
     return flowDoctrine(annotation);
   }
 
-  t.deepEqual(toDoctrineType('number'),
+  t.deepEqual(
+    toDoctrineType('number'),
     {
       type: 'NameExpression',
       name: 'number'
-    }, 'number');
+    },
+    'number'
+  );
 
-  t.deepEqual(toDoctrineType('string'),
+  t.deepEqual(
+    toDoctrineType('string'),
     {
       type: 'NameExpression',
       name: 'string'
-    }, 'string');
+    },
+    'string'
+  );
 
-  t.deepEqual(toDoctrineType('any'),
+  t.deepEqual(
+    toDoctrineType('any'),
     {
       type: 'AllLiteral'
-    }, 'all');
+    },
+    'all'
+  );
 
-  t.deepEqual(toDoctrineType('(y:Foo) => Bar'),
+  t.deepEqual(
+    toDoctrineType('(y:Foo) => Bar'),
     {
       type: 'FunctionType',
-      params: [{
-        type: 'ParameterType',
-        name: 'y',
-        expression: {
-          type: 'NameExpression',
-          name: 'Foo'
+      params: [
+        {
+          type: 'ParameterType',
+          name: 'y',
+          expression: {
+            type: 'NameExpression',
+            name: 'Foo'
+          }
         }
-      }],
+      ],
       result: {
         type: 'NameExpression',
         name: 'Bar'
       }
-    }, 'function type');
+    },
+    'function type'
+  );
 
-  t.deepEqual(toDoctrineType('?number'),
+  t.deepEqual(
+    toDoctrineType('?number'),
     {
       type: 'NullableType',
       expression: {
         type: 'NameExpression',
         name: 'number'
       }
-    }, 'nullable');
+    },
+    'nullable'
+  );
 
-  t.deepEqual(toDoctrineType('number | string'),
+  t.deepEqual(
+    toDoctrineType('number | string'),
     {
       type: 'UnionType',
       elements: [
@@ -85,71 +104,101 @@ test('flowDoctrine', function (t) {
           name: 'string'
         }
       ]
-    }, 'union');
+    },
+    'union'
+  );
 
-  t.deepEqual(toDoctrineType('Object'),
+  t.deepEqual(
+    toDoctrineType('Object'),
     {
       type: 'NameExpression',
       name: 'Object'
-    }, 'object');
+    },
+    'object'
+  );
 
-  t.deepEqual(toDoctrineType('{ a: 1 }'),
+  t.deepEqual(
+    toDoctrineType('{ a: 1 }'),
     {
       type: 'RecordType',
-      fields: [{
-        type: 'FieldType',
-        key: 'a',
-        value: {
-          type: 'NumericLiteralType',
-          value: 1
+      fields: [
+        {
+          type: 'FieldType',
+          key: 'a',
+          value: {
+            type: 'NumericLiteralType',
+            value: 1
+          }
         }
-      }]
-    }, 'object with properties');
+      ]
+    },
+    'object with properties'
+  );
 
-  t.deepEqual(toDoctrineType('mixed'),
+  t.deepEqual(
+    toDoctrineType('mixed'),
     {
       type: 'AllLiteral'
-    }, 'alias mixed to any for now');
+    },
+    'alias mixed to any for now'
+  );
 
-  t.deepEqual(toDoctrineType('Array'),
+  t.deepEqual(
+    toDoctrineType('Array'),
     {
       type: 'NameExpression',
       name: 'Array'
-    }, 'array');
+    },
+    'array'
+  );
 
-  t.deepEqual(toDoctrineType('Array<number>'),
+  t.deepEqual(
+    toDoctrineType('Array<number>'),
     {
       type: 'TypeApplication',
       expression: {
         type: 'NameExpression',
         name: 'Array'
       },
-      applications: [{
-        type: 'NameExpression',
-        name: 'number'
-      }]
-    }, 'Array<number>');
+      applications: [
+        {
+          type: 'NameExpression',
+          name: 'number'
+        }
+      ]
+    },
+    'Array<number>'
+  );
 
-  t.deepEqual(toDoctrineType('number[]'),
+  t.deepEqual(
+    toDoctrineType('number[]'),
     {
       type: 'TypeApplication',
       expression: {
         type: 'NameExpression',
         name: 'Array'
       },
-      applications: [{
-        type: 'NameExpression',
-        name: 'number'
-      }]
-    }, 'number[]');
+      applications: [
+        {
+          type: 'NameExpression',
+          name: 'number'
+        }
+      ]
+    },
+    'number[]'
+  );
 
-  t.deepEqual(toDoctrineType('[]'),
+  t.deepEqual(
+    toDoctrineType('[]'),
     {
       type: 'ArrayType',
       elements: []
-    }, '[]');
+    },
+    '[]'
+  );
 
-  t.deepEqual(toDoctrineType('[number]'),
+  t.deepEqual(
+    toDoctrineType('[number]'),
     {
       type: 'ArrayType',
       elements: [
@@ -158,9 +207,12 @@ test('flowDoctrine', function (t) {
           name: 'number'
         }
       ]
-    }, '[number]');
+    },
+    '[number]'
+  );
 
-  t.deepEqual(toDoctrineType('[string, boolean]'),
+  t.deepEqual(
+    toDoctrineType('[string, boolean]'),
     {
       type: 'ArrayType',
       elements: [
@@ -173,74 +225,107 @@ test('flowDoctrine', function (t) {
           name: 'boolean'
         }
       ]
-    }, '[string, boolean]');
+    },
+    '[string, boolean]'
+  );
 
-  t.deepEqual(toDoctrineType('boolean'),
+  t.deepEqual(
+    toDoctrineType('boolean'),
     {
       type: 'NameExpression',
       name: 'boolean'
-    }, 'boolean');
+    },
+    'boolean'
+  );
 
-  t.deepEqual(toDoctrineType('any => any'),
+  t.deepEqual(
+    toDoctrineType('any => any'),
     {
       type: 'FunctionType',
       params: [
         {
-          expression: {type: 'AllLiteral'},
+          expression: { type: 'AllLiteral' },
           name: '',
           type: 'ParameterType'
         }
       ],
-      result: {type: 'AllLiteral'},
-    }, '');
+      result: { type: 'AllLiteral' }
+    },
+    ''
+  );
 
-  t.deepEqual(toDoctrineType('undefined'),
+  t.deepEqual(
+    toDoctrineType('undefined'),
     {
       type: 'NameExpression',
       name: 'undefined'
-    }, 'undefined');
+    },
+    'undefined'
+  );
 
-  t.deepEqual(toDoctrineType('"value"'),
+  t.deepEqual(
+    toDoctrineType('"value"'),
     {
       type: 'StringLiteralType',
       value: 'value'
-    }, 'StringLiteralType');
+    },
+    'StringLiteralType'
+  );
 
-  t.deepEqual(toDoctrineType('1'),
+  t.deepEqual(
+    toDoctrineType('1'),
     {
       type: 'NumericLiteralType',
       value: '1'
-    }, 'NumericLiteralType');
+    },
+    'NumericLiteralType'
+  );
 
-  t.deepEqual(toDoctrineType('true'),
+  t.deepEqual(
+    toDoctrineType('true'),
     {
       type: 'BooleanLiteralType',
       value: true
-    }, 'BooleanLiteralType');
+    },
+    'BooleanLiteralType'
+  );
 
-  t.deepEqual(toDoctrineType('false'),
+  t.deepEqual(
+    toDoctrineType('false'),
     {
       type: 'BooleanLiteralType',
       value: false
-    }, 'BooleanLiteralType');
+    },
+    'BooleanLiteralType'
+  );
 
-  t.deepEqual(toDoctrineType('null'),
+  t.deepEqual(
+    toDoctrineType('null'),
     {
-      type: 'NullLiteral',
-    }, 'NullLiteral');
+      type: 'NullLiteral'
+    },
+    'NullLiteral'
+  );
 
-  t.deepEqual(toDoctrineType('void'),
+  t.deepEqual(
+    toDoctrineType('void'),
     {
-      type: 'VoidLiteral',
-    }, 'VoidLiteral');
+      type: 'VoidLiteral'
+    },
+    'VoidLiteral'
+  );
 
   // TODO: remove all these types
-  t.deepEqual(types, [
-    'IntersectionTypeAnnotation',
-    'EmptyTypeAnnotation',
-    'ThisTypeAnnotation',
-    'TypeofTypeAnnotation'
-  ], 'Type coverage');
+  t.deepEqual(
+    types,
+    [
+      'IntersectionTypeAnnotation',
+      'EmptyTypeAnnotation',
+      'ThisTypeAnnotation',
+      'TypeofTypeAnnotation'
+    ],
+    'Type coverage'
+  );
 
   t.end();
 });
