@@ -68,7 +68,7 @@
     "lint-staged": "^3.4.0",
     "mock-fs": "^4.2.0",
     "prettier": "^0.22.0",
-    "standard-changelog": "1.0.1",
+    "standard-version": "^4.0.0",
     "tap": "^10.3.2",
     "tmp": "^0.0.31"
   },
@@ -87,6 +87,7 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
+    "release": "standard-version",
     "precommit": "lint-staged --verbose",
     "format": "prettier --write '{lib,test}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",
