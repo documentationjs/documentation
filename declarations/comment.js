@@ -98,7 +98,8 @@ declare type Kind = 'class' |
   'mixin' |
   'module' |
   'namespace' |
-  'typedef';
+  'typedef' |
+  'interface';
 
 declare type Comment = {
   errors: Array<CommentError>,
