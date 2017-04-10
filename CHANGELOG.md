@@ -1,3 +1,26 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="4.0.0-beta.19"></a>
+# [4.0.0-beta.19](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.18...v4.0.0-beta.19) (2017-04-10)
+
+
+### Bug Fixes
+
+* **inference:** Refactor membership inference ([84c9215](https://github.com/documentationjs/documentation/commit/84c9215))
+* **inference:** Robust parsing for shorthand object methods ([802dc4c](https://github.com/documentationjs/documentation/commit/802dc4c))
+* **scopes:** Support inner scope ([#665](https://github.com/documentationjs/documentation/issues/665)) ([8cc34b6](https://github.com/documentationjs/documentation/commit/8cc34b6))
+
+
+### Features
+
+* **core:** Support Flow interface declarations ([e2915dc](https://github.com/documentationjs/documentation/commit/e2915dc))
+* **core:** Switch to Promises everywhere. Adopt Node v4 ES6 ([#648](https://github.com/documentationjs/documentation/issues/648)) ([631c692](https://github.com/documentationjs/documentation/commit/631c692))
+* **markdown:** Add `[@see](https://github.com/see)` tag output in Markdown ([#682](https://github.com/documentationjs/documentation/issues/682)) ([f07285a](https://github.com/documentationjs/documentation/commit/f07285a))
+
+
+
 <a name="4.0.0-beta.18"></a>
 # [4.0.0-beta.18](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.17...v4.0.0-beta.18) (2016-12-29)
 
