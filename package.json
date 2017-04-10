@@ -44,7 +44,7 @@
     "remark": "^7.0.0",
     "remark-html": "6.0.0",
     "remark-toc": "^4.0.0",
-    "remote-origin-url": "0.5.2",
+    "remote-origin-url": "0.4.0",
     "resolve": "^1.1.6",
     "shelljs": "^0.7.5",
     "stream-array": "^1.1.0",
@@ -57,7 +57,7 @@
     "vfile-sort": "^2.0.0",
     "vinyl": "^2.0.0",
     "vinyl-fs": "^2.3.1",
-    "yargs": "^7.0.2"
+    "yargs": "^6.0.0"
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
@@ -109,6 +109,12 @@
   "lint-staged": {
     "*.js": [
       "prettier --write --single-quote"
+    ]
+  },
+  "greenkeeper": {
+    "ignore": [
+      "remote-origin-url",
+      "yargs"
     ]
   }
 }
