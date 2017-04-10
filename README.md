@@ -1,7 +1,12 @@
-# documentation
+<p align="center">
+  <img src="./.github/documentation-js-logo.png" width="650" />
+</p>
+
+<p align="center">
+  The documentation system for modern JavaScript
+</p>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/documentation.svg)](https://greenkeeper.io/)
-
 [![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=shield)](https://circleci.com/gh/documentationjs/documentation/tree/master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
@@ -9,42 +14,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/github/documentationjs/documentation?branch=master)
 [![Inline docs](http://inch-ci.org/github/documentationjs/documentation.svg?branch=master&style=flat-square)](http://inch-ci.org/github/documentationjs/documentation)
 
-A **documentation generation system** that's
-_beautiful_ by default, _flexible_ across formats and styles, and
-_powerful_ enough to support [JSDoc](http://usejsdoc.org/)'s advanced syntax.
-
-**ES5 and ES6 support of JavaScript, with support for other transpilers a possibility**
-
-Using [babel](https://babeljs.io/), we have support for a wide range
-of [ES6 & ES7 features](https://github.com/lukehoban/es6features), as well
-as [Flow](http://flowtype.org/) type annotations.
-
-**Powerful inference**
-
-By statically analyzing your JavaScript code, documentation.js can write
-many parts of your documentation for you. It can infer parameter names
-and types, class membership, return values from Flow types, and lots more.
-
-**Support for C++**
-
-You can use the `--polyglot` mode of documentationjs to document native node.js
-modules in JSDoc _within the C++ code that implements the feature_.
-
-**Support for following dependency trees**
-
-Using [module-deps](https://github.com/substack/module-deps), `documentation` can
-crawl `require()` graphs - pointing it to your app's `main` file will find all
-referenced files and include all of their documentation.
-
-**GitHub Integration**
-
-The `--github` option automatically permalinks documentation to the exact
-sections of code it refers to in a GitHub repository.
-
-**Gulp integration**
-
-The [gulp-documentation](https://github.com/documentationjs/gulp-documentation) project
-lets you run `documentation` as a [Gulp](http://gulpjs.com/) build task.
+* Supports modern JavaScript: ES5, ES2017, JSX, and [Flow](http://flowtype.org/) type annotations.
+* Infers parameters, types, membership, and more. Write less documentation: let the computer write it for you.
+* Integrates with GitHub to link directly from documentation to the code it refers to.
+* Customizable output: HTML, JSON, Markdown, and more
 
 ## Examples
 
