@@ -5,7 +5,7 @@ const obj = {
   /**
    * The foo property
    */
-  'foo': {
+  foo: {
     bar: 0
   }
-}
+};

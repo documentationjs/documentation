@@ -15,7 +15,7 @@ function Klass(foo) {
  * @example <caption>this shows you how to getFoo</caption>
  * var x = foo.getFoo();
  */
-Klass.prototype.getFoo = function () {
+Klass.prototype.getFoo = function() {
   return this.foo;
 };
 
@@ -26,8 +26,7 @@ Klass.prototype.getFoo = function () {
  * @param {number} options.bar
  * @param {?number} otherOptions
  */
-Klass.prototype.withOptions = function (options, otherOptions) {
-};
+Klass.prototype.withOptions = function(options, otherOptions) {};
 
 /**
  * @typedef CustomError
@@ -47,7 +46,7 @@ Klass.prototype.withOptions = function (options, otherOptions) {
  * @param {*} also
  * @returns {boolean} whether the other thing is a Klass
  */
-Klass.isClass = function (other, also) {
+Klass.isClass = function(other, also) {
   return other instanceof Klass;
 };
 
@@ -58,7 +57,7 @@ Klass.isClass = function (other, also) {
  * @param {Weird} other
  * @returns {boolean} whether the other thing is a Klass
  */
-Klass.isWeird = function (other) {
+Klass.isWeird = function(other) {
   return other instanceof Weird;
 };
 
@@ -69,7 +68,7 @@ Klass.isWeird = function (other) {
  * @param {number} [size=0] size
  * @returns {boolean} whether the other thing is a Klass
  */
-Klass.isBuffer = function (buf, size) {
+Klass.isBuffer = function(buf, size) {
   return other instanceof Buffer;
 };
 
@@ -82,7 +81,7 @@ Klass.isBuffer = function (buf, size) {
  * var k = new Klass();
  * k.isArrayOfBuffers();
  */
-Klass.isArrayOfBuffers = function (buffers) {
+Klass.isArrayOfBuffers = function(buffers) {
   return buffers.length;
 };
 
@@ -136,19 +135,19 @@ class Foo {
   /**
    * This is bar
    */
-  get bar() { }
+  get bar() {}
 }
 
 /**
  * I am the container of stream types
  */
-var customStreams = { };
+var customStreams = {};
 
 /**
  * I am a passthrough stream that belongs to customStreams
  *
  * @kind class
  */
-customStreams.passthrough = function () {
+customStreams.passthrough = function() {
   this.custom = true;
 };

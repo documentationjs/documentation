@@ -25,102 +25,142 @@ function documentation(args, options, callback, parseJSON) {
 
 var UPDATE = !!process.env.UPDATE;
 
-test('readme command', function (group) {
+test('readme command', function(group) {
   var fixtures = path.join(__dirname, 'fixture/readme');
   var sourceFile = path.join(fixtures, 'index.js');
 
-  tmp.dir({unsafeCleanup: true}, function (err, d) {
+  tmp.dir({ unsafeCleanup: true }, function(err, d) {
     group.error(err);
-    fs.copySync(path.join(fixtures, 'README.input.md'), path.join(d, 'README.md'));
+    fs.copySync(
+      path.join(fixtures, 'README.input.md'),
+      path.join(d, 'README.md')
+    );
     fs.copySync(path.join(fixtures, 'index.js'), path.join(d, 'index.js'));
 
     // run tests after setting up temp dir
 
-    group.test('--diff-only: changes needed', function (t) {
+    group.test('--diff-only: changes needed', function(t) {
       t.error(err);
       var before = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
-      documentation(['readme index.js --diff-only -s API'], {cwd: d}, function (err, stdout, stderr) {
-        var after = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
-        t.ok(err);
-        t.notEqual(err.code, 0, 'exit nonzero');
-        t.same(after, before, 'readme unchanged');
-        t.end();
-      });
+      documentation(
+        ['readme index.js --diff-only -s API'],
+        { cwd: d },
+        function(err, stdout, stderr) {
+          var after = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
+          t.ok(err);
+          t.notEqual(err.code, 0, 'exit nonzero');
+          t.same(after, before, 'readme unchanged');
+          t.end();
+        }
+      );
     });
 
     var expectedFile = path.join(fixtures, 'README.output.md');
     var expectedPath = path.join(fixtures, 'README.output.md');
     var expected = fs.readFileSync(expectedFile, 'utf-8');
 
-    group.test('updates README.md', function (t) {
-      documentation(['readme index.js -s API'], {cwd: d}, function (err, stdout) {
-        var outputPath = path.join(d, 'README.md');
-        t.error(err);
+    group.test('updates README.md', function(t) {
+      documentation(
+        ['readme index.js -s API'],
+        { cwd: d },
+        function(err, stdout) {
+          var outputPath = path.join(d, 'README.md');
+          t.error(err);
 
-        if (UPDATE) {
-          fs.writeFileSync(expectedPath, fs.readFileSync(outputPath, 'utf-8'));
+          if (UPDATE) {
+            fs.writeFileSync(
+              expectedPath,
+              fs.readFileSync(outputPath, 'utf-8')
+            );
+          }
+
+          var actual = fs.readFileSync(outputPath, 'utf-8');
+          t.same(actual, expected, 'generated readme output');
+          t.end();
         }
-
-        var actual = fs.readFileSync(outputPath, 'utf-8');
-        t.same(actual, expected, 'generated readme output');
-        t.end();
-      });
+      );
     });
 
-    group.test('--readme-file', function (t) {
-      fs.copySync(path.join(fixtures, 'README.input.md'), path.join(d, 'other.md'));
-      documentation(['readme index.js -s API --readme-file other.md'], {cwd: d}, function (err, stdout) {
-        t.error(err);
-        var actualPath = path.join(d, 'other.md');
-        if (UPDATE) {
-          fs.writeFileSync(actualPath, expected);
+    group.test('--readme-file', function(t) {
+      fs.copySync(
+        path.join(fixtures, 'README.input.md'),
+        path.join(d, 'other.md')
+      );
+      documentation(
+        ['readme index.js -s API --readme-file other.md'],
+        { cwd: d },
+        function(err, stdout) {
+          t.error(err);
+          var actualPath = path.join(d, 'other.md');
+          if (UPDATE) {
+            fs.writeFileSync(actualPath, expected);
+          }
+          var actual = fs.readFileSync(actualPath, 'utf-8');
+          t.same(actual, expected, 'generated readme output');
+          t.end();
         }
-        var actual = fs.readFileSync(actualPath, 'utf-8');
-        t.same(actual, expected, 'generated readme output');
-        t.end();
-      });
+      );
     });
 
-    group.test('--diff-only: changes NOT needed', function (t) {
+    group.test('--diff-only: changes NOT needed', function(t) {
       t.error(err);
-      fs.copySync(path.join(fixtures, 'README.output.md'), path.join(d, 'uptodate.md'));
-      documentation(['readme index.js --diff-only -s API --readme-file uptodate.md'],
-        {cwd: d}, function (err, stdout, stderr) {
+      fs.copySync(
+        path.join(fixtures, 'README.output.md'),
+        path.join(d, 'uptodate.md')
+      );
+      documentation(
+        ['readme index.js --diff-only -s API --readme-file uptodate.md'],
+        { cwd: d },
+        function(err, stdout, stderr) {
           t.error(err);
           t.match(stdout, 'is up to date.');
           t.end();
-        });
+        }
+      );
     });
 
-    group.test('-s: not found', function (t) {
+    group.test('-s: not found', function(t) {
       t.error(err);
-      fs.copySync(path.join(fixtures, 'README.output.md'), path.join(d, 'uptodate.md'));
-      documentation(['readme index.js --diff-only -s NOTFOUND --readme-file uptodate.md'],
-        {cwd: d}, function (err, stdout, stderr) {
+      fs.copySync(
+        path.join(fixtures, 'README.output.md'),
+        path.join(d, 'uptodate.md')
+      );
+      documentation(
+        ['readme index.js --diff-only -s NOTFOUND --readme-file uptodate.md'],
+        { cwd: d },
+        function(err, stdout, stderr) {
           t.ok(err);
           t.end();
-        });
+        }
+      );
     });
 
-    group.test('requires -s option', function (t) {
-      documentation(['readme index.js'], {cwd: d}, function (err, stdout, stderr) {
-        t.ok(err);
-        t.ok(err.code !== 0, 'exit nonzero');
-        t.match(stderr, 'Missing required argument: s');
-        t.end();
-      });
+    group.test('requires -s option', function(t) {
+      documentation(
+        ['readme index.js'],
+        { cwd: d },
+        function(err, stdout, stderr) {
+          t.ok(err);
+          t.ok(err.code !== 0, 'exit nonzero');
+          t.match(stderr, 'Missing required argument: s');
+          t.end();
+        }
+      );
     });
 
-    var badFixturePath = path.join(__dirname, 'fixture/bad/syntax.input.js');
-    group.test('errors on invalid syntax', function (t) {
-      documentation(['readme ' + badFixturePath + ' -s API'], {cwd: d}, function (err, stdout, stderr) {
-        t.ok(err);
-        t.ok(err.code !== 0, 'exit nonzero');
-        t.end();
-      });
+    var badFixturePath = path.join(__dirname, 'fixture/bad/syntax.input');
+    group.test('errors on invalid syntax', function(t) {
+      documentation(
+        ['readme ' + badFixturePath + ' -s API --parseExtension input'],
+        { cwd: d },
+        function(err, stdout, stderr) {
+          t.ok(err);
+          t.ok(err.code !== 0, 'exit nonzero');
+          t.end();
+        }
+      );
     });
 
     group.end();
   });
 });
-

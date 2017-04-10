@@ -1,15 +1,16 @@
 'use strict';
-var http = require('http'),
-  concat = require('concat-stream');
+var http = require('http'), concat = require('concat-stream');
 
 function get(url, callback) {
-  http.get(url, function (res) {
-    res.pipe(concat(function (text) {
-      if (res.statusCode >= 400) {
-        return callback(res.statusCode);
-      }
-      callback(text.toString());
-    }));
+  http.get(url, function(res) {
+    res.pipe(
+      concat(function(text) {
+        if (res.statusCode >= 400) {
+          return callback(res.statusCode);
+        }
+        callback(text.toString());
+      })
+    );
   });
 }
 

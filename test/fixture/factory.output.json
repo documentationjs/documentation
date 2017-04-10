@@ -80,7 +80,7 @@
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 18,
           "column": 2
         }
       }
@@ -184,23 +184,23 @@
     ],
     "loc": {
       "start": {
-        "line": 7,
+        "line": 6,
         "column": 2
       },
       "end": {
-        "line": 9,
+        "line": 8,
         "column": 5
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 10,
+          "line": 9,
           "column": 2
         },
         "end": {
-          "line": 11,
-          "column": 4
+          "line": 9,
+          "column": 37
         }
       }
     },
@@ -211,7 +211,7 @@
       {
         "title": "param",
         "name": "selection",
-        "lineNumber": 10
+        "lineNumber": 9
       }
     ],
     "properties": [],
@@ -299,23 +299,23 @@
     ],
     "loc": {
       "start": {
-        "line": 13,
+        "line": 11,
         "column": 2
       },
       "end": {
-        "line": 16,
+        "line": 14,
         "column": 5
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 17,
+          "line": 15,
           "column": 2
         },
         "end": {
-          "line": 18,
-          "column": 4
+          "line": 15,
+          "column": 30
         }
       }
     },
@@ -331,7 +331,7 @@
       {
         "title": "param",
         "name": "_",
-        "lineNumber": 17
+        "lineNumber": 15
       }
     ],
     "properties": [],

@@ -2,16 +2,16 @@
  * This function destructures with defaults. It should not
  * have any parameter descriptions.
  */
-function destructure({phoneNumbers = [], emailAddresses = [], ...params} = {}) {
-}
+function destructure(
+  { phoneNumbers = [], emailAddresses = [], ...params } = {}
+) {}
 
 /**
  * Similar, but with an array
  * @example
  * destructure([1, 2, 3])
  */
-function destructure([a, b, c]) {
-}
+function destructure([a, b, c]) {}
 
 /**
  * This function returns the number one.
@@ -66,8 +66,7 @@ class Sink {
  *
  * @returns {Basket} a basket
  */
-function makeABasket() {
-}
+function makeABasket() {}
 
 /**
  * This method returns a {@link Sink sink}. The type should be linked.
@@ -75,20 +74,17 @@ function makeABasket() {
  *
  * @returns {Sink} a sink
  */
-function makeASink() {
-}
+function makeASink() {}
 
 /**
  * This function takes rest params
  */
-function functionWithRest(...someParams) {
-}
+function functionWithRest(...someParams) {}
 
 /**
  * So does this one, with types
  */
 function functionWithRestAndType(...someParams: number) {
-
   /**
    * This is an inner member. We are still trying to figure out
    * what these are for.
@@ -102,7 +98,7 @@ function functionWithRestAndType(...someParams: number) {
 /**
  * This is an async method
  */
-async function foo() { }
+async function foo() {}
 
 export default multiply;
 
@@ -110,13 +106,13 @@ export default multiply;
  * This function returns the number one.
  * @returns {Number} numberone
  */
-module.exports = () => (<p>hello</p>);
+module.exports = () => <p>hello</p>;
 
 /**
  * This tests our support of optional parameters in ES6
  */
 function veryImportantTransform(foo = 'bar') {
-  return "42";
+  return '42';
 }
 
 // ACCESS LEVELS
@@ -125,25 +121,25 @@ function veryImportantTransform(foo = 'bar') {
  * A private function
  * @private
  */
-function iAmPrivate() { }
+function iAmPrivate() {}
 
 /**
  * A protected function
  * @protected
  */
-function iAmProtected() { }
+function iAmProtected() {}
 
 /**
  * A public function
  * @public
  */
-function iAmPublic() { }
+function iAmPublic() {}
 
 /**
  * A private function using the access tag
  * @access private
  */
-function iAmAccessPrivate() { }
+function iAmAccessPrivate() {}
 
 /**
  * This is re-exported
@@ -158,4 +154,3 @@ export function isArrayEqualWith<T>(
 ): boolean {
   return true;
 }
-

@@ -1,8 +1,8 @@
 'use strict';
 var walk = require('../lib/walk');
 
-module.exports = function (comments) {
-  return walk(comments, function (comment) {
+module.exports = function(comments) {
+  return walk(comments, function(comment) {
     var hasGithub = !!comment.context.github;
     var path = comment.context.path;
     comment.context = {

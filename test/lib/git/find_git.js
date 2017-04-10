@@ -6,19 +6,18 @@ var test = require('tap').test,
   path = require('path'),
   findGit = require('../../../lib/git/find_git');
 
-test('findGit', function (t) {
-
+test('findGit', function(t) {
   mock(mockRepo.master);
 
   const root = path.parse(__dirname).root;
 
   t.equal(
-    findGit(
-      root + path.join('my', 'repository', 'path', 'index.js')),
-      root + path.join('my', 'repository', 'path', '.git'), 'finds git path');
+    findGit(root + path.join('my', 'repository', 'path', 'index.js')),
+    root + path.join('my', 'repository', 'path', '.git'),
+    'finds git path'
+  );
 
   mock.restore();
 
   t.end();
 });
-

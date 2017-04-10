@@ -15,7 +15,7 @@
  * @augments Foo
  * @augments Bar
  */
-module.exports = function () {
+module.exports = function() {
   // this returns 1
   return 1;
 };

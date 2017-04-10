@@ -61,16 +61,16 @@
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
-    "babel-eslint": "^7.1.1",
     "chdir": "0.0.0",
     "cz-conventional-changelog": "1.2.0",
     "documentation-schema": "0.0.1",
-    "eslint": "^3.12.2",
-    "eslint-plugin-flowtype": "^2.29.2",
     "flow-bin": "^0.37.4",
     "fs-extra": "^1.0.0",
+    "husky": "^0.13.3",
     "json-schema": "0.2.3",
+    "lint-staged": "^3.4.0",
     "mock-fs": "^3.5.0",
+    "prettier": "^0.22.0",
     "standard-changelog": "0.0.1",
     "tap": "^8.0.0",
     "tmp": "^0.0.29"
@@ -90,11 +90,12 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "lint": "eslint bin lib index.js test",
+    "precommit": "lint-staged --verbose",
+    "format": "prettier --write '{lib,test}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
-    "test": "are-we-flow-yet lib && flow check && npm run lint && npm run self-lint && npm run test-tap",
+    "test": "are-we-flow-yet lib && flow check && npm run self-lint && npm run test-tap",
     "test-tap": "tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
   },
   "config": {
@@ -104,5 +105,10 @@
   },
   "engines": {
     "node": ">=4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote"
+    ]
   }
 }

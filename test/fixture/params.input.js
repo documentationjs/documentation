@@ -30,8 +30,7 @@ class Foo {
    * The method
    * @param {number} x Param to method
    */
-  method(x) {
-  }
+  method(x) {}
 }
 
 /**
@@ -41,7 +40,7 @@ var TraditionalObject = {
   /**
    * This method should acquire the param x
    */
-  traditionalMethod: function (x) {
+  traditionalMethod: function(x) {
     return x;
   }
 };
