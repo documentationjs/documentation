@@ -135,7 +135,12 @@
       }
     },
     "augments": [],
-    "errors": [],
+    "errors": [
+      {
+        "message": "@memberof reference to obj not found",
+        "commentLineNumber": 0
+      }
+    ],
     "examples": [],
     "params": [],
     "properties": [],
@@ -144,6 +149,8 @@
     "throws": [],
     "todos": [],
     "name": "foo",
+    "memberof": "obj",
+    "scope": "static",
     "members": {
       "global": [],
       "inner": [],
@@ -153,9 +160,10 @@
     },
     "path": [
       {
-        "name": "foo"
+        "name": "foo",
+        "scope": "static"
       }
     ],
-    "namespace": "foo"
+    "namespace": ".foo"
   }
 ]
