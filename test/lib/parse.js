@@ -107,6 +107,21 @@ test('parse - @augments', function(t) {
   t.end();
 });
 
+test('parse - @description', function(t) {
+  t.deepEqual(
+    evaluate(function() {
+      /**
+       * This is a free-form description
+       * @description This tagged description wins, and [is markdown](http://markdown.com).
+       */
+    })[0].description,
+    remark().parse('This tagged description wins, and [is markdown](http://markdown.com).'),
+    'description'
+  );
+
+  t.end();
+});
+
 /*
  * Dossier-style augments tag
  * https://github.com/google/closure-library/issues/746

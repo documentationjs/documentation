@@ -63,39 +63,44 @@
         }
       },
       {
-        "title": "see",
-        "description": "{@link http://github.com/|github}",
+        "title": "description",
+        "description": "This function returns the number one.",
         "lineNumber": 3
       },
       {
         "title": "see",
-        "description": "TestCase",
+        "description": "{@link http://github.com/|github}",
         "lineNumber": 4
       },
       {
         "title": "see",
-        "description": "[markdown link](http://foo.com/)",
+        "description": "TestCase",
         "lineNumber": 5
+      },
+      {
+        "title": "see",
+        "description": "[markdown link](http://foo.com/)",
+        "lineNumber": 6
       },
       {
         "title": "version",
         "description": "1.0.0",
-        "lineNumber": 6
+        "lineNumber": 7
       },
       {
         "title": "since",
         "description": "2.0.0",
-        "lineNumber": 7
+        "lineNumber": 8
       },
       {
         "title": "copyright",
         "description": "Tom MacWright",
-        "lineNumber": 8
+        "lineNumber": 9
       },
       {
         "title": "license",
         "description": "BSD",
-        "lineNumber": 9
+        "lineNumber": 10
       }
     ],
     "loc": {
@@ -104,18 +109,18 @@
         "column": 0
       },
       "end": {
-        "line": 11,
+        "line": 12,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 2
         }
       }

@@ -1,6 +1,7 @@
 /**
- * This function returns the number one.
+ * This description is ignored because the method has a tagged description.
  * @returns {number} numberone
+ * @description This function returns the number one.
  * @see {@link http://github.com/|github}
  * @see TestCase
  * @see [markdown link](http://foo.com/)
