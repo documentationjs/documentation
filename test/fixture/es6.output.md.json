@@ -1860,7 +1860,7 @@
       "children": [
         {
           "type": "text",
-          "value": "A public function",
+          "value": "A public function. This uses a sampling of UTF8 to make sure we're on board:\n¥ · £ · € · $ · ¢ · ₡ · ₢ · ₣ · ₤ · ₥ · ₦ · ₧ · ₨ · ₩ · ₪ · ₫ · ₭ · ₮ · ₯ · ₹\nᚠᛇᚻ᛫ᛒᛦᚦ᛫ᚠᚱᚩᚠᚢᚱ᛫ᚠᛁᚱᚪ᛫ᚷᛖᚻᚹᛦᛚᚳᚢᛗ\nSîne klâwen durh die wolken sint geslagen,",
           "position": {
             "start": {
               "line": 1,
@@ -1868,11 +1868,15 @@
               "offset": 0
             },
             "end": {
-              "line": 1,
-              "column": 18,
-              "offset": 17
+              "line": 4,
+              "column": 43,
+              "offset": 227
             },
-            "indent": []
+            "indent": [
+              1,
+              1,
+              1
+            ]
           }
         }
       ],
@@ -1883,11 +1887,15 @@
           "offset": 0
         },
         "end": {
-          "line": 1,
-          "column": 18,
-          "offset": 17
+          "line": 4,
+          "column": 43,
+          "offset": 227
         },
-        "indent": []
+        "indent": [
+          1,
+          1,
+          1
+        ]
       }
     },
     {

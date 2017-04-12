@@ -130,7 +130,10 @@ function iAmPrivate() {}
 function iAmProtected() {}
 
 /**
- * A public function
+ * A public function. This uses a sampling of UTF8 to make sure we're on board:
+ * ¥ · £ · € · $ · ¢ · ₡ · ₢ · ₣ · ₤ · ₥ · ₦ · ₧ · ₨ · ₩ · ₪ · ₫ · ₭ · ₮ · ₯ · ₹
+ * ᚠᛇᚻ᛫ᛒᛦᚦ᛫ᚠᚱᚩᚠᚢᚱ᛫ᚠᛁᚱᚪ᛫ᚷᛖᚻᚹᛦᛚᚳᚢᛗ
+ * Sîne klâwen durh die wolken sint geslagen,
  * @public
  */
 function iAmPublic() {}
