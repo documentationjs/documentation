@@ -34,6 +34,8 @@ test('formatType', function(t) {
       'number!',
       '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)!'
     ],
+    ["('pre'|'post')", '(`"pre"` \\| `"post"`)'],
+    ["'pre'|'post'", '(`"pre"` \\| `"post"`)'],
     [
       'function(string, boolean)',
       'function ([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean))'
