@@ -61,7 +61,7 @@
     "chdir": "0.0.0",
     "cz-conventional-changelog": "2.0.0",
     "documentation-schema": "0.0.1",
-    "flow-bin": "^0.43.1",
+    "flow-bin": "^0.44.0",
     "fs-extra": "^2.1.2",
     "husky": "^0.13.3",
     "json-schema": "0.2.3",
