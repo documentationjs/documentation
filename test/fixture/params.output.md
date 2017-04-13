@@ -13,6 +13,7 @@
 -   [GeoJSONSource](#geojsonsource)
 -   [myfunc](#myfunc)
 -   [foo](#foo-1)
+-   [rotate](#rotate)
 
 ## addThem
 
@@ -123,3 +124,16 @@ or any type information we could infer from annotations.
 **Parameters**
 
 -   `address`  An IPv6 address string
+
+## rotate
+
+This tests our support for iterator rest inside an
+iterator destructure (RestElement)
+
+**Parameters**
+
+-   `$0` **any** 
+    -   `$0.x` **any** head of iterator
+    -   `$0.xs` **...any** 
+
+Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>** rotated such that the last element was the first
