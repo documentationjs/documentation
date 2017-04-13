@@ -180,23 +180,17 @@ test('inferName', function(t) {
   );
 
   t.equal(
-    evaluate(
-      function() {
-        /** @module */
-        function implicitName() {}
-      },
-      '/path/inferred-from-file.js'
-    ).name,
+    evaluate(function() {
+      /** @module */
+      function implicitName() {}
+    }, '/path/inferred-from-file.js').name,
     'inferred-from-file'
   );
 
   t.equal(
-    evaluate(
-      function() {
-        /** @module */
-      },
-      '/path/inferred-from-file.js'
-    ).name,
+    evaluate(function() {
+      /** @module */
+    }, '/path/inferred-from-file.js').name,
     'inferred-from-file'
   );
 

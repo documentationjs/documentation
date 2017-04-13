@@ -5,8 +5,10 @@ var test = require('tap').test,
   shallow = require('../../../lib/input/shallow');
 
 test('shallow deps', function(t) {
-  shallow([path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))], {
-  }).then(deps => {
+  shallow(
+    [path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))],
+    {}
+  ).then(deps => {
     t.equal(deps.length, 1);
     t.ok(deps[0], 'has path');
     t.end();

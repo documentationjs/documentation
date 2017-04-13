@@ -27,18 +27,12 @@ var indexFile = new File({
 });
 
 test('server - throws on bad port', function(t) {
-  t.throws(
-    function() {
-      var server = new Server('4001');
-    },
-    'port must be a number'
-  );
-  t.throws(
-    function() {
-      var server = new Server();
-    },
-    'port must be provided'
-  );
+  t.throws(function() {
+    var server = new Server('4001');
+  }, 'port must be a number');
+  t.throws(function() {
+    var server = new Server();
+  }, 'port must be provided');
   t.end();
 });
 
@@ -46,13 +40,12 @@ test('server', function(t) {
   var server = new Server(4001);
   t.ok(server, 'server is initialized');
   server.start().then(function() {
-    t.test(
-      'start can be called more than once, without a callback',
-      function(tt) {
-        server.start();
-        tt.end();
-      }
-    );
+    t.test('start can be called more than once, without a callback', function(
+      tt
+    ) {
+      server.start();
+      tt.end();
+    });
 
     t.test('base path', function(tt) {
       get('http://localhost:4001/file.coffee', function(code) {
@@ -91,13 +84,12 @@ test('server', function(t) {
       });
     });
 
-    t.test(
-      'stop can be called more than once, without a callback',
-      function(tt) {
-        server.stop();
-        tt.end();
-      }
-    );
+    t.test('stop can be called more than once, without a callback', function(
+      tt
+    ) {
+      server.stop();
+      tt.end();
+    });
 
     t.end();
   });

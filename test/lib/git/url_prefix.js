@@ -31,7 +31,8 @@ test('getGithubURLPrefix', function(t) {
 });
 
 test('parsePackedRefs', function(t) {
-  var input = '# pack-refs with: peeled fully-peeled\n' +
+  var input =
+    '# pack-refs with: peeled fully-peeled\n' +
     '4acd658617928bd17ae7364ef2512630d97c007a refs/heads/babel-6\n' +
     '11826ad98c6c08d00f4af77f64d3e2687e0f7dba refs/remotes/origin/flow-types';
   t.equal(

@@ -52,37 +52,36 @@ test('documentation binary', options, function(t) {
 });
 
 test('defaults to parsing package.json main', options, function(t) {
-  documentation(
-    ['build'],
-    { cwd: path.join(__dirname, '..') },
-    function(err, data) {
-      t.error(err);
-      t.ok(data.length, 'we document ourself');
-      t.end();
-    }
-  );
+  documentation(['build'], { cwd: path.join(__dirname, '..') }, function(
+    err,
+    data
+  ) {
+    t.error(err);
+    t.ok(data.length, 'we document ourself');
+    t.end();
+  });
 });
 
 test('polyglot mode', options, function(t) {
-  documentation(
-    ['build fixture/polyglot/blend.cpp --polyglot'],
-    function(err, data) {
-      t.ifError(err);
-      if (process.env.UPDATE) {
-        fs.writeFileSync(
-          path.resolve(__dirname, 'fixture', 'polyglot/blend.json'),
-          JSON.stringify(normalize(data), null, 2),
-          'utf8'
-        );
-      }
-      var expected = fs.readFileSync(
+  documentation(['build fixture/polyglot/blend.cpp --polyglot'], function(
+    err,
+    data
+  ) {
+    t.ifError(err);
+    if (process.env.UPDATE) {
+      fs.writeFileSync(
         path.resolve(__dirname, 'fixture', 'polyglot/blend.json'),
+        JSON.stringify(normalize(data), null, 2),
         'utf8'
       );
-      t.deepEqual(normalize(data), JSON.parse(expected), 'parsed C++ file');
-      t.end();
     }
-  );
+    var expected = fs.readFileSync(
+      path.resolve(__dirname, 'fixture', 'polyglot/blend.json'),
+      'utf8'
+    );
+    t.deepEqual(normalize(data), JSON.parse(expected), 'parsed C++ file');
+    t.end();
+  });
 });
 
 test('accepts config file', options, function(t) {
@@ -148,14 +147,14 @@ test('accepts config file - reports parse failures', options, function(t) {
 });
 
 test('--shallow option', function(t) {
-  documentation(
-    ['build --shallow fixture/internal.input.js'],
-    function(err, data) {
-      t.error(err);
-      t.equal(data.length, 0, 'should not check dependencies');
-      t.end();
-    }
-  );
+  documentation(['build --shallow fixture/internal.input.js'], function(
+    err,
+    data
+  ) {
+    t.error(err);
+    t.equal(data.length, 0, 'should not check dependencies');
+    t.end();
+  });
 });
 
 test('external modules option', function(t) {
@@ -172,7 +171,9 @@ test('external modules option', function(t) {
   );
 });
 
-test('when a file is specified both in a glob and explicitly, it is only documented once', function(t) {
+test('when a file is specified both in a glob and explicitly, it is only documented once', function(
+  t
+) {
   documentation(
     ['build fixture/simple.input.js fixture/simple.input.*'],
     function(err, data) {
@@ -567,10 +568,8 @@ test(
 test(
   'build large file without error (no deoptimized styling error)',
   function(t) {
-    var dstFile = path.join(
-      os.tmpdir(),
-      (Date.now() + Math.random()).toString()
-    ) + '.js';
+    var dstFile =
+      path.join(os.tmpdir(), (Date.now() + Math.random()).toString()) + '.js';
     var contents = '';
     for (var i = 0; i < 4e4; i++) {
       contents += '/* - */\n';

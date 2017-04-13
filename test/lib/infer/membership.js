@@ -15,15 +15,12 @@ function toComment(fn, file) {
 }
 
 function pick(obj, props) {
-  return props.reduce(
-    function(memo, prop) {
-      if (obj[prop] !== undefined) {
-        memo[prop] = obj[prop];
-      }
-      return memo;
-    },
-    {}
-  );
+  return props.reduce(function(memo, prop) {
+    if (obj[prop] !== undefined) {
+      memo[prop] = obj[prop];
+    }
+    return memo;
+  }, {});
 }
 
 function evaluate(fn, file) {
@@ -610,16 +607,13 @@ test('inferMembership - module.exports', function(t) {
 });
 
 test('inferMembership - not module exports', function(t) {
-  var result = evaluate(
-    function() {
-      /**
+  var result = evaluate(function() {
+    /**
      * @module mod
      */
-      /** Test */
-      global.module.exports.foo = 1;
-    },
-    '/path/mod.js'
-  );
+    /** Test */
+    global.module.exports.foo = 1;
+  }, '/path/mod.js');
 
   t.equal(result.length, 2);
   t.notEqual(result[0].memberof, 'mod');
@@ -627,16 +621,13 @@ test('inferMembership - not module exports', function(t) {
 });
 
 test('inferMembership - anonymous @module', function(t) {
-  var result = evaluate(
-    function() {
-      /**
+  var result = evaluate(function() {
+    /**
      * @module
      */
-      /** Test */
-      exports.foo = 1;
-    },
-    '/path/mod.js'
-  );
+    /** Test */
+    exports.foo = 1;
+  }, '/path/mod.js');
 
   t.equal(result.length, 2);
   t.equal(result[1].memberof, 'mod');
@@ -644,20 +635,19 @@ test('inferMembership - anonymous @module', function(t) {
 });
 
 test('inferMembership - no @module', function(t) {
-  var result = evaluate(
-    function() {
-      /** Test */
-      exports.foo = 1;
-    },
-    '/path/mod.js'
-  );
+  var result = evaluate(function() {
+    /** Test */
+    exports.foo = 1;
+  }, '/path/mod.js');
 
   t.equal(result.length, 1);
   t.equal(result[0].memberof, 'mod');
   t.end();
 });
 
-test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function(t) {
+test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function(
+  t
+) {
   t.deepEqual(
     pick(
       evaluate(function() {
