@@ -94,3 +94,16 @@ export const myfunc = (x = 123) => x;
 function foo(address) {
   return address;
 }
+
+/**
+ * This tests our support for iterator rest inside an
+ * iterator destructure (RestElement)
+ *
+ * @param {any} $0.x head of iterator
+ * @param {any[]} ...$0.xs body of iterator
+ *
+ * @returns {any[]} rotated such that the last element was the first
+ */
+export function rotate([x, ...xs]) {
+  return [...xs, x];
+}
