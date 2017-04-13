@@ -1,17 +1,18 @@
 /* @flow */
 'use strict';
 
-var u = require('unist-builder'),
-  remark = require('remark'),
-  mergeConfig = require('../merge_config'),
-  toc = require('remark-toc'),
-  hljs = require('highlight.js'),
-  GithubSlugger = require('github-slugger'),
-  LinkerStack = require('./util/linker_stack'),
-  rerouteLinks = require('./util/reroute_links'),
-  _formatType = require('./util/format_type');
+import u from 'unist-builder';
+import remark from 'remark';
+import mergeConfig from '../merge_config';
+import toc from 'remark-toc';
+import hljs from 'highlight.js';
+import GithubSlugger from 'github-slugger';
+import LinkerStack from './util/linker_stack';
+import rerouteLinks from './util/reroute_links';
+import _formatType from './util/format_type';
+import traverse from 'babel-traverse';
 
-var DEFAULT_LANGUAGE = 'javascript';
+const DEFAULT_LANGUAGE = 'javascript';
 
 /**
  * Given a hierarchy-nested set of comments, generate an remark-compatible
@@ -25,11 +26,14 @@ var DEFAULT_LANGUAGE = 'javascript';
  * consult hljs.configure for the full list.
  * @returns {Promise<Object>} returns an eventual Markdown value
  */
-function markdownAST(comments /*: Array<Comment> */, args /*: Object */) {
+export default function markdownAST(
+  comments /*: Array<Comment> */,
+  args /*: Object */
+) {
   return mergeConfig(args).then(config => buildMarkdownAST(comments, config));
 }
 
-function buildMarkdownAST(
+function buildMarkdownASTOld(
   comments /*: Array<Comment> */,
   config /*: DocumentationConfig*/
 ) {
@@ -351,4 +355,12 @@ function buildMarkdownAST(
   return Promise.resolve(root);
 }
 
-module.exports = markdownAST;
+function buildMarkdownAST(node: Node, config: DocumentationConfig) {
+  traverse(node, {
+    // Ideally we want to track DeclareExportDeclaration, but that's
+    // not yet in babel, so it would throw an error
+    DeclareFunction() {
+      console.log('here');
+    }
+  });
+}

@@ -1,7 +1,7 @@
 /* @flow */
 'use strict';
-var visit = require('unist-util-visit');
-var hljs = require('highlight.js');
+import visit from 'unist-util-visit';
+import hljs from 'highlight.js';
 
 /**
  * Adapted from remark-highlight.js
@@ -19,7 +19,7 @@ function visitor(node) {
   }
 }
 
-module.exports = function(ast /*: Object*/) {
+export default function(ast /*: Object*/) {
   visit(ast, 'code', visitor);
   return ast;
-};
+}

@@ -1,7 +1,7 @@
 'use strict';
 /* @flow */
 
-var walk = require('../walk');
+import walk from '../walk';
 
 /**
  * Formats documentation as a JSON string.
@@ -20,7 +20,9 @@ var walk = require('../walk');
  *     fs.writeFileSync('./output.json', output);
  *   });
  */
-function json(comments /*: Array<Comment>*/) /*: Promise<string>*/ {
+export default function json(
+  comments /*: Array<Comment>*/
+) /*: Promise<string>*/ {
   walk(comments, comment => {
     delete comment.errors;
     if (comment.context) {
@@ -30,5 +32,3 @@ function json(comments /*: Array<Comment>*/) /*: Promise<string>*/ {
 
   return Promise.resolve(JSON.stringify(comments, null, 2));
 }
-
-module.exports = json;

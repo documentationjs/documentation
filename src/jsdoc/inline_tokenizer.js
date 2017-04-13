@@ -59,7 +59,7 @@ var tokenizeTutorial = makeTokenizer(
  * @param {Object} options - for the plugin
  * @returns {undefined}
  */
-module.exports = function(options /*: Object*/) {
+export default function(options /*: Object*/) {
   var proto = this.Parser.prototype;
   proto.inlineTokenizers.tokenizeLink = tokenizeLink;
   proto.inlineTokenizers.tokenizeTutorial = tokenizeTutorial;
@@ -70,4 +70,4 @@ module.exports = function(options /*: Object*/) {
     'tokenizeLink',
     'tokenizeTutorial'
   );
-};
+}

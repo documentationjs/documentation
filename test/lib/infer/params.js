@@ -65,7 +65,11 @@ if (false)
     t.deepEqual(
       evaluate('/** Test */ var f = function({ x }) {};').params,
       [
-        { title: 'param', name: '$0', type: { type: 'NameExpression', name: 'Object' } },
+        {
+          title: 'param',
+          name: '$0',
+          type: { type: 'NameExpression', name: 'Object' }
+        },
         { title: 'param', name: '$0.x', lineNumber: 1 }
       ],
       'ObjectPattern'
@@ -74,7 +78,11 @@ if (false)
     t.deepEqual(
       evaluate('/** Test */ var f = function([ x ]) {};').params,
       [
-        { title: 'param', name: '$0', type: { type: 'NameExpression', name: 'Array' } },
+        {
+          title: 'param',
+          name: '$0',
+          type: { type: 'NameExpression', name: 'Array' }
+        },
         { title: 'param', name: '$0.x', lineNumber: 1 }
       ],
       'ArrayPattern'

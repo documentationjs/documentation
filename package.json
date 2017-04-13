@@ -10,6 +10,7 @@
     "ansi-html": "^0.0.7",
     "babel-core": "^6.17.0",
     "babel-generator": "6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-system-import-transformer": "3.1.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
@@ -42,6 +43,8 @@
     "remark-html": "6.0.0",
     "remark-toc": "^4.0.0",
     "remote-origin-url": "0.4.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
     "shelljs": "^0.7.5",
     "stream-array": "^1.1.0",
     "strip-json-comments": "^2.0.0",
@@ -68,6 +71,7 @@
     "lint-staged": "^3.4.0",
     "mock-fs": "^4.2.0",
     "prettier": "^0.22.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "standard-version": "^4.0.0",
     "tap": "^10.3.2",
     "tmp": "^0.0.31"
@@ -89,7 +93,7 @@
   "scripts": {
     "release": "standard-version",
     "precommit": "lint-staged --verbose",
-    "build": "rm -rf lib && babel src -d lib --ignore __tests__ && node lib/cli.js src/index.js --dest lib/index",
+    "build": "rm -rf lib && rollup -c rollup.config.js && node lib/documentation.js src/index.js --dest lib/index",
     "prepublish": "yarn build",
     "format": "prettier --write '{lib,test}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",

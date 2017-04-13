@@ -1,9 +1,9 @@
 /* @flow */
 'use strict';
-var fs = require('fs');
-var path = require('path');
-var gitUrlParse = require('git-url-parse');
-var getRemoteOrigin = require('remote-origin-url');
+import fs from 'fs';
+import path from 'path';
+import gitUrlParse from 'git-url-parse';
+import getRemoteOrigin from 'remote-origin-url';
 
 /**
  * Sometimes git will [pack refs](https://git-scm.com/docs/git-pack-refs)
@@ -16,7 +16,7 @@ var getRemoteOrigin = require('remote-origin-url');
  * @param {string} branchName the branch name to resolve to
  * @returns {string} sha hash referring to current tree
  */
-function parsePackedRefs(packedRefs, branchName) {
+export function parsePackedRefs(packedRefs: string, branchName: string) {
   return packedRefs
     .split(/\n/)
     .filter(line => line[0] !== '#' && line[0] !== '^')
@@ -37,7 +37,7 @@ function parsePackedRefs(packedRefs, branchName) {
  * @returns {string} base HTTPS url of the GitHub repository
  * @throws {Error} if the root is not a git repo
  */
-function getGithubURLPrefix(root /*: string*/) {
+export function getGithubURLPrefix(root /*: string*/) {
   var sha;
   try {
     var head = fs.readFileSync(path.join(root, '.git', 'HEAD'), 'utf8');
@@ -71,6 +71,3 @@ function getGithubURLPrefix(root /*: string*/) {
     return null;
   }
 }
-
-module.exports = getGithubURLPrefix;
-module.exports.parsePackedRefs = parsePackedRefs;

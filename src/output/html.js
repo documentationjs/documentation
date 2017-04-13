@@ -1,8 +1,8 @@
 'use strict';
 /* @flow */
 
-var path = require('path');
-var mergeConfig = require('../merge_config');
+import path from 'path';
+import mergeConfig from '../merge_config';
 
 /**
  * Formats documentation as HTML.
@@ -14,9 +14,9 @@ var mergeConfig = require('../merge_config');
  * @name formats.html
  * @public
  * @example
- * var documentation = require('documentation');
- * var streamArray = require('stream-array');
- * var vfs = require('vinyl-fs');
+ * var documentation from 'documentation');
+ * var streamArray from 'stream-array');
+ * var vfs from 'vinyl-fs');
  *
  * documentation.build(['index.js'])
  *   .then(documentation.formats.html)
@@ -24,7 +24,10 @@ var mergeConfig = require('../merge_config');
  *     streamArray(output).pipe(vfs.dest('./output-directory'));
  *   });
  */
-function html(comments /*: Array<Comment>*/, config /*: DocumentationConfig*/) {
+export default function html(
+  comments /*: Array<Comment>*/,
+  config /*: DocumentationConfig*/
+) {
   return mergeConfig(config).then(config => {
     var themePath = '../../default_theme/';
     if (config.theme) {
@@ -33,5 +36,3 @@ function html(comments /*: Array<Comment>*/, config /*: DocumentationConfig*/) {
     return require(themePath)(comments, config);
   });
 }
-
-module.exports = html;

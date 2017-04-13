@@ -1,7 +1,8 @@
 'use strict';
 /* @flow */
 
-var remark = require('remark'), markdownAST = require('./markdown_ast');
+import remark from 'remark';
+import markdownAST from './markdown_ast';
 
 /**
  * Formats documentation as
@@ -23,11 +24,6 @@ var remark = require('remark'), markdownAST = require('./markdown_ast');
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(
-  comments /*: Array<Comment>*/,
-  args /*: Object*/
-) /*: Promise<string> */ {
-  return markdownAST(comments, args).then(ast => remark().stringify(ast));
+export default function markdown(node: Node, args: Object): Promise<string> {
+  return markdownAST(node, args).then(ast => remark().stringify(ast));
 }
-
-module.exports = markdown;

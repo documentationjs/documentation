@@ -1,9 +1,9 @@
 'use strict';
 /* @flow */
 
-var path = require('path');
-var findGit = require('../lib/git/find_git');
-var getGithubURLPrefix = require('../lib/git/url_prefix');
+import path from 'path';
+import findGit from '../lib/git/find_git';
+import getGithubURLPrefix from '../lib/git/url_prefix';
 
 /**
  * Attempts to link code to its place on GitHub.
@@ -12,7 +12,7 @@ var getGithubURLPrefix = require('../lib/git/url_prefix');
  * @param {Object} comment parsed comment
  * @return {Object} comment with github inferred
  */
-module.exports = function(comment /*: Comment*/) {
+export default function(comment /*: Comment*/) {
   var repoPath = findGit(comment.context.file);
   var root = repoPath ? path.dirname(repoPath) : '.';
   var urlPrefix = getGithubURLPrefix(root);
@@ -34,4 +34,4 @@ module.exports = function(comment /*: Comment*/) {
     };
   }
   return comment;
-};
+}
