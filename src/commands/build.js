@@ -7,7 +7,7 @@ var streamArray = require('stream-array'),
   fs = require('fs'),
   vfs = require('vinyl-fs'),
   chokidar = require('chokidar'),
-  documentation = require('../../'),
+  documentation = require('../'),
   _ = require('lodash');
 
 module.exports.command = 'build [input..]';
