@@ -7,15 +7,12 @@ var test = require('tap').test,
 
 function pick(obj, props) {
   if (Array.isArray(props)) {
-    return props.reduce(
-      function(memo, prop) {
-        if (obj[prop] !== undefined) {
-          memo[prop] = obj[prop];
-        }
-        return memo;
-      },
-      {}
-    );
+    return props.reduce(function(memo, prop) {
+      if (obj[prop] !== undefined) {
+        memo[prop] = obj[prop];
+      }
+      return memo;
+    }, {});
   }
   return obj[props];
 }
@@ -115,7 +112,9 @@ test('parse - @description', function(t) {
        * @description This tagged description wins, and [is markdown](http://markdown.com).
        */
     })[0].description,
-    remark().parse('This tagged description wins, and [is markdown](http://markdown.com).'),
+    remark().parse(
+      'This tagged description wins, and [is markdown](http://markdown.com).'
+    ),
     'description'
   );
 

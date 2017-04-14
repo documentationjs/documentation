@@ -118,7 +118,9 @@ test('sort stream with configuration and a section', function(t) {
   t.end();
 });
 
-test('sort an already-sorted stream containing a section/description', function(t) {
+test('sort an already-sorted stream containing a section/description', function(
+  t
+) {
   // this happens in the 'serve' task
   var apples = { context: { sortKey: 'a' }, name: 'apples' };
   var carrot = { context: { sortKey: 'b' }, name: 'carrot' };

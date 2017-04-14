@@ -60,25 +60,21 @@ test('readme command', function(group) {
     var expected = fs.readFileSync(expectedFile, 'utf-8');
 
     group.test('updates README.md', function(t) {
-      documentation(
-        ['readme index.js -s API'],
-        { cwd: d },
-        function(err, stdout) {
-          var outputPath = path.join(d, 'README.md');
-          t.error(err);
+      documentation(['readme index.js -s API'], { cwd: d }, function(
+        err,
+        stdout
+      ) {
+        var outputPath = path.join(d, 'README.md');
+        t.error(err);
 
-          if (UPDATE) {
-            fs.writeFileSync(
-              expectedPath,
-              fs.readFileSync(outputPath, 'utf-8')
-            );
-          }
-
-          var actual = fs.readFileSync(outputPath, 'utf-8');
-          t.same(actual, expected, 'generated readme output');
-          t.end();
+        if (UPDATE) {
+          fs.writeFileSync(expectedPath, fs.readFileSync(outputPath, 'utf-8'));
         }
-      );
+
+        var actual = fs.readFileSync(outputPath, 'utf-8');
+        t.same(actual, expected, 'generated readme output');
+        t.end();
+      });
     });
 
     group.test('--readme-file', function(t) {
@@ -136,16 +132,16 @@ test('readme command', function(group) {
     });
 
     group.test('requires -s option', function(t) {
-      documentation(
-        ['readme index.js'],
-        { cwd: d },
-        function(err, stdout, stderr) {
-          t.ok(err);
-          t.ok(err.code !== 0, 'exit nonzero');
-          t.match(stderr, 'Missing required argument: s');
-          t.end();
-        }
-      );
+      documentation(['readme index.js'], { cwd: d }, function(
+        err,
+        stdout,
+        stderr
+      ) {
+        t.ok(err);
+        t.ok(err.code !== 0, 'exit nonzero');
+        t.match(stderr, 'Missing required argument: s');
+        t.end();
+      });
     });
 
     var badFixturePath = path.join(__dirname, 'fixture/bad/syntax.input');

@@ -74,7 +74,8 @@ test('nc(mergeConfig)', function(t) {
         .then(nc)
         .then(res => {
           t.deepEqual(res, pair[1]);
-        }))
+        })
+    )
   ).then(res => {
     t.end();
   });

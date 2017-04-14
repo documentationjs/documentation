@@ -20,46 +20,34 @@ function evaluate(fn, re) {
 
 test('inferAccess', function(t) {
   t.equal(
-    evaluate(
-      function() {
-        /** Test */
-        function _name() {}
-      },
-      '^_'
-    ).access,
+    evaluate(function() {
+      /** Test */
+      function _name() {}
+    }, '^_').access,
     'private'
   );
 
   t.equal(
-    evaluate(
-      function() {
-        /** @private */
-        function name() {}
-      },
-      '^_'
-    ).access,
+    evaluate(function() {
+      /** @private */
+      function name() {}
+    }, '^_').access,
     'private'
   );
 
   t.equal(
-    evaluate(
-      function() {
-        /** @public */
-        function _name() {}
-      },
-      '^_'
-    ).access,
+    evaluate(function() {
+      /** @public */
+      function _name() {}
+    }, '^_').access,
     'public'
   );
 
   t.equal(
-    evaluate(
-      function() {
-        /** Test */
-        function name_() {}
-      },
-      '_$'
-    ).access,
+    evaluate(function() {
+      /** Test */
+      function name_() {}
+    }, '_$').access,
     'private'
   );
 
