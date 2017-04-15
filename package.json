@@ -106,7 +106,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write --single-quote"
+      "prettier --write --single-quote",
+      "git add"
     ]
   },
   "greenkeeper": {
