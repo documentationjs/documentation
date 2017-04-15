@@ -71,6 +71,28 @@
               "children": [
                 {
                   "type": "inlineCode",
+                  "value": "a"
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                },
+                {
+                  "type": "text",
+                  "value": " "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "inlineCode",
                   "value": "b"
                 },
                 {
@@ -144,28 +166,6 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "a"
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                },
-                {
-                  "type": "text",
-                  "value": " "
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "listItem",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "type": "inlineCode",
                   "value": "c"
                 },
                 {
@@ -198,8 +198,15 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "any"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Object"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -351,7 +358,7 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "$0"
+                  "value": "options"
                 },
                 {
                   "type": "text",
@@ -361,8 +368,15 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "any"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Object"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -384,7 +398,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.fishes"
+                          "value": "options.fishes"
                         },
                         {
                           "type": "text",
@@ -457,7 +471,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.foxes"
+                          "value": "options.foxes"
                         },
                         {
                           "type": "text",
@@ -566,16 +580,29 @@
                     {
                       "type": "text",
                       "value": "?"
-                    },
-                    {
-                      "type": "text",
-                      "value": "= 2"
                     }
                   ]
                 },
                 {
                   "type": "text",
                   "value": " "
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": " (optional, default "
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "2"
+                    },
+                    {
+                      "type": "text",
+                      "value": ")"
+                    }
+                  ]
                 }
               ]
             }
@@ -1954,10 +1981,6 @@
                     {
                       "type": "text",
                       "value": "?"
-                    },
-                    {
-                      "type": "text",
-                      "value": "= 123"
                     }
                   ]
                 },
@@ -1999,6 +2022,23 @@
                     },
                     "indent": []
                   }
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": " (optional, default "
+                    },
+                    {
+                      "type": "inlineCode",
+                      "value": "123"
+                    },
+                    {
+                      "type": "text",
+                      "value": ")"
+                    }
+                  ]
                 }
               ]
             }
@@ -2261,7 +2301,7 @@
               "children": [
                 {
                   "type": "inlineCode",
-                  "value": "$0"
+                  "value": "input"
                 },
                 {
                   "type": "text",
@@ -2271,8 +2311,15 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "any"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -2294,7 +2341,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.x"
+                          "value": "input.x"
                         },
                         {
                           "type": "text",
@@ -2360,7 +2407,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.xs"
+                          "value": "input.xs"
                         },
                         {
                           "type": "text",

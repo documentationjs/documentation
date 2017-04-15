@@ -92,6 +92,11 @@
     "params": [
       {
         "title": "param",
+        "name": "a",
+        "lineNumber": 5
+      },
+      {
+        "title": "param",
         "name": "b",
         "lineNumber": 2,
         "description": {
@@ -149,12 +154,8 @@
         "type": {
           "type": "NameExpression",
           "name": "number"
-        }
-      },
-      {
-        "title": "param",
-        "name": "a",
-        "lineNumber": 5
+        },
+        "properties": []
       },
       {
         "title": "param",
@@ -164,8 +165,10 @@
       {
         "title": "param",
         "name": "$3",
+        "anonymous": true,
         "type": {
-          "type": "AllLiteral"
+          "type": "NameExpression",
+          "name": "Object"
         },
         "properties": [
           {
@@ -264,13 +267,23 @@
     "tags": [
       {
         "title": "param",
-        "description": "number of kinds of fish",
+        "description": null,
         "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "Object"
+        },
+        "name": "options"
+      },
+      {
+        "title": "param",
+        "description": "number of kinds of fish",
+        "lineNumber": 3,
         "type": {
           "type": "NameExpression",
           "name": "String"
         },
-        "name": "$0.fishes"
+        "name": "options.fishes"
       }
     ],
     "loc": {
@@ -279,18 +292,18 @@
         "column": 0
       },
       "end": {
-        "line": 12,
+        "line": 13,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 1
         }
       }
@@ -301,15 +314,17 @@
     "params": [
       {
         "title": "param",
-        "name": "$0",
+        "name": "options",
+        "lineNumber": 2,
         "type": {
-          "type": "AllLiteral"
+          "type": "NameExpression",
+          "name": "Object"
         },
         "properties": [
           {
             "title": "param",
-            "name": "$0.fishes",
-            "lineNumber": 2,
+            "name": "options.fishes",
+            "lineNumber": 3,
             "description": {
               "type": "root",
               "children": [
@@ -365,12 +380,13 @@
             "type": {
               "type": "NameExpression",
               "name": "String"
-            }
+            },
+            "properties": []
           },
           {
             "title": "param",
-            "name": "$0.foxes",
-            "lineNumber": 13
+            "name": "options.foxes",
+            "lineNumber": 14
           }
         ]
       }
@@ -464,22 +480,22 @@
     ],
     "loc": {
       "start": {
-        "line": 17,
+        "line": 18,
         "column": 0
       },
       "end": {
-        "line": 20,
+        "line": 21,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 21,
+          "line": 22,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 1
         }
       }
@@ -497,9 +513,10 @@
           "expression": {
             "type": "NameExpression",
             "name": "number"
-          },
-          "default": "2"
-        }
+          }
+        },
+        "properties": [],
+        "default": "2"
       }
     ],
     "properties": [],
@@ -580,22 +597,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 25,
+        "line": 26,
         "column": 0
       },
       "end": {
-        "line": 27,
+        "line": 28,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 28,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 34,
+          "line": 35,
           "column": 1
         }
       }
@@ -682,22 +699,22 @@
           ],
           "loc": {
             "start": {
-              "line": 29,
+              "line": 30,
               "column": 2
             },
             "end": {
-              "line": 32,
+              "line": 33,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 33,
+                "line": 34,
                 "column": 2
               },
               "end": {
-                "line": 33,
+                "line": 34,
                 "column": 14
               }
             }
@@ -765,7 +782,8 @@
               "type": {
                 "type": "NameExpression",
                 "name": "number"
-              }
+              },
+              "properties": []
             }
           ],
           "properties": [],
@@ -865,22 +883,22 @@
     "tags": [],
     "loc": {
       "start": {
-        "line": 36,
+        "line": 37,
         "column": 0
       },
       "end": {
-        "line": 38,
+        "line": 39,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 39,
+          "line": 40,
           "column": 0
         },
         "end": {
-          "line": 46,
+          "line": 47,
           "column": 2
         }
       }
@@ -957,22 +975,22 @@
           "tags": [],
           "loc": {
             "start": {
-              "line": 40,
+              "line": 41,
               "column": 2
             },
             "end": {
-              "line": 42,
+              "line": 43,
               "column": 5
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 43,
+                "line": 44,
                 "column": 2
               },
               "end": {
-                "line": 45,
+                "line": 46,
                 "column": 3
               }
             }
@@ -984,7 +1002,7 @@
             {
               "title": "param",
               "name": "x",
-              "lineNumber": 43
+              "lineNumber": 44
             }
           ],
           "properties": [],
@@ -1180,22 +1198,22 @@
     ],
     "loc": {
       "start": {
-        "line": 48,
+        "line": 49,
         "column": 0
       },
       "end": {
-        "line": 59,
+        "line": 60,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 60,
+          "line": 61,
           "column": 0
         },
         "end": {
-          "line": 60,
+          "line": 61,
           "column": 22
         }
       }
@@ -1658,22 +1676,22 @@
     ],
     "loc": {
       "start": {
-        "line": 62,
+        "line": 63,
         "column": 0
       },
       "end": {
-        "line": 73,
+        "line": 74,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 74,
+          "line": 75,
           "column": 0
         },
         "end": {
-          "line": 76,
+          "line": 77,
           "column": 1
         }
       }
@@ -2118,22 +2136,22 @@
     ],
     "loc": {
       "start": {
-        "line": 78,
+        "line": 79,
         "column": 0
       },
       "end": {
-        "line": 85,
+        "line": 86,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 86,
+          "line": 87,
           "column": 0
         },
         "end": {
-          "line": 86,
+          "line": 87,
           "column": 37
         }
       }
@@ -2203,9 +2221,10 @@
           "expression": {
             "type": "NameExpression",
             "name": "number"
-          },
-          "default": "123"
-        }
+          }
+        },
+        "properties": [],
+        "default": "123"
       }
     ],
     "properties": [],
@@ -2358,22 +2377,22 @@
     ],
     "loc": {
       "start": {
-        "line": 88,
+        "line": 89,
         "column": 0
       },
       "end": {
-        "line": 93,
+        "line": 94,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 94,
+          "line": 95,
           "column": 0
         },
         "end": {
-          "line": 96,
+          "line": 97,
           "column": 1
         }
       }
@@ -2437,7 +2456,8 @@
               "offset": 22
             }
           }
-        }
+        },
+        "properties": []
       }
     ],
     "properties": [],
@@ -2522,18 +2542,28 @@
     "tags": [
       {
         "title": "param",
-        "description": "head of iterator",
+        "description": null,
         "lineNumber": 4,
+        "type": {
+          "type": "NameExpression",
+          "name": "Array"
+        },
+        "name": "input"
+      },
+      {
+        "title": "param",
+        "description": "head of iterator",
+        "lineNumber": 5,
         "type": {
           "type": "NameExpression",
           "name": "any"
         },
-        "name": "$0.x"
+        "name": "input.x"
       },
       {
         "title": "param",
-        "description": "...$0.xs body of iterator",
-        "lineNumber": 5,
+        "description": "...input.xs body of iterator",
+        "lineNumber": 6,
         "type": {
           "type": "TypeApplication",
           "expression": {
@@ -2555,7 +2585,7 @@
       {
         "title": "returns",
         "description": "rotated such that the last element was the first",
-        "lineNumber": 7,
+        "lineNumber": 8,
         "type": {
           "type": "TypeApplication",
           "expression": {
@@ -2573,22 +2603,22 @@
     ],
     "loc": {
       "start": {
-        "line": 98,
+        "line": 99,
         "column": 0
       },
       "end": {
-        "line": 106,
+        "line": 108,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 107,
+          "line": 109,
           "column": 0
         },
         "end": {
-          "line": 109,
+          "line": 111,
           "column": 1
         }
       }
@@ -2603,15 +2633,17 @@
     "params": [
       {
         "title": "param",
-        "name": "$0",
+        "name": "input",
+        "lineNumber": 4,
         "type": {
-          "type": "AllLiteral"
+          "type": "NameExpression",
+          "name": "Array"
         },
         "properties": [
           {
             "title": "param",
-            "name": "$0.x",
-            "lineNumber": 4,
+            "name": "input.x",
+            "lineNumber": 5,
             "description": {
               "type": "root",
               "children": [
@@ -2667,12 +2699,13 @@
             "type": {
               "type": "NameExpression",
               "name": "any"
-            }
+            },
+            "properties": []
           },
           {
             "title": "param",
-            "name": "$0.xs",
-            "lineNumber": 107,
+            "name": "input.xs",
+            "lineNumber": 109,
             "type": {
               "type": "RestType"
             }

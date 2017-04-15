@@ -21,10 +21,10 @@ This function returns the number one.
 
 **Parameters**
 
--   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
 -   `a`  
+-   `b` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the second param
 -   `c`  
--   `$3` **any** 
+-   `$3` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `$3.d`  
     -   `$3.e`  
     -   `$3.f`  
@@ -35,9 +35,9 @@ This method has partially inferred params
 
 **Parameters**
 
--   `$0` **any** 
-    -   `$0.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
-    -   `$0.foxes`  
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `options.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
+    -   `options.foxes`  
 
 ## withDefault
 
@@ -45,7 +45,7 @@ This method has a type in the description and a default in the code
 
 **Parameters**
 
--   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 2** 
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?**  (optional, default `2`)
 
 ## Foo
 
@@ -112,7 +112,7 @@ values specified in code.
 
 **Parameters**
 
--   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?= 123** an argument
+-   `x` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?** an argument (optional, default `123`)
 
 Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** some
 
@@ -132,8 +132,8 @@ iterator destructure (RestElement)
 
 **Parameters**
 
--   `$0` **any** 
-    -   `$0.x` **any** head of iterator
-    -   `$0.xs` **...any** 
+-   `input` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+    -   `input.x` **any** head of iterator
+    -   `input.xs` **...any** 
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>** rotated such that the last element was the first

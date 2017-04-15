@@ -58,7 +58,21 @@ declare type CommentContextGitHub = {
   url: string
 };
 
-declare type CommentTag = {
+declare type CommentTagBase = {
+  title: string
+};
+
+declare type CommentTag = CommentTagBase & {
+  name?: string,
+  title: string,
+  description?: Object,
+  default?: any,
+  lineNumber?: number,
+  type?: DoctrineType,
+  properties?: Array<CommentTag>
+};
+
+declare type CommentTagNamed = CommentTag & {
   name?: string,
   title: string,
   description?: Object,
@@ -88,18 +102,19 @@ declare type Remark = {
 
 declare type Access = 'private' | 'public' | 'protected';
 declare type Scope = 'instance' | 'static' | 'inner' | 'global';
-declare type Kind = 'class' |
-  'constant' |
-  'event' |
-  'external' |
-  'file' |
-  'function' |
-  'member' |
-  'mixin' |
-  'module' |
-  'namespace' |
-  'typedef' |
-  'interface';
+declare type Kind =
+  | 'class'
+  | 'constant'
+  | 'event'
+  | 'external'
+  | 'file'
+  | 'function'
+  | 'member'
+  | 'mixin'
+  | 'module'
+  | 'namespace'
+  | 'typedef'
+  | 'interface';
 
 declare type Comment = {
   errors: Array<CommentError>,
@@ -152,4 +167,4 @@ declare type ReducedComment = {
   name: string,
   kind: ?Kind,
   scope?: ?Scope
-}
+};

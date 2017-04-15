@@ -329,7 +329,8 @@
               "type": {
                 "type": "NameExpression",
                 "name": "boolean"
-              }
+              },
+              "properties": []
             }
           ],
           "properties": [],

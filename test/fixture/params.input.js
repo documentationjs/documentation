@@ -8,7 +8,8 @@ function addThem(a, b, c, { d, e, f }) {
 
 /**
  * This method has partially inferred params
- * @param {String} $0.fishes number of kinds of fish
+ * @param {Object} options
+ * @param {String} options.fishes number of kinds of fish
  */
 function fishesAndFoxes({ fishes, foxes }) {
   return fishes + foxes;
@@ -99,8 +100,9 @@ function foo(address) {
  * This tests our support for iterator rest inside an
  * iterator destructure (RestElement)
  *
- * @param {any} $0.x head of iterator
- * @param {any[]} ...$0.xs body of iterator
+ * @param {Array} input
+ * @param {any} input.x head of iterator
+ * @param {any[]} ...input.xs body of iterator
  *
  * @returns {any[]} rotated such that the last element was the first
  */

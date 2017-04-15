@@ -183,6 +183,7 @@
             }
           }
         },
+        "properties": [],
         "type": {
           "type": "NameExpression",
           "name": "number"

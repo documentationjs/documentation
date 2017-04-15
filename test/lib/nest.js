@@ -1,101 +1,117 @@
 'use strict';
 
-var test = require('tap').test,
-  parse = require('../../lib/parsers/javascript'),
-  nest = require('../../lib/nest');
+var test = require('tap').test;
+var nestTag = require('../../lib/nest').nestTag;
 
-function toComment(fn, filename) {
-  return parse(
-    {
-      file: filename,
-      source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
-    },
-    {}
-  ).map(nest);
-}
+// Print a tree of tags in a way that's easy to test.
+var printTree = indent =>
+  node =>
+    `${new Array(indent + 1).join(' ')}- ${node.name}${node.properties ? '\n' : ''}${(node.properties || [
+    ])
+      .map(printTree(indent + 1))
+      .join('\n')}`;
 
-test('nest params - no params', function(t) {
-  t.deepEqual(
-    toComment(function() {
-      /** @name foo */
-    })[0].params,
-    [],
-    'no params'
+var printNesting = params =>
+  printTree(0)({ properties: nestTag(params), name: 'root' });
+
+test('nest params - basic', function(t) {
+  var params = [
+    'foo',
+    'foo.bar',
+    'foo.bar.third',
+    'foo.third',
+    'foo.third[].baz'
+  ].map(name => ({ name }));
+  t.equal(
+    printNesting(params),
+    `- root
+ - foo
+  - foo.bar
+   - foo.bar.third
+  - foo.third
+   - foo.third[].baz`
   );
   t.end();
 });
 
-test('nest params - no nesting', function(t) {
-  var result = toComment(function() {
-    /** @param {Object} foo */
-  });
-  t.equal(result[0].params.length, 1);
-  t.equal(result[0].params[0].name, 'foo');
-  t.equal(result[0].params[0].properties, undefined);
-  t.end();
-});
-
-test('nest params - basic', function(t) {
-  var result = toComment(function() {
-    /**
-     * @param {Object} foo
-     * @param {string} foo.bar
-     * @param {string} foo.baz
-     */
-  });
-  t.equal(result[0].params.length, 1);
-  t.equal(result[0].params[0].name, 'foo');
-  t.equal(result[0].params[0].properties.length, 2);
-  t.equal(result[0].params[0].properties[0].name, 'foo.bar');
-  t.equal(result[0].params[0].properties[1].name, 'foo.baz');
-  t.end();
-});
-
-test('nest properties - basic', function(t) {
-  var result = toComment(function() {
-    /**
-     * @property {Object} foo
-     * @property {string} foo.bar
-     * @property {string} foo.baz
-     */
-  });
-  t.equal(result[0].properties.length, 1);
-  t.equal(result[0].properties[0].name, 'foo');
-  t.equal(result[0].properties[0].properties.length, 2);
-  t.equal(result[0].properties[0].properties[0].name, 'foo.bar');
-  t.equal(result[0].properties[0].properties[1].name, 'foo.baz');
-  t.end();
-});
-
-test('nest params - array', function(t) {
-  var result = toComment(function() {
-    /**
-     * @param {Object[]} employees - The employees who are responsible for the project.
-     * @param {string} employees[].name - The name of an employee.
-     * @param {string} employees[].department - The employee's department.
-     */
-  });
-  t.equal(result[0].params.length, 1);
-  t.equal(result[0].params[0].name, 'employees');
-  t.equal(result[0].params[0].properties.length, 2);
-  t.equal(result[0].params[0].properties[0].name, 'employees[].name');
-  t.equal(result[0].params[0].properties[1].name, 'employees[].department');
+test('nest params - multiple roots', function(t) {
+  var params = ['a', 'b', 'c'].map(name => ({ name }));
+  t.equal(
+    printNesting(params),
+    `- root
+ - a
+ - b
+ - c`
+  );
   t.end();
 });
 
 test('nest params - missing parent', function(t) {
-  var result = toComment(function() {
-    /** @param {string} foo.bar */
+  var params = ['foo', 'foo.bar.third'].map(name => ({ name }));
+  t.throws(() => {
+    nestTag(params);
   });
-  t.equal(result[0].params.length, 1);
-  t.deepEqual(
-    result[0].errors[0],
-    {
-      message: "@param foo.bar's parent foo not found",
-      commentLineNumber: 0
-    },
-    'correct error message'
+  t.end();
+});
+
+test('nest params - #658', function(t) {
+  var params = [
+    'state',
+    'payload',
+    'payload.input_meter_levels',
+    'payload.input_meter_levels[].peak',
+    'payload.input_meter_levels[].rms',
+    'payload.output_meter_levels',
+    'payload.output_meter_levels[].peak',
+    'payload.output_meter_levels[].rms'
+  ].map(name => ({ name }));
+  t.equal(
+    printNesting(params),
+    `- root
+ - state
+ - payload
+  - payload.input_meter_levels
+   - payload.input_meter_levels[].peak
+   - payload.input_meter_levels[].rms
+  - payload.output_meter_levels
+   - payload.output_meter_levels[].peak
+   - payload.output_meter_levels[].rms`
   );
-  t.equal(result[0].params[0].name, 'foo.bar');
+  t.end();
+});
+
+test('nest params - #554', function(t) {
+  var params = [
+    'x',
+    'yIn',
+    'options',
+    'options.sgOption',
+    'options.minMaxRatio',
+    'options.broadRatio',
+    'options.noiseLevel',
+    'options.maxCriteria',
+    'options.smoothY',
+    'options.realTopDetection',
+    'options.heightFactor',
+    'options.boundaries',
+    'options.derivativeThreshold'
+  ].map(name => ({ name }));
+  t.equal(
+    printNesting(params),
+    `- root
+ - x
+ - yIn
+ - options
+  - options.sgOption
+  - options.minMaxRatio
+  - options.broadRatio
+  - options.noiseLevel
+  - options.maxCriteria
+  - options.smoothY
+  - options.realTopDetection
+  - options.heightFactor
+  - options.boundaries
+  - options.derivativeThreshold`
+  );
   t.end();
 });
