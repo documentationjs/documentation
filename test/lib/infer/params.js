@@ -162,13 +162,15 @@ test('inferParams', function(t) {
   );
 
   t.deepEqual(
-    evaluate(function() {
+    evaluate(
+      `
       /**
        * Test
        * @param {Object} a renamed destructuring param
        */
       var f = function({ x }) {};
-    }).params,
+    `
+    ).params,
     [
       {
         description: {
@@ -256,10 +258,12 @@ test('inferParams', function(t) {
   );
 
   t.deepEqual(
-    evaluate(function() {
+    evaluate(
+      `
       /** Test */
       function f(x = 4) {}
-    }).params,
+    `
+    ).params,
     [
       {
         default: '4',
@@ -276,12 +280,14 @@ test('inferParams', function(t) {
   );
 
   t.deepEqual(
-    evaluate(function() {
+    evaluate(
+      `
       /** Test
        * @param {number} x
       */
       function f(x = 4) {}
-    }).params,
+    `
+    ).params,
     [
       {
         default: '4',
@@ -302,10 +308,12 @@ test('inferParams', function(t) {
   );
 
   t.deepEqual(
-    evaluate(function() {
+    evaluate(
+      `
       /** Test */
       function f({ x: y }) {}
-    }).params,
+    `
+    ).params,
     [
       {
         anonymous: true,
