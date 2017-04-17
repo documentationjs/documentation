@@ -167,8 +167,7 @@
         "type": {
           "type": "NameExpression",
           "name": "Number"
-        },
-        "properties": []
+        }
       }
     ],
     "properties": [],

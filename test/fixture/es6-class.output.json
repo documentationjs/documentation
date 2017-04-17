@@ -295,8 +295,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "string"
-              },
-              "properties": []
+              }
             }
           ],
           "properties": [],

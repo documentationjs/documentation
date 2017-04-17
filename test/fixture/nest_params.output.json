@@ -339,8 +339,7 @@
             "name": "string"
           }
         },
-        "default": "minion",
-        "properties": []
+        "default": "minion"
       }
     ],
     "properties": [],

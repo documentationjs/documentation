@@ -335,8 +335,7 @@
         "type": {
           "type": "NameExpression",
           "name": "Date"
-        },
-        "properties": []
+        }
       }
     ],
     "properties": [],

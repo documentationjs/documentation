@@ -294,7 +294,6 @@ test('inferParams', function(t) {
         name: 'x',
         title: 'param',
         lineNumber: 1,
-        properties: [],
         type: {
           expression: {
             type: 'NameExpression',

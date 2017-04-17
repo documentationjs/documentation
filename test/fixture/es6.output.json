@@ -463,8 +463,7 @@
               "name": "Number"
             }
           ]
-        },
-        "properties": []
+        }
       },
       {
         "title": "param",
@@ -1085,8 +1084,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "number"
-              },
-              "properties": []
+              }
             },
             {
               "title": "param",
@@ -1147,8 +1145,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "number"
-              },
-              "properties": []
+              }
             }
           ],
           "properties": [],

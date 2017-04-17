@@ -272,8 +272,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "string"
-              },
-              "properties": []
+              }
             }
           ],
           "properties": [],
@@ -524,8 +523,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "string"
-              },
-              "properties": []
+              }
             }
           ],
           "properties": [],

@@ -158,8 +158,7 @@
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "properties": []
+        }
       }
     ],
     "properties": [],
@@ -582,8 +581,7 @@
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "properties": []
+        }
       }
     ],
     "properties": [],

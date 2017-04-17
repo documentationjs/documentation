@@ -154,8 +154,7 @@
         "type": {
           "type": "NameExpression",
           "name": "number"
-        },
-        "properties": []
+        }
       },
       {
         "title": "param",
@@ -380,8 +379,7 @@
             "type": {
               "type": "NameExpression",
               "name": "String"
-            },
-            "properties": []
+            }
           },
           {
             "title": "param",
@@ -515,7 +513,6 @@
             "name": "number"
           }
         },
-        "properties": [],
         "default": "2"
       }
     ],
@@ -782,8 +779,7 @@
               "type": {
                 "type": "NameExpression",
                 "name": "number"
-              },
-              "properties": []
+              }
             }
           ],
           "properties": [],
@@ -2223,7 +2219,6 @@
             "name": "number"
           }
         },
-        "properties": [],
         "default": "123"
       }
     ],
@@ -2456,8 +2451,7 @@
               "offset": 22
             }
           }
-        },
-        "properties": []
+        }
       }
     ],
     "properties": [],
@@ -2699,8 +2693,7 @@
             "type": {
               "type": "NameExpression",
               "name": "any"
-            },
-            "properties": []
+            }
           },
           {
             "title": "param",
