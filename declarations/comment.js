@@ -1,4 +1,4 @@
-declare type DocumentationConfig = {
+type DocumentationConfig = {
   polyglot?: boolean,
   inferPrivate?: boolean,
   noPackage?: boolean,
@@ -12,17 +12,17 @@ declare type DocumentationConfig = {
   parseExtension: Array<string>
 };
 
-declare type InputsConfig = {
+type InputsConfig = {
   inputs: Array<SourceFile>,
   config: DocumentationConfig
 };
 
-declare type CommentError = {
+type CommentError = {
   message: string,
   commentLineNumber?: number
 };
 
-declare type DoctrineType = {
+type DoctrineType = {
   elements?: Array<DoctrineType>,
   expression?: DoctrineType,
   applications?: Array<DoctrineType>,
@@ -30,7 +30,7 @@ declare type DoctrineType = {
   name?: string
 };
 
-declare type CommentLoc = {
+type CommentLoc = {
   start: {
     line: number
   },
@@ -39,12 +39,12 @@ declare type CommentLoc = {
   }
 };
 
-declare type SourceFile = {
+type SourceFile = {
   source?: string,
   file: string
 };
 
-declare type CommentContext = {
+type CommentContext = {
   sortKey: string,
   file: string,
   ast: Object,
@@ -53,16 +53,16 @@ declare type CommentContext = {
   github?: CommentContextGitHub
 };
 
-declare type CommentContextGitHub = {
+type CommentContextGitHub = {
   path: string,
   url: string
 };
 
-declare type CommentTagBase = {
+type CommentTagBase = {
   title: string
 };
 
-declare type CommentTag = CommentTagBase & {
+type CommentTag = CommentTagBase & {
   name?: string,
   title: string,
   description?: Object,
@@ -72,7 +72,7 @@ declare type CommentTag = CommentTagBase & {
   properties?: Array<CommentTag>
 };
 
-declare type CommentTagNamed = CommentTag & {
+type CommentTagNamed = CommentTag & {
   name?: string,
   title: string,
   description?: Object,
@@ -82,7 +82,7 @@ declare type CommentTagNamed = CommentTag & {
   properties?: Array<CommentTag>
 };
 
-declare type CommentMembers = {
+type CommentMembers = {
   static: Array<Comment>,
   instance: Array<Comment>,
   events: Array<Comment>,
@@ -90,19 +90,19 @@ declare type CommentMembers = {
   inner: Array<Comment>
 };
 
-declare type CommentExample = {
+type CommentExample = {
   caption?: string,
   description?: Object
 };
 
-declare type Remark = {
+type Remark = {
   type: string,
   children: Array<Object>
 };
 
-declare type Access = 'private' | 'public' | 'protected';
-declare type Scope = 'instance' | 'static' | 'inner' | 'global';
-declare type Kind =
+type Access = 'private' | 'public' | 'protected';
+type Scope = 'instance' | 'static' | 'inner' | 'global';
+type Kind =
   | 'class'
   | 'constant'
   | 'event'
@@ -116,7 +116,7 @@ declare type Kind =
   | 'typedef'
   | 'interface';
 
-declare type Comment = {
+type Comment = {
   errors: Array<CommentError>,
   tags: Array<CommentTag>,
 
@@ -163,7 +163,7 @@ declare type Comment = {
   }>
 };
 
-declare type ReducedComment = {
+type ReducedComment = {
   name: string,
   kind: ?Kind,
   scope?: ?Scope

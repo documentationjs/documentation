@@ -131,6 +131,37 @@ test('inferParams', function(t) {
   );
 
   t.deepEqual(
+    evaluate(`/** Test */function f({ x, ...xs }) {};`).params,
+    [
+      {
+        title: 'param',
+        name: '$0',
+        anonymous: true,
+        type: {
+          type: 'NameExpression',
+          name: 'Object'
+        },
+        properties: [
+          {
+            title: 'param',
+            name: '$0.x',
+            lineNumber: 1
+          },
+          {
+            title: 'param',
+            name: '$0.xs',
+            lineNumber: 1,
+            type: {
+              type: 'RestType'
+            }
+          }
+        ]
+      }
+    ],
+    'object spread property'
+  );
+
+  t.deepEqual(
     evaluate(function() {
       /**
        * Test
