@@ -334,6 +334,34 @@ test('inferParams', function(t) {
     'renaming'
   );
 
+  t.deepEqual(
+    evaluate(
+      `
+      /** Test */
+      function f({ x: { y: { z } } }) {}
+    `
+    ).params,
+    [
+      {
+        anonymous: true,
+        name: '$0',
+        properties: [
+          {
+            lineNumber: 3,
+            name: '$0.x.y.z',
+            title: 'param'
+          }
+        ],
+        title: 'param',
+        type: {
+          name: 'Object',
+          type: 'NameExpression'
+        }
+      }
+    ],
+    'renaming'
+  );
+
   t.deepEqual(evaluate('/** Test */ export function f(x) {}').params, [
     { lineNumber: 1, name: 'x', title: 'param' }
   ]);

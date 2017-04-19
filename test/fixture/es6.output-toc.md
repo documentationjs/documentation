@@ -19,9 +19,9 @@ Similar, but with an array
 **Parameters**
 
 -   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
-    -   `$0.a`  
-    -   `$0.b`  
-    -   `$0.c`  
+    -   `$0.0`  
+    -   `$0.1`  
+    -   `$0.2`  
 
 **Examples**
 
@@ -135,6 +135,6 @@ Regression check for #498
 
 -   `array1` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
 -   `array2` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
--   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a: T, b: T): boolean => a === b`)
+-   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a:T,b:T):boolean=>a===b`)
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 

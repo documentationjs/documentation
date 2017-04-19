@@ -2407,6 +2407,28 @@
                       "children": [
                         {
                           "type": "inlineCode",
+                          "value": "input.0"
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        },
+                        {
+                          "type": "text",
+                          "value": " "
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "listItem",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "inlineCode",
                           "value": "input.xs"
                         },
                         {

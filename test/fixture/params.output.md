@@ -134,6 +134,7 @@ iterator destructure (RestElement)
 
 -   `input` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
     -   `input.x` **any** head of iterator
+    -   `input.0`  
     -   `input.xs` **...any** 
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>** rotated such that the last element was the first

@@ -379,7 +379,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.a"
+                          "value": "$0.0"
                         },
                         {
                           "type": "text",
@@ -401,7 +401,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.b"
+                          "value": "$0.1"
                         },
                         {
                           "type": "text",
@@ -423,7 +423,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.c"
+                          "value": "$0.2"
                         },
                         {
                           "type": "text",
@@ -2229,7 +2229,7 @@
                     },
                     {
                       "type": "inlineCode",
-                      "value": "(a: T, b: T): boolean => a === b"
+                      "value": "(a:T,b:T):boolean=>a===b"
                     },
                     {
                       "type": "text",

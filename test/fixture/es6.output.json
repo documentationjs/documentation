@@ -248,17 +248,17 @@
         "properties": [
           {
             "title": "param",
-            "name": "$0.a",
+            "name": "$0.0",
             "lineNumber": 14
           },
           {
             "title": "param",
-            "name": "$0.b",
+            "name": "$0.1",
             "lineNumber": 14
           },
           {
             "title": "param",
-            "name": "$0.c",
+            "name": "$0.2",
             "lineNumber": 14
           }
         ]
@@ -2809,7 +2809,7 @@
             }
           }
         },
-        "default": "(a: T, b: T): boolean => a === b"
+        "default": "(a:T,b:T):boolean=>a===b"
       }
     ],
     "properties": [],
