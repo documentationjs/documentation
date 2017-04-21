@@ -1,9 +1,10 @@
 type DocumentationConfig = {
   polyglot?: boolean,
-  inferPrivate?: boolean,
+  inferPrivate?: string,
   noPackage?: boolean,
   toc?: Array<Object>,
   paths?: { [key: string]: number },
+  access?: Array<string>,
   defaultGlobals?: boolean,
   defaultGlobalsEnvs?: Array<string>,
   external?: Array<string>,
