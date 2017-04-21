@@ -4,15 +4,14 @@
 
 'use strict';
 
-var yargs = require('yargs'),
-  commands = require('../lib/commands');
+var yargs = require('yargs'), commands = require('../lib/commands');
 
 var argv = yargs
   .command(commands.serve)
   .command(commands.build)
   .command(commands.lint)
   .command(commands.readme)
-  .fail(function (msg, error) {
+  .fail(function(msg, error) {
     if (error) {
       throw error;
     } else {
@@ -21,10 +20,11 @@ var argv = yargs
       return yargs.exit(1);
     }
   })
-  .version(function () {
+  .version(function() {
     return require('../package').version;
   })
-  .usage(`Usage:
+  .usage(
+    `Usage:
 
   # generate markdown docs for index.js and files it references 
   $0 build index.js -f md 
@@ -46,13 +46,15 @@ var argv = yargs
 
   # build docs for all values exported by index.js 
   $0 build --document-exported index.js
-`)
+`
+  )
   .recommendCommands()
-  .help()
-  .argv;
+  .help().argv;
 
 if (argv.private) {
-  console.error('--private is deprecated, please use the --access (or -a) option instead');
+  console.error(
+    '--private is deprecated, please use the --access (or -a) option instead'
+  );
   console.error('for example: -a public -a private -a protected -a undefined');
 }
 
