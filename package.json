@@ -81,7 +81,7 @@
     "website"
   ],
   "license": "ISC",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:documentationjs/documentation.git"
@@ -90,7 +90,7 @@
     "release": "standard-version",
     "precommit": "lint-staged --verbose",
     "format": "prettier --write '{lib,test}/**/*.js' --single-quote",
-    "doc": "./bin/documentation.js build index.js -f md --access=public > docs/NODE_API.md",
+    "doc": "./bin/documentation.js build lib/index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
     "test": "are-we-flow-yet lib && flow check && npm run self-lint && npm run test-tap",
