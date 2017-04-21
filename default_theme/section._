@@ -52,7 +52,7 @@
             = <code><%- param.default %></code><% } %>)</code>
 	    <%= md(param.description, true) %>
           </div>
-          <% if (param.properties) { %>
+          <% if (param.properties && param.properties.length) { %>
           <table class='mt1 mb2 fixed-table h5 col-12'>
             <colgroup>
               <col width='30%' />
@@ -93,7 +93,7 @@
           <% } %><% if (property.description) {
 	    %>: <%= md(property.description, true) %><%
 	  } %>
-          <% if (property.properties) { %>
+          <% if (property.properties && property.properties.length) { %>
             <ul>
               <% property.properties.forEach(function(property) { %>
                 <li><code><%- property.name %></code> <%= formatType(property.type) %>

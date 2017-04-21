@@ -7,9 +7,9 @@ have any parameter descriptions.
 
 **Parameters**
 
--   `$0` **any**  (optional, default `{}`)
-    -   `$0.phoneNumbers`   (optional, default `[]`)
-    -   `$0.emailAddresses`   (optional, default `[]`)
+-   `$0` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)?**  (optional, default `{}`)
+    -   `$0.phoneNumbers` **any?**  (optional, default `[]`)
+    -   `$0.emailAddresses` **any?**  (optional, default `[]`)
     -   `$0.params` **...any** 
 
 ## destructure
@@ -18,10 +18,10 @@ Similar, but with an array
 
 **Parameters**
 
--   `$0` **any** 
-    -   `$0.a`  
-    -   `$0.b`  
-    -   `$0.c`  
+-   `$0` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+    -   `$0.0`  
+    -   `$0.1`  
+    -   `$0.2`  
 
 **Examples**
 
@@ -113,7 +113,7 @@ This tests our support of optional parameters in ES6
 
 **Parameters**
 
--   `foo`   (optional, default `'bar'`)
+-   `foo` **any?**  (optional, default `'bar'`)
 
 ## iAmProtected
 
@@ -135,6 +135,6 @@ Regression check for #498
 
 -   `array1` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
 -   `array2` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
--   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a: T, b: T): boolean => a === b`)
+-   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a:T,b:T):boolean=>a===b`)
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 

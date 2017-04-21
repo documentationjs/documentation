@@ -115,7 +115,9 @@ test('parse - @description', function(t) {
        * @description This tagged description wins, and [is markdown](http://markdown.com).
        */
     })[0].description,
-    remark().parse('This tagged description wins, and [is markdown](http://markdown.com).'),
+    remark().parse(
+      'This tagged description wins, and [is markdown](http://markdown.com).'
+    ),
     'description'
   );
 

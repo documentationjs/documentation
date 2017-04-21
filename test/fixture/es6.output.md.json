@@ -85,8 +85,19 @@
                   "type": "strong",
                   "children": [
                     {
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Object"
+                        }
+                      ]
+                    },
+                    {
                       "type": "text",
-                      "value": "any"
+                      "value": "?"
                     }
                   ]
                 },
@@ -132,6 +143,19 @@
                           "value": " "
                         },
                         {
+                          "type": "strong",
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "any"
+                            },
+                            {
+                              "type": "text",
+                              "value": "?"
+                            }
+                          ]
+                        },
+                        {
                           "type": "text",
                           "value": " "
                         },
@@ -169,6 +193,19 @@
                         {
                           "type": "text",
                           "value": " "
+                        },
+                        {
+                          "type": "strong",
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "any"
+                            },
+                            {
+                              "type": "text",
+                              "value": "?"
+                            }
+                          ]
                         },
                         {
                           "type": "text",
@@ -312,8 +349,15 @@
                   "type": "strong",
                   "children": [
                     {
-                      "type": "text",
-                      "value": "any"
+                      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+                      "type": "link",
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Array"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -335,7 +379,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.a"
+                          "value": "$0.0"
                         },
                         {
                           "type": "text",
@@ -357,7 +401,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.b"
+                          "value": "$0.1"
                         },
                         {
                           "type": "text",
@@ -379,7 +423,7 @@
                       "children": [
                         {
                           "type": "inlineCode",
-                          "value": "$0.c"
+                          "value": "$0.2"
                         },
                         {
                           "type": "text",
@@ -1774,6 +1818,19 @@
                   "value": " "
                 },
                 {
+                  "type": "strong",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "any"
+                    },
+                    {
+                      "type": "text",
+                      "value": "?"
+                    }
+                  ]
+                },
+                {
                   "type": "text",
                   "value": " "
                 },
@@ -2172,7 +2229,7 @@
                     },
                     {
                       "type": "inlineCode",
-                      "value": "(a: T, b: T): boolean => a === b"
+                      "value": "(a:T,b:T):boolean=>a===b"
                     },
                     {
                       "type": "text",

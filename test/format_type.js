@@ -4,7 +4,7 @@
 var _formatType = require('../lib/output/util/format_type'),
   LinkerStack = require('../lib/output/util/linker_stack'),
   remark = require('remark'),
-  parse = require('doctrine').parse,
+  parse = require('doctrine-temporary-fork').parse,
   test = require('tap').test;
 
 function stringify(children) {

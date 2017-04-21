@@ -86,20 +86,32 @@
       {
         "title": "param",
         "name": "$0",
+        "anonymous": true,
         "type": {
-          "type": "AllLiteral"
+          "type": "OptionalType",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Object"
+          }
         },
-        "default": "{}",
         "properties": [
           {
             "title": "param",
             "name": "$0.phoneNumbers",
-            "default": "[]"
+            "lineNumber": 6,
+            "default": "[]",
+            "type": {
+              "type": "OptionalType"
+            }
           },
           {
             "title": "param",
             "name": "$0.emailAddresses",
-            "default": "[]"
+            "lineNumber": 6,
+            "default": "[]",
+            "type": {
+              "type": "OptionalType"
+            }
           },
           {
             "title": "param",
@@ -109,7 +121,8 @@
               "type": "RestType"
             }
           }
-        ]
+        ],
+        "default": "{}"
       }
     ],
     "properties": [],
@@ -227,23 +240,25 @@
       {
         "title": "param",
         "name": "$0",
+        "anonymous": true,
         "type": {
-          "type": "AllLiteral"
+          "type": "NameExpression",
+          "name": "Array"
         },
         "properties": [
           {
             "title": "param",
-            "name": "$0.a",
+            "name": "$0.0",
             "lineNumber": 14
           },
           {
             "title": "param",
-            "name": "$0.b",
+            "name": "$0.1",
             "lineNumber": 14
           },
           {
             "title": "param",
-            "name": "$0.c",
+            "name": "$0.2",
             "lineNumber": 14
           }
         ]
@@ -2299,7 +2314,11 @@
       {
         "title": "param",
         "name": "foo",
-        "default": "'bar'"
+        "lineNumber": 114,
+        "default": "'bar'",
+        "type": {
+          "type": "OptionalType"
+        }
       }
     ],
     "properties": [],
@@ -2761,7 +2780,7 @@
       {
         "title": "param",
         "name": "compareFunction",
-        "default": "(a: T, b: T): boolean => a === b",
+        "lineNumber": 153,
         "type": {
           "type": "OptionalType",
           "expression": {
@@ -2789,7 +2808,8 @@
               "name": "boolean"
             }
           }
-        }
+        },
+        "default": "(a:T,b:T):boolean=>a===b"
       }
     ],
     "properties": [],
