@@ -2,6 +2,61 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-rc.0"></a>
+# [4.0.0-rc.0](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.19...v4.0.0-rc.0) (2017-04-21)
+
+
+### Bug Fixes
+
+* **html output:** Fix github links in HTML output ([#745](https://github.com/documentationjs/documentation/issues/745)) ([9554b2f](https://github.com/documentationjs/documentation/commit/9554b2f)), closes [#738](https://github.com/documentationjs/documentation/issues/738)
+* **params:** added code path for type RestElement ([6961ee8](https://github.com/documentationjs/documentation/commit/6961ee8))
+
+
+### Code Refactoring
+
+* **nest:** Better nesting implementation ([#732](https://github.com/documentationjs/documentation/issues/732)) ([7374730](https://github.com/documentationjs/documentation/commit/7374730))
+
+
+### BREAKING CHANGES
+
+* **nest:** referencing inferred destructure params without
+renaming them, like $0.x, from JSDoc comments will no longer
+work. To reference them, instead add a param tag to name the
+destructuring param, and then refer to members of that name.
+
+Before:
+
+```js
+/**
+ * @param {number} $0.x a member of x
+ */
+function a({ x }) {}
+```
+
+After:
+
+```js
+/**
+ * @param {Object} options
+ * @param {number} options.x a member of x
+ */
+function a({ x }) {}
+```
+
+* Address review comments
+
+* Reduce testing node requirement back down to 4
+
+* Don't output empty properties, reduce diff noise
+
+* Rearrange and document params
+
+* Simplify param inference, update test fixtures. This is focused around Array destructuring: documenting destructured array elements with indices instead of names, because the names are purely internal details
+
+* Use temporary fork to get through blocker
+
+
+
 <a name="4.0.0-beta.19"></a>
 # [4.0.0-beta.19](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.18...v4.0.0-beta.19) (2017-04-10)
 
