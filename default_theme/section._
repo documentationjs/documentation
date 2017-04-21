@@ -8,8 +8,8 @@
     </h3>
     <% } %>
     <% if (section.context && section.context.github) { %>
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='<%= section.context.github %>'>
-      <span><%= section.context.path %></span>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='<%= section.context.github.url %>'>
+      <span><%= section.context.github.path %></span>
       </a>
     <% } %>
   </div>
