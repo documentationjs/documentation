@@ -23,7 +23,7 @@
     "chokidar": "^1.2.0",
     "concat-stream": "^1.5.0",
     "disparity": "^2.0.0",
-    "doctrine": "^2.0.0",
+    "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-comments": "^1.0.1",
     "git-url-parse": "^6.0.1",
     "github-slugger": "1.1.1",

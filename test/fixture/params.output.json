@@ -2552,29 +2552,20 @@
           "type": "NameExpression",
           "name": "any"
         },
-        "name": "input.x"
+        "name": "input.0"
       },
       {
         "title": "param",
-        "description": "...input.xs body of iterator",
+        "description": "body of iterator",
         "lineNumber": 6,
         "type": {
-          "type": "TypeApplication",
+          "type": "RestType",
           "expression": {
             "type": "NameExpression",
-            "name": "Array"
-          },
-          "applications": [
-            {
-              "type": "NameExpression",
-              "name": "any"
-            }
-          ]
+            "name": "any"
+          }
         },
-        "name": null,
-        "errors": [
-          "Missing or invalid tag name"
-        ]
+        "name": "input.xs"
       },
       {
         "title": "returns",
@@ -2618,11 +2609,7 @@
       }
     },
     "augments": [],
-    "errors": [
-      {
-        "message": "Missing or invalid tag name"
-      }
-    ],
+    "errors": [],
     "examples": [],
     "params": [
       {
@@ -2636,7 +2623,7 @@
         "properties": [
           {
             "title": "param",
-            "name": "input.x",
+            "name": "input.0",
             "lineNumber": 5,
             "description": {
               "type": "root",
@@ -2697,15 +2684,66 @@
           },
           {
             "title": "param",
-            "name": "input.0",
-            "lineNumber": 109
-          },
-          {
-            "title": "param",
             "name": "input.xs",
-            "lineNumber": 109,
+            "lineNumber": 6,
+            "description": {
+              "type": "root",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "body of iterator",
+                      "position": {
+                        "start": {
+                          "line": 1,
+                          "column": 1,
+                          "offset": 0
+                        },
+                        "end": {
+                          "line": 1,
+                          "column": 17,
+                          "offset": 16
+                        },
+                        "indent": []
+                      }
+                    }
+                  ],
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "indent": []
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                }
+              }
+            },
             "type": {
-              "type": "RestType"
+              "type": "RestType",
+              "expression": {
+                "type": "NameExpression",
+                "name": "any"
+              }
             }
           }
         ]

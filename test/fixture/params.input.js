@@ -101,8 +101,8 @@ function foo(address) {
  * iterator destructure (RestElement)
  *
  * @param {Array} input
- * @param {any} input.x head of iterator
- * @param {any[]} ...input.xs body of iterator
+ * @param {any} input.0 head of iterator
+ * @param {...any} input.xs body of iterator
  *
  * @returns {any[]} rotated such that the last element was the first
  */
