@@ -22,6 +22,7 @@ test('formatType', function(t) {
     ['null', 'null'],
     ['null', 'null'],
     ['*', 'any'],
+    ['namedType.typeProperty', 'namedType.typeProperty'],
     [
       'Array|undefined',
       '([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \\| [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined))'

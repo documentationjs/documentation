@@ -22,6 +22,7 @@
 -   [iAmPublic](#iampublic)
 -   [execute](#execute)
 -   [isArrayEqualWith](#isarrayequalwith)
+-   [paramWithMemberType](#paramwithmembertype)
 
 ## destructure
 
@@ -159,5 +160,15 @@ Regression check for #498
 -   `array1` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
 -   `array2` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;T>** 
 -   `compareFunction` **function (a: T, b: T): [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?**  (optional, default `(a:T,b:T):boolean=>a===b`)
+
+Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
+## paramWithMemberType
+
+Regression check for #749
+
+**Parameters**
+
+-   `a` **atype.property** 
 
 Returns **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
