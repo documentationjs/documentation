@@ -1,6 +1,7 @@
 // Options: {"documentExported": true}
 
 export class Class {
+  constructor(a: string) {}
   classMethod() {}
   get classGetter() {}
   set classSetter(v) {}
