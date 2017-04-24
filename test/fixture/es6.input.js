@@ -154,3 +154,8 @@ export function isArrayEqualWith<T>(
 ): boolean {
   return true;
 }
+
+/** Regression check for #749 */
+export function paramWithMemberType(a: atype.property): boolean {
+  return true;
+}

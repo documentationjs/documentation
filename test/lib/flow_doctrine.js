@@ -118,6 +118,105 @@ test('flowDoctrine', function(t) {
   );
 
   t.deepEqual(
+    toDoctrineType('namedType.propertyOfType'),
+    {
+      type: 'NameExpression',
+      name: 'namedType.propertyOfType'
+    },
+    'named type with property'
+  );
+
+  t.deepEqual(
+    toDoctrineType('Array<namedType.propertyOfType>'),
+    {
+      applications: [
+        {
+          type: 'NameExpression',
+          name: 'namedType.propertyOfType'
+        }
+      ],
+      expression: {
+        name: 'Array',
+        type: 'NameExpression'
+      },
+      type: 'TypeApplication'
+    },
+    'typeapplication of named type with property'
+  );
+
+  t.deepEqual(
+    toDoctrineType('Array<namedType.propertyOfType<boolean>>'),
+    {
+      applications: [
+        {
+          applications: [
+            {
+              name: 'boolean',
+              type: 'NameExpression'
+            }
+          ],
+          expression: {
+            type: 'NameExpression',
+            name: 'namedType.propertyOfType'
+          },
+          type: 'TypeApplication'
+        }
+      ],
+      expression: {
+        name: 'Array',
+        type: 'NameExpression'
+      },
+      type: 'TypeApplication'
+    },
+    'nested type application'
+  );
+
+  t.deepEqual(
+    toDoctrineType('{ a: foo.bar }'),
+    {
+      fields: [
+        {
+          key: 'a',
+          type: 'FieldType',
+          value: {
+            name: 'foo.bar',
+            type: 'NameExpression'
+          }
+        }
+      ],
+      type: 'RecordType'
+    },
+    'object type expression with subtype'
+  );
+
+  t.deepEqual(
+    toDoctrineType('{ a: { b: foo.bar } }'),
+    {
+      fields: [
+        {
+          key: 'a',
+          type: 'FieldType',
+          value: {
+            type: 'RecordType',
+            fields: [
+              {
+                key: 'b',
+                type: 'FieldType',
+                value: {
+                  name: 'foo.bar',
+                  type: 'NameExpression'
+                }
+              }
+            ]
+          }
+        }
+      ],
+      type: 'RecordType'
+    },
+    'nested fieldtype'
+  );
+
+  t.deepEqual(
     toDoctrineType('{ a: 1 }'),
     {
       type: 'RecordType',
