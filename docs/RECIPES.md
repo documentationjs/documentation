@@ -1,3 +1,42 @@
+## Classes
+
+ES6 has a nice, formal way of declaring classes. documentation.js handles it well:
+here are tips for dealing with them.
+
+**Document constructor parameters with the class, not the constructor method.**
+
+Do:
+
+```js
+/**
+ * A table object
+ * @param {number} width
+ * @param {number} height
+ */
+class Table {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+}
+```
+
+Don't:
+
+```js
+/** A table object */
+class Table {
+  /*
+   * @param {number} width
+   * @param {number} height
+   */
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+}
+```
+
 ## Destructuring Parameters
 
 In ES6, you can use [destructuring assignment in functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):

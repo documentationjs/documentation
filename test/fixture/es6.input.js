@@ -22,8 +22,15 @@ var multiply = (a, b) => a * b;
 
 /**
  * This is a sink
+ * @param {number} height the height of the thing
+ * @param {number} width the width of the thing
  */
 class Sink {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+
   /**
    * This is a property of the sink.
    */
@@ -49,15 +56,6 @@ class Sink {
    */
   get aGetter() {
     return 42;
-  }
-
-  /**
-   * @param {number} height the height of the thing
-   * @param {number} width the width of the thing
-   */
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
   }
 }
 

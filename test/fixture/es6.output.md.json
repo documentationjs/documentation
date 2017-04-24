@@ -741,155 +741,6 @@
       }
     },
     {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "staticProp"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "This is a property of the sink.",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 32,
-              "offset": 31
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 32,
-          "offset": 31
-        },
-        "indent": []
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "empty"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "Is it empty",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 1,
-              "column": 12,
-              "offset": 11
-            },
-            "indent": []
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 1,
-          "column": 12,
-          "offset": 11
-        },
-        "indent": []
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "aGetter"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "children": [
-        {
-          "type": "text",
-          "value": "This is a getter method: it should be documented\nas a property.",
-          "position": {
-            "start": {
-              "line": 1,
-              "column": 1,
-              "offset": 0
-            },
-            "end": {
-              "line": 2,
-              "column": 15,
-              "offset": 63
-            },
-            "indent": [
-              1
-            ]
-          }
-        }
-      ],
-      "position": {
-        "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 15,
-          "offset": 63
-        },
-        "indent": [
-          1
-        ]
-      }
-    },
-    {
-      "depth": 3,
-      "type": "heading",
-      "children": [
-        {
-          "type": "text",
-          "value": "constructor"
-        }
-      ]
-    },
-    {
       "type": "strong",
       "children": [
         {
@@ -1049,6 +900,145 @@
           ]
         }
       ]
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "staticProp"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a property of the sink.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 32,
+              "offset": 31
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 32,
+          "offset": 31
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "Is it empty",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 12,
+              "offset": 11
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 12,
+          "offset": 11
+        },
+        "indent": []
+      }
+    },
+    {
+      "depth": 3,
+      "type": "heading",
+      "children": [
+        {
+          "type": "text",
+          "value": "aGetter"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "children": [
+        {
+          "type": "text",
+          "value": "This is a getter method: it should be documented\nas a property.",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 15,
+              "offset": 63
+            },
+            "indent": [
+              1
+            ]
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 15,
+          "offset": 63
+        },
+        "indent": [
+          1
+        ]
+      }
     },
     {
       "depth": 3,
