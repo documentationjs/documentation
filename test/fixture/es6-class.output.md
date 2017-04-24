@@ -4,8 +4,8 @@
 
 -   [Foo](#foo)
 -   [Bar](#bar)
-    -   [constructor](#constructor)
     -   [bar](#bar-1)
+-   [Baz](#baz)
 
 ## Foo
 
@@ -17,10 +17,6 @@ This is my component. This is from issue #458
 
 Does nothing. This is from issue #556
 
-### constructor
-
-Creates a new instance
-
 **Parameters**
 
 -   `str` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
@@ -28,3 +24,12 @@ Creates a new instance
 ### bar
 
 A useless property
+
+## Baz
+
+This class has fully inferred constructor parameters.
+
+**Parameters**
+
+-   `n` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `l` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>** 

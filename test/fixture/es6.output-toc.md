@@ -44,6 +44,11 @@ Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 This is a sink
 
+**Parameters**
+
+-   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the height of the thing
+-   `width` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the width of the thing
+
 ### staticProp
 
 This is a property of the sink.
@@ -56,13 +61,6 @@ Is it empty
 
 This is a getter method: it should be documented
 as a property.
-
-### constructor
-
-**Parameters**
-
--   `height` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the height of the thing
--   `width` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the width of the thing
 
 ### hello
 

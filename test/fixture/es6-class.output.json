@@ -159,25 +159,36 @@
         }
       }
     },
-    "tags": [],
+    "tags": [
+      {
+        "title": "param",
+        "description": null,
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        },
+        "name": "str"
+      }
+    ],
     "loc": {
       "start": {
         "line": 6,
         "column": 0
       },
       "end": {
-        "line": 8,
+        "line": 9,
         "column": 3
       }
     },
     "context": {
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 18,
           "column": 1
         }
       }
@@ -185,7 +196,17 @@
     "augments": [],
     "errors": [],
     "examples": [],
-    "params": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "str",
+        "lineNumber": 2,
+        "type": {
+          "type": "NameExpression",
+          "name": "string"
+        }
+      }
+    ],
     "properties": [],
     "returns": [],
     "sees": [],
@@ -197,136 +218,6 @@
       "global": [],
       "inner": [],
       "instance": [
-        {
-          "description": {
-            "type": "root",
-            "children": [
-              {
-                "type": "paragraph",
-                "children": [
-                  {
-                    "type": "text",
-                    "value": "Creates a new instance",
-                    "position": {
-                      "start": {
-                        "line": 1,
-                        "column": 1,
-                        "offset": 0
-                      },
-                      "end": {
-                        "line": 1,
-                        "column": 23,
-                        "offset": 22
-                      },
-                      "indent": []
-                    }
-                  }
-                ],
-                "position": {
-                  "start": {
-                    "line": 1,
-                    "column": 1,
-                    "offset": 0
-                  },
-                  "end": {
-                    "line": 1,
-                    "column": 23,
-                    "offset": 22
-                  },
-                  "indent": []
-                }
-              }
-            ],
-            "position": {
-              "start": {
-                "line": 1,
-                "column": 1,
-                "offset": 0
-              },
-              "end": {
-                "line": 1,
-                "column": 23,
-                "offset": 22
-              }
-            }
-          },
-          "tags": [
-            {
-              "title": "param",
-              "description": null,
-              "lineNumber": 2,
-              "type": {
-                "type": "NameExpression",
-                "name": "string"
-              },
-              "name": "str"
-            }
-          ],
-          "loc": {
-            "start": {
-              "line": 10,
-              "column": 2
-            },
-            "end": {
-              "line": 13,
-              "column": 7
-            }
-          },
-          "context": {
-            "loc": {
-              "start": {
-                "line": 14,
-                "column": 2
-              },
-              "end": {
-                "line": 20,
-                "column": 3
-              }
-            }
-          },
-          "augments": [],
-          "errors": [],
-          "examples": [],
-          "params": [
-            {
-              "title": "param",
-              "name": "str",
-              "lineNumber": 2,
-              "type": {
-                "type": "NameExpression",
-                "name": "string"
-              }
-            }
-          ],
-          "properties": [],
-          "returns": [],
-          "sees": [],
-          "throws": [],
-          "todos": [],
-          "name": "constructor",
-          "kind": "function",
-          "memberof": "Bar",
-          "scope": "instance",
-          "members": {
-            "global": [],
-            "inner": [],
-            "instance": [],
-            "events": [],
-            "static": []
-          },
-          "path": [
-            {
-              "name": "Bar",
-              "kind": "class"
-            },
-            {
-              "name": "constructor",
-              "kind": "function",
-              "scope": "instance"
-            }
-          ],
-          "namespace": "Bar#constructor"
-        },
         {
           "description": {
             "type": "root",
@@ -393,22 +284,22 @@
           ],
           "loc": {
             "start": {
-              "line": 15,
+              "line": 12,
               "column": 4
             },
             "end": {
-              "line": 18,
-              "column": 11
+              "line": 15,
+              "column": 7
             }
           },
           "context": {
             "loc": {
               "start": {
-                "line": 19,
+                "line": 16,
                 "column": 4
               },
               "end": {
-                "line": 19,
+                "line": 16,
                 "column": 18
               }
             }
@@ -455,5 +346,135 @@
       }
     ],
     "namespace": "Bar"
+  },
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "This class has fully inferred constructor parameters.",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 54,
+                  "offset": 53
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 54,
+              "offset": 53
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 54,
+          "offset": 53
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 20,
+        "column": 0
+      },
+      "end": {
+        "line": 22,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 0
+        },
+        "end": {
+          "line": 25,
+          "column": 1
+        }
+      }
+    },
+    "augments": [],
+    "errors": [],
+    "examples": [],
+    "params": [
+      {
+        "title": "param",
+        "name": "n",
+        "lineNumber": 24,
+        "type": {
+          "type": "NameExpression",
+          "name": "number"
+        }
+      },
+      {
+        "title": "param",
+        "name": "l",
+        "lineNumber": 24,
+        "type": {
+          "type": "TypeApplication",
+          "expression": {
+            "type": "NameExpression",
+            "name": "Array"
+          },
+          "applications": [
+            {
+              "type": "NameExpression",
+              "name": "string"
+            }
+          ]
+        }
+      }
+    ],
+    "properties": [],
+    "returns": [],
+    "sees": [],
+    "throws": [],
+    "todos": [],
+    "name": "Baz",
+    "kind": "class",
+    "members": {
+      "global": [],
+      "inner": [],
+      "instance": [],
+      "events": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "Baz",
+        "kind": "class"
+      }
+    ],
+    "namespace": "Baz"
   }
 ]
