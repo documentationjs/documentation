@@ -576,10 +576,6 @@
                           "value": "number"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },
@@ -1108,10 +1104,6 @@
                           "value": "number"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },
@@ -1279,10 +1271,6 @@
                           "value": "Array"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },
@@ -1661,10 +1649,6 @@
                                   "value": "number"
                                 }
                               ]
-                            },
-                            {
-                              "type": "text",
-                              "value": "?"
                             }
                           ]
                         },
@@ -1977,10 +1961,6 @@
                           "value": "number"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },

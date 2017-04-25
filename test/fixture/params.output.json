@@ -507,11 +507,8 @@
         "name": "x",
         "lineNumber": 2,
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "number"
-          }
+          "type": "NameExpression",
+          "name": "number"
         },
         "default": "2"
       }
@@ -1340,11 +1337,8 @@
           }
         },
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "number"
-          }
+          "type": "NameExpression",
+          "name": "number"
         },
         "default": "8"
       },
@@ -1470,11 +1464,8 @@
           }
         },
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "Array"
-          }
+          "type": "NameExpression",
+          "name": "Array"
         },
         "default": "[1]"
       }
@@ -1891,11 +1882,8 @@
               }
             },
             "type": {
-              "type": "OptionalType",
-              "expression": {
-                "type": "NameExpression",
-                "name": "number"
-              }
+              "type": "NameExpression",
+              "name": "number"
             },
             "default": "14"
           },
@@ -2213,11 +2201,8 @@
           }
         },
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "number"
-          }
+          "type": "NameExpression",
+          "name": "number"
         },
         "default": "123"
       }

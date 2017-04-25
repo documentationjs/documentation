@@ -299,10 +299,6 @@
                           "value": "string"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },

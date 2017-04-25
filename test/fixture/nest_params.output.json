@@ -333,11 +333,8 @@
           }
         },
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "string"
-          }
+          "type": "NameExpression",
+          "name": "string"
         },
         "default": "minion"
       }

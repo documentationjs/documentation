@@ -270,10 +270,7 @@ test('inferParams', function(t) {
         name: 'x',
         title: 'param',
         lineNumber: 3,
-        type: {
-          expression: null,
-          type: 'OptionalType'
-        }
+        type: null
       }
     ],
     'default params'
@@ -295,11 +292,8 @@ test('inferParams', function(t) {
         title: 'param',
         lineNumber: 1,
         type: {
-          expression: {
-            type: 'NameExpression',
-            name: 'number'
-          },
-          type: 'OptionalType'
+          type: 'NameExpression',
+          name: 'number'
         }
       }
     ],
