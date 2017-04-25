@@ -37,6 +37,44 @@ class Table {
 }
 ```
 
+## Class factories: using `@lends`
+
+Many libraries and frameworks have special 'class constructor methods' that
+accept an object as an input and return a class with that object's properties
+as prototype properties. For instance, Dojo has `define`, React has `React.createClass`,
+Ext has `Ext.define`.
+
+documentation.js can't assume that a method receiving an object will return a class,
+since many methods don't. Luckily, you can indicate this to the tool with the `@lends`
+tag.
+
+For instance in a Dojo-style instantiation:
+
+```js
+/**
+ * This is the documentation for the created class, a SelectionEngine
+ */
+const SelectionEngine = declare(
+  null,
+  /** @lends SelectionEngine */ {
+    /**
+     * This method will be parsed as SelectionEngine.expandColsTo
+     * because the object that contains it has a @lends tag indicating
+     * that it will be lended to the SelectionEngine prototype.
+     */
+    expandColsTo: function(foo, bar, baz) {}
+  }
+);
+```
+
+The mechanics are:
+
+* If you're creating a kind of class with a helper function
+* And you provide an object of properties that will be mixed in to the class
+  as one of the arguments to that function
+* Add a tag like `/** @lends ClassName */` before that object, and the properties
+  in the object will be correctly assigned to the class's prototype.
+
 ## Destructuring Parameters
 
 In ES6, you can use [destructuring assignment in functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
