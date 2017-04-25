@@ -4,6 +4,8 @@
 
 -   [addThem](#addthem)
 -   [fishesAndFoxes](#fishesandfoxes)
+-   [fishesAndFoxesInline](#fishesandfoxesinline)
+-   [foxes](#foxes)
 -   [withDefault](#withdefault)
 -   [Foo](#foo)
     -   [method](#method)
@@ -38,6 +40,20 @@ This method has partially inferred params
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.fishes` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** number of kinds of fish
     -   `options.foxes`  
+
+## fishesAndFoxesInline
+
+This method has inline documentation for a param
+
+**Parameters**
+
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `options.fishes`  number of kinds of fish
+    -   `options.foxes`  
+
+## foxes
+
+number of kinds of fish
 
 ## withDefault
 
