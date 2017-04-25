@@ -419,7 +419,7 @@ the referenced class type</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>isBuffer(buf, size = 0)</span>
+            <span class='code strong strong truncate'>isBuffer(buf, size)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -430,7 +430,7 @@ the referenced class type</p>
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
 
-  <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>), size: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -455,7 +455,7 @@ the referenced class type</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>size</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?
+            <span class='code bold'>size</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>0</code>)</code>
 	    size
 

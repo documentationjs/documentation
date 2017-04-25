@@ -94,10 +94,6 @@
                           "value": "Object"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },
@@ -143,19 +139,6 @@
                           "value": " "
                         },
                         {
-                          "type": "strong",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": "any"
-                            },
-                            {
-                              "type": "text",
-                              "value": "?"
-                            }
-                          ]
-                        },
-                        {
                           "type": "text",
                           "value": " "
                         },
@@ -193,19 +176,6 @@
                         {
                           "type": "text",
                           "value": " "
-                        },
-                        {
-                          "type": "strong",
-                          "children": [
-                            {
-                              "type": "text",
-                              "value": "any"
-                            },
-                            {
-                              "type": "text",
-                              "value": "?"
-                            }
-                          ]
                         },
                         {
                           "type": "text",
@@ -1808,19 +1778,6 @@
                   "value": " "
                 },
                 {
-                  "type": "strong",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "any"
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
-                    }
-                  ]
-                },
-                {
                   "type": "text",
                   "value": " "
                 },
@@ -2199,10 +2156,6 @@
                           "value": "boolean"
                         }
                       ]
-                    },
-                    {
-                      "type": "text",
-                      "value": "?"
                     }
                   ]
                 },

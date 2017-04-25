@@ -88,30 +88,21 @@
         "name": "$0",
         "anonymous": true,
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "NameExpression",
-            "name": "Object"
-          }
+          "type": "NameExpression",
+          "name": "Object"
         },
         "properties": [
           {
             "title": "param",
             "name": "$0.phoneNumbers",
             "lineNumber": 6,
-            "default": "[]",
-            "type": {
-              "type": "OptionalType"
-            }
+            "default": "[]"
           },
           {
             "title": "param",
             "name": "$0.emailAddresses",
             "lineNumber": 6,
-            "default": "[]",
-            "type": {
-              "type": "OptionalType"
-            }
+            "default": "[]"
           },
           {
             "title": "param",
@@ -2257,10 +2248,7 @@
         "title": "param",
         "name": "foo",
         "lineNumber": 112,
-        "default": "'bar'",
-        "type": {
-          "type": "OptionalType"
-        }
+        "default": "'bar'"
       }
     ],
     "properties": [],
@@ -2724,31 +2712,28 @@
         "name": "compareFunction",
         "lineNumber": 151,
         "type": {
-          "type": "OptionalType",
-          "expression": {
-            "type": "FunctionType",
-            "params": [
-              {
-                "type": "ParameterType",
-                "name": "a",
-                "expression": {
-                  "type": "NameExpression",
-                  "name": "T"
-                }
-              },
-              {
-                "type": "ParameterType",
-                "name": "b",
-                "expression": {
-                  "type": "NameExpression",
-                  "name": "T"
-                }
+          "type": "FunctionType",
+          "params": [
+            {
+              "type": "ParameterType",
+              "name": "a",
+              "expression": {
+                "type": "NameExpression",
+                "name": "T"
               }
-            ],
-            "result": {
-              "type": "NameExpression",
-              "name": "boolean"
+            },
+            {
+              "type": "ParameterType",
+              "name": "b",
+              "expression": {
+                "type": "NameExpression",
+                "name": "T"
+              }
             }
+          ],
+          "result": {
+            "type": "NameExpression",
+            "name": "boolean"
           }
         },
         "default": "(a:T,b:T):boolean=>a===b"
