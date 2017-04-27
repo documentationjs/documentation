@@ -62,7 +62,7 @@
     "cz-conventional-changelog": "2.0.0",
     "documentation-schema": "0.0.1",
     "flow-bin": "^0.44.0",
-    "fs-extra": "^2.1.2",
+    "fs-extra": "^3.0.0",
     "husky": "^0.13.3",
     "json-schema": "0.2.3",
     "lint-staged": "^3.4.0",
