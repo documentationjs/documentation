@@ -16,6 +16,16 @@ function fishesAndFoxes({ fishes, foxes }) {
 }
 
 /**
+ * This method has inline documentation for a param
+ * @param {Object} options
+ */
+function fishesAndFoxesInline(
+  { fishes /** number of kinds of fish */, foxes }
+) {
+  return fishes + foxes;
+}
+
+/**
  * This method has a type in the description and a default in the code
  * @param {number} x
  */
