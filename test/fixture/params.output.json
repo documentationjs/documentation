@@ -1212,7 +1212,24 @@
       }
     },
     "augments": [],
-    "errors": [],
+    "errors": [
+      {
+        "message": "An explicit parameter named address was specified but didn't match inferred information ",
+        "commentLineNumber": 5
+      },
+      {
+        "message": "An explicit parameter named groups was specified but didn't match inferred information ",
+        "commentLineNumber": 6
+      },
+      {
+        "message": "An explicit parameter named third was specified but didn't match inferred information ",
+        "commentLineNumber": 7
+      },
+      {
+        "message": "An explicit parameter named foo was specified but didn't match inferred information ",
+        "commentLineNumber": 8
+      }
+    ],
     "examples": [
       {
         "description": "var address = new Address6('2001::/32');"

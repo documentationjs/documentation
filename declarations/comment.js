@@ -59,21 +59,7 @@ type CommentContextGitHub = {
   url: string
 };
 
-type CommentTagBase = {
-  title: string
-};
-
-type CommentTag = CommentTagBase & {
-  name?: string,
-  title: string,
-  description?: Object,
-  default?: any,
-  lineNumber?: number,
-  type?: DoctrineType,
-  properties?: Array<CommentTag>
-};
-
-type CommentTagNamed = CommentTag & {
+type CommentTag = {
   name?: string,
   title: string,
   description?: Object,
