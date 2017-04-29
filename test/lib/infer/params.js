@@ -34,17 +34,25 @@ test('mergeTrees', function(t) {
         }
       ]
     ),
-    [
-      {
-        title: 'param',
-        description: 'First arg!',
-        name: 'a',
-        type: {
-          type: 'NameExpression',
-          name: 'string'
+    {
+      errors: [
+        {
+          commentLineNumber: null,
+          message: "An explicit parameter named a was specified but didn't match inferred information "
         }
-      }
-    ]
+      ],
+      mergedParams: [
+        {
+          title: 'param',
+          description: 'First arg!',
+          name: 'a',
+          type: {
+            type: 'NameExpression',
+            name: 'string'
+          }
+        }
+      ]
+    }
   );
 
   t.deepEqual(
@@ -85,29 +93,32 @@ test('mergeTrees', function(t) {
         }
       ]
     ),
-    [
-      {
-        title: 'param',
-        description: 'First arg!',
-        name: 'a',
-        type: {
-          type: 'NameExpression',
-          name: 'object'
-        },
-        properties: [
-          {
-            title: 'param',
-            name: 'a.a',
-            parameterIndex: 0,
-            type: {
-              type: 'NameExpression',
-              name: 'string'
-            },
-            properties: []
-          }
-        ]
-      }
-    ]
+    {
+      errors: [],
+      mergedParams: [
+        {
+          title: 'param',
+          description: 'First arg!',
+          name: 'a',
+          type: {
+            type: 'NameExpression',
+            name: 'object'
+          },
+          properties: [
+            {
+              title: 'param',
+              name: 'a.a',
+              parameterIndex: 0,
+              type: {
+                type: 'NameExpression',
+                name: 'string'
+              },
+              properties: []
+            }
+          ]
+        }
+      ]
+    }
   );
 
   t.end();
