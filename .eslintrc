@@ -8,26 +8,14 @@
     "flowtype"
   ],
   "rules": {
-    "space-in-parens": 2,
-    "space-before-blocks": 2,
-    "keyword-spacing": 2,
-    "space-unary-ops": 2,
-    "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
     "no-use-before-define": [2, "nofunc"],
     "camelcase": 2,
-    "semi": 2,
-    "comma-style": 2,
     "no-lonely-if": 2,
-    "max-len": [2, 120],
     "no-else-return": 2,
-    "no-trailing-spaces": 2,
     "new-cap": 2,
     "no-empty": 2,
     "consistent-return": 0,
     "no-new": 2,
-    "key-spacing": 2,
-    "no-multi-spaces": 2,
-    "brace-style": 2,
     "object-shorthand": ["error", "always", { "avoidQuotes": true }],
     "no-throw-literal": 2,
     "no-self-compare": 2,
@@ -35,16 +23,16 @@
     "no-unused-vars": 2,
     "wrap-iife": 2,
     "no-eq-null": 2,
-    "quotes": [2, "single"],
-    "indent": [2, 2],
-    "curly": 2,
     "strict": [2, "global"],
     "no-shadow": 0,
     "no-undef": 2,
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
   "env": {
     "node": true,
     "es6": true
