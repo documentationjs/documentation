@@ -2,9 +2,8 @@
 
 /* eslint no-console: 0 */
 
-'use strict';
-
-var yargs = require('yargs'), commands = require('../lib/commands');
+var yargs = require('yargs');
+var commands = require('../lib/commands');
 
 var argv = yargs
   .command(commands.serve)

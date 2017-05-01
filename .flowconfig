@@ -1,7 +1,8 @@
 [ignore]
 .*node_modules/.cache/.*
 .*node_modules/conventional-changelog-core/test/fixtures/.*
-.*/test/fixture/.*
+.*/__tests__/fixture/.*
+./lib/.*
 
 [include]
 

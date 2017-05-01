@@ -2,7 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "script"
+    "sourceType": "module"
   },
   "plugins": [
     "flowtype"
@@ -31,6 +31,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:flowtype/recommended",
     "prettier"
   ],
   "env": {

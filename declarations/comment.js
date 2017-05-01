@@ -1,3 +1,5 @@
+/* @flow */
+/* eslint no-use-before-define: 0 */
 type DocumentationConfig = {
   polyglot?: boolean,
   inferPrivate?: string,
@@ -11,11 +13,6 @@ type DocumentationConfig = {
   theme: string,
   requireExtension?: Array<string>,
   parseExtension: Array<string>
-};
-
-type InputsConfig = {
-  inputs: Array<SourceFile>,
-  config: DocumentationConfig
 };
 
 type CommentError = {
@@ -69,40 +66,6 @@ type CommentTag = {
   properties?: Array<CommentTag>
 };
 
-type CommentMembers = {
-  static: Array<Comment>,
-  instance: Array<Comment>,
-  events: Array<Comment>,
-  global: Array<Comment>,
-  inner: Array<Comment>
-};
-
-type CommentExample = {
-  caption?: string,
-  description?: Object
-};
-
-type Remark = {
-  type: string,
-  children: Array<Object>
-};
-
-type Access = 'private' | 'public' | 'protected';
-type Scope = 'instance' | 'static' | 'inner' | 'global';
-type Kind =
-  | 'class'
-  | 'constant'
-  | 'event'
-  | 'external'
-  | 'file'
-  | 'function'
-  | 'member'
-  | 'mixin'
-  | 'module'
-  | 'namespace'
-  | 'typedef'
-  | 'interface';
-
 type Comment = {
   errors: Array<CommentError>,
   tags: Array<CommentTag>,
@@ -150,8 +113,36 @@ type Comment = {
   }>
 };
 
-type ReducedComment = {
-  name: string,
-  kind: ?Kind,
-  scope?: ?Scope
+type CommentMembers = {
+  static: Array<Comment>,
+  instance: Array<Comment>,
+  events: Array<Comment>,
+  global: Array<Comment>,
+  inner: Array<Comment>
 };
+
+type CommentExample = {
+  caption?: string,
+  description?: Object
+};
+
+type Remark = {
+  type: string,
+  children: Array<Object>
+};
+
+type Access = 'private' | 'public' | 'protected';
+type Scope = 'instance' | 'static' | 'inner' | 'global';
+type Kind =
+  | 'class'
+  | 'constant'
+  | 'event'
+  | 'external'
+  | 'file'
+  | 'function'
+  | 'member'
+  | 'mixin'
+  | 'module'
+  | 'namespace'
+  | 'typedef'
+  | 'interface';

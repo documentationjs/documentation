@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "valid-jsdoc": [0],
+    "no-unused-vars": [0]
+  },
+  "env": {
+    "jest": true
+  }
+}
