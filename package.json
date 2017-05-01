@@ -58,9 +58,13 @@
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
+    "babel-eslint": "^7.2.3",
     "chdir": "0.0.0",
     "cz-conventional-changelog": "2.0.0",
     "documentation-schema": "0.0.1",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^1.7.0",
+    "eslint-plugin-flowtype": "^2.32.1",
     "flow-bin": "^0.44.0",
     "fs-extra": "^3.0.0",
     "husky": "^0.13.3",
@@ -93,7 +97,7 @@
     "doc": "./bin/documentation.js build lib/index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint",
-    "test": "are-we-flow-yet lib && flow check && npm run self-lint && npm run test-tap",
+    "test": "eslint lib && are-we-flow-yet lib && flow check && npm run self-lint && npm run test-tap",
     "test-tap": "tap -t 120 --coverage --nyc-arg=--cache test/*.js test/lib test/streams"
   },
   "config": {
