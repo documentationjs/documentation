@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0-rc.1"></a>
+# [4.0.0-rc.1](https://github.com/documentationjs/documentation/compare/v4.0.0-rc.0...v4.0.0-rc.1) (2017-05-01)
+
+
+### Bug Fixes
+
+* Infer parameters for classes from constructors ([355038d](https://github.com/documentationjs/documentation/commit/355038d)), closes [#689](https://github.com/documentationjs/documentation/issues/689)
+* **document-exported:** Ensure that document-exported does not document constructors separately ([96a6d13](https://github.com/documentationjs/documentation/commit/96a6d13))
+* **flow:** Fix inference of Flow types with properties ([#751](https://github.com/documentationjs/documentation/issues/751)) ([7c00acc](https://github.com/documentationjs/documentation/commit/7c00acc)), closes [#749](https://github.com/documentationjs/documentation/issues/749)
+* **params:** Parameters with default use = not ? ([3cc4426](https://github.com/documentationjs/documentation/commit/3cc4426)), closes [#737](https://github.com/documentationjs/documentation/issues/737)
+
+
+### Features
+
+* **lint:** Identify explicit tags that don't match inference in lint stage ([ed5c2a0](https://github.com/documentationjs/documentation/commit/ed5c2a0))
+
+
+
 <a name="4.0.0-rc.0"></a>
 # [4.0.0-rc.0](https://github.com/documentationjs/documentation/compare/v4.0.0-beta.19...v4.0.0-rc.0) (2017-04-21)
 
