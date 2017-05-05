@@ -87,27 +87,29 @@ function addTheXandYProperties({ x, y }) {
 }
 ```
 
-Destructured parameters are **unnamed**: while we have names for x & y,
-the function doesn't declare what it will call the object you call
-this function with. So documentation.js names your destructured parameters
-for you: if the param is the first, it'll call it `$0`, if second, `$1`,
-and so on.
+Destructured parameters are **unnamed** in the code: while we have names
+for x & y, the function doesn't declare what it will call the object you
+call this function with. So you must name the parent object of
+destructured parameters to document them in documentation.js.
 
 So, if you want to add more detailed documentation for properties
-within destructured params, prefix property names with $0 for the object,
-or $1 if it's the second parameter, and so on - the number is the position
-of the destructuring parameter within the list of parameters. Here's
-an example:
+within destructured params, name the parent object, then prefix property
+names with the parent object. Here's an example:
 
 ```js
 /**
- * This method has partially inferred params
- * @param {String} $0.fishes number of kinds of fish
+ * This method has hierachical params
+ * @param {Object} animals different kinds of animals
+ * @param {String} animals.fishes number of kinds of fish
  */
 function fishesAndFoxes({ fishes, foxes }) {
   return fishes + foxes;
 }
 ```
+
+Note: documentation.js used to implicitly call those parent objects
+`$0`, `$1`, etc. Starting in documentation.js 4.0.0-rc.1 the more
+explicit syntax is required.
 
 ## Object Factories
 
