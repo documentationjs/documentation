@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`server 1`] = `"test = 123"`;
+
+exports[`server 2`] = `"var test = 123;"`;
+
+exports[`server 3`] = `"<html>"`;

@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inferParams 1`] = `
+Array [
+  Object {
+    "anonymous": true,
+    "name": "$0",
+    "properties": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "$0.x",
+        "title": "param",
+      },
+      Object {
+        "lineNumber": 1,
+        "name": "$0.xs",
+        "title": "param",
+        "type": Object {
+          "type": "RestType",
+        },
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Object",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 2`] = `
+Array [
+  Object {
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Position {
+                "end": Object {
+                  "column": 28,
+                  "line": 1,
+                  "offset": 27,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "renamed destructuring param",
+            },
+          ],
+          "position": Position {
+            "end": Object {
+              "column": 28,
+              "line": 1,
+              "offset": 27,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 28,
+          "line": 1,
+          "offset": 27,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "lineNumber": 2,
+    "name": "a",
+    "properties": Array [
+      Object {
+        "lineNumber": 6,
+        "name": "a.x",
+        "title": "param",
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Object",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 3`] = `
+Array [
+  Object {
+    "default": "4",
+    "lineNumber": 3,
+    "name": "x",
+    "title": "param",
+    "type": undefined,
+  },
+]
+`;
+
+exports[`inferParams 4`] = `
+Array [
+  Object {
+    "default": "4",
+    "lineNumber": 1,
+    "name": "x",
+    "title": "param",
+    "type": Object {
+      "name": "number",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 5`] = `
+Array [
+  Object {
+    "anonymous": true,
+    "name": "$0",
+    "properties": Array [
+      Object {
+        "lineNumber": 3,
+        "name": "$0.x",
+        "title": "param",
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Object",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 6`] = `
+Array [
+  Object {
+    "anonymous": true,
+    "name": "$0",
+    "properties": Array [
+      Object {
+        "lineNumber": 3,
+        "name": "$0.x.y.z",
+        "title": "param",
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Object",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`mergeTrees 1`] = `
+Object {
+  "errors": Array [
+    Object {
+      "commentLineNumber": undefined,
+      "message": "An explicit parameter named a was specified but didn't match inferred information ",
+    },
+  ],
+  "mergedParams": Array [
+    Object {
+      "description": "First arg!",
+      "name": "a",
+      "title": "param",
+      "type": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+    },
+  ],
+}
+`;
+
+exports[`mergeTrees 2`] = `
+Object {
+  "errors": Array [],
+  "mergedParams": Array [
+    Object {
+      "description": "First arg!",
+      "name": "a",
+      "properties": Array [
+        Object {
+          "name": "a.a",
+          "parameterIndex": 0,
+          "properties": Array [],
+          "title": "param",
+          "type": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+        },
+      ],
+      "title": "param",
+      "type": Object {
+        "name": "object",
+        "type": "NameExpression",
+      },
+    },
+  ],
+}
+`;
