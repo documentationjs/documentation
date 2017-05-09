@@ -106,7 +106,7 @@
     "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && are-we-flow-yet src && flow check && jest",
-    "test-ci": "npm run build && eslint . && are-we-flow-yet src && flow check && jest --runInBand && coveralls < coverage/lcov.info"
+    "test-ci": "npm run build && eslint . && are-we-flow-yet src && flow check && jest --runInBand"
   },
   "jest": {
     "testPathIgnorePatterns": [
