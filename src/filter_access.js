@@ -12,8 +12,6 @@ import { walk } from './walk';
  * @return {Array<Object>} filtered comments
  */
 function filterAccess(levels: Array<string>, comments: Array<Comment>) {
-  levels = levels || ['public', 'undefined', 'protected'];
-
   function filter(comment) {
     return (
       comment.kind === 'note' ||
