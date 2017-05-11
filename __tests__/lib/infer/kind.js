@@ -59,6 +59,24 @@ test('inferKind', function() {
   ).toBe('function');
 
   expect(
+    inferKind(toComment('/** Exported interface */' + 'interface myinter {}'))
+      .kind
+  ).toBe('interface');
+
+  expect(
+    inferKind(
+      toComment(
+        '/** Exported interface */' + 'module.exports.foo = function() {}'
+      )
+    ).kind
+  ).toBe('function');
+
+  expect(
+    inferKind(toComment('class A { /** Exported interface */' + 'foo: 1 }'))
+      .kind
+  ).toBe('member');
+
+  expect(
     inferKind(
       toComment('/** Exported function */' + 'export function foo() {}')
     ).kind
