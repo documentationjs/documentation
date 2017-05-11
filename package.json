@@ -74,7 +74,7 @@
     "flow-bin": "^0.45.0",
     "fs-extra": "^3.0.0",
     "husky": "^0.13.3",
-    "jest": "^19.0.2",
+    "jest": "^20.0.1",
     "json-schema": "0.2.3",
     "lint-staged": "^3.4.0",
     "mock-fs": "^4.2.0",
