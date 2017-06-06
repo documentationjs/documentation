@@ -50,31 +50,31 @@ exports[`--config 1`] = `
                     <li class='h5'><span>Static members</span></li>
                     
                       <li><a
-                        href='#Klass.isClass'
+                        href='#klassisclass'
                         class='regular pre-open'>
                         .isClass
                       </a></li>
                     
                       <li><a
-                        href='#Klass.isWeird'
+                        href='#klassisweird'
                         class='regular pre-open'>
                         .isWeird
                       </a></li>
                     
                       <li><a
-                        href='#Klass.isBuffer'
+                        href='#klassisbuffer'
                         class='regular pre-open'>
                         .isBuffer
                       </a></li>
                     
                       <li><a
-                        href='#Klass.isArrayOfBuffers'
+                        href='#klassisarrayofbuffers'
                         class='regular pre-open'>
                         .isArrayOfBuffers
                       </a></li>
                     
                       <li><a
-                        href='#Klass.MAGIC_NUMBER'
+                        href='#klassmagic_number'
                         class='regular pre-open'>
                         .MAGIC_NUMBER
                       </a></li>
@@ -86,13 +86,13 @@ exports[`--config 1`] = `
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#Klass#getFoo'
+                        href='#klassgetfoo'
                         class='regular pre-open'>
                         #getFoo
                       </a></li>
                       
                       <li><a
-                        href='#Klass#withOptions'
+                        href='#klasswithoptions'
                         class='regular pre-open'>
                         #withOptions
                       </a></li>
@@ -105,7 +105,7 @@ exports[`--config 1`] = `
                       <li class='h5'>Events</li>
                       
                         <li><a
-                          href='#Klass.event:event'
+                          href='#klasseventevent'
                           class='regular pre-open'>
                           ⓔ event
                         </a></li>
@@ -171,7 +171,7 @@ exports[`--config 1`] = `
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#Foo#bar'
+                        href='#foobar'
                         class='regular pre-open'>
                         #bar
                       </a></li>
@@ -198,7 +198,7 @@ exports[`--config 1`] = `
                     <li class='h5'><span>Static members</span></li>
                     
                       <li><a
-                        href='#customStreams.passthrough'
+                        href='#customstreamspassthrough'
                         class='regular pre-open'>
                         .passthrough
                       </a></li>
@@ -311,7 +311,7 @@ PeerId.create({ <span class=\\"hljs-attr\\">bits</span>: <span class=\\"hljs-num
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class=\\"clearfix\\">
   
-    <div class='border-bottom' id='Klass.isClass'>
+    <div class='border-bottom' id='klassisclass'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -388,7 +388,7 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass.isWeird'>
+    <div class='border-bottom' id='klassisweird'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -456,7 +456,7 @@ the referenced class type</p>
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass.isBuffer'>
+    <div class='border-bottom' id='klassisbuffer'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -533,7 +533,7 @@ the referenced class type</p>
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass.isArrayOfBuffers'>
+    <div class='border-bottom' id='klassisarrayofbuffers'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -608,7 +608,7 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass.MAGIC_NUMBER'>
+    <div class='border-bottom' id='klassmagic_number'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -662,7 +662,7 @@ k.isArrayOfBuffers();</pre>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class=\\"clearfix\\">
   
-    <div class='border-bottom' id='Klass#getFoo'>
+    <div class='border-bottom' id='klassgetfoo'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -723,7 +723,7 @@ k.isArrayOfBuffers();</pre>
       </div>
     </div>
   
-    <div class='border-bottom' id='Klass#withOptions'>
+    <div class='border-bottom' id='klasswithoptions'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -826,7 +826,7 @@ k.isArrayOfBuffers();</pre>
     <div class='py1 quiet mt1 prose-big'>Events</div>
     <div class=\\"clearfix\\">
   
-    <div class='border-bottom' id='Klass.event:event'>
+    <div class='border-bottom' id='klasseventevent'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -1199,7 +1199,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class=\\"clearfix\\">
   
-    <div class='border-bottom' id='Foo#bar'>
+    <div class='border-bottom' id='foobar'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
@@ -1296,7 +1296,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class=\\"clearfix\\">
   
-    <div class='border-bottom' id='customStreams.passthrough'>
+    <div class='border-bottom' id='customstreamspassthrough'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
