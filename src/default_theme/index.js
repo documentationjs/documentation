@@ -9,6 +9,15 @@ var fs = require('fs'),
   LinkerStack = require('../').util.LinkerStack,
   hljs = require('highlight.js');
 
+function is_function(section) {
+  return (
+    section.kind === 'function' ||
+    (section.kind === 'typedef' &&
+      section.type.type == 'NameExpression' &&
+      section.type.name == 'Function')
+  );
+}
+
 module.exports = function(
   comments: Array<Comment>,
   config: DocumentationConfig
@@ -34,7 +43,7 @@ module.exports = function(
         var prefix = '';
         if (section.kind === 'class') {
           prefix = 'new ';
-        } else if (section.kind !== 'function') {
+        } else if (!is_function(section)) {
           return section.name;
         }
         return prefix + section.name + formatters.parameters(section, true);
@@ -44,7 +53,7 @@ module.exports = function(
         var prefix = '';
         if (section.kind === 'class') {
           prefix = 'new ';
-        } else if (section.kind !== 'function') {
+        } else if (!is_function(section)) {
           return section.name;
         }
         if (section.returns.length) {
