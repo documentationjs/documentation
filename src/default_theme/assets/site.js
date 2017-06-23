@@ -97,11 +97,23 @@ function showHashTarget(targetId) {
   }
 }
 
-window.addEventListener('hashchange', function() {
-  showHashTarget(location.hash.substring(1));
-});
+function scrollIntoView(targetId) {
+  // Only scroll to element if we don't have a stored scroll position.
+  if (targetId && !history.state) {
+    var hashTarget = document.getElementById(targetId);
+    if (hashTarget) {
+      hashTarget.scrollIntoView();
+    }
+  }
+}
 
-showHashTarget(location.hash.substring(1));
+function gotoCurrentTarget() {
+  showHashTarget(location.hash.substring(1));
+  scrollIntoView(location.hash.substring(1));
+}
+
+window.addEventListener('hashchange', gotoCurrentTarget);
+gotoCurrentTarget();
 
 var toclinks = document.getElementsByClassName('pre-open');
 for (var k = 0; k < toclinks.length; k++) {
@@ -111,3 +123,74 @@ for (var k = 0; k < toclinks.length; k++) {
 function preOpen() {
   showHashTarget(this.hash.substring(1));
 }
+
+var split_left = document.querySelector('#split-left');
+var split_right = document.querySelector('#split-right');
+var split_parent = split_left.parentNode;
+var cw_with_sb = split_left.clientWidth;
+split_left.style.overflow = 'hidden';
+var cw_without_sb = split_left.clientWidth;
+split_left.style.overflow = '';
+
+// Need to add:
+// - Half of gutterSize (i.e. 10) because gutter will take that much from each.
+// - Scrollbar width (cw_with_sb - cw_without_sb), if it takes up existing
+//   space (Firefox) rather than adding the scrollbar to the side (Chrome)
+var percent_left =
+  (split_left.getBoundingClientRect().width + 10 + cw_without_sb - cw_with_sb) /
+  split_parent.getBoundingClientRect().width *
+  100;
+
+Split(['#split-left', '#split-right'], {
+  elementStyle: function(dimension, size, gutterSize) {
+    return {
+      'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)'
+    };
+  },
+  gutterStyle: function(dimension, gutterSize) {
+    return {
+      'flex-basis': gutterSize + 'px'
+    };
+  },
+  gutterSize: 20,
+  sizes: [percent_left, 100 - percent_left]
+});
+
+// Chrome doesn't remember scroll position properly so do it ourselves.
+// Also works on Firefox and Edge.
+
+function updateState() {
+  history.replaceState(
+    {
+      left_top: split_left.scrollTop,
+      right_top: split_right.scrollTop
+    },
+    document.title
+  );
+}
+
+function loadState(ev) {
+  if (ev) {
+    // Edge doesn't replace change history.state on popstate.
+    history.replaceState(ev.state, document.title);
+  }
+  if (history.state) {
+    split_left.scrollTop = history.state.left_top;
+    split_right.scrollTop = history.state.right_top;
+  }
+}
+
+window.addEventListener('load', function() {
+  // Restore after Firefox scrolls to hash.
+  setTimeout(function() {
+    loadState();
+    // Update with initial scroll position.
+    updateState();
+    // Update scroll positions only after we've loaded because Firefox
+    // emits an initial scroll event with 0.
+    split_left.addEventListener('scroll', updateState);
+    split_right.addEventListener('scroll', updateState);
+  }, 1);
+});
+
+window.addEventListener('popstate', loadState);
