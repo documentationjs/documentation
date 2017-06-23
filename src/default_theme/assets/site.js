@@ -30,7 +30,8 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
 
   if (!value.match(/^\s*$/)) {
     match = function(element) {
-      return element.firstChild.innerHTML.toLowerCase().indexOf(value) !== -1;
+      var html = element.firstChild.innerHTML;
+      return html && html.toLowerCase().indexOf(value) !== -1;
     };
   }
 
@@ -83,14 +84,16 @@ function toggleSibling() {
 }
 
 function showHashTarget(targetId) {
-  var hashTarget = document.getElementById(targetId);
-  // new target is hidden
-  if (
-    hashTarget &&
-    hashTarget.offsetHeight === 0 &&
-    hashTarget.parentNode.parentNode.classList.contains('display-none')
-  ) {
-    hashTarget.parentNode.parentNode.classList.remove('display-none');
+  if (targetId) {
+    var hashTarget = document.getElementById(targetId);
+    // new target is hidden
+    if (
+      hashTarget &&
+      hashTarget.offsetHeight === 0 &&
+      hashTarget.parentNode.parentNode.classList.contains('display-none')
+    ) {
+      hashTarget.parentNode.parentNode.classList.remove('display-none');
+    }
   }
 }
 
@@ -108,3 +111,27 @@ for (var k = 0; k < toclinks.length; k++) {
 function preOpen() {
   showHashTarget(this.hash.substring(1));
 }
+
+var split_left = document.querySelector('#split-left');
+var split_parent = split_left.parentNode;
+// Need to add half of gutterSize (i.e. 10) because gutter will take that much
+// from each element.
+var percent_left =
+  (split_left.getBoundingClientRect().width + 10) /
+  split_parent.getBoundingClientRect().width *
+  100;
+
+Split(['#split-left', '#split-right'], {
+  elementStyle: function(dimension, size, gutterSize) {
+    return {
+      'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)'
+    };
+  },
+  gutterStyle: function(dimension, gutterSize) {
+    return {
+      'flex-basis': gutterSize + 'px'
+    };
+  },
+  gutterSize: 20,
+  sizes: [percent_left, 100 - percent_left]
+});
