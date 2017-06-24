@@ -112,6 +112,18 @@ function preOpen() {
   showHashTarget(this.hash.substring(1));
 }
 
+// Chrome doesn't scroll to anchor on refresh (Firefox does the right thing)
+// so work around by scrolling the element into view ourselves.
+function scrollIntoView(targetId) {
+  if (targetId) {
+    var hashTarget = document.getElementById(targetId);
+    if (hashTarget) {
+      hashTarget.scrollIntoView();
+    }
+  }
+}
+scrollIntoView(location.hash.substring(1));
+
 var split_left = document.querySelector('#split-left');
 var split_parent = split_left.parentNode;
 var cw_with_sb = split_left.clientWidth;
