@@ -114,10 +114,17 @@ function preOpen() {
 
 var split_left = document.querySelector('#split-left');
 var split_parent = split_left.parentNode;
-// Need to add half of gutterSize (i.e. 10) because gutter will take that much
-// from each element.
+var cw_with_sb = split_left.clientWidth;
+split_left.style.overflow = 'hidden';
+var cw_without_sb = split_left.clientWidth;
+split_left.style.overflow = '';
+
+// Need to add:
+// - Half of gutterSize (i.e. 10) because gutter will take that much from each.
+// - Scrollbar width (cw_with_sb - cw_without_sb), if it takes up existing
+//   space (Firefox) rather than adding the scrollbar to the side (Chrome)
 var percent_left =
-  (split_left.getBoundingClientRect().width + 10) /
+  (split_left.getBoundingClientRect().width + 10 + cw_without_sb - cw_with_sb) /
   split_parent.getBoundingClientRect().width *
   100;
 
