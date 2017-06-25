@@ -112,19 +112,8 @@ function preOpen() {
   showHashTarget(this.hash.substring(1));
 }
 
-// Chrome doesn't scroll to anchor on refresh (Firefox does the right thing)
-// so work around by scrolling the element into view ourselves.
-function scrollIntoView(targetId) {
-  if (targetId) {
-    var hashTarget = document.getElementById(targetId);
-    if (hashTarget) {
-      hashTarget.scrollIntoView();
-    }
-  }
-}
-scrollIntoView(location.hash.substring(1));
-
 var split_left = document.querySelector('#split-left');
+var split_right = document.querySelector('#split-right');
 var split_parent = split_left.parentNode;
 var cw_with_sb = split_left.clientWidth;
 split_left.style.overflow = 'hidden';
@@ -153,4 +142,27 @@ Split(['#split-left', '#split-right'], {
   },
   gutterSize: 20,
   sizes: [percent_left, 100 - percent_left]
+});
+
+// Chrome doesn't remember scroll position properly so do it ourselves.
+
+window.addEventListener('beforeunload', function() {
+  history.replaceState(
+    {
+      left_top: split_left.scrollTop,
+      right_top: split_right.scrollTop
+    },
+    document.title
+  );
+});
+
+window.addEventListener('load', function() {
+  if (history.state) {
+    if (history.state.left_top) {
+      split_left.scrollTop = history.state.left_top;
+    }
+    if (history.state.right_top) {
+      split_right.scrollTop = history.state.right_top;
+    }
+  }
 });
