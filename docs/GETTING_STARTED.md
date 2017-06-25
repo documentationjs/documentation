@@ -136,3 +136,7 @@ function addOne(input: number): number {
   return input + 1;
 }
 ```
+
+# Learn more
+
+[Continue reading](https://github.com/documentationjs/documentation#documentation) about Usage and the other aspects of `documentation`.
