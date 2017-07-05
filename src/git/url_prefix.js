@@ -37,7 +37,7 @@ function getGithubURLPrefix(root: string) {
   var sha;
   try {
     var head = fs.readFileSync(path.join(root, '.git', 'HEAD'), 'utf8');
-    var branch = head.match(/ref\: (.*)/);
+    var branch = head.match(/ref: (.*)/);
     if (branch) {
       var branchName = branch[1];
       var branchFileName = path.join(root, '.git', branchName);
