@@ -4,10 +4,11 @@ var path = require('path');
 var micromatch = require('micromatch');
 
 // Skip external modules. Based on http://git.io/pzPO.
-var internalModuleRegexp = process.platform === 'win32'
-  ? /* istanbul ignore next */
-    /^(\.|\w:)/
-  : /^[\/.]/;
+var internalModuleRegexp =
+  process.platform === 'win32'
+    ? /* istanbul ignore next */
+      /^(\.|\w:)/
+    : /^[/.]/;
 
 /**
  * Module filters
