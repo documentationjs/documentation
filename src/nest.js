@@ -33,7 +33,8 @@ var tagDepth = tag => tag.name.split(PATH_SPLIT).length;
  * @returns {Object} nested comment
  */
 var nestTag = (
-  tags: Array<CommentTag>
+  tags: Array<CommentTag>,
+  errors: Array<CommentError>
   // Use lodash here both for brevity and also because, unlike JavaScript's
   // sort, it's stable.
 ) =>
@@ -59,16 +60,22 @@ var nestTag = (
 
           if (!child) {
             if (tag.name.match(/^(\$\d+)/)) {
-              throw new Error(
-                `Parent of ${tag.name} not found. To document a destructuring\n` +
+              errors.push({
+                message:
+                  `Parent of ${tag.name} not found. To document a destructuring\n` +
                   `type, add a @param tag in its position to specify the name of the\n` +
-                  `destructured parameter`
-              );
+                  `destructured parameter`,
+                commentLineNumber: tag.lineNumber
+              });
+            } else {
+              errors.push({
+                message: `Parent of ${tag.name} not found`,
+                commentLineNumber: tag.lineNumber
+              });
             }
-            throw new Error(`Parent of ${tag.name} not found`);
+          } else {
+            insertTag(child, parts.slice(1));
           }
-
-          insertTag(child, parts.slice(1));
         }
       }
 
@@ -91,9 +98,9 @@ var nestTag = (
  * @return {Object} nested comment
  */
 var nest = (comment: Comment) =>
-  _.assign(comment, {
-    params: nestTag(comment.params),
-    properties: nestTag(comment.properties)
+  Object.assign(comment, {
+    params: nestTag(comment.params, comment.errors),
+    properties: nestTag(comment.properties, comment.errors)
   });
 
 module.exports = nest;
