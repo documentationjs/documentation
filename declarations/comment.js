@@ -71,7 +71,6 @@ type Comment = {
   tags: Array<CommentTag>,
 
   augments: Array<CommentTag>,
-  errors: Array<CommentExample>,
   examples: Array<CommentExample>,
   params: Array<CommentTag>,
   properties: Array<CommentTag>,
