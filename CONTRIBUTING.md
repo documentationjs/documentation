@@ -24,7 +24,7 @@ Declaring formal releases remains the prerogative of the project maintainer.
 
 This is an experiment and feedback is welcome! This document may also be subject to pull-requests or changes by contributors where you believe you have something valuable to add or change.
 
-[this approach is totally cribbed from the excellent LevelUP project](https://github.com/rvagg/node-levelup/blob/master/CONTRIBUTING.md)
+[this approach is totally cribbed from the excellent LevelUP project](https://github.com/Level/community/blob/master/CONTRIBUTING.md)
 
 ----
 
