@@ -20,7 +20,7 @@ The theme function should call the callback with either an error, if one occurs,
 or an array of [vinyl](https://github.com/gulpjs/vinyl) `File` objects.
 
 The theme is free to implement HTML generation however it chooses. See
-[the default theme](https://github.com/documentationjs/documentation-theme-default/)
+[the default theme](https://github.com/documentationjs/documentation/tree/master/src/default_theme)
 for some ideas.
 
 ### Theming Markdown
