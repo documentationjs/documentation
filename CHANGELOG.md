@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/documentationjs/documentation/compare/v4.0.0...v5.0.0) (2017-07-27)
+
+
+### Reverts
+
+* **polyglot:** Remove polyglot mode ([5b373ff](https://github.com/documentationjs/documentation/commit/5b373ff)), closes [#850](https://github.com/documentationjs/documentation/issues/850) [#731](https://github.com/documentationjs/documentation/issues/731) [#702](https://github.com/documentationjs/documentation/issues/702) [#132](https://github.com/documentationjs/documentation/issues/132)
+
+
+### BREAKING CHANGES
+
+* **polyglot:** I'd like to still support C++ and other languages in the future! But I'm much
+happier doing so by separating the extraction & input phases to the degree that documentation.js can
+read the output of another module that extracts JSDoc comments from C++ code, rather than having CPP
+support in it.
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/documentationjs/documentation/compare/v4.0.0-rc.1...v4.0.0) (2017-07-27)
 
