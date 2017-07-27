@@ -30,8 +30,6 @@ Options:
                        documentation.                            [default: null]
   --extension, -e      only input source files matching this extension will be
                        parsed, this option can be used multiple times.
-  --polyglot           polyglot mode turns off dependency resolution and enables
-                       multi-language support. use this to document c++[boolean]
   --private, -p        generate documentation tagged as private
                                                       [boolean] [default: false]
   --access, -a         Include only comments with a given access level, out of

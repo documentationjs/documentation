@@ -42,11 +42,11 @@ Array [
       "loc": SourceLocation {
         "end": Position {
           "column": 1,
-          "line": 12,
+          "line": 10,
         },
         "start": Position {
           "column": 0,
-          "line": 10,
+          "line": 8,
         },
       },
     },
@@ -142,11 +142,11 @@ Array [
     "loc": SourceLocation {
       "end": Position {
         "column": 3,
-        "line": 9,
+        "line": 7,
       },
       "start": Position {
         "column": 0,
-        "line": 7,
+        "line": 5,
       },
     },
     "members": Object {

@@ -6,7 +6,6 @@ var fs = require('fs'),
   dependency = require('./input/dependency'),
   shallow = require('./input/shallow'),
   parseJavaScript = require('./parsers/javascript'),
-  polyglot = require('./parsers/polyglot'),
   github = require('./github'),
   hierarchy = require('./hierarchy'),
   inferName = require('./infer/name'),
@@ -69,7 +68,7 @@ function expandInputs(indexes, config) {
   // Ensure that indexes is an array of strings
   indexes = [].concat(indexes);
 
-  if (config.polyglot || config.shallow || config.documentExported) {
+  if (config.shallow || config.documentExported) {
     return shallow(indexes, config);
   }
 
@@ -83,8 +82,6 @@ function buildInternal(inputsAndConfig) {
   if (!config.access) {
     config.access = ['public', 'undefined', 'protected'];
   }
-
-  var parseFn = config.polyglot ? polyglot : parseJavaScript;
 
   var buildPipeline = pipeline([
     inferName,
@@ -106,7 +103,7 @@ function buildInternal(inputsAndConfig) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
 
-    return parseFn(sourceFile, config).map(buildPipeline);
+    return parseJavaScript(sourceFile, config).map(buildPipeline);
   }).filter(Boolean);
 
   return filterAccess(
@@ -118,8 +115,6 @@ function buildInternal(inputsAndConfig) {
 function lintInternal(inputsAndConfig) {
   let inputs = inputsAndConfig.inputs;
   let config = inputsAndConfig.config;
-
-  let parseFn = config.polyglot ? polyglot : parseJavaScript;
 
   let lintPipeline = pipeline([
     lintComments,
@@ -140,7 +135,7 @@ function lintInternal(inputsAndConfig) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
 
-    return parseFn(sourceFile, config).map(lintPipeline);
+    return parseJavaScript(sourceFile, config).map(lintPipeline);
   }).filter(Boolean);
 
   return formatLint(hierarchy(extractedComments));
@@ -156,11 +151,8 @@ function lintInternal(inputsAndConfig) {
  * @param {Array<string>} args.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
- * @param {boolean} [args.polyglot=false] parse comments with a regex rather than
- * a proper parser. This enables support of non-JavaScript languages but
- * reduces documentation's ability to infer structure of code.
  * @param {boolean} [args.shallow=false] whether to avoid dependency parsing
- * even in JavaScript code. With the polyglot option set, this has no effect.
+ * even in JavaScript code.
  * @param {string} [args.inferPrivate] a valid regular expression string
  * to infer whether a code element should be private, given its naming structure.
  * For instance, you can specify `inferPrivate: '^_'` to automatically treat
@@ -190,11 +182,8 @@ let lint = (indexes, args) => configure(indexes, args).then(lintInternal);
  * @param {Array<string>} args.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
- * @param {boolean} [args.polyglot=false] parse comments with a regex rather than
- * a proper parser. This enables support of non-JavaScript languages but
- * reduces documentation's ability to infer structure of code.
  * @param {boolean} [args.shallow=false] whether to avoid dependency parsing
- * even in JavaScript code. With the polyglot option set, this has no effect.
+ * even in JavaScript code.
  * @param {Array<string|Object>} [args.order=[]] optional array that
  * defines sorting order of documentation
  * @param {Array<string>} [args.access=[]] an array of access levels
