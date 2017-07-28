@@ -102,7 +102,6 @@
     "precommit": "lint-staged --verbose",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
-    "changelog": "standard-changelog -i CHANGELOG.md -w",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && are-we-flow-yet src && flow check && jest",
     "test-ci": "npm run build && eslint . && are-we-flow-yet src && flow check && jest --runInBand"
