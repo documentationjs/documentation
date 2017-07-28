@@ -89,7 +89,7 @@ test('bad input', function() {
     });
 });
 
-test('html', function() {
+describe('html', function() {
   glob
     .sync(path.join(__dirname, 'fixture/html', '*.input.js'))
     .forEach(function(file) {
@@ -109,7 +109,7 @@ test('html', function() {
     });
 });
 
-test('outputs', function() {
+describe('outputs', function() {
   glob
     .sync(path.join(__dirname, 'fixture', '*.input.js'))
     .forEach(function(file) {
@@ -157,9 +157,9 @@ test('outputs', function() {
 
 test('highlightAuto md output', async function() {
   var file = path.join(
-    __dirname,
-    'fixture/auto_lang_hljs/multilanguage.input.js'
-  ),
+      __dirname,
+      'fixture/auto_lang_hljs/multilanguage.input.js'
+    ),
     hljsConfig = {
       hljs: { highlightAuto: true, languages: ['js', 'css', 'html'] }
     };
