@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.1"></a>
+## [5.0.1](https://github.com/documentationjs/documentation/compare/v5.0.0...v5.0.1) (2017-07-28)
+
+
+
 <a name="5.0.0"></a>
 # [5.0.0](https://github.com/documentationjs/documentation/compare/v4.0.0...v5.0.0) (2017-07-27)
 
