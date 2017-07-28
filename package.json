@@ -97,9 +97,10 @@
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "build": "rm -rf lib && babel -D src -d lib",
+    "build": "rm -rf lib && babel -D src -d lib && npm run doc",
     "release": "standard-version",
     "precommit": "lint-staged --verbose",
+    "prepublish": "npm run build",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
