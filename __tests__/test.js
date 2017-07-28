@@ -71,7 +71,7 @@ test('bad input', function() {
   glob
     .sync(path.join(__dirname, 'fixture/bad', '*.input.js'))
     .forEach(function(file) {
-      test(path.basename(file), function(t) {
+      test(path.basename(file), function() {
         return documentation
           .build([file], readOptionsFromFile(file))
           .then(res => {
@@ -93,7 +93,7 @@ describe('html', function() {
   glob
     .sync(path.join(__dirname, 'fixture/html', '*.input.js'))
     .forEach(function(file) {
-      test(path.basename(file), async function(t) {
+      test(path.basename(file), async function() {
         const result = await documentation.build(
           [file],
           readOptionsFromFile(file)
@@ -113,12 +113,12 @@ describe('outputs', function() {
   glob
     .sync(path.join(__dirname, 'fixture', '*.input.js'))
     .forEach(function(file) {
-      test(path.basename(file), async function(tt) {
+      test(path.basename(file), async function() {
         const result = await documentation.build(
           [file],
           readOptionsFromFile(file)
         );
-        test('markdown', async function(t) {
+        test('markdown', async function() {
           const md = await outputMarkdown(_.cloneDeep(result), {
             markdownToc: true
           });
@@ -126,7 +126,7 @@ describe('outputs', function() {
         });
 
         if (file.match(/es6.input.js/)) {
-          test('no markdown TOC', async function(t) {
+          test('no markdown TOC', async function() {
             const txt = await outputMarkdown(_.cloneDeep(result), {
               markdownToc: false
             });
@@ -134,12 +134,12 @@ describe('outputs', function() {
           });
         }
 
-        test('markdown AST', async function(t) {
+        test('markdown AST', async function() {
           const ast = await outputMarkdownAST(_.cloneDeep(result), {});
           expect(ast).toMatchSnapshot();
         });
 
-        test('JSON', function(t) {
+        test('JSON', function() {
           normalize(result);
           result.forEach(function(comment) {
             validate(
