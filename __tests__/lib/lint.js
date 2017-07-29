@@ -31,6 +31,14 @@ test('lintComments', function() {
   expect(
     evaluate(function() {
       /**
+      * @param {Object} foo.bar
+      */
+    }).errors
+  ).toEqual([{ commentLineNumber: 1, message: 'Parent of foo.bar not found' }]);
+
+  expect(
+    evaluate(function() {
+      /**
    * @param {String} foo
    * @param {array} bar
    */

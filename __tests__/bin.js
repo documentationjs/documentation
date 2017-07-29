@@ -58,13 +58,6 @@ test('defaults to parsing package.json main', async function() {
   expect(data.length).toBeTruthy();
 });
 
-test('polyglot mode', async function() {
-  const data = await documentation([
-    'build fixture/polyglot/blend.cpp --polyglot'
-  ]);
-  expect(normalize(data)).toMatchSnapshot();
-});
-
 test('accepts config file', async function() {
   const data = await documentation([
     'build fixture/sorting/input.js -c fixture/config.json'
@@ -122,17 +115,6 @@ test('extension option', async function() {
   const data = await documentation([
     'build fixture/extension/index.otherextension ' +
       '--requireExtension=otherextension --parseExtension=otherextension'
-  ]);
-  expect(data.length).toBe(1);
-});
-
-/*
- * This tests that parseExtension adds extensions to smartGlob's
- * look through directories.
- */
-test('polyglot + parseExtension + smartGlob', async function() {
-  const data = await documentation([
-    'build fixture/polyglot ' + '--polyglot --parseExtension=cpp'
   ]);
   expect(data.length).toBe(1);
 });

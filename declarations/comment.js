@@ -1,7 +1,6 @@
 /* @flow */
 /* eslint no-use-before-define: 0 */
 type DocumentationConfig = {
-  polyglot?: boolean,
   inferPrivate?: string,
   noPackage?: boolean,
   toc?: Array<Object>,
@@ -71,7 +70,6 @@ type Comment = {
   tags: Array<CommentTag>,
 
   augments: Array<CommentTag>,
-  errors: Array<CommentExample>,
   examples: Array<CommentExample>,
   params: Array<CommentTag>,
   properties: Array<CommentTag>,

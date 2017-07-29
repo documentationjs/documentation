@@ -4,6 +4,7 @@ var VFile = require('vfile');
 import { walk } from './walk';
 import vfileSort from 'vfile-sort';
 import reporter from 'vfile-reporter';
+import nest from './nest';
 
 var CANONICAL = {
   String: 'string',
@@ -27,11 +28,8 @@ function lintComments(comment: Comment) {
     function nameInvariant(name) {
       if (name && typeof CANONICAL[name] === 'string') {
         comment.errors.push({
-          message: 'type ' +
-            name +
-            ' found, ' +
-            CANONICAL[name] +
-            ' is standard',
+          message:
+            'type ' + name + ' found, ' + CANONICAL[name] + ' is standard',
           commentLineNumber: tag.lineNumber
         });
       }
@@ -60,6 +58,8 @@ function lintComments(comment: Comment) {
       checkCanonical(tag.type);
     }
   });
+  nest(comment);
+
   return comment;
 }
 

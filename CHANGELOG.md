@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.1"></a>
+## [5.0.1](https://github.com/documentationjs/documentation/compare/v5.0.0...v5.0.1) (2017-07-28)
+
+
+
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/documentationjs/documentation/compare/v4.0.0...v5.0.0) (2017-07-27)
+
+
+### Reverts
+
+* **polyglot:** Remove polyglot mode ([5b373ff](https://github.com/documentationjs/documentation/commit/5b373ff)), closes [#850](https://github.com/documentationjs/documentation/issues/850) [#731](https://github.com/documentationjs/documentation/issues/731) [#702](https://github.com/documentationjs/documentation/issues/702) [#132](https://github.com/documentationjs/documentation/issues/132)
+
+
+### BREAKING CHANGES
+
+* **polyglot:** I'd like to still support C++ and other languages in the future! But I'm much
+happier doing so by separating the extraction & input phases to the degree that documentation.js can
+read the output of another module that extracts JSDoc comments from C++ code, rather than having CPP
+support in it.
+
+
+
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/documentationjs/documentation/compare/v4.0.0-rc.1...v4.0.0) (2017-07-27)
+
+
+### Bug Fixes
+
+* **html output:** Fix links between navigation and items in HTML documentation ([5fb77bc](https://github.com/documentationjs/documentation/commit/5fb77bc))
+* **package:** update babel-generator to version 6.25.0 ([#804](https://github.com/documentationjs/documentation/issues/804)) ([65f5a37](https://github.com/documentationjs/documentation/commit/65f5a37))
+* **package:** update chalk to version 2.0.0 ([#833](https://github.com/documentationjs/documentation/issues/833)) ([2329db4](https://github.com/documentationjs/documentation/commit/2329db4))
+* **package:** update github-slugger to version 1.1.3 ([#793](https://github.com/documentationjs/documentation/issues/793)) ([74392cc](https://github.com/documentationjs/documentation/commit/74392cc))
+* Show () for callbacks ([61968c7](https://github.com/documentationjs/documentation/commit/61968c7))
+* **package:** update micromatch to version 3.0.0 ([#792](https://github.com/documentationjs/documentation/issues/792)) ([3f2bf90](https://github.com/documentationjs/documentation/commit/3f2bf90))
+* **package:** update remark to version 8.0.0 ([1ae8136](https://github.com/documentationjs/documentation/commit/1ae8136))
+* Fix filtering in the default theme ([473f317](https://github.com/documentationjs/documentation/commit/473f317))
+* Report nesting errors instead of throwing them as errors ([ea69608](https://github.com/documentationjs/documentation/commit/ea69608)), closes [#832](https://github.com/documentationjs/documentation/issues/832)
+* **package:** update remark-html to version 6.0.1 ([#815](https://github.com/documentationjs/documentation/issues/815)) ([e472550](https://github.com/documentationjs/documentation/commit/e472550))
+* **package:** update vfile-reporter to version 4.0.0 ([a3e1fb8](https://github.com/documentationjs/documentation/commit/a3e1fb8))
+
+
+
 <a name="4.0.0-rc.1"></a>
 # [4.0.0-rc.1](https://github.com/documentationjs/documentation/compare/v4.0.0-rc.0...v4.0.0-rc.1) (2017-05-01)
 
