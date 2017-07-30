@@ -145,6 +145,7 @@ Split(['#split-left', '#split-right'], {
 });
 
 // Chrome doesn't remember scroll position properly so do it ourselves.
+// Works on Firefox too but Edge doesn't scroll to anchors.
 
 function updateState() {
   history.replaceState(
@@ -156,9 +157,6 @@ function updateState() {
   );
 }
 
-split_left.addEventListener('scroll', updateState);
-split_right.addEventListener('scroll', updateState);
-
 function loadState() {
   if (history.state) {
     split_left.scrollTop = history.state.left_top;
@@ -167,5 +165,12 @@ function loadState() {
   updateState();
 }
 
-window.addEventListener('load', loadState);
+window.addEventListener('load', function() {
+  loadState();
+  // Update scroll positions only after we've loaded because Firefox
+  // emits an initial scroll event with 0.
+  split_left.addEventListener('scroll', updateState);
+  split_right.addEventListener('scroll', updateState);
+});
+
 window.addEventListener('popstate', loadState);
