@@ -97,11 +97,23 @@ function showHashTarget(targetId) {
   }
 }
 
-window.addEventListener('hashchange', function() {
-  showHashTarget(location.hash.substring(1));
-});
+function scrollIntoView(targetId) {
+  // Only scroll to element if we don't have a stored scroll position.
+  if (targetId && !history.state) {
+    var hashTarget = document.getElementById(targetId);
+    if (hashTarget) {
+      hashTarget.scrollIntoView();
+    }
+  }
+}
 
-showHashTarget(location.hash.substring(1));
+function gotoCurrentTarget() {
+  showHashTarget(location.hash.substring(1));
+  scrollIntoView(location.hash.substring(1));
+}
+
+window.addEventListener('hashchange', gotoCurrentTarget);
+gotoCurrentTarget();
 
 var toclinks = document.getElementsByClassName('pre-open');
 for (var k = 0; k < toclinks.length; k++) {
@@ -145,7 +157,7 @@ Split(['#split-left', '#split-right'], {
 });
 
 // Chrome doesn't remember scroll position properly so do it ourselves.
-// Works on Firefox too but Edge doesn't scroll to anchors.
+// Also works on Firefox and Edge.
 
 function updateState() {
   history.replaceState(
@@ -157,16 +169,21 @@ function updateState() {
   );
 }
 
-function loadState() {
+function loadState(ev) {
+  if (ev) {
+    // Edge doesn't replace change history.state on popstate.
+    history.replaceState(ev.state, document.title);
+  }
   if (history.state) {
     split_left.scrollTop = history.state.left_top;
     split_right.scrollTop = history.state.right_top;
   }
-  updateState();
 }
 
 window.addEventListener('load', function() {
   loadState();
+  // Update with initial scroll position.
+  updateState();
   // Update scroll positions only after we've loaded because Firefox
   // emits an initial scroll event with 0.
   split_left.addEventListener('scroll', updateState);
