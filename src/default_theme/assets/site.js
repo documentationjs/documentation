@@ -181,13 +181,16 @@ function loadState(ev) {
 }
 
 window.addEventListener('load', function() {
-  loadState();
-  // Update with initial scroll position.
-  updateState();
-  // Update scroll positions only after we've loaded because Firefox
-  // emits an initial scroll event with 0.
-  split_left.addEventListener('scroll', updateState);
-  split_right.addEventListener('scroll', updateState);
+  // Restore after Firefox scrolls to hash.
+  setTimeout(function() {
+    loadState();
+    // Update with initial scroll position.
+    updateState();
+    // Update scroll positions only after we've loaded because Firefox
+    // emits an initial scroll event with 0.
+    split_left.addEventListener('scroll', updateState);
+    split_right.addEventListener('scroll', updateState);
+  }, 1);
 });
 
 window.addEventListener('popstate', loadState);
