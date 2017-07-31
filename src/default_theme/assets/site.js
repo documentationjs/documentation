@@ -46,25 +46,6 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
   }
 });
 
-var toggles = document.getElementsByClassName('toggle-step-sibling');
-for (var i = 0; i < toggles.length; i++) {
-  toggles[i].addEventListener('click', toggleStepSibling);
-}
-
-function toggleStepSibling() {
-  var stepSibling = this.parentNode.parentNode.parentNode.getElementsByClassName(
-    'toggle-target'
-  )[0];
-  var klass = 'display-none';
-  if (stepSibling.classList.contains(klass)) {
-    stepSibling.classList.remove(klass);
-    stepSibling.innerHTML = '▾';
-  } else {
-    stepSibling.classList.add(klass);
-    stepSibling.innerHTML = '▸';
-  }
-}
-
 var items = document.getElementsByClassName('toggle-sibling');
 for (var j = 0; j < items.length; j++) {
   items[j].addEventListener('click', toggleSibling);
