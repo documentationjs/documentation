@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/documentationjs/documentation/compare/v5.0.1...v5.1.0) (2017-07-31)
+
+
+### Bug Fixes
+
+* **scripts:** Remove changelog package.json task ([dddac19](https://github.com/documentationjs/documentation/commit/dddac19))
+
+
+### Features
+
+* **theme:** Flexible sidebar for default theme ([6509ae8](https://github.com/documentationjs/documentation/commit/6509ae8))
+
+
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://github.com/documentationjs/documentation/compare/v5.0.0...v5.0.1) (2017-07-28)
 
