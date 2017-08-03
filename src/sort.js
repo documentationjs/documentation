@@ -94,25 +94,21 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
   return fixed.concat(unfixed);
 };
 
-function compare(a: string, b: string) {
-  return a.localeCompare(b, undefined, { caseFirst: 'upper' });
-}
-
-function compareCommentsByName(a, b) {
-  var akey = a.name;
-  var bkey = b.name;
+function compareCommentsByName(a: Comment, b: Comment): number {
+  const akey: ?string = a.name;
+  const bkey: ?string = b.name;
 
   if (akey && bkey) {
-    return compare(akey, bkey);
+    return akey.localeCompare(bkey, undefined, { caseFirst: 'upper' });
   }
   return 0;
 }
 
-function compareCommentsBySourceLocation(a, b) {
+function compareCommentsBySourceLocation(a: Comment, b: Comment): number {
   return a.context.sortKey.localeCompare(b.context.sortKey);
 }
 
-function sortComments(comments, sortOrder) {
+function sortComments(comments: Array<Comment>, sortOrder: string) {
   return comments.sort(
     sortOrder === 'alpha'
       ? compareCommentsByName
