@@ -70,7 +70,7 @@
     "eslint": "^4.1.1",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-flowtype": "^2.34.1",
-    "flow-bin": "^0.46.0",
+    "flow-bin": "^0.52.0",
     "fs-extra": "^4.0.0",
     "husky": "^0.14.0",
     "jest": "^20.0.4",
@@ -102,7 +102,7 @@
     "precommit": "lint-staged --verbose",
     "prepublish": "npm run build",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js' --single-quote",
-    "doc": "./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
+    "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && are-we-flow-yet src && flow check && jest",
     "test-ci": "npm run build && eslint . && are-we-flow-yet src && flow check && jest --runInBand"

@@ -37,7 +37,7 @@ function leftPad(str, width) {
 function parseJavaScript(data: Object, config: DocumentationConfig) {
   var visited = new Set();
 
-  var ast = parseToAst(data.source, data.file);
+  var ast = parseToAst(data.source);
   var addComment = _addComment.bind(null, visited);
 
   return _.flatMap(

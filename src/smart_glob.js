@@ -86,7 +86,8 @@ function resolveFileGlobPatterns(patterns, extensions) {
  * @returns Resolved absolute filenames.
  */
 function listFilesToProcess(globPatterns: Array<string>): Array<string> {
-  var files = [], added = new Set();
+  var files = [],
+    added = new Set();
 
   var cwd = process.cwd();
 
@@ -107,7 +108,7 @@ function listFilesToProcess(globPatterns: Array<string>): Array<string> {
   globPatterns.forEach(function(pattern) {
     var file = path.resolve(cwd, pattern);
     if (shell.test('-f', file)) {
-      addFile(fs.realpathSync(file), !shell.test('-d', file));
+      addFile(fs.realpathSync(file));
     } else {
       var globOptions = {
         nodir: true,
@@ -116,7 +117,7 @@ function listFilesToProcess(globPatterns: Array<string>): Array<string> {
       };
 
       glob.sync(pattern, globOptions).forEach(function(globMatch) {
-        addFile(path.resolve(cwd, globMatch), false);
+        addFile(path.resolve(cwd, globMatch));
       });
     }
   });

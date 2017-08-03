@@ -17,7 +17,8 @@ module.exports.description = 'inject documentation into your README.md';
  * @private
  */
 module.exports.builder = {
-  usage: 'Usage: documentation readme [--readme-file=README.md] --section "API"' +
+  usage:
+    'Usage: documentation readme [--readme-file=README.md] --section "API"' +
     ' [--compare-only] [other documentationjs options]',
   example: 'documentation readme index.js -s "API Docs" --github',
   'readme-file': {
@@ -26,12 +27,14 @@ module.exports.builder = {
   },
   section: {
     alias: 's',
-    describe: 'The section heading after which to inject generated documentation',
+    describe:
+      'The section heading after which to inject generated documentation',
     required: true
   },
   'diff-only': {
     alias: 'd',
-    describe: 'Instead of updating the given README with the generated documentation,' +
+    describe:
+      'Instead of updating the given README with the generated documentation,' +
       ' just check if its contents match, exiting nonzero if not.',
     default: false
   },
@@ -41,8 +44,6 @@ module.exports.builder = {
     default: false
   }
 };
-
-function noop() {}
 
 /**
  * Insert API documentation into a Markdown readme
@@ -68,9 +69,11 @@ module.exports.handler = function readme(argv: Object) {
 
   argv.format = 'remark';
   /* eslint no-console: 0 */
-  var log = argv.q
-    ? noop
-    : console.log.bind(console, '[documentation-readme] ');
+  const log: Function = (...data: Array<string>) => {
+    if (!argv.q) {
+      console.log.apply(console, data);
+    }
+  };
 
   var readmeContent = fs.readFileSync(argv.readmeFile, 'utf8');
 
