@@ -1,4 +1,5 @@
-var sort = require('../../src/sort'), path = require('path');
+var sort = require('../../src/sort'),
+  path = require('path');
 
 test('sort stream alphanumeric', function() {
   var apples = { context: { sortKey: 'a' }, name: 'apples' };
@@ -201,6 +202,34 @@ test('sort toc with files absolute path', function() {
   expect(
     sort([apples, carrot, bananas], {
       toc: [snowflake]
+    })
+  ).toMatchSnapshot();
+});
+
+test('sort toc with files absolute path', function() {
+  var apples = {
+    context: { sortKey: 'a' },
+    name: 'apples',
+    memberof: 'classB'
+  };
+  var carrot = {
+    context: { sortKey: 'b' },
+    name: 'carrot',
+    memberof: 'classB'
+  };
+  var bananas = {
+    context: { sortKey: 'c' },
+    name: 'bananas',
+    memberof: 'classB'
+  };
+
+  var snowflake = {
+    name: 'snowflake',
+    file: path.join(__dirname, '../fixture/snowflake.md')
+  };
+  expect(
+    sort([carrot, apples, bananas], {
+      sortOrder: 'alpha'
     })
   ).toMatchSnapshot();
 });

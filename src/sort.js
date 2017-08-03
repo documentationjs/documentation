@@ -99,8 +99,8 @@ function compare(a: string, b: string) {
 }
 
 function compareCommentsByName(a, b) {
-  var akey = a.memberof || a.name;
-  var bkey = b.memberof || b.name;
+  var akey = a.name;
+  var bkey = b.name;
 
   if (akey && bkey) {
     return compare(akey, bkey);
