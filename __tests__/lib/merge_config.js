@@ -10,7 +10,30 @@ test('bad config', async function() {
   }
 });
 
-test('nc(mergeConfig)', function(done) {
+test('right merging package configuration', async function() {
+  // Omit configuration from output, for simplicity
+  var nc = _.curryRight(_.omit, 2)([
+    'config',
+    'no-package',
+    'parseExtension',
+    'project-homepage',
+    'project-version'
+  ]);
+  return mergeConfig({
+    config: path.join(__dirname, '../config_fixture/config.json'),
+    'no-package': true,
+    'project-name': 'cool Documentation'
+  })
+    .then(nc)
+    .then(res => {
+      expect(res).toEqual({
+        'project-name': 'cool Documentation',
+        foo: 'bar'
+      });
+    });
+});
+
+test('nc(mergeConfig)', async function() {
   // Omit configuration from output, for simplicity
   var nc = _.curryRight(_.omit, 2)([
     'config',
@@ -21,7 +44,7 @@ test('nc(mergeConfig)', function(done) {
     'project-version'
   ]);
 
-  Promise.all(
+  return Promise.all(
     [
       [
         { config: path.join(__dirname, '../config_fixture/config.json') },
@@ -74,7 +97,5 @@ test('nc(mergeConfig)', function(done) {
           expect(res).toEqual(pair[1]);
         })
     )
-  ).then(res => {
-    done();
-  });
+  );
 });
