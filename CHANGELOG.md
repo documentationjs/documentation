@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.1.1"></a>
+## [5.1.1](https://github.com/documentationjs/documentation/compare/v5.1.0...v5.1.1) (2017-08-04)
+
+
+### Bug Fixes
+
+* **theme:** Remove dead stepsibling navigation code ([dccb151](https://github.com/documentationjs/documentation/commit/dccb151))
+* cli options should override package.json options ([ecf16bd](https://github.com/documentationjs/documentation/commit/ecf16bd)), closes [#845](https://github.com/documentationjs/documentation/issues/845)
+
+
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/documentationjs/documentation/compare/v5.0.1...v5.1.0) (2017-07-31)
 
