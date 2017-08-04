@@ -3,7 +3,6 @@
 var yaml = require('js-yaml'),
   fs = require('fs'),
   pify = require('pify'),
-  _ = require('lodash'),
   readPkgUp = require('read-pkg-up'),
   path = require('path'),
   stripComments = require('strip-json-comments');
@@ -29,7 +28,7 @@ function processToc(config: DocumentationConfig, absFilePath: string) {
  * values of `name` and `version` config.
  *
  * @param {Object} config the user-provided config, usually via argv
- * @returns {Object} configuration with inferred parameters
+ * @returns {Promise<Object>} configuration with inferred parameters
  * @throws {Error} if the file cannot be read.
  */
 function mergePackage(config: Object): Promise<Object> {
@@ -38,16 +37,12 @@ function mergePackage(config: Object): Promise<Object> {
   }
   return (
     readPkgUp()
-      .then(pkg =>
-        _.defaults(
-          {},
-          _.mapKeys(
-            _.pick(pkg.pkg, ['name', 'homepage', 'version']),
-            (val, key) => `project-${key}`
-          ),
-          config
-        )
-      )
+      .then(pkg => {
+        ['name', 'homepage', 'version'].forEach(key => {
+          config[`project-${key}`] = config[`project-${key}`] || pkg.pkg[key];
+        });
+        return config;
+      })
       // Allow this to fail: this inference is not required.
       .catch(() => config)
   );
