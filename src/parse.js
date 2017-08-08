@@ -414,9 +414,10 @@ function todo() {}
  * @param {string} key the eventual destination key
  * @returns {Function} a flattener that remembers that key
  */
-function synonym(key) {
-  return function(result, tag) {
-    return flatteners[key](result, tag, key);
+function synonym(key: string) {
+  return function(result: Object, tag: Object) {
+    const fun = flatteners[key];
+    fun.apply(null, [result, tag, key].slice(0, fun.length));
   };
 }
 

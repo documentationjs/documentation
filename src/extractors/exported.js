@@ -184,7 +184,7 @@ function getCachedData(dataCache, filePath) {
   var value = dataCache.get(path);
   if (!value) {
     var input = fs.readFileSync(path, 'utf-8');
-    var ast = parseToAst(input, path);
+    var ast = parseToAst(input);
     value = {
       data: {
         file: path,
