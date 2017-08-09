@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.0"></a>
+# [5.2.0](https://github.com/documentationjs/documentation/compare/v5.1.1...v5.2.0) (2017-08-09)
+
+
+### Bug Fixes
+
+* alphabetical sort and add flow notation to sort file ([#861](https://github.com/documentationjs/documentation/issues/861)) ([aa3496a](https://github.com/documentationjs/documentation/commit/aa3496a)), closes [#838](https://github.com/documentationjs/documentation/issues/838)
+* make html and markdown second option optional ([#871](https://github.com/documentationjs/documentation/issues/871)) ([0324865](https://github.com/documentationjs/documentation/commit/0324865)), closes [#869](https://github.com/documentationjs/documentation/issues/869)
+
+
+### Features
+
+* convert Flow's ThisTypeAnnotation to a doctrine NameExpression ([#870](https://github.com/documentationjs/documentation/issues/870)) ([23aa981](https://github.com/documentationjs/documentation/commit/23aa981))
+
+
+
 <a name="5.1.1"></a>
 ## [5.1.1](https://github.com/documentationjs/documentation/compare/v5.1.0...v5.1.1) (2017-08-04)
 
