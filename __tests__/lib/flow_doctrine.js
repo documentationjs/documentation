@@ -295,11 +295,15 @@ test('flowDoctrine', function() {
     type: 'VoidLiteral'
   });
 
+  expect(toDoctrineType('this')).toEqual({
+    type: 'NameExpression',
+    name: 'this'
+  });
+
   // TODO: remove all these types
   expect(types).toEqual([
     'IntersectionTypeAnnotation',
     'EmptyTypeAnnotation',
-    'ThisTypeAnnotation',
     'TypeofTypeAnnotation'
   ]);
 });

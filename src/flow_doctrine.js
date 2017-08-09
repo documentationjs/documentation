@@ -152,6 +152,11 @@ function flowDoctrine(type: Object): DoctrineType {
         type: 'StringLiteralType',
         value: type.value
       };
+    case 'ThisTypeAnnotation':
+      return {
+        type: 'NameExpression',
+        name: 'this'
+      };
     default:
       return {
         type: 'AllLiteral'
