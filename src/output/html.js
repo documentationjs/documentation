@@ -23,8 +23,8 @@ var mergeConfig = require('../merge_config');
  *     streamArray(output).pipe(vfs.dest('./output-directory'));
  *   });
  */
-function html(comments: Array<Comment>, config: DocumentationConfig) {
-  return mergeConfig(config).then(config => {
+function html(comments: Array<Comment>, config: Object = {}) {
+  return mergeConfig(config).then((config: DocumentationConfig) => {
     var themePath = '../default_theme/';
     if (config.theme) {
       themePath = path.resolve(process.cwd(), config.theme);
