@@ -1,6 +1,7 @@
 /* @flow */
 
-var remark = require('remark'), markdownAST = require('./markdown_ast');
+var remark = require('remark'),
+  markdownAST = require('./markdown_ast');
 
 /**
  * Formats documentation as
@@ -22,7 +23,10 @@ var remark = require('remark'), markdownAST = require('./markdown_ast');
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(comments: Array<Comment>, args: Object): Promise<string> {
+function markdown(
+  comments: Array<Comment>,
+  args: Object = {}
+): Promise<string> {
   return markdownAST(comments, args).then(ast => remark().stringify(ast));
 }
 
