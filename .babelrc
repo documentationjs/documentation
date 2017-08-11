@@ -1,5 +1,12 @@
 {
-  "presets": ["flow"],
+  "presets": [
+    ["env", {
+      "targets": {
+	"node": 4
+      }
+    }],
+    "flow"
+  ],
   "plugins": [
     ["transform-es2015-modules-commonjs", {
       "allowTopLevelThis": true
