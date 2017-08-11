@@ -24,8 +24,9 @@ var DEFAULT_LANGUAGE = 'javascript';
  * consult hljs.configure for the full list.
  * @returns {Promise<Object>} returns an eventual Markdown value
  */
-function markdownAST(comments: Array<Comment>, args: Object) {
-  return mergeConfig(args).then(config => buildMarkdownAST(comments, config));
+async function markdownAST(comments: Array<Comment>, args: Object) {
+  const config = await mergeConfig(args);
+  return buildMarkdownAST(comments, config);
 }
 
 function buildMarkdownAST(

@@ -1,8 +1,0 @@
-machine:
-  node:
-    version: 7
-test:
-  override:
-    - npm run test-ci
-  post:
-    - ./node_modules/.bin/coveralls < coverage/lcov.info

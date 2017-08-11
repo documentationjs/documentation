@@ -38,7 +38,7 @@ module.exports.builder = _.assign(
  * @param {Object} argv cli input
  * @returns {undefined} has side effects
  */
-module.exports.handler = function serve(argv: Object) {
+module.exports.handler = async function serve(argv: Object) {
   argv._handled = true;
 
   if (!argv.input.length) {
@@ -54,48 +54,43 @@ module.exports.handler = function serve(argv: Object) {
     }
   }
 
-  getPort(argv.port).then(port => {
-    var server = new Server(port);
-    var watcher;
+  const port = await getPort(argv.port);
+  var server = new Server(port);
+  var watcher;
 
-    server.on('listening', function() {
-      process.stdout.write(`documentation.js serving on port ${port}\n`);
-    });
-
-    function updateWatcher() {
-      if (!watcher) {
-        watcher = chokidar.watch(argv.input);
-        watcher.on('all', _.debounce(updateServer, 300));
-      }
-
-      documentation
-        .expandInputs(argv.input, argv)
-        .then(files => {
-          watcher.add(
-            files.map(data => (typeof data === 'string' ? data : data.file))
-          );
-        })
-        .catch(err => {
-          /* eslint no-console: 0 */
-          return server.setFiles([errorPage(err)]).start();
-        });
-    }
-
-    function updateServer() {
-      documentation
-        .build(argv.input, argv)
-        .then(comments => documentation.formats.html(comments, argv))
-        .then(files => {
-          if (argv.watch) {
-            updateWatcher();
-          }
-          server.setFiles(files).start();
-        })
-        .catch(err => {
-          return server.setFiles([errorPage(err)]).start();
-        });
-    }
-
-    updateServer();
+  server.on('listening', function() {
+    process.stdout.write(`documentation.js serving on port ${port}\n`);
   });
+
+  async function updateWatcher() {
+    if (!watcher) {
+      watcher = chokidar.watch(argv.input);
+      watcher.on('all', _.debounce(updateServer, 300));
+    }
+
+    try {
+      const files = await documentation.expandInputs(argv.input, argv);
+      watcher.add(
+        files.map(data => (typeof data === 'string' ? data : data.file))
+      );
+    } catch (err) {
+      /* eslint no-console: 0 */
+      return server.setFiles([errorPage(err)]).start();
+    }
+  }
+
+  async function updateServer() {
+    try {
+      const comments = await documentation.build(argv.input, argv);
+      const files = await documentation.formats.html(comments, argv);
+      if (argv.watch) {
+        updateWatcher();
+      }
+      server.setFiles(files).start();
+    } catch (err) {
+      return server.setFiles([errorPage(err)]).start();
+    }
+  }
+
+  updateServer();
 };

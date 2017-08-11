@@ -25,7 +25,8 @@ module.exports.builder = _.assign(
   {
     example: 'documentation build foo.js -f md > API.md',
     output: {
-      describe: 'output location. omit for stdout, otherwise is a filename ' +
+      describe:
+        'output location. omit for stdout, otherwise is a filename ' +
         'for single-file outputs and a directory name for multi-file outputs like html',
       default: 'stdout',
       alias: 'o'
@@ -64,21 +65,23 @@ module.exports.handler = function build(argv: Object) {
     );
   }
 
-  function generator() {
-    return documentation
-      .build(argv.input, argv)
-      .then(comments =>
-        documentation.formats[argv.format](comments, argv).then(onFormatted)
-      )
-      .catch(err => {
-        /* eslint no-console: 0 */
-        if (err instanceof Error) {
-          console.error(err.stack);
-        } else {
-          console.error(err);
-        }
-        process.exit(1);
-      });
+  async function generator() {
+    try {
+      const comments = await documentation.build(argv.input, argv);
+      const formatted = await documentation.formats[argv.format](
+        comments,
+        argv
+      );
+      onFormatted(formatted);
+    } catch (err) {
+      /* eslint no-console: 0 */
+      if (err instanceof Error) {
+        console.error(err.stack);
+      } else {
+        console.error(err);
+      }
+      process.exit(1);
+    }
   }
 
   function onFormatted(output) {
@@ -100,18 +103,15 @@ module.exports.handler = function build(argv: Object) {
     }
   }
 
-  function updateWatcher() {
+  async function updateWatcher() {
     if (!watcher) {
       watcher = chokidar.watch(argv.input);
       watcher.on('all', _.debounce(generator, 300));
     }
-    documentation
-      .expandInputs(argv.input, argv)
-      .then(files =>
-        watcher.add(
-          files.map(data => (typeof data === 'string' ? data : data.file))
-        )
-      );
+    const files = await documentation.expandInputs(argv.input, argv);
+    watcher.add(
+      files.map(data => (typeof data === 'string' ? data : data.file))
+    );
   }
 
   return generator();
