@@ -1,3 +1,4 @@
+version: 2
 machine:
   node:
     version: 4
