@@ -105,7 +105,7 @@ Formats documentation as HTML.
 **Parameters**
 
 -   `comments` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Comment](https://developer.mozilla.org/en-US/docs/Web/API/Comment/Comment)>** parsed comments
--   `config` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options that can customize the output (optional, default `{}`)
+-   `config` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options that can customize the output
     -   `config.theme` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
 
 **Examples**
@@ -132,7 +132,7 @@ Formats documentation as
 **Parameters**
 
 -   `comments` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** parsed comments
--   `args` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options that can customize the output (optional, default `{}`)
+-   `args` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options that can customize the output
 
 **Examples**
 
