@@ -23,10 +23,10 @@ var remark = require('remark'),
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(
-  comments: Array<Comment>,
-  args: Object = {}
-): Promise<string> {
+function markdown(comments: Array<Comment>, args?: Object): Promise<string> {
+  if (!args) {
+    args = {};
+  }
   return markdownAST(comments, args).then(ast => remark().stringify(ast));
 }
 
