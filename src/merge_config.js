@@ -31,21 +31,19 @@ function processToc(config: DocumentationConfig, absFilePath: string) {
  * @returns {Promise<Object>} configuration with inferred parameters
  * @throws {Error} if the file cannot be read.
  */
-function mergePackage(config: Object): Promise<Object> {
+async function mergePackage(config: Object): Promise<Object> {
   if (config.noPackage) {
     return Promise.resolve(config);
   }
-  return (
-    readPkgUp()
-      .then(pkg => {
-        ['name', 'homepage', 'version'].forEach(key => {
-          config[`project-${key}`] = config[`project-${key}`] || pkg.pkg[key];
-        });
-        return config;
-      })
-      // Allow this to fail: this inference is not required.
-      .catch(() => config)
-  );
+  try {
+    const pkg = await readPkgUp();
+    ['name', 'homepage', 'version'].forEach(key => {
+      config[`project-${key}`] = config[`project-${key}`] || pkg.pkg[key];
+    });
+  } catch (_) {
+    return config;
+  }
+  return config;
 }
 
 /**
@@ -56,25 +54,24 @@ function mergePackage(config: Object): Promise<Object> {
  * @returns {Promise<Object>} configuration, if it can be parsed
  * @throws {Error} if the file cannot be read.
  */
-function mergeConfigFile(config): Promise<Object> {
+async function mergeConfigFile(config): Promise<Object> {
   if (config && typeof config.config === 'string') {
     var filePath = config.config;
     var ext = path.extname(filePath);
     var absFilePath = path.resolve(process.cwd(), filePath);
-    return pify(fs).readFile(absFilePath, 'utf8').then(rawFile => {
-      if (ext === '.json') {
-        return Object.assign(
-          {},
-          config,
-          processToc(JSON.parse(stripComments(rawFile)), absFilePath)
-        );
-      }
+    const rawFile = await pify(fs).readFile(absFilePath, 'utf8');
+    if (ext === '.json') {
       return Object.assign(
         {},
         config,
-        processToc(yaml.safeLoad(rawFile), absFilePath)
+        processToc(JSON.parse(stripComments(rawFile)), absFilePath)
       );
-    });
+    }
+    return Object.assign(
+      {},
+      config,
+      processToc(yaml.safeLoad(rawFile), absFilePath)
+    );
   }
 
   return Promise.resolve(config || {});
