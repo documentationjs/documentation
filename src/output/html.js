@@ -23,14 +23,13 @@ var mergeConfig = require('../merge_config');
  *     streamArray(output).pipe(vfs.dest('./output-directory'));
  *   });
  */
-function html(comments: Array<Comment>, config: Object = {}) {
-  return mergeConfig(config).then((config: DocumentationConfig) => {
-    var themePath = '../default_theme/';
-    if (config.theme) {
-      themePath = path.resolve(process.cwd(), config.theme);
-    }
-    return require(themePath)(comments, config);
-  });
+async function html(comments: Array<Comment>, config: Object = {}) {
+  const mergedConfig: DocumentationConfig = await mergeConfig(config);
+  var themePath = '../default_theme/';
+  if (mergedConfig.theme) {
+    themePath = path.resolve(process.cwd(), mergedConfig.theme);
+  }
+  return require(themePath)(comments, mergedConfig);
 }
 
 module.exports = html;
