@@ -51,7 +51,7 @@ module.exports.builder = {
  * @param {Object} argv args from the CLI option parser
  * @return {undefined} has the side-effect of writing a file or printing to stdout
  */
-module.exports.handler = function readme(argv: Object) {
+module.exports.handler = async function readme(argv: Object) {
   argv._handled = true;
 
   if (!argv.input.length) {
@@ -75,44 +75,39 @@ module.exports.handler = function readme(argv: Object) {
     }
   };
 
-  var readmeContent = fs.readFileSync(argv.readmeFile, 'utf8');
-
-  documentation
-    .build(argv.input, argv)
-    .then(comments => documentation.formats.remark(comments, argv))
-    .then(docsAst =>
-      remark()
-        .use(plugin, {
-          section: argv.section,
-          toInject: JSON.parse(docsAst)
-        })
-        .process(readmeContent)
-    )
-    .then(file => {
-      var diffOutput = disparity.unified(readmeContent, file.contents, {
-        paths: [argv.readmeFile, argv.readmeFile]
-      });
-      if (!diffOutput.length) {
-        log(`${argv.readmeFile} is up to date.`);
-        process.exit(0);
-      }
-
-      if (argv.d) {
-        log(
-          chalk.bold(`${argv.readmeFile} needs the following updates:`),
-          `\n${diffOutput}`
-        );
-        process.exit(1);
-      } else {
-        log(chalk.bold(`Updating ${argv.readmeFile}`), `\n${diffOutput}`);
-      }
-
-      fs.writeFileSync(argv.readmeFile, file.contents);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
+  try {
+    var readmeContent = fs.readFileSync(argv.readmeFile, 'utf8');
+    const comments = await documentation.build(argv.input, argv);
+    const docsAst = await documentation.formats.remark(comments, argv);
+    const file = await remark()
+      .use(plugin, {
+        section: argv.section,
+        toInject: JSON.parse(docsAst)
+      })
+      .process(readmeContent);
+    var diffOutput = disparity.unified(readmeContent, file.contents, {
+      paths: [argv.readmeFile, argv.readmeFile]
     });
+    if (!diffOutput.length) {
+      log(`${argv.readmeFile} is up to date.`);
+      process.exit(0);
+    }
+
+    if (argv.d) {
+      log(
+        chalk.bold(`${argv.readmeFile} needs the following updates:`),
+        `\n${diffOutput}`
+      );
+      process.exit(1);
+    } else {
+      log(chalk.bold(`Updating ${argv.readmeFile}`), `\n${diffOutput}`);
+    }
+
+    fs.writeFileSync(argv.readmeFile, file.contents);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
 };
 
 // wrap the inject utility as an remark plugin

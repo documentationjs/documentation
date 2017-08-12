@@ -18,7 +18,7 @@ module.exports.builder = {};
  * @returns {undefined} has side-effects
  * @private
  */
-module.exports.handler = function(argv: Object) {
+module.exports.handler = async function(argv: Object) {
   argv._handled = true;
   if (!argv.input.length) {
     try {
@@ -32,19 +32,17 @@ module.exports.handler = function(argv: Object) {
       );
     }
   }
-  documentation
-    .lint(argv.input, argv)
-    .then(lintOutput => {
-      if (lintOutput) {
-        console.log(lintOutput);
-        process.exit(1);
-      } else {
-        process.exit(0);
-      }
-    })
-    .catch(err => {
-      /* eslint no-console: 0 */
-      console.error(err);
+  try {
+    const lintOutput = await documentation.lint(argv.input, argv);
+    if (lintOutput) {
+      console.log(lintOutput);
       process.exit(1);
-    });
+    } else {
+      process.exit(0);
+    }
+  } catch (err) {
+    /* eslint no-console: 0 */
+    console.error(err);
+    process.exit(1);
+  }
 };
