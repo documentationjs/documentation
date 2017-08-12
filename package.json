@@ -61,6 +61,7 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.1",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "chdir": "0.0.0",
@@ -79,6 +80,7 @@
     "mock-fs": "^4.2.0",
     "p-event": "^1.0.0",
     "prettier": "^1.0.0",
+    "regenerator-runtime": "^0.10.5",
     "standard-version": "^4.0.0",
     "tmp": "^0.0.31"
   },
