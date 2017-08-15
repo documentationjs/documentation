@@ -80,7 +80,7 @@
     "mock-fs": "^4.2.0",
     "p-event": "^1.0.0",
     "prettier": "^1.0.0",
-    "regenerator-runtime": "^0.10.5",
+    "regenerator-runtime": "^0.11.0",
     "standard-version": "^4.0.0",
     "tmp": "^0.0.33"
   },
