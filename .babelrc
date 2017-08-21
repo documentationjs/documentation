@@ -1,4 +1,7 @@
 {
   "presets": ["es2015", "stage-0", "flow"],
-  "plugins": ["syntax-async-functions"]
+  "plugins": ["syntax-async-functions"],
+  "ignore": [
+      "**/default_theme/assets/*"
+  ]
 }
