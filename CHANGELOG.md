@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.2"></a>
+## [5.2.2](https://github.com/documentationjs/documentation/compare/v5.2.1...v5.2.2) (2017-08-22)
+
+
+### Bug Fixes
+
+* **$compile:** prevent babel from transpiling non-module scripts in default_theme's assets ([1286a1f](https://github.com/documentationjs/documentation/commit/1286a1f))
+
+
+
 <a name="5.2.1"></a>
 ## [5.2.1](https://github.com/documentationjs/documentation/compare/v5.2.0...v5.2.1) (2017-08-12)
 
