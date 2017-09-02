@@ -18,28 +18,19 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
   if (!options || !options.toc) {
     return sortComments(comments, options && options.sortOrder);
   }
-  var indexes = options.toc.reduce(function(memo, val, i) {
+  let i = 0;
+  const indexes: { [?string]: number } = Object.create(null);
+  const toBeSorted: { [?string]: boolean } = Object.create(null);
+  const paths: {
+    [?string]: Array<{ scope: Scope, name: string }>
+  } = Object.create(null);
+  const fixed = [];
+  const walk = function(tocPath, val) {
     if (typeof val === 'object' && val.name) {
       val.kind = 'note';
-      memo[val.name] = i;
-    } else {
-      memo[val] = i;
-    }
-    return memo;
-  }, Object.create(null));
-  var toBeSorted = options.toc.reduce(function(memo, val) {
-    if (typeof val === 'string') {
-      memo[val] = false;
-    }
-    return memo;
-  }, Object.create(null));
-  // Table of contents 'theme' entries: defined as objects
-  // in the YAML list
-  var fixed = options.toc
-    .filter(val => typeof val === 'object' && val.name)
-    .map(function(val) {
+      indexes[val.name] = i++;
       if (typeof val.file === 'string') {
-        var filename = val.file;
+        let filename = val.file;
         if (!path.isAbsolute(val.file)) {
           filename = path.join(process.cwd(), val.file);
         }
@@ -50,14 +41,34 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
         } catch (err) {
           process.stderr.write(chalk.red(`Failed to read file ${filename}`));
         }
+      } else if (!val.description) {
+        val.description = '';
       }
       if (typeof val.description === 'string') {
         val.description = parseMarkdown(val.description);
       }
-      return val;
-    });
+      const childPath = tocPath.concat({ scope: 'static', name: val.name });
+      val.path = childPath;
+      if (val.children) {
+        val.children.forEach(walk.bind(null, childPath));
+      }
+      fixed.push(val);
+    } else {
+      indexes[val] = i++;
+      toBeSorted[val] = false;
+      paths[val] = tocPath.concat({ scope: 'static', name: val, toc: true });
+    }
+  };
+  // Table of contents 'theme' entries: defined as objects
+  // in the YAML list
+  options.toc.forEach(walk.bind(null, []));
   var unfixed = [];
   comments.forEach(function(comment) {
+    const commentPath = paths[comment.name];
+    if (commentPath) {
+      comment.path = commentPath;
+    }
+
     // If comment is of kind 'note', this means that we must be _re_ sorting
     // the list, and the TOC note entries were already added to the list. Bail
     // out here so that we don't add duplicates.
@@ -78,6 +89,7 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
     if (indexes[a.name] !== undefined && indexes[b.name] !== undefined) {
       return indexes[a.name] - indexes[b.name];
     }
+    return 0;
   });
   sortComments(unfixed, options.sortOrder);
   Object.keys(toBeSorted)

@@ -53,3 +53,22 @@ and areas on the sphere.
 ```
 
 it would produce the same output as the previous example.
+
+## Groups
+
+The `children` property can be used to group content under headings instead of just arranging them in order. Example:
+
+```yml
+toc:
+  - name: Geography
+    children:
+      - Map
+      - LngLat
+      - LngLatBounds
+  - name: Navigation
+    description: |
+      Here are some helper functions for navigation.
+    children:
+      - shortestPath
+      - salesman
+```

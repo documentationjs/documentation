@@ -55,38 +55,72 @@ module.exports = function(comments) {
       members: getMembers()
     };
 
+  const namesToUnroot = [];
+
   comments.forEach(comment => {
-    var path = [];
+    let path = comment.path;
+    if (!path) {
+      path = [];
 
-    if (comment.memberof) {
-      // TODO: full namepath parsing
-      path = comment.memberof.split('.').map(segment => ['static', segment]);
-    }
+      if (comment.memberof) {
+        // TODO: full namepath parsing
+        path = comment.memberof
+          .split('.')
+          .map(segment => ({ scope: 'static', name: segment }));
+      }
 
-    if (!comment.name) {
-      comment.errors.push({
-        message: 'could not determine @name for hierarchy'
+      if (!comment.name) {
+        comment.errors.push({
+          message: 'could not determine @name for hierarchy'
+        });
+      }
+
+      path.push({
+        scope: comment.scope || 'static',
+        name: comment.name || 'unknown_' + id++
       });
     }
-
-    path.push([comment.scope || 'static', comment.name || 'unknown_' + id++]);
 
     var node = root;
 
     while (path.length) {
-      var segment = path.shift(), scope = segment[0], name = segment[1];
+      var segment = path.shift(),
+        scope = segment.scope,
+        name = segment.name;
 
       if (!hasOwnProperty.call(node.members[scope], name)) {
-        node.members[scope][name] = {
-          comments: [],
-          members: getMembers()
-        };
+        // If segment.toc is true, everything up to this point in the path
+        // represents how the documentation should be nested, but not how the
+        // actual code is nested. To ensure that child members end up in the
+        // right places in the tree, we temporarily push the same node a second
+        // time to the root of the tree, and unroot it after all the comments
+        // have found their homes.
+        if (
+          segment.toc &&
+          node !== root &&
+          hasOwnProperty.call(root.members[scope], name)
+        ) {
+          node.members[scope][name] = root.members[scope][name];
+          namesToUnroot.push(name);
+        } else {
+          const newNode = (node.members[scope][name] = {
+            comments: [],
+            members: getMembers()
+          });
+          if (segment.toc && node !== root) {
+            root.members[scope][name] = newNode;
+            namesToUnroot.push(name);
+          }
+        }
       }
 
       node = node.members[scope][name];
     }
 
     node.comments.push(comment);
+  });
+  namesToUnroot.forEach(function(name) {
+    delete root.members.static[name];
   });
 
   /*
@@ -107,7 +141,8 @@ module.exports = function(comments) {
    *     Person~say  // the inner method named "say."
    */
   function toComments(nodes, root, hasUndefinedParent, path) {
-    var result = [], scope;
+    var result = [],
+      scope;
 
     path = path || [];
 
@@ -119,7 +154,9 @@ module.exports = function(comments) {
           node.members[scope],
           root || result,
           !node.comments.length,
-          node.comments.length ? path.concat(node.comments[0]) : []
+          node.comments.length && node.comments[0].kind !== 'note'
+            ? path.concat(node.comments[0])
+            : []
         );
       }
 

@@ -87,7 +87,13 @@ test('sort stream with configuration and a section', function() {
         }
       }
     },
-    kind: 'note'
+    kind: 'note',
+    path: [
+      {
+        name: 'This is the banana type',
+        scope: 'static'
+      }
+    ]
   };
 
   expect(
@@ -161,7 +167,13 @@ test('sort an already-sorted stream containing a section/description', function(
         }
       }
     },
-    kind: 'note'
+    kind: 'note',
+    path: [
+      {
+        name: 'This is the banana type',
+        scope: 'static'
+      }
+    ]
   };
 
   var config = {
@@ -180,7 +192,7 @@ test('sort toc with files', function() {
 
   var snowflake = {
     name: 'snowflake',
-    file: 'test/fixture/snowflake.md'
+    file: path.join(__dirname, '../fixture/snowflake.md')
   };
 
   expect(
