@@ -49,7 +49,7 @@ module.exports.builder = {
  * Insert API documentation into a Markdown readme
  * @private
  * @param {Object} argv args from the CLI option parser
- * @return {undefined} has the side-effect of writing a file or printing to stdout
+ * @returns {undefined} has the side-effect of writing a file or printing to stdout
  */
 module.exports.handler = function readme(argv: Object) {
   argv._handled = true;

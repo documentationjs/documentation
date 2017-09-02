@@ -67,7 +67,7 @@ function lintComments(comment: Comment) {
  * @private
  * Extract lint instructions from comments and generate user-readable output.
  * @param {Array<Object>} comments a list of comments
- * @return {string} user-readable output
+ * @returns {string} user-readable output
  */
 function formatLint(comments: Array<Comment>): string {
   var vFiles = {};

@@ -10,7 +10,7 @@ var remark = require('remark'),
  * @param {Array<Object>} comments parsed comments
  * @param {Object} args Options that can customize the output
  * @name formats.markdown
- * @return {Promise<string>} a promise of the eventual value
+ * @returns {Promise<string>} a promise of the eventual value
  * @public
  * @example
  * var documentation = require('documentation');

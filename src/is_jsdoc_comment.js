@@ -10,7 +10,7 @@
  *
  * @name isJSDocComment
  * @param {Object} comment an ast path of the comment
- * @return {boolean} whether it is valid
+ * @returns {boolean} whether it is valid
  */
 module.exports = function isJSDocComment(
   comment /*: {

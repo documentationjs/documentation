@@ -9,7 +9,7 @@ var getGithubURLPrefix = require('./git/url_prefix');
  *
  * @name linkGitHub
  * @param {Object} comment parsed comment
- * @return {Object} comment with github inferred
+ * @returns {Object} comment with github inferred
  */
 module.exports = function(comment: Comment) {
   var repoPath = findGit(comment.context.file);

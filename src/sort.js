@@ -11,7 +11,7 @@ var fs = require('fs');
  *
  * @param {Array<Object>} comments all comments
  * @param {Object} options options from documentation.yml
- * @return {number} sorting value
+ * @returns {number} sorting value
  * @private
  */
 module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
