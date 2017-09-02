@@ -16,7 +16,7 @@ var smartGlob = require('../smart_glob.js');
  *
  * @param indexes entry points
  * @param config parsing options
- * @return promise with parsed files
+ * @returns promise with parsed files
  */
 module.exports = function(
   indexes: Array<string | Object>,

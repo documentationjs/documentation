@@ -35,7 +35,7 @@ function walkComments(
        * Parse a comment with doctrine and decorate the result with file position and code context.
        *
        * @param {Object} comment the current state of the parsed JSDoc comment
-       * @return {undefined} this emits data
+       * @returns {undefined} this emits data
        */
       function parseComment(comment) {
         newResults.push(

@@ -25,7 +25,7 @@ module.exports = {
    * @param {Object} options - An options object with `external` being a
    * micromatch-compaitible glob. *NOTE:* the glob will be matched relative to
    * the top-level node_modules directory for each entry point.
-   * @return {function} - A function for use as the module-deps `postFilter`
+   * @returns {function} - A function for use as the module-deps `postFilter`
    * options.
    */
   externals: function externalModuleFilter(

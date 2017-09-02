@@ -9,7 +9,7 @@ import { walk } from './walk';
  *
  * @param {Array<string>} [levels=['public', 'undefined', 'protected']] included access levels.
  * @param {Array<Object>} comments parsed comments (can be nested)
- * @return {Array<Object>} filtered comments
+ * @returns {Array<Object>} filtered comments
  */
 function filterAccess(levels: Array<string>, comments: Array<Comment>) {
   function filter(comment) {

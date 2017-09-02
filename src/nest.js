@@ -95,7 +95,7 @@ var nestTag = (
  * This assumes that incoming comments have been flattened.
  *
  * @param {Object} comment input comment
- * @return {Object} nested comment
+ * @returns {Object} nested comment
  */
 var nest = (comment: Comment) =>
   Object.assign(comment, {

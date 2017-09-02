@@ -564,7 +564,7 @@ function flattenKindShorthand(result, tag, key) {
  * @param {string} comment input to be parsed
  * @param {Object} loc location of the input
  * @param {Object} context code context of the input
- * @return {Comment} an object conforming to the
+ * @returns {Comment} an object conforming to the
  * [documentation schema](https://github.com/documentationjs/api-json)
  */
 function parseJSDoc(comment: string, loc: ?Object, context: ?Object): Comment {

@@ -32,7 +32,7 @@ function leftPad(str, width) {
  *
  * @param {Object} data a chunk of data provided by module-deps
  * @param {Object} config config
- * @return {Array<Object>} an array of parsed comments
+ * @returns {Array<Object>} an array of parsed comments
  */
 function parseJavaScript(data: Object, config: DocumentationConfig) {
   var visited = new Set();
