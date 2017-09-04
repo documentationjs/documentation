@@ -60,7 +60,7 @@
     "are-we-flow-yet": "^1.0.0",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.1",
+    "babel-jest": "^21.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
