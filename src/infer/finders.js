@@ -10,7 +10,7 @@ var t = require('babel-types');
  * @returns {?Object} ast path, if one is found.
  * @private
  */
-function findTarget(path: Object) {
+function findTarget(path: ?Object) {
   if (!path) {
     return path;
   }

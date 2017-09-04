@@ -5,7 +5,8 @@ import { walk } from '../walk';
 /**
  * Formats documentation as a JSON string.
  *
- * @param comments parsed comments
+ * @param {Array<Comment>} comments parsed comments
+ * @returns {Promise<string>}
  * @name formats.json
  * @public
  * @example

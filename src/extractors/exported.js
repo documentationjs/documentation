@@ -151,14 +151,17 @@ function traverseExportedSubtree(path, data, addComments, overrideName) {
   }
   addComments(data, attachCommentPath, overrideName);
 
-  path = findTarget(path);
-
-  if (t.isVariableDeclarator(path) && path.has('init')) {
-    path = path.get('init');
+  let target = findTarget(path);
+  if (!target) {
+    return;
   }
 
-  if (path.isClass() || path.isObjectExpression()) {
-    path.traverse({
+  if (t.isVariableDeclarator(target) && target.has('init')) {
+    target = target.get('init');
+  }
+
+  if (target.isClass() || target.isObjectExpression()) {
+    target.traverse({
       Property(path) {
         addComments(data, path);
         path.skip();

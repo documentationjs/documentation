@@ -14,6 +14,9 @@ import flowDoctrine from '../flow_doctrine';
  */
 function inferParams(comment: Comment) {
   var path = finders.findTarget(comment.context.ast);
+  if (!path) {
+    return comment;
+  }
 
   // In case of `/** */ var x = function () {}` findTarget returns
   // the declarator.

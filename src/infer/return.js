@@ -21,6 +21,9 @@ function inferReturn(comment: Comment) {
   }
   var path = findTarget(comment.context.ast);
   var fn = path && path.node;
+  if (!fn) {
+    return comment;
+  }
 
   // In case of `/** */ var x = function () {}` findTarget returns
   // the declarator.

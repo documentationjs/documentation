@@ -163,10 +163,6 @@ test('--config', async function() {
   var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);
   var outputIndex = path.join(dst, 'index.html');
-  var expectedOutputPath = path.join(
-    __dirname,
-    'fixture/html/nested.config-output.html'
-  );
   const data = await documentation(
     [
       'build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
