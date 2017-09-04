@@ -241,32 +241,15 @@ module.exports = function() {
     return comment;
   }
 
-  function shouldSkipInference(comment: Comment): boolean {
-    // If someone uses the @name tag, they explicitly ask for inference
-    // to be skipped.
-    if (comment.tags.some(tag => tag.title === 'name')) {
-      return true;
-    }
-
+  return function inferMembership(comment: Comment) {
     // Lends tags are go-betweens that let people reassign membership
     // in bulk: they themselves don't get an inference step
     if (comment.lends) {
-      return true;
-    }
-
-    // If this chunk doesn't have code attached, like if it was the result
-    // of a polyglot parse, don't try to infer anything.
-    if (!comment.context.ast) {
-      return true;
-    }
-
-    return false;
-  }
-
-  return function inferMembership(comment: Comment) {
-    // First skip inference if the user indicates it or if it isn't possible.
-    if (shouldSkipInference(comment)) {
       return comment;
+    }
+
+    if (comment.kind === 'module') {
+      currentModule = comment;
     }
 
     // If someone explicitly specifies the parent of this chunk, don't
@@ -275,11 +258,12 @@ module.exports = function() {
       return normalizeMemberof(comment);
     }
 
-    if (comment.kind === 'module') {
-      currentModule = comment;
-    }
-
     var path = comment.context.ast;
+    // If this chunk doesn't have code attached, like if it was the result
+    // of a polyglot parse, don't try to infer anything.
+    if (!path) {
+      return comment;
+    }
 
     // INFERENCE ===============================================================
     // Deal with an oddity of espree: the jsdoc comment is attached to a different

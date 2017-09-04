@@ -896,7 +896,7 @@ k.isArrayOfBuffers();</pre>
   <p>a typedef with nested properties</p>
 
 
-  <div class='pre p1 fill-light mt0'>CustomError(other: any, also: any)</div>
+  <div class='pre p1 fill-light mt0'>CustomError</div>
   
   
 
@@ -907,27 +907,6 @@ k.isArrayOfBuffers();</pre>
   
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>other</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>also</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
   
 
   

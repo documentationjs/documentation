@@ -44,7 +44,7 @@ type SourceFile = {
 type CommentContext = {
   sortKey: string,
   file: string,
-  ast: Object,
+  ast?: Object,
   loc: CommentLoc,
   code: string,
   github?: CommentContextGitHub

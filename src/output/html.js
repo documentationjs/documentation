@@ -6,7 +6,7 @@ var mergeConfig = require('../merge_config');
 /**
  * Formats documentation as HTML.
  *
- * @param comments parsed comments
+ * @param {Array<Comment>} comments parsed comments
  * @param {Object} config Options that can customize the output
  * @param {string} [config.theme='default_theme'] Name of a module used for an HTML theme.
  * @returns {Promise<Array<Object>>} Promise with results
