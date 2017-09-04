@@ -64,9 +64,10 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
   options.toc.forEach(walk.bind(null, []));
   var unfixed = [];
   comments.forEach(function(comment) {
-    const commentPath = paths[comment.name];
-    if (commentPath) {
+    let commentPath;
+    if (!comment.memberof && (commentPath = paths[comment.name])) {
       comment.path = commentPath;
+      delete paths[comment.name];
     }
 
     // If comment is of kind 'note', this means that we must be _re_ sorting

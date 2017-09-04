@@ -50,6 +50,10 @@ This function is third
 
 This function is first
 
+### first
+
+forgot a memberof here... sure hope that doesn't crash anything!
+
 ## Bravo
 
 Contains a subsection!
@@ -80,6 +84,13 @@ second::bar
 
 -   \`beans\`  
 -   \`rice\`  
+
+## AClass
+
+### second
+
+shares a name with a top level item referenced in the TOC... sure hope
+that doesn't crash anything!
 "
 `;
 
