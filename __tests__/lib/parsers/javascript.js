@@ -84,3 +84,24 @@ test('parse - document exported', function() {
     ).length
   ).toBe(2);
 });
+
+test('parse - constructor comments', function() {
+  expect(
+    toComments(`
+      class Test {
+        /** @hideconstructor */
+        constructor() {}
+      }
+    `).length
+  ).toBe(0);
+
+  expect(
+    toComments(`
+      /** Test */
+      export class Test {
+        /** @hideconstructor */
+        constructor() {}
+      }
+    `)[0].constructorComment
+  ).toBeDefined();
+});

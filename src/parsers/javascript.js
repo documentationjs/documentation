@@ -6,7 +6,8 @@ var _ = require('lodash'),
   walkComments = require('../extractors/comments'),
   walkExported = require('../extractors/exported'),
   util = require('util'),
-  debuglog = util.debuglog('documentation');
+  debuglog = util.debuglog('documentation'),
+  findTarget = require('../infer/finders').findTarget;
 
 import { parseToAst } from './parse_to_ast';
 
@@ -98,7 +99,7 @@ function _addComment(
     }
     const comment = parse(commentValue, commentLoc, context);
     if (includeContext) {
-      commentsByNode.set(path.node, comment);
+      commentsByNode.set((findTarget(path) || path).node, comment);
 
       if (t.isClassMethod(path) && path.node.kind === 'constructor') {
         // #689
@@ -113,6 +114,9 @@ function _addComment(
         );
         if (parentComment) {
           parentComment.constructorComment = comment;
+          return;
+        }
+        if (comment.hideconstructor) {
           return;
         }
       }
