@@ -163,4 +163,28 @@ test('inferParams', function() {
   expect(
     evaluate('/** Test */ export default function f(x) {}').params
   ).toEqual([{ lineNumber: 1, name: 'x', title: 'param' }]);
+
+  expect(
+    evaluate(function() {
+      /**
+       * @class
+       * @hideconstructor
+       */
+      function SomeClass(foo, bar) {}
+    }).params
+  ).toEqual([]);
+
+  expect(
+    evaluate(`
+      /**
+       * Test
+       */
+      class SomeClass {
+        /**
+         * @hideconstructor
+         */
+        constructor(foo, bar) {}
+      }
+    `).params
+  ).toEqual([]);
 });

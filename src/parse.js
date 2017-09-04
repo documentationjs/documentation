@@ -168,6 +168,7 @@ var flatteners = {
   global(result) {
     result.scope = 'global';
   },
+  hideconstructor: flattenBoolean,
   host: synonym('external'),
   ignore: flattenBoolean,
   implements: todo,

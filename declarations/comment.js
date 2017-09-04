@@ -84,6 +84,7 @@ type Comment = {
   classdesc?: Remark,
 
   members: CommentMembers,
+  constructorComment?: Comment,
 
   name?: string,
   kind?: Kind,
@@ -100,6 +101,7 @@ type Comment = {
   since?: string,
   lends?: string,
   override?: boolean,
+  hideconstructor?: true,
 
   type?: DoctrineType,
 

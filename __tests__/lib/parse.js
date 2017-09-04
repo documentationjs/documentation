@@ -444,6 +444,14 @@ test('parse - @global', function() {
   ).toBe('global');
 });
 
+test('parse - @hideconstructor', function() {
+  expect(
+    evaluate(function() {
+      /** @hideconstructor */
+    })[0].hideconstructor
+  ).toBe(true);
+});
+
 test('parse - @host', function() {});
 
 test('parse - @ignore', function() {
