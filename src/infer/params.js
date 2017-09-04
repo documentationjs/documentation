@@ -23,7 +23,10 @@ function inferParams(comment: Comment) {
 
   // If this is an ES6 class with a constructor method, infer
   // parameters from that constructor method.
-  if (t.isClassDeclaration(path)) {
+  if (
+    t.isClassDeclaration(path) &&
+    !(comment.constructorComment && comment.constructorComment.hideconstructor)
+  ) {
     let constructor = path.node.body.body.find(item => {
       // https://github.com/babel/babylon/blob/master/ast/spec.md#classbody
       return t.isClassMethod(item) && item.kind === 'constructor';
@@ -34,6 +37,10 @@ function inferParams(comment: Comment) {
   }
 
   if (!t.isFunction(path)) {
+    return comment;
+  }
+
+  if (comment.kind === 'class' && comment.hideconstructor) {
     return comment;
   }
 
@@ -277,7 +284,9 @@ function mergeTopNodes(inferred, explicit) {
 
   var errors = explicitTagsWithoutInference.map(tag => {
     return {
-      message: `An explicit parameter named ${tag.name || ''} was specified but didn't match ` +
+      message:
+        `An explicit parameter named ${tag.name ||
+          ''} was specified but didn't match ` +
         `inferred information ${Array.from(inferredNames).join(', ')}`,
       commentLineNumber: tag.lineNumber
     };

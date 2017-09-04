@@ -36,9 +36,10 @@ function leftPad(str, width) {
  */
 function parseJavaScript(data: Object, config: DocumentationConfig) {
   var visited = new Set();
+  const commentsByNode = new Map();
 
   var ast = parseToAst(data.source);
-  var addComment = _addComment.bind(null, visited);
+  var addComment = _addComment.bind(null, visited, commentsByNode);
 
   return _.flatMap(
     config.documentExported
@@ -54,6 +55,7 @@ function parseJavaScript(data: Object, config: DocumentationConfig) {
 
 function _addComment(
   visited,
+  commentsByNode,
   data,
   commentValue,
   commentLoc,
@@ -89,19 +91,33 @@ function _addComment(
         value: path
       });
 
-      // #689
-      if (t.isClassMethod(path) && path.node.kind === 'constructor') {
-        debuglog(
-          'A constructor was documented explicitly: document along with the class instead'
-        );
-      }
-
       if (path.parentPath && path.parentPath.node) {
         var parentNode = path.parentPath.node;
         context.code = data.source.substring(parentNode.start, parentNode.end);
       }
     }
-    return parse(commentValue, commentLoc, context);
+    const comment = parse(commentValue, commentLoc, context);
+    if (includeContext) {
+      commentsByNode.set(path.node, comment);
+
+      if (t.isClassMethod(path) && path.node.kind === 'constructor') {
+        // #689
+        if (!comment.hideconstructor) {
+          debuglog(
+            'A constructor was documented explicitly: document along with the class instead'
+          );
+        }
+
+        const parentComment = commentsByNode.get(
+          path.parentPath.parentPath.node
+        );
+        if (parentComment) {
+          parentComment.constructorComment = comment;
+          return;
+        }
+      }
+    }
+    return comment;
   }
 }
 
