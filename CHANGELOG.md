@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.0"></a>
+# [5.3.0](https://github.com/documentationjs/documentation/compare/v5.2.2...v5.3.0) (2017-09-04)
+
+
+### Bug Fixes
+
+* [@name](https://github.com/name) tag disconnects comment ([#897](https://github.com/documentationjs/documentation/issues/897)) ([a04b6fd](https://github.com/documentationjs/documentation/commit/a04b6fd))
+
+
+### Features
+
+* groups in toc ([#895](https://github.com/documentationjs/documentation/issues/895)) ([c94412a](https://github.com/documentationjs/documentation/commit/c94412a))
+* implement [@hideconstructor](https://github.com/hideconstructor) ([#898](https://github.com/documentationjs/documentation/issues/898)) ([7a07d51](https://github.com/documentationjs/documentation/commit/7a07d51))
+
+
+
 <a name="5.2.2"></a>
 ## [5.2.2](https://github.com/documentationjs/documentation/compare/v5.2.1...v5.2.2) (2017-08-22)
 
