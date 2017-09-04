@@ -3,9 +3,67 @@
 exports[`sort toc with files 1`] = `
 Array [
   Object {
-    "file": "test/fixture/snowflake.md",
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Position {
+                "end": Object {
+                  "column": 16,
+                  "line": 1,
+                  "offset": 15,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+              },
+              "type": "text",
+              "value": "The Snowflake",
+            },
+          ],
+          "depth": 1,
+          "position": Position {
+            "end": Object {
+              "column": 16,
+              "line": 1,
+              "offset": 15,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "heading",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 1,
+          "line": 2,
+          "offset": 16,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
     "kind": "note",
     "name": "snowflake",
+    "path": Array [
+      Object {
+        "name": "snowflake",
+        "scope": "static",
+      },
+    ],
   },
   Object {
     "context": Object {
@@ -86,6 +144,12 @@ Array [
     },
     "kind": "note",
     "name": "snowflake",
+    "path": Array [
+      Object {
+        "name": "snowflake",
+        "scope": "static",
+      },
+    ],
   },
   Object {
     "context": Object {

@@ -303,9 +303,16 @@ function buildMarkdownAST(
     }
 
     if (comment.kind === 'note') {
-      return [u('heading', { depth }, [u('text', comment.name || '')])].concat(
-        comment.description
-      );
+      return [u('heading', { depth }, [u('text', comment.name || '')])]
+        .concat(comment.description)
+        .concat(
+          !!comment.members.static.length &&
+            comment.members.static.reduce(
+              (memo, child) => memo.concat(generate(depth + 1, child)),
+              []
+            )
+        )
+        .filter(Boolean);
     }
 
     return [u('heading', { depth }, [u('text', comment.name || '')])]

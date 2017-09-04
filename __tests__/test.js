@@ -179,6 +179,15 @@ test('config', async function() {
   expect(md).toMatchSnapshot();
 });
 
+test('config with nested sections', async function() {
+  var file = path.join(__dirname, 'fixture', 'sections.input.js');
+  const out = await documentation.build([file], {
+    config: path.join(__dirname, 'fixture', 'sections.config.yml')
+  });
+  const md = await outputMarkdown(out, {});
+  expect(md).toMatchSnapshot();
+});
+
 test('multi-file input', async function() {
   const result = await documentation.build(
     [

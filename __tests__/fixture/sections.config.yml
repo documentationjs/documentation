@@ -1,0 +1,12 @@
+toc:
+  - name: Alpha
+    children:
+      - third
+      - first
+  - name: Bravo
+    description: Contains a subsection!
+    children:
+      - name: Charlie
+        description: Second is in here
+        children:
+          - second
