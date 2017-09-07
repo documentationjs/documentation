@@ -6,20 +6,18 @@ var opts = {
   allowImportExportEverywhere: true,
   sourceType: 'module',
   plugins: [
-    'jsx',
-    'flow',
-    'asyncFunctions',
-    'classConstructorCall',
-    'doExpressions',
-    'trailingFunctionCommas',
-    'objectRestSpread',
-    'decorators',
-    'classProperties',
-    'exportExtensions',
-    'exponentiationOperator',
     'asyncGenerators',
+    'classConstructorCall',
+    'classProperties',
+    'decorators',
+    'doExpressions',
+    'exportExtensions',
+    'flow',
     'functionBind',
-    'functionSent'
+    'functionSent',
+    'jsx',
+    'objectRestSpread',
+    'dynamicImport'
   ]
 };
 
