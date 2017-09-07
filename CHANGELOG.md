@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.1"></a>
+## [5.3.1](https://github.com/documentationjs/documentation/compare/v5.3.0...v5.3.1) (2017-09-07)
+
+
+### Bug Fixes
+
+* cover more hideconstructor cases ([5bdbf1f](https://github.com/documentationjs/documentation/commit/5bdbf1f))
+* Enable dynamicImport plugin to support import() syntax ([#903](https://github.com/documentationjs/documentation/issues/903)) ([b97241f](https://github.com/documentationjs/documentation/commit/b97241f)), closes [#902](https://github.com/documentationjs/documentation/issues/902)
+* regression in toc causing crash ([125a577](https://github.com/documentationjs/documentation/commit/125a577))
+
+
+
 <a name="5.3.0"></a>
 # [5.3.0](https://github.com/documentationjs/documentation/compare/v5.2.2...v5.3.0) (2017-09-04)
 
