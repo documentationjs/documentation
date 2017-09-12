@@ -59,7 +59,7 @@
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
     "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-jest": "^21.0.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
