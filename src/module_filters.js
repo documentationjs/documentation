@@ -23,7 +23,7 @@ module.exports = {
    * @param {Array<string>} indexes - the list of entry points that will be
    * used by module-deps
    * @param {Object} options - An options object with `external` being a
-   * micromatch-compaitible glob. *NOTE:* the glob will be matched relative to
+   * micromatch-compatible glob. *NOTE:* the glob will be matched relative to
    * the top-level node_modules directory for each entry point.
    * @returns {function} - A function for use as the module-deps `postFilter`
    * options.
