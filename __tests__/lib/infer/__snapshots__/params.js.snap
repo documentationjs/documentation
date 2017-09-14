@@ -32,6 +32,52 @@ Array [
 exports[`inferParams 2`] = `
 Array [
   Object {
+    "anonymous": true,
+    "name": "$0",
+    "properties": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "$0.0",
+        "title": "param",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "lineNumber": 1,
+        "name": "$0.1",
+        "title": "param",
+      },
+      Object {
+        "anonymous": true,
+        "name": "$0.2",
+        "properties": Array [
+          Object {
+            "lineNumber": 1,
+            "name": "$0.2.c",
+            "title": "param",
+          },
+        ],
+        "title": "param",
+        "type": Object {
+          "name": "Object",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Array",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 3`] = `
+Array [
+  Object {
     "description": Object {
       "children": Array [
         Object {
@@ -102,7 +148,7 @@ Array [
 ]
 `;
 
-exports[`inferParams 3`] = `
+exports[`inferParams 4`] = `
 Array [
   Object {
     "default": "4",
@@ -114,7 +160,7 @@ Array [
 ]
 `;
 
-exports[`inferParams 4`] = `
+exports[`inferParams 5`] = `
 Array [
   Object {
     "default": "4",
@@ -129,7 +175,7 @@ Array [
 ]
 `;
 
-exports[`inferParams 5`] = `
+exports[`inferParams 6`] = `
 Array [
   Object {
     "anonymous": true,
@@ -150,7 +196,7 @@ Array [
 ]
 `;
 
-exports[`inferParams 6`] = `
+exports[`inferParams 7`] = `
 Array [
   Object {
     "anonymous": true,

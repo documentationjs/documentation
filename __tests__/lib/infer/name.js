@@ -64,6 +64,18 @@ test('inferName', function() {
 
   expect(
     evaluate(function() {
+      exports = {
+        // Property
+        //   Identifier (comment attached here)
+        //   FunctionExpression
+        /** Test */
+        name() {}
+      };
+    }).name
+  ).toBe('name');
+
+  expect(
+    evaluate(function() {
       /** Test */
       function name() {}
     }).name
