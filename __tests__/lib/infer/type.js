@@ -40,6 +40,28 @@ test('inferType', function() {
     type: 'TypeApplication'
   });
 
+  expect(evaluate('/** */' + "type V = {a:number,'b':string}").type).toEqual({
+    fields: [
+      {
+        key: 'a',
+        type: 'FieldType',
+        value: {
+          name: 'number',
+          type: 'NameExpression'
+        }
+      },
+      {
+        key: 'b',
+        type: 'FieldType',
+        value: {
+          name: 'string',
+          type: 'NameExpression'
+        }
+      }
+    ],
+    type: 'RecordType'
+  });
+
   expect(evaluate('/** */' + 'type V = Array<T>').type).toEqual({
     applications: [
       {
