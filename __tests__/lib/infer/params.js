@@ -94,6 +94,10 @@ test('inferParams', function() {
   ).toMatchSnapshot();
 
   expect(
+    evaluate(`/** Test */function f([a: string, b, {c}]) {};`).params
+  ).toMatchSnapshot();
+
+  expect(
     evaluate(
       `
     /**
