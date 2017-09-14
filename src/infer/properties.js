@@ -12,6 +12,7 @@ function prefixedName(name, prefix) {
 
 function propertyToDoc(property, prefix): CommentTag {
   var type = flowDoctrine(property.value);
+  var name = property.key.name || property.key.value
   if (property.optional) {
     type = {
       type: 'OptionalType',
@@ -20,7 +21,7 @@ function propertyToDoc(property, prefix): CommentTag {
   }
   return {
     title: 'property',
-    name: prefixedName(property.key.name, prefix),
+    name: prefixedName(name, prefix),
     lineNumber: property.loc.start.line,
     type
   };

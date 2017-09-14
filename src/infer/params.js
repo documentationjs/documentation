@@ -197,8 +197,8 @@ function paramToDoc(
       });
     }
     case 'ObjectProperty': {
-      return _.assign(paramToDoc(param.value, prefix + '.' + param.key.name), {
-        name: prefix + '.' + param.key.name
+      return _.assign(paramToDoc(param.value, prefix + '.' + param.key.name || param.key.value), {
+        name: prefix + '.' + param.key.name || param.key.value
       });
     }
     case 'RestProperty': // (a, ...b)
