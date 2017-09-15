@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.2"></a>
+## [5.3.2](https://github.com/documentationjs/documentation/compare/v5.3.1...v5.3.2) (2017-09-15)
+
+
+### Bug Fixes
+
+* special property names in flowtypes ([7fc6ca8](https://github.com/documentationjs/documentation/commit/7fc6ca8))
+
+
+
 <a name="5.3.1"></a>
 ## [5.3.1](https://github.com/documentationjs/documentation/compare/v5.3.0...v5.3.1) (2017-09-07)
 
