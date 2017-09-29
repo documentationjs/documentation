@@ -19,10 +19,13 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
     return sortComments(comments, options && options.sortOrder);
   }
   let i = 0;
-  const indexes: { [?string]: number } = Object.create(null);
-  const toBeSorted: { [?string]: boolean } = Object.create(null);
+  const indexes: { [?string]: number, __proto__: null } = Object.create(null);
+  const toBeSorted: { [?string]: boolean, __proto__: null } = Object.create(
+    null
+  );
   const paths: {
-    [?string]: Array<{ scope: Scope, name: string }>
+    [?string]: Array<{ scope: Scope, name: string }>,
+    __proto__: null
   } = Object.create(null);
   const fixed = [];
   const walk = function(tocPath, val) {

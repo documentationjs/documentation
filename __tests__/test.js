@@ -32,6 +32,7 @@ function readOptionsFromFile(file) {
 
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', async function() {
+    jest.setTimeout(10000); // 10 second timeout. After update flow.js on 0.56 version the test is executed more time.
     var file = path.join(__dirname, './fixture/simple.input.js');
     const result = await documentation.build([file], { github: true });
     normalize(result);
