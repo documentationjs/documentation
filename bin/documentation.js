@@ -6,6 +6,7 @@ var yargs = require('yargs');
 var commands = require('../lib/commands');
 
 var argv = yargs
+  .strict()
   .command(commands.serve)
   .command(commands.build)
   .command(commands.lint)
@@ -19,9 +20,8 @@ var argv = yargs
       return yargs.exit(1);
     }
   })
-  .version(function() {
-    return require('../package').version;
-  })
+  .example('documentation build foo.js -f md > API.md')
+  .version()
   .usage(
     `Usage:
 

@@ -23,9 +23,9 @@ module.exports.builder = _.assign(
   sharedOptions.sharedOutputOptions,
   sharedOptions.sharedInputOptions,
   {
-    example: 'documentation build foo.js -f md > API.md',
     output: {
-      describe: 'output location. omit for stdout, otherwise is a filename ' +
+      describe:
+        'output location. omit for stdout, otherwise is a filename ' +
         'for single-file outputs and a directory name for multi-file outputs like html',
       default: 'stdout',
       alias: 'o'

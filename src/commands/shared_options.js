@@ -4,11 +4,10 @@
  * Adds shared options to any command that runs documentation
  */
 module.exports.sharedInputOptions = {
-  strict: true,
   shallow: {
     describe:
       'shallow mode turns off dependency resolution, ' +
-        'only processing the specified files (or the main script specified in package.json)',
+      'only processing the specified files (or the main script specified in package.json)',
     default: false,
     type: 'boolean'
   },
@@ -27,13 +26,13 @@ module.exports.sharedInputOptions = {
   external: {
     describe:
       'a string / glob match pattern that defines which external ' +
-        'modules will be whitelisted and included in the generated documentation.',
+      'modules will be whitelisted and included in the generated documentation.',
     default: null
   },
   'require-extension': {
     describe:
       "additional extensions to include in require() and import's search algorithm." +
-        'For instance, adding .es5 would allow require("adder") to find "adder.es5"',
+      'For instance, adding .es5 would allow require("adder") to find "adder.es5"',
     // Ensure that the value is an array
     coerce: (value: string | Array<string>) => [].concat(value),
     alias: 're'
@@ -53,8 +52,8 @@ module.exports.sharedInputOptions = {
   access: {
     describe:
       'Include only comments with a given access level, out of private, ' +
-        'protected, public, undefined. By default, public, protected, and undefined access ' +
-        'levels are included',
+      'protected, public, undefined. By default, public, protected, and undefined access ' +
+      'levels are included',
     choices: ['public', 'private', 'protected', 'undefined'],
     array: true,
     alias: 'a'
@@ -68,13 +67,13 @@ module.exports.sharedInputOptions = {
     type: 'string',
     describe:
       'Infer private access based on the name. This is a regular expression that ' +
-        'is used to match the name'
+      'is used to match the name'
   },
   'document-exported': {
     type: 'boolean',
     describe:
       'Generate documentation for all exported bindings and members ' +
-        'even if there is no JSDoc for them',
+      'even if there is no JSDoc for them',
     default: false
   },
   'sort-order': {

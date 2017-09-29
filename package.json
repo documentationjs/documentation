@@ -54,7 +54,7 @@
     "vfile-sort": "^2.0.0",
     "vinyl": "^2.0.0",
     "vinyl-fs": "^2.3.1",
-    "yargs": "^6.0.1"
+    "yargs": "^9.0.1"
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
@@ -137,8 +137,7 @@
   },
   "greenkeeper": {
     "ignore": [
-      "remote-origin-url",
-      "yargs"
+      "remote-origin-url"
     ]
   }
 }
