@@ -137,7 +137,8 @@
   },
   "greenkeeper": {
     "ignore": [
-      "remote-origin-url"
+      "remote-origin-url",
+      "mime"
     ]
   }
 }
