@@ -1,7 +1,7 @@
-var walk = require('../../src/walk');
+var walk = require('../../src/walk').walk;
 
-test('walk', function() {
-  test('flat comments', function(t) {
+describe('walk', function() {
+  test('flat comments', function() {
     var comments = [{ name: 'Tom' }];
 
     function renamer(comment, options) {
@@ -19,7 +19,7 @@ test('walk', function() {
     ]);
   });
 
-  test('nested comments', function(t) {
+  test('nested comments', function() {
     var comments = [
       {
         name: 'Tom',

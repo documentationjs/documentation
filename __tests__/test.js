@@ -113,11 +113,12 @@ describe('outputs', function() {
   glob
     .sync(path.join(__dirname, 'fixture', '*.input.js'))
     .forEach(function(file) {
-      test(path.basename(file), async function() {
-        const result = await documentation.build(
-          [file],
-          readOptionsFromFile(file)
-        );
+      describe(path.basename(file), async function() {
+        let result = null;
+        beforeEach(async function() {
+          result = await documentation.build([file], readOptionsFromFile(file));
+        });
+
         test('markdown', async function() {
           const md = await outputMarkdown(_.cloneDeep(result), {
             markdownToc: true

@@ -123,7 +123,7 @@ test('extension option', function() {
   return documentation(['build fixture/extension.jsx']);
 });
 
-test('invalid arguments', function() {
+describe('invalid arguments', function() {
   test('bad -f option', async function() {
     try {
       await documentation(
@@ -136,10 +136,10 @@ test('invalid arguments', function() {
     }
   });
 
-  test('html with no destination', function() {
-    return documentation(['build -f html fixture/internal.input.js'], function(
-      err
-    ) {
+  test('html with no destination', async function() {
+    try {
+      await documentation(['build -f html fixture/internal.input.js']);
+    } catch (err) {
       expect(
         err
           .toString()
@@ -147,7 +147,7 @@ test('invalid arguments', function() {
             /The HTML output mode requires a destination directory set with -o/
           )
       ).toBeTruthy();
-    });
+    }
   });
 
   test('bad command', async function() {
