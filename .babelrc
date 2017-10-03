@@ -1,5 +1,13 @@
 {
-  "presets": ["es2015", "stage-0", "flow"],
+  "presets": [
+    ["env", {
+      "targets": {
+      "node": 4
+      },
+      "include": ["transform-regenerator"]
+    }],
+    "flow"
+  ],
   "plugins": ["syntax-async-functions"],
   "ignore": [
       "**/default_theme/assets/*"
