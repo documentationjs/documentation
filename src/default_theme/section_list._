@@ -11,7 +11,8 @@
         <%= renderSection({
           section: member,
           renderSection: renderSection,
-	  nested: true
+          renderParamProperty: renderParamProperty,
+     	  nested: true
         }) %>
       </div>
     </div>

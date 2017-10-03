@@ -97,7 +97,8 @@
             <%= renderSection({
               section: s,
               renderSection: renderSection,
-              renderSectionList: renderSectionList
+              renderSectionList: renderSectionList,
+              renderParamProperty: renderParamProperty
             }) %>
           <% } else { %>
             <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>

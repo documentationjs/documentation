@@ -22,12 +22,13 @@ module.exports = function(
   comments: Array<Comment>,
   config: DocumentationConfig
 ) {
-  var linkerStack = new LinkerStack(
-    config
-  ).namespaceResolver(comments, function(namespace) {
-    var slugger = new GithubSlugger();
-    return '#' + slugger.slug(namespace);
-  });
+  var linkerStack = new LinkerStack(config).namespaceResolver(
+    comments,
+    function(namespace) {
+      var slugger = new GithubSlugger();
+      return '#' + slugger.slug(namespace);
+    }
+  );
 
   var formatters = createFormatters(linkerStack.link);
 
@@ -96,6 +97,10 @@ module.exports = function(
   );
   sharedImports.imports.renderNote = _.template(
     fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'),
+    sharedImports
+  );
+  sharedImports.imports.renderParamProperty = _.template(
+    fs.readFileSync(path.join(__dirname, 'paramProperty._'), 'utf8'),
     sharedImports
   );
 
