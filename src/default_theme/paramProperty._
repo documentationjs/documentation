@@ -4,12 +4,12 @@
     (default <code><%- property.default %></code>)
   <% } %></td>
   <td class='break-word'><span><%= md(property.description, true) %></span></td>
-  <% if(property.properties && property.properties.length) { %>
-    <% property.properties.forEach(function(childProperty) { %>
-        <%= renderParamProperty({
-            property: childProperty,
-            renderParamProperty: renderParamProperty
-        }) %>
-    <% }) %>
-  <% } %>
 </tr>
+<% if(property.properties && property.properties.length) { %>
+  <% property.properties.forEach(function(childProperty) { %>
+    <%= renderParamProperty({
+      property: childProperty,
+      renderParamProperty: renderParamProperty
+    }) %>
+  <% }) %>
+<% } %>
