@@ -27,6 +27,15 @@ Klass.prototype.getFoo = function() {
 Klass.prototype.withOptions = function(options, otherOptions) {};
 
 /**
+ * A function with a deep options parameter
+ * @param {Object} options
+ * @param {string} options.foo
+ * @param {Object} options.bar
+ * @param {string} options.bar.buz
+ */
+Klass.prototype.withDeepOptions = function(options) {};
+
+/**
  * @typedef CustomError
  * @name CustomError
  * @description a typedef with nested properties

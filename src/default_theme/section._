@@ -66,13 +66,10 @@
             </thead>
             <tbody class='mt1'>
               <% param.properties.forEach(function(property) { %>
-                <tr>
-                  <td class='break-word'><span class='code bold'><%- property.name %></span> <code class='quiet'><%= formatType(property.type) %></code>
-                  <% if (property.default) { %>
-                    (default <code><%- property.default %></code>)
-                  <% } %></td>
-                  <td class='break-word'><span><%= md(property.description, true) %></span></td>
-                </tr>
+                <%= renderParamProperty({
+                  property: property,
+                  renderParamProperty: renderParamProperty
+                }) %>
               <% }) %>
             </tbody>
           </table>
@@ -137,16 +134,16 @@
 
   <% if (section.members.static && section.members.static.length) { %>
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <%= renderSectionList({ members: section.members.static, renderSection: renderSection, noun: 'Static Member' }) %>
+    <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Static Member' }) %>
   <% } %>
 
   <% if (section.members.instance && section.members.instance.length) { %>
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
-    <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, noun: 'Instance Member' }) %>
+    <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
   <% } %>
 
   <% if (section.members.events && section.members.events.length) { %>
     <div class='py1 quiet mt1 prose-big'>Events</div>
-    <%= renderSectionList({ members: section.members.events, renderSection: renderSection, noun: 'Event' }) %>
+    <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
   <% } %>
 </section>
