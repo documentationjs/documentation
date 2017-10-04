@@ -38,7 +38,7 @@ function dependencyStream(
         sourceMap: false,
         compact: false,
         presets: [
-          require('babel-preset-es2015'),
+          require('babel-preset-env'),
           require('babel-preset-stage-0'),
           require('babel-preset-react')
         ],
