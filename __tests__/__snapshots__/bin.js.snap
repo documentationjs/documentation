@@ -97,6 +97,12 @@ exports[`--config 1`] = `
                         #withOptions
                       </a></li>
                       
+                      <li><a
+                        href='#klasswithdeepoptions'
+                        class='regular pre-open'>
+                        #withDeepOptions
+                      </a></li>
+                      
                     </ul>
                   
                   
@@ -773,16 +779,20 @@ k.isArrayOfBuffers();</pre>
             <tbody class='mt1'>
               
                 <tr>
-                  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
-                  </td>
-                  <td class='break-word'><span></span></td>
-                </tr>
+  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
               
                 <tr>
-                  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>
-                  </td>
-                  <td class='break-word'><span></span></td>
-                </tr>
+  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
               
             </tbody>
           </table>
@@ -794,6 +804,107 @@ k.isArrayOfBuffers();</pre>
             <span class='code bold'>otherOptions</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</code>
 	    
           </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='klasswithdeepoptions'>
+      <div class=\\"clearfix small pointer toggle-sibling\\">
+        <div class=\\"py1 contain\\">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>withDeepOptions(options)</span>
+        </div>
+      </div>
+      <div class=\\"clearfix display-none toggle-target\\">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>A function with a deep options parameter</p>
+
+
+  <div class='pre p1 fill-light mt0'>withDeepOptions(options: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
+              
+                <tr>
+  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a></code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+  
+    <tr>
+  <td class='break-word'><span class='code bold'>options.bar.buz</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  </td>
+  <td class='break-word'><span></span></td>
+</tr>
+
+
+  
+
+
+              
+            </tbody>
+          </table>
           
         </div>
       
