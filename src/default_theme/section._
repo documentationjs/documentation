@@ -66,8 +66,9 @@
             </thead>
             <tbody class='mt1'>
               <% param.properties.forEach(function(property) { %>
-                <%- renderParamProperty({
-                  property: property
+                <%= renderParamProperty({
+                  property: property,
+                  renderParamProperty: renderParamProperty
                 }) %>
               <% }) %>
             </tbody>
