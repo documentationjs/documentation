@@ -1,6 +1,6 @@
 # Getting Started
 
-`documentation` is a **documentation generator**. It's used to generates documentation from
+`documentation` is a **documentation generator**. It's used to generate documentation from
 comments _within your code_. `documentation` processes JavaScript comments
 in the JSDoc format. 
 
