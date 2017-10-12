@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.3"></a>
+## [5.3.3](https://github.com/documentationjs/documentation/compare/v5.3.2...v5.3.3) (2017-10-12)
+
+
+### Bug Fixes
+
+* **html:** Display all levels of parameter properties. ([#933](https://github.com/documentationjs/documentation/issues/933)) ([7a548eb](https://github.com/documentationjs/documentation/commit/7a548eb))
+* **package:** update github-slugger to version 1.2.0 ([2b74956](https://github.com/documentationjs/documentation/commit/2b74956))
+* Fix the split in HTML at 33/67% instead of calculating percentages ([#939](https://github.com/documentationjs/documentation/issues/939)) ([e4781eb](https://github.com/documentationjs/documentation/commit/e4781eb)), closes [#927](https://github.com/documentationjs/documentation/issues/927)
+
+
+
 <a name="5.3.2"></a>
 ## [5.3.2](https://github.com/documentationjs/documentation/compare/v5.3.1...v5.3.2) (2017-09-15)
 
