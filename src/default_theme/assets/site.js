@@ -113,15 +113,6 @@ split_left.style.overflow = 'hidden';
 var cw_without_sb = split_left.clientWidth;
 split_left.style.overflow = '';
 
-// Need to add:
-// - Half of gutterSize (i.e. 10) because gutter will take that much from each.
-// - Scrollbar width (cw_with_sb - cw_without_sb), if it takes up existing
-//   space (Firefox) rather than adding the scrollbar to the side (Chrome)
-var percent_left =
-  (split_left.getBoundingClientRect().width + 10 + cw_without_sb - cw_with_sb) /
-  split_parent.getBoundingClientRect().width *
-  100;
-
 Split(['#split-left', '#split-right'], {
   elementStyle: function(dimension, size, gutterSize) {
     return {
@@ -134,7 +125,7 @@ Split(['#split-left', '#split-right'], {
     };
   },
   gutterSize: 20,
-  sizes: [percent_left, 100 - percent_left]
+  sizes: [33, 67]
 });
 
 // Chrome doesn't remember scroll position properly so do it ourselves.
