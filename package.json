@@ -17,7 +17,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-traverse": "^6.16.0",
     "babel-types": "^6.16.0",
-    "babelify": "^7.3.0",
+    "babelify": "^8.0.0",
     "babylon": "^6.17.2",
     "chalk": "^2.0.0",
     "chokidar": "^1.2.0",
