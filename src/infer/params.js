@@ -105,6 +105,16 @@ function paramToDoc(
   const autoName = '$' + String(i);
   const prefixedName = prefix + '.' + param.name;
 
+  if (param.typeAnnotation) {
+    return {
+      title: 'param',
+      name: prefix ? prefixedName : param.name,
+      anonymous: true,
+      lineNumber: param.loc.start.line,
+      type: flowDoctrine(param)
+    };
+  }
+
   switch (param.type) {
     case 'AssignmentPattern': {
       // (a = b)
@@ -131,7 +141,7 @@ function paramToDoc(
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -147,7 +157,7 @@ function paramToDoc(
           title: 'param',
           name: prefixedName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -171,7 +181,7 @@ function paramToDoc(
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: {
             type: 'NameExpression',
             name: 'Array'
           },
@@ -206,9 +216,6 @@ function paramToDoc(
       let type: DoctrineType = {
         type: 'RestType'
       };
-      if (param.typeAnnotation) {
-        type.expression = flowDoctrine(param.typeAnnotation.typeAnnotation);
-      }
       return {
         title: 'param',
         name: prefix ? `${prefix}.${param.argument.name}` : param.argument.name,
@@ -223,11 +230,6 @@ function paramToDoc(
         name: prefix ? prefixedName : param.name,
         lineNumber: param.loc.start.line
       };
-
-      // Flow/TS annotations
-      if (param.typeAnnotation && param.typeAnnotation.typeAnnotation) {
-        newParam.type = flowDoctrine(param.typeAnnotation.typeAnnotation);
-      }
 
       return newParam;
     }
