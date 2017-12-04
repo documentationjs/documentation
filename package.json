@@ -40,7 +40,7 @@
     "pify": "^3.0.0",
     "read-pkg-up": "^3.0.0",
     "remark": "^8.0.0",
-    "remark-html": "6.0.1",
+    "remark-html": "7.0.0",
     "remark-toc": "^4.0.0",
     "remote-origin-url": "0.4.0",
     "shelljs": "^0.7.5",
