@@ -28,7 +28,7 @@
     "git-url-parse": "^6.0.1",
     "github-slugger": "1.2.0",
     "glob": "^7.0.0",
-    "globals-docs": "^2.3.0",
+    "globals-docs": "^2.3.1",
     "highlight.js": "^9.1.0",
     "js-yaml": "^3.8.4",
     "lodash": "^4.11.1",
