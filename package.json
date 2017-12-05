@@ -53,7 +53,7 @@
     "vfile-reporter": "^4.0.0",
     "vfile-sort": "^2.0.0",
     "vinyl": "^2.0.0",
-    "vinyl-fs": "^2.3.1",
+    "vinyl-fs": "^3.0.0",
     "yargs": "^9.0.1"
   },
   "devDependencies": {
