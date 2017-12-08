@@ -17,10 +17,6 @@ module.exports.description = 'inject documentation into your README.md';
  * @private
  */
 module.exports.builder = {
-  usage:
-    'Usage: documentation readme [--readme-file=README.md] --section "API"' +
-    ' [--compare-only] [other documentationjs options]',
-  example: 'documentation readme index.js -s "API Docs" --github',
   'readme-file': {
     describe: 'The markdown file into which to inject documentation',
     default: 'README.md'

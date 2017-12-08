@@ -21,6 +21,7 @@ var argv = yargs
     }
   })
   .example('documentation build foo.js -f md > API.md')
+  .example('documentation readme index.js -s "API Docs" --github')
   .version()
   .usage(
     `Usage:
