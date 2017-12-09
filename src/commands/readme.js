@@ -8,7 +8,6 @@ var sharedOptions = require('./shared_options');
 var inject = require('mdast-util-inject');
 var chalk = require('chalk');
 var disparity = require('disparity');
-var _ = require('lodash');
 
 module.exports.command = 'readme [input..]';
 module.exports.description = 'inject documentation into your README.md';
@@ -19,7 +18,7 @@ module.exports.description = 'inject documentation into your README.md';
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = _.assign(
+module.exports.builder = Object.assign(
   {},
   sharedOptions.sharedOutputOptions,
   sharedOptions.sharedInputOptions,

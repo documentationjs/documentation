@@ -55,7 +55,7 @@ function inferAndCombineParams(params, comment) {
   var mergedParamsAndErrors = mergeTrees(inferredParams, comment.params);
 
   // Then merge the trees. This is the hard part.
-  return _.assign(comment, {
+  return Object.assign(comment, {
     params: mergedParamsAndErrors.mergedParams,
     errors: comment.errors.concat(mergedParamsAndErrors.errors)
   });
@@ -114,7 +114,7 @@ function paramToDoc(
         throw new Error('Encountered an unexpected parameter type');
       }
 
-      return _.assign(newAssignmentParam, {
+      return Object.assign(newAssignmentParam, {
         default: generate(param.right, {
           compact: true
         }).code,
@@ -181,7 +181,7 @@ function paramToDoc(
           // instead we're going to (immutably) rename the parameters to their
           // indices
           properties: _.flatMap(param.elements, (element, idx) => {
-            var indexedElement = _.assign({}, element, {
+            var indexedElement = Object.assign({}, element, {
               name: String(idx),
               indexed: true
             });
@@ -190,16 +190,22 @@ function paramToDoc(
         };
       }
       return _.flatMap(param.elements, (element, idx) => {
-        var indexedElement = _.assign({}, element, {
+        var indexedElement = Object.assign({}, element, {
           name: String(idx)
         });
         return paramToDoc(indexedElement, prefix);
       });
     }
     case 'ObjectProperty': {
-      return _.assign(paramToDoc(param.value, prefix + '.' + param.key.name || param.key.value), {
-        name: prefix + '.' + param.key.name || param.key.value
-      });
+      return Object.assign(
+        paramToDoc(
+          param.value,
+          prefix + '.' + param.key.name || param.key.value
+        ),
+        {
+          name: prefix + '.' + param.key.name || param.key.value
+        }
+      );
     }
     case 'RestProperty': // (a, ...b)
     case 'RestElement': {
@@ -342,7 +348,7 @@ function combineTags(inferredTag, explicitTag) {
     (inferredTag.properties && inferredTag.properties.length) ||
     (explicitTag.properties && explicitTag.properties.length);
 
-  return _.assign(
+  return Object.assign(
     explicitTag,
     hasProperties
       ? {
