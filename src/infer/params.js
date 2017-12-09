@@ -198,10 +198,10 @@ function paramToDoc(
     }
     case 'ObjectProperty': {
       return Object.assign(
-        paramToDoc(
+        ((paramToDoc(
           param.value,
           prefix + '.' + param.key.name || param.key.value
-        ),
+        ): any): CommentTag),
         {
           name: prefix + '.' + param.key.name || param.key.value
         }
