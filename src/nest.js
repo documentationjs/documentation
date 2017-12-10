@@ -46,7 +46,7 @@ var nestTag = (
         // get to this case because the recursive method
         // is always passed parts.slice(1)
         if (parts.length === 1) {
-          _.assign(node, {
+          Object.assign(node, {
             properties: (node.properties || []).concat(tag)
           });
         } else {
@@ -62,7 +62,9 @@ var nestTag = (
             if (tag.name.match(/^(\$\d+)/)) {
               errors.push({
                 message:
-                  `Parent of ${tag.name} not found. To document a destructuring\n` +
+                  `Parent of ${
+                    tag.name
+                  } not found. To document a destructuring\n` +
                   `type, add a @param tag in its position to specify the name of the\n` +
                   `destructured parameter`,
                 commentLineNumber: tag.lineNumber

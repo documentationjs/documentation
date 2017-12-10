@@ -4,46 +4,49 @@ var fs = require('fs');
 var remark = require('remark');
 var path = require('path');
 var documentation = require('../');
+var sharedOptions = require('./shared_options');
 var inject = require('mdast-util-inject');
 var chalk = require('chalk');
 var disparity = require('disparity');
 
 module.exports.command = 'readme [input..]';
 module.exports.description = 'inject documentation into your README.md';
+
 /**
  * Add yargs parsing for the readme command
  * @param {Object} yargs module instance
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = {
-  usage:
-    'Usage: documentation readme [--readme-file=README.md] --section "API"' +
-    ' [--compare-only] [other documentationjs options]',
-  example: 'documentation readme index.js -s "API Docs" --github',
-  'readme-file': {
-    describe: 'The markdown file into which to inject documentation',
-    default: 'README.md'
-  },
-  section: {
-    alias: 's',
-    describe:
-      'The section heading after which to inject generated documentation',
-    required: true
-  },
-  'diff-only': {
-    alias: 'd',
-    describe:
-      'Instead of updating the given README with the generated documentation,' +
-      ' just check if its contents match, exiting nonzero if not.',
-    default: false
-  },
-  quiet: {
-    alias: 'q',
-    describe: 'Quiet mode: do not print messages or README diff to stdout.',
-    default: false
+module.exports.builder = Object.assign(
+  {},
+  sharedOptions.sharedOutputOptions,
+  sharedOptions.sharedInputOptions,
+  {
+    'readme-file': {
+      describe: 'The markdown file into which to inject documentation',
+      default: 'README.md'
+    },
+    section: {
+      alias: 's',
+      describe:
+        'The section heading after which to inject generated documentation',
+      required: true
+    },
+    'diff-only': {
+      alias: 'd',
+      describe:
+        'Instead of updating the given README with the generated documentation,' +
+        ' just check if its contents match, exiting nonzero if not.',
+      default: false
+    },
+    quiet: {
+      alias: 'q',
+      describe: 'Quiet mode: do not print messages or README diff to stdout.',
+      default: false
+    }
   }
-};
+);
 
 /**
  * Insert API documentation into a Markdown readme

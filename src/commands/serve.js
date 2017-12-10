@@ -18,7 +18,7 @@ module.exports.description = 'generate, update, and display HTML documentation';
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = _.assign(
+module.exports.builder = Object.assign(
   {},
   sharedOptions.sharedOutputOptions,
   sharedOptions.sharedInputOptions,
