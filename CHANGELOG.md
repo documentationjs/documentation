@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.5"></a>
+## [5.3.5](https://github.com/documentationjs/documentation/compare/v5.3.4...v5.3.5) (2017-12-12)
+
+
+### Bug Fixes
+
+* **globals-docs:** Remove en-US from MDN links. ([#973](https://github.com/documentationjs/documentation/issues/973)) ([aa661ff](https://github.com/documentationjs/documentation/commit/aa661ff)), closes [#964](https://github.com/documentationjs/documentation/issues/964)
+
+
+
 <a name="5.3.4"></a>
 ## [5.3.4](https://github.com/documentationjs/documentation/compare/v5.3.3...v5.3.4) (2017-12-12)
 
