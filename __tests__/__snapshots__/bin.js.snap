@@ -5,7 +5,7 @@ exports[`--config 1`] = `
 <html>
 <head>
   <meta charset='utf-8' />
-  <title>documentation 5.3.3 | Documentation</title>
+  <title>documentation 5.3.4 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
@@ -17,7 +17,7 @@ exports[`--config 1`] = `
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>documentation</h3>
-          <div class='mb1'><code>5.3.3</code></div>
+          <div class='mb1'><code>5.3.4</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -334,7 +334,7 @@ This is a [klasssic]<a href=\\"#klass\\">Klass</a>
 This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</a></p>
 
 
-  <div class='pre p1 fill-light mt0'>isClass(other: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, also: any): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isClass(other: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, also: any): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
   
   
 
@@ -351,7 +351,7 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>other</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
+            <span class='code bold'>other</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
 	    
           </div>
           
@@ -373,7 +373,7 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -410,7 +410,7 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
 the referenced class type</p>
 
 
-  <div class='pre p1 fill-light mt0'>isWeird(other: Weird): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isWeird(other: Weird): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
   
   
 
@@ -441,7 +441,7 @@ the referenced class type</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -477,7 +477,7 @@ the referenced class type</p>
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
 
-  <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a> | <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>), size: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a> | <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>), size: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
   
   
 
@@ -494,7 +494,7 @@ the referenced class type</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>buf</span> <code class='quiet'>((<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a> | <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>))</code>
+            <span class='code bold'>buf</span> <code class='quiet'>((<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a> | <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>))</code>
 	    
           </div>
           
@@ -502,7 +502,7 @@ the referenced class type</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>size</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>
+            <span class='code bold'>size</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>
             = <code>0</code>)</code>
 	    size
 
@@ -518,7 +518,7 @@ the referenced class type</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></code>:
         whether the other thing is a Klass
 
       
@@ -554,7 +554,7 @@ the referenced class type</p>
   <p>This method takes an array of buffers and counts them</p>
 
 
-  <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\\">Array</a>&#x3C;<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a>>): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></div>
+  <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array\\">Array</a>&#x3C;<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a>>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></div>
   
   
 
@@ -571,7 +571,7 @@ the referenced class type</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>buffers</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\\">Array</a>&#x3C;<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a>>)</code>
+            <span class='code bold'>buffers</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array\\">Array</a>&#x3C;<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a>>)</code>
 	    some buffers
 
           </div>
@@ -586,7 +586,7 @@ the referenced class type</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>:
         how many
 
       
@@ -683,7 +683,7 @@ k.isArrayOfBuffers();</pre>
   <p>Get this Klass's foo</p>
 
 
-  <div class='pre p1 fill-light mt0'>getFoo(): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a></div>
+  <div class='pre p1 fill-light mt0'>getFoo(): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a></div>
   
   
 
@@ -701,7 +701,7 @@ k.isArrayOfBuffers();</pre>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a></code>:
         foo
 
       
@@ -744,7 +744,7 @@ k.isArrayOfBuffers();</pre>
   <p>A function with an options parameter</p>
 
 
-  <div class='pre p1 fill-light mt0'>withOptions(options: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, otherOptions: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</div>
+  <div class='pre p1 fill-light mt0'>withOptions(options: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, otherOptions: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</div>
   
   
 
@@ -761,7 +761,7 @@ k.isArrayOfBuffers();</pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
 	    
           </div>
           
@@ -779,7 +779,7 @@ k.isArrayOfBuffers();</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -787,7 +787,7 @@ k.isArrayOfBuffers();</pre>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>
+  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -801,7 +801,7 @@ k.isArrayOfBuffers();</pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>otherOptions</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</code>
+            <span class='code bold'>otherOptions</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</code>
 	    
           </div>
           
@@ -843,7 +843,7 @@ k.isArrayOfBuffers();</pre>
   <p>A function with a deep options parameter</p>
 
 
-  <div class='pre p1 fill-light mt0'>withDeepOptions(options: <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</div>
+  <div class='pre p1 fill-light mt0'>withDeepOptions(options: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</div>
   
   
 
@@ -860,7 +860,7 @@ k.isArrayOfBuffers();</pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</code>
 	    
           </div>
           
@@ -878,7 +878,7 @@ k.isArrayOfBuffers();</pre>
             <tbody class='mt1'>
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  <td class='break-word'><span class='code bold'>options.foo</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -886,14 +886,14 @@ k.isArrayOfBuffers();</pre>
 
               
                 <tr>
-  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a></code>
+  <td class='break-word'><span class='code bold'>options.bar</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a></code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
 
   
     <tr>
-  <td class='break-word'><span class='code bold'>options.bar.buz</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
+  <td class='break-word'><span class='code bold'>options.bar.buz</span> <code class='quiet'><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a></code>
   </td>
   <td class='break-word'><span></span></td>
 </tr>
@@ -1025,18 +1025,18 @@ k.isArrayOfBuffers();</pre>
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>error</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\\">object</a>)</code>
+          <span class='code bold'>error</span> <code class='quiet'>(<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">object</a>)</code>
           : An error
 
           
             <ul>
               
-                <li><code>error.code</code> <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>
+                <li><code>error.code</code> <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>
                   
                   <p>The error's code</p>
 </li>
               
-                <li><code>error.description</code> <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>
+                <li><code>error.description</code> <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>
                   
                   <p>The error's description</p>
 </li>
@@ -1137,7 +1137,7 @@ like a <a href=\\"#klass\\">klass</a></p>
   <p>Rest property function</p>
 
 
-  <div class='pre p1 fill-light mt0'>bar(toys: ...<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a>): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
+  <div class='pre p1 fill-light mt0'>bar(toys: ...<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
   
   
 
@@ -1154,7 +1154,7 @@ like a <a href=\\"#klass\\">klass</a></p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>toys</span> <code class='quiet'>(...<a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a>)</code>
+            <span class='code bold'>toys</span> <code class='quiet'>(...<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a>)</code>
 	    
           </div>
           
@@ -1168,7 +1168,7 @@ like a <a href=\\"#klass\\">klass</a></p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></code>:
         nothing
 
       
@@ -1204,10 +1204,10 @@ like a <a href=\\"#klass\\">klass</a></p>
 
   <p>Get an instance of <a href=\\"#klass\\">Klass</a>. Will make
 a <a href=\\"#klass\\">klass instance multiword</a>,
-like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a> input.</p>
+like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a> input.</p>
 
 
-  <div class='pre p1 fill-light mt0'>bar(): <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
+  <div class='pre p1 fill-light mt0'>bar(): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
   
   
 
@@ -1225,7 +1225,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></code>:
+      <code><a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></code>:
         nothing
 
       
@@ -1814,7 +1814,7 @@ exports[`build --document-exported 1`] = `
 
 **Parameters**
 
--   \`a\` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   \`a\` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ### classMethod
 
@@ -1838,7 +1838,7 @@ exports[`build --document-exported 1`] = `
 
 ## T5
 
-Type: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
 ## y2Default
 
@@ -1848,7 +1848,7 @@ Description of y3
 
 **Parameters**
 
--   \`p\` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   \`p\` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 Returns **void** 
 
@@ -1874,15 +1874,15 @@ Returns **void**
 
 ## T
 
-Type: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
 ## T2
 
-Type: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 ## T4
 
-Type: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 ## f4
 

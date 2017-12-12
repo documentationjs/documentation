@@ -23,47 +23,47 @@ test('formatType', function() {
     ['namedType.typeProperty', 'namedType.typeProperty'],
     [
       'Array|undefined',
-      '([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \\| [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined))'
+      '([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \\| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))'
     ],
     [
       'Array<number>',
-      '[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)>'
+      '[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)>'
     ],
     [
       'number!',
-      '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)!'
+      '[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)!'
     ],
     ["('pre'|'post')", '(`"pre"` \\| `"post"`)'],
     ["'pre'|'post'", '(`"pre"` \\| `"post"`)'],
     [
       'function(string, boolean)',
-      'function ([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean))'
+      'function ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean))'
     ],
     [
       'function(string, boolean): number',
-      'function ([string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)): [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'
+      'function ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)): [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)'
     ],
     ['function()', 'function ()'],
     [
       'function(this:something, string)',
-      'function (this: something, [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))'
+      'function (this: something, [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))'
     ],
     ['function(new:something)', 'function (new: something)'],
     [
       '{myNum: number, myObject}',
-      '{myNum: [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), myObject}'
+      '{myNum: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), myObject}'
     ],
     [
       '[string,]',
-      '\\[[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)]'
+      '\\[[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)]'
     ],
     [
       'number?',
-      '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
+      '[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
     ],
     [
       'number',
-      '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'
+      '[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)'
     ],
     ['?', '?'],
     ['void', 'void'],
@@ -71,15 +71,15 @@ test('formatType', function() {
     ['function(a):void', 'function (a): void'],
     [
       'number=',
-      '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
+      '[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
     ],
     [
       '...number',
-      '...[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)'
+      '...[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)'
     ],
     [
       'undefined',
-      '[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)'
+      '[undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)'
     ]
   ].forEach(function(example) {
     expect(
@@ -96,7 +96,7 @@ test('formatType', function() {
       formatType(parse('@param {number} [a=1]', { sloppy: true }).tags[0].type)
     )
   ).toEqual(
-    '[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
+    '[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?'
   );
 
   expect(
