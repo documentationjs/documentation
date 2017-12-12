@@ -20,7 +20,7 @@ A function with documentation.
 
 -   \`a\`  {string} blah
 
-Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** answer
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** answer
 
 ## bar
 
@@ -54,7 +54,7 @@ A function with documentation.
 
 -   \`a\`  {string} blah
 
-Returns **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** answer
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** answer
 
 ## bar
 

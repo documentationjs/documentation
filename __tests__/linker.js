@@ -4,7 +4,7 @@ test('linkerStack', function() {
   var linkerStack = new LinkerStack({});
 
   expect(linkerStack.link('string')).toBe(
-    'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+    'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String'
   );
 
   expect(
