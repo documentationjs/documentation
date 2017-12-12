@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.1
+    steps:
+      - checkout
+      - run:
+          name: install
+          command: yarn --frozen-lockfile
+      - run:
+          name: test
+          command: yarn test-ci
+      - run:
+          name: coverage
+          command: ./node_modules/.bin/coveralls < coverage/lcov.info
