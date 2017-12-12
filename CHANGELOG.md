@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.4"></a>
+## [5.3.4](https://github.com/documentationjs/documentation/compare/v5.3.3...v5.3.4) (2017-12-12)
+
+
+### Bug Fixes
+
+* **package:** update babelify to version 8.0.0 ([10dff6f](https://github.com/documentationjs/documentation/commit/10dff6f))
+* **package:** update read-pkg-up to version 3.0.0 ([d8fbf2c](https://github.com/documentationjs/documentation/commit/d8fbf2c))
+* **package:** update remark-html to version 7.0.0 ([9842814](https://github.com/documentationjs/documentation/commit/9842814))
+* **package:** update vinyl-fs to version 3.0.0 ([#966](https://github.com/documentationjs/documentation/issues/966)) ([1d6fe80](https://github.com/documentationjs/documentation/commit/1d6fe80))
+
+
+
 <a name="5.3.3"></a>
 ## [5.3.3](https://github.com/documentationjs/documentation/compare/v5.3.2...v5.3.3) (2017-10-12)
 
