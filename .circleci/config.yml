@@ -11,6 +11,6 @@ jobs:
       - run:
           name: test
           command: yarn test-ci
-      -run:
+      - run:
           name: coverage
           command: ./node_modules/.bin/coveralls < coverage/lcov.info
