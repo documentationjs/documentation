@@ -21,7 +21,7 @@ There are two main ways:
 
 ## How does `documentation` differ from JSDoc?
 
-JSDoc is both a **standard syntax for documentating code** and an
+JSDoc is both a **standard syntax for documenting code** and an
 application, also called `jsdoc`, that processes that syntax into documentation.
 
 `documentation` uses the JSDoc syntax and provides an alternative to the `jsdoc`
