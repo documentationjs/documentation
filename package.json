@@ -25,7 +25,7 @@
     "disparity": "^2.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-port": "^3.1.0",
-    "git-url-parse": "^6.0.1",
+    "git-url-parse": "^7.0.2",
     "github-slugger": "1.2.0",
     "glob": "^7.0.0",
     "globals-docs": "^2.4.0",
