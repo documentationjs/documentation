@@ -1,16 +1,36 @@
+workflows:
+  version: 2
+  node-multi-build:
+    jobs:
+      - node-v6
+      - node-v8
+      - node-latest
+
 version: 2
 jobs:
-  build:
+  node-base: &node-base
     docker:
-      - image: circleci/node:8.9.1
+      - image: node
     steps:
       - checkout
       - run:
-          name: install
+          name: Install dependencies
           command: yarn --frozen-lockfile
       - run:
-          name: test
+          name: Test
           command: yarn test-ci
       - run:
           name: coverage
           command: ./node_modules/.bin/coveralls < coverage/lcov.info
+  node-v6:
+    <<: *node-base
+    docker:
+      - image: node:6
+  node-v8:
+    <<: *node-base
+    docker:
+      - image: node:8
+  node-latest:
+    <<: *node-base
+    docker:
+      - image: node:latest
