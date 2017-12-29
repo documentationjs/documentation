@@ -20,7 +20,7 @@
     "babelify": "^8.0.0",
     "babylon": "^6.17.2",
     "chalk": "^2.0.0",
-    "chokidar": "^1.2.0",
+    "chokidar": "^2.0.0",
     "concat-stream": "^1.5.0",
     "disparity": "^2.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
