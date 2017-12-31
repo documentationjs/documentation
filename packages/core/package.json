@@ -1,0 +1,21 @@
+{
+  "name": "@documentation/core",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "rimraf lib",
+    "build": "babel -D src -d lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/plugin-syntax-function-bind": "^7.0.0-beta.36",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "@documentation/parser-js": "^1.0.0"
+  }
+}

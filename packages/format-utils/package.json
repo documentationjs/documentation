@@ -1,0 +1,17 @@
+{
+  "name": "@documentation/format-utils",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "babel -D src -d lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "globals-docs": "^2.4.0"
+  }
+}

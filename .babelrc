@@ -1,14 +1,16 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
-      "node": 4
-      },
-      "include": ["transform-regenerator"]
+        "node": "6.10"
+      }
     }],
-    "flow"
+    "@babel/preset-flow"
   ],
-  "plugins": ["syntax-async-functions"],
+  "plugins": [
+    "@babel/plugin-syntax-function-bind",
+    "transform-function-bind"
+  ],
   "ignore": [
       "**/default_theme/assets/*"
   ]
