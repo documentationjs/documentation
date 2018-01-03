@@ -3,7 +3,12 @@ const
 
 
 module.exports = (outputStream) => (files: Array<File>) => {
+
+  // console.log(typeof(outputStream), outputStream);
+
+  console.error("Stream output");
+
   return utils.streamArray(files)
-    .pipe(utils.stream.ExtractFileContentTransform)
+    .pipe(new utils.stream.ExtractFileContentTransform())
     .pipe(outputStream)
 }

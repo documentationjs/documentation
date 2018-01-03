@@ -130,10 +130,7 @@ function _addComment(
 
 module.exports = function (sourceFile: {source: string, file: string}, config: DocumentationConfig) {
     if (!sourceFile.source) {
-      console.error(sourceFile);
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
-
-    console.log("BEFORE");
     return parseJavaScript(sourceFile, config);
 }

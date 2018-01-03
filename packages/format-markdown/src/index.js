@@ -1,6 +1,9 @@
 /* @flow */
 
+import type { Comment } from 'documentation';
+
 var remark = require('remark'),
+  File = require('vinyl'),
   markdownAST = require('./ast');
 
 /**
@@ -23,13 +26,17 @@ var remark = require('remark'),
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(comments: Array<Comment>, args?: Object): Promise<string> {
-  if (!args) {
-    args = {};
-  }
-  return markdownAST(comments, args).then(ast => remark().stringify(ast));
+function markdown(comments: Array<Comment>, args?: Object = {}): Promise<Array<File>> {
+  return markdownAST(comments, args)
+    .then(ast => {
+      return [
+        new File({
+          path: 'docs.md',
+          contents: new Buffer(remark().stringify(ast))
+        })
+      ]
+    });
 }
 
-markdown._SUPPORTS_STDOUT__ = true;
 
 module.exports = markdown;

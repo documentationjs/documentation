@@ -29,12 +29,6 @@ const yargsCommandConfig = Object.assign({}, sharedConfig, {
 
 const buildCommand = function buildCommand(argv) {
 
-  process.on('unhandledRejection', function(reason, p){
-    console.error(reason);
-    process.exit(1);
-      // application specific logging here
-  });
-
   const args = cleanArgs(argv, yargsCommandConfig);
   args.input = argv.input;
 
@@ -56,17 +50,13 @@ const buildCommand = function buildCommand(argv) {
   const outputAdapter = getOutputAdapter(args);
 
 
-
   const docs = new DocumentationEngine();
   plugins.forEach(plugin => docs.use(plugin));
 
   return docs.parse(args.input, parseConfig)
-  .then(comments => {
-    console.log("Done", JSON.stringify(comments, null, 2));
-  })
-    // .then( comments => docs.format(comments, formatter))
-    // .then( files => docs.output(files, outputAdapter))
-   .catch( err => {
+    .then( comments => docs.format(comments, formatter))
+    .then( files => docs.output(files, outputAdapter))
+    .catch( err => {
       throw err;
     })
 
@@ -100,7 +90,7 @@ function getOutputAdapter(args) {
   if(args['output-dir']) {
     return FilesystemOutput({dir: args['output-dir'] })
   } else {
-    return TextStreamOutput(process.stdout);
+    return TextStreamOutput(process.stderr);
   }
 }
 

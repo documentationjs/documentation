@@ -1,30 +1,15 @@
 #!/usr/bin/env node
-
-// const
-//   DocumentationEngine = require('@documentation/core').Engine,
-//   JSONFormatter = require('@documentation/format-json');
-
-
-// const docs = new DocumentationEngine();
-
-
-// docs.parse(process.argv[2],{
-//   access: ['private']
-// })
-// .then( comments => docs.format(comments, JSONFormatter))
-// .then( files => {
-//   console.log("DONE", files);
-// })
-// .catch(err => {
-//   console.error(err);
-// })
-
-
-
 /* eslint no-console: 0 */
 
 var yargs = require('yargs');
 var commands = require('../lib/commands');
+
+
+process.on('unhandledRejection', function(reason, p){
+  console.error(reason);
+  process.exit(1);
+});
+
 
 var argv = yargs
   .strict()

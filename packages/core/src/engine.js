@@ -4,7 +4,23 @@ const
   fs = require('fs'),
   _ = require('lodash'),
   parseJsFile = require('@documentation/parser-js'),
-  PluginManager = require('./plugins');
+  PluginManager = require('./plugins'),
+  inferName = require('./infer/name'),
+  inferKind = require('./infer/kind'),
+  inferAugments = require('./infer/augments'),
+  inferParams = require('./infer/params'),
+  inferProperties = require('./infer/properties'),
+  inferMembership = require('./infer/membership'),
+  inferReturn = require('./infer/return'),
+  inferAccess = require('./infer/access'),
+  inferType = require('./infer/type'),
+  github = require('./infer/github'),
+  nest = require('./infer/nest'),
+  garbageCollect = require('./infer/garbage_collect'),
+  filterAccess = require('./js-parser/filter_access'),
+  hierarchy = require('./js-parser/hierarchy'),
+  sort = require('./js-parser/sort')
+  ;
 
 
 /**
@@ -12,7 +28,7 @@ const
  *
  *
  */
-module.exports = class DocumentationEngine {
+class DocumentationEngine {
 
   _plugins: PluginManager;
 
@@ -22,11 +38,14 @@ module.exports = class DocumentationEngine {
 
 
   /**
+   * Register a plugin that this engine should use.
    *
-   * @param {Plugin} plugin
+   * @param {Plugin} plugin The plugin to be registered
+   * @returns {DocumentationEngine} (`this`)
    */
-  use (plugin: Plugin) {
+  use (plugin: Plugin): DocumentationEngine {
     this._plugins.add(plugin);
+    return this;
   }
 
 
@@ -39,13 +58,18 @@ module.exports = class DocumentationEngine {
     const preparedConfig = await this::_validateParserConfig(config);
     const preparedInputFiles = await this::_prepareInputFiles(entrypoints);
 
-    const buildPipeline = (comment) => comment;
+    const buildPipeline = await this::_prepareBuildPipeline(config);
 
     let extractedComments = _.flatMap(
       preparedInputFiles.map(file => parseJsFile({file}, preparedConfig)))
-       .filter(Boolean)
-       .map(buildPipeline);
-    return extractedComments;
+        .filter(Boolean)
+        .map(buildPipeline);
+
+    return filterAccess(
+      config.access,
+      hierarchy(sort(extractedComments, config))
+    );
+
   }
 
 
@@ -64,11 +88,13 @@ module.exports = class DocumentationEngine {
    * @param {*} files
    * @param {*} config
    */
-  async output ( files: Array<File>, config: any): Promise<void> {
-
+  async output ( files: Array<File>, outputAdapter: Function): Promise<void> {
+    return outputAdapter(files);
   }
 
 }
+
+module.exports = DocumentationEngine;
 
 
 /**
@@ -102,10 +128,23 @@ async function _prepareInputFiles (inputFiles: Array<string>): Promise<Array<str
 }
 
 
-async function _prepareBuildPipeline (): Promise<Array<Function>> {
-  parsers = [
+async function _prepareBuildPipeline (config: ParserConfig): Promise<Function> {
+  const parsers = [
+    inferName,
+    inferAccess(config.inferPrivate),
+    inferAugments,
+    inferKind,
+    nest,
+    inferParams,
+    inferProperties,
+    inferReturn,
+    inferMembership(),
+    inferType,
+    config.github ? github : undefined,
+    garbageCollect
+  ].filter(Boolean);
 
-  ];
+
 
   return (comment) => {
     for(const parser of parsers) {

@@ -4,7 +4,8 @@ module.exports = {
     describe: 'Include only comments with a given access level, out of private, ' + 'protected, public, undefined. By default, public, protected, and undefined access ' + 'levels are included',
     choices: ['public', 'private', 'protected', 'undefined'],
     array: true,
-    alias: 'a'
+    alias: 'a',
+    default: ['public','protected','undefined']
   },
 
   'infer-private': {
