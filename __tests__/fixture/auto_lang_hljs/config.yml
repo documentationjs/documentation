@@ -1,6 +1,0 @@
-hljs:
-  highlightAuto: true
-  languages:
-    - js
-    - css
-    - html

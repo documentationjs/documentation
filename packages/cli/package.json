@@ -1,0 +1,24 @@
+{
+  "name": "@documentation/cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "documentation": "./bin/documentation.js"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "babel -D src -d lib"
+  },
+  "dependencies": {
+    "@documentation/core": "^1.0.0",
+    "@documentation/format-json": "^1.0.0",
+    "@documentation/format-markdown": "^1.0.0",
+    "@documentation/parser-js": "^1.0.0",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "rimraf": "^2.6.2"
+  }
+}

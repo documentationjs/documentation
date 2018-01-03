@@ -1,0 +1,20 @@
+{
+  "name": "@documentation/output-utils",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "babel -D src -d lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "@babel/preset-flow": "^7.0.0-beta.36",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "readable-stream": "^2.3.3"
+  }
+}

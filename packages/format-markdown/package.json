@@ -1,0 +1,22 @@
+{
+  "name": "@documentation/format-markdown",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "babel -D src -d lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "@documentation/format-utils": "^1.0.0",
+    "github-slugger": "^1.2.0",
+    "highlight.js": "^9.12.0",
+    "remark": "^8.0.0",
+    "remark-toc": "^5.0.0",
+    "unist-builder": "^1.0.2"
+  }
+}
