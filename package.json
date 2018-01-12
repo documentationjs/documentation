@@ -43,7 +43,7 @@
     "remark-html": "7.0.0",
     "remark-toc": "^5.0.0",
     "remote-origin-url": "0.4.0",
-    "shelljs": "^0.7.5",
+    "shelljs": "^0.8.0",
     "stream-array": "^1.1.0",
     "strip-json-comments": "^2.0.0",
     "tiny-lr": "^1.0.3",
