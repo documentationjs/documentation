@@ -185,7 +185,11 @@ describe('lint command', function() {
     try {
       await documentation(['lint fixture/lint/lint.input.js'], {}, false);
     } catch (err) {
-      var data = err.stderr.toString().split('\n').slice(2).join('\n');
+      var data = err.stderr
+        .toString()
+        .split('\n')
+        .slice(2)
+        .join('\n');
       expect(data).toMatchSnapshot();
     }
   });
@@ -223,6 +227,15 @@ describe('lint command', function() {
     } catch (err) {
       expect(err.code > 0).toBeTruthy();
     }
+  });
+
+  test('generates lint output with shallow', async function() {
+    const data = await documentation(
+      ['lint fixture/lint/lint.input.shallow.js --shallow'],
+      {},
+      false
+    );
+    expect(data).toBe('');
   });
 });
 

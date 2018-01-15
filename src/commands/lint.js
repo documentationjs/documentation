@@ -1,14 +1,17 @@
 /* @flow */
 
-var documentation = require('../');
-var fs = require('fs');
-var path = require('path');
+var documentation = require('../'),
+  sharedOptions = require('./shared_options'),
+  fs = require('fs'),
+  path = require('path');
 
 /* eslint no-console: 0 */
 
 module.exports.command = 'lint [input..]';
 module.exports.description = 'check for common style and uniformity mistakes';
-module.exports.builder = {};
+module.exports.builder = {
+  shallow: sharedOptions.sharedInputOptions.shallow
+};
 
 /**
  * Wrap around the documentation.lint method and add the additional
