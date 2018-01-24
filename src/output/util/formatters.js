@@ -1,11 +1,11 @@
 /* @flow */
-var remark = require('remark'),
-  html = require('remark-html'),
-  Syntax = require('doctrine-temporary-fork').Syntax,
-  u = require('unist-builder'),
-  _rerouteLinks = require('./reroute_links'),
-  highlighter = require('../highlighter'),
-  formatType = require('./format_type');
+const remark = require('remark');
+const html = require('remark-html');
+const Syntax = require('doctrine-temporary-fork').Syntax;
+const u = require('unist-builder');
+const _rerouteLinks = require('./reroute_links');
+const highlighter = require('../highlighter');
+const formatType = require('./format_type');
 
 /**
  * Create a formatter group, given a linker method that resolves
@@ -15,9 +15,9 @@ var remark = require('remark'),
  * @returns {formatters} formatter object
  */
 module.exports = function(getHref: Function) {
-  var rerouteLinks = _rerouteLinks.bind(undefined, getHref);
+  const rerouteLinks = _rerouteLinks.bind(undefined, getHref);
 
-  var formatters = {};
+  const formatters = {};
 
   /**
    * Format a parameter name. This is used in formatParameters
@@ -48,7 +48,9 @@ module.exports = function(getHref: Function) {
    */
   formatters.markdown = function(ast) {
     if (ast) {
-      return remark().use(html).stringify(highlighter(rerouteLinks(ast)));
+      return remark()
+        .use(html)
+        .stringify(highlighter(rerouteLinks(ast)));
     }
     return '';
   };
@@ -71,7 +73,7 @@ module.exports = function(getHref: Function) {
    * @returns {string} potentially linked HTML
    */
   formatters.autolink = function(text: string) {
-    var href = getHref(text);
+    const href = getHref(text);
     if (href) {
       // TODO: this is a temporary fix until we drop remark 3.x support,
       // and then we should remove the 'href' property and only

@@ -1,6 +1,6 @@
-var parse = require('../../src/parsers/javascript'),
-  lintComments = require('../../src/lint').lintComments,
-  formatLint = require('../../src/lint').formatLint;
+const parse = require('../../src/parsers/javascript');
+const lintComments = require('../../src/lint').lintComments;
+const formatLint = require('../../src/lint').formatLint;
 
 function toComment(fn, filename) {
   return parse(
@@ -20,8 +20,8 @@ test('lintComments', function() {
   expect(
     evaluate(function() {
       /**
-   * @param {foo
-   */
+       * @param {foo
+       */
     }).errors
   ).toEqual([
     { message: 'Braces are not balanced' },
@@ -31,17 +31,17 @@ test('lintComments', function() {
   expect(
     evaluate(function() {
       /**
-      * @param {Object} foo.bar
-      */
+       * @param {Object} foo.bar
+       */
     }).errors
   ).toEqual([{ commentLineNumber: 1, message: 'Parent of foo.bar not found' }]);
 
   expect(
     evaluate(function() {
       /**
-   * @param {String} foo
-   * @param {array} bar
-   */
+       * @param {String} foo
+       * @param {array} bar
+       */
     }).errors
   ).toEqual([
     {
@@ -54,14 +54,14 @@ test('lintComments', function() {
   expect(
     evaluate(function() {
       /**
-   * @param {string} foo
-   */
+       * @param {string} foo
+       */
     }).errors
   ).toEqual([]);
 });
 
 test('formatLint', function() {
-  var comment = evaluate(function() {
+  const comment = evaluate(function() {
     // 2
     // 3
     /** 4
@@ -71,7 +71,7 @@ test('formatLint', function() {
      */
   });
 
-  var formatted = formatLint([comment]);
+  const formatted = formatLint([comment]);
 
   expect(formatted.match(/input.js/g));
   expect(formatted.match(/4:1[^\n]+Braces are not balanced/g));

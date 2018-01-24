@@ -1,5 +1,5 @@
-var remark = require('remark'),
-  parse = require('../../../src/parsers/javascript');
+const remark = require('remark');
+const parse = require('../../../src/parsers/javascript');
 
 function toComments(source, filename, opts) {
   source = typeof source === 'string' ? source : '(' + source.toString() + ')';

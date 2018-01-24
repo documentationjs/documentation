@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-var inferKind = require('../../../src/infer/kind'),
-  parse = require('../../../src/parsers/javascript');
+const inferKind = require('../../../src/infer/kind');
+const parse = require('../../../src/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse(
@@ -52,7 +52,7 @@ test('inferKind', function() {
     inferKind(
       toComment(function() {
         /** function */
-        var foo = function() {};
+        const foo = function() {};
         foo();
       })
     ).kind

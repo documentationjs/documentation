@@ -2,10 +2,10 @@
 
 /* eslint no-console: 0 */
 
-var yargs = require('yargs');
-var commands = require('../lib/commands');
+const yargs = require('yargs');
+const commands = require('../lib/commands');
 
-var argv = yargs
+const argv = yargs
   .strict()
   .command(commands.serve)
   .command(commands.build)

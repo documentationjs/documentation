@@ -1,8 +1,8 @@
 /* @flow */
-var fs = require('fs');
-var path = require('path');
-var gitUrlParse = require('git-url-parse');
-var getRemoteOrigin = require('remote-origin-url');
+const fs = require('fs');
+const path = require('path');
+const gitUrlParse = require('git-url-parse');
+const getRemoteOrigin = require('remote-origin-url');
 
 /**
  * Sometimes git will [pack refs](https://git-scm.com/docs/git-pack-refs)
@@ -34,14 +34,14 @@ function parsePackedRefs(packedRefs, branchName) {
  * @throws {Error} if the root is not a git repo
  */
 function getGithubURLPrefix(root: string) {
-  var sha;
+  let sha;
   try {
-    var head = fs.readFileSync(path.join(root, '.git', 'HEAD'), 'utf8');
-    var branch = head.match(/ref: (.*)/);
+    const head = fs.readFileSync(path.join(root, '.git', 'HEAD'), 'utf8');
+    const branch = head.match(/ref: (.*)/);
     if (branch) {
-      var branchName = branch[1];
-      var branchFileName = path.join(root, '.git', branchName);
-      var packedRefsName = path.join(root, '.git', 'packed-refs');
+      const branchName = branch[1];
+      const branchFileName = path.join(root, '.git', branchName);
+      const packedRefsName = path.join(root, '.git', 'packed-refs');
       if (fs.existsSync(branchFileName)) {
         sha = fs.readFileSync(branchFileName, 'utf8');
       } else if (fs.existsSync(packedRefsName)) {

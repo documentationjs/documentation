@@ -1,6 +1,6 @@
 /* @flow */
 import traverse from 'babel-traverse';
-var isJSDocComment = require('../is_jsdoc_comment');
+const isJSDocComment = require('../is_jsdoc_comment');
 
 /**
  * Iterate through the abstract syntax tree, finding a different kind of comment
@@ -21,7 +21,7 @@ function walkComments(
   data: Object,
   addComment: Function
 ): Array<Comment> {
-  var newResults = [];
+  const newResults = [];
 
   traverse(ast, {
     /**

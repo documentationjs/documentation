@@ -1,10 +1,10 @@
 /* @flow */
 
-var findTarget = require('./finders').findTarget,
-  flowDoctrine = require('../flow_doctrine'),
-  t = require('babel-types');
+const findTarget = require('./finders').findTarget;
+const flowDoctrine = require('../flow_doctrine');
+const t = require('babel-types');
 
-var constTypeMapping = {
+const constTypeMapping = {
   BooleanLiteral: { type: 'BooleanTypeAnnotation' },
   NumericLiteral: { type: 'NumberTypeAnnotation' },
   StringLiteral: { type: 'StringTypeAnnotation' }
@@ -22,13 +22,13 @@ function inferType(comment: Comment) {
     return comment;
   }
 
-  var path = findTarget(comment.context.ast);
+  const path = findTarget(comment.context.ast);
   if (!path) {
     return comment;
   }
 
-  var n = path.node;
-  var type;
+  const n = path.node;
+  let type;
   switch (n.type) {
     case 'VariableDeclarator':
       type = n.id.typeAnnotation;

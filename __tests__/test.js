@@ -1,28 +1,28 @@
-var documentationSchema = require('documentation-schema'),
-  validate = require('json-schema'),
-  documentation = require('../'),
-  outputMarkdown = require('../src/output/markdown.js'),
-  outputMarkdownAST = require('../src/output/markdown_ast.js'),
-  outputHtml = require('../src/output/html.js'),
-  normalize = require('./utils').normalize,
-  glob = require('glob'),
-  pify = require('pify'),
-  path = require('path'),
-  fs = require('fs'),
-  _ = require('lodash'),
-  chdir = require('chdir');
+const documentationSchema = require('documentation-schema');
+const validate = require('json-schema');
+const documentation = require('../');
+const outputMarkdown = require('../src/output/markdown.js');
+const outputMarkdownAST = require('../src/output/markdown_ast.js');
+const outputHtml = require('../src/output/html.js');
+const normalize = require('./utils').normalize;
+const glob = require('glob');
+const pify = require('pify');
+const path = require('path');
+const fs = require('fs');
+const _ = require('lodash');
+const chdir = require('chdir');
 
-var UPDATE = !!process.env.UPDATE;
+const UPDATE = !!process.env.UPDATE;
 
 function makePOJO(ast) {
   return JSON.parse(JSON.stringify(ast));
 }
 
 function readOptionsFromFile(file) {
-  var s = fs.readFileSync(file, 'utf-8');
-  var lines = s.split(/\n/, 20);
-  for (var i = 0; i < lines.length; i++) {
-    var m = lines[i].match(/^\/\/\s+Options:\s*(.+)$/);
+  const s = fs.readFileSync(file, 'utf-8');
+  const lines = s.split(/\n/, 20);
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(/^\/\/\s+Options:\s*(.+)$/);
     if (m) {
       return JSON.parse(m[1]);
     }
@@ -33,7 +33,7 @@ function readOptionsFromFile(file) {
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', async function() {
     jest.setTimeout(10000); // 10 second timeout. After update flow.js on 0.56 version the test is executed more time.
-    var file = path.join(__dirname, './fixture/simple.input.js');
+    const file = path.join(__dirname, './fixture/simple.input.js');
     const result = await documentation.build([file], { github: true });
     normalize(result);
     expect(result).toMatchSnapshot();
@@ -44,7 +44,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
 }
 
 test('document-exported error', async function() {
-  var file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
+  const file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
   try {
     await documentation.build([file], { documentExported: true });
   } catch (err) {
@@ -60,7 +60,7 @@ test('external modules option', async function() {
     }
   );
   normalize(result);
-  var outputfile = path.join(
+  const outputfile = path.join(
     __dirname,
     'fixture',
     '_external-deps-included.json'
@@ -100,7 +100,7 @@ describe('html', function() {
           readOptionsFromFile(file)
         );
         const html = await outputHtml(result, {});
-        var clean = html
+        const clean = html
           .sort((a, b) => a.path > b.path)
           .filter(r => r.path.match(/(html)$/))
           .map(r => r.contents)
@@ -144,12 +144,11 @@ describe('outputs', function() {
         test('JSON', function() {
           normalize(result);
           result.forEach(function(comment) {
-            validate(
-              comment,
-              documentationSchema.jsonSchema
-            ).errors.forEach(function(error) {
-              expect(error).toBeFalsy();
-            });
+            validate(comment, documentationSchema.jsonSchema).errors.forEach(
+              function(error) {
+                expect(error).toBeFalsy();
+              }
+            );
           });
           expect(makePOJO(result)).toMatchSnapshot();
         });
@@ -158,13 +157,13 @@ describe('outputs', function() {
 });
 
 test('highlightAuto md output', async function() {
-  var file = path.join(
-      __dirname,
-      'fixture/auto_lang_hljs/multilanguage.input.js'
-    ),
-    hljsConfig = {
-      hljs: { highlightAuto: true, languages: ['js', 'css', 'html'] }
-    };
+  const file = path.join(
+    __dirname,
+    'fixture/auto_lang_hljs/multilanguage.input.js'
+  );
+  const hljsConfig = {
+    hljs: { highlightAuto: true, languages: ['js', 'css', 'html'] }
+  };
 
   const result = await documentation.build(file, {});
   const md = await outputMarkdown(result, hljsConfig);
@@ -172,8 +171,8 @@ test('highlightAuto md output', async function() {
 });
 
 test('config', async function() {
-  var file = path.join(__dirname, 'fixture', 'class.input.js');
-  var outputfile = path.join(__dirname, 'fixture', 'class.config.output.md');
+  const file = path.join(__dirname, 'fixture', 'class.input.js');
+  const outputfile = path.join(__dirname, 'fixture', 'class.config.output.md');
   const out = await documentation.build([file], {
     config: path.join(__dirname, 'fixture', 'simple.config.yml')
   });
@@ -182,7 +181,7 @@ test('config', async function() {
 });
 
 test('config with nested sections', async function() {
-  var file = path.join(__dirname, 'fixture', 'sections.input.js');
+  const file = path.join(__dirname, 'fixture', 'sections.input.js');
   const out = await documentation.build([file], {
     config: path.join(__dirname, 'fixture', 'sections.config.yml')
   });

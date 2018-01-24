@@ -1,9 +1,9 @@
 /* @flow */
 
-var n = require('babel-types'),
-  pathParse = require('parse-filepath'),
-  isJSDocComment = require('../is_jsdoc_comment'),
-  parse = require('../parse');
+const n = require('babel-types');
+const pathParse = require('parse-filepath');
+const isJSDocComment = require('../is_jsdoc_comment');
+const parse = require('../parse');
 
 function inferModuleName(comment) {
   return (
@@ -26,12 +26,12 @@ function findLendsIdentifiers(path) {
     return;
   }
 
-  var leadingComments = path.get('leadingComments');
+  const leadingComments = path.get('leadingComments');
 
-  for (var i = 0; i < leadingComments.length; i++) {
-    var comment = leadingComments[i];
+  for (let i = 0; i < leadingComments.length; i++) {
+    const comment = leadingComments[i];
     if (isJSDocComment(comment.node)) {
-      var lends = parse(comment.node.value).lends;
+      const lends = parse(comment.node.value).lends;
       if (lends) {
         return lends.split('.');
       }
@@ -50,7 +50,7 @@ function findLendsIdentifiers(path) {
  * @private
  */
 function extractThis(path, comment) {
-  var identifiers = [];
+  let identifiers = [];
 
   path.traverse({
     /**
@@ -60,7 +60,7 @@ function extractThis(path, comment) {
      * @private
      */
     ThisExpression(path) {
-      var scope = path.scope;
+      let scope = path.scope;
 
       while (n.isBlockStatement(scope.block)) {
         scope = scope.parent;
@@ -111,7 +111,7 @@ function extractThis(path, comment) {
  * @private
  */
 function extractIdentifiers(path) {
-  var identifiers = [];
+  const identifiers = [];
 
   path.traverse({
     /**
@@ -161,9 +161,9 @@ function normalizeMemberof(comment: Comment): Comment {
     return comment;
   }
 
-  var memberof = comment.memberof;
+  const memberof = comment.memberof;
 
-  var isPrototype = /.prototype$/;
+  const isPrototype = /.prototype$/;
 
   if (memberof.match(isPrototype) !== null) {
     comment.memberof = memberof.replace(isPrototype, '');
@@ -172,7 +172,7 @@ function normalizeMemberof(comment: Comment): Comment {
     return comment;
   }
 
-  var isInstanceMember = /#$/;
+  const isInstanceMember = /#$/;
 
   if (memberof.match(isInstanceMember) !== null) {
     comment.memberof = memberof.replace(isInstanceMember, '');
@@ -191,7 +191,7 @@ function normalizeMemberof(comment: Comment): Comment {
  * @returns {Object} comment with membership inferred
  */
 module.exports = function() {
-  var currentModule;
+  let currentModule;
 
   /**
    * Set `memberof` and `instance`/`static` tags on `comment` based on the
@@ -221,7 +221,7 @@ module.exports = function() {
      * Test whether identifiers start with a module export (`exports` or `module.exports`),
      * and if so replace those identifiers with the name of the current module.
      */
-    var moduleIdentifierCount = countModuleIdentifiers(comment, identifiers);
+    const moduleIdentifierCount = countModuleIdentifiers(comment, identifiers);
     if (moduleIdentifierCount) {
       identifiers = identifiers.slice(moduleIdentifierCount);
       identifiers.unshift(inferModuleName(currentModule || comment));
@@ -258,7 +258,7 @@ module.exports = function() {
       return normalizeMemberof(comment);
     }
 
-    var path = comment.context.ast;
+    let path = comment.context.ast;
     // If this chunk doesn't have code attached, like if it was the result
     // of a polyglot parse, don't try to infer anything.
     if (!path) {
@@ -271,7 +271,10 @@ module.exports = function() {
     if (
       path.isExpressionStatement() &&
       path.get('expression').isAssignmentExpression() &&
-      path.get('expression').get('left').isMemberExpression()
+      path
+        .get('expression')
+        .get('left')
+        .isMemberExpression()
     ) {
       path = path.get('expression').get('left');
     }
@@ -289,7 +292,7 @@ module.exports = function() {
     //
     // Lends is not supported in this codepath.
     if (path.isMemberExpression()) {
-      var memberIdentifiers = [].concat(
+      const memberIdentifiers = [].concat(
         extractThis(path, comment),
         extractIdentifiers(path)
       );
@@ -314,7 +317,7 @@ module.exports = function() {
       path.parentPath.isClassBody() &&
       path.parentPath.parentPath.isClass()
     ) {
-      var scope = 'instance';
+      let scope = 'instance';
       if (path.node.static == true) {
         scope = 'static';
       }
@@ -327,7 +330,7 @@ module.exports = function() {
         );
       }
 
-      var declarationNode = path.parentPath.parentPath.node;
+      const declarationNode = path.parentPath.parentPath.node;
       if (!declarationNode.id) {
         // export default function () {}
         // export default class {}
@@ -351,7 +354,7 @@ module.exports = function() {
     // doesn't matter for the membership phase, as long as we end up knowing
     // that it belongs to an object. So we first establish objectParent,
     // and then have the logic for the numerous ways an object can be named.
-    var objectParent;
+    let objectParent;
 
     if (
       path.isIdentifier() &&
@@ -367,7 +370,7 @@ module.exports = function() {
     if (objectParent) {
       // The @lends comment is sometimes attached to the first property rather than
       // the object expression itself.
-      var lendsIdentifiers =
+      const lendsIdentifiers =
         findLendsIdentifiers(objectParent) ||
         findLendsIdentifiers(objectParent.get('properties')[0]);
 

@@ -1,6 +1,6 @@
 /* @flow */
 
-var _ = require('lodash');
+const _ = require('lodash');
 
 const PATH_SPLIT = /(?:\[])?\./g;
 
@@ -8,7 +8,7 @@ function removeUnnamedTags(tags: Array<CommentTag>): Array<CommentTag> {
   return tags.filter(tag => typeof tag.name === 'string');
 }
 
-var tagDepth = tag => tag.name.split(PATH_SPLIT).length;
+const tagDepth = tag => tag.name.split(PATH_SPLIT).length;
 
 /**
  * Nest nestable tags, like param and property, into nested
@@ -32,7 +32,7 @@ var tagDepth = tag => tag.name.split(PATH_SPLIT).length;
  * @param {Array<CommentTag>} tags a list of tags
  * @returns {Object} nested comment
  */
-var nestTag = (
+const nestTag = (
   tags: Array<CommentTag>,
   errors: Array<CommentError>
   // Use lodash here both for brevity and also because, unlike JavaScript's
@@ -52,7 +52,7 @@ var nestTag = (
         } else {
           // The recursive case: try to find the child that owns
           // this tag.
-          let child =
+          const child =
             node.properties &&
             node.properties.find(
               property => parts[0] === _.last(property.name.split(PATH_SPLIT))
@@ -99,7 +99,7 @@ var nestTag = (
  * @param {Object} comment input comment
  * @returns {Object} nested comment
  */
-var nest = (comment: Comment) =>
+const nest = (comment: Comment) =>
   Object.assign(comment, {
     params: nestTag(comment.params, comment.errors),
     properties: nestTag(comment.properties, comment.errors)

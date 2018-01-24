@@ -1,27 +1,27 @@
-var fs = require('fs'),
-  _ = require('lodash'),
-  sort = require('./sort'),
-  nest = require('./nest'),
-  filterAccess = require('./filter_access'),
-  dependency = require('./input/dependency'),
-  shallow = require('./input/shallow'),
-  parseJavaScript = require('./parsers/javascript'),
-  github = require('./github'),
-  hierarchy = require('./hierarchy'),
-  inferName = require('./infer/name'),
-  inferKind = require('./infer/kind'),
-  inferAugments = require('./infer/augments'),
-  inferParams = require('./infer/params'),
-  inferProperties = require('./infer/properties'),
-  inferMembership = require('./infer/membership'),
-  inferReturn = require('./infer/return'),
-  inferAccess = require('./infer/access'),
-  inferType = require('./infer/type'),
-  formatLint = require('./lint').formatLint,
-  garbageCollect = require('./garbage_collect'),
-  lintComments = require('./lint').lintComments,
-  markdownAST = require('./output/markdown_ast'),
-  mergeConfig = require('./merge_config');
+const fs = require('fs');
+const _ = require('lodash');
+const sort = require('./sort');
+const nest = require('./nest');
+const filterAccess = require('./filter_access');
+const dependency = require('./input/dependency');
+const shallow = require('./input/shallow');
+const parseJavaScript = require('./parsers/javascript');
+const github = require('./github');
+const hierarchy = require('./hierarchy');
+const inferName = require('./infer/name');
+const inferKind = require('./infer/kind');
+const inferAugments = require('./infer/augments');
+const inferParams = require('./infer/params');
+const inferProperties = require('./infer/properties');
+const inferMembership = require('./infer/membership');
+const inferReturn = require('./infer/return');
+const inferAccess = require('./infer/access');
+const inferType = require('./infer/type');
+const formatLint = require('./lint').formatLint;
+const garbageCollect = require('./garbage_collect');
+const lintComments = require('./lint').lintComments;
+const markdownAST = require('./output/markdown_ast');
+const mergeConfig = require('./merge_config');
 
 /**
  * Build a pipeline of comment handlers.
@@ -32,7 +32,7 @@ var fs = require('fs'),
  */
 function pipeline(fns) {
   return comment => {
-    for (var i = 0; comment && i < fns.length; i++) {
+    for (let i = 0; comment && i < fns.length; i++) {
       if (fns[i]) {
         comment = fns[i](comment);
       }
@@ -42,10 +42,10 @@ function pipeline(fns) {
 }
 
 function configure(indexes, args) {
-  let mergedConfig = mergeConfig(args);
+  const mergedConfig = mergeConfig(args);
 
   return mergedConfig.then(config => {
-    let expandedInputs = expandInputs(indexes, config);
+    const expandedInputs = expandInputs(indexes, config);
 
     return expandedInputs.then(inputs => {
       return {
@@ -76,14 +76,14 @@ function expandInputs(indexes, config) {
 }
 
 function buildInternal(inputsAndConfig) {
-  let config = inputsAndConfig.config;
-  let inputs = inputsAndConfig.inputs;
+  const config = inputsAndConfig.config;
+  const inputs = inputsAndConfig.inputs;
 
   if (!config.access) {
     config.access = ['public', 'undefined', 'protected'];
   }
 
-  var buildPipeline = pipeline([
+  const buildPipeline = pipeline([
     inferName,
     inferAccess(config.inferPrivate),
     inferAugments,
@@ -98,7 +98,7 @@ function buildInternal(inputsAndConfig) {
     garbageCollect
   ]);
 
-  let extractedComments = _.flatMap(inputs, function(sourceFile) {
+  const extractedComments = _.flatMap(inputs, function(sourceFile) {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
@@ -113,10 +113,10 @@ function buildInternal(inputsAndConfig) {
 }
 
 function lintInternal(inputsAndConfig) {
-  let inputs = inputsAndConfig.inputs;
-  let config = inputsAndConfig.config;
+  const inputs = inputsAndConfig.inputs;
+  const config = inputsAndConfig.config;
 
-  let lintPipeline = pipeline([
+  const lintPipeline = pipeline([
     lintComments,
     inferName,
     inferAccess(config.inferPrivate),
@@ -130,7 +130,7 @@ function lintInternal(inputsAndConfig) {
     nest
   ]);
 
-  let extractedComments = _.flatMap(inputs, sourceFile => {
+  const extractedComments = _.flatMap(inputs, sourceFile => {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
@@ -171,7 +171,7 @@ function lintInternal(inputsAndConfig) {
  *   }
  * });
  */
-let lint = (indexes, args) => configure(indexes, args).then(lintInternal);
+const lint = (indexes, args) => configure(indexes, args).then(lintInternal);
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -211,7 +211,7 @@ let lint = (indexes, args) => configure(indexes, args).then(lintInternal);
  *   // any other kind of code data.
  * });
  */
-let build = (indexes, args) => configure(indexes, args).then(buildInternal);
+const build = (indexes, args) => configure(indexes, args).then(buildInternal);
 
 /**
  * Documentation's formats are modular methods that take comments
@@ -220,7 +220,7 @@ let build = (indexes, args) => configure(indexes, args).then(buildInternal);
  * output.
  * @public
  */
-var formats = {
+const formats = {
   html: require('./output/html'),
   md: require('./output/markdown'),
   remark: (comments, config) =>

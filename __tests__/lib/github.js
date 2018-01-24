@@ -1,10 +1,10 @@
 /* eslint no-unused-vars: 0 */
 
-var mock = require('mock-fs'),
-  path = require('path'),
-  mockRepo = require('../utils').mockRepo,
-  parse = require('../../src/parsers/javascript'),
-  github = require('../../src/github');
+const mock = require('mock-fs');
+const path = require('path');
+const mockRepo = require('../utils').mockRepo;
+const parse = require('../../src/parsers/javascript');
+const github = require('../../src/github');
 
 function toComment(fn, filename) {
   return parse(
@@ -31,9 +31,9 @@ test('github', function() {
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
@@ -52,9 +52,9 @@ test('malformed repository', function() {
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
@@ -70,16 +70,17 @@ test('enterprise repository', function() {
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
     })[0].context.github
   ).toEqual({
     path: 'index.js',
-    url: 'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
+    url:
+      'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
 
   mock.restore();

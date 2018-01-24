@@ -1,7 +1,7 @@
-var LinkerStack = require('../src/output/util/linker_stack');
+const LinkerStack = require('../src/output/util/linker_stack');
 
 test('linkerStack', function() {
-  var linkerStack = new LinkerStack({});
+  const linkerStack = new LinkerStack({});
 
   expect(linkerStack.link('string')).toBe(
     'https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String'
@@ -23,7 +23,7 @@ test('linkerStack', function() {
     }).link('Image')
   ).toBe('http://custom.com/');
 
-  var linker = new LinkerStack({
+  const linker = new LinkerStack({
     paths: {
       Image: 'http://custom.com/'
     }

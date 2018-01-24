@@ -1,9 +1,9 @@
-var path = require('path');
-var os = require('os');
-var get = require('./utils').get;
-var spawn = require('child_process').spawn;
-var fs = require('fs');
-var pEvent = require('p-event');
+const path = require('path');
+const os = require('os');
+const get = require('./utils').get;
+const spawn = require('child_process').spawn;
+const fs = require('fs');
+const pEvent = require('p-event');
 
 function documentation(args, options) {
   if (!options) {
@@ -29,7 +29,7 @@ function normalize(result) {
 const timeout = 20000;
 
 test('harness', function() {
-  var docProcess = documentation(['serve', 'fixture/simple.input.js']);
+  const docProcess = documentation(['serve', 'fixture/simple.input.js']);
   expect(docProcess).toBeTruthy();
   docProcess.kill();
 });
@@ -37,9 +37,9 @@ test('harness', function() {
 test(
   'provides index.html',
   function() {
-    var docProcess = documentation(['serve', 'fixture/simple.input.js']);
+    const docProcess = documentation(['serve', 'fixture/simple.input.js']);
     return pEvent(docProcess.stdout, 'data').then(function(data) {
-      var portNumber = data
+      const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
@@ -55,13 +55,13 @@ test(
 test(
   'accepts port argument',
   function() {
-    var docProcess = documentation([
+    const docProcess = documentation([
       'serve',
       'fixture/simple.input.js',
       '--port=4004'
     ]);
     return pEvent(docProcess.stdout, 'data').then(function(data) {
-      var portNumber = data
+      const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
@@ -77,11 +77,11 @@ test(
 test(
   '--watch',
   function(done) {
-    var tmpFile = path.join(os.tmpdir(), '/simple.js');
+    const tmpFile = path.join(os.tmpdir(), '/simple.js');
     fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
-    var docProcess = documentation(['serve', tmpFile, '--watch']);
+    const docProcess = documentation(['serve', tmpFile, '--watch']);
     pEvent(docProcess.stdout, 'data').then(function(data) {
-      var portNumber = data
+      const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
@@ -108,14 +108,14 @@ test(
 test(
   '--watch',
   function(done) {
-    var tmpDir = os.tmpdir();
-    var a = path.join(tmpDir, '/simple.js');
-    var b = path.join(tmpDir, '/required.js');
+    const tmpDir = os.tmpdir();
+    const a = path.join(tmpDir, '/simple.js');
+    const b = path.join(tmpDir, '/required.js');
     fs.writeFileSync(a, 'require("./required")');
     fs.writeFileSync(b, '/** soup */function soup() {}');
-    var docProcess = documentation(['serve', a, '--watch']);
+    const docProcess = documentation(['serve', a, '--watch']);
     docProcess.stdout.once('data', function(data) {
-      var portNumber = data
+      const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
@@ -142,12 +142,12 @@ test(
 test(
   'error page',
   function() {
-    var tmpDir = os.tmpdir();
-    var a = path.join(tmpDir, '/simple.js');
+    const tmpDir = os.tmpdir();
+    const a = path.join(tmpDir, '/simple.js');
     fs.writeFileSync(a, '**');
-    var docProcess = documentation(['serve', a, '--watch']);
+    const docProcess = documentation(['serve', a, '--watch']);
     return pEvent(docProcess.stdout, 'data').then(function(data) {
-      var portNumber = data
+      const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();

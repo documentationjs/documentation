@@ -1,11 +1,11 @@
 /* @flow */
 
-var yaml = require('js-yaml'),
-  fs = require('fs'),
-  pify = require('pify'),
-  readPkgUp = require('read-pkg-up'),
-  path = require('path'),
-  stripComments = require('strip-json-comments');
+const yaml = require('js-yaml');
+const fs = require('fs');
+const pify = require('pify');
+const readPkgUp = require('read-pkg-up');
+const path = require('path');
+const stripComments = require('strip-json-comments');
 
 function processToc(config: DocumentationConfig, absFilePath: string) {
   if (!config || !config.toc) {
@@ -58,31 +58,37 @@ function mergePackage(config: Object): Promise<Object> {
  */
 function mergeConfigFile(config): Promise<Object> {
   if (config && typeof config.config === 'string') {
-    var filePath = config.config;
-    var ext = path.extname(filePath);
-    var absFilePath = path.resolve(process.cwd(), filePath);
-    return pify(fs).readFile(absFilePath, 'utf8').then(rawFile => {
-      if (ext === '.json') {
+    const filePath = config.config;
+    const ext = path.extname(filePath);
+    const absFilePath = path.resolve(process.cwd(), filePath);
+    return pify(fs)
+      .readFile(absFilePath, 'utf8')
+      .then(rawFile => {
+        if (ext === '.json') {
+          return Object.assign(
+            {},
+            config,
+            processToc(JSON.parse(stripComments(rawFile)), absFilePath)
+          );
+        }
         return Object.assign(
           {},
           config,
-          processToc(JSON.parse(stripComments(rawFile)), absFilePath)
+          processToc(yaml.safeLoad(rawFile), absFilePath)
         );
-      }
-      return Object.assign(
-        {},
-        config,
-        processToc(yaml.safeLoad(rawFile), absFilePath)
-      );
-    });
+      });
   }
 
   return Promise.resolve(config || {});
 }
 
 function mergeConfig(config: Object): Promise<DocumentationConfig> {
-  config.parseExtension = (config.parseExtension || [])
-    .concat(['js', 'jsx', 'es5', 'es6']);
+  config.parseExtension = (config.parseExtension || []).concat([
+    'js',
+    'jsx',
+    'es5',
+    'es6'
+  ]);
 
   return mergeConfigFile(config).then(mergePackage);
 }

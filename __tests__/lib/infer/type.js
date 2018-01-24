@@ -1,6 +1,6 @@
-var parse = require('../../../src/parsers/javascript'),
-  inferKind = require('../../../src/infer/kind'),
-  inferType = require('../../../src/infer/type');
+const parse = require('../../../src/parsers/javascript');
+const inferKind = require('../../../src/infer/kind');
+const inferType = require('../../../src/infer/type');
 
 function toComment(code) {
   return parse(

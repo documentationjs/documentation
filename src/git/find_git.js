@@ -1,7 +1,7 @@
 /* @flow */
 
-var path = require('path');
-var fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 
 /**
  * Given a full path to a single file, iterate upwards through the filesystem
@@ -10,9 +10,11 @@ var fs = require('fs');
  * @returns  repository path
  */
 function findGit(filename: string) {
-  var paths = filename.split(path.sep);
-  for (var i = paths.length; i > 0; i--) {
-    var p = path.resolve(paths.slice(0, i).join(path.sep) + path.sep + '.git');
+  const paths = filename.split(path.sep);
+  for (let i = paths.length; i > 0; i--) {
+    const p = path.resolve(
+      paths.slice(0, i).join(path.sep) + path.sep + '.git'
+    );
     if (fs.existsSync(p)) {
       return p;
     }

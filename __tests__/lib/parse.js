@@ -1,6 +1,6 @@
-var parse = require('../../src/parsers/javascript'),
-  remark = require('remark'),
-  visit = require('unist-util-visit');
+const parse = require('../../src/parsers/javascript');
+const remark = require('remark');
+const visit = require('unist-util-visit');
 
 function pick(obj, props) {
   if (Array.isArray(props)) {
@@ -84,9 +84,9 @@ test('parse - @description', function() {
   expect(
     evaluate(function() {
       /**
-     * This is a free-form description
-     * @description This tagged description wins, and [is markdown](http://markdown.com).
-     */
+       * This is a free-form description
+       * @description This tagged description wins, and [is markdown](http://markdown.com).
+       */
     })[0].description
   ).toEqual(
     remark().parse(
@@ -322,10 +322,10 @@ test('parse - @example', function() {
   expect(
     evaluate(function() {
       /**
-   * @example
-   * a
-   * b
-   */
+       * @example
+       * a
+       * b
+       */
     })[0].examples[0]
   ).toEqual({
     description: 'a\nb'
@@ -334,10 +334,10 @@ test('parse - @example', function() {
   expect(
     evaluate(function() {
       /**
-   * @example <caption>caption</caption>
-   * a
-   * b
-   */
+       * @example <caption>caption</caption>
+       * a
+       * b
+       */
     })[0].examples[0]
   ).toEqual({
     description: 'a\nb',
@@ -913,9 +913,9 @@ test('parse - @see', function() {
   expect(
     evaluate(function() {
       /**
-   * @see a
-   * @see b
-   */
+       * @see a
+       * @see b
+       */
     })[0].sees
   ).toEqual([remark().parse('a'), remark().parse('b')]);
 });
@@ -975,9 +975,9 @@ test('parse - @throws', function() {
   expect(
     evaluate(function() {
       /**
-   * @throws a
-   * @throws b
-   */
+       * @throws a
+       * @throws b
+       */
     })[0].throws
   ).toEqual([
     {
@@ -999,9 +999,9 @@ test('parse - @todo', function() {
   expect(
     evaluate(function() {
       /**
-   * @todo a
-   * @todo b
-   */
+       * @todo a
+       * @todo b
+       */
     })[0].todos
   ).toEqual([remark().parse('a'), remark().parse('b')]);
 });

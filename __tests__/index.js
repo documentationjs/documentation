@@ -1,12 +1,12 @@
-var documentation = require('../src/');
-var os = require('os');
-var path = require('path');
-var fs = require('fs');
+const documentation = require('../src/');
+const os = require('os');
+const path = require('path');
+const fs = require('fs');
 
 function inputs(contents) {
-  var dirEntry = os.tmpdir();
-  var paths = {};
-  for (var filename in contents) {
+  const dirEntry = os.tmpdir();
+  const paths = {};
+  for (const filename in contents) {
     paths[filename] = path.join(dirEntry, '/', filename);
     fs.writeFileSync(paths[filename], contents[filename]);
   }
@@ -22,7 +22,7 @@ function cleanup(comments) {
 }
 
 test('lint', async function() {
-  var { paths } = inputs({
+  const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });
 
@@ -31,7 +31,7 @@ test('lint', async function() {
 });
 
 test('build', async function() {
-  var { paths } = inputs({
+  const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });
 
@@ -47,7 +47,7 @@ test('build', async function() {
 });
 
 test('expandInputs', async function() {
-  var { paths } = inputs({
+  const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });
 

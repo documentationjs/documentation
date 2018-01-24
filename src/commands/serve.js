@@ -1,14 +1,14 @@
 /* @flow */
 
-var errorPage = require('../serve/error_page'),
-  fs = require('fs'),
-  path = require('path'),
-  chokidar = require('chokidar'),
-  sharedOptions = require('./shared_options'),
-  Server = require('../serve/server'),
-  _ = require('lodash'),
-  getPort = require('get-port'),
-  documentation = require('../');
+const errorPage = require('../serve/error_page');
+const fs = require('fs');
+const path = require('path');
+const chokidar = require('chokidar');
+const sharedOptions = require('./shared_options');
+const Server = require('../serve/server');
+const _ = require('lodash');
+const getPort = require('get-port');
+const documentation = require('../');
 
 module.exports.command = 'serve [input..]';
 module.exports.description = 'generate, update, and display HTML documentation';
@@ -55,8 +55,8 @@ module.exports.handler = function serve(argv: Object) {
   }
 
   getPort(argv.port).then(port => {
-    var server = new Server(port);
-    var watcher;
+    const server = new Server(port);
+    let watcher;
 
     server.on('listening', function() {
       process.stdout.write(`documentation.js serving on port ${port}\n`);

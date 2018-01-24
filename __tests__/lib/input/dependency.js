@@ -1,13 +1,13 @@
-var os = require('os');
-var shell = require('shelljs');
-var path = require('path');
-var fs = require('fs');
-var dependency = require('../../../src/input/dependency');
+const os = require('os');
+const shell = require('shelljs');
+const path = require('path');
+const fs = require('fs');
+const dependency = require('../../../src/input/dependency');
 
 function inputs(contents) {
-  var dirEntry = os.tmpdir();
-  var paths = {};
-  for (var filename in contents) {
+  const dirEntry = os.tmpdir();
+  const paths = {};
+  for (const filename in contents) {
     paths[filename] = path.join(dirEntry, '/', filename);
     fs.writeFileSync(paths[filename], contents[filename]);
   }
@@ -17,19 +17,19 @@ function inputs(contents) {
 }
 
 test('dependency', async function() {
-  let { paths, cleanup } = inputs({
+  const { paths, cleanup } = inputs({
     'index.js': 'module.exports = 1;',
     'requires.js': "module.exports = require('./foo');",
     'foo.js': 'module.exports = 2;'
   });
   {
-    let dependencies = await dependency([paths['index.js']], {
+    const dependencies = await dependency([paths['index.js']], {
       parseExtension: ['js']
     });
     expect(dependencies.length).toEqual(1);
   }
   {
-    let dependencies = await dependency([paths['requires.js']], {
+    const dependencies = await dependency([paths['requires.js']], {
       parseExtension: ['js']
     });
     expect(dependencies.length).toEqual(2);

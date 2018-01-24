@@ -9,7 +9,7 @@
  * @private
  */
 function inferAccessWithPattern(pattern: ?string) {
-  var re = pattern && new RegExp(pattern);
+  const re = pattern && new RegExp(pattern);
 
   /**
    * Infers access (only private atm) from the name.

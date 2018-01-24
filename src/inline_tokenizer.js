@@ -11,8 +11,8 @@
  * @returns {Function} tokenizer
  */
 function makeTokenizer(type, regex) {
-  var tokenizer = function(eat, value) {
-    var match = regex.exec(value);
+  const tokenizer = function(eat, value) {
+    const match = regex.exec(value);
 
     if (!match) {
       return;
@@ -40,8 +40,8 @@ function makeTokenizer(type, regex) {
   return tokenizer;
 }
 
-var tokenizeLink = makeTokenizer('link', /^\{@link\s+(.+?)(?:[\s|](.*?))?\}/);
-var tokenizeTutorial = makeTokenizer(
+const tokenizeLink = makeTokenizer('link', /^\{@link\s+(.+?)(?:[\s|](.*?))?\}/);
+const tokenizeTutorial = makeTokenizer(
   'tutorial',
   /^\{@tutorial\s+(.+?)(?:[\s|](.*?))?\}/
 );
@@ -58,10 +58,10 @@ var tokenizeTutorial = makeTokenizer(
  * @returns {undefined}
  */
 module.exports = function(/* options: Object*/) {
-  var proto = this.Parser.prototype;
+  const proto = this.Parser.prototype;
   proto.inlineTokenizers.tokenizeLink = tokenizeLink;
   proto.inlineTokenizers.tokenizeTutorial = tokenizeTutorial;
-  var methods = proto.inlineMethods;
+  const methods = proto.inlineMethods;
   methods.splice(
     methods.indexOf('inlineText'),
     0,

@@ -1,8 +1,8 @@
 /* @flow */
-var fs = require('fs');
-var path = require('path');
-var glob = require('glob');
-var shell = require('shelljs');
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const shell = require('shelljs');
 
 /**
  * Replace Windows with posix style paths
@@ -11,8 +11,8 @@ var shell = require('shelljs');
  * @returns {string}          Converted filepath
  */
 function convertPathToPosix(filepath) {
-  var normalizedFilepath = path.normalize(filepath);
-  var posixFilepath = normalizedFilepath.replace(/\\/g, '/');
+  const normalizedFilepath = path.normalize(filepath);
+  const posixFilepath = normalizedFilepath.replace(/\\/g, '/');
 
   return posixFilepath;
 }
@@ -33,14 +33,14 @@ function convertPathToPosix(filepath) {
  *                     pathname is a directory.
  */
 function processPath(extensions) {
-  var cwd = process.cwd();
+  const cwd = process.cwd();
   extensions = extensions || ['.js'];
 
   extensions = extensions.map(function(ext) {
     return ext.replace(/^\./, '');
   });
 
-  var suffix = '/**';
+  let suffix = '/**';
 
   if (extensions.length === 1) {
     suffix += '/*.' + extensions[0];
@@ -56,8 +56,8 @@ function processPath(extensions) {
    * @private
    */
   return function(pathname) {
-    var newPath = pathname;
-    var resolvedPath = path.resolve(cwd, pathname);
+    let newPath = pathname;
+    const resolvedPath = path.resolve(cwd, pathname);
 
     if (shell.test('-d', resolvedPath)) {
       newPath = pathname.replace(/[/\\]$/, '') + suffix;
@@ -74,7 +74,7 @@ function processPath(extensions) {
  * @returns {string[]} The equivalent glob patterns and filepath strings.
  */
 function resolveFileGlobPatterns(patterns, extensions) {
-  var processPathExtensions = processPath(extensions);
+  const processPathExtensions = processPath(extensions);
   return patterns.map(processPathExtensions);
 }
 
@@ -86,10 +86,10 @@ function resolveFileGlobPatterns(patterns, extensions) {
  * @returns Resolved absolute filenames.
  */
 function listFilesToProcess(globPatterns: Array<string>): Array<string> {
-  var files = [],
-    added = new Set();
+  const files = [];
+  const added = new Set();
 
-  var cwd = process.cwd();
+  const cwd = process.cwd();
 
   /**
    * Executes the linter on a file defined by the `filename`. Skips
@@ -106,11 +106,11 @@ function listFilesToProcess(globPatterns: Array<string>): Array<string> {
   }
 
   globPatterns.forEach(function(pattern) {
-    var file = path.resolve(cwd, pattern);
+    const file = path.resolve(cwd, pattern);
     if (shell.test('-f', file)) {
       addFile(fs.realpathSync(file));
     } else {
-      var globOptions = {
+      const globOptions = {
         nodir: true,
         dot: true,
         cwd

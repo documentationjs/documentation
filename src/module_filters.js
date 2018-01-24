@@ -1,10 +1,10 @@
 /* @flow */
 
-var path = require('path');
-var micromatch = require('micromatch');
+const path = require('path');
+const micromatch = require('micromatch');
 
 // Skip external modules. Based on http://git.io/pzPO.
-var internalModuleRegexp =
+const internalModuleRegexp =
   process.platform === 'win32'
     ? /* istanbul ignore next */
       /^(\.|\w:)/
@@ -32,11 +32,11 @@ module.exports = {
     indexes: Array<string>,
     options: Object
   ) {
-    var externalFilters = false;
+    let externalFilters = false;
     if (options.external) {
       externalFilters = indexes.map(index => {
         // grab the path of the top-level node_modules directory.
-        var topNodeModules = path.join(path.dirname(index), 'node_modules');
+        const topNodeModules = path.join(path.dirname(index), 'node_modules');
         return function matchGlob(file, pkg) {
           // if a module is not found, don't include it.
           if (!file || !pkg) {
@@ -51,14 +51,14 @@ module.exports = {
             file = path.dirname(file);
           }
           // test the path relative to the top node_modules dir.
-          var p = path.relative(topNodeModules, file);
+          const p = path.relative(topNodeModules, file);
           return micromatch.any(p, options.external);
         };
       });
     }
 
     return function(id: string, file: string, pkg: Object) {
-      var internal = internalModuleRegexp.test(id);
+      const internal = internalModuleRegexp.test(id);
       return (
         internal || (externalFilters && externalFilters.some(f => f(file, pkg)))
       );

@@ -1,7 +1,7 @@
 /* @flow */
 
-var remark = require('remark'),
-  markdownAST = require('./markdown_ast');
+const remark = require('remark');
+const markdownAST = require('./markdown_ast');
 
 /**
  * Formats documentation as

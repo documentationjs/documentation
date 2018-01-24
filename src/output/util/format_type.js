@@ -1,6 +1,6 @@
 /* @flow */
-var Syntax = require('doctrine-temporary-fork').Syntax,
-  u = require('unist-builder');
+const Syntax = require('doctrine-temporary-fork').Syntax;
+const u = require('unist-builder');
 
 /**
  * Shortcut to create a new text node
@@ -26,7 +26,7 @@ function t(text) {
  * link('string').url // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
 function link(text, getHref, description) {
-  var href = getHref(text);
+  const href = getHref(text);
   if (href) {
     // TODO: this is a temporary fix until we drop remark 3.x support,
     // and then we should remove the 'href' property and only
@@ -57,11 +57,11 @@ function link(text, getHref, description) {
  * @returns {Array<Object>} formatted remark AST
  */
 function commaList(getHref, items, start, end, sep) {
-  var res = [];
+  let res = [];
   if (start) {
     res.push(t(start));
   }
-  for (var i = 0, iz = items.length; i < iz; ++i) {
+  for (let i = 0, iz = items.length; i < iz; ++i) {
     res = res.concat(formatType(getHref, items[i]));
     if (i + 1 !== iz) {
       res.push(t(sep || ', '));
@@ -101,7 +101,7 @@ function decorate(formatted, str, prefix) {
  * // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
 function formatType(getHref: Function, node: ?Object) {
-  var result = [];
+  let result = [];
 
   if (!node) {
     return [t('any')];

@@ -13,7 +13,7 @@ import flowDoctrine from '../flow_doctrine';
  * @returns {Object} comment with parameters
  */
 function inferParams(comment: Comment) {
-  var path = finders.findTarget(comment.context.ast);
+  let path = finders.findTarget(comment.context.ast);
   if (!path) {
     return comment;
   }
@@ -30,7 +30,7 @@ function inferParams(comment: Comment) {
     t.isClassDeclaration(path) &&
     !(comment.constructorComment && comment.constructorComment.hideconstructor)
   ) {
-    let constructor = path.node.body.body.find(item => {
+    const constructor = path.node.body.body.find(item => {
       // https://github.com/babel/babylon/blob/master/ast/spec.md#classbody
       return t.isClassMethod(item) && item.kind === 'constructor';
     });
@@ -51,8 +51,8 @@ function inferParams(comment: Comment) {
 }
 
 function inferAndCombineParams(params, comment) {
-  var inferredParams = params.map((param, i) => paramToDoc(param, '', i));
-  var mergedParamsAndErrors = mergeTrees(inferredParams, comment.params);
+  const inferredParams = params.map((param, i) => paramToDoc(param, '', i));
+  const mergedParamsAndErrors = mergeTrees(inferredParams, comment.params);
 
   // Then merge the trees. This is the hard part.
   return Object.assign(comment, {
@@ -181,7 +181,7 @@ function paramToDoc(
           // instead we're going to (immutably) rename the parameters to their
           // indices
           properties: _.flatMap(param.elements, (element, idx) => {
-            var indexedElement = Object.assign({}, element, {
+            const indexedElement = Object.assign({}, element, {
               name: String(idx),
               indexed: true
             });
@@ -190,7 +190,7 @@ function paramToDoc(
         };
       }
       return _.flatMap(param.elements, (element, idx) => {
-        var indexedElement = Object.assign({}, element, {
+        const indexedElement = Object.assign({}, element, {
           name: String(idx)
         });
         return paramToDoc(indexedElement, prefix);
@@ -209,7 +209,7 @@ function paramToDoc(
     }
     case 'RestProperty': // (a, ...b)
     case 'RestElement': {
-      let type: DoctrineType = {
+      const type: DoctrineType = {
         type: 'RestType'
       };
       if (param.typeAnnotation) {
@@ -224,7 +224,7 @@ function paramToDoc(
     }
     default: {
       // (a)
-      var newParam: CommentTag = {
+      const newParam: CommentTag = {
         title: 'param',
         name: prefix ? prefixedName : param.name,
         lineNumber: param.loc.start.line
@@ -255,7 +255,7 @@ function paramToDoc(
  * also $0.x and maybe $0.x.y.z all to options.x and options.x.y.z
  */
 function renameTree(node, explicitName) {
-  var parts = node.name.split(PATH_SPLIT_CAPTURING);
+  const parts = node.name.split(PATH_SPLIT_CAPTURING);
   parts[0] = explicitName;
   node.name = parts.join('');
   if (node.properties) {
@@ -274,7 +274,7 @@ function mergeTrees(inferred, explicit) {
   // to destructuring parameters, which do not have inferred names. This is
   // _only_ enabled in the case in which all parameters are specified explicitly
   if (inferred.length === explicit.length) {
-    for (var i = 0; i < inferred.length; i++) {
+    for (let i = 0; i < inferred.length; i++) {
       if (inferred[i].anonymous === true) {
         renameTree(inferred[i], explicit[i].name);
       }
@@ -291,7 +291,7 @@ function mergeTopNodes(inferred, explicit) {
     return tagDepth(tag) === 1 && !inferredNames.has(tag.name);
   });
 
-  var errors = explicitTagsWithoutInference.map(tag => {
+  const errors = explicitTagsWithoutInference.map(tag => {
     return {
       message:
         `An explicit parameter named ${tag.name ||
@@ -337,7 +337,7 @@ function mergeNodes(inferred, explicit) {
 
 function combineTags(inferredTag, explicitTag) {
   let type = explicitTag.type;
-  var defaultValue;
+  let defaultValue;
   if (!explicitTag.type) {
     type = inferredTag.type;
   } else if (!explicitTag.default && inferredTag.default) {
