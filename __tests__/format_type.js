@@ -1,9 +1,9 @@
 /*eslint max-len: 0 */
 
-var _formatType = require('../src/output/util/format_type'),
-  LinkerStack = require('../src/output/util/linker_stack'),
-  remark = require('remark'),
-  parse = require('doctrine-temporary-fork').parse;
+const _formatType = require('../src/output/util/format_type');
+const LinkerStack = require('../src/output/util/linker_stack');
+const remark = require('remark');
+const parse = require('doctrine-temporary-fork').parse;
 
 function stringify(children) {
   return remark().stringify({
@@ -13,8 +13,8 @@ function stringify(children) {
 }
 
 test('formatType', function() {
-  var linkerStack = new LinkerStack({});
-  var formatType = _formatType.bind(undefined, linkerStack.link);
+  const linkerStack = new LinkerStack({});
+  const formatType = _formatType.bind(undefined, linkerStack.link);
   [
     ['Foo', 'Foo'],
     ['null', 'null'],

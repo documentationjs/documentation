@@ -1,6 +1,6 @@
 /* @flow */
-var remark = require('remark');
-var inlineTokenizer = require('./inline_tokenizer');
+const remark = require('remark');
+const inlineTokenizer = require('./inline_tokenizer');
 
 /**
  * Parse a string of Markdown into a Remark
@@ -11,7 +11,9 @@ var inlineTokenizer = require('./inline_tokenizer');
  * @private
  */
 function parseMarkdown(string: string) {
-  return remark().use(inlineTokenizer).parse(string);
+  return remark()
+    .use(inlineTokenizer)
+    .parse(string);
 }
 
 module.exports = parseMarkdown;

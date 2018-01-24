@@ -1,9 +1,9 @@
 /* @flow */
 /* eslint no-console: 0 */
-var File = require('vinyl');
-var ansiHTML = require('ansi-html');
+const File = require('vinyl');
+const ansiHTML = require('ansi-html');
 
-var template =
+const template =
   '<head><style>' +
   'body{padding:20px;font:18px monospace;background:#880000;color:#fff;}' +
   '</style></head>';
@@ -27,7 +27,7 @@ ansiHTML.setColors({
  * @returns {Object} vinyl file object
  */
 function errorPage(error: Error) {
-  var errorText = error.toString();
+  let errorText = error.toString();
   console.error(error);
   if (error.codeFrame) {
     errorText += '<pre>' + ansiHTML(error.codeFrame) + '</pre>';

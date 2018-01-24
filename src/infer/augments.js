@@ -1,7 +1,7 @@
 /* @flow */
 
 import generate from 'babel-generator';
-var findTarget = require('./finders').findTarget;
+const findTarget = require('./finders').findTarget;
 
 /**
  * Infers an `augments` tag from an ES6 class declaration
@@ -14,7 +14,7 @@ function inferAugments(comment: Comment) {
     return comment;
   }
 
-  var path = findTarget(comment.context.ast);
+  const path = findTarget(comment.context.ast);
 
   if (!path) {
     return comment;

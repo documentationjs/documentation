@@ -1,5 +1,5 @@
-var parse = require('../../../src/parsers/javascript'),
-  findTarget = require('../../../src/infer/finders').findTarget;
+const parse = require('../../../src/parsers/javascript');
+const findTarget = require('../../../src/infer/finders').findTarget;
 
 function toComment(fn) {
   if (typeof fn == 'function') {
@@ -23,7 +23,7 @@ test('findTarget', function() {
     findTarget(
       toComment(function() {
         /** Test */
-        var x = 10;
+        const x = 10;
       }).context.ast
     ).type
   ).toBe('VariableDeclarator');
@@ -31,7 +31,7 @@ test('findTarget', function() {
   expect(
     findTarget(
       toComment(function() {
-        var z = {};
+        const z = {};
 
         /** Test */
         z.y = 10;
@@ -42,7 +42,7 @@ test('findTarget', function() {
   expect(
     findTarget(
       toComment(function() {
-        var z = {
+        const z = {
           /** Test */
           y: 10
         };

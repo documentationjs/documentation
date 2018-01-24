@@ -1,6 +1,6 @@
-var parse = require('../../../src/parsers/javascript'),
-  inferName = require('../../../src/infer/name'),
-  inferAccess = require('../../../src/infer/access');
+const parse = require('../../../src/parsers/javascript');
+const inferName = require('../../../src/infer/name');
+const inferAccess = require('../../../src/infer/access');
 
 function toComment(fn) {
   return parse(

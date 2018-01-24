@@ -1,9 +1,9 @@
 /* @flow */
 
-var parseMarkdown = require('./parse_markdown');
-var chalk = require('chalk');
-var path = require('path');
-var fs = require('fs');
+const parseMarkdown = require('./parse_markdown');
+const chalk = require('chalk');
+const path = require('path');
+const fs = require('fs');
 
 /**
  * Sort two documentation objects, given an optional order object. Returns
@@ -65,7 +65,7 @@ module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
   // Table of contents 'theme' entries: defined as objects
   // in the YAML list
   options.toc.forEach(walk.bind(null, []));
-  var unfixed = [];
+  const unfixed = [];
   comments.forEach(function(comment) {
     let commentPath;
     if (!comment.memberof && (commentPath = paths[comment.name])) {

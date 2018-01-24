@@ -1,8 +1,8 @@
-var walk = require('../../src/walk').walk;
+const walk = require('../../src/walk').walk;
 
 describe('walk', function() {
   test('flat comments', function() {
-    var comments = [{ name: 'Tom' }];
+    const comments = [{ name: 'Tom' }];
 
     function renamer(comment, options) {
       if (options) {
@@ -20,7 +20,7 @@ describe('walk', function() {
   });
 
   test('nested comments', function() {
-    var comments = [
+    const comments = [
       {
         name: 'Tom',
         members: {

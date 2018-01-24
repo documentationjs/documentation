@@ -1,6 +1,6 @@
-var flowDoctrine = require('../../src/flow_doctrine.js'),
-  parse = require('../../src/parsers/javascript'),
-  FLOW_TYPES = require('babel-types').FLOW_TYPES;
+const flowDoctrine = require('../../src/flow_doctrine.js');
+const parse = require('../../src/parsers/javascript');
+const FLOW_TYPES = require('babel-types').FLOW_TYPES;
 
 function toComment(fn, filename) {
   return parse(
@@ -13,12 +13,12 @@ function toComment(fn, filename) {
 }
 
 test('flowDoctrine', function() {
-  var types = FLOW_TYPES.filter(function(type) {
+  const types = FLOW_TYPES.filter(function(type) {
     return type.match(/\wTypeAnnotation$/);
   });
 
   function toDoctrineType(flowType) {
-    var annotation = toComment(
+    const annotation = toComment(
       '/** add */function add(a: ' + flowType + ' ) { }'
     ).context.ast.node.params[0].typeAnnotation.typeAnnotation;
     if (types.indexOf(annotation.type) !== -1) {

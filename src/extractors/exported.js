@@ -1,11 +1,11 @@
 /* @flow */
 import traverse from 'babel-traverse';
-var isJSDocComment = require('../is_jsdoc_comment');
-var t = require('babel-types');
-var nodePath = require('path');
-var fs = require('fs');
+const isJSDocComment = require('../is_jsdoc_comment');
+const t = require('babel-types');
+const nodePath = require('path');
+const fs = require('fs');
 import { parseToAst } from '../parsers/parse_to_ast';
-var findTarget = require('../infer/finders').findTarget;
+const findTarget = require('../infer/finders').findTarget;
 
 /**
  * Iterate through the abstract syntax tree, finding ES6-style exports,
@@ -25,16 +25,16 @@ function walkExported(
 } */,
   addComment: Function
 ) {
-  var newResults = [];
-  var filename = data.file;
-  var dataCache = new Map();
+  const newResults = [];
+  const filename = data.file;
+  const dataCache = new Map();
 
   function addBlankComment(data, path, node) {
     return addComment(data, '', node.loc, path, node.loc, true);
   }
 
   function getComments(data, path) {
-    var comments = (path.node.leadingComments || []).filter(isJSDocComment);
+    const comments = (path.node.leadingComments || []).filter(isJSDocComment);
 
     if (!comments.length) {
       // If this is the first declarator we check for comments on the VariableDeclaration.
@@ -45,7 +45,7 @@ function walkExported(
         return getComments(data, path.parentPath);
       }
 
-      var added = addBlankComment(data, path, path.node);
+      const added = addBlankComment(data, path, path.node);
       return added ? [added] : [];
     }
 
@@ -64,7 +64,7 @@ function walkExported(
   }
 
   function addComments(data, path, overrideName) {
-    var comments = getComments(data, path);
+    const comments = getComments(data, path);
     if (overrideName) {
       comments.forEach(function(comment) {
         comment.name = overrideName;
@@ -78,7 +78,7 @@ function walkExported(
       path.skip();
     },
     ExportDeclaration(path) {
-      var declaration = path.get('declaration');
+      const declaration = path.get('declaration');
       if (t.isDeclaration(declaration)) {
         traverseExportedSubtree(declaration, data, addComments);
         return path.skip();
@@ -86,7 +86,7 @@ function walkExported(
 
       if (path.isExportDefaultDeclaration()) {
         if (declaration.isIdentifier()) {
-          var binding = declaration.scope.getBinding(declaration.node.name);
+          const binding = declaration.scope.getBinding(declaration.node.name);
           traverseExportedSubtree(binding.path, data, addComments);
           return path.skip();
         }
@@ -96,23 +96,23 @@ function walkExported(
       }
 
       if (t.isExportNamedDeclaration(path)) {
-        var specifiers = path.get('specifiers');
-        var source = path.node.source;
-        var exportKind = path.node.exportKind;
+        const specifiers = path.get('specifiers');
+        const source = path.node.source;
+        const exportKind = path.node.exportKind;
         specifiers.forEach(specifier => {
-          var specData = data;
-          var local, exported;
+          let specData = data;
+          let local;
           if (t.isExportDefaultSpecifier(specifier)) {
             local = 'default';
           } else {
             // ExportSpecifier
             local = specifier.node.local.name;
           }
-          exported = specifier.node.exported.name;
+          const exported = specifier.node.exported.name;
 
-          var bindingPath;
+          let bindingPath;
           if (source) {
-            var tmp = findExportDeclaration(
+            const tmp = findExportDeclaration(
               dataCache,
               local,
               exportKind,
@@ -145,7 +145,7 @@ function walkExported(
 }
 
 function traverseExportedSubtree(path, data, addComments, overrideName) {
-  var attachCommentPath = path;
+  let attachCommentPath = path;
   if (path.parentPath && path.parentPath.isExportDeclaration()) {
     attachCommentPath = path.parentPath;
   }
@@ -179,15 +179,15 @@ function traverseExportedSubtree(path, data, addComments, overrideName) {
 }
 
 function getCachedData(dataCache, filePath) {
-  var path = filePath;
+  let path = filePath;
   if (!nodePath.extname(path)) {
     path = require.resolve(path);
   }
 
-  var value = dataCache.get(path);
+  let value = dataCache.get(path);
   if (!value) {
-    var input = fs.readFileSync(path, 'utf-8');
-    var ast = parseToAst(input);
+    const input = fs.readFileSync(path, 'utf-8');
+    const ast = parseToAst(input);
     value = {
       data: {
         file: path,
@@ -208,12 +208,12 @@ function findExportDeclaration(
   referrer,
   filename
 ) {
-  var depPath = nodePath.resolve(nodePath.dirname(referrer), filename);
-  var tmp = getCachedData(dataCache, depPath);
-  var ast = tmp.ast;
-  var data = tmp.data;
+  const depPath = nodePath.resolve(nodePath.dirname(referrer), filename);
+  const tmp = getCachedData(dataCache, depPath);
+  const ast = tmp.ast;
+  let data = tmp.data;
 
-  var rv;
+  let rv;
   traverse(ast, {
     Statement(path) {
       path.skip();
@@ -223,9 +223,9 @@ function findExportDeclaration(
         rv = path.get('declaration');
         path.stop();
       } else if (path.isExportNamedDeclaration()) {
-        var declaration = path.get('declaration');
+        const declaration = path.get('declaration');
         if (t.isDeclaration(declaration)) {
-          var bindingName;
+          let bindingName;
           if (
             declaration.isFunctionDeclaration() ||
             declaration.isClassDeclaration() ||
@@ -247,11 +247,11 @@ function findExportDeclaration(
 
         // export {x as y}
         // export {x as y} from './file.js'
-        var specifiers = path.get('specifiers');
-        var source = path.node.source;
-        for (var i = 0; i < specifiers.length; i++) {
-          var specifier = specifiers[i];
-          var local, exported;
+        const specifiers = path.get('specifiers');
+        const source = path.node.source;
+        for (let i = 0; i < specifiers.length; i++) {
+          const specifier = specifiers[i];
+          let local, exported;
           if (t.isExportDefaultSpecifier(specifier)) {
             // export x from ...
             local = 'default';
@@ -264,7 +264,7 @@ function findExportDeclaration(
           if (exported === name) {
             if (source) {
               // export {local as exported} from './file.js';
-              var tmp = findExportDeclaration(
+              const tmp = findExportDeclaration(
                 dataCache,
                 local,
                 exportKind,
@@ -304,7 +304,7 @@ function findExportDeclaration(
 // Since we cannot use scope.getBinding for types this walks the current scope looking for a
 // top-level type alias.
 function findLocalType(scope, local) {
-  var rv;
+  let rv;
   scope.path.traverse({
     Statement(path) {
       path.skip();

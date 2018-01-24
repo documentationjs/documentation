@@ -1,10 +1,10 @@
-var sort = require('../../src/sort'),
-  path = require('path');
+const sort = require('../../src/sort');
+const path = require('path');
 
 test('sort stream alphanumeric', function() {
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var banana = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const banana = { context: { sortKey: 'c' }, name: 'bananas' };
 
   expect(sort([apples, carrot, banana])).toEqual([apples, carrot, banana]);
 
@@ -12,9 +12,9 @@ test('sort stream alphanumeric', function() {
 });
 
 test('sort stream with configuration', function() {
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
 
   expect(
     sort([apples, carrot, bananas], {
@@ -24,16 +24,16 @@ test('sort stream with configuration', function() {
 });
 
 test('sort stream with configuration and a section', function() {
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
 
-  var section = {
+  const section = {
     name: 'This is the banana type',
     description: 'here lies bananas'
   };
 
-  var sectionMarkdown = {
+  const sectionMarkdown = {
     name: 'This is the banana type',
     description: {
       type: 'root',
@@ -105,15 +105,15 @@ test('sort stream with configuration and a section', function() {
 
 test('sort an already-sorted stream containing a section/description', function() {
   // this happens in the 'serve' task
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
 
-  var section = {
+  const section = {
     name: 'This is the banana type',
     description: 'here lies bananas'
   };
-  var sectionMarkdown = {
+  const sectionMarkdown = {
     name: 'This is the banana type',
     description: {
       type: 'root',
@@ -176,21 +176,21 @@ test('sort an already-sorted stream containing a section/description', function(
     ]
   };
 
-  var config = {
+  const config = {
     toc: ['carrot', section, 'bananas']
   };
 
-  var sortOnce = sort([apples, carrot, bananas], config);
-  var sortTwice = sort(sortOnce, config);
+  const sortOnce = sort([apples, carrot, bananas], config);
+  const sortTwice = sort(sortOnce, config);
   expect(sortTwice).toEqual([carrot, sectionMarkdown, bananas, apples]);
 });
 
 test('sort toc with files', function() {
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
 
-  var snowflake = {
+  const snowflake = {
     name: 'snowflake',
     file: path.join(__dirname, '../fixture/snowflake.md')
   };
@@ -203,11 +203,11 @@ test('sort toc with files', function() {
 });
 
 test('sort toc with files absolute path', function() {
-  var apples = { context: { sortKey: 'a' }, name: 'apples' };
-  var carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  var bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+  const apples = { context: { sortKey: 'a' }, name: 'apples' };
+  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
 
-  var snowflake = {
+  const snowflake = {
     name: 'snowflake',
     file: path.join(__dirname, '../fixture/snowflake.md')
   };
@@ -219,23 +219,23 @@ test('sort toc with files absolute path', function() {
 });
 
 test('sort toc with files absolute path', function() {
-  var apples = {
+  const apples = {
     context: { sortKey: 'a' },
     name: 'apples',
     memberof: 'classB'
   };
-  var carrot = {
+  const carrot = {
     context: { sortKey: 'b' },
     name: 'carrot',
     memberof: 'classB'
   };
-  var bananas = {
+  const bananas = {
     context: { sortKey: 'c' },
     name: 'bananas',
     memberof: 'classB'
   };
 
-  var snowflake = {
+  const snowflake = {
     name: 'snowflake',
     file: path.join(__dirname, '../fixture/snowflake.md')
   };

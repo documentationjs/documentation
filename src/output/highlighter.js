@@ -1,6 +1,6 @@
 /* @flow */
-var visit = require('unist-util-visit');
-var hljs = require('highlight.js');
+const visit = require('unist-util-visit');
+const hljs = require('highlight.js');
 
 /**
  * Adapted from remark-highlight.js

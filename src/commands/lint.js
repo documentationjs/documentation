@@ -1,8 +1,8 @@
 /* @flow */
 
-var documentation = require('../');
-var fs = require('fs');
-var path = require('path');
+const documentation = require('../');
+const fs = require('fs');
+const path = require('path');
 
 /* eslint no-console: 0 */
 

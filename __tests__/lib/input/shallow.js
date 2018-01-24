@@ -1,4 +1,5 @@
-var path = require('path'), shallow = require('../../../src/input/shallow');
+const path = require('path');
+const shallow = require('../../../src/input/shallow');
 
 test('shallow deps', async function() {
   const deps = await shallow(
@@ -37,7 +38,7 @@ test('throws on non-string or object input', function() {
 });
 
 test('shallow deps literal', async function() {
-  var obj = {
+  const obj = {
     file: 'foo.js',
     source: '//bar'
   };

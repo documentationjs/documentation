@@ -1,17 +1,16 @@
-var nestTag = require('../../src/nest').nestTag;
+const nestTag = require('../../src/nest').nestTag;
 
 // Print a tree of tags in a way that's easy to test.
-var printTree = indent => node =>
-  `${new Array(indent + 1).join(' ')}- ${node.name}${node.properties ? '\n' : ''}${(node.properties || [
-  ])
-    .map(printTree(indent + 1))
-    .join('\n')}`;
+const printTree = indent => node =>
+  `${new Array(indent + 1).join(' ')}- ${node.name}${
+    node.properties ? '\n' : ''
+  }${(node.properties || []).map(printTree(indent + 1)).join('\n')}`;
 
-var printNesting = params =>
+const printNesting = params =>
   printTree(0)({ properties: nestTag(params), name: 'root' });
 
 test('nest params - basic', function() {
-  var params = [
+  const params = [
     'foo',
     'foo.bar',
     'foo.bar.third',
@@ -29,7 +28,7 @@ test('nest params - basic', function() {
 });
 
 test('nest params - multiple roots', function() {
-  var params = ['a', 'b', 'c'].map(name => ({ name }));
+  const params = ['a', 'b', 'c'].map(name => ({ name }));
   expect(printNesting(params)).toBe(
     `- root
  - a
@@ -39,14 +38,14 @@ test('nest params - multiple roots', function() {
 });
 
 test('nest params - missing parent', function() {
-  var params = ['foo', 'foo.bar.third'].map(name => ({ name }));
+  const params = ['foo', 'foo.bar.third'].map(name => ({ name }));
   expect(() => {
     nestTag(params);
   }).toThrow();
 });
 
 test('nest params - #658', function() {
-  var params = [
+  const params = [
     'state',
     'payload',
     'payload.input_meter_levels',
@@ -70,7 +69,7 @@ test('nest params - #658', function() {
 });
 
 test('nest params - #554', function() {
-  var params = [
+  const params = [
     'x',
     'yIn',
     'options',

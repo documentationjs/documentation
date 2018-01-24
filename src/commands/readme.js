@@ -1,13 +1,13 @@
 /* @flow */
 
-var fs = require('fs');
-var remark = require('remark');
-var path = require('path');
-var documentation = require('../');
-var sharedOptions = require('./shared_options');
-var inject = require('mdast-util-inject');
-var chalk = require('chalk');
-var disparity = require('disparity');
+const fs = require('fs');
+const remark = require('remark');
+const path = require('path');
+const documentation = require('../');
+const sharedOptions = require('./shared_options');
+const inject = require('mdast-util-inject');
+const chalk = require('chalk');
+const disparity = require('disparity');
 
 module.exports.command = 'readme [input..]';
 module.exports.description = 'inject documentation into your README.md';
@@ -78,7 +78,7 @@ module.exports.handler = function readme(argv: Object) {
     }
   };
 
-  var readmeContent = fs.readFileSync(argv.readmeFile, 'utf8');
+  const readmeContent = fs.readFileSync(argv.readmeFile, 'utf8');
 
   documentation
     .build(argv.input, argv)
@@ -92,7 +92,7 @@ module.exports.handler = function readme(argv: Object) {
         .process(readmeContent)
     )
     .then(file => {
-      var diffOutput = disparity.unified(readmeContent, file.contents, {
+      const diffOutput = disparity.unified(readmeContent, file.contents, {
         paths: [argv.readmeFile, argv.readmeFile]
       });
       if (!diffOutput.length) {

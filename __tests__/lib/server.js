@@ -1,23 +1,23 @@
-var get = require('../utils').get;
-var File = require('vinyl');
-var getPort = require('get-port');
-var Server = require('../../src/serve/server');
+const get = require('../utils').get;
+const File = require('vinyl');
+const getPort = require('get-port');
+const Server = require('../../src/serve/server');
 
-var jsFile = new File({
+const jsFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/file.js',
   contents: new Buffer('var test = 123;')
 });
 
-var coffeeFile = new File({
+const coffeeFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/file.coffee',
   contents: new Buffer('test = 123')
 });
 
-var indexFile = new File({
+const indexFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/index.html',
@@ -26,10 +26,10 @@ var indexFile = new File({
 
 test('server - throws on bad port', function() {
   expect(function() {
-    var server = new Server('${port}');
+    const server = new Server('${port}');
   }).toThrow();
   expect(function() {
-    var server = new Server();
+    const server = new Server();
   }).toThrow();
 });
 
@@ -45,7 +45,7 @@ test('server', async function() {
   }
 
   server.setFiles([coffeeFile]);
-  var text;
+  let text;
 
   text = await get(`http://localhost:${port}/file.coffee`);
   expect(text).toMatchSnapshot();

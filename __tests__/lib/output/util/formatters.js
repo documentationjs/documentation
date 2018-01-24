@@ -1,4 +1,4 @@
-var formatters = require('../../../../src/output/util/formatters')(getHref);
+const formatters = require('../../../../src/output/util/formatters')(getHref);
 
 test('formatters.parameters -- long form', function() {
   expect(formatters.parameters({})).toEqual('()');

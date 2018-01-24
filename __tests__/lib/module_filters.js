@@ -1,4 +1,4 @@
-var moduleFilters = require('../../src/module_filters');
+const moduleFilters = require('../../src/module_filters');
 
 test('moduleFilters.internalOnly', function() {
   expect(moduleFilters.internalOnly('./foo')).toEqual(true);

@@ -1,5 +1,5 @@
-var parse = require('../../../src/parsers/javascript'),
-  inferParams = require('../../../src/infer/params');
+const parse = require('../../../src/parsers/javascript');
+const inferParams = require('../../../src/infer/params');
 
 function toComment(fn, file) {
   return parse(
@@ -85,7 +85,7 @@ test('inferParams', function() {
   expect(
     evaluate(function() {
       /** Test */
-      var f = function(x) {};
+      const f = function(x) {};
     }).params
   ).toEqual([{ lineNumber: 3, name: 'x', title: 'param' }]);
 
@@ -115,10 +115,10 @@ test('inferParams', function() {
 
   expect(
     evaluate(function() {
-      var x = 1,
-        g = function(y) {},
-        /** Test */
-        f = function(x) {};
+      const x = 1;
+      const g = function(y) {};
+      /** Test */
+      const f = function(x) {};
     }).params
   ).toEqual([{ lineNumber: 5, name: 'x', title: 'param' }]);
 

@@ -1,12 +1,12 @@
 /* @flow */
 
-var VFile = require('vfile');
+const VFile = require('vfile');
 import { walk } from './walk';
 import vfileSort from 'vfile-sort';
 import reporter from 'vfile-reporter';
 import nest from './nest';
 
-var CANONICAL = {
+const CANONICAL = {
   String: 'string',
   Boolean: 'boolean',
   Undefined: 'undefined',
@@ -70,10 +70,10 @@ function lintComments(comment: Comment) {
  * @returns {string} user-readable output
  */
 function formatLint(comments: Array<Comment>): string {
-  var vFiles = {};
+  const vFiles = {};
   walk(comments, function(comment) {
     comment.errors.forEach(function(error) {
-      var p = comment.context.file;
+      const p = comment.context.file;
       vFiles[p] =
         vFiles[p] ||
         new VFile({

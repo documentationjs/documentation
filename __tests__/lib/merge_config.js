@@ -1,6 +1,6 @@
-var path = require('path'),
-  _ = require('lodash'),
-  mergeConfig = require('../../src/merge_config');
+const path = require('path');
+const _ = require('lodash');
+const mergeConfig = require('../../src/merge_config');
 
 test('bad config', async function() {
   try {
@@ -12,7 +12,7 @@ test('bad config', async function() {
 
 test('right merging package configuration', async function() {
   // Omit configuration from output, for simplicity
-  var nc = _.curryRight(_.omit, 2)([
+  const nc = _.curryRight(_.omit, 2)([
     'config',
     'no-package',
     'parseExtension',
@@ -35,7 +35,7 @@ test('right merging package configuration', async function() {
 
 test('nc(mergeConfig)', async function() {
   // Omit configuration from output, for simplicity
-  var nc = _.curryRight(_.omit, 2)([
+  const nc = _.curryRight(_.omit, 2)([
     'config',
     'no-package',
     'parseExtension',
