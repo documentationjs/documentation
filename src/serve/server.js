@@ -75,7 +75,7 @@ class Server extends EventEmitter {
       var file = this._files[i];
       var filePath = file.relative.split(sep).join('/');
       if (filePath === path) {
-        response.writeHead(200, { 'Content-Type': mime.lookup(path) });
+        response.writeHead(200, { 'Content-Type': mime.getType(path) });
         response.end(file.contents);
         return;
       }
