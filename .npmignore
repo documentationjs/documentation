@@ -6,4 +6,4 @@
 .nyc_output
 circle.yml
 coverage
-test
+__tests__
