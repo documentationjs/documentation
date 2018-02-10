@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.0"></a>
+# [5.4.0](https://github.com/documentationjs/documentation/compare/v5.3.5...v5.4.0) (2018-02-10)
+
+
+### Bug Fixes
+
+* **package:** update remark-toc to version 5.0.0 ([0bb3d0d](https://github.com/documentationjs/documentation/commit/0bb3d0d))
+
+
+### Features
+
+* add support for class param declarations at the constructor ([#1013](https://github.com/documentationjs/documentation/issues/1013)) ([05c5279](https://github.com/documentationjs/documentation/commit/05c5279))
+
+
+
 <a name="5.3.5"></a>
 ## [5.3.5](https://github.com/documentationjs/documentation/compare/v5.3.4...v5.3.5) (2017-12-12)
 
