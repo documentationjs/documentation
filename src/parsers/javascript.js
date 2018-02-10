@@ -103,7 +103,7 @@ function _addComment(
 
       if (t.isClassMethod(path) && path.node.kind === 'constructor') {
         // #689
-        if (!comment.hideconstructor) {
+        if (comment.tags.some(tag => tag.title !== 'param' && tag.title !== 'hideconstructor')) {
           debuglog(
             'A constructor was documented explicitly: document along with the class instead'
           );

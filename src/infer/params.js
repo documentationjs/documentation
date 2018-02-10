@@ -52,7 +52,11 @@ function inferParams(comment: Comment) {
 
 function inferAndCombineParams(params, comment) {
   const inferredParams = params.map((param, i) => paramToDoc(param, '', i));
-  const mergedParamsAndErrors = mergeTrees(inferredParams, comment.params);
+  const paramsToMerge = comment.params;
+  if (comment.constructorComment) {
+    paramsToMerge.push.apply(paramsToMerge, comment.constructorComment.params);
+  }
+  const mergedParamsAndErrors = mergeTrees(inferredParams, paramsToMerge);
 
   // Then merge the trees. This is the hard part.
   return Object.assign(comment, {
