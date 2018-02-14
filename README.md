@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  The documentation system for modern JavaScript
+  The documentation system is for modern JavaScript
 </p>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/documentation.svg)](https://greenkeeper.io/)
@@ -47,25 +47,25 @@ $ npm install -g documentation
 
 This installs a command called `documentation` in your path, that you can
 point at [JSDoc](http://usejsdoc.org/)-annotated source code to generate
-human-readable documentation. First run `documentation` with the `--help`
+human-readable documentation. First, run `documentation` with the `--help`
 option for help:
 
 ```sh
 Usage:
 
 # generate markdown docs for index.js and files it references
-bin/documentation.js build index.js -f md
+bin/documentation.js build index.js -f MD
 
 # generate html docs for all files in src
 bin/documentation.js build src/** -f html -o docs
 
 # document index.js, ignoring any files it requires or imports
-bin/documentation.js build index.js -f md --shallow
+bin/documentation.js build index.js -f MD --shallow
 
-# build and serve html docs for app.js
+# build and serve HTML docs for app.js
 bin/documentation.js serve app.js
 
-# build, serve, and live-update html docs for app.js
+# build, serve, and live-update HTML docs for app.js
 bin/documentation.js serve --watch app.js
 
 # validate JSDoc syntax in util.js
@@ -92,13 +92,13 @@ Options:
 
 _We have plenty of
 [issues](https://github.com/documentationjs/documentation/issues) that we'd
-love help with._
+love help with.
 
 -   Robust and complete `JSDoc` support, including typedefs.
 -   Strong support for HTML and Markdown output
 -   Documentation coverage, statistics, and validation
 
-documentation is an OPEN Open Source Project. This means that:
+documentation is an Open Source Project. This means that:
 
 Individuals making significant and valuable contributions are given
 commit-access to the project to contribute as they see fit. This
