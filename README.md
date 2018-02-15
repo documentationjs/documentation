@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  The documentation system is for modern JavaScript
+  The documentation system for modern JavaScript
 </p>
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/documentation.svg)](https://greenkeeper.io/)
@@ -54,13 +54,13 @@ option for help:
 Usage:
 
 # generate markdown docs for index.js and files it references
-bin/documentation.js build index.js -f MD
+bin/documentation.js build index.js -f md
 
 # generate html docs for all files in src
 bin/documentation.js build src/** -f html -o docs
 
 # document index.js, ignoring any files it requires or imports
-bin/documentation.js build index.js -f MD --shallow
+bin/documentation.js build index.js -f md --shallow
 
 # build and serve HTML docs for app.js
 bin/documentation.js serve app.js
@@ -92,7 +92,7 @@ Options:
 
 _We have plenty of
 [issues](https://github.com/documentationjs/documentation/issues) that we'd
-love help with.
+love help with._
 
 -   Robust and complete `JSDoc` support, including typedefs.
 -   Strong support for HTML and Markdown output
