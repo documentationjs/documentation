@@ -47,7 +47,7 @@ $ npm install -g documentation
 
 This installs a command called `documentation` in your path, that you can
 point at [JSDoc](http://usejsdoc.org/)-annotated source code to generate
-human-readable documentation. First run `documentation` with the `--help`
+human-readable documentation. First, run `documentation` with the `--help`
 option for help:
 
 ```sh
@@ -62,10 +62,10 @@ bin/documentation.js build src/** -f html -o docs
 # document index.js, ignoring any files it requires or imports
 bin/documentation.js build index.js -f md --shallow
 
-# build and serve html docs for app.js
+# build and serve HTML docs for app.js
 bin/documentation.js serve app.js
 
-# build, serve, and live-update html docs for app.js
+# build, serve, and live-update HTML docs for app.js
 bin/documentation.js serve --watch app.js
 
 # validate JSDoc syntax in util.js
