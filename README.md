@@ -98,7 +98,7 @@ love help with._
 -   Strong support for HTML and Markdown output
 -   Documentation coverage, statistics, and validation
 
-documentation is an Open Source Project. This means that:
+documentation is an OPEN Open Source Project. This means that:
 
 Individuals making significant and valuable contributions are given
 commit-access to the project to contribute as they see fit. This
