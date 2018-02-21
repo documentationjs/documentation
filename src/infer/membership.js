@@ -397,6 +397,21 @@ module.exports = function() {
       }
     }
 
+    // type Foo = { bar: T }
+    // interface Foo { bar: T }
+    if (
+      path.isObjectTypeProperty() &&
+      path.parentPath.isObjectTypeAnnotation() &&
+      (path.parentPath.parentPath.isTypeAlias() ||
+        path.parentPath.parentPath.isInterfaceDeclaration())
+    ) {
+      return inferMembershipFromIdentifiers(
+        comment,
+        [path.parentPath.parentPath.get('id').node.name],
+        'instance'
+      );
+    }
+
     return comment;
   };
 };

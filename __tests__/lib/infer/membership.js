@@ -633,3 +633,37 @@ test('inferMembership - export', function() {
     scope: 'instance'
   });
 });
+
+test('inferMembership - flow interface', function() {
+  expect(
+    pick(
+      evaluate(`
+        interface Foo {
+          /** Test */
+          bar: number
+        }
+      `)[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
+    scope: 'instance'
+  });
+});
+
+test('inferMembership - flow object type alias', function() {
+  expect(
+    pick(
+      evaluate(`
+        type Foo = {
+          /** Test */
+          bar: number
+        }
+      `)[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
+    scope: 'instance'
+  });
+});
