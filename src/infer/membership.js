@@ -397,18 +397,6 @@ module.exports = function() {
       }
     }
 
-    // var function Foo() {
-    //   function bar() {}
-    //   return { bar: bar };
-    // }
-    /*
-    if (n.isFunctionDeclaration(path) &&
-        n.isBlockStatement(path.parentPath) &&
-        n.isFunction(path.parentPath.parentPath)) {
-      inferMembershipFromIdentifiers(comment, [path.parentPath.parentPath.node.id.name]);
-    }
-    */
-
     return comment;
   };
 };
