@@ -21,15 +21,20 @@ module.exports = function(comment: Comment) {
     .join('/');
 
   if (urlPrefix) {
+    let startLine;
+    let endLine;
+
+    if (comment.kind == 'typedef') {
+      startLine = comment.loc.start.line;
+      endLine = comment.loc.end.line;
+    } else {
+      startLine = comment.context.loc.start.line;
+      endLine = comment.context.loc.end.line;
+    }
+
     comment.context.github = {
       url:
-        urlPrefix +
-        fileRelativePath +
-        '#L' +
-        comment.context.loc.start.line +
-        '-' +
-        'L' +
-        comment.context.loc.end.line,
+        urlPrefix + fileRelativePath + '#L' + startLine + '-' + 'L' + endLine,
       path: fileRelativePath
     };
   }
