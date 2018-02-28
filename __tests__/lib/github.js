@@ -85,3 +85,29 @@ test('enterprise repository', function() {
 
   mock.restore();
 });
+
+test('typedef', function() {
+  mock(mockRepo.master);
+
+  expect(
+    evaluate(function() {
+      /**
+       * A number, or a string containing a number.
+       * @typedef {(number|string)} NumberLike
+       */
+
+      /**
+       * get one
+       * @returns {number} one
+       */
+      function getOne() {
+        return 1;
+      }
+    })[0].context.github
+  ).toEqual({
+    path: 'index.js',
+    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L1-L4'
+  });
+
+  mock.restore();
+});
