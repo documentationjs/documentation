@@ -104,6 +104,6 @@ test('typedef', function() {
     })[0].context.github
   ).toEqual({
     path: 'index.js',
-    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L1-L4'
+    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L2-L5'
   });
 });
