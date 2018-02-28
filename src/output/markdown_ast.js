@@ -4,6 +4,7 @@ const u = require('unist-builder');
 const remark = require('remark');
 const mergeConfig = require('../merge_config');
 const toc = require('remark-toc');
+const links = require('remark-reference-links');
 const hljs = require('highlight.js');
 const GithubSlugger = require('github-slugger');
 const LinkerStack = require('./util/linker_stack');
@@ -374,11 +375,10 @@ function buildMarkdownAST(
     )
   );
 
-  if (config.markdownToc) {
-    root = remark()
-      .use(toc, { tight: true })
-      .run(root);
-  }
+  const pluginRemark = remark();
+  if (config.markdownToc) pluginRemark.use(toc, { tight: true });
+  pluginRemark.use(links);
+  root = pluginRemark.run(root);
 
   return Promise.resolve(root);
 }
