@@ -84,6 +84,7 @@ function mergeConfigFile(config): Promise<Object> {
 
 function mergeConfig(config: Object): Promise<DocumentationConfig> {
   config.parseExtension = (config.parseExtension || []).concat([
+    'mjs',
     'js',
     'jsx',
     'es5',
