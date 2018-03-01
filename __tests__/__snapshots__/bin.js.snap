@@ -1769,36 +1769,36 @@ exports[`build --document-exported 1`] = `
 
 ### Table of Contents
 
--   [z](#z)
-    -   [zMethod](#zmethod)
--   [x](#x)
--   [Class](#class)
-    -   [classMethod](#classmethod)
-    -   [classGetter](#classgetter)
-    -   [classSetter](#classsetter)
-    -   [staticMethod](#staticmethod)
-    -   [staticGetter](#staticgetter)
-    -   [staticSetter](#staticsetter)
--   [T5](#t5)
--   [y2Default](#y2default)
--   [y4](#y4)
--   [object](#object)
-    -   [method](#method)
-    -   [getter](#getter)
-    -   [setter](#setter)
-    -   [prop](#prop)
-    -   [func](#func)
--   [f1](#f1)
--   [f3](#f3)
--   [T](#t)
--   [T2](#t2)
--   [T4](#t4)
--   [f4](#f4)
--   [o1](#o1)
-    -   [om1](#om1)
--   [f5](#f5)
--   [o2](#o2)
-    -   [om2](#om2)
+-   [z][1]
+    -   [zMethod][2]
+-   [x][3]
+-   [Class][4]
+    -   [classMethod][5]
+    -   [classGetter][6]
+    -   [classSetter][7]
+    -   [staticMethod][8]
+    -   [staticGetter][9]
+    -   [staticSetter][10]
+-   [T5][11]
+-   [y2Default][12]
+-   [y4][13]
+-   [object][14]
+    -   [method][15]
+    -   [getter][16]
+    -   [setter][17]
+    -   [prop][18]
+    -   [func][19]
+-   [f1][20]
+-   [f3][21]
+-   [T][22]
+-   [T2][23]
+-   [T4][24]
+-   [f4][25]
+-   [o1][26]
+    -   [om1][27]
+-   [f5][28]
+-   [o2][29]
+    -   [om2][30]
 
 ## z
 
@@ -1814,7 +1814,7 @@ exports[`build --document-exported 1`] = `
 
 **Parameters**
 
--   \`a\` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   \`a\` **[string][31]** 
 
 ### classMethod
 
@@ -1838,7 +1838,7 @@ exports[`build --document-exported 1`] = `
 
 ## T5
 
-Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+Type: [boolean][32]
 
 ## y2Default
 
@@ -1848,7 +1848,7 @@ Description of y3
 
 **Parameters**
 
--   \`p\` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   \`p\` **[number][33]** 
 
 Returns **void** 
 
@@ -1874,15 +1874,15 @@ Returns **void**
 
 ## T
 
-Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
+Type: [number][33]
 
 ## T2
 
-Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
+Type: [string][31]
 
 ## T4
 
-Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
+Type: [string][31]
 
 ## f4
 
@@ -1905,6 +1905,72 @@ f5 comment
 ## o2
 
 ### om2
+
+[1]: #z
+
+[2]: #zmethod
+
+[3]: #x
+
+[4]: #class
+
+[5]: #classmethod
+
+[6]: #classgetter
+
+[7]: #classsetter
+
+[8]: #staticmethod
+
+[9]: #staticgetter
+
+[10]: #staticsetter
+
+[11]: #t5
+
+[12]: #y2default
+
+[13]: #y4
+
+[14]: #object
+
+[15]: #method
+
+[16]: #getter
+
+[17]: #setter
+
+[18]: #prop
+
+[19]: #func
+
+[20]: #f1
+
+[21]: #f3
+
+[22]: #t
+
+[23]: #t2
+
+[24]: #t4
+
+[25]: #f4
+
+[26]: #o1
+
+[27]: #om1
+
+[28]: #f5
+
+[29]: #o2
+
+[30]: #om2
+
+[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[33]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
