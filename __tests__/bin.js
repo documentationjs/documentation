@@ -228,6 +228,15 @@ describe('lint command', function() {
       expect(err.code > 0).toBeTruthy();
     }
   });
+
+  test('generates lint output with shallow', async function() {
+    const data = await documentation(
+      ['lint fixture/lint/lint.input.shallow.js --shallow'],
+      {},
+      false
+    );
+    expect(data).toBe('');
+  });
 });
 
 test('given no files', async function() {
