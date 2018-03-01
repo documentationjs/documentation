@@ -11,7 +11,8 @@ type DocumentationConfig = {
   external?: Array<string>,
   theme: string,
   requireExtension?: Array<string>,
-  parseExtension: Array<string>
+  parseExtension: Array<string>,
+  noReferenceLinks?: boolean
 };
 
 type CommentError = {
