@@ -31,7 +31,7 @@ for some ideas.
 
 - In the folder you created, replace `require('../')` on lines 10 and 11 of `index.js` with `require('documentation')` and save.
 
-- You can now make changes that will show up when you generate your docs using your theme.   Example `package.json` `scripts` entry: `"node_modules/.bin/documentation build index.js -f html -o docs --theme node_modules/docjs-theme"`
+- You can now make changes that will show up when you generate your docs using your theme.   Example `package.json` `scripts` entry: `"documentation build index.js -f html -o docs --theme node_modules/docjs-theme"`
 
 ### Theming Markdown
 
