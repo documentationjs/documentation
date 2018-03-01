@@ -12762,6 +12762,10 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "type": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
         },
       ],
       "static": Array [],
@@ -13155,6 +13159,26 @@ Object {
       "children": Array [
         Object {
           "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "1",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
           "value": "Baz",
         },
       ],
@@ -13323,6 +13347,567 @@ Object {
       "title": undefined,
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`outputs es6-class-property.input.js JSON 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 1,
+          "line": 25,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 4,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 22,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "This is for issue 906.",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 23,
+              "line": 1,
+              "offset": 22,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 23,
+          "line": 1,
+          "offset": 22,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "kind": "class",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 3,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 3,
+                "line": 11,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 9,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 31,
+                        "line": 1,
+                        "offset": 30,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is a read-write property.",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 31,
+                    "line": 1,
+                    "offset": 30,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 31,
+                "line": 1,
+                "offset": 30,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 5,
+              "line": 8,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "memberof": "Issue906",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "readWriteProp",
+          "namespace": "Issue906#readWriteProp",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "class",
+              "name": "Issue906",
+            },
+            Object {
+              "kind": "member",
+              "name": "readWriteProp",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [
+            Object {
+              "description": null,
+              "lineNumber": 2,
+              "title": "type",
+              "type": Object {
+                "name": "boolean",
+                "type": "NameExpression",
+              },
+            },
+          ],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "boolean",
+            "type": "NameExpression",
+          },
+        },
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 3,
+                "line": 24,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 22,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 30,
+                        "line": 1,
+                        "offset": 29,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is a read-only property.",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 30,
+                    "line": 1,
+                    "offset": 29,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 30,
+                "line": 1,
+                "offset": 29,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 5,
+              "line": 21,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 17,
+            },
+          },
+          "memberof": "Issue906",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "readOnlyProp",
+          "namespace": "Issue906#readOnlyProp",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "class",
+              "name": "Issue906",
+            },
+            Object {
+              "kind": "member",
+              "name": "readOnlyProp",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "readonly": true,
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [
+            Object {
+              "description": null,
+              "lineNumber": 2,
+              "title": "type",
+              "type": Object {
+                "name": "string",
+                "type": "NameExpression",
+              },
+            },
+            Object {
+              "description": null,
+              "lineNumber": 3,
+              "title": "readonly",
+            },
+          ],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+        },
+      ],
+      "static": Array [],
+    },
+    "name": "Issue906",
+    "namespace": "Issue906",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "class",
+        "name": "Issue906",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+  },
+]
+`;
+
+exports[`outputs es6-class-property.input.js markdown 1`] = `"[object Object]"`;
+
+exports[`outputs es6-class-property.input.js markdown AST 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "type": "html",
+      "value": "<!-- Generated by documentation.js. Update this documentation by updating the source code. -->",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Issue906",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 23,
+              "line": 1,
+              "offset": 22,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is for issue 906.",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 23,
+          "line": 1,
+          "offset": 22,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "readWriteProp",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 31,
+              "line": 1,
+              "offset": 30,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is a read-write property.",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 31,
+          "line": 1,
+          "offset": 30,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "boolean",
+            },
+          ],
+          "identifier": "1",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "readOnlyProp",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 30,
+              "line": 1,
+              "offset": 29,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is a read-only property.",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 30,
+          "line": 1,
+          "offset": 29,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "2",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
+      "identifier": "1",
+      "title": undefined,
+      "type": "definition",
+      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    },
+    Object {
+      "identifier": "2",
+      "title": undefined,
+      "type": "definition",
+      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
   ],
   "type": "root",
@@ -14495,6 +15080,10 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "type": Object {
+      "name": "Object",
+      "type": "NameExpression",
+    },
   },
 ]
 `;
@@ -14551,6 +15140,26 @@ Object {
           "offset": 0,
         },
       },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "Object",
+            },
+          ],
+          "identifier": "1",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
       "type": "paragraph",
     },
     Object {
@@ -14651,7 +15260,7 @@ Object {
                           "value": "Event",
                         },
                       ],
-                      "identifier": "1",
+                      "identifier": "2",
                       "referenceType": "full",
                       "type": "linkReference",
                     },
@@ -14709,6 +15318,12 @@ Object {
     },
     Object {
       "identifier": "1",
+      "title": undefined,
+      "type": "definition",
+      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    },
+    Object {
+      "identifier": "2",
       "title": undefined,
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/API/Event",
