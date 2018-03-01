@@ -25,6 +25,10 @@ function evaluate(fn) {
   );
 }
 
+afterEach(function() {
+  mock.restore();
+});
+
 test('github', function() {
   mock(mockRepo.master);
 
@@ -42,8 +46,6 @@ test('github', function() {
     path: 'index.js',
     url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
-
-  mock.restore();
 });
 
 test('malformed repository', function() {
@@ -60,8 +62,6 @@ test('malformed repository', function() {
       }
     })[0].context.github
   ).toBe(undefined);
-
-  mock.restore();
 });
 
 test('enterprise repository', function() {
@@ -82,6 +82,28 @@ test('enterprise repository', function() {
     url:
       'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
+});
 
-  mock.restore();
+test('typedef', function() {
+  mock(mockRepo.master);
+
+  expect(
+    evaluate(function() {
+      /**
+       * A number, or a string containing a number.
+       * @typedef {(number|string)} NumberLike
+       */
+
+      /**
+       * get one
+       * @returns {number} one
+       */
+      function getOne() {
+        return 1;
+      }
+    })[0].context.github
+  ).toEqual({
+    path: 'index.js',
+    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L2-L5'
+  });
 });
