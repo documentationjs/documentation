@@ -5030,6 +5030,12 @@ remark-parse@^5.0.0:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
+remark-reference-links@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/remark-reference-links/-/remark-reference-links-4.0.1.tgz#021aed1c55c187d712b3c76d0057bf510d300ba7"
+  dependencies:
+    unist-util-visit "^1.0.0"
+
 remark-slug@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/remark-slug/-/remark-slug-5.0.0.tgz#9de71fcdc2bfae33ebb4a41eb83035288a829980"
