@@ -32,7 +32,7 @@ function dependencyStream(
     extensions: []
       .concat(config.requireExtension || [])
       .map(ext => '.' + ext.replace(/^\./, ''))
-      .concat(['.js', '.json', '.es6', '.jsx']),
+      .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
     transform: [
       babelify.configure({
         sourceMap: false,
