@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-var inferProperties = require('../../../src/infer/properties'),
-  parse = require('../../../src/parsers/javascript');
+const inferProperties = require('../../../src/infer/properties');
+const parse = require('../../../src/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse(

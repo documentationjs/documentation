@@ -23,6 +23,16 @@ The theme is free to implement HTML generation however it chooses. See
 [the default theme](https://github.com/documentationjs/documentation/tree/master/src/default_theme)
 for some ideas.
 
+### Customizing the Default Theme
+
+**Instructions**
+
+- Copy contents of `default_theme` folder (noted above) into a new folder in your project.  One way to do it is to create a new git repository with the folder contents and add this line to your `package.json` `devDependencies` section:    `"docjs-theme": "my-gh-username/reponame"`.   That way when you install dependencies, your new theme will be in the projects `node_modules` folder.
+
+- In the folder you created, replace `require('../')` on lines 10 and 11 of `index.js` with `require('documentation')` and save.
+
+- You can now make changes that will show up when you generate your docs using your theme.   Example `package.json` `scripts` entry: `"documentation build index.js -f html -o docs --theme node_modules/docjs-theme"`
+
 ### Theming Markdown
 
 The default Markdown generator for documentation.js isn't customizable - instead

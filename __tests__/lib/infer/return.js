@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-var inferReturn = require('../../../src/infer/return'),
-  parse = require('../../../src/parsers/javascript');
+const inferReturn = require('../../../src/infer/return');
+const parse = require('../../../src/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse(

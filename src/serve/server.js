@@ -2,12 +2,12 @@
 
 // This file triggers https://github.com/prettier/prettier/issues/1151
 
-var http = require('http'),
-  mime = require('mime'),
-  pify = require('pify'),
-  EventEmitter = require('events').EventEmitter,
-  liveReload = require('tiny-lr'),
-  sep = require('path').sep;
+const http = require('http');
+const mime = require('mime');
+const pify = require('pify');
+const EventEmitter = require('events').EventEmitter;
+const liveReload = require('tiny-lr');
+const sep = require('path').sep;
 
 declare type ServerFile = {
   relative: string,
@@ -66,16 +66,16 @@ class Server extends EventEmitter {
    * @private
    */
   handler(request: http.IncomingMessage, response: http.ServerResponse) {
-    var path = request.url.substring(1);
+    let path = request.url.substring(1);
     if (path === '') {
       path = 'index.html';
     }
 
-    for (var i = 0; i < this._files.length; i++) {
-      var file = this._files[i];
-      var filePath = file.relative.split(sep).join('/');
+    for (let i = 0; i < this._files.length; i++) {
+      const file = this._files[i];
+      const filePath = file.relative.split(sep).join('/');
       if (filePath === path) {
-        response.writeHead(200, { 'Content-Type': mime.lookup(path) });
+        response.writeHead(200, { 'Content-Type': mime.getType(path) });
         response.end(file.contents);
         return;
       }

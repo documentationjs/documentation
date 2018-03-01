@@ -1,7 +1,7 @@
 /* @flow */
 
-var path = require('path');
-var mergeConfig = require('../merge_config');
+const path = require('path');
+const mergeConfig = require('../merge_config');
 
 /**
  * Formats documentation as HTML.
@@ -28,7 +28,7 @@ function html(comments: Array<Comment>, config?: Object) {
     config = {};
   }
   return mergeConfig(config).then((config: DocumentationConfig) => {
-    var themePath = '../default_theme/';
+    let themePath = '../default_theme/';
     if (config.theme) {
       themePath = path.resolve(process.cwd(), config.theme);
     }

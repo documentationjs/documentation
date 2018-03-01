@@ -20,7 +20,7 @@ function filterAccess(levels: Array<string>, comments: Array<Comment>) {
   }
 
   function recurse(comment) {
-    for (var scope in comment.members) {
+    for (const scope in comment.members) {
       comment.members[scope] = comment.members[scope].filter(filter);
     }
   }

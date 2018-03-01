@@ -1,7 +1,7 @@
 /* @flow */
 
-var flowDoctrine = require('../flow_doctrine'),
-  findTarget = require('./finders').findTarget;
+const flowDoctrine = require('../flow_doctrine');
+const findTarget = require('./finders').findTarget;
 
 function prefixedName(name, prefix) {
   if (prefix.length) {
@@ -11,8 +11,8 @@ function prefixedName(name, prefix) {
 }
 
 function propertyToDoc(property, prefix): CommentTag {
-  var type = flowDoctrine(property.value);
-  var name = property.key.name || property.key.value
+  let type = flowDoctrine(property.value);
+  const name = property.key.name || property.key.value;
   if (property.optional) {
     type = {
       type: 'OptionalType',
@@ -34,7 +34,7 @@ function propertyToDoc(property, prefix): CommentTag {
  * @returns {Object} comment with inferred properties
  */
 function inferProperties(comment: Comment): Comment {
-  let explicitProperties = new Set();
+  const explicitProperties = new Set();
   // Ensure that explicitly specified properties are not overridden
   // by inferred properties
   comment.properties.forEach(prop => explicitProperties.add(prop));
@@ -55,7 +55,7 @@ function inferProperties(comment: Comment): Comment {
     }
   }
 
-  var path = findTarget(comment.context.ast);
+  const path = findTarget(comment.context.ast);
 
   if (path) {
     if (path.isTypeAlias()) {

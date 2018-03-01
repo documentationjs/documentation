@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-var inferAugments = require('../../../src/infer/augments'),
-  parse = require('../../../src/parsers/javascript');
+const inferAugments = require('../../../src/infer/augments');
+const parse = require('../../../src/parsers/javascript');
 
 function toComment(fn, filename) {
   return parse(

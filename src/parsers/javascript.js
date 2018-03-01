@@ -1,13 +1,13 @@
 /* @flow */
 
-var _ = require('lodash'),
-  t = require('babel-types'),
-  parse = require('../parse'),
-  walkComments = require('../extractors/comments'),
-  walkExported = require('../extractors/exported'),
-  util = require('util'),
-  debuglog = util.debuglog('documentation'),
-  findTarget = require('../infer/finders').findTarget;
+const _ = require('lodash');
+const t = require('babel-types');
+const parse = require('../parse');
+const walkComments = require('../extractors/comments');
+const walkExported = require('../extractors/exported');
+const util = require('util');
+const debuglog = util.debuglog('documentation');
+const findTarget = require('../infer/finders').findTarget;
 
 import { parseToAst } from './parse_to_ast';
 
@@ -36,11 +36,11 @@ function leftPad(str, width) {
  * @returns {Array<Object>} an array of parsed comments
  */
 function parseJavaScript(data: Object, config: DocumentationConfig) {
-  var visited = new Set();
+  const visited = new Set();
   const commentsByNode = new Map();
 
-  var ast = parseToAst(data.source);
-  var addComment = _addComment.bind(null, visited, commentsByNode);
+  const ast = parseToAst(data.source);
+  const addComment = _addComment.bind(null, visited, commentsByNode);
 
   return _.flatMap(
     config.documentExported
@@ -66,12 +66,12 @@ function _addComment(
 ) {
   // Avoid visiting the same comment twice as a leading
   // and trailing node
-  var key =
+  const key =
     data.file + ':' + commentLoc.start.line + ':' + commentLoc.start.column;
   if (!visited.has(key)) {
     visited.add(key);
 
-    var context /* : {
+    const context /* : {
       loc: Object,
       file: string,
       sortKey: string,
@@ -93,7 +93,7 @@ function _addComment(
       });
 
       if (path.parentPath && path.parentPath.node) {
-        var parentNode = path.parentPath.node;
+        const parentNode = path.parentPath.node;
         context.code = data.source.substring(parentNode.start, parentNode.end);
       }
     }
@@ -103,7 +103,7 @@ function _addComment(
 
       if (t.isClassMethod(path) && path.node.kind === 'constructor') {
         // #689
-        if (!comment.hideconstructor) {
+        if (comment.tags.some(tag => tag.title !== 'param' && tag.title !== 'hideconstructor')) {
           debuglog(
             'A constructor was documented explicitly: document along with the class instead'
           );

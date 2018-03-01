@@ -1,18 +1,18 @@
-var _ = require('lodash');
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+const _ = require('lodash');
+const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
  * Check if a given member object is of kind `event`.
  * @param {Object} member - The member to check.
  * @returns {boolean} `true` if it is of kind `event`, otherwise false.
  */
-let isEvent = member => member.kind === 'event';
+const isEvent = member => member.kind === 'event';
 
 /**
  * We need to have members of all valid JSDoc scopes.
  * @private
  */
-let getMembers = () => ({
+const getMembers = () => ({
   global: Object.create(null),
   inner: Object.create(null),
   instance: Object.create(null),
@@ -32,7 +32,7 @@ function pick(comment) {
     return undefined;
   }
 
-  var item = {
+  const item = {
     name: comment.name,
     kind: comment.kind
   };
@@ -50,10 +50,10 @@ function pick(comment) {
  * at the top level.
  */
 module.exports = function(comments) {
-  var id = 0,
-    root = {
-      members: getMembers()
-    };
+  let id = 0;
+  const root = {
+    members: getMembers()
+  };
 
   const namesToUnroot = [];
 
@@ -81,12 +81,12 @@ module.exports = function(comments) {
       });
     }
 
-    var node = root;
+    let node = root;
 
     while (path.length) {
-      var segment = path.shift(),
-        scope = segment.scope,
-        name = segment.name;
+      const segment = path.shift();
+      const scope = segment.scope;
+      const name = segment.name;
 
       if (!hasOwnProperty.call(node.members[scope], name)) {
         // If segment.toc is true, everything up to this point in the path
@@ -141,13 +141,13 @@ module.exports = function(comments) {
    *     Person~say  // the inner method named "say."
    */
   function toComments(nodes, root, hasUndefinedParent, path) {
-    var result = [],
-      scope;
+    const result = [];
+    let scope;
 
     path = path || [];
 
-    for (var name in nodes) {
-      var node = nodes[name];
+    for (const name in nodes) {
+      const node = nodes[name];
 
       for (scope in node.members) {
         node.members[scope] = toComments(
@@ -160,16 +160,16 @@ module.exports = function(comments) {
         );
       }
 
-      for (var i = 0; i < node.comments.length; i++) {
-        var comment = node.comments[i];
+      for (let i = 0; i < node.comments.length; i++) {
+        const comment = node.comments[i];
 
         comment.members = {};
         for (scope in node.members) {
           comment.members[scope] = node.members[scope];
         }
 
-        var events = comment.members.events;
-        var groups = [];
+        let events = comment.members.events;
+        let groups = [];
 
         if (comment.members.instance.length) {
           groups = _.groupBy(comment.members.instance, isEvent);
@@ -201,9 +201,12 @@ module.exports = function(comments) {
 
         comment.members.events = events;
 
-        comment.path = path.map(pick).concat(pick(comment)).filter(Boolean);
+        comment.path = path
+          .map(pick)
+          .concat(pick(comment))
+          .filter(Boolean);
 
-        var scopeChars = {
+        const scopeChars = {
           instance: '#',
           static: '.',
           inner: '~',
@@ -222,10 +225,10 @@ module.exports = function(comments) {
         }, '');
 
         if (hasUndefinedParent) {
-          var memberOfTag = comment.tags.filter(
+          const memberOfTag = comment.tags.filter(
             tag => tag.title === 'memberof'
           )[0];
-          var memberOfTagLineNumber =
+          const memberOfTagLineNumber =
             (memberOfTag && memberOfTag.lineNumber) || 0;
 
           comment.errors.push({

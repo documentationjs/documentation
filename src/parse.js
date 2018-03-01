@@ -1,7 +1,7 @@
 /* @flow */
 
-var doctrine = require('doctrine-temporary-fork');
-var parseMarkdown = require('./parse_markdown');
+const doctrine = require('doctrine-temporary-fork');
+const parseMarkdown = require('./parse_markdown');
 
 /**
  * Flatteners: these methods simplify the structure of JSDoc comments
@@ -9,7 +9,7 @@ var parseMarkdown = require('./parse_markdown');
  * information where appropriate.
  * @private
  */
-var flatteners = {
+const flatteners = {
   abstract: flattenBoolean,
   /**
    * Parse tag
@@ -76,7 +76,7 @@ var flatteners = {
   default: todo,
   defaultvalue: synonym('default'),
   deprecated(result, tag) {
-    let description = tag.description || 'This is deprecated.';
+    const description = tag.description || 'This is deprecated.';
     result.deprecated = parseMarkdown(description);
   },
   flattenMarkdownDescription,
@@ -114,7 +114,7 @@ var flatteners = {
       return;
     }
 
-    var example: CommentExample = {
+    const example: CommentExample = {
       description: tag.description
     };
 
@@ -236,7 +236,7 @@ var flatteners = {
    * @returns {undefined} has side-effects
    */
   param(result, tag) {
-    var param: CommentTag = {
+    const param: CommentTag = {
       title: 'param',
       name: tag.name,
       lineNumber: tag.lineNumber // TODO: remove
@@ -277,7 +277,7 @@ var flatteners = {
    * @returns {undefined} has side-effects
    */
   property(result, tag) {
-    var property: CommentTag = {
+    const property: CommentTag = {
       title: 'property',
       name: tag.name,
       lineNumber: tag.lineNumber // TODO: remove
@@ -322,7 +322,7 @@ var flatteners = {
    * @returns {undefined} has side-effects
    */
   returns(result, tag) {
-    var returns: CommentTag = {
+    const returns: CommentTag = {
       description: parseMarkdown(tag.description),
       title: 'returns'
     };
@@ -363,7 +363,7 @@ var flatteners = {
    * @returns {undefined} has side-effects
    */
   throws(result, tag) {
-    var throws = {};
+    const throws = {};
 
     if (tag.description) {
       throws.description = parseMarkdown(tag.description);
@@ -569,7 +569,7 @@ function flattenKindShorthand(result, tag, key) {
  * [documentation schema](https://github.com/documentationjs/api-json)
  */
 function parseJSDoc(comment: string, loc: ?Object, context: ?Object): Comment {
-  var result = doctrine.parse(comment, {
+  const result = doctrine.parse(comment, {
     // have doctrine itself remove the comment asterisks from content
     unwrap: true,
     // enable parsing of optional parameters in brackets, JSDoc3 style
@@ -610,7 +610,7 @@ function parseJSDoc(comment: string, loc: ?Object, context: ?Object): Comment {
 
   result.tags.forEach(function(tag) {
     if (tag.errors) {
-      for (var j = 0; j < tag.errors.length; j++) {
+      for (let j = 0; j < tag.errors.length; j++) {
         result.errors.push({ message: tag.errors[j] });
       }
     } else if (flatteners[tag.title]) {

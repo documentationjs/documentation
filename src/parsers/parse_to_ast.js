@@ -1,8 +1,8 @@
 /* @flow */
 
-var babylon = require('babylon');
+const babylon = require('babylon');
 
-var opts = {
+const opts = {
   allowImportExportEverywhere: true,
   sourceType: 'module',
   plugins: [

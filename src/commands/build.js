@@ -1,13 +1,13 @@
 /* @flow */
 
-var streamArray = require('stream-array'),
-  sharedOptions = require('./shared_options'),
-  path = require('path'),
-  fs = require('fs'),
-  vfs = require('vinyl-fs'),
-  chokidar = require('chokidar'),
-  documentation = require('../'),
-  _ = require('lodash');
+const streamArray = require('stream-array');
+const sharedOptions = require('./shared_options');
+const path = require('path');
+const fs = require('fs');
+const vfs = require('vinyl-fs');
+const chokidar = require('chokidar');
+const documentation = require('../');
+const _ = require('lodash');
 
 module.exports.command = 'build [input..]';
 module.exports.describe = 'build documentation';
@@ -42,7 +42,7 @@ module.exports.builder = Object.assign(
  * just a thin wrapper around this one.
  */
 module.exports.handler = function build(argv: Object) {
-  var watcher;
+  let watcher;
   argv._handled = true;
 
   if (!argv.input.length) {

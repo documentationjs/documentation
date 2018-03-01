@@ -1,6 +1,6 @@
 /* @flow */
 
-var smartGlob = require('../smart_glob.js');
+const smartGlob = require('../smart_glob.js');
 
 /**
  * A readable source for content that doesn't do dependency resolution, but
@@ -22,9 +22,9 @@ module.exports = function(
   indexes: Array<string | Object>,
   config: DocumentationConfig
 ): Promise<Array<SourceFile>> {
-  var objects = [];
-  var strings = [];
-  for (var index of indexes) {
+  const objects = [];
+  const strings = [];
+  for (const index of indexes) {
     if (typeof index === 'string') {
       strings.push(index);
     } else if (typeof index === 'object') {

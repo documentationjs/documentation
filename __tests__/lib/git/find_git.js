@@ -1,7 +1,7 @@
-var mock = require('mock-fs');
-var mockRepo = require('../../utils').mockRepo;
-var path = require('path');
-var findGit = require('../../../src/git/find_git');
+const mock = require('mock-fs');
+const mockRepo = require('../../utils').mockRepo;
+const path = require('path');
+const findGit = require('../../../src/git/find_git');
 
 test('findGit', function() {
   mock(mockRepo.master);

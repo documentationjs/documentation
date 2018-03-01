@@ -1,5 +1,5 @@
 /* @flow */
-var globalsDocs = require('globals-docs');
+const globalsDocs = require('globals-docs');
 import { walk } from '../../walk';
 
 /**
@@ -25,8 +25,8 @@ function pathsLinker(paths /* Object */) {
  * @returns {*} any output
  */
 function firstPass(fns: Array<Function>, input) {
-  for (var i = 0; i < fns.length; i++) {
-    var output = fns[i](input);
+  for (let i = 0; i < fns.length; i++) {
+    const output = fns[i](input);
     if (output) {
       return output;
     }
@@ -85,7 +85,7 @@ class LinkerStack {
    *   });
    */
   namespaceResolver(comments: Array<Comment>, resolver: Function) {
-    var namespaces = {};
+    const namespaces = {};
     walk(comments, comment => {
       namespaces[comment.namespace] = true;
     });

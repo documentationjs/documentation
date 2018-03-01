@@ -1,5 +1,5 @@
-var parse = require('../../../src/parsers/javascript'),
-  inferMembership = require('../../../src/infer/membership')();
+const parse = require('../../../src/parsers/javascript');
+const inferMembership = require('../../../src/infer/membership')();
 
 function toComment(fn, file) {
   return parse(
@@ -32,10 +32,10 @@ test('inferMembership - explicit', function() {
     pick(
       evaluate(function() {
         /**
-   * Test
-   * @memberof Bar
-   * @static
-   */
+         * Test
+         * @memberof Bar
+         * @static
+         */
         Foo.bar = 0;
       })[0],
       ['memberof', 'scope']
@@ -49,9 +49,9 @@ test('inferMembership - explicit', function() {
     pick(
       evaluate(function() {
         /**
-   * Test
-   * @memberof Bar#
-   */
+         * Test
+         * @memberof Bar#
+         */
         Foo.bar = 0;
       })[0],
       ['memberof', 'scope']
@@ -65,9 +65,9 @@ test('inferMembership - explicit', function() {
     pick(
       evaluate(function() {
         /**
-   * Test
-   * @memberof Bar.prototype
-   */
+         * Test
+         * @memberof Bar.prototype
+         */
         Foo.bar = 0;
       })[0],
       ['memberof', 'scope']
@@ -162,8 +162,8 @@ test('inferMembership - explicit', function() {
       evaluate(function() {
         Foo.prototype = {
           /**
-     * Test
-     */
+           * Test
+           */
           bar: function() {}
         };
       })[0],
@@ -179,8 +179,8 @@ test('inferMembership - explicit', function() {
       evaluate(function() {
         Foo.prototype = {
           /**
-     * Test
-     */
+           * Test
+           */
           bar() {}
         };
       })[0],
@@ -194,7 +194,7 @@ test('inferMembership - explicit', function() {
   expect(
     pick(
       evaluate(function() {
-        var Foo = {
+        const Foo = {
           /** Test */
           baz: 0
         };
@@ -210,7 +210,7 @@ test('inferMembership - explicit', function() {
   expect(
     pick(
       evaluate(function() {
-        var Foo = {
+        const Foo = {
           /** Test */
           baz: function() {}
         };
@@ -243,7 +243,7 @@ test('inferMembership - explicit', function() {
   expect(
     pick(
       evaluate(function() {
-        var Foo = function Bar() {
+        const Foo = function Bar() {
           {
             /** */
             this.baz = 0;
@@ -509,9 +509,9 @@ test('inferMembership - module.exports', function() {
   expect(
     evaluate(function() {
       /**
-   * @module mod
-   * @name exports
-   */
+       * @module mod
+       * @name exports
+       */
       module.exports = 1;
     })[0].memberof
   ).toBe(undefined);
@@ -519,9 +519,9 @@ test('inferMembership - module.exports', function() {
   expect(
     evaluate(function() {
       /**
-   * @module mod
-   * @name exports
-   */
+       * @module mod
+       * @name exports
+       */
       module.exports = function() {};
     })[0].memberof
   ).toBe(undefined);
@@ -538,7 +538,7 @@ test('inferMembership - module.exports', function() {
 });
 
 test('inferMembership - not module exports', function() {
-  var result = evaluate(function() {
+  const result = evaluate(function() {
     /**
      * @module mod
      */
@@ -551,7 +551,7 @@ test('inferMembership - not module exports', function() {
 });
 
 test('inferMembership - anonymous @module', function() {
-  var result = evaluate(function() {
+  const result = evaluate(function() {
     /**
      * @module
      */
@@ -564,7 +564,7 @@ test('inferMembership - anonymous @module', function() {
 });
 
 test('inferMembership - no @module', function() {
-  var result = evaluate(function() {
+  const result = evaluate(function() {
     /** Test */
     exports.foo = 1;
   }, '/path/mod.js');

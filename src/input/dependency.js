@@ -1,11 +1,11 @@
 /* @flow */
 
-var mdeps = require('module-deps-sortable');
-var path = require('path');
-var babelify = require('babelify');
-var concat = require('concat-stream');
-var moduleFilters = require('../module_filters');
-var smartGlob = require('../smart_glob.js');
+const mdeps = require('module-deps-sortable');
+const path = require('path');
+const babelify = require('babelify');
+const concat = require('concat-stream');
+const moduleFilters = require('../module_filters');
+const smartGlob = require('../smart_glob.js');
 
 /**
  * Returns a readable stream of dependencies, given an array of entry
@@ -22,7 +22,7 @@ function dependencyStream(
   indexes: Array<string>,
   config: DocumentationConfig
 ): Promise<Array<SourceFile>> {
-  var md = mdeps({
+  const md = mdeps({
     /**
      * Determine whether a module should be included in documentation
      * @param {string} id path to a module
@@ -32,7 +32,7 @@ function dependencyStream(
     extensions: []
       .concat(config.requireExtension || [])
       .map(ext => '.' + ext.replace(/^\./, ''))
-      .concat(['.js', '.json', '.es6', '.jsx']),
+      .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
     transform: [
       babelify.configure({
         sourceMap: false,

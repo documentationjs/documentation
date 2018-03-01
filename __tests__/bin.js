@@ -1,10 +1,10 @@
 /* global jasmine */
 
-var path = require('path'),
-  os = require('os'),
-  exec = require('child_process').exec,
-  tmp = require('tmp'),
-  fs = require('fs-extra');
+const path = require('path');
+const os = require('os');
+const exec = require('child_process').exec;
+const tmp = require('tmp');
+const fs = require('fs-extra');
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
 
@@ -160,9 +160,9 @@ describe('invalid arguments', function() {
 });
 
 test('--config', async function() {
-  var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);
-  var outputIndex = path.join(dst, 'index.html');
+  const outputIndex = path.join(dst, 'index.html');
   const data = await documentation(
     [
       'build -c fixture/html/documentation.yml -f html fixture/html/nested.input.js -o ' +
@@ -171,7 +171,7 @@ test('--config', async function() {
     {},
     false
   );
-  var output = fs.readFileSync(outputIndex, 'utf8');
+  const output = fs.readFileSync(outputIndex, 'utf8');
   expect(output).toMatchSnapshot();
 });
 
@@ -185,7 +185,7 @@ describe('lint command', function() {
     try {
       await documentation(['lint fixture/lint/lint.input.js'], {}, false);
     } catch (err) {
-      var data = err.stderr
+      const data = err.stderr
         .toString()
         .split('\n')
         .slice(2)
@@ -297,7 +297,7 @@ test('--infer-private flag', async function() {
 });
 
 test('write to file', async function() {
-  var dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
 
   const data = await documentation(
     ['build --shallow fixture/internal.input.js -o ' + dst],
@@ -309,7 +309,10 @@ test('write to file', async function() {
 });
 
 test('write to html', async function() {
-  var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  const dstDir = path.join(
+    os.tmpdir(),
+    (Date.now() + Math.random()).toString()
+  );
   fs.mkdirSync(dstDir);
 
   const data = await documentation(
@@ -322,7 +325,10 @@ test('write to html', async function() {
 });
 
 test('write to html with custom theme', async function() {
-  var dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  const dstDir = path.join(
+    os.tmpdir(),
+    (Date.now() + Math.random()).toString()
+  );
   fs.mkdirSync(dstDir);
 
   const data = await documentation(
@@ -338,9 +344,12 @@ test('write to html with custom theme', async function() {
 });
 
 test('write to html, highlightAuto', function() {
-  var fixture = 'fixture/auto_lang_hljs/multilanguage.input.js',
-    config = 'fixture/auto_lang_hljs/config.yml',
-    dstDir = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
+  const fixture = 'fixture/auto_lang_hljs/multilanguage.input.js';
+  const config = 'fixture/auto_lang_hljs/config.yml';
+  const dstDir = path.join(
+    os.tmpdir(),
+    (Date.now() + Math.random()).toString()
+  );
 
   fs.mkdirSync(dstDir);
 
@@ -349,7 +358,7 @@ test('write to html, highlightAuto', function() {
     {},
     false
   ).then(() => {
-    var result = fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8');
+    const result = fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8');
     expect(
       result.indexOf('<span class="hljs-number">42</span>') > 0
     ).toBeTruthy();
@@ -384,10 +393,10 @@ test('build --document-exported', async function() {
 });
 
 test('build large file without error (no deoptimized styling error)', function() {
-  var dstFile =
+  const dstFile =
     path.join(os.tmpdir(), (Date.now() + Math.random()).toString()) + '.js';
-  var contents = '';
-  for (var i = 0; i < 4e4; i++) {
+  let contents = '';
+  for (let i = 0; i < 4e4; i++) {
     contents += '/* - */\n';
   }
   fs.writeFileSync(dstFile, contents, 'utf8');

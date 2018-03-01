@@ -1,9 +1,9 @@
 /* @flow */
 
-var documentation = require('../'),
-  sharedOptions = require('./shared_options'),
-  fs = require('fs'),
-  path = require('path');
+const documentation = require('../');
+const fs = require('fs');
+const path = require('path');
+const sharedOptions = require('./shared_options');
 
 /* eslint no-console: 0 */
 

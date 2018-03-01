@@ -1,5 +1,5 @@
-var parse = require('../../../src/parsers/javascript'),
-  inferName = require('../../../src/infer/name');
+const parse = require('../../../src/parsers/javascript');
+const inferName = require('../../../src/infer/name');
 
 function toComment(fn, file) {
   return parse(
@@ -84,14 +84,14 @@ test('inferName', function() {
   expect(
     evaluate(function() {
       /** Test */
-      var name = function() {};
+      const name = function() {};
     }).name
   ).toBe('name');
 
   expect(
     evaluate(function() {
       /** Test */
-      var name = function name2() {};
+      const name = function name2() {};
     }).name
   ).toBe('name');
 

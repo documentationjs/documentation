@@ -1,10 +1,10 @@
 /* eslint no-unused-vars: 0 */
 
-var mock = require('mock-fs'),
-  path = require('path'),
-  mockRepo = require('../utils').mockRepo,
-  parse = require('../../src/parsers/javascript'),
-  github = require('../../src/github');
+const mock = require('mock-fs');
+const path = require('path');
+const mockRepo = require('../utils').mockRepo;
+const parse = require('../../src/parsers/javascript');
+const github = require('../../src/github');
 
 function toComment(fn, filename) {
   return parse(
@@ -25,15 +25,19 @@ function evaluate(fn) {
   );
 }
 
+afterEach(function() {
+  mock.restore();
+});
+
 test('github', function() {
   mock(mockRepo.master);
 
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
@@ -42,8 +46,6 @@ test('github', function() {
     path: 'index.js',
     url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
-
-  mock.restore();
 });
 
 test('malformed repository', function() {
@@ -52,16 +54,14 @@ test('malformed repository', function() {
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
     })[0].context.github
   ).toBe(undefined);
-
-  mock.restore();
 });
 
 test('enterprise repository', function() {
@@ -70,17 +70,40 @@ test('enterprise repository', function() {
   expect(
     evaluate(function() {
       /**
-   * get one
-   * @returns {number} one
-   */
+       * get one
+       * @returns {number} one
+       */
       function getOne() {
         return 1;
       }
     })[0].context.github
   ).toEqual({
     path: 'index.js',
-    url: 'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
+    url:
+      'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
+});
 
-  mock.restore();
+test('typedef', function() {
+  mock(mockRepo.master);
+
+  expect(
+    evaluate(function() {
+      /**
+       * A number, or a string containing a number.
+       * @typedef {(number|string)} NumberLike
+       */
+
+      /**
+       * get one
+       * @returns {number} one
+       */
+      function getOne() {
+        return 1;
+      }
+    })[0].context.github
+  ).toEqual({
+    path: 'index.js',
+    url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L2-L5'
+  });
 });

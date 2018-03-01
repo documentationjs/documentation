@@ -2,13 +2,13 @@
 
 const generate = require('babel-generator').default;
 
-var namedTypes = {
+const namedTypes = {
   NumberTypeAnnotation: 'number',
   BooleanTypeAnnotation: 'boolean',
   StringTypeAnnotation: 'string'
 };
 
-var oneToOne = {
+const oneToOne = {
   AnyTypeAnnotation: 'AllLiteral',
   MixedTypeAnnotation: 'AllLiteral',
   NullLiteralTypeAnnotation: 'NullLiteral',
@@ -16,7 +16,7 @@ var oneToOne = {
 };
 
 function propertyToField(property) {
-  var type = flowDoctrine(property.value);
+  let type = flowDoctrine(property.value);
   if (property.optional) {
     // Doctrine does not support optional fields but it does have something called optional types
     // (which makes no sense, but let's play along).
@@ -45,7 +45,7 @@ function propertyToField(property) {
  */
 function flowDoctrine(type: Object): DoctrineType {
   if (type.type in namedTypes) {
-    let doctrineType = {
+    const doctrineType = {
       type: 'NameExpression',
       name: namedTypes[type.type]
     };

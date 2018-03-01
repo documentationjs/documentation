@@ -1,4 +1,4 @@
-var filterAccess = require('../../src/filter_access');
+const filterAccess = require('../../src/filter_access');
 
 test('filterAccess ignore', function() {
   expect(

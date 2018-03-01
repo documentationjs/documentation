@@ -8,6 +8,8 @@
     "flowtype"
   ],
   "rules": {
+    "no-var": 2,
+    "prefer-const": 2,
     "no-use-before-define": [2, "nofunc"],
     "camelcase": 2,
     "no-lonely-if": 2,

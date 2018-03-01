@@ -18,7 +18,7 @@ module.exports = function isJSDocComment(
   type: string
 }*/
 ) {
-  var asterisks = comment.value.match(/^(\*+)/);
+  const asterisks = comment.value.match(/^(\*+)/);
   return (
     comment.type === 'CommentBlock' && asterisks && asterisks[1].length === 1
   );

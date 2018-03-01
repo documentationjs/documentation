@@ -1,5 +1,5 @@
 /* @flow */
-var visit = require('unist-util-visit');
+const visit = require('unist-util-visit');
 
 /**
  * Reroute inline jsdoc links in documentation

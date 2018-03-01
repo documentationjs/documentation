@@ -1,5 +1,5 @@
-var parse = require('../../src/parsers/javascript'),
-  hierarchy = require('../../src/hierarchy');
+const parse = require('../../src/parsers/javascript');
+const hierarchy = require('../../src/hierarchy');
 
 function toComments(fn, filename) {
   return parse(
@@ -22,7 +22,7 @@ function map(arr, prop) {
 }
 
 test('hierarchy', function() {
-  var comments = evaluate(function() {
+  const comments = evaluate(function() {
     /**
      * @name Class
      * @class
@@ -50,7 +50,7 @@ test('hierarchy', function() {
 
   expect(map(comments, 'name')).toEqual(['Class']);
 
-  var classMembers = comments[0].members;
+  const classMembers = comments[0].members;
 
   expect(map(classMembers.static, 'name')).toEqual(['isClass', 'MAGIC_NUMBER']);
   expect(map(classMembers.instance, 'name')).toEqual(['getFoo']);
@@ -67,7 +67,7 @@ test('hierarchy', function() {
 });
 
 test('hierarchy - nesting', function() {
-  var comments = evaluate(function() {
+  const comments = evaluate(function() {
     /**
      * @name Parent
      * @class
@@ -88,10 +88,10 @@ test('hierarchy - nesting', function() {
 
   expect(map(comments, 'name')).toEqual(['Parent']);
 
-  var classMembers = comments[0].members;
+  const classMembers = comments[0].members;
   expect(map(classMembers.static, 'name')).toEqual(['enum']);
 
-  var enumMembers = classMembers.static[0].members;
+  const enumMembers = classMembers.static[0].members;
   expect(map(enumMembers.static, 'name')).toEqual(['Parent', 'Child']);
   expect(map(enumMembers.static[0].path, 'name')).toEqual([
     'Parent',
@@ -106,7 +106,7 @@ test('hierarchy - nesting', function() {
 });
 
 test('hierarchy - multisignature', function() {
-  var comments = evaluate(function() {
+  const comments = evaluate(function() {
     /**
      * @name Parent
      * @class
@@ -127,7 +127,7 @@ test('hierarchy - multisignature', function() {
 });
 
 test('hierarchy - missing memberof', function() {
-  var test = evaluate(function() {
+  const test = evaluate(function() {
     /**
      * @name test
      * @memberof DoesNotExist
@@ -143,7 +143,7 @@ test('hierarchy - missing memberof', function() {
 });
 
 test('hierarchy - anonymous', function() {
-  var result = evaluate(function() {
+  const result = evaluate(function() {
     /** Test */
   })[0];
 
@@ -155,7 +155,7 @@ test('hierarchy - anonymous', function() {
 });
 
 test('hierarchy - object prototype member names', function() {
-  var comments = evaluate(function() {
+  const comments = evaluate(function() {
     /**
      * @name should
      * @function

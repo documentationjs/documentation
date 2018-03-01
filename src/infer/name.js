@@ -1,6 +1,7 @@
 /* @flow */
 
-var pathParse = require('parse-filepath'), t = require('babel-types');
+const pathParse = require('parse-filepath');
+const t = require('babel-types');
 
 /**
  * Infers a `name` tag from the context.
@@ -35,7 +36,7 @@ function inferName(comment: Comment) {
     }
   }
 
-  var path = comment.context.ast;
+  const path = comment.context.ast;
   if (path) {
     if (path.type === 'ExportDefaultDeclaration') {
       if (t.isDeclaration(path.node.declaration) && path.node.declaration.id) {

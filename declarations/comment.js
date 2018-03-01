@@ -106,6 +106,7 @@ type Comment = {
   type?: DoctrineType,
 
   context: CommentContext,
+  loc: CommentLoc,
 
   path?: Array<{
     name: string,
