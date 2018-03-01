@@ -377,7 +377,7 @@ function buildMarkdownAST(
 
   const pluginRemark = remark();
   if (config.markdownToc) pluginRemark.use(toc, { tight: true });
-  pluginRemark.use(links);
+  if (config.noReferenceLinks !== true) pluginRemark.use(links);
   root = pluginRemark.run(root);
 
   return Promise.resolve(root);

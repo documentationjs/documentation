@@ -70,6 +70,7 @@ module.exports.handler = function readme(argv: Object) {
     }
   }
 
+  argv.noReferenceLinks = true;
   argv.format = 'remark';
   /* eslint no-console: 0 */
   const log: Function = (...data: Array<string>) => {

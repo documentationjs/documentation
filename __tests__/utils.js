@@ -25,7 +25,10 @@ function normalize(comments) {
       loc: comment.context.loc
     };
     if (hasGithub) {
-      comment.context.github = '[github]';
+      comment.context.github = {
+        path: '[github]',
+        url: '[github]'
+      };
     }
     if (path) {
       comment.context.path = path;

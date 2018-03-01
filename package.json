@@ -104,7 +104,7 @@
     "release": "standard-version",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
-    "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js' --single-quote",
+    "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js'",
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && are-we-flow-yet src && flow check && jest",
@@ -132,7 +132,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write --single-quote",
+      "prettier --write",
       "git add"
     ]
   },
