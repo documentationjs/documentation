@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/documentationjs/documentation/compare/v5.5.0...v6.0.0) (2018-03-02)
+
+
+### Features
+
+* documentation.js now requires node v6 or newer. ([#1034](https://github.com/documentationjs/documentation/issues/1034)) ([ccce516](https://github.com/documentationjs/documentation/commit/ccce516))
+
+
+### BREAKING CHANGES
+
+* documentation.js requires node v6 or newer.
+
+
+
 <a name="5.5.0"></a>
 # [5.5.0](https://github.com/documentationjs/documentation/compare/v5.4.0...v5.5.0) (2018-03-02)
 
