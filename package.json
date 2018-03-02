@@ -34,7 +34,7 @@
     "lodash": "^4.17.4",
     "mdast-util-inject": "^1.1.0",
     "micromatch": "^3.1.5",
-    "mime": "^2.2.0",
+    "mime": "^1.4.1",
     "module-deps-sortable": "4.0.6",
     "parse-filepath": "^1.0.2",
     "pify": "^3.0.0",
