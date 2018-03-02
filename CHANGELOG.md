@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.5.0"></a>
+# [5.5.0](https://github.com/documentationjs/documentation/compare/v5.4.0...v5.5.0) (2018-03-02)
+
+
+### Bug Fixes
+
+* github links for [@typedef](https://github.com/typedef) comments should link to comment, not context ([#1024](https://github.com/documentationjs/documentation/issues/1024)) ([37a91b2](https://github.com/documentationjs/documentation/commit/37a91b2))
+* Make documentation.js compatible with node 4.x for one more version ([#1033](https://github.com/documentationjs/documentation/issues/1033)) ([5067ee0](https://github.com/documentationjs/documentation/commit/5067ee0))
+
+
+### Features
+
+* Support `--shallow` argument for `lint` command. Closes [#956](https://github.com/documentationjs/documentation/issues/956) ([#995](https://github.com/documentationjs/documentation/issues/995)) ([64f660d](https://github.com/documentationjs/documentation/commit/64f660d))
+* Support the .mjs extension by default. ([#1023](https://github.com/documentationjs/documentation/issues/1023)) ([b8a7e0d](https://github.com/documentationjs/documentation/commit/b8a7e0d))
+* use reference links for Markdown output, improving brevity ([ab494dd](https://github.com/documentationjs/documentation/commit/ab494dd))
+
+
+
 <a name="5.4.0"></a>
 # [5.4.0](https://github.com/documentationjs/documentation/compare/v5.3.5...v5.4.0) (2018-02-10)
 
