@@ -56,7 +56,7 @@ test('inferKind', function() {
         foo();
       })
     ).kind
-  ).toBe('function');
+  ).toBe('constant');
 
   expect(
     inferKind(toComment('/** Exported interface */' + 'interface myinter {}'))
