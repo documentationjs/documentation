@@ -1,6 +1,6 @@
 /* @flow */
 
-const n = require('babel-types');
+const n = require('@babel/types');
 const pathParse = require('parse-filepath');
 const isJSDocComment = require('../is_jsdoc_comment');
 const parse = require('../parse');

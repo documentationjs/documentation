@@ -1,6 +1,6 @@
 /* @flow */
 
-const generate = require('babel-generator').default;
+const generate = require('@babel/generator').default;
 
 const namedTypes = {
   NumberTypeAnnotation: 'number',
