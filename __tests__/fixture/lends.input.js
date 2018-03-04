@@ -6,6 +6,8 @@
 export default TheClass(
   /** @lends TheClass.prototype */
   {
+    /** My field */
+    'my-field': true,
     /**
      * My neat function
      * @param {string} word your word

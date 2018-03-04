@@ -280,7 +280,10 @@ module.exports = function() {
     }
 
     // Same as above but for `b: c` vs `b: function () {}`.
-    if (path.isObjectProperty() && path.get('key').isIdentifier()) {
+    if (
+      path.isObjectProperty() &&
+      (path.get('key').isIdentifier() || path.get('key').isLiteral())
+    ) {
       path = path.get('key');
     }
 
@@ -357,7 +360,7 @@ module.exports = function() {
     let objectParent;
 
     if (
-      path.isIdentifier() &&
+      (path.isIdentifier() || path.isLiteral()) &&
       path.parentPath.isObjectProperty() &&
       path.parentPath.parentPath.isObjectExpression()
     ) {
