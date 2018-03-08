@@ -386,7 +386,9 @@ const flatteners = {
     result.todos.push(parseMarkdown(tag.description));
   },
   tutorial: todo,
-  type: todo,
+  type(result, tag) {
+    result.type = tag.type;
+  },
   typedef: flattenKindShorthand,
   var: synonym('member'),
   /**
