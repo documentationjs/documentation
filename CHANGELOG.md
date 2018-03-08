@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/documentationjs/documentation/compare/v6.0.0...v6.1.0) (2018-03-08)
+
+
+### Bug Fixes
+
+* lends with object property using literal key ([#1035](https://github.com/documentationjs/documentation/issues/1035)) ([99ad49b](https://github.com/documentationjs/documentation/commit/99ad49b))
+
+
+### Features
+
+* Support class property [@type](https://github.com/type) tag ([#1028](https://github.com/documentationjs/documentation/issues/1028)) ([4ed5edf](https://github.com/documentationjs/documentation/commit/4ed5edf))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/documentationjs/documentation/compare/v5.5.0...v6.0.0) (2018-03-02)
 
