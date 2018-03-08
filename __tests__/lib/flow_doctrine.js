@@ -1,6 +1,6 @@
 const flowDoctrine = require('../../src/flow_doctrine.js');
 const parse = require('../../src/parsers/javascript');
-const FLOW_TYPES = require('babel-types').FLOW_TYPES;
+const FLOW_TYPES = require('@babel/types').FLOW_TYPES;
 
 function toComment(fn, filename) {
   return parse(

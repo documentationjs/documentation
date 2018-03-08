@@ -1,7 +1,7 @@
 /* @flow */
 
 const findTarget = require('./finders').findTarget;
-const t = require('babel-types');
+const t = require('@babel/types');
 const flowDoctrine = require('../flow_doctrine');
 
 /**

@@ -35,12 +35,12 @@ function dependencyStream(
       .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
     transform: [
       babelify.configure({
-        sourceMap: false,
+        sourceMaps: false,
         compact: false,
         presets: [
-          require('babel-preset-env'),
-          require('babel-preset-stage-0'),
-          require('babel-preset-react')
+          require('@babel/preset-env'),
+          require('@babel/preset-stage-0'),
+          require('@babel/preset-react')
         ],
         plugins: [
           require('babel-plugin-transform-decorators-legacy').default,
