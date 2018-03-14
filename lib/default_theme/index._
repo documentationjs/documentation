@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title><%- config['project-name'] %> <%- config['project-version'] %> | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'><%- config['project-name'] %></h3>
+          <div class='mb1'><code><%- config['project-version'] %></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              <% docs.forEach(function(doc) { %>
+                <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
+                <li><a
+                  href='#<%=slug(doc.namespace)%>'
+                  class="<% if (doc.kind === 'note') { %>h5 bold black caps<% } %><% if (hasMembers) { %> toggle-sibling<% } %>">
+                  <%- doc.name %>
+                  <% if (hasMembers) { %><span class='icon'>▸</span><% } %>
+                </a>
+                <% if (hasMembers) { %>
+                <div class='toggle-target display-none'>
+                  <% if (doc.members.static && doc.members.static.length) { %>
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    <% doc.members.static.forEach(function(member) { %>
+                      <li><a
+                        href='#<%=slug(member.namespace)%>'
+                        class='regular pre-open'>
+                        .<%- member.name %>
+                      </a></li>
+                    <% }) %>
+                    </ul>
+                  <% } %>
+                  <% if (doc.members.instance && doc.members.instance.length) { %>
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      <% doc.members.instance.forEach(function(member) { %>
+                      <li><a
+                        href='#<%=slug(member.namespace)%>'
+                        class='regular pre-open'>
+                        #<%- member.name %>
+                      </a></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
+                  <% if (doc.members.inner && doc.members.inner.length) { %>
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Inner members</span></li>
+                      <% doc.members.inner.forEach(function(member) { %>
+                      <li><a
+                        href='#<%=slug(member.namespace)%>'
+                        class='regular pre-open'>
+                        #<%- member.name %>
+                      </a></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
+                  <% if (doc.members.events && doc.members.events.length) { %>
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'>Events</li>
+                      <% doc.members.events.forEach(function(member) { %>
+                        <li><a
+                          href='#<%=slug(member.namespace)%>'
+                          class='regular pre-open'>
+                          ⓔ <%- member.name %>
+                        </a></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
+                </div>
+                <% } %>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        <% docs.forEach(function(s) { %>
+          <% if (s.kind !== 'note') { %>
+            <%= renderSection({
+              section: s,
+              renderSection: renderSection,
+              renderSectionList: renderSectionList,
+              renderParamProperty: renderParamProperty
+            }) %>
+          <% } else { %>
+            <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
+          <% } %>
+        <% }) %>
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
