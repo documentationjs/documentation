@@ -40,7 +40,12 @@ function parseJavaScript(data: Object, config: DocumentationConfig) {
   const commentsByNode = new Map();
 
   const ast = parseToAst(data.source);
-  const addComment = _addComment.bind(null, visited, commentsByNode);
+  const addComment = _addComment.bind(
+    null,
+    visited,
+    commentsByNode,
+    config.ignorePatterns
+  );
 
   return _.flatMap(
     config.documentExported
@@ -57,6 +62,7 @@ function parseJavaScript(data: Object, config: DocumentationConfig) {
 function _addComment(
   visited,
   commentsByNode,
+  ignorePatterns,
   data,
   commentValue,
   commentLoc,
@@ -98,6 +104,16 @@ function _addComment(
       }
     }
     const comment = parse(commentValue, commentLoc, context);
+
+    // If the commentValue matches an ignore pattern specified in config, don't add
+    if (ignorePatterns) {
+      for (let i = 0; i < ignorePatterns.length; i++) {
+        if (ignorePatterns[i].test(commentValue)) {
+          return;
+        }
+      }
+    }
+
     if (includeContext) {
       commentsByNode.set((findTarget(path) || path).node, comment);
 

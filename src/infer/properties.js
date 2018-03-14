@@ -2,6 +2,7 @@
 
 const flowDoctrine = require('../flow_doctrine');
 const findTarget = require('./finders').findTarget;
+const mergeTrees = require('./params').mergeTrees;
 
 function prefixedName(name, prefix) {
   if (prefix.length) {
@@ -34,23 +35,21 @@ function propertyToDoc(property, prefix): CommentTag {
  * @returns {Object} comment with inferred properties
  */
 function inferProperties(comment: Comment): Comment {
-  const explicitProperties = new Set();
-  // Ensure that explicitly specified properties are not overridden
-  // by inferred properties
-  comment.properties.forEach(prop => explicitProperties.add(prop));
+  const explicitProperties = comment.properties.slice();
+  comment.properties = [];
 
   function inferProperties(value, prefix) {
     if (value.type === 'ObjectTypeAnnotation') {
       value.properties.forEach(function(property) {
-        if (!explicitProperties.has(prefixedName(property.key.name, prefix))) {
-          comment.properties = comment.properties.concat(
-            propertyToDoc(property, prefix)
-          );
-          // Nested type parameters
-          if (property.value.type === 'ObjectTypeAnnotation') {
-            inferProperties(property.value, prefix.concat(property.key.name));
-          }
+        comment.properties = comment.properties.concat(
+          propertyToDoc(property, prefix)
+        );
+        // Nested type parameters
+        /*
+        if (property.value.type === 'ObjectTypeAnnotation') {
+          inferProperties(property.value, prefix.concat(property.key.name));
         }
+        */
       });
     }
   }
@@ -64,6 +63,11 @@ function inferProperties(comment: Comment): Comment {
       inferProperties(path.node.body, []);
     }
   }
+
+  comment.properties = mergeTrees(
+    comment.properties,
+    explicitProperties
+  ).mergedParams;
 
   return comment;
 }

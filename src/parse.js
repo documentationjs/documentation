@@ -287,6 +287,10 @@ const flatteners = {
       property.description = parseMarkdown(tag.description);
     }
 
+    if (tag.default) {
+      property.default = parseMarkdown(tag.default);
+    }
+
     if (tag.type) {
       property.type = tag.type;
     }
@@ -609,7 +613,8 @@ function parseJSDoc(comment: string, loc: ?Object, context: ?Object): Comment {
   });
 
   result.tags.forEach(function(tag) {
-    if (tag.errors) {
+    // Ignore errors on property tag until doctrine allows typeless properties
+    if (tag.title !== 'property' && tag.errors) {
       for (let j = 0; j < tag.errors.length; j++) {
         result.errors.push({ message: tag.errors[j] });
       }

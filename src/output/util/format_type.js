@@ -26,7 +26,10 @@ function t(text) {
  * link('string').url // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
 function link(text, getHref, description) {
-  const href = getHref(text);
+  // If we can't dynamically generate a link for a named type, we assume it's in the types section
+  // and blindly link to it.
+  // TODO: Be smarter
+  const href = getHref(text) || `/types#${text}`;
   if (href) {
     // TODO: this is a temporary fix until we drop remark 3.x support,
     // and then we should remove the 'href' property and only

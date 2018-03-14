@@ -8,6 +8,7 @@ const hljs = require('highlight.js');
 const GithubSlugger = require('github-slugger');
 const LinkerStack = require('./util/linker_stack');
 const rerouteLinks = require('./util/reroute_links');
+const { alphabetizeBy } = require('./util/sorters');
 const _formatType = require('./util/format_type');
 
 const DEFAULT_LANGUAGE = 'javascript';
@@ -67,6 +68,8 @@ function buildMarkdownAST(
    */
   function generate(depth: number, comment: Comment) {
     function typeSection(comment: Comment) {
+      if (comment.kind === 'typedef') return [];
+
       return (
         comment.type &&
         u('paragraph', [u('text', 'Type: ')].concat(formatType(comment.type)))
@@ -131,27 +134,52 @@ function buildMarkdownAST(
       return u(
         'list',
         { ordered: false },
-        properties.map(property =>
-          u(
-            'listItem',
-            [
-              u(
-                'paragraph',
-                [
-                  u('inlineCode', property.name),
-                  u('text', ' '),
-                  u('strong', formatType(property.type)),
-                  u('text', ' ')
-                ]
-                  .concat(
-                    property.description ? property.description.children : []
+        properties
+          .sort(alphabetizeBy('name'))
+          .map(
+            property =>
+              property.name.startsWith('_')
+                ? null
+                : u(
+                    'listItem',
+                    [
+                      u(
+                        'paragraph',
+                        [
+                          u('inlineCode', property.name),
+                          u('text', ' '),
+                          u('strong', formatType(property.type)),
+                          u('text', ' ')
+                        ]
+                          .concat(
+                            property.description
+                              ? property.description.children
+                              : []
+                          )
+                          .concat(
+                            property.default
+                              ? [
+                                  u('break'),
+                                  u('list', { ordered: false }, [
+                                    u('listItem', [
+                                      u('strong', [
+                                        u('text', ' Default: '),
+                                        u('emphasis', [
+                                          ...property.default.children
+                                        ])
+                                      ])
+                                    ])
+                                  ])
+                                ]
+                              : []
+                          )
+                          .filter(Boolean)
+                      ),
+                      property.properties && propertyList(property.properties)
+                    ].filter(Boolean)
                   )
-                  .filter(Boolean)
-              ),
-              property.properties && propertyList(property.properties)
-            ].filter(Boolean)
           )
-        )
+          .filter(Boolean)
       );
     }
 

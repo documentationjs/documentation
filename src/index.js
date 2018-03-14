@@ -186,6 +186,8 @@ const lint = (indexes, args) => configure(indexes, args).then(lintInternal);
  * even in JavaScript code.
  * @param {Array<string|Object>} [args.order=[]] optional array that
  * defines sorting order of documentation
+ * @param {Array<RegExp> args.ignorePatterns An array of RegExp expression specifying comments to ignore.
+ * If a JSDoc comment matches a pattern in the array, that comment will not be included in the generated documentation.
  * @param {Array<string>} [args.access=[]] an array of access levels
  * to output in documentation
  * @param {Object} [args.hljs] hljs optional args

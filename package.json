@@ -100,6 +100,7 @@
   },
   "scripts": {
     "build": "rm -rf lib && babel -D src -d lib && npm run doc",
+    "quick-build": "rm -rf lib && babel -D src -d lib",
     "release": "standard-version",
     "precommit": "lint-staged",
     "prepublish": "npm run build",

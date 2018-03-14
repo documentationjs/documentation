@@ -8,6 +8,7 @@ type DocumentationConfig = {
   access?: Array<string>,
   defaultGlobals?: boolean,
   defaultGlobalsEnvs?: Array<string>,
+  ignorePatterns?: Array<RegExp>,
   external?: Array<string>,
   theme: string,
   requireExtension?: Array<string>,
