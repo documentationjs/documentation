@@ -1,5 +1,4 @@
 const os = require('os');
-const shell = require('shelljs');
 const path = require('path');
 const fs = require('fs');
 const dependency = require('../../../src/input/dependency');
