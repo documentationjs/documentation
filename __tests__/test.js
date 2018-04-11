@@ -104,7 +104,10 @@ describe('html', function() {
           .sort((a, b) => a.path > b.path)
           .filter(r => r.path.match(/(html)$/))
           .map(r =>
-            r.contents.toString().replace(/documentation \d+\.\d+\.\d+/g, '')
+            r.contents
+              .toString()
+              .replace(/documentation \d+\.\d+\.\d+/g, '')
+              .replace(/<code>\d+\.\d+\.\d+<\/code>/g, '')
           )
           .join('\n');
         expect(clean).toMatchSnapshot();
