@@ -12,7 +12,10 @@ type DocumentationConfig = {
   theme: string,
   requireExtension?: Array<string>,
   parseExtension: Array<string>,
-  noReferenceLinks?: boolean
+  noReferenceLinks?: boolean,
+  markdownToc?: boolean,
+  documentExported?: boolean,
+  hljs?: Object
 };
 
 type CommentError = {
@@ -112,7 +115,9 @@ type Comment = {
   path?: Array<{
     name: string,
     scope: Scope
-  }>
+  }>,
+
+  ignore?: boolean
 };
 
 type CommentMembers = {

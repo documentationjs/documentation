@@ -26,7 +26,7 @@ ansiHTML.setColors({
  * @param error parse or generation error
  * @returns {Object} vinyl file object
  */
-function errorPage(error: Error) {
+function errorPage(error: Error | { codeFrame: string }) {
   let errorText = error.toString();
   console.error(error);
   if (error.codeFrame) {
