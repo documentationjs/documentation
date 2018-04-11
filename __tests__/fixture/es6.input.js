@@ -26,6 +26,12 @@ var multiply = (a, b) => a * b;
  * This is a sink
  * @param {number} height the height of the thing
  * @param {number} width the width of the thing
+ * @example
+ * \@abc
+ * class A {
+ *   \@bind
+ *   say() {}
+ * }
  */
 class Sink {
   constructor(height, width) {
