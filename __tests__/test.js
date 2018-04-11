@@ -103,7 +103,9 @@ describe('html', function() {
         const clean = html
           .sort((a, b) => a.path > b.path)
           .filter(r => r.path.match(/(html)$/))
-          .map(r => r.contents)
+          .map(r =>
+            r.contents.toString().replace(/documentation \d+\.\d+\.\d+/g, '')
+          )
           .join('\n');
         expect(clean).toMatchSnapshot();
       });

@@ -171,7 +171,8 @@ test('--config', async function() {
     {},
     false
   );
-  const output = fs.readFileSync(outputIndex, 'utf8');
+  let output = fs.readFileSync(outputIndex, 'utf8');
+  output = output.replace(/documentation \d+\.\d+\.\d+/g, '');
   expect(output).toMatchSnapshot();
 });
 
