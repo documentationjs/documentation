@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-const shell = require('shelljs');
 
 /**
  * Replace Windows with posix style paths
@@ -59,7 +58,10 @@ function processPath(extensions) {
     let newPath = pathname;
     const resolvedPath = path.resolve(cwd, pathname);
 
-    if (shell.test('-d', resolvedPath)) {
+    if (
+      fs.existsSync(resolvedPath) &&
+      fs.lstatSync(resolvedPath).isDirectory()
+    ) {
       newPath = pathname.replace(/[/\\]$/, '') + suffix;
     }
 
@@ -107,7 +109,7 @@ function listFilesToProcess(globPatterns: Array<string>): Array<string> {
 
   globPatterns.forEach(function(pattern) {
     const file = path.resolve(cwd, pattern);
-    if (shell.test('-f', file)) {
+    if (fs.existsSync(file) && fs.statSync(file).isFile()) {
       addFile(fs.realpathSync(file));
     } else {
       const globOptions = {
