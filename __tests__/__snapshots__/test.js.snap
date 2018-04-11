@@ -839,7 +839,7 @@ exports[`html nested.input.js 1`] = `
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>documentation</h3>
-          <div class='mb1'><code>6.1.0</code></div>
+          <div class='mb1'></div>
           <input
             placeholder='Filter'
             id='filter-input'
