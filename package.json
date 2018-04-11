@@ -44,7 +44,6 @@
     "remark-reference-links": "^4.0.1",
     "remark-toc": "^5.0.0",
     "remote-origin-url": "0.4.0",
-    "shelljs": "^0.8.1",
     "stream-array": "^1.1.2",
     "strip-json-comments": "^2.0.1",
     "tiny-lr": "^1.1.0",
