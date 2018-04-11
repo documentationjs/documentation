@@ -7199,8 +7199,8 @@ Array [
     "context": Object {
       "loc": Object {
         "end": Object {
-          "column": 4,
-          "line": 7,
+          "column": 10,
+          "line": 9,
         },
         "start": Object {
           "column": 0,
@@ -7301,12 +7301,12 @@ have any parameter descriptions.",
           },
           Object {
             "default": "[]",
-            "lineNumber": 6,
+            "lineNumber": 7,
             "name": "$0.emailAddresses",
             "title": "param",
           },
           Object {
-            "lineNumber": 6,
+            "lineNumber": 8,
             "name": "$0.params",
             "title": "param",
             "type": Object {
@@ -7340,11 +7340,11 @@ have any parameter descriptions.",
       "loc": Object {
         "end": Object {
           "column": 34,
-          "line": 14,
+          "line": 16,
         },
         "start": Object {
           "column": 0,
-          "line": 14,
+          "line": 16,
         },
       },
     },
@@ -7410,11 +7410,11 @@ have any parameter descriptions.",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 13,
+        "line": 15,
       },
       "start": Object {
         "column": 0,
-        "line": 9,
+        "line": 11,
       },
     },
     "members": Object {
@@ -7432,17 +7432,17 @@ have any parameter descriptions.",
         "name": "$0",
         "properties": Array [
           Object {
-            "lineNumber": 14,
+            "lineNumber": 16,
             "name": "$0.0",
             "title": "param",
           },
           Object {
-            "lineNumber": 14,
+            "lineNumber": 16,
             "name": "$0.1",
             "title": "param",
           },
           Object {
-            "lineNumber": 14,
+            "lineNumber": 16,
             "name": "$0.2",
             "title": "param",
           },
@@ -7479,11 +7479,11 @@ have any parameter descriptions.",
       "loc": Object {
         "end": Object {
           "column": 31,
-          "line": 21,
+          "line": 23,
         },
         "start": Object {
           "column": 0,
-          "line": 21,
+          "line": 23,
         },
       },
     },
@@ -7545,11 +7545,11 @@ have any parameter descriptions.",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 20,
+        "line": 22,
       },
       "start": Object {
         "column": 0,
-        "line": 16,
+        "line": 18,
       },
     },
     "members": Object {
@@ -7633,7 +7633,7 @@ have any parameter descriptions.",
         },
       },
       Object {
-        "lineNumber": 21,
+        "lineNumber": 23,
         "name": "b",
         "title": "param",
       },
@@ -7746,11 +7746,11 @@ have any parameter descriptions.",
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 60,
+          "line": 69,
         },
         "start": Object {
           "column": 0,
-          "line": 28,
+          "line": 30,
         },
       },
     },
@@ -7812,11 +7812,11 @@ have any parameter descriptions.",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 27,
+        "line": 29,
       },
       "start": Object {
         "column": 0,
-        "line": 23,
+        "line": 25,
       },
     },
     "members": Object {
@@ -7830,11 +7830,11 @@ have any parameter descriptions.",
             "loc": Object {
               "end": Object {
                 "column": 18,
-                "line": 37,
+                "line": 39,
               },
               "start": Object {
                 "column": 2,
-                "line": 37,
+                "line": 39,
               },
             },
           },
@@ -7896,11 +7896,11 @@ have any parameter descriptions.",
           "loc": Object {
             "end": Object {
               "column": 5,
-              "line": 36,
+              "line": 38,
             },
             "start": Object {
               "column": 2,
-              "line": 34,
+              "line": 36,
             },
           },
           "memberof": "Sink",
@@ -7939,11 +7939,11 @@ have any parameter descriptions.",
             "loc": Object {
               "end": Object {
                 "column": 3,
-                "line": 44,
+                "line": 46,
               },
               "start": Object {
                 "column": 2,
-                "line": 42,
+                "line": 44,
               },
             },
           },
@@ -8005,11 +8005,11 @@ have any parameter descriptions.",
           "loc": Object {
             "end": Object {
               "column": 5,
-              "line": 41,
+              "line": 43,
             },
             "start": Object {
               "column": 2,
-              "line": 39,
+              "line": 41,
             },
           },
           "memberof": "Sink",
@@ -8047,12 +8047,139 @@ have any parameter descriptions.",
           "context": Object {
             "loc": Object {
               "end": Object {
-                "column": 3,
-                "line": 59,
+                "column": 4,
+                "line": 53,
               },
               "start": Object {
                 "column": 2,
-                "line": 57,
+                "line": 51,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 39,
+                        "line": 1,
+                        "offset": 38,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This uses the class property transform",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 39,
+                    "line": 1,
+                    "offset": 38,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 39,
+                "line": 1,
+                "offset": 38,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 5,
+              "line": 50,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 48,
+            },
+          },
+          "memberof": "Sink",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "classprop",
+          "namespace": "Sink#classprop",
+          "params": Array [
+            Object {
+              "lineNumber": 51,
+              "name": "a",
+              "title": "param",
+              "type": Object {
+                "name": "number",
+                "type": "NameExpression",
+              },
+            },
+          ],
+          "path": Array [
+            Object {
+              "kind": "class",
+              "name": "Sink",
+            },
+            Object {
+              "kind": "member",
+              "name": "classprop",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [
+            Object {
+              "title": "returns",
+              "type": Object {
+                "name": "string",
+                "type": "NameExpression",
+              },
+            },
+          ],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+        },
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 3,
+                "line": 68,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 66,
               },
             },
           },
@@ -8119,11 +8246,11 @@ as a property.",
           "loc": Object {
             "end": Object {
               "column": 5,
-              "line": 56,
+              "line": 65,
             },
             "start": Object {
               "column": 2,
-              "line": 53,
+              "line": 62,
             },
           },
           "memberof": "Sink",
@@ -8164,11 +8291,11 @@ as a property.",
             "loc": Object {
               "end": Object {
                 "column": 3,
-                "line": 51,
+                "line": 60,
               },
               "start": Object {
                 "column": 2,
-                "line": 49,
+                "line": 58,
               },
             },
           },
@@ -8230,11 +8357,11 @@ as a property.",
           "loc": Object {
             "end": Object {
               "column": 5,
-              "line": 48,
+              "line": 57,
             },
             "start": Object {
               "column": 2,
-              "line": 46,
+              "line": 55,
             },
           },
           "memberof": "Sink",
@@ -8435,11 +8562,11 @@ as a property.",
       "loc": Object {
         "end": Object {
           "column": 25,
-          "line": 67,
+          "line": 76,
         },
         "start": Object {
           "column": 0,
-          "line": 67,
+          "line": 76,
         },
       },
     },
@@ -8501,11 +8628,11 @@ as a property.",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 66,
+        "line": 75,
       },
       "start": Object {
         "column": 0,
-        "line": 62,
+        "line": 71,
       },
     },
     "members": Object {
@@ -8607,11 +8734,11 @@ as a property.",
       "loc": Object {
         "end": Object {
           "column": 23,
-          "line": 75,
+          "line": 84,
         },
         "start": Object {
           "column": 0,
-          "line": 75,
+          "line": 84,
         },
       },
     },
@@ -8762,11 +8889,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 74,
+        "line": 83,
       },
       "start": Object {
         "column": 0,
-        "line": 69,
+        "line": 78,
       },
     },
     "members": Object {
@@ -8868,11 +8995,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 43,
-          "line": 80,
+          "line": 89,
         },
         "start": Object {
           "column": 0,
-          "line": 80,
+          "line": 89,
         },
       },
     },
@@ -8934,11 +9061,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 79,
+        "line": 88,
       },
       "start": Object {
         "column": 0,
-        "line": 77,
+        "line": 86,
       },
     },
     "members": Object {
@@ -8952,7 +9079,7 @@ It takes a ",
     "namespace": "functionWithRest",
     "params": Array [
       Object {
-        "lineNumber": 80,
+        "lineNumber": 89,
         "name": "someParams",
         "title": "param",
         "type": Object {
@@ -8979,11 +9106,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 92,
+          "line": 101,
         },
         "start": Object {
           "column": 0,
-          "line": 85,
+          "line": 94,
         },
       },
     },
@@ -9045,11 +9172,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 84,
+        "line": 93,
       },
       "start": Object {
         "column": 0,
-        "line": 82,
+        "line": 91,
       },
     },
     "members": Object {
@@ -9063,7 +9190,7 @@ It takes a ",
     "namespace": "functionWithRestAndType",
     "params": Array [
       Object {
-        "lineNumber": 85,
+        "lineNumber": 94,
         "name": "someParams",
         "title": "param",
         "type": Object {
@@ -9094,11 +9221,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 23,
-          "line": 99,
+          "line": 108,
         },
         "start": Object {
           "column": 0,
-          "line": 99,
+          "line": 108,
         },
       },
     },
@@ -9160,11 +9287,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 98,
+        "line": 107,
       },
       "start": Object {
         "column": 0,
-        "line": 96,
+        "line": 105,
       },
     },
     "members": Object {
@@ -9196,11 +9323,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 36,
-          "line": 107,
+          "line": 116,
         },
         "start": Object {
           "column": 0,
-          "line": 107,
+          "line": 116,
         },
       },
     },
@@ -9262,11 +9389,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 106,
+        "line": 115,
       },
       "start": Object {
         "column": 0,
-        "line": 103,
+        "line": 112,
       },
     },
     "members": Object {
@@ -9368,11 +9495,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 114,
+          "line": 123,
         },
         "start": Object {
           "column": 0,
-          "line": 112,
+          "line": 121,
         },
       },
     },
@@ -9434,11 +9561,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 111,
+        "line": 120,
       },
       "start": Object {
         "column": 0,
-        "line": 109,
+        "line": 118,
       },
     },
     "members": Object {
@@ -9453,7 +9580,7 @@ It takes a ",
     "params": Array [
       Object {
         "default": "'bar'",
-        "lineNumber": 112,
+        "lineNumber": 121,
         "name": "foo",
         "title": "param",
       },
@@ -9478,11 +9605,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 26,
-          "line": 128,
+          "line": 137,
         },
         "start": Object {
           "column": 0,
-          "line": 128,
+          "line": 137,
         },
       },
     },
@@ -9544,11 +9671,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 127,
+        "line": 136,
       },
       "start": Object {
         "column": 0,
-        "line": 124,
+        "line": 133,
       },
     },
     "members": Object {
@@ -9587,11 +9714,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 23,
-          "line": 134,
+          "line": 143,
         },
         "start": Object {
           "column": 0,
-          "line": 134,
+          "line": 143,
         },
       },
     },
@@ -9653,11 +9780,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 133,
+        "line": 142,
       },
       "start": Object {
         "column": 0,
-        "line": 130,
+        "line": 139,
       },
     },
     "members": Object {
@@ -9695,11 +9822,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 42,
-          "line": 145,
+          "line": 154,
         },
         "start": Object {
           "column": 0,
-          "line": 145,
+          "line": 154,
         },
       },
     },
@@ -9760,11 +9887,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 144,
+        "line": 153,
       },
       "start": Object {
         "column": 0,
-        "line": 142,
+        "line": 151,
       },
     },
     "members": Object {
@@ -9795,11 +9922,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 154,
+          "line": 163,
         },
         "start": Object {
           "column": 0,
-          "line": 148,
+          "line": 157,
         },
       },
     },
@@ -9861,11 +9988,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 32,
-        "line": 147,
+        "line": 156,
       },
       "start": Object {
         "column": 0,
-        "line": 147,
+        "line": 156,
       },
     },
     "members": Object {
@@ -9879,7 +10006,7 @@ It takes a ",
     "namespace": "isArrayEqualWith",
     "params": Array [
       Object {
-        "lineNumber": 149,
+        "lineNumber": 158,
         "name": "array1",
         "title": "param",
         "type": Object {
@@ -9897,7 +10024,7 @@ It takes a ",
         },
       },
       Object {
-        "lineNumber": 150,
+        "lineNumber": 159,
         "name": "array2",
         "title": "param",
         "type": Object {
@@ -9916,7 +10043,7 @@ It takes a ",
       },
       Object {
         "default": "(a:T,b:T):boolean=>a===b",
-        "lineNumber": 151,
+        "lineNumber": 160,
         "name": "compareFunction",
         "title": "param",
         "type": Object {
@@ -9973,11 +10100,11 @@ It takes a ",
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 159,
+          "line": 168,
         },
         "start": Object {
           "column": 0,
-          "line": 157,
+          "line": 166,
         },
       },
     },
@@ -10039,11 +10166,11 @@ It takes a ",
     "loc": Object {
       "end": Object {
         "column": 32,
-        "line": 156,
+        "line": 165,
       },
       "start": Object {
         "column": 0,
-        "line": 156,
+        "line": 165,
       },
     },
     "members": Object {
@@ -10057,7 +10184,7 @@ It takes a ",
     "namespace": "paramWithMemberType",
     "params": Array [
       Object {
-        "lineNumber": 157,
+        "lineNumber": 166,
         "name": "a",
         "title": "param",
         "type": Object {
@@ -11060,6 +11187,133 @@ have any parameter descriptions.",
       "children": Array [
         Object {
           "type": "text",
+          "value": "classprop",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 39,
+              "line": 1,
+              "offset": 38,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This uses the class property transform",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 39,
+          "line": 1,
+          "offset": 38,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Parameters",
+        },
+      ],
+      "type": "strong",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "inlineCode",
+                  "value": "a",
+                },
+                Object {
+                  "type": "text",
+                  "value": " ",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "text",
+                          "value": "number",
+                        },
+                      ],
+                      "identifier": "3",
+                      "referenceType": "full",
+                      "type": "linkReference",
+                    },
+                  ],
+                  "type": "strong",
+                },
+                Object {
+                  "type": "text",
+                  "value": " ",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "type": "list",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Returns ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "string",
+                },
+              ],
+              "identifier": "4",
+              "referenceType": "full",
+              "type": "linkReference",
+            },
+          ],
+          "type": "strong",
+        },
+        Object {
+          "type": "text",
+          "value": " ",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
           "value": "aGetter",
         },
       ],
@@ -11289,7 +11543,7 @@ as a property.",
               "value": "sink",
             },
           ],
-          "identifier": "4",
+          "identifier": "5",
           "referenceType": "full",
           "type": "linkReference",
         },
@@ -11320,7 +11574,7 @@ It takes a ",
               "value": "number",
             },
           ],
-          "identifier": "5",
+          "identifier": "6",
           "referenceType": "full",
           "type": "linkReference",
         },
@@ -11374,7 +11628,7 @@ It takes a ",
                   "value": "Sink",
                 },
               ],
-              "identifier": "6",
+              "identifier": "7",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -12217,7 +12471,7 @@ It takes a ",
                           "value": "boolean",
                         },
                       ],
-                      "identifier": "7",
+                      "identifier": "8",
                       "referenceType": "full",
                       "type": "linkReference",
                     },
@@ -12270,7 +12524,7 @@ It takes a ",
                   "value": "boolean",
                 },
               ],
-              "identifier": "7",
+              "identifier": "8",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -12390,7 +12644,7 @@ It takes a ",
                   "value": "boolean",
                 },
               ],
-              "identifier": "7",
+              "identifier": "8",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -12424,24 +12678,30 @@ It takes a ",
     },
     Object {
       "identifier": "4",
-      "title": null,
+      "title": undefined,
       "type": "definition",
-      "url": "#sink",
+      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "5",
       "title": null,
       "type": "definition",
-      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
+      "url": "#sink",
     },
     Object {
       "identifier": "6",
+      "title": null,
+      "type": "definition",
+      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    },
+    Object {
+      "identifier": "7",
       "title": undefined,
       "type": "definition",
       "url": "#sink",
     },
     Object {
-      "identifier": "7",
+      "identifier": "8",
       "title": undefined,
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",

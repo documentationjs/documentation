@@ -29,7 +29,10 @@ function findTarget(path: ?Object) {
     // foo.x = TARGET
     path = path.get('expression').get('right');
   } else if (t.isObjectProperty(path)) {
-    // var foo = { x: TARGET };
+    // var foo = { x: TARGET }; object property
+    path = path.get('value');
+  } else if (t.isClassProperty(path) && path.get('value').node) {
+    // var foo = { x = TARGET }; class property
     path = path.get('value');
   }
 

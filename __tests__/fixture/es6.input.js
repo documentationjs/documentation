@@ -2,9 +2,11 @@
  * This function destructures with defaults. It should not
  * have any parameter descriptions.
  */
-function destructure(
-  { phoneNumbers = [], emailAddresses = [], ...params } = {}
-) {}
+function destructure({
+  phoneNumbers = [],
+  emailAddresses = [],
+  ...params
+} = {}) {}
 
 /**
  * Similar, but with an array
@@ -42,6 +44,13 @@ class Sink {
   empty() {
     return 1;
   }
+
+  /**
+   * This uses the class property transform
+   */
+  classprop = (a: number): string => {
+    return 'hi';
+  };
 
   /**
    * This method says hello
