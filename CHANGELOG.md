@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/documentationjs/documentation/compare/v6.1.0...v6.2.0) (2018-04-11)
+
+
+### Bug Fixes
+
+* get rid of shelljs dependency ([630625d](https://github.com/documentationjs/documentation/commit/630625d))
+
+
+### Features
+
+* **doctrine:** Support decorator syntax in examples ([b309d39](https://github.com/documentationjs/documentation/commit/b309d39)), closes [#1016](https://github.com/documentationjs/documentation/issues/1016)
+* **inferTypes:** Support class properties ([22d8740](https://github.com/documentationjs/documentation/commit/22d8740)), closes [#1043](https://github.com/documentationjs/documentation/issues/1043)
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/documentationjs/documentation/compare/v6.0.0...v6.1.0) (2018-03-08)
 
