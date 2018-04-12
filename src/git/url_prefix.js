@@ -58,12 +58,9 @@ function getGithubURLPrefix(root: string) {
       sha = head;
     }
     if (sha) {
-      return (
-        gitUrlParse(getRemoteOrigin.sync(root)).toString('https') +
-        '/blob/' +
-        sha.trim() +
-        '/'
-      );
+      const parsed = gitUrlParse(getRemoteOrigin.sync(root));
+      parsed.git_suffix = false; // eslint-disable-line
+      return parsed.toString('https') + '/blob/' + sha.trim() + '/';
     }
   } catch (e) {
     return null;
