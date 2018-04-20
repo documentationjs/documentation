@@ -88,7 +88,8 @@ function mergeConfig(config: Object): Promise<DocumentationConfig> {
     'js',
     'jsx',
     'es5',
-    'es6'
+    'es6',
+    'vue'
   ]);
 
   return mergeConfigFile(config).then(mergePackage);

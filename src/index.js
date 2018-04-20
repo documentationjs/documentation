@@ -6,6 +6,7 @@ const filterAccess = require('./filter_access');
 const dependency = require('./input/dependency');
 const shallow = require('./input/shallow');
 const parseJavaScript = require('./parsers/javascript');
+const parseVueScript = require('./parsers/vue');
 const github = require('./github');
 const hierarchy = require('./hierarchy');
 const inferName = require('./infer/name');
@@ -102,8 +103,13 @@ function buildInternal(inputsAndConfig) {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
+    var extension = sourceFile.file.substr(sourceFile.file.length - 4);
 
-    return parseJavaScript(sourceFile, config).map(buildPipeline);
+    if (extension === '.vue') {
+      return parseVueScript(sourceFile, config).map(buildPipeline);
+    } else {
+      return parseJavaScript(sourceFile, config).map(buildPipeline);
+    }
   }).filter(Boolean);
 
   return filterAccess(
