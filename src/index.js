@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const _ = require('lodash');
 const sort = require('./sort');
 const nest = require('./nest');
@@ -103,13 +104,11 @@ function buildInternal(inputsAndConfig) {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
-    var extension = sourceFile.file.substr(sourceFile.file.length - 4);
 
-    if (extension === '.vue') {
+    if (path.extname(sourceFile.file) === '.vue') {
       return parseVueScript(sourceFile, config).map(buildPipeline);
-    } else {
-      return parseJavaScript(sourceFile, config).map(buildPipeline);
     }
+    return parseJavaScript(sourceFile, config).map(buildPipeline);
   }).filter(Boolean);
 
   return filterAccess(

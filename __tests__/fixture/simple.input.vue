@@ -14,8 +14,6 @@ props: {
 
   /**
    * This is a number
-   *
-   *  @property
    */
   myNumber: {
     default: 42,
