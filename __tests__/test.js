@@ -234,3 +234,10 @@ test('.lint with bad input', async function() {
     expect(err).toBeTruthy();
   }
 });
+
+test('Vue file', async function() {
+  await pify(chdir)(__dirname);
+  const data = await documentation.build('__tests__/fixture/vue.input.vue', {});
+  normalize(data);
+  expect(data).toMatchSnapshot();
+});

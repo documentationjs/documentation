@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const _ = require('lodash');
 const sort = require('./sort');
 const nest = require('./nest');
@@ -6,6 +7,7 @@ const filterAccess = require('./filter_access');
 const dependency = require('./input/dependency');
 const shallow = require('./input/shallow');
 const parseJavaScript = require('./parsers/javascript');
+const parseVueScript = require('./parsers/vue');
 const github = require('./github');
 const hierarchy = require('./hierarchy');
 const inferName = require('./infer/name');
@@ -103,6 +105,9 @@ function buildInternal(inputsAndConfig) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
 
+    if (path.extname(sourceFile.file) === '.vue') {
+      return parseVueScript(sourceFile, config).map(buildPipeline);
+    }
     return parseJavaScript(sourceFile, config).map(buildPipeline);
   }).filter(Boolean);
 
