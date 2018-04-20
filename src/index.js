@@ -103,13 +103,14 @@ function buildInternal(inputsAndConfig) {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
-    var extension = sourceFile.file.substr(sourceFile.file.length - 4);
-
-    if (extension === '.vue') {
-      return parseVueScript(sourceFile, config).map(buildPipeline);
+    const extention = sourceFile.file.substr(sourceFile.file.length - 4);
+    let result = '';
+    if (extention === '.vue') {
+      result = parseVueScript(sourceFile, config).map(buildPipeline);
     } else {
-      return parseJavaScript(sourceFile, config).map(buildPipeline);
+      result = parseJavaScript(sourceFile, config).map(buildPipeline);
     }
+    return result;
   }).filter(Boolean);
 
   return filterAccess(
