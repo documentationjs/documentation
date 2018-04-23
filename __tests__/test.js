@@ -262,7 +262,9 @@ export default {
     }
   }
 }`;
-  const data = await documentation.build([{ source: documentationSource }], {});
+  const data = await documentation.build([{ source: documentationSource }], {
+    shallow: true
+  });
   normalize(data);
   expect(data).toMatchSnapshot();
 });
