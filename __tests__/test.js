@@ -241,3 +241,28 @@ test('Vue file', async function() {
   normalize(data);
   expect(data).toMatchSnapshot();
 });
+
+test('Use Source attribute only', async function() {
+  await pify(chdir)(__dirname);
+  const documentationSource = `
+/**
+ * This Vue Component is a test
+ * @returns {vue-tested} vue-tested component
+ */
+export default {
+
+  props: {
+
+    /**
+     * This is a number
+     */
+    myNumber: {
+      default: 42,
+      type: Number
+    }
+  }
+}`;
+  const data = await documentation.build([{ source: documentationSource }], {});
+  normalize(data);
+  expect(data).toMatchSnapshot();
+});

@@ -105,7 +105,10 @@ function buildInternal(inputsAndConfig) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }
 
-    if (path.extname(sourceFile.file) === '.vue') {
+    if (
+      typeof sourceFile.file === 'string' &&
+      path.extname(sourceFile.file) === '.vue'
+    ) {
       return parseVueScript(sourceFile, config).map(buildPipeline);
     }
     return parseJavaScript(sourceFile, config).map(buildPipeline);
