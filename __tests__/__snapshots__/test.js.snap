@@ -1,5 +1,286 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Use Source attribute only 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 1,
+          "line": 18,
+        },
+        "start": Position {
+          "column": 0,
+          "line": 6,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Position {
+                "end": Object {
+                  "column": 29,
+                  "line": 1,
+                  "offset": 28,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "This Vue Component is a test",
+            },
+          ],
+          "position": Position {
+            "end": Object {
+              "column": 29,
+              "line": 1,
+              "offset": 28,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 29,
+          "line": 1,
+          "offset": 28,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [
+      Object {
+        "message": "could not determine @name for hierarchy",
+      },
+    ],
+    "examples": Array [],
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 2,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "",
+    "namespace": "",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": undefined,
+        "name": "",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "position": Position {
+                    "end": Object {
+                      "column": 21,
+                      "line": 1,
+                      "offset": 20,
+                    },
+                    "indent": Array [],
+                    "start": Object {
+                      "column": 1,
+                      "line": 1,
+                      "offset": 0,
+                    },
+                  },
+                  "type": "text",
+                  "value": "vue-tested component",
+                },
+              ],
+              "position": Position {
+                "end": Object {
+                  "column": 21,
+                  "line": 1,
+                  "offset": 20,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "paragraph",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+              "offset": 20,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "vue-tested",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "vue-tested component",
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "vue-tested",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 5,
+          "line": 16,
+        },
+        "start": Position {
+          "column": 4,
+          "line": 13,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Position {
+                "end": Object {
+                  "column": 17,
+                  "line": 1,
+                  "offset": 16,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "This is a number",
+            },
+          ],
+          "position": Position {
+            "end": Object {
+              "column": 17,
+              "line": 1,
+              "offset": 16,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 17,
+          "line": 1,
+          "offset": 16,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 7,
+        "line": 12,
+      },
+      "start": Position {
+        "column": 4,
+        "line": 10,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "myNumber",
+    "namespace": "myNumber",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": undefined,
+        "name": "myNumber",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+  },
+]
+`;
+
 exports[`Vue file 1`] = `
 Array [
   Object {
