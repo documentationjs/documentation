@@ -12,7 +12,9 @@ const vuecompiler = require('vue-template-compiler');
  * @returns {Array<Object>} an array of parsed comments
  */
 function parseVueScript(data: Object, config: DocumentationConfig) {
-  data.source = vuecompiler.parseComponent(data.source).script.content;
+  const component = vuecompiler.parseComponent(data.source);
+  if (!component.script) return [];
+  data.source = component.script.content;
   return parseJavaScript(data, config);
 }
 

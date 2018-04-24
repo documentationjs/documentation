@@ -242,6 +242,16 @@ test('Vue file', async function() {
   expect(data).toMatchSnapshot();
 });
 
+test('Vue file', async function() {
+  await pify(chdir)(__dirname);
+  const data = await documentation.build(
+    '__tests__/fixture/vue-no-script.input.vue',
+    {}
+  );
+  normalize(data);
+  expect(data).toMatchSnapshot();
+});
+
 test('Use Source attribute only', async function() {
   await pify(chdir)(__dirname);
   const documentationSource = `
