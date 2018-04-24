@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.2"></a>
+## [6.3.2](https://github.com/documentationjs/documentation/compare/v6.3.1...v6.3.2) (2018-04-24)
+
+
+### Bug Fixes
+
+* **vue:** Make vue parser tolerant of components that don't contain scripts ([#1061](https://github.com/documentationjs/documentation/issues/1061)) ([8f9bc7b](https://github.com/documentationjs/documentation/commit/8f9bc7b)), closes [#1060](https://github.com/documentationjs/documentation/issues/1060)
+
+
+
 <a name="6.3.1"></a>
 ## [6.3.1](https://github.com/documentationjs/documentation/compare/v6.3.0...v6.3.1) (2018-04-23)
 
