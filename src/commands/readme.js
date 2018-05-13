@@ -8,14 +8,14 @@ const sharedOptions = require('./shared_options');
 const inject = require('mdast-util-inject');
 const chalk = require('chalk');
 const disparity = require('disparity');
-const getReadmeFile = require('readme-file');
+const getReadmeFile = require('../get-readme-file');
 
 module.exports.command = 'readme [input..]';
 module.exports.description = 'inject documentation into your README.md';
 
-let DEFAULT_README_FILE = 'README.md';
+let defaultReadmeFile = 'README.md';
 try {
-  DEFAULT_README_FILE = getReadmeFile('.');
+  defaultReadmeFile = getReadmeFile('.');
 } catch (err) {
   // ignore and use default README.md
 }
@@ -33,7 +33,7 @@ module.exports.builder = Object.assign(
   {
     'readme-file': {
       describe: 'The markdown file into which to inject documentation',
-      default: DEFAULT_README_FILE
+      default: defaultReadmeFile
     },
     section: {
       alias: 's',
