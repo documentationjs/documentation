@@ -5173,16 +5173,6 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-readme-file@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/readme-file/-/readme-file-0.2.0.tgz#4ce8f43d756f53740f39b7a9121469d7fb0508fc"
-  dependencies:
-    readme-filenames "^1.0.1"
-
-readme-filenames@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/readme-filenames/-/readme-filenames-1.0.1.tgz#9c125c69839c3741edf4f0b4b46ba51e1a3a4bf8"
-
 realpath-native@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-1.0.0.tgz#7885721a83b43bd5327609f0ddecb2482305fdf0"
