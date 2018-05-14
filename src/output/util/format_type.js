@@ -81,7 +81,7 @@ function commaList(getHref, items, start, end, sep) {
  * @param {boolean} prefix string to put after the type comment
  * @returns {Array<Object>} suffixed and potentially prefixed type
  */
-function decorate(formatted, str, prefix) {
+function decorate(formatted, str, prefix): Array<Object> {
   if (prefix) {
     return [t(str)].concat(formatted);
   }
@@ -100,7 +100,7 @@ function decorate(formatted, str, prefix) {
  * formatType({ type: 'NameExpression', name: 'String' })[0].url
  * // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
-function formatType(getHref: Function, node: ?Object) {
+function formatType(getHref: Function, node: ?Object): Array<Object> {
   let result = [];
 
   if (!node) {
