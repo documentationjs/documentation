@@ -14,7 +14,10 @@ const fs = require('fs');
  * @returns {number} sorting value
  * @private
  */
-module.exports = function sortDocs(comments: Array<Comment>, options: Object) {
+module.exports = function sortDocs(
+  comments: Array<Comment>,
+  options: Object
+): Array<Comment> {
   if (!options || !options.toc) {
     return sortComments(comments, options && options.sortOrder);
   }
@@ -124,7 +127,10 @@ function compareCommentsBySourceLocation(a: Comment, b: Comment): number {
   return a.context.sortKey.localeCompare(b.context.sortKey);
 }
 
-function sortComments(comments: Array<Comment>, sortOrder: string) {
+function sortComments(
+  comments: Array<Comment>,
+  sortOrder: string
+): Array<Comment> {
   return comments.sort(
     sortOrder === 'alpha'
       ? compareCommentsByName

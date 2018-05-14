@@ -34,13 +34,13 @@ module.exports.sharedInputOptions = {
       "additional extensions to include in require() and import's search algorithm." +
       'For instance, adding .es5 would allow require("adder") to find "adder.es5"',
     // Ensure that the value is an array
-    coerce: (value: string | Array<string>) => [].concat(value),
+    coerce: (value: string | Array<string>): Array<string> => [].concat(value),
     alias: 're'
   },
   'parse-extension': {
     describe: 'additional extensions to parse as source code.',
     // Ensure that the value is an array
-    coerce: (value: string | Array<string>) => [].concat(value),
+    coerce: (value: string | Array<string>): Array<string> => [].concat(value),
     alias: 'pe'
   },
   private: {
