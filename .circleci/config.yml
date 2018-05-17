@@ -13,6 +13,13 @@ jobs:
       - image: node
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-{{ .Branch }}
+            - yarn-packages-master
+            - yarn-packages-
       - run:
           name: Install dependencies
           command: yarn --frozen-lockfile
@@ -22,6 +29,11 @@ jobs:
       - run:
           name: coverage
           command: ./node_modules/.bin/coveralls < coverage/lcov.info
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
   node-v6:
     <<: *node-base
     docker:
