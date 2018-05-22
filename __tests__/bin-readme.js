@@ -22,6 +22,29 @@ function documentation(args, options, parseJSON) {
   });
 }
 
+describe('readme autodetection of different filenames', function() {
+  const fixtures = path.join(__dirname, 'fixture/readme');
+  const sourceFile = path.join(fixtures, 'index.js');
+  let d;
+  let removeCallback;
+
+  beforeEach(() => {
+    const dirEntry = tmp.dirSync({ unsafeCleanup: true });
+    d = dirEntry.name;
+    fs.copySync(
+      path.join(fixtures, 'README.input.md'),
+      path.join(d, 'readme.markdown')
+    );
+    fs.copySync(path.join(fixtures, 'index.js'), path.join(d, 'index.js'));
+  });
+
+  test('updates readme.markdown', async function() {
+    await documentation(['readme index.js -s API'], { cwd: d });
+    const outputPath = path.join(d, 'readme.markdown');
+    expect(fs.readFileSync(outputPath, 'utf-8')).toMatchSnapshot();
+  });
+});
+
 describe('readme command', function() {
   const fixtures = path.join(__dirname, 'fixture/readme');
   const sourceFile = path.join(fixtures, 'index.js');
