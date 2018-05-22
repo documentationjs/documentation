@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/documentationjs/documentation/compare/v6.3.3...v7.0.0) (2018-05-22)
+
+
+### Features
+
+* Auto-detect readme filename ([4fd776b](https://github.com/documentationjs/documentation/commit/4fd776b))
+
+
+### BREAKING CHANGES
+
+* the --readme-file option now has a smart default value
+
+
+
 <a name="6.3.3"></a>
 ## [6.3.3](https://github.com/documentationjs/documentation/compare/v6.3.2...v6.3.3) (2018-05-14)
 
