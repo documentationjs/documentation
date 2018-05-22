@@ -13,12 +13,7 @@ const getReadmeFile = require('../get-readme-file');
 module.exports.command = 'readme [input..]';
 module.exports.description = 'inject documentation into your README.md';
 
-let defaultReadmeFile = 'README.md';
-try {
-  defaultReadmeFile = getReadmeFile('.');
-} catch (err) {
-  // ignore and use default README.md
-}
+const defaultReadmeFile = getReadmeFile('.');
 
 /**
  * Add yargs parsing for the readme command
