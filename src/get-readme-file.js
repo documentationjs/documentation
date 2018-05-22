@@ -22,4 +22,6 @@ module.exports = function findReadme(dir: string) {
   if (readmeFile) {
     return path.join(fs.realpathSync(dir), readmeFile);
   }
+
+  return 'README.md';
 };
