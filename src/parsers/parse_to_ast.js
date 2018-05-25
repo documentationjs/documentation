@@ -21,6 +21,20 @@ const opts = {
   ]
 };
 
+/**
+ * Convert flow comment types into flow annotations so that
+ * they end up in the final AST. If the source does not contain
+ * a flow pragma, the code is returned verbatim.
+ * @param {*} source code with flow type comments
+ * @returns {string} code with flow annotations
+ */
+function commentToFlow(source) {
+  if (!/@flow/.test(source)) return source;
+  return source
+    .replace(/\/\*::([^]+?)\*\//g, '$1')
+    .replace(/\/\*:\s*([^]+?)\s*\*\//g, ':$1');
+}
+
 export function parseToAst(source: string) {
-  return babylon.parse(source, opts);
+  return babylon.parse(commentToFlow(source), opts);
 }
