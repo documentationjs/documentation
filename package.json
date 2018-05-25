@@ -79,7 +79,7 @@
     "json-schema": "0.2.3",
     "lint-staged": "^7.0.0",
     "mock-fs": "^4.4.2",
-    "p-event": "^1.3.0",
+    "p-event": "^2.0.0",
     "prettier": "^1.10.2",
     "regenerator-runtime": "^0.11.1",
     "standard-version": "^4.3.0",
