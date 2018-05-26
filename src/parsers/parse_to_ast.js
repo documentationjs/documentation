@@ -28,7 +28,7 @@ const opts = {
  * @param {*} source code with flow type comments
  * @returns {string} code with flow annotations
  */
-function commentToFlow(source) {
+export function commentToFlow(source: string) {
   if (!/@flow/.test(source)) return source;
   return source
     .replace(/\/\*::([^]+?)\*\//g, '$1')
