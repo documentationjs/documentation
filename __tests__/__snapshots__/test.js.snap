@@ -567,7 +567,7 @@ exports[`config 1`] = `
 
 This is my class, a demo thing.
 
-**Properties**
+### Properties
 
 -   \`howMany\` **[number][1]** how many things it contains
 
@@ -575,7 +575,7 @@ This is my class, a demo thing.
 
 Get the number 42
 
-**Parameters**
+#### Parameters
 
 -   \`getIt\` **[boolean][2]** whether to get the number
 
@@ -638,7 +638,7 @@ This class has some members
 
 second::foo
 
-**Parameters**
+###### Parameters
 
 -   \`pork\`  
 
@@ -646,7 +646,7 @@ second::foo
 
 second::bar
 
-**Parameters**
+###### Parameters
 
 -   \`beans\`  
 -   \`rice\`  
@@ -1352,7 +1352,7 @@ exports[`highlightAuto md output 1`] = `
 
 This function returns the number one.
 
-**Examples**
+### Examples
 
 \`\`\`js
 var myFoo = new Foo('[data-foo]');
@@ -3347,7 +3347,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -4137,7 +4138,8 @@ Object {
           "value": "Properties",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -4270,7 +4272,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -6725,7 +6728,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -6772,7 +6776,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -6855,7 +6860,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -6922,7 +6928,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -7044,7 +7051,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -7159,7 +7167,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -7336,7 +7345,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -7447,7 +7457,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -10860,7 +10871,8 @@ have any parameter descriptions.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -11094,7 +11106,8 @@ have any parameter descriptions.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -11219,7 +11232,8 @@ have any parameter descriptions.",
           "value": "Examples",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "lang": "javascript",
@@ -11278,7 +11292,8 @@ have any parameter descriptions.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -11516,7 +11531,8 @@ have any parameter descriptions.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -11677,7 +11693,8 @@ have any parameter descriptions.",
           "value": "Examples",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "lang": "javascript",
@@ -11830,7 +11847,8 @@ class A {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -12324,7 +12342,8 @@ It takes a ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -12419,7 +12438,8 @@ It takes a ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -12675,7 +12695,8 @@ It takes a ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -12909,7 +12930,8 @@ It takes a ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -13185,7 +13207,8 @@ It takes a ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -13919,7 +13942,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -14082,7 +14106,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -14864,7 +14889,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -15415,7 +15441,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -16024,7 +16051,8 @@ Object {
           "value": "Properties",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -16488,7 +16516,8 @@ Object {
           "value": "Examples",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -17400,7 +17429,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -19524,7 +19554,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -19847,7 +19878,8 @@ and ",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -20235,7 +20267,8 @@ Object {
           "value": "Properties",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -21479,7 +21512,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -21676,7 +21710,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -22071,7 +22106,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -22175,7 +22211,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -22929,7 +22966,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -23578,7 +23616,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -25143,7 +25182,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -25289,7 +25329,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -26044,7 +26085,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -27379,7 +27421,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -27738,7 +27781,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -27978,7 +28022,8 @@ Object {
           "value": "Properties",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -28520,7 +28565,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -28806,7 +28852,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -29046,7 +29093,8 @@ Object {
           "value": "Properties",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32048,7 +32096,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32335,7 +32384,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32534,7 +32584,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32694,7 +32745,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32872,7 +32924,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -32989,7 +33042,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -33334,7 +33388,8 @@ Object {
           "value": "Examples",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "lang": "javascript",
@@ -33428,7 +33483,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -33921,7 +33977,8 @@ values specified in code.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -34140,7 +34197,8 @@ or any type information we could infer from annotations.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -34262,7 +34320,8 @@ iterator destructure (RestElement)",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -35831,7 +35890,8 @@ that doesn't crash anything!",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -35913,7 +35973,8 @@ that doesn't crash anything!",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 4,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -36906,7 +36967,8 @@ plus 3.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -37132,7 +37194,8 @@ plus 3.",
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -37994,7 +38057,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -38082,7 +38146,8 @@ Object {
           "value": "Examples",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "lang": "javascript",
@@ -39965,7 +40030,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -40057,7 +40123,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -40403,7 +40470,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
@@ -40620,7 +40688,8 @@ Object {
           "value": "Parameters",
         },
       ],
-      "type": "strong",
+      "depth": 3,
+      "type": "heading",
     },
     Object {
       "children": Array [
