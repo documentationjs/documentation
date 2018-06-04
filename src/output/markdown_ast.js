@@ -113,7 +113,7 @@ function buildMarkdownAST(
     function paramSection(comment: Comment) {
       return (
         comment.params.length > 0 && [
-          u('strong', [u('text', 'Parameters')]),
+          u('heading', { depth: depth + 1 }, [u('text', 'Parameters')]),
           paramList(comment.params)
         ]
       );
@@ -122,7 +122,7 @@ function buildMarkdownAST(
     function propertySection(comment: Comment) {
       return (
         comment.properties.length > 0 && [
-          u('strong', [u('text', 'Properties')]),
+          u('heading', { depth: depth + 1 }, [u('text', 'Properties')]),
           propertyList(comment.properties)
         ]
       );
@@ -159,7 +159,7 @@ function buildMarkdownAST(
     function examplesSection(comment: Comment) {
       return (
         comment.examples.length > 0 &&
-        [u('strong', [u('text', 'Examples')])].concat(
+        [u('heading', { depth: depth + 1 }, [u('text', 'Examples')])].concat(
           comment.examples.reduce(function(memo, example) {
             const language = hljsOptions.highlightAuto
               ? hljs.highlightAuto(example.description).language
