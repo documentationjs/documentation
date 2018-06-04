@@ -1772,33 +1772,41 @@ exports[`build --document-exported 1`] = `
 -   [z][1]
     -   [zMethod][2]
 -   [x][3]
--   [Class][4]
-    -   [classMethod][5]
-    -   [classGetter][6]
-    -   [classSetter][7]
-    -   [staticMethod][8]
-    -   [staticGetter][9]
-    -   [staticSetter][10]
--   [T5][11]
--   [y2Default][12]
--   [y4][13]
--   [object][14]
-    -   [method][15]
-    -   [getter][16]
-    -   [setter][17]
-    -   [prop][18]
-    -   [func][19]
--   [f1][20]
--   [f3][21]
--   [T][22]
--   [T2][23]
--   [T4][24]
--   [f4][25]
--   [o1][26]
-    -   [om1][27]
--   [f5][28]
--   [o2][29]
-    -   [om2][30]
+    -   [Parameters][4]
+-   [Class][5]
+    -   [Parameters][6]
+    -   [classMethod][7]
+    -   [classGetter][8]
+    -   [classSetter][9]
+        -   [Parameters][10]
+    -   [staticMethod][11]
+    -   [staticGetter][12]
+    -   [staticSetter][13]
+        -   [Parameters][14]
+-   [T5][15]
+-   [y2Default][16]
+-   [y4][17]
+    -   [Parameters][18]
+-   [object][19]
+    -   [method][20]
+    -   [getter][21]
+    -   [setter][22]
+        -   [Parameters][23]
+    -   [prop][24]
+    -   [func][25]
+-   [f1][26]
+-   [f3][27]
+-   [T][28]
+-   [T2][29]
+-   [T4][30]
+-   [f4][31]
+    -   [Parameters][32]
+-   [o1][33]
+    -   [om1][34]
+-   [f5][35]
+    -   [Parameters][36]
+-   [o2][37]
+    -   [om2][38]
 
 ## z
 
@@ -1806,15 +1814,15 @@ exports[`build --document-exported 1`] = `
 
 ## x
 
-**Parameters**
+### Parameters
 
 -   \`yparam\`  
 
 ## Class
 
-**Parameters**
+### Parameters
 
--   \`a\` **[string][31]** 
+-   \`a\` **[string][39]** 
 
 ### classMethod
 
@@ -1822,7 +1830,7 @@ exports[`build --document-exported 1`] = `
 
 ### classSetter
 
-**Parameters**
+#### Parameters
 
 -   \`v\`  
 
@@ -1832,13 +1840,13 @@ exports[`build --document-exported 1`] = `
 
 ### staticSetter
 
-**Parameters**
+#### Parameters
 
 -   \`v\`  
 
 ## T5
 
-Type: [boolean][32]
+Type: [boolean][40]
 
 ## y2Default
 
@@ -1846,9 +1854,9 @@ Type: [boolean][32]
 
 Description of y3
 
-**Parameters**
+### Parameters
 
--   \`p\` **[number][33]** 
+-   \`p\` **[number][41]** 
 
 Returns **void** 
 
@@ -1860,7 +1868,7 @@ Returns **void**
 
 ### setter
 
-**Parameters**
+#### Parameters
 
 -   \`v\`  
 
@@ -1874,19 +1882,19 @@ Returns **void**
 
 ## T
 
-Type: [number][33]
+Type: [number][41]
 
 ## T2
 
-Type: [string][31]
+Type: [string][39]
 
 ## T4
 
-Type: [string][31]
+Type: [string][39]
 
 ## f4
 
-**Parameters**
+### Parameters
 
 -   \`x\` **X** 
 
@@ -1898,7 +1906,7 @@ Type: [string][31]
 
 f5 comment
 
-**Parameters**
+### Parameters
 
 -   \`y\` **Y** 
 
@@ -1912,65 +1920,81 @@ f5 comment
 
 [3]: #x
 
-[4]: #class
+[4]: #parameters
 
-[5]: #classmethod
+[5]: #class
 
-[6]: #classgetter
+[6]: #parameters-1
 
-[7]: #classsetter
+[7]: #classmethod
 
-[8]: #staticmethod
+[8]: #classgetter
 
-[9]: #staticgetter
+[9]: #classsetter
 
-[10]: #staticsetter
+[10]: #parameters-2
 
-[11]: #t5
+[11]: #staticmethod
 
-[12]: #y2default
+[12]: #staticgetter
 
-[13]: #y4
+[13]: #staticsetter
 
-[14]: #object
+[14]: #parameters-3
 
-[15]: #method
+[15]: #t5
 
-[16]: #getter
+[16]: #y2default
 
-[17]: #setter
+[17]: #y4
 
-[18]: #prop
+[18]: #parameters-4
 
-[19]: #func
+[19]: #object
 
-[20]: #f1
+[20]: #method
 
-[21]: #f3
+[21]: #getter
 
-[22]: #t
+[22]: #setter
 
-[23]: #t2
+[23]: #parameters-5
 
-[24]: #t4
+[24]: #prop
 
-[25]: #f4
+[25]: #func
 
-[26]: #o1
+[26]: #f1
 
-[27]: #om1
+[27]: #f3
 
-[28]: #f5
+[28]: #t
 
-[29]: #o2
+[29]: #t2
 
-[30]: #om2
+[30]: #t4
 
-[31]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[31]: #f4
 
-[32]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[32]: #parameters-6
 
-[33]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[33]: #o1
+
+[34]: #om1
+
+[35]: #f5
+
+[36]: #parameters-7
+
+[37]: #o2
+
+[38]: #om2
+
+[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[40]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[41]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 

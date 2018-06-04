@@ -3,11 +3,21 @@
 ### Table of Contents
 
 -   [lint][1]
--   [build][2]
--   [formats][3]
--   [formats.html][4]
--   [formats.markdown][5]
--   [formats.json][6]
+    -   [Parameters][2]
+    -   [Examples][3]
+-   [build][4]
+    -   [Parameters][5]
+    -   [Examples][6]
+-   [formats][7]
+-   [formats.html][8]
+    -   [Parameters][9]
+    -   [Examples][10]
+-   [formats.markdown][11]
+    -   [Parameters][12]
+    -   [Examples][13]
+-   [formats.json][14]
+    -   [Parameters][15]
+    -   [Examples][16]
 
 ## lint
 
@@ -15,23 +25,23 @@ Lint files for non-standard or incorrect documentation
 information, returning a potentially-empty string
 of lint information intended for human-readable output.
 
-**Parameters**
+### Parameters
 
--   `indexes` **([Array][7]&lt;[string][8]> | [string][8])** files to process
--   `args` **[Object][9]** args
-    -   `args.external` **[Array][7]&lt;[string][8]>** a string regex / glob match pattern
+-   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
+-   `args` **[Object][19]** args
+    -   `args.external` **[Array][17]&lt;[string][18]>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-    -   `args.shallow` **[boolean][10]** whether to avoid dependency parsing
+    -   `args.shallow` **[boolean][20]** whether to avoid dependency parsing
         even in JavaScript code. (optional, default `false`)
-    -   `args.inferPrivate` **[string][8]?** a valid regular expression string
+    -   `args.inferPrivate` **[string][18]?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
         methods named like `_myMethod` as private.
-    -   `args.extension` **([string][8] \| [Array][7]&lt;[string][8]>)?** treat additional file extensions
+    -   `args.extension` **([string][18] \| [Array][17]&lt;[string][18]>)?** treat additional file extensions
         as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 
-**Examples**
+### Examples
 
 ```javascript
 documentation.lint('file.js').then(lintOutput => {
@@ -44,37 +54,37 @@ documentation.lint('file.js').then(lintOutput => {
 });
 ```
 
-Returns **[Promise][11]** promise with lint results
+Returns **[Promise][21]** promise with lint results
 
 ## build
 
 Generate JavaScript documentation as a list of parsed JSDoc
 comments, given a root file as a path.
 
-**Parameters**
+### Parameters
 
--   `indexes` **([Array][7]&lt;[string][8]> | [string][8])** files to process
--   `args` **[Object][9]** args
-    -   `args.external` **[Array][7]&lt;[string][8]>** a string regex / glob match pattern
+-   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
+-   `args` **[Object][19]** args
+    -   `args.external` **[Array][17]&lt;[string][18]>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
-    -   `args.shallow` **[boolean][10]** whether to avoid dependency parsing
+    -   `args.shallow` **[boolean][20]** whether to avoid dependency parsing
         even in JavaScript code. (optional, default `false`)
-    -   `args.order` **[Array][7]&lt;([string][8] \| [Object][9])>** optional array that
+    -   `args.order` **[Array][17]&lt;([string][18] \| [Object][19])>** optional array that
         defines sorting order of documentation (optional, default `[]`)
-    -   `args.access` **[Array][7]&lt;[string][8]>** an array of access levels
+    -   `args.access` **[Array][17]&lt;[string][18]>** an array of access levels
         to output in documentation (optional, default `[]`)
-    -   `args.hljs` **[Object][9]?** hljs optional args
-        -   `args.hljs.highlightAuto` **[boolean][10]** hljs automatically detect language (optional, default `false`)
-        -   `args.hljs.languages` **[Array][7]?** languages for hljs to choose from
-    -   `args.inferPrivate` **[string][8]?** a valid regular expression string
+    -   `args.hljs` **[Object][19]?** hljs optional args
+        -   `args.hljs.highlightAuto` **[boolean][20]** hljs automatically detect language (optional, default `false`)
+        -   `args.hljs.languages` **[Array][17]?** languages for hljs to choose from
+    -   `args.inferPrivate` **[string][18]?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
         methods named like `_myMethod` as private.
-    -   `args.extension` **([string][8] \| [Array][7]&lt;[string][8]>)?** treat additional file extensions
+    -   `args.extension` **([string][18] \| [Array][17]&lt;[string][18]>)?** treat additional file extensions
         as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
 
-**Examples**
+### Examples
 
 ```javascript
 var documentation = require('documentation');
@@ -89,7 +99,7 @@ documentation.build(['index.js'], {
 });
 ```
 
-Returns **[Promise][11]** results
+Returns **[Promise][21]** results
 
 ## formats
 
@@ -102,13 +112,13 @@ output.
 
 Formats documentation as HTML.
 
-**Parameters**
+### Parameters
 
--   `comments` **[Array][7]&lt;[Comment][12]>** parsed comments
--   `config` **[Object][9]** Options that can customize the output
-    -   `config.theme` **[string][8]** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
+-   `comments` **[Array][17]&lt;[Comment][22]>** parsed comments
+-   `config` **[Object][19]** Options that can customize the output
+    -   `config.theme` **[string][18]** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
 
-**Examples**
+### Examples
 
 ```javascript
 var documentation = require('documentation');
@@ -122,19 +132,19 @@ documentation.build(['index.js'])
   });
 ```
 
-Returns **[Promise][11]&lt;[Array][7]&lt;[Object][9]>>** Promise with results
+Returns **[Promise][21]&lt;[Array][17]&lt;[Object][19]>>** Promise with results
 
 ## formats.markdown
 
 Formats documentation as
-[Markdown][13].
+[Markdown][23].
 
-**Parameters**
+### Parameters
 
--   `comments` **[Array][7]&lt;[Object][9]>** parsed comments
--   `args` **[Object][9]** Options that can customize the output
+-   `comments` **[Array][17]&lt;[Object][19]>** parsed comments
+-   `args` **[Object][19]** Options that can customize the output
 
-**Examples**
+### Examples
 
 ```javascript
 var documentation = require('documentation');
@@ -148,17 +158,17 @@ documentation.build(['index.js'])
   });
 ```
 
-Returns **[Promise][11]&lt;[string][8]>** a promise of the eventual value
+Returns **[Promise][21]&lt;[string][18]>** a promise of the eventual value
 
 ## formats.json
 
 Formats documentation as a JSON string.
 
-**Parameters**
+### Parameters
 
--   `comments` **[Array][7]&lt;[Comment][12]>** parsed comments
+-   `comments` **[Array][17]&lt;[Comment][22]>** parsed comments
 
-**Examples**
+### Examples
 
 ```javascript
 var documentation = require('documentation');
@@ -172,30 +182,50 @@ documentation.build(['index.js'])
   });
 ```
 
-Returns **[Promise][11]&lt;[string][8]>** 
+Returns **[Promise][21]&lt;[string][18]>** 
 
 [1]: #lint
 
-[2]: #build
+[2]: #parameters
 
-[3]: #formats
+[3]: #examples
 
-[4]: #formatshtml
+[4]: #build
 
-[5]: #formatsmarkdown
+[5]: #parameters-1
 
-[6]: #formatsjson
+[6]: #examples-1
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[7]: #formats
 
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[8]: #formatshtml
 
-[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[9]: #parameters-2
 
-[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[10]: #examples-2
 
-[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[11]: #formatsmarkdown
 
-[12]: https://developer.mozilla.org/docs/Web/API/Comment/Comment
+[12]: #parameters-3
 
-[13]: http://daringfireball.net/projects/markdown/
+[13]: #examples-3
+
+[14]: #formatsjson
+
+[15]: #parameters-4
+
+[16]: #examples-4
+
+[17]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[19]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[20]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[21]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+[22]: https://developer.mozilla.org/docs/Web/API/Comment/Comment
+
+[23]: http://daringfireball.net/projects/markdown/

@@ -10,13 +10,15 @@ exports[`readme autodetection of different filenames updates readme.markdown 1`]
 ### Table of Contents
 
 -   [foo](#foo)
+    -   [Parameters](#parameters)
 -   [bar](#bar)
+    -   [Parameters](#parameters-1)
 
 ## foo
 
 A function with documentation.
 
-**Parameters**
+### Parameters
 
 -   \`a\`  {string} blah
 
@@ -26,7 +28,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 A second function with docs
 
-**Parameters**
+### Parameters
 
 -   \`b\`  
 
@@ -44,13 +46,15 @@ exports[`readme command --readme-file 1`] = `
 ### Table of Contents
 
 -   [foo](#foo)
+    -   [Parameters](#parameters)
 -   [bar](#bar)
+    -   [Parameters](#parameters-1)
 
 ## foo
 
 A function with documentation.
 
-**Parameters**
+### Parameters
 
 -   \`a\`  {string} blah
 
@@ -60,7 +64,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 A second function with docs
 
-**Parameters**
+### Parameters
 
 -   \`b\`  
 
@@ -78,13 +82,15 @@ exports[`readme command updates README.md 1`] = `
 ### Table of Contents
 
 -   [foo](#foo)
+    -   [Parameters](#parameters)
 -   [bar](#bar)
+    -   [Parameters](#parameters-1)
 
 ## foo
 
 A function with documentation.
 
-**Parameters**
+### Parameters
 
 -   \`a\`  {string} blah
 
@@ -94,7 +100,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 A second function with docs
 
-**Parameters**
+### Parameters
 
 -   \`b\`  
 
