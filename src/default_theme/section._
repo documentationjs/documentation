@@ -16,15 +16,14 @@
   <% } %>
 
   <%= md(section.description) %>
-
-  <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
+ 
   <% if (section.type) { %>
     <p>
       Type:
       <%= formatType(section.type) %>
     </p>
   <% } %>
-  <% if (section.augments.length) { %>
+  <% if (section.arguments && section.augments.length) { %>
     <p>
       Extends
       <% if (section.augments) { %>
@@ -42,7 +41,7 @@
   <% if (section.copyright) { %><div>Copyright: <%= md(section.copyright, true) %></div><% }%>
   <% if (section.since) { %><div>Since: <%- section.since %></div><% }%>
 
-  <% if (section.params.length) { %>
+  <% if (section.params && section.params.length) { %>
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
       <% section.params.forEach(function(param) { %>
@@ -79,7 +78,7 @@
     </div>
   <% } %>
 
-  <% if (section.properties.length) { %>
+  <% if (section.properties && section.properties.length) { %>
     <div class='py1 quiet mt1 prose-big'>Properties</div>
     <div>
       <% section.properties.forEach(function(property) { %>
@@ -106,7 +105,7 @@
     </div>
   <% } %>
 
-  <% if (section.returns.length) { %>
+  <% if (section.returns && section.returns.length) { %>
     <% section.returns.forEach(function(ret) { %>
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><%= formatType(ret.type) %></code><% if (ret.description) { %>:
@@ -115,7 +114,7 @@
     <% }) %>
   <% } %>
 
-  <% if (section.throws.length) { %>
+  <% if (section.throws && section.throws.length) { %>
     <div class='py1 quiet mt1 prose-big'>Throws</div>
     <ul>
       <% section.throws.forEach(function(throws) { %>
@@ -124,7 +123,7 @@
     </ul>
   <% } %>
 
-  <% if (section.examples.length) { %>
+  <% if (section.examples && section.examples.length) { %>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     <% section.examples.forEach(function(example) { %>
       <% if (example.caption) { %><p><%= md(example.caption) %></p><% } %>
