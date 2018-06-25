@@ -17,7 +17,9 @@
 
   <%= md(section.description) %>
  
-  <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
+  <% if (section.kind !== "note") { %>
+    <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
+  <% } %> 
   <% if (section.type) { %>
     <p>
       Type:
