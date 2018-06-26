@@ -69,7 +69,7 @@
     "coveralls": "^3.0.0",
     "cz-conventional-changelog": "2.1.0",
     "documentation-schema": "0.0.1",
-    "eslint": "^4.16.0",
+    "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.41.0",
     "flow-bin": "^0.73.0",
