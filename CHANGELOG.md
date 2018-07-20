@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.2"></a>
+## [8.0.2](https://github.com/documentationjs/documentation/compare/v8.0.1...v8.0.2) (2018-07-20)
+
+
+### Bug Fixes
+
+* **package:** update git-url-parse to version 10.0.1 ([91ade89](https://github.com/documentationjs/documentation/commit/91ade89))
+
+
+
 <a name="8.0.1"></a>
 ## [8.0.1](https://github.com/documentationjs/documentation/compare/v8.0.0...v8.0.1) (2018-07-16)
 
