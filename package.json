@@ -24,7 +24,7 @@
     "concat-stream": "^1.6.0",
     "disparity": "^2.0.0",
     "doctrine-temporary-fork": "2.0.1",
-    "get-port": "^3.2.0",
+    "get-port": "^4.0.0",
     "git-url-parse": "^10.0.1",
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
