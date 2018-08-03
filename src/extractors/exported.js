@@ -1,7 +1,7 @@
 /* @flow */
-import traverse from 'babel-traverse';
+import traverse from '@babel/traverse';
 const isJSDocComment = require('../is_jsdoc_comment');
-const t = require('babel-types');
+const t = require('@babel/types');
 const nodePath = require('path');
 const fs = require('fs');
 import { parseToAst } from '../parsers/parse_to_ast';

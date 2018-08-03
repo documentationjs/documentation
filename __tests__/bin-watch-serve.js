@@ -14,7 +14,7 @@ function documentation(args, options) {
   }
 
   options.maxBuffer = 1024 * 1024;
-  args.unshift(path.join(__dirname, '..', 'bin', 'documentation.js'));
+  args.unshift(path.resolve(__dirname, '..', 'bin', 'documentation.js'));
 
   return spawn('node', args, options);
 }

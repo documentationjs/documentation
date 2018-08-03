@@ -1,6 +1,6 @@
 /* @flow */
 
-const t = require('babel-types');
+const t = require('@babel/types');
 
 /**
  * Infers a `kind` tag from the context.

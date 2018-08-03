@@ -120,7 +120,7 @@ test('inferParams', function() {
       /** Test */
       const f = function(x) {};
     }).params
-  ).toEqual([{ lineNumber: 5, name: 'x', title: 'param' }]);
+  ).toEqual([{ lineNumber: 8, name: 'x', title: 'param' }]);
 
   expect(
     evaluate(

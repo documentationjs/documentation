@@ -1,6 +1,6 @@
 /* @flow */
 
-const generate = require('babel-generator').default;
+const generate = require('@babel/generator').default;
 
 const namedTypes = {
   NumberTypeAnnotation: 'number',
@@ -142,7 +142,7 @@ function flowDoctrine(type: Object): DoctrineType {
         type: 'BooleanLiteralType',
         value: type.value
       };
-    case 'NumericLiteralTypeAnnotation':
+    case 'NumberLiteralTypeAnnotation':
       return {
         type: 'NumericLiteralType',
         value: type.value

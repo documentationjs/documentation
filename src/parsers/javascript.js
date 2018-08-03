@@ -1,7 +1,7 @@
 /* @flow */
 
 const _ = require('lodash');
-const t = require('babel-types');
+const t = require('@babel/types');
 const parse = require('../parse');
 const walkComments = require('../extractors/comments');
 const walkExported = require('../extractors/exported');
@@ -103,7 +103,11 @@ function _addComment(
 
       if (t.isClassMethod(path) && path.node.kind === 'constructor') {
         // #689
-        if (comment.tags.some(tag => tag.title !== 'param' && tag.title !== 'hideconstructor')) {
+        if (
+          comment.tags.some(
+            tag => tag.title !== 'param' && tag.title !== 'hideconstructor'
+          )
+        ) {
           debuglog(
             'A constructor was documented explicitly: document along with the class instead'
           );
