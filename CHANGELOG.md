@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.0"></a>
+# [8.3.0](https://github.com/documentationjs/documentation/compare/v8.0.2...v8.3.0) (2018-08-03)
+
+
+### Bug Fixes
+
+* **package:** update get-port to version 4.0.0 ([9ca8c06](https://github.com/documentationjs/documentation/commit/9ca8c06))
+
+
+### Features
+
+* added project description ([45a9ea9](https://github.com/documentationjs/documentation/commit/45a9ea9))
+
+
+
 <a name="8.0.2"></a>
 ## [8.0.2](https://github.com/documentationjs/documentation/compare/v8.0.1...v8.0.2) (2018-07-20)
 
