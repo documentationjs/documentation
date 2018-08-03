@@ -97,6 +97,9 @@ module.exports.sharedOutputOptions = {
   'project-version': {
     describe: 'project version. by default, inferred from package.json'
   },
+  'project-description': {
+    describe: 'project description. by default, inferred from package.json'
+  },
   'project-homepage': {
     describe: 'project homepage. by default, inferred from package.json'
   },

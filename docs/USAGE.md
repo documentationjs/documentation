@@ -20,6 +20,8 @@ Options:
                              package.json
   --project-version          project version. by default, inferred from
                              package.json
+  --project-description      project description. by default, inferred from
+                             package.json
   --project-homepage         project homepage. by default, inferred from
                              package.json
   --watch, -w                watch input files and rebuild documentation when

@@ -17,7 +17,8 @@ test('right merging package configuration', async function() {
     'no-package',
     'parseExtension',
     'project-homepage',
-    'project-version'
+    'project-version',
+    'project-description'
   ]);
   return mergeConfig({
     config: path.join(__dirname, '../config_fixture/config.json'),
@@ -41,7 +42,8 @@ test('nc(mergeConfig)', async function() {
     'parseExtension',
     'project-homepage',
     'project-name',
-    'project-version'
+    'project-version',
+    'project-description'
   ]);
 
   return Promise.all(

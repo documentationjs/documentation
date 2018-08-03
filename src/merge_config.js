@@ -38,7 +38,7 @@ function mergePackage(config: Object): Promise<Object> {
   return (
     readPkgUp()
       .then(pkg => {
-        ['name', 'homepage', 'version'].forEach(key => {
+        ['name', 'homepage', 'version', 'description'].forEach(key => {
           config[`project-${key}`] = config[`project-${key}`] || pkg.pkg[key];
         });
         return config;

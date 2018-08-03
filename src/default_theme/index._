@@ -7,7 +7,8 @@
   <link href='assets/bass.css' type='text/css' rel='stylesheet' />
   <link href='assets/style.css' type='text/css' rel='stylesheet' />
   <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' /><% if (config['project-description']) { %>
+  <meta name='description' content='<%- config['project-description'] %>'><% } %>
 </head>
 <body class='documentation m0'>
     <div class='flex'>
