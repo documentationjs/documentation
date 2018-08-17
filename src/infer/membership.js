@@ -40,6 +40,33 @@ function findLendsIdentifiers(path) {
 }
 
 /**
+ * Given an AST node, try to find a comment before the class declaration that
+ * has a `memberof` tag, and if it has that, return the tag, split by
+ * .s with the name of the class.
+ *
+ * @private
+ * @param {Object} path AST node
+ * @returns {Array<string>} class membership
+ */
+function inferClassMembership(path) {
+  if (path.get('leadingComments')) {
+    const leadingComments = path.get('leadingComments');
+
+    for (let i = leadingComments.length - 1; i >= 0; i--) {
+      const comment = leadingComments[i];
+      if (isJSDocComment(comment.node)) {
+        const memberof = parse(comment.node.value).memberof;
+        if (memberof) {
+          return [...memberof.split('.'), path.node.id.name];
+        }
+      }
+    }
+  }
+
+  return [path.node.id.name];
+}
+
+/**
  * Extract and return the identifiers for expressions of
  * type this.foo
  *
@@ -347,7 +374,7 @@ module.exports = function() {
 
       return inferMembershipFromIdentifiers(
         comment,
-        [declarationNode.id.name],
+        inferClassMembership(path.parentPath.parentPath),
         scope
       );
     }
