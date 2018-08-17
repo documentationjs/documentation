@@ -63,9 +63,9 @@ test(
     return pEvent(docProcess.stdout, 'data').then(function(data) {
       const portNumber = data
         .toString()
-        .match(/documentation.js serving on port (\d+)/);
+        .match(/documentation.js serving on port 4004/);
       expect(portNumber).toBeTruthy();
-      return get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+      return get(`http://localhost:4004/`).then(function(text) {
         expect(text.match(/<html>/)).toBeTruthy();
         docProcess.kill();
       });

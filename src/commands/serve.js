@@ -54,7 +54,7 @@ module.exports.handler = function serve(argv: Object) {
     }
   }
 
-  getPort(argv.port).then(port => {
+  getPort({ port: argv.port }).then(port => {
     const server = new Server(port);
     let watcher;
 
