@@ -279,6 +279,38 @@ test('inferMembership - explicit', function() {
   expect(
     pick(
       evaluate(function() {
+        /** @memberof bar */
+        class Foo {
+          /** */
+          baz() {}
+        }
+      })[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(function() {
+        /** @memberof bar */
+        class Foo {
+          /** */
+          static baz() {}
+        }
+      })[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(function() {
         /** Test */
         module.exports = function() {};
       })[0],
