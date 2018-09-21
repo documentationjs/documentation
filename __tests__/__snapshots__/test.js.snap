@@ -16601,7 +16601,7 @@ Object {
               "offset": 0,
             },
           },
-          "type": "emphasis",
+          "type": "root",
         },
       ],
       "type": "paragraph",
