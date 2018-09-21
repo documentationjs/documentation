@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.0-alpha.0"></a>
+# [9.0.0-alpha.0](https://github.com/documentationjs/documentation/compare/v8.1.2...v9.0.0-alpha.0) (2018-09-21)
+
+
+### Features
+
+* Babel 7 support ([49c0f72](https://github.com/documentationjs/documentation/commit/49c0f72))
+
+
+### BREAKING CHANGES
+
+* This moves documentation.js to Babel 7. From now on,
+documentation.js will only support Babel 7: please stick to older
+releases if you need to support Babel 6. Additionally, this work
+temporarily disables support for following dynamic imports.
+
+
+
 <a name="8.1.2"></a>
 ## [8.1.2](https://github.com/documentationjs/documentation/compare/v8.1.1...v8.1.2) (2018-08-23)
 
