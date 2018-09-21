@@ -1,15 +1,17 @@
 /* @flow */
 
-const babylon = require('babylon');
+const babelParser = require('@babel/parser');
 
 const opts = {
   allowImportExportEverywhere: true,
   sourceType: 'module',
   plugins: [
     'asyncGenerators',
+    'exportDefaultFrom',
+    'optionalChaining',
     'classConstructorCall',
     'classProperties',
-    'decorators',
+    ['decorators', { decoratorsBeforeExport: false }],
     'doExpressions',
     'exportExtensions',
     'flow',
@@ -36,5 +38,5 @@ export function commentToFlow(source: string) {
 }
 
 export function parseToAst(source: string) {
-  return babylon.parse(commentToFlow(source), opts);
+  return babelParser.parse(commentToFlow(source), opts);
 }

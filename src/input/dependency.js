@@ -35,18 +35,38 @@ function dependencyStream(
       .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
     transform: [
       babelify.configure({
-        sourceMap: false,
+        sourceMaps: false,
         compact: false,
+        cwd: path.resolve(__dirname, '../../'),
         presets: [
-          require('babel-preset-env'),
-          require('babel-preset-stage-0'),
-          require('babel-preset-react')
+          '@babel/preset-react',
+          '@babel/preset-env',
+          '@babel/preset-flow'
         ],
         plugins: [
-          require('babel-plugin-transform-decorators-legacy').default,
-          // Required to support webpack's System.import
-          // https://github.com/documentationjs/documentation/issues/578
-          require('babel-plugin-system-import-transformer').default
+          // Stage 0
+          '@babel/plugin-proposal-function-bind',
+          // Stage 1
+          '@babel/plugin-proposal-export-default-from',
+          '@babel/plugin-proposal-logical-assignment-operators',
+          '@babel/plugin-proposal-optional-chaining',
+          ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
+          [
+            '@babel/plugin-proposal-nullish-coalescing-operator',
+            { loose: false }
+          ],
+          '@babel/plugin-proposal-do-expressions',
+          // Stage 2
+          ['@babel/plugin-proposal-decorators', { legacy: true }],
+          '@babel/plugin-proposal-function-sent',
+          '@babel/plugin-proposal-export-namespace-from',
+          '@babel/plugin-proposal-numeric-separator',
+          '@babel/plugin-proposal-throw-expressions',
+          // Stage 3
+          '@babel/plugin-syntax-dynamic-import',
+          '@babel/plugin-syntax-import-meta',
+          ['@babel/plugin-proposal-class-properties', { loose: false }],
+          '@babel/plugin-proposal-json-strings'
         ]
       })
     ],

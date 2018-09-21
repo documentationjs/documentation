@@ -1,7 +1,7 @@
 /* @flow */
 
 const pathParse = require('parse-filepath');
-const t = require('babel-types');
+const t = require('@babel/types');
 
 /**
  * Infers a `name` tag from the context.

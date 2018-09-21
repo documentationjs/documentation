@@ -1,6 +1,6 @@
 /* @flow */
 
-const t = require('babel-types');
+const t = require('@babel/types');
 
 /**
  * Try to find the part of JavaScript a comment is referring to, by
