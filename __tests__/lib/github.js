@@ -6,6 +6,10 @@ const mockRepo = require('../utils').mockRepo;
 const parse = require('../../src/parsers/javascript');
 const github = require('../../src/github');
 
+// mock-fs is causing some unusual side effects with jest-resolve
+// not being able to resolve modules so we've disabled these tests
+// for now.
+
 function toComment(fn, filename) {
   return parse(
     {
@@ -29,7 +33,7 @@ afterEach(function() {
   mock.restore();
 });
 
-test('github', function() {
+test.skip('github', function() {
   mock(mockRepo.master);
 
   expect(
@@ -48,7 +52,7 @@ test('github', function() {
   });
 });
 
-test('malformed repository', function() {
+test.skip('malformed repository', function() {
   mock(mockRepo.malformed);
 
   expect(
@@ -64,7 +68,7 @@ test('malformed repository', function() {
   ).toBe(undefined);
 });
 
-test('enterprise repository', function() {
+test.skip('enterprise repository', function() {
   mock(mockRepo.enterprise);
 
   expect(
@@ -84,7 +88,7 @@ test('enterprise repository', function() {
   });
 });
 
-test('typedef', function() {
+test.skip('typedef', function() {
   mock(mockRepo.master);
 
   expect(

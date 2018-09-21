@@ -1,5 +1,6 @@
 /* @flow */
-import traverse from 'babel-traverse';
+
+import traverse from '@babel/traverse';
 const isJSDocComment = require('../is_jsdoc_comment');
 
 /**
@@ -54,7 +55,7 @@ function walkComments(
     }
   });
 
-  traverse.clearCache();
+  traverse.cache.clear();
 
   return newResults;
 }
