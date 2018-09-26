@@ -89,7 +89,7 @@
     "eslint-plugin-flowtype": "^2.41.0",
     "flow-bin": "^0.81.0",
     "fs-extra": "^7.0.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0",
     "jest": "^23.0.0",
     "json-schema": "0.2.3",
     "lint-staged": "^7.2.0",
