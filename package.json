@@ -78,7 +78,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "are-we-flow-yet": "^1.0.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.0",
     "babel-jest": "^23.4.2",
     "chdir": "0.0.0",
     "coveralls": "^3.0.0",
