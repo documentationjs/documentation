@@ -59,6 +59,7 @@
     "remark-reference-links": "^4.0.1",
     "remark-toc": "^5.0.0",
     "remote-origin-url": "0.4.0",
+    "resolve": "^1.8.1",
     "stream-array": "^1.1.2",
     "strip-json-comments": "^2.0.1",
     "tiny-lr": "^1.1.0",
@@ -123,6 +124,7 @@
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && flow check && jest",
+    "test2": "npm run build && flow check && jest",
     "test-ci": "npm run build && eslint . && flow check && jest --runInBand"
   },
   "jest": {
