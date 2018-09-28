@@ -73,7 +73,7 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
+    "@babel/cli": "^7.1.1",
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "are-we-flow-yet": "^1.0.0",
