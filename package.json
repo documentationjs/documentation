@@ -87,7 +87,7 @@
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-flowtype": "^2.41.0",
-    "flow-bin": "^0.81.0",
+    "flow-bin": "^0.83.0",
     "fs-extra": "^7.0.0",
     "husky": "^0.14.3",
     "jest": "^23.0.0",
