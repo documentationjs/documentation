@@ -54,7 +54,7 @@
     "parse-filepath": "^1.0.2",
     "pify": "^4.0.0",
     "read-pkg-up": "^4.0.0",
-    "remark": "^9.0.0",
+    "remark": "^10.0.0",
     "remark-html": "^8.0.0",
     "remark-reference-links": "^4.0.1",
     "remark-toc": "^5.0.0",
