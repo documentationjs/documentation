@@ -14,6 +14,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/documentationjs/documentation/badge.svg?branch=master)](https://coveralls.io/github/documentationjs/documentation?branch=master)
 [![Inline docs](http://inch-ci.org/github/documentationjs/documentation.svg?branch=master&style=flat-square)](http://inch-ci.org/github/documentationjs/documentation)
 
+[:date: Current maintenance status](https://github.com/documentationjs/documentation/wiki/Current-maintenance-status)
+
 * Supports modern JavaScript: ES5, ES2017, JSX, Vue and [Flow](http://flowtype.org/) type annotations.
 * Infers parameters, types, membership, and more. Write less documentation: let the computer write it for you.
 * Integrates with GitHub to link directly from documentation to the code it refers to.
