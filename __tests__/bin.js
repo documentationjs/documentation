@@ -159,6 +159,7 @@ describe('invalid arguments', function() {
   });
 });
 
+const semver = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
 test('--config', async function() {
   const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);
@@ -172,9 +173,8 @@ test('--config', async function() {
     false
   );
   let output = fs.readFileSync(outputIndex, 'utf8');
-  output = output
-    .replace(/documentation \d+\.\d+\.\d+/g, '')
-    .replace(/<code>\d+\.\d+\.\d+<\/code>/g, '');
+  const version = require('../package.json').version;
+  output = output.replace(new RegExp(version.replace(/\./g, '\\.'), 'g'), '');
   expect(output).toMatchSnapshot();
 });
 
