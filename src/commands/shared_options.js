@@ -80,6 +80,11 @@ module.exports.sharedInputOptions = {
     describe: 'The order to sort the documentation',
     choices: ['source', 'alpha'],
     default: 'source'
+  },
+  resolve: {
+    describe: 'Dependency resolution algorithm.',
+    choices: ['browser', 'node'],
+    default: 'browser'
   }
 };
 
