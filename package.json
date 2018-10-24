@@ -124,7 +124,6 @@
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "npm run build && eslint . && flow check && jest",
-    "test2": "npm run build && flow check && jest",
     "test-ci": "npm run build && eslint . && flow check && jest --runInBand"
   },
   "jest": {

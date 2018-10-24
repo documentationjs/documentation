@@ -71,11 +71,13 @@ function dependencyStream(
       })
     ],
     postFilter: moduleFilters.externals(indexes, config),
-    resolve: (id, opts, cb) => {
-      const r = require('resolve');
-      opts.basedir = path.dirname(opts.filename);
-      r(id, opts, cb);
-    }
+    resolve:
+      config.resolve === 'node' &&
+      ((id, opts, cb) => {
+        const r = require('resolve');
+        opts.basedir = path.dirname(opts.filename);
+        r(id, opts, cb);
+      })
   });
   smartGlob(indexes, config.parseExtension).forEach(index => {
     md.write(path.resolve(index));
