@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.0-alpha.1"></a>
+# [9.0.0-alpha.1](https://github.com/documentationjs/documentation/compare/v9.0.0-alpha.0...v9.0.0-alpha.1) (2018-10-24)
+
+
+### Bug Fixes
+
+* **package:** update [@babel](https://github.com/babel)/parser to version 7.1.3 ([4dbb406](https://github.com/documentationjs/documentation/commit/4dbb406)), closes [#1145](https://github.com/documentationjs/documentation/issues/1145)
+* add node-resolve to module-deps ([a033547](https://github.com/documentationjs/documentation/commit/a033547))
+* add tests ([a4107dc](https://github.com/documentationjs/documentation/commit/a4107dc))
+
+
+### Features
+
+* add support for node resolve algo ([ddd675d](https://github.com/documentationjs/documentation/commit/ddd675d))
+
+
+
 <a name="9.0.0-alpha.0"></a>
 # [9.0.0-alpha.0](https://github.com/documentationjs/documentation/compare/v8.1.2...v9.0.0-alpha.0) (2018-09-21)
 
