@@ -2087,3 +2087,421 @@ f5 comment
 `;
 
 exports[`lint command generates lint output 1`] = `""`;
+
+exports[`should use browser resolve 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "loc": Object {
+        "end": Object {
+          "column": 2,
+          "line": 10,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 8,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "test",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 5,
+              "line": 1,
+              "offset": 4,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+          "offset": 4,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "examples": Array [],
+    "kind": "function",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "index",
+    "namespace": "index",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "index",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [],
+          "position": Object {
+            "end": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+  },
+]
+`;
+
+exports[`should use node resolve 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "loc": Object {
+        "end": Object {
+          "column": 2,
+          "line": 10,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 8,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "test",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 5,
+              "line": 1,
+              "offset": 4,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+          "offset": 4,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "examples": Array [],
+    "kind": "function",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 7,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "index",
+    "namespace": "index",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "index",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [],
+          "position": Object {
+            "end": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "loc": Object {
+        "end": Object {
+          "column": 2,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 6,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "test",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 5,
+              "line": 1,
+              "offset": 4,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+          "offset": 4,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "examples": Array [],
+    "kind": "function",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "node",
+    "namespace": "node",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "node",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [],
+          "position": Object {
+            "end": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+  },
+]
+`;

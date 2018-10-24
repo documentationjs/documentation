@@ -408,3 +408,15 @@ test('build large file without error (no deoptimized styling error)', function()
     fs.unlinkSync(dstFile);
   });
 });
+
+test('should use browser resolve', async function() {
+  const data = await documentation(['build fixture/resolve/index.js']);
+  expect(normalize(data)).toMatchSnapshot();
+});
+
+test('should use node resolve', async function() {
+  const data = await documentation([
+    'build fixture/resolve/index.js --resolve node'
+  ]);
+  expect(normalize(data)).toMatchSnapshot();
+});
