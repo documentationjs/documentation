@@ -2773,18 +2773,18 @@ git-semver-tags@^1.3.0, git-semver-tags@^1.3.6:
     meow "^4.0.0"
     semver "^5.5.0"
 
-git-up@^2.0.0:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/git-up/-/git-up-2.0.10.tgz#20fe6bafbef4384cae253dc4f463c49a0c3bd2ec"
+git-up@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/git-up/-/git-up-4.0.0.tgz#6c17040afa488fafc118400d5e0f12c079974aba"
   dependencies:
     is-ssh "^1.3.0"
-    parse-url "^1.3.0"
+    parse-url "^5.0.0"
 
-git-url-parse@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-10.0.1.tgz#75f153b24ac7297447fc583cf9fac23a5ae687c1"
+git-url-parse@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-11.0.0.tgz#fd36e66117104aadc0edc7ded7480a2ce3be696b"
   dependencies:
-    git-up "^2.0.0"
+    git-up "^4.0.0"
 
 gitconfiglocal@^1.0.0:
   version "1.0.0"
@@ -4584,6 +4584,10 @@ normalize-path@^2.0.1, normalize-path@^2.1.1:
   dependencies:
     remove-trailing-separator "^1.0.1"
 
+normalize-url@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
+
 now-and-later@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/now-and-later/-/now-and-later-2.0.0.tgz#bc61cbb456d79cb32207ce47ca05136ff2e7d6ee"
@@ -4917,11 +4921,20 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
-parse-url@^1.3.0:
-  version "1.3.11"
-  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-1.3.11.tgz#57c15428ab8a892b1f43869645c711d0e144b554"
+parse-path@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/parse-path/-/parse-path-4.0.0.tgz#38e50496a3e38bc1a0ced205a12a7fa91e719332"
   dependencies:
     is-ssh "^1.3.0"
+    protocols "^1.4.0"
+
+parse-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-5.0.0.tgz#01538e9f2df5c612b8b5e1124f1a108787495d08"
+  dependencies:
+    is-ssh "^1.3.0"
+    normalize-url "^3.3.0"
+    parse-path "^4.0.0"
     protocols "^1.4.0"
 
 parse5@4.0.0:
