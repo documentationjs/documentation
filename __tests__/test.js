@@ -106,8 +106,8 @@ describe('html', function() {
           .map(r =>
             r.contents
               .toString()
-              .replace(/documentation \d+\.\d+\.\d+/g, '')
-              .replace(/<code>\d+\.\d+\.\d+<\/code>/g, '')
+              .replace(/documentation \d+\.\d+\.\d+(-\w+(\.\d+)?)?/g, '')
+              .replace(/<code>\d+\.\d+\.\d+(-\w+(\.\d+)?)?<\/code>/g, '')
           )
           .join('\n');
         expect(clean).toMatchSnapshot();
