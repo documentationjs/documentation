@@ -30,7 +30,7 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-0": "^7.0.0",
-    "@babel/traverse": "^7.1.4",
+    "@babel/traverse": "^7.1.6",
     "@babel/types": "^7.1.3",
     "ansi-html": "^0.0.7",
     "babelify": "^10.0.0",
