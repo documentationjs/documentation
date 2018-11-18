@@ -300,6 +300,11 @@ test('flowDoctrine', function() {
     name: 'this'
   });
 
+  expect(toDoctrineType('{ ...A }')).toEqual({
+    fields: [],
+    type: 'RecordType'
+  });
+
   // TODO: remove all these types
   expect(types).toEqual([
     'ExistsTypeAnnotation',

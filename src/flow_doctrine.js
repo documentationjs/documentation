@@ -16,6 +16,8 @@ const oneToOne = {
 };
 
 function propertyToField(property) {
+  if (!property.value) return null;
+
   let type = flowDoctrine(property.value);
   if (property.optional) {
     // Doctrine does not support optional fields but it does have something called optional types
@@ -127,7 +129,7 @@ function flowDoctrine(type: Object): DoctrineType {
       if (type.properties) {
         return {
           type: 'RecordType',
-          fields: type.properties.map(propertyToField)
+          fields: type.properties.map(propertyToField).filter(x => x)
         };
       }
 
