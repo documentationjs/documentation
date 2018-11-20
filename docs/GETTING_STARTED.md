@@ -126,7 +126,7 @@ try [using a plugin for JSDoc](https://github.com/documentationjs/documentation/
 
 ## Flow type annotations
 
-Alternatively, [Flow](http://flowtype.org/) type annotations allows for a compacter syntax:
+Alternatively, [Flow](http://flowtype.org/) type annotations allows for a more compact syntax:
 
 ```js
 /**
