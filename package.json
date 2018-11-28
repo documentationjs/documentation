@@ -35,7 +35,7 @@
     "ansi-html": "^0.0.7",
     "babelify": "^10.0.0",
     "chalk": "^2.3.0",
-    "chokidar": "^2.0.0",
+    "chokidar": "^2.0.4",
     "concat-stream": "^1.6.0",
     "disparity": "^2.0.0",
     "doctrine-temporary-fork": "2.0.1",
