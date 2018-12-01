@@ -222,7 +222,7 @@ exports[`--config 1`] = `
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
-            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
           </div>
         </div>
       </div>
@@ -1858,27 +1858,35 @@ exports[`build --document-exported 1`] = `
 ### Table of Contents
 
 -   [z][1]
+
     -   [zMethod][2]
 -   [x][3]
+
     -   [Parameters][4]
 -   [Class][5]
+
     -   [Parameters][6]
     -   [classMethod][7]
     -   [classGetter][8]
     -   [classSetter][9]
+
         -   [Parameters][10]
     -   [staticMethod][11]
     -   [staticGetter][12]
     -   [staticSetter][13]
+
         -   [Parameters][14]
 -   [T5][15]
 -   [y2Default][16]
 -   [y4][17]
+
     -   [Parameters][18]
 -   [object][19]
+
     -   [method][20]
     -   [getter][21]
     -   [setter][22]
+
         -   [Parameters][23]
     -   [prop][24]
     -   [func][25]
@@ -1888,12 +1896,16 @@ exports[`build --document-exported 1`] = `
 -   [T2][29]
 -   [T4][30]
 -   [f4][31]
+
     -   [Parameters][32]
 -   [o1][33]
+
     -   [om1][34]
 -   [f5][35]
+
     -   [Parameters][36]
 -   [o2][37]
+
     -   [om2][38]
 
 ## z
