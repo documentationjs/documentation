@@ -43,8 +43,6 @@ documentation.
   and [untagged](https://github.com/jsdoc3/jsdoc/blob/master/package.json#L25) [TaffyDB](http://www.taffydb.com/) project.
 * Uses high-quality node modules for syntax parsing, argument parsing, and other
   tasks: separates concerns so that we can focus on a robust solution
-* Customization points like plugins & templates are well documented and
-  flexible
 
 ## Why use `documentation` instead of writing a Markdown file by hand?
 
