@@ -19,7 +19,8 @@ const opts = {
     'functionSent',
     'jsx',
     'objectRestSpread',
-    'dynamicImport'
+    'dynamicImport',
+    'logicalAssignment'
   ]
 };
 
