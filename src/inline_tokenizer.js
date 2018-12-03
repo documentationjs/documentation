@@ -1,5 +1,3 @@
-/* @flow */
-
 /**
  * Create a tokenizer method for Remark, our Markdown processor,
  * that is able to parse JSDoc inline tokens

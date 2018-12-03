@@ -1,5 +1,3 @@
-/* @flow */
-
 const t = require('@babel/types');
 
 /**
@@ -10,7 +8,7 @@ const t = require('@babel/types');
  * @returns {?Object} ast path, if one is found.
  * @private
  */
-function findTarget(path: ?Object) {
+function findTarget(path) {
   if (!path) {
     return path;
   }

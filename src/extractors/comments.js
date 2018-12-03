@@ -1,6 +1,4 @@
-/* @flow */
-
-import traverse from '@babel/traverse';
+const traverse = require('@babel/traverse').default;
 const isJSDocComment = require('../is_jsdoc_comment');
 
 /**
@@ -15,13 +13,7 @@ const isJSDocComment = require('../is_jsdoc_comment');
  * @returns  comments
  * @private
  */
-function walkComments(
-  type: string,
-  includeContext: boolean,
-  ast: Object,
-  data: Object,
-  addComment: Function
-): Array<Comment> {
+function walkComments(type, includeContext, ast, data, addComment) {
   const newResults = [];
 
   traverse(ast, {

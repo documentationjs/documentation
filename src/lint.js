@@ -1,10 +1,8 @@
-/* @flow */
-
 const VFile = require('vfile');
-import { walk } from './walk';
-import vfileSort from 'vfile-sort';
-import reporter from 'vfile-reporter';
-import nest from './nest';
+const { walk } = require('./walk');
+const vfileSort = require('vfile-sort');
+const reporter = require('vfile-reporter');
+const nest = require('./nest');
 
 const CANONICAL = {
   String: 'string',
@@ -23,7 +21,7 @@ const CANONICAL = {
  * @param {Object} comment parsed comment
  * @returns {Array<Object>} array of errors
  */
-function lintComments(comment: Comment) {
+function lintComments(comment) {
   comment.tags.forEach(function(tag) {
     function nameInvariant(name) {
       if (name && typeof CANONICAL[name] === 'string') {
@@ -69,7 +67,7 @@ function lintComments(comment: Comment) {
  * @param {Array<Object>} comments a list of comments
  * @returns {string} user-readable output
  */
-function formatLint(comments: Array<Comment>): string {
+function formatLint(comments) {
   const vFiles = {};
   walk(comments, function(comment) {
     comment.errors.forEach(function(error) {

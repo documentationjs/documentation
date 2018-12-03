@@ -1,5 +1,3 @@
-/* @flow */
-
 const u = require('unist-builder');
 const remark = require('remark');
 const mergeConfig = require('../merge_config');
@@ -25,14 +23,11 @@ const DEFAULT_LANGUAGE = 'javascript';
  * consult hljs.configure for the full list.
  * @returns {Promise<Object>} returns an eventual Markdown value
  */
-function markdownAST(comments: Array<Comment>, args: Object) {
+function markdownAST(comments, args) {
   return mergeConfig(args).then(config => buildMarkdownAST(comments, config));
 }
 
-function buildMarkdownAST(
-  comments: Array<Comment>,
-  config: DocumentationConfig
-) {
+function buildMarkdownAST(comments, config) {
   // Configure code highlighting
   const hljsOptions = config.hljs || {};
   hljs.configure(hljsOptions);
@@ -66,15 +61,15 @@ function buildMarkdownAST(
    * @param {Object} comment a single comment
    * @returns {Object} remark-compatible AST
    */
-  function generate(depth: number, comment: Comment) {
-    function typeSection(comment: Comment) {
+  function generate(depth, comment) {
+    function typeSection(comment) {
       return (
         comment.type &&
         u('paragraph', [u('text', 'Type: ')].concat(formatType(comment.type)))
       );
     }
 
-    function paramList(params: Array<CommentTag>) {
+    function paramList(params) {
       if (params.length === 0) return [];
       return u(
         'list',
@@ -110,7 +105,7 @@ function buildMarkdownAST(
       );
     }
 
-    function paramSection(comment: Comment) {
+    function paramSection(comment) {
       return (
         comment.params.length > 0 && [
           u('heading', { depth: depth + 1 }, [u('text', 'Parameters')]),
@@ -119,7 +114,7 @@ function buildMarkdownAST(
       );
     }
 
-    function propertySection(comment: Comment) {
+    function propertySection(comment) {
       return (
         comment.properties.length > 0 && [
           u('heading', { depth: depth + 1 }, [u('text', 'Properties')]),
@@ -128,7 +123,7 @@ function buildMarkdownAST(
       );
     }
 
-    function propertyList(properties: Array<CommentTag>) {
+    function propertyList(properties) {
       return u(
         'list',
         { ordered: false },
@@ -156,7 +151,7 @@ function buildMarkdownAST(
       );
     }
 
-    function examplesSection(comment: Comment) {
+    function examplesSection(comment) {
       return (
         comment.examples.length > 0 &&
         [u('heading', { depth: depth + 1 }, [u('text', 'Examples')])].concat(
@@ -176,7 +171,7 @@ function buildMarkdownAST(
       );
     }
 
-    function returnsSection(comment: Comment) {
+    function returnsSection(comment) {
       return (
         comment.returns.length > 0 &&
         comment.returns.map(returns =>
@@ -192,7 +187,7 @@ function buildMarkdownAST(
       );
     }
 
-    function throwsSection(comment: Comment) {
+    function throwsSection(comment) {
       return (
         comment.throws.length > 0 &&
         u(
@@ -216,7 +211,7 @@ function buildMarkdownAST(
       );
     }
 
-    function augmentsLink(comment: Comment) {
+    function augmentsLink(comment) {
       return (
         comment.augments.length > 0 &&
         u('paragraph', [
@@ -228,7 +223,7 @@ function buildMarkdownAST(
       );
     }
 
-    function seeLink(comment: Comment) {
+    function seeLink(comment) {
       return (
         comment.sees.length > 0 &&
         u(
@@ -243,7 +238,7 @@ function buildMarkdownAST(
       );
     }
 
-    function githubLink(comment: Comment) {
+    function githubLink(comment) {
       return (
         comment.context &&
         comment.context.github &&
@@ -269,7 +264,7 @@ function buildMarkdownAST(
       );
     }
 
-    function metaSection(comment: Comment) {
+    function metaSection(comment) {
       const meta = [
         'version',
         'since',

@@ -1,5 +1,3 @@
-/* @flow */
-
 const n = require('@babel/types');
 const pathParse = require('parse-filepath');
 const isJSDocComment = require('../is_jsdoc_comment');
@@ -183,7 +181,7 @@ function countModuleIdentifiers(comment, identifiers) {
  * @param comment parsed comment
  * @returns the normalized comment
  */
-function normalizeMemberof(comment: Comment): Comment {
+function normalizeMemberof(comment) {
   if (typeof comment.memberof != 'string') {
     return comment;
   }
@@ -268,7 +266,7 @@ module.exports = function() {
     return comment;
   }
 
-  return function inferMembership(comment: Comment) {
+  return function inferMembership(comment) {
     // Lends tags are go-betweens that let people reassign membership
     // in bulk: they themselves don't get an inference step
     if (comment.lends) {

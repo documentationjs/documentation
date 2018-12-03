@@ -1,5 +1,3 @@
-/* @flow */
-
 const generate = require('@babel/generator').default;
 
 const namedTypes = {
@@ -43,7 +41,7 @@ function propertyToField(property) {
  * @param {Object} type babel-parsed flow type
  * @returns {Object} doctrine compatible type
  */
-function flowDoctrine(type: Object): DoctrineType {
+function flowDoctrine(type) {
   if (type.type in namedTypes) {
     const doctrineType = {
       type: 'NameExpression',

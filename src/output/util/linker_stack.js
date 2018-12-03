@@ -1,6 +1,5 @@
-/* @flow */
 const globalsDocs = require('globals-docs');
-import { walk } from '../../walk';
+const { walk } = require('../../walk');
 
 /**
  * Generate a linker method that links given hardcoded namepaths to URLs
@@ -24,7 +23,7 @@ function pathsLinker(paths /* Object */) {
  * @param {*} input any input
  * @returns {*} any output
  */
-function firstPass(fns: Array<Function>, input) {
+function firstPass(fns, input) {
   for (let i = 0; i < fns.length; i++) {
     const output = fns[i](input);
     if (output) {
@@ -41,10 +40,7 @@ function firstPass(fns: Array<Function>, input) {
  * @returns {Function} linker method
  */
 class LinkerStack {
-  stack: Array<Function>;
-  link: Function;
-
-  constructor(config: DocumentationConfig) {
+  constructor(config) {
     this.stack = [];
 
     if (config.defaultGlobals !== false) {
@@ -84,7 +80,7 @@ class LinkerStack {
    *     return '#' + slugger.slug(namespace);
    *   });
    */
-  namespaceResolver(comments: Array<Comment>, resolver: Function) {
+  namespaceResolver(comments, resolver) {
     const namespaces = {};
     walk(comments, comment => {
       namespaces[comment.namespace] = true;
@@ -106,7 +102,7 @@ class LinkerStack {
    * @returns {string?} URL target or maybe undefined
    * @private
    */
-  _link(namepath: string) {
+  _link(namepath) {
     return firstPass(this.stack, namepath);
   }
 }

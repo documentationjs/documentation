@@ -1,4 +1,3 @@
-/* @flow */
 const visit = require('unist-util-visit');
 
 /**
@@ -8,7 +7,7 @@ const visit = require('unist-util-visit');
  * @returns {Object} that ast with rerouted links
  * @private
  */
-module.exports = function rerouteLinks(getHref: Function, ast: Object) {
+module.exports = function rerouteLinks(getHref, ast) {
   visit(ast, 'link', function(node) {
     if (
       node.jsdoc &&

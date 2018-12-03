@@ -18,10 +18,7 @@ function isFunction(section) {
   );
 }
 
-module.exports = function(
-  comments: Array<Comment>,
-  config: DocumentationConfig
-) {
+module.exports = function(comments, config) {
   var linkerStack = new LinkerStack(config).namespaceResolver(
     comments,
     function(namespace) {

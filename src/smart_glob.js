@@ -1,4 +1,3 @@
-/* @flow */
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
@@ -87,7 +86,7 @@ function resolveFileGlobPatterns(patterns, extensions) {
  * @param globPatterns            Glob patterns.
  * @returns Resolved absolute filenames.
  */
-function listFilesToProcess(globPatterns: Array<string>): Array<string> {
+function listFilesToProcess(globPatterns) {
   const files = [];
   const added = new Set();
 
@@ -127,7 +126,7 @@ function listFilesToProcess(globPatterns: Array<string>): Array<string> {
   return files;
 }
 
-function smartGlob(indexes: Array<string>, extensions: Array<string>) {
+function smartGlob(indexes, extensions) {
   return listFilesToProcess(resolveFileGlobPatterns(indexes, extensions));
 }
 

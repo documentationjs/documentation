@@ -3,7 +3,7 @@
 /* eslint no-console: 0 */
 
 const yargs = require('yargs');
-const commands = require('../lib/commands');
+const commands = require('../src/commands');
 
 const argv = yargs
   .strict()

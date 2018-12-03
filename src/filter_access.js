@@ -1,6 +1,4 @@
-/* @flow */
-
-import { walk } from './walk';
+const { walk } = require('./walk');
 
 /**
  * Exclude given access levels from the generated documentation: this allows
@@ -11,7 +9,7 @@ import { walk } from './walk';
  * @param {Array<Object>} comments parsed comments (can be nested)
  * @returns {Array<Object>} filtered comments
  */
-function filterAccess(levels: Array<string>, comments: Array<Comment>) {
+function filterAccess(levels, comments) {
   function filter(comment) {
     return (
       comment.kind === 'note' ||

@@ -1,5 +1,3 @@
-/* @flow */
-
 const flowDoctrine = require('../flow_doctrine');
 const findTarget = require('./finders').findTarget;
 
@@ -10,7 +8,7 @@ function prefixedName(name, prefix) {
   return name;
 }
 
-function propertyToDoc(property, prefix): CommentTag {
+function propertyToDoc(property, prefix) {
   let type = flowDoctrine(property.value);
   const name = property.key.name || property.key.value;
   if (property.optional) {
@@ -33,7 +31,7 @@ function propertyToDoc(property, prefix): CommentTag {
  * @param {Object} comment parsed comment
  * @returns {Object} comment with inferred properties
  */
-function inferProperties(comment: Comment): Comment {
+function inferProperties(comment) {
   const explicitProperties = new Set();
   // Ensure that explicitly specified properties are not overridden
   // by inferred properties

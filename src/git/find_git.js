@@ -1,5 +1,3 @@
-/* @flow */
-
 const path = require('path');
 const fs = require('fs');
 
@@ -9,7 +7,7 @@ const fs = require('fs');
  * @param  filename any file within a repository
  * @returns  repository path
  */
-function findGit(filename: string) {
+function findGit(filename) {
   const paths = filename.split(path.sep);
   for (let i = paths.length; i > 0; i--) {
     const p = path.resolve(

@@ -1,4 +1,3 @@
-/* @flow */
 const remark = require('remark');
 const html = require('remark-html');
 const Syntax = require('doctrine-temporary-fork').Syntax;
@@ -14,7 +13,7 @@ const formatType = require('./format_type');
  * @param getHref linker method
  * @returns {formatters} formatter object
  */
-module.exports = function(getHref: Function) {
+module.exports = function(getHref) {
   const rerouteLinks = _rerouteLinks.bind(undefined, getHref);
 
   const formatters = {};
@@ -28,7 +27,7 @@ module.exports = function(getHref: Function) {
    * @param {boolean} short whether to cut the details and make it skimmable
    * @returns {string} formatted parameter representation.
    */
-  formatters.parameter = function(param: Object, short: boolean): string {
+  formatters.parameter = function(param, short) {
     if (short) {
       if (param.type && param.type.type == Syntax.OptionalType) {
         if (param.default) {
@@ -61,7 +60,7 @@ module.exports = function(getHref: Function) {
    * @param {Object} type doctrine-format type
    * @returns {string} HTML
    */
-  formatters.type = function(type: Object) {
+  formatters.type = function(type) {
     return formatters
       .markdown(u('root', formatType(getHref, type)))
       .replace(/\n/g, '');
@@ -72,7 +71,7 @@ module.exports = function(getHref: Function) {
    * @param {string} text inner text of the link
    * @returns {string} potentially linked HTML
    */
-  formatters.autolink = function(text: string) {
+  formatters.autolink = function(text) {
     const href = getHref(text);
     if (href) {
       // TODO: this is a temporary fix until we drop remark 3.x support,
@@ -103,7 +102,7 @@ module.exports = function(getHref: Function) {
    * @param {boolean} short whether to cut the details and make it skimmable
    * @returns {string} formatted parameters
    */
-  formatters.parameters = function(section: Comment, short: boolean) {
+  formatters.parameters = function(section, short) {
     if (section.params) {
       return (
         '(' +

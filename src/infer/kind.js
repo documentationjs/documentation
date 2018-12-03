@@ -1,5 +1,3 @@
-/* @flow */
-
 const t = require('@babel/types');
 
 /**
@@ -8,7 +6,7 @@ const t = require('@babel/types');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with kind inferred
  */
-function inferKind(comment: Comment) {
+function inferKind(comment) {
   if (comment.kind) {
     return comment;
   }

@@ -1,5 +1,3 @@
-/* @flow */
-
 const doctrine = require('doctrine-temporary-fork');
 const parseMarkdown = require('./parse_markdown');
 
@@ -114,7 +112,7 @@ const flatteners = {
       return;
     }
 
-    const example: CommentExample = {
+    const example = {
       description: tag.description
     };
 
@@ -236,7 +234,7 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   param(result, tag) {
-    const param: CommentTag = {
+    const param = {
       title: 'param',
       name: tag.name,
       lineNumber: tag.lineNumber // TODO: remove
@@ -277,7 +275,7 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   property(result, tag) {
-    const property: CommentTag = {
+    const property = {
       title: 'property',
       name: tag.name,
       lineNumber: tag.lineNumber // TODO: remove
@@ -322,7 +320,7 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   returns(result, tag) {
-    const returns: CommentTag = {
+    const returns = {
       description: parseMarkdown(tag.description),
       title: 'returns'
     };
@@ -417,8 +415,8 @@ function todo() {}
  * @param {string} key the eventual destination key
  * @returns {Function} a flattener that remembers that key
  */
-function synonym(key: string) {
-  return function(result: Object, tag: Object) {
+function synonym(key) {
+  return function(result, tag) {
     const fun = flatteners[key];
     fun.apply(null, [result, tag, key].slice(0, fun.length));
   };
@@ -570,7 +568,7 @@ function flattenKindShorthand(result, tag, key) {
  * @returns {Comment} an object conforming to the
  * [documentation schema](https://github.com/documentationjs/api-json)
  */
-function parseJSDoc(comment: string, loc: ?Object, context: ?Object): Comment {
+function parseJSDoc(comment, loc, context) {
   const result = doctrine.parse(comment, {
     // have doctrine itself remove the comment asterisks from content
     unwrap: true,

@@ -1,5 +1,3 @@
-/* @flow */
-
 const pathParse = require('parse-filepath');
 const t = require('@babel/types');
 
@@ -10,7 +8,7 @@ const t = require('@babel/types');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with name inferred
  */
-function inferName(comment: Comment) {
+function inferName(comment) {
   if (comment.name) {
     return comment;
   }

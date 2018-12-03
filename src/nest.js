@@ -1,10 +1,8 @@
-/* @flow */
-
 const _ = require('lodash');
 
 const PATH_SPLIT = /(?:\[])?\./g;
 
-function removeUnnamedTags(tags: Array<CommentTag>): Array<CommentTag> {
+function removeUnnamedTags(tags) {
   return tags.filter(tag => typeof tag.name === 'string');
 }
 
@@ -33,8 +31,8 @@ const tagDepth = tag => tag.name.split(PATH_SPLIT).length;
  * @returns {Object} nested comment
  */
 const nestTag = (
-  tags: Array<CommentTag>,
-  errors: Array<CommentError>
+  tags,
+  errors
   // Use lodash here both for brevity and also because, unlike JavaScript's
   // sort, it's stable.
 ) =>
@@ -99,7 +97,7 @@ const nestTag = (
  * @param {Object} comment input comment
  * @returns {Object} nested comment
  */
-const nest = (comment: Comment) =>
+const nest = comment =>
   Object.assign(comment, {
     params: nestTag(comment.params, comment.errors),
     properties: nestTag(comment.properties, comment.errors)

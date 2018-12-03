@@ -1,4 +1,3 @@
-/* @flow */
 const visit = require('unist-util-visit');
 const hljs = require('highlight.js');
 
@@ -19,7 +18,7 @@ function visitor(node) {
   }
 }
 
-module.exports = function(ast: Object) {
+module.exports = function(ast) {
   visit(ast, 'code', visitor);
   return ast;
 };

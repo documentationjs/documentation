@@ -1,5 +1,3 @@
-/* @flow */
-
 /*
  * Maps command name to a command plugin module.  Each command plugin module
  * must export a function that takes (documentation, parsedArgs), where

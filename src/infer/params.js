@@ -1,10 +1,8 @@
-/* @flow */
-
-import * as t from '@babel/types';
-import generate from '@babel/generator';
-import _ from 'lodash';
-import finders from './finders';
-import flowDoctrine from '../flow_doctrine';
+const t = require('@babel/types');
+const generate = require('@babel/generator').default;
+const _ = require('lodash');
+const finders = require('./finders');
+const flowDoctrine = require('../flow_doctrine');
 
 /**
  * Infers param tags by reading function parameter names
@@ -12,7 +10,7 @@ import flowDoctrine from '../flow_doctrine';
  * @param {Object} comment parsed comment
  * @returns {Object} comment with parameters
  */
-function inferParams(comment: Comment) {
+function inferParams(comment) {
   let path = finders.findTarget(comment.context.ast);
   if (!path) {
     return comment;
@@ -69,7 +67,7 @@ function inferAndCombineParams(params, comment) {
 //
 const PATH_SPLIT_CAPTURING = /(\[])?(\.)/g;
 const PATH_SPLIT = /(?:\[])?\./g;
-function tagDepth(tag: CommentTag): number {
+function tagDepth(tag) {
   return (tag.name || '').split(PATH_SPLIT).length;
 }
 
@@ -101,11 +99,7 @@ function mapTags(tags) {
  * @param {string} prefix of the comment, if it is nested, like in the case of destructuring
  * @returns {Object} parameter with inference.
  */
-function paramToDoc(
-  param,
-  prefix: string,
-  i: ?number
-): CommentTag | Array<CommentTag> {
+function paramToDoc(param, prefix, i) {
   const autoName = '$' + String(i);
   const prefixedName = prefix + '.' + param.name;
 
@@ -202,10 +196,10 @@ function paramToDoc(
     }
     case 'ObjectProperty': {
       return Object.assign(
-        ((paramToDoc(
+        paramToDoc(
           param.value,
           prefix + '.' + param.key.name || param.key.value
-        ): any): CommentTag),
+        ),
         {
           name: prefix + '.' + param.key.name || param.key.value
         }
@@ -213,7 +207,7 @@ function paramToDoc(
     }
     case 'RestProperty': // (a, ...b)
     case 'RestElement': {
-      const type: DoctrineType = {
+      const type = {
         type: 'RestType'
       };
       if (param.typeAnnotation) {
@@ -228,7 +222,7 @@ function paramToDoc(
     }
     default: {
       // (a)
-      const newParam: CommentTag = {
+      const newParam = {
         title: 'param',
         name: prefix ? prefixedName : param.name,
         lineNumber: param.loc.start.line

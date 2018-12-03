@@ -1,4 +1,3 @@
-/* @flow */
 /* eslint no-console: 0 */
 const File = require('vinyl');
 const ansiHTML = require('ansi-html');
@@ -26,7 +25,7 @@ ansiHTML.setColors({
  * @param error parse or generation error
  * @returns {Object} vinyl file object
  */
-function errorPage(error: Error | { codeFrame: string }) {
+function errorPage(error) {
   let errorText = error.toString();
   console.error(error);
   if (error.codeFrame) {

@@ -1,5 +1,3 @@
-/* @flow */
-
 const findTarget = require('./finders').findTarget;
 const flowDoctrine = require('../flow_doctrine');
 const t = require('@babel/types');
@@ -17,7 +15,7 @@ const constTypeMapping = {
  * @param {Object} comment parsed comment
  * @returns {Object} comment with type tag inferred
  */
-function inferType(comment: Comment) {
+function inferType(comment) {
   if (comment.type) {
     return comment;
   }
