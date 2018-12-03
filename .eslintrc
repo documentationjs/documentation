@@ -4,9 +4,6 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "plugins": [
-    "flowtype"
-  ],
   "rules": {
     "no-var": 2,
     "prefer-const": 2,
@@ -27,13 +24,10 @@
     "no-eq-null": 2,
     "strict": [2, "global"],
     "no-shadow": 0,
-    "no-undef": 2,
-    "flowtype/define-flow-type": 1,
-    "flowtype/use-flow-type": 1
+    "no-undef": 2
   },
   "extends": [
     "eslint:recommended",
-    "plugin:flowtype/recommended",
     "prettier"
   ],
   "env": {

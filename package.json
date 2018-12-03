@@ -74,10 +74,6 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/plugin-transform-async-to-generator": "^7.1.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
-    "are-we-flow-yet": "^1.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
@@ -87,8 +83,6 @@
     "documentation-schema": "0.0.1",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-flowtype": "^2.41.0",
-    "flow-bin": "^0.81.0",
     "fs-extra": "^7.0.0",
     "husky": "^0.14.3",
     "jest": "^23.0.0",
@@ -122,8 +116,8 @@
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js'",
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
-    "test": "eslint . && flow check && jest",
-    "test-ci": "eslint . && flow check && jest --runInBand"
+    "test": "eslint . && jest",
+    "test-ci": "eslint . && jest --runInBand"
   },
   "jest": {
     "testPathIgnorePatterns": [
