@@ -16,16 +16,16 @@
 
 [:date: Current maintenance status](https://github.com/documentationjs/documentation/wiki/Current-maintenance-status)
 
-* Supports modern JavaScript: ES5, ES2017, JSX, Vue and [Flow](http://flowtype.org/) type annotations.
+* Supports modern JavaScript: ES5, ES2017, JSX, Vue and [Flow](https://flow.org/) type annotations.
 * Infers parameters, types, membership, and more. Write less documentation: let the computer write it for you.
 * Integrates with GitHub to link directly from documentation to the code it refers to.
 * Customizable output: HTML, JSON, Markdown, and more
 
 ## Examples
 
--   [HTML output with default template](http://documentation.js.org/html-example/)
+-   [HTML output with default template](https://documentation.js.org/html-example/)
 -   [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
--   [JSON](http://documentation.js.org/html-example/index.json)
+-   [JSON](https://documentation.js.org/html-example/index.json)
 
 ## Documentation
 
