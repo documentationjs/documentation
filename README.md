@@ -6,7 +6,6 @@
   The documentation system for modern JavaScript
 </p>
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/documentation.svg)](https://greenkeeper.io/)
 [![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=shield)](https://circleci.com/gh/documentationjs/documentation/tree/master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
