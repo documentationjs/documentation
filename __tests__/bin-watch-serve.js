@@ -28,7 +28,7 @@ function normalize(result) {
 
 const timeout = 20000;
 
-test('harness', function() {
+test.skip('harness', function() {
   const docProcess = documentation(['serve', 'fixture/simple.input.js']);
   expect(docProcess).toBeTruthy();
   docProcess.kill();
