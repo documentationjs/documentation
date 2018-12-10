@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/documentationjs/documentation/compare/v9.0.0-alpha.1...v9.0.0) (2018-12-10)
+
+
+### Features
+
+* Support for the logical assignment operator ([58d2a2f](https://github.com/documentationjs/documentation/commit/58d2a2f)), closes [#1172](https://github.com/documentationjs/documentation/issues/1172)
+
+
+
 <a name="9.0.0-alpha.1"></a>
 # [9.0.0-alpha.1](https://github.com/documentationjs/documentation/compare/v9.0.0-alpha.0...v9.0.0-alpha.1) (2018-10-24)
 
