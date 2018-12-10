@@ -55,28 +55,28 @@ option for help:
 Usage:
 
 # generate markdown docs for index.js and files it references
-bin/documentation.js build index.js -f md
+documentation build index.js -f md
 
 # generate html docs for all files in src
-bin/documentation.js build src/** -f html -o docs
+documentation build src/** -f html -o docs
 
 # document index.js, ignoring any files it requires or imports
-bin/documentation.js build index.js -f md --shallow
+documentation build index.js -f md --shallow
 
 # build and serve HTML docs for app.js
-bin/documentation.js serve app.js
+documentation serve app.js
 
 # build, serve, and live-update HTML docs for app.js
-bin/documentation.js serve --watch app.js
+documentation serve --watch app.js
 
 # validate JSDoc syntax in util.js
-bin/documentation.js lint util.js
+documentation lint util.js
 
 # update the API section of README.md with docs from index.js
-bin/documentation.js readme index.js --section=API
+documentation readme index.js --section=API
 
 # build docs for all values exported by index.js
-bin/documentation.js build --document-exported index.js
+documentation build --document-exported index.js
 
 Commands:
   serve [input..]   generate, update, and display HTML documentation
