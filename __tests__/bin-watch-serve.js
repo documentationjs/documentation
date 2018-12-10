@@ -34,7 +34,7 @@ test('harness', function() {
   docProcess.kill();
 });
 
-test(
+test.skip(
   'provides index.html',
   function() {
     const docProcess = documentation(['serve', 'fixture/simple.input.js']);
@@ -52,7 +52,7 @@ test(
   timeout
 );
 
-test(
+test.skip(
   'accepts port argument',
   function() {
     const docProcess = documentation([
@@ -74,7 +74,7 @@ test(
   timeout
 );
 
-test(
+test.skip(
   '--watch',
   function(done) {
     const tmpFile = path.join(os.tmpdir(), '/simple.js');
@@ -105,7 +105,7 @@ test(
   timeout
 );
 
-test(
+test.skip(
   '--watch',
   function(done) {
     const tmpDir = os.tmpdir();
@@ -139,7 +139,7 @@ test(
   timeout
 );
 
-test(
+test.skip(
   'error page',
   function() {
     const tmpDir = os.tmpdir();

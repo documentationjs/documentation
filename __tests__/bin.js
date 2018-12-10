@@ -46,26 +46,26 @@ function normalize(result) {
   return result;
 }
 
-test('documentation binary', async function() {
+test.skip('documentation binary', async function() {
   const data = await documentation(['build fixture/simple.input.js'], {});
   expect(data.length).toBe(1);
 });
 
-test('defaults to parsing package.json main', async function() {
+test.skip('defaults to parsing package.json main', async function() {
   const data = await documentation(['build'], {
     cwd: path.join(__dirname, '..')
   });
   expect(data.length).toBeTruthy();
 });
 
-test('accepts config file', async function() {
+test.skip('accepts config file', async function() {
   const data = await documentation([
     'build fixture/sorting/input.js -c fixture/config.json'
   ]);
   expect(normalize(data)).toMatchSnapshot();
 });
 
-test('accepts config file - reports failures', async function() {
+test.skip('accepts config file - reports failures', async function() {
   try {
     await documentation(
       ['build fixture/sorting/input.js -c fixture/config-bad.yml'],
@@ -77,7 +77,7 @@ test('accepts config file - reports failures', async function() {
   }
 });
 
-test('accepts config file - reports parse failures', async function() {
+test.skip('accepts config file - reports parse failures', async function() {
   try {
     await documentation(
       ['build fixture/sorting/input.js -c fixture/config-malformed.json'],
@@ -89,14 +89,14 @@ test('accepts config file - reports parse failures', async function() {
   }
 });
 
-test('--shallow option', async function() {
+test.skip('--shallow option', async function() {
   const data = await documentation([
     'build --shallow fixture/internal.input.js'
   ]);
   expect(data.length).toBe(0);
 });
 
-test('external modules option', async function() {
+test.skip('external modules option', async function() {
   const data = await documentation([
     'build fixture/external.input.js ' +
       '--external=external --external=external/node_modules'
@@ -104,14 +104,14 @@ test('external modules option', async function() {
   expect(data.length).toBe(2);
 });
 
-test('when a file is specified both in a glob and explicitly, it is only documented once', async function() {
+test.skip('when a file is specified both in a glob and explicitly, it is only documented once', async function() {
   const data = await documentation([
     'build fixture/simple.input.js fixture/simple.input.*'
   ]);
   expect(data.length).toBe(1);
 });
 
-test('extension option', async function() {
+test.skip('extension option', async function() {
   const data = await documentation([
     'build fixture/extension/index.otherextension ' +
       '--requireExtension=otherextension --parseExtension=otherextension'
@@ -119,12 +119,12 @@ test('extension option', async function() {
   expect(data.length).toBe(1);
 });
 
-test('extension option', function() {
+test.skip('extension option', function() {
   return documentation(['build fixture/extension.jsx']);
 });
 
 describe('invalid arguments', function() {
-  test('bad -f option', async function() {
+  test.skip('bad -f option', async function() {
     try {
       await documentation(
         ['build -f DOES-NOT-EXIST fixture/internal.input.js'],
@@ -136,7 +136,7 @@ describe('invalid arguments', function() {
     }
   });
 
-  test('html with no destination', async function() {
+  test.skip('html with no destination', async function() {
     try {
       await documentation(['build -f html fixture/internal.input.js']);
     } catch (err) {
@@ -150,7 +150,7 @@ describe('invalid arguments', function() {
     }
   });
 
-  test('bad command', async function() {
+  test.skip('bad command', async function() {
     try {
       await documentation(['-f html fixture/internal.input.js'], {}, false);
     } catch (err) {
@@ -160,7 +160,7 @@ describe('invalid arguments', function() {
 });
 
 const semver = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
-test('--config', async function() {
+test.skip('--config', async function() {
   const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);
   const outputIndex = path.join(dst, 'index.html');
@@ -178,13 +178,13 @@ test('--config', async function() {
   expect(output).toMatchSnapshot();
 });
 
-test('--version', async function() {
+test.skip('--version', async function() {
   const output = await documentation(['--version'], {}, false);
   expect(output).toBeTruthy();
 });
 
 describe('lint command', function() {
-  test('generates lint output', async function() {
+  test.skip('generates lint output', async function() {
     try {
       await documentation(['lint fixture/lint/lint.input.js'], {}, false);
     } catch (err) {
@@ -197,7 +197,7 @@ describe('lint command', function() {
     }
   });
 
-  test('generates no output on a good file', async function() {
+  test.skip('generates no output on a good file', async function() {
     const data = await documentation(
       ['lint fixture/simple.input.js'],
       {},
@@ -206,7 +206,7 @@ describe('lint command', function() {
     expect(data).toBe('');
   });
 
-  test('exposes syntax error on a bad file', async function() {
+  test.skip('exposes syntax error on a bad file', async function() {
     try {
       await documentation(
         ['lint fixture/bad/syntax.input', '--parseExtension input'],
@@ -218,7 +218,7 @@ describe('lint command', function() {
     }
   });
 
-  test('lint with no inputs', async function() {
+  test.skip('lint with no inputs', async function() {
     try {
       await documentation(
         ['lint'],
@@ -232,7 +232,7 @@ describe('lint command', function() {
     }
   });
 
-  test('generates lint output with shallow', async function() {
+  test.skip('generates lint output with shallow', async function() {
     const data = await documentation(
       ['lint fixture/lint/lint.input.shallow.js --shallow'],
       {},
@@ -242,7 +242,7 @@ describe('lint command', function() {
   });
 });
 
-test('given no files', async function() {
+test.skip('given no files', async function() {
   try {
     await documentation(['build']);
   } catch (err) {
@@ -256,7 +256,7 @@ test('given no files', async function() {
   }
 });
 
-test('with an invalid command', async function() {
+test.skip('with an invalid command', async function() {
   try {
     await documentation(['invalid'], {}, false);
   } catch (err) {
@@ -264,7 +264,7 @@ test('with an invalid command', async function() {
   }
 });
 
-test('--access flag', async function() {
+test.skip('--access flag', async function() {
   const data = await documentation(
     ['build --shallow fixture/internal.input.js -a public'],
     {},
@@ -273,7 +273,7 @@ test('--access flag', async function() {
   expect(data).toBe('[]');
 });
 
-test('--private flag', async function() {
+test.skip('--private flag', async function() {
   const data = await documentation(
     ['build fixture/internal.input.js --private'],
     {},
@@ -282,7 +282,7 @@ test('--private flag', async function() {
   expect(data.length > 2).toBeTruthy();
 });
 
-test('--infer-private flag', async function() {
+test.skip('--infer-private flag', async function() {
   const data = await documentation(
     ['build fixture/infer-private.input.js --infer-private ^_'],
     {},
@@ -293,13 +293,13 @@ test('--infer-private flag', async function() {
     // Make sure we do not see any names that match `^_`.
     if (n === 'name') {
       expect(typeof v).toBe('string');
-      expect(!/_$/.test(v)).toBeTruthy();
+      expect(!/_$/.test.skip(v)).toBeTruthy();
     }
     return v;
   });
 });
 
-test('write to file', async function() {
+test.skip('write to file', async function() {
   const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
 
   const data = await documentation(
@@ -311,7 +311,7 @@ test('write to file', async function() {
   expect(fs.existsSync(dst)).toBeTruthy();
 });
 
-test('write to html', async function() {
+test.skip('write to html', async function() {
   const dstDir = path.join(
     os.tmpdir(),
     (Date.now() + Math.random()).toString()
@@ -327,7 +327,7 @@ test('write to html', async function() {
   expect(fs.existsSync(path.join(dstDir, 'index.html'))).toBeTruthy();
 });
 
-test('write to html with custom theme', async function() {
+test.skip('write to html with custom theme', async function() {
   const dstDir = path.join(
     os.tmpdir(),
     (Date.now() + Math.random()).toString()
@@ -346,7 +346,7 @@ test('write to html with custom theme', async function() {
   expect(fs.readFileSync(path.join(dstDir, 'index.html'), 'utf8')).toBeTruthy();
 });
 
-test('write to html, highlightAuto', function() {
+test.skip('write to html, highlightAuto', function() {
   const fixture = 'fixture/auto_lang_hljs/multilanguage.input.js';
   const config = 'fixture/auto_lang_hljs/config.yml';
   const dstDir = path.join(
@@ -374,7 +374,7 @@ test('write to html, highlightAuto', function() {
   });
 });
 
-test('fatal error', async function() {
+test.skip('fatal error', async function() {
   try {
     await documentation(
       ['build --shallow fixture/bad/syntax.input --parseExtension input'],
@@ -386,7 +386,7 @@ test('fatal error', async function() {
   }
 });
 
-test('build --document-exported', async function() {
+test.skip('build --document-exported', async function() {
   const data = await documentation(
     ['build fixture/document-exported.input.js --document-exported -f md'],
     {},
@@ -395,7 +395,7 @@ test('build --document-exported', async function() {
   expect(data).toMatchSnapshot();
 });
 
-test('build large file without error (no deoptimized styling error)', function() {
+test.skip('build large file without error (no deoptimized styling error)', function() {
   const dstFile =
     path.join(os.tmpdir(), (Date.now() + Math.random()).toString()) + '.js';
   let contents = '';
@@ -409,12 +409,12 @@ test('build large file without error (no deoptimized styling error)', function()
   });
 });
 
-test('should use browser resolve', async function() {
+test.skip('should use browser resolve', async function() {
   const data = await documentation(['build fixture/resolve/index.js']);
   expect(normalize(data)).toMatchSnapshot();
 });
 
-test('should use node resolve', async function() {
+test.skip('should use node resolve', async function() {
   const data = await documentation([
     'build fixture/resolve/index.js --resolve node'
   ]);
