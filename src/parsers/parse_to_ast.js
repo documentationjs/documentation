@@ -1,5 +1,3 @@
-/* @flow */
-
 const babelParser = require('@babel/parser');
 
 const opts = {
@@ -31,13 +29,15 @@ const opts = {
  * @param {*} source code with flow type comments
  * @returns {string} code with flow annotations
  */
-export function commentToFlow(source: string) {
+function commentToFlow(source) {
   if (!/@flow/.test(source)) return source;
   return source
     .replace(/\/\*::([^]+?)\*\//g, '$1')
     .replace(/\/\*:\s*([^]+?)\s*\*\//g, ':$1');
 }
 
-export function parseToAst(source: string) {
+function parseToAst(source) {
   return babelParser.parse(commentToFlow(source), opts);
 }
+module.exports.commentToFlow = commentToFlow;
+module.exports.parseToAst = parseToAst;

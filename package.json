@@ -74,10 +74,6 @@
     "yargs": "^9.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/plugin-transform-async-to-generator": "^7.1.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
-    "are-we-flow-yet": "^1.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
@@ -87,8 +83,6 @@
     "documentation-schema": "0.0.1",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-flowtype": "^2.41.0",
-    "flow-bin": "^0.81.0",
     "fs-extra": "^7.0.0",
     "husky": "^0.14.3",
     "jest": "^23.0.0",
@@ -97,7 +91,6 @@
     "mock-fs": "^4.4.2",
     "p-event": "^2.0.0",
     "prettier": "^1.10.2",
-    "regenerator-runtime": "^0.12.0",
     "standard-version": "^4.3.0",
     "tmp": "^0.0.33"
   },
@@ -110,30 +103,27 @@
     "website"
   ],
   "license": "ISC",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:documentationjs/documentation.git"
   },
   "scripts": {
-    "build": "rm -rf lib && babel -D src -d lib && npm run doc",
+    "build": "npm run doc",
     "release": "standard-version",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js'",
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
-    "test": "npm run build && eslint . && flow check && jest",
-    "test-ci": "npm run build && eslint . && flow check && jest --runInBand"
+    "test": "eslint . && jest",
+    "test-ci": "eslint . && jest --runInBand"
   },
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/",
       "utils.js",
       "fixture"
-    ],
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/lib/"
     ],
     "collectCoverage": true,
     "testEnvironment": "node"

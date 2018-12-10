@@ -1,9 +1,7 @@
-/* @flow */
-
 const fs = require('fs');
 const path = require('path');
 
-module.exports = function findReadme(dir: string) {
+module.exports = function findReadme(dir) {
   const readmeFilenames = [
     'README.markdown',
     'README.md',

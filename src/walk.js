@@ -1,5 +1,3 @@
-/* @flow */
-
 /**
  * Apply a function to all comments within a hierarchy: this iterates
  * through children in the 'members' property.
@@ -9,7 +7,7 @@
  * @param {Object} [options] options passed through to walker function
  * @returns {Array<Object>} comments
  */
-export function walk(comments: Array<Comment>, fn: Function, options: ?Object) {
+module.exports.walk = function walk(comments, fn, options) {
   comments.forEach(comment => {
     fn(comment, options);
     for (const scope in comment.members) {
@@ -17,4 +15,4 @@ export function walk(comments: Array<Comment>, fn: Function, options: ?Object) {
     }
   });
   return comments;
-}
+};

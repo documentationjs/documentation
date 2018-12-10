@@ -1,6 +1,4 @@
-/* @flow */
-
-import { walk } from '../walk';
+const { walk } = require('../walk');
 
 /**
  * Formats documentation as a JSON string.
@@ -20,7 +18,7 @@ import { walk } from '../walk';
  *     fs.writeFileSync('./output.json', output);
  *   });
  */
-function json(comments: Array<Comment>): Promise<string> {
+function json(comments) {
   walk(comments, comment => {
     delete comment.errors;
     if (comment.context) {

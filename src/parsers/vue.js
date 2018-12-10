@@ -1,5 +1,3 @@
-/* @flow */
-
 const parseJavaScript = require('./javascript');
 const vuecompiler = require('vue-template-compiler');
 
@@ -11,7 +9,7 @@ const vuecompiler = require('vue-template-compiler');
  * @param {Object} config config
  * @returns {Array<Object>} an array of parsed comments
  */
-function parseVueScript(data: Object, config: DocumentationConfig) {
+function parseVueScript(data, config) {
   const component = vuecompiler.parseComponent(data.source);
   if (!component.script) return [];
   data.source = component.script.content;

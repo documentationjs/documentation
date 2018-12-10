@@ -1,5 +1,3 @@
-/* @flow */
-
 const documentation = require('../');
 const fs = require('fs');
 const path = require('path');
@@ -21,7 +19,7 @@ module.exports.builder = {
  * @returns {undefined} has side-effects
  * @private
  */
-module.exports.handler = function(argv: Object) {
+module.exports.handler = function(argv) {
   argv._handled = true;
   if (!argv.input.length) {
     try {

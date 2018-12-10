@@ -1,5 +1,3 @@
-/* @flow */
-
 /**
  * Given a string with a pattern that might infer access level, like `^_`,
  * create an inference method.
@@ -8,7 +6,7 @@
  * @returns {Function} inference method
  * @private
  */
-function inferAccessWithPattern(pattern: ?string) {
+function inferAccessWithPattern(pattern) {
   const re = pattern && new RegExp(pattern);
 
   /**
@@ -18,7 +16,7 @@ function inferAccessWithPattern(pattern: ?string) {
    * @param {Object} comment parsed comment
    * @returns {Object} comment with access inferred
    */
-  return function inferAccess(comment: Comment) {
+  return function inferAccess(comment) {
     // This needs to run after inferName beacuse we infer the access based on
     // the name.
     if (

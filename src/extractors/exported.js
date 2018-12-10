@@ -1,10 +1,9 @@
-/* @flow */
-import traverse from '@babel/traverse';
+const traverse = require('@babel/traverse').default;
 const isJSDocComment = require('../is_jsdoc_comment');
 const t = require('@babel/types');
 const nodePath = require('path');
 const fs = require('fs');
-import { parseToAst } from '../parsers/parse_to_ast';
+const { parseToAst } = require('../parsers/parse_to_ast');
 const findTarget = require('../infer/finders').findTarget;
 
 /**
@@ -18,13 +17,9 @@ const findTarget = require('../infer/finders').findTarget;
  * @returns {Array<Object>} comments
  * @private
  */
-function walkExported(
-  ast: Object,
-  data /*: {
+function walkExported(ast, data /*: {
   file: string
-} */,
-  addComment: Function
-) {
+} */, addComment) {
   const newResults = [];
   const filename = data.file;
   const dataCache = new Map();

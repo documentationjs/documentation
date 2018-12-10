@@ -1,6 +1,4 @@
-/* @flow */
-
-import generate from '@babel/generator';
+const generate = require('@babel/generator').default;
 const findTarget = require('./finders').findTarget;
 
 /**
@@ -9,7 +7,7 @@ const findTarget = require('./finders').findTarget;
  * @param {Object} comment parsed comment
  * @returns {Object} comment with kind inferred
  */
-function inferAugments(comment: Comment) {
+function inferAugments(comment) {
   if (comment.augments.length) {
     return comment;
   }

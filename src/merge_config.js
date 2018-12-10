@@ -1,5 +1,3 @@
-/* @flow */
-
 const yaml = require('js-yaml');
 const fs = require('fs');
 const pify = require('pify');
@@ -7,7 +5,7 @@ const readPkgUp = require('read-pkg-up');
 const path = require('path');
 const stripComments = require('strip-json-comments');
 
-function processToc(config: DocumentationConfig, absFilePath: string) {
+function processToc(config, absFilePath) {
   if (!config || !config.toc) {
     return config;
   }
@@ -31,7 +29,7 @@ function processToc(config: DocumentationConfig, absFilePath: string) {
  * @returns {Promise<Object>} configuration with inferred parameters
  * @throws {Error} if the file cannot be read.
  */
-function mergePackage(config: Object): Promise<Object> {
+function mergePackage(config) {
   if (config.noPackage) {
     return Promise.resolve(config);
   }
@@ -56,7 +54,7 @@ function mergePackage(config: Object): Promise<Object> {
  * @returns {Promise<Object>} configuration, if it can be parsed
  * @throws {Error} if the file cannot be read.
  */
-function mergeConfigFile(config): Promise<Object> {
+function mergeConfigFile(config) {
   if (config && typeof config.config === 'string') {
     const filePath = config.config;
     const ext = path.extname(filePath);
@@ -82,7 +80,7 @@ function mergeConfigFile(config): Promise<Object> {
   return Promise.resolve(config || {});
 }
 
-function mergeConfig(config: Object): Promise<DocumentationConfig> {
+function mergeConfig(config) {
   config.parseExtension = (config.parseExtension || []).concat([
     'mjs',
     'js',

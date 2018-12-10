@@ -1,5 +1,3 @@
-/* @flow */
-
 const path = require('path');
 const mergeConfig = require('../merge_config');
 
@@ -23,11 +21,11 @@ const mergeConfig = require('../merge_config');
  *     streamArray(output).pipe(vfs.dest('./output-directory'));
  *   });
  */
-function html(comments: Array<Comment>, config?: Object) {
+function html(comments, config) {
   if (!config) {
     config = {};
   }
-  return mergeConfig(config).then((config: DocumentationConfig) => {
+  return mergeConfig(config).then(config => {
     let themePath = '../default_theme/';
     if (config.theme) {
       themePath = path.resolve(process.cwd(), config.theme);

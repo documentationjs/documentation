@@ -1,5 +1,3 @@
-/* @flow */
-
 const path = require('path');
 const micromatch = require('micromatch');
 
@@ -28,10 +26,7 @@ module.exports = {
    * @returns {function} - A function for use as the module-deps `postFilter`
    * options.
    */
-  externals: function externalModuleFilter(
-    indexes: Array<string>,
-    options: Object
-  ) {
+  externals: function externalModuleFilter(indexes, options) {
     let externalFilters = false;
     if (options.external) {
       externalFilters = indexes.map(index => {
@@ -57,7 +52,7 @@ module.exports = {
       });
     }
 
-    return function(id: string, file: string, pkg: Object) {
+    return function(id, file, pkg) {
       const internal = internalModuleRegexp.test(id);
       return (
         internal || (externalFilters && externalFilters.some(f => f(file, pkg)))

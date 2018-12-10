@@ -262,8 +262,8 @@
      */
     this.hasAnchorJSLink = function(el) {
       var hasLeftAnchor =
-        el.firstChild &&
-        (' ' + el.firstChild.className + ' ').indexOf(' anchorjs-link ') > -1,
+          el.firstChild &&
+          (' ' + el.firstChild.className + ' ').indexOf(' anchorjs-link ') > -1,
         hasRightAnchor =
           el.lastChild &&
           (' ' + el.lastChild.className + ' ').indexOf(' anchorjs-link ') > -1;

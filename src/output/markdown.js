@@ -1,5 +1,3 @@
-/* @flow */
-
 const remark = require('remark');
 const markdownAST = require('./markdown_ast');
 
@@ -23,7 +21,7 @@ const markdownAST = require('./markdown_ast');
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(comments: Array<Comment>, args?: Object): Promise<string> {
+function markdown(comments, args) {
   if (!args) {
     args = {};
   }

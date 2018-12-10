@@ -1,5 +1,3 @@
-/* @flow */
-
 /**
  * Detect whether a comment is a JSDoc comment: it must be a block
  * comment which starts with two asterisks, not any other number of asterisks.

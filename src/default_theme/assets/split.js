@@ -219,8 +219,8 @@
       var b = elements[this.b];
       var percentage = a.size + b.size;
 
-      a.size = offset / this.size * percentage;
-      b.size = percentage - offset / this.size * percentage;
+      a.size = (offset / this.size) * percentage;
+      b.size = percentage - (offset / this.size) * percentage;
 
       setElementSize(a.element, a.size, this.aGutterSize);
       setElementSize(b.element, b.size, this.bGutterSize);

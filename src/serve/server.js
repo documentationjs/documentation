@@ -1,5 +1,3 @@
-/* @flow */
-
 // This file triggers https://github.com/prettier/prettier/issues/1151
 
 const http = require('http');
@@ -8,11 +6,6 @@ const pify = require('pify');
 const EventEmitter = require('events').EventEmitter;
 const liveReload = require('tiny-lr');
 const sep = require('path').sep;
-
-declare type ServerFile = {
-  relative: string,
-  contents: string
-};
 
 /**
  * A static file server designed to support documentation.js's --serve
@@ -24,13 +17,7 @@ declare type ServerFile = {
  * @param port server port to serve on.
  */
 class Server extends EventEmitter {
-  _lr: Object;
-  _disableLiveReload: boolean;
-  _port: number;
-  _files: Array<ServerFile>;
-  _http: http.Server;
-
-  constructor(port: number, disableLiveReload?: boolean) {
+  constructor(port, disableLiveReload) {
     super();
     if (typeof port !== 'number') {
       throw new Error('port argument required to initialize a server');
@@ -47,7 +34,7 @@ class Server extends EventEmitter {
    * @param files new content. replaces any previously-set content.
    * @returns {Server} self
    */
-  setFiles(files: Array<ServerFile>) {
+  setFiles(files) {
     this._files = files;
     if (this._lr) {
       this._lr.changed({ body: { files: '*' } });
@@ -65,7 +52,7 @@ class Server extends EventEmitter {
    * @returns {undefined} nothing
    * @private
    */
-  handler(request: http.IncomingMessage, response: http.ServerResponse) {
+  handler(request, response) {
     let path = request.url.substring(1);
     if (path === '') {
       path = 'index.html';
@@ -84,7 +71,7 @@ class Server extends EventEmitter {
     response.end('Not found');
   }
 
-  start(): Promise<Server> {
+  start() {
     /*
      * Boot up the server's HTTP & LiveReload endpoints. This method
      * can be called multiple times.
@@ -112,7 +99,7 @@ class Server extends EventEmitter {
     });
   }
 
-  stop(): Promise<Server> {
+  stop() {
     /*
      * Shut down the server's HTTP & LiveReload endpoints. This method
      * can be called multiple times.

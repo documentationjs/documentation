@@ -1,5 +1,3 @@
-/* @flow */
-
 const errorPage = require('../serve/error_page');
 const fs = require('fs');
 const path = require('path');
@@ -38,7 +36,7 @@ module.exports.builder = Object.assign(
  * @param {Object} argv cli input
  * @returns {undefined} has side effects
  */
-module.exports.handler = function serve(argv: Object) {
+module.exports.handler = function serve(argv) {
   argv._handled = true;
 
   if (!argv.input.length) {

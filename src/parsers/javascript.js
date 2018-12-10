@@ -1,5 +1,3 @@
-/* @flow */
-
 const _ = require('lodash');
 const t = require('@babel/types');
 const parse = require('../parse');
@@ -8,8 +6,7 @@ const walkExported = require('../extractors/exported');
 const util = require('util');
 const debuglog = util.debuglog('documentation');
 const findTarget = require('../infer/finders').findTarget;
-
-import { parseToAst } from './parse_to_ast';
+const { parseToAst } = require('./parse_to_ast');
 
 /**
  * Left-pad a string so that it can be sorted lexicographically. We sort
@@ -35,7 +32,7 @@ function leftPad(str, width) {
  * @param {Object} config config
  * @returns {Array<Object>} an array of parsed comments
  */
-function parseJavaScript(data: Object, config: DocumentationConfig) {
+function parseJavaScript(data, config) {
   const visited = new Set();
   const commentsByNode = new Map();
 

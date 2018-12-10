@@ -1,5 +1,3 @@
-/* @flow */
-
 const fs = require('fs');
 const remark = require('remark');
 const path = require('path');
@@ -57,7 +55,7 @@ module.exports.builder = Object.assign(
  * @param {Object} argv args from the CLI option parser
  * @returns {undefined} has the side-effect of writing a file or printing to stdout
  */
-module.exports.handler = function readme(argv: Object) {
+module.exports.handler = function readme(argv) {
   argv._handled = true;
 
   if (!argv.input.length) {
@@ -76,7 +74,7 @@ module.exports.handler = function readme(argv: Object) {
   argv.noReferenceLinks = true;
   argv.format = 'remark';
   /* eslint no-console: 0 */
-  const log: Function = (...data: Array<string>) => {
+  const log = (...data) => {
     if (!argv.q) {
       console.log.apply(console, data);
     }

@@ -1,4 +1,3 @@
-/* @flow */
 const remark = require('remark');
 const inlineTokenizer = require('./inline_tokenizer');
 
@@ -10,7 +9,7 @@ const inlineTokenizer = require('./inline_tokenizer');
  * @returns {Object} abstract syntax tree
  * @private
  */
-function parseMarkdown(string: string) {
+function parseMarkdown(string) {
   return remark()
     .use(inlineTokenizer)
     .parse(string);

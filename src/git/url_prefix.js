@@ -1,4 +1,3 @@
-/* @flow */
 const fs = require('fs');
 const path = require('path');
 const gitUrlParse = require('git-url-parse');
@@ -33,7 +32,7 @@ function parsePackedRefs(packedRefs, branchName) {
  * @returns {string} base HTTPS url of the GitHub repository
  * @throws {Error} if the root is not a git repo
  */
-function getGithubURLPrefix(root: string) {
+function getGithubURLPrefix(root) {
   let sha;
   try {
     const head = fs.readFileSync(path.join(root, '.git', 'HEAD'), 'utf8');

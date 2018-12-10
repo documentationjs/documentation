@@ -1,5 +1,3 @@
-/* @flow */
-
 const findTarget = require('./finders').findTarget;
 const t = require('@babel/types');
 const flowDoctrine = require('../flow_doctrine');
@@ -11,7 +9,7 @@ const flowDoctrine = require('../flow_doctrine');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with return tag inferred
  */
-function inferReturn(comment: Comment) {
+function inferReturn(comment) {
   if (
     Array.isArray(comment.returns) &&
     comment.returns.length &&

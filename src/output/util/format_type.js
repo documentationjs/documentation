@@ -1,4 +1,3 @@
-/* @flow */
 const Syntax = require('doctrine-temporary-fork').Syntax;
 const u = require('unist-builder');
 
@@ -81,7 +80,7 @@ function commaList(getHref, items, start, end, sep) {
  * @param {boolean} prefix string to put after the type comment
  * @returns {Array<Object>} suffixed and potentially prefixed type
  */
-function decorate(formatted, str, prefix): Array<Object> {
+function decorate(formatted, str, prefix) {
   if (prefix) {
     return [t(str)].concat(formatted);
   }
@@ -100,7 +99,7 @@ function decorate(formatted, str, prefix): Array<Object> {
  * formatType({ type: 'NameExpression', name: 'String' })[0].url
  * // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
-function formatType(getHref: Function, node: ?Object): Array<Object> {
+function formatType(getHref, node) {
   let result = [];
 
   if (!node) {

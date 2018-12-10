@@ -1,5 +1,3 @@
-/* @flow */
-
 const parseMarkdown = require('./parse_markdown');
 const chalk = require('chalk');
 const path = require('path');
@@ -14,22 +12,14 @@ const fs = require('fs');
  * @returns {number} sorting value
  * @private
  */
-module.exports = function sortDocs(
-  comments: Array<Comment>,
-  options: Object
-): Array<Comment> {
+module.exports = function sortDocs(comments, options) {
   if (!options || !options.toc) {
     return sortComments(comments, options && options.sortOrder);
   }
   let i = 0;
-  const indexes: { [?string]: number, __proto__: null } = Object.create(null);
-  const toBeSorted: { [?string]: boolean, __proto__: null } = Object.create(
-    null
-  );
-  const paths: {
-    [?string]: Array<{ scope: Scope, name: string }>,
-    __proto__: null
-  } = Object.create(null);
+  const indexes = Object.create(null);
+  const toBeSorted = Object.create(null);
+  const paths = Object.create(null);
   const fixed = [];
   const walk = function(tocPath, val) {
     if (typeof val === 'object' && val.name) {
@@ -113,9 +103,9 @@ module.exports = function sortDocs(
   return fixed.concat(unfixed);
 };
 
-function compareCommentsByName(a: Comment, b: Comment): number {
-  const akey: ?string = a.name;
-  const bkey: ?string = b.name;
+function compareCommentsByName(a, b) {
+  const akey = a.name;
+  const bkey = b.name;
 
   if (akey && bkey) {
     return akey.localeCompare(bkey, undefined, { caseFirst: 'upper' });
@@ -123,14 +113,11 @@ function compareCommentsByName(a: Comment, b: Comment): number {
   return 0;
 }
 
-function compareCommentsBySourceLocation(a: Comment, b: Comment): number {
+function compareCommentsBySourceLocation(a, b) {
   return a.context.sortKey.localeCompare(b.context.sortKey);
 }
 
-function sortComments(
-  comments: Array<Comment>,
-  sortOrder: string
-): Array<Comment> {
+function sortComments(comments, sortOrder) {
   return comments.sort(
     sortOrder === 'alpha'
       ? compareCommentsByName

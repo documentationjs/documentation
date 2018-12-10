@@ -1,5 +1,3 @@
-/* @flow */
-
 const streamArray = require('stream-array');
 const sharedOptions = require('./shared_options');
 const path = require('path');
@@ -41,7 +39,7 @@ module.exports.builder = Object.assign(
  * The former case, with the callback, is used by the `serve` command, which is
  * just a thin wrapper around this one.
  */
-module.exports.handler = function build(argv: Object) {
+module.exports.handler = function build(argv) {
   let watcher;
   argv._handled = true;
 

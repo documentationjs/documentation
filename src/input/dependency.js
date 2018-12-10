@@ -1,5 +1,3 @@
-/* @flow */
-
 const mdeps = require('module-deps-sortable');
 const path = require('path');
 const babelify = require('babelify');
@@ -18,10 +16,7 @@ const smartGlob = require('../smart_glob.js');
  * @param config optional options passed
  * @returns results
  */
-function dependencyStream(
-  indexes: Array<string>,
-  config: DocumentationConfig
-): Promise<Array<SourceFile>> {
+function dependencyStream(indexes, config) {
   const md = mdeps({
     /**
      * Determine whether a module should be included in documentation
