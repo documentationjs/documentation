@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/documentationjs/documentation/compare/v9.0.0...v9.1.0) (2018-12-17)
+
+
+### Features
+
+* support spead types ([ca5a681](https://github.com/documentationjs/documentation/commit/ca5a681))
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/documentationjs/documentation/compare/v9.0.0-alpha.1...v9.0.0) (2018-12-10)
 
