@@ -26,9 +26,6 @@ jobs:
       - run:
           name: Test
           command: yarn test-ci
-      - run:
-          name: coverage
-          command: ./node_modules/.bin/coveralls < coverage/lcov.info
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}

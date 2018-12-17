@@ -78,7 +78,6 @@
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
     "chdir": "0.0.0",
-    "coveralls": "^3.0.0",
     "cz-conventional-changelog": "2.1.0",
     "documentation-schema": "0.0.1",
     "eslint": "^5.0.1",
