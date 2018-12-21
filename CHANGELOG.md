@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/documentationjs/documentation/compare/v9.1.0...v9.1.1) (2018-12-21)
+
+
+### Bug Fixes
+
+* inferred properties duplicating explicitly specified ones ([2d0bd0e](https://github.com/documentationjs/documentation/commit/2d0bd0e))
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/documentationjs/documentation/compare/v9.0.0...v9.1.0) (2018-12-17)
 
