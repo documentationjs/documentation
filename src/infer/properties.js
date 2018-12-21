@@ -35,7 +35,7 @@ function inferProperties(comment) {
   const explicitProperties = new Set();
   // Ensure that explicitly specified properties are not overridden
   // by inferred properties
-  comment.properties.forEach(prop => explicitProperties.add(prop));
+  comment.properties.forEach(prop => explicitProperties.add(prop.name));
 
   function inferProperties(value, prefix) {
     if (value.type === 'ObjectTypeAnnotation') {
