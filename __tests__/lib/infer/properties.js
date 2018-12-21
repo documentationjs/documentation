@@ -30,6 +30,20 @@ test('inferProperties', function() {
   ]);
 
   expect(
+    evaluate('/** @property {number} b */ type a = { b: 1 };').properties
+  ).toEqual([
+    {
+      lineNumber: 0,
+      name: 'b',
+      title: 'property',
+      type: {
+        name: 'number',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+
+  expect(
     evaluate('/** */interface a { b: 1, c: { d: 2 } };').properties
   ).toEqual([
     {
