@@ -5,6 +5,35 @@ const concat = require('concat-stream');
 const moduleFilters = require('../module_filters');
 const smartGlob = require('../smart_glob.js');
 
+const STANDARD_BABEL_CONFIG = {
+  sourceMaps: false,
+  compact: false,
+  cwd: path.resolve(__dirname, '../../'),
+  presets: ['@babel/preset-react', '@babel/preset-env', '@babel/preset-flow'],
+  plugins: [
+    // Stage 0
+    '@babel/plugin-proposal-function-bind',
+    // Stage 1
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/plugin-proposal-logical-assignment-operators',
+    '@babel/plugin-proposal-optional-chaining',
+    ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
+    ['@babel/plugin-proposal-nullish-coalescing-operator', { loose: false }],
+    '@babel/plugin-proposal-do-expressions',
+    // Stage 2
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    '@babel/plugin-proposal-function-sent',
+    '@babel/plugin-proposal-export-namespace-from',
+    '@babel/plugin-proposal-numeric-separator',
+    '@babel/plugin-proposal-throw-expressions',
+    // Stage 3
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-import-meta',
+    ['@babel/plugin-proposal-class-properties', { loose: false }],
+    '@babel/plugin-proposal-json-strings'
+  ]
+};
+
 /**
  * Returns a readable stream of dependencies, given an array of entry
  * points and an object of options to provide to module-deps.
@@ -17,6 +46,9 @@ const smartGlob = require('../smart_glob.js');
  * @returns results
  */
 function dependencyStream(indexes, config) {
+  const babelConfig = config.babel
+    ? { configFile: path.resolve(__dirname, '../../../../', config.babel) }
+    : STANDARD_BABEL_CONFIG;
   const md = mdeps({
     /**
      * Determine whether a module should be included in documentation
@@ -28,43 +60,7 @@ function dependencyStream(indexes, config) {
       .concat(config.requireExtension || [])
       .map(ext => '.' + ext.replace(/^\./, ''))
       .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
-    transform: [
-      babelify.configure({
-        sourceMaps: false,
-        compact: false,
-        cwd: path.resolve(__dirname, '../../'),
-        presets: [
-          '@babel/preset-react',
-          '@babel/preset-env',
-          '@babel/preset-flow'
-        ],
-        plugins: [
-          // Stage 0
-          '@babel/plugin-proposal-function-bind',
-          // Stage 1
-          '@babel/plugin-proposal-export-default-from',
-          '@babel/plugin-proposal-logical-assignment-operators',
-          '@babel/plugin-proposal-optional-chaining',
-          ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
-          [
-            '@babel/plugin-proposal-nullish-coalescing-operator',
-            { loose: false }
-          ],
-          '@babel/plugin-proposal-do-expressions',
-          // Stage 2
-          ['@babel/plugin-proposal-decorators', { legacy: true }],
-          '@babel/plugin-proposal-function-sent',
-          '@babel/plugin-proposal-export-namespace-from',
-          '@babel/plugin-proposal-numeric-separator',
-          '@babel/plugin-proposal-throw-expressions',
-          // Stage 3
-          '@babel/plugin-syntax-dynamic-import',
-          '@babel/plugin-syntax-import-meta',
-          ['@babel/plugin-proposal-class-properties', { loose: false }],
-          '@babel/plugin-proposal-json-strings'
-        ]
-      })
-    ],
+    transform: [babelify.configure(babelConfig)],
     postFilter: moduleFilters.externals(indexes, config),
     resolve:
       config.resolve === 'node' &&
