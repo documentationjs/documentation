@@ -4,10 +4,10 @@
   <meta charset='utf-8' />
   <title><%- config['project-name'] %> <%- config['project-version'] %> | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' /><% if (config['project-description']) { %>
+  <link href='assets/bass.css' rel='stylesheet' />
+  <link href='assets/style.css' rel='stylesheet' />
+  <link href='assets/github.css' rel='stylesheet' />
+  <link href='assets/split.css' rel='stylesheet' /><% if (config['project-description']) { %>
   <meta name='description' content='<%- config['project-description'] %>'><% } %>
 </head>
 <body class='documentation m0'>
