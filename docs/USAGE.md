@@ -24,6 +24,7 @@ Options:
                              package.json
   --project-homepage         project homepage. by default, inferred from
                              package.json
+  --favicon                  favicon used in html
   --watch, -w                watch input files and rebuild documentation when
                              they change                               [boolean]
   --markdown-toc             include a table of contents in markdown output

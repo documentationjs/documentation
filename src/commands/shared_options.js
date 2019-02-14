@@ -106,6 +106,9 @@ module.exports.sharedOutputOptions = {
   'project-homepage': {
     describe: 'project homepage. by default, inferred from package.json'
   },
+  favicon: {
+    describe: 'favicon used in html'
+  },
   format: {
     alias: 'f',
     default: 'json',
