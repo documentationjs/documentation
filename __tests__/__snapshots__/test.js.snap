@@ -1616,10 +1616,7 @@ exports[`html nested.input.js 1`] = `
 
   <p>Creates a new Klass</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new Klass(foo: any)</div>
-   
   
   
     <p>
@@ -1680,10 +1677,7 @@ exports[`html nested.input.js 1`] = `
 This is a [klasssic]<a href=\\"#klass\\">Klass</a>
 This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</a></p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>isClass(other: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, also: any): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
-   
   
   
 
@@ -1758,10 +1752,7 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
   <p>A function that triggers the case where the autolinker doesn't find
 the referenced class type</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>isWeird(other: Weird): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
-   
   
   
 
@@ -1827,10 +1818,7 @@ the referenced class type</p>
 
   <p>This method takes a Buffer object that will be linked to nodejs.org</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>isBuffer(buf: (<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a> | <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String\\">string</a>), size: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean\\">boolean</a></div>
-   
   
   
 
@@ -1906,10 +1894,7 @@ the referenced class type</p>
 
   <p>This method takes an array of buffers and counts them</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>isArrayOfBuffers(buffers: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array\\">Array</a>&#x3C;<a href=\\"https://nodejs.org/api/buffer.html\\">Buffer</a>>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a></div>
-   
   
   
 
@@ -1983,10 +1968,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>A magic number that identifies this Klass.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>MAGIC_NUMBER</div>
-   
   
   
 
@@ -2039,10 +2021,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>Get this Klass's foo</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>getFoo(): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a></div>
-   
   
   
 
@@ -2102,10 +2081,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>A function with an options parameter</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>withOptions(options: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>, otherOptions: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a>?)</div>
-   
   
   
 
@@ -2203,10 +2179,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>A function with a deep options parameter</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>withDeepOptions(options: <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object\\">Object</a>)</div>
-   
   
   
 
@@ -2314,10 +2287,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>Klass event</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>event</div>
-   
   
   
 
@@ -2353,6 +2323,7 @@ k.isArrayOfBuffers();</pre>
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2370,10 +2341,7 @@ k.isArrayOfBuffers();</pre>
 
   <p>a typedef with nested properties</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>CustomError</div>
-   
   
   
 
@@ -2427,6 +2395,7 @@ k.isArrayOfBuffers();</pre>
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2446,10 +2415,7 @@ k.isArrayOfBuffers();</pre>
 a <a href=\\"#klass\\">klass instance multiword</a>,
 like a <a href=\\"#klass\\">klass</a></p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>bar(): <a href=\\"#klass\\">Klass</a></div>
-   
   
   
 
@@ -2485,6 +2451,7 @@ like a <a href=\\"#klass\\">klass</a></p>
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2502,10 +2469,7 @@ like a <a href=\\"#klass\\">klass</a></p>
 
   <p>Rest property function</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>bar(toys: ...<a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">Number</a>): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
-   
   
   
 
@@ -2554,6 +2518,7 @@ like a <a href=\\"#klass\\">klass</a></p>
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2573,10 +2538,7 @@ like a <a href=\\"#klass\\">klass</a></p>
 a <a href=\\"#klass\\">klass instance multiword</a>,
 like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number\\">number</a> input.</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>bar(): <a href=\\"https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined\\">undefined</a></div>
-   
   
   
 
@@ -2612,6 +2574,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2629,10 +2592,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
 
   <p>This is Foo</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new Foo()</div>
-   
   
   
 
@@ -2673,10 +2633,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
 
   <p>This is bar</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>bar</div>
-   
   
   
 
@@ -2714,6 +2671,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 </section>
 
+          
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -2731,10 +2689,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
 
   <p>I am the container of stream types</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>customStreams</div>
-   
   
   
 
@@ -2773,10 +2728,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
 
   <p>I am a passthrough stream that belongs to customStreams</p>
 
- 
-  
     <div class='pre p1 fill-light mt0'>new passthrough()</div>
-   
   
   
 
@@ -2816,6 +2768,7 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 </section>
 
+          
         
       </div>
     </div>
