@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/documentationjs/documentation/compare/v9.1.1...v9.2.0) (2019-02-22)
+
+
+### Bug Fixes
+
+* **default theme:** only render either note or section (fixes [#1113](https://github.com/documentationjs/documentation/issues/1113)) ([#1206](https://github.com/documentationjs/documentation/issues/1206)) ([fb0a27f](https://github.com/documentationjs/documentation/commit/fb0a27f))
+
+
+### Features
+
+* Add favicon option ([#1207](https://github.com/documentationjs/documentation/issues/1207)) ([5b045f2](https://github.com/documentationjs/documentation/commit/5b045f2))
+
+
+
 <a name="9.1.1"></a>
 ## [9.1.1](https://github.com/documentationjs/documentation/compare/v9.1.0...v9.1.1) (2018-12-21)
 
