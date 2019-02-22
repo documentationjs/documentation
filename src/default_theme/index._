@@ -96,13 +96,14 @@
         <% docs.forEach(function(s) { %>
           <% if (s.kind === 'note') { %>
             <div class='keyline-top-not py2'><%=renderNote({ note: s })%></div>
-          <% } %>
+          <% } else { %>
           <%= renderSection({
             section: s,
             renderSection: renderSection,
             renderSectionList: renderSectionList,
             renderParamProperty: renderParamProperty
           }) %>
+          <% } %>
         <% }) %>
       </div>
     </div>
