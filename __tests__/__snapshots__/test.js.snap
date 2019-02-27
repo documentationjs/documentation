@@ -1732,6 +1732,8 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
   
 
   
+
+  
 </section>
 
       </div>
@@ -1788,6 +1790,8 @@ the referenced class type</p>
 
       
     
+  
+
   
 
   
@@ -1875,6 +1879,8 @@ the referenced class type</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1949,6 +1955,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
       </div>
@@ -1977,6 +1985,8 @@ k.isArrayOfBuffers();</pre>
   
   
   
+  
+
   
 
   
@@ -2055,6 +2065,8 @@ k.isArrayOfBuffers();</pre>
 </p>
       <pre class='p1 overflow-auto round fill-light'><span class=\\"hljs-keyword\\">var</span> x = foo.getFoo();</pre>
     
+  
+
   
 
   
@@ -2145,6 +2157,8 @@ k.isArrayOfBuffers();</pre>
         </div>
       
     </div>
+  
+
   
 
   
@@ -2260,12 +2274,16 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
       </div>
     </div>
   
 </div>
+
+  
 
   
 
@@ -2296,6 +2314,8 @@ k.isArrayOfBuffers();</pre>
   
   
   
+  
+
   
 
   
@@ -2393,6 +2413,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
           
@@ -2438,6 +2460,8 @@ like a <a href=\\"#klass\\">klass</a></p>
 
       
     
+  
+
   
 
   
@@ -2516,6 +2540,8 @@ like a <a href=\\"#klass\\">klass</a></p>
   
 
   
+
+  
 </section>
 
           
@@ -2561,6 +2587,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
 
       
     
+  
+
   
 
   
@@ -2659,12 +2687,16 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 
   
+
+  
 </section>
 
       </div>
     </div>
   
 </div>
+
+  
 
   
 
@@ -2754,12 +2786,16 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 
   
+
+  
 </section>
 
       </div>
     </div>
   
 </div>
+
+  
 
   
 
