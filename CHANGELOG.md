@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/documentationjs/documentation/compare/v9.2.1...v9.3.0) (2019-02-27)
+
+
+### Features
+
+* Add inner section ([#1212](https://github.com/documentationjs/documentation/issues/1212)) ([64c9ca6](https://github.com/documentationjs/documentation/commit/64c9ca6))
+
+
+
 <a name="9.2.1"></a>
 ## [9.2.1](https://github.com/documentationjs/documentation/compare/v9.2.0...v9.2.1) (2019-02-26)
 
