@@ -29,7 +29,7 @@ function link(text, getHref, description) {
   // If we can't dynamically generate a link for a named type, we assume it's in the types section
   // and blindly link to it.
   // TODO: Be smarter
-  const href = getHref(text) || `/types#${text}`;
+  const href = getHref(text) || `/reference/types#${text}`;
   if (href) {
     // TODO: this is a temporary fix until we drop remark 3.x support,
     // and then we should remove the 'href' property and only
