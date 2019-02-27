@@ -141,6 +141,11 @@
     <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
   <% } %>
 
+  <% if (section.members.inner && section.members.inner.length) { %>
+    <div class='py1 quiet mt1 prose-big'>Inner Members</div>
+    <%= renderSectionList({ members: section.members.inner, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Inner Member' }) %>
+  <% } %>
+
   <% if (section.members.events && section.members.events.length) { %>
     <div class='py1 quiet mt1 prose-big'>Events</div>
     <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
