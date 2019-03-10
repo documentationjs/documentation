@@ -29,6 +29,8 @@ Options:
                              they change                               [boolean]
   --markdown-toc             include a table of contents in markdown output
                                                        [boolean] [default: true]
+  --markdown-toc-max-depth   specifies the max depth of the table of contents in markdown output
+                                                           [number] [default: 6]
   --shallow                  shallow mode turns off dependency resolution, only
                              processing the specified files (or the main script
                              specified in package.json)
