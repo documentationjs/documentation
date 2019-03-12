@@ -14,6 +14,7 @@ type DocumentationConfig = {
   parseExtension: Array<string>,
   noReferenceLinks?: boolean,
   markdownToc?: boolean,
+  markdownTocMaxDepth?: number,
   documentExported?: boolean,
   resolve?: string,
   hljs?: Object

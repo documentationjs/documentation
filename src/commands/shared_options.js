@@ -123,5 +123,11 @@ module.exports.sharedOutputOptions = {
     describe: 'include a table of contents in markdown output',
     default: true,
     type: 'boolean'
+  },
+  'markdown-toc-max-depth': {
+    describe:
+      'specifies the max depth of the table of contents in markdown output',
+    default: 6,
+    type: 'number'
   }
 };

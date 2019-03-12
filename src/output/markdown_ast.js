@@ -371,7 +371,11 @@ function buildMarkdownAST(comments, config) {
   );
 
   const pluginRemark = remark();
-  if (config.markdownToc) pluginRemark.use(toc, { tight: true });
+  if (config.markdownToc)
+    pluginRemark.use(toc, {
+      tight: true,
+      maxDepth: config.markdownTocMaxDepth
+    });
   if (config.noReferenceLinks !== true) pluginRemark.use(links);
   root = pluginRemark.run(root);
 
