@@ -7,8 +7,7 @@ module.exports = {
           node: 8
         }
       }
-    ],
-    '@babel/preset-flow'
+    ]
   ],
   ignore: ['**/default_theme/assets/*']
 };
