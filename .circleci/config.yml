@@ -2,7 +2,6 @@ workflows:
   version: 2
   node-multi-build:
     jobs:
-      - node-v6
       - node-v8
       - node-v10
 
@@ -31,10 +30,6 @@ jobs:
           key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
-  node-v6:
-    <<: *node-base
-    docker:
-      - image: node:6
   node-v8:
     <<: *node-base
     docker:
