@@ -110,7 +110,6 @@
   "scripts": {
     "build": "npm run doc",
     "release": "standard-version",
-    "precommit": "lint-staged",
     "prepublish": "npm run build",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js'",
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
@@ -145,5 +144,10 @@
     "ignore": [
       "remote-origin-url"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
