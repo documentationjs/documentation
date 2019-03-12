@@ -29,10 +29,6 @@ function evaluate(fn) {
   );
 }
 
-afterEach(function() {
-  mock.restore();
-});
-
 test.skip('github', function() {
   mock(mockRepo.master);
 
@@ -50,6 +46,8 @@ test.skip('github', function() {
     path: 'index.js',
     url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
+
+  mock.restore();
 });
 
 test.skip('malformed repository', function() {
@@ -66,6 +64,8 @@ test.skip('malformed repository', function() {
       }
     })[0].context.github
   ).toBe(undefined);
+
+  mock.restore();
 });
 
 test.skip('enterprise repository', function() {
@@ -86,6 +86,8 @@ test.skip('enterprise repository', function() {
     url:
       'https://github.enterprise.com/foo/bar/blob/this_is_the_sha/index.js#L6-L8'
   });
+
+  mock.restore();
 });
 
 test.skip('typedef', function() {
@@ -110,4 +112,6 @@ test.skip('typedef', function() {
     path: 'index.js',
     url: 'https://github.com/foo/bar/blob/this_is_the_sha/index.js#L2-L5'
   });
+
+  mock.restore();
 });

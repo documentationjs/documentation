@@ -3,7 +3,7 @@ const mockRepo = require('../../utils').mockRepo;
 const getGithubURLPrefix = require('../../../src/git/url_prefix');
 const parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
 
-test('getGithubURLPrefix', function() {
+test.skip('getGithubURLPrefix', function() {
   mock(mockRepo.master);
 
   expect(getGithubURLPrefix('/my/repository/path/')).toBe(

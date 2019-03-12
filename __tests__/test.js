@@ -69,96 +69,85 @@ test('external modules option', async function() {
 });
 
 test('bad input', function() {
-  glob
-    .sync(path.join(__dirname, 'fixture/bad', '*.input.js'))
-    .forEach(function(file) {
-      test(path.basename(file), function() {
-        return documentation
-          .build([file], readOptionsFromFile(file))
-          .then(res => {
-            expect(res).toBe(undefined);
-          })
-          .catch(error => {
-            // make error a serializable object
-            error = JSON.parse(JSON.stringify(error));
-            // remove system-specific path
-            delete error.filename;
-            delete error.codeFrame;
-            expect(error).toMatchSnapshot();
-          });
-      });
+  for (const file of glob.sync(
+    path.join(__dirname, 'fixture/bad', '*.input.js')
+  )) {
+    test(path.basename(file), async () => {
+      await documentation
+        .build([file], readOptionsFromFile(file))
+        .then(res => {
+          expect(res).toBe(undefined);
+        })
+        .catch(error => {
+          // make error a serializable object
+          error = JSON.parse(JSON.stringify(error));
+          // remove system-specific path
+          delete error.filename;
+          delete error.codeFrame;
+          expect(error).toMatchSnapshot();
+        });
     });
+  }
 });
 
 describe('html', function() {
-  glob
-    .sync(path.join(__dirname, 'fixture/html', '*.input.js'))
-    .forEach(function(file) {
-      test(path.basename(file), async function() {
-        const result = await documentation.build(
-          [file],
-          readOptionsFromFile(file)
-        );
-        const html = await outputHtml(result, {});
-        const clean = html
-          .sort((a, b) => a.path > b.path)
-          .filter(r => r.path.match(/(html)$/))
-          .map(r =>
-            r.contents
-              .toString()
-              .replace(/documentation \d+\.\d+\.\d+(-\w+(\.\d+)?)?/g, '')
-              .replace(/<code>\d+\.\d+\.\d+(-\w+(\.\d+)?)?<\/code>/g, '')
-          )
-          .join('\n');
-        expect(clean).toMatchSnapshot();
-      });
+  for (const file of glob.sync(
+    path.join(__dirname, 'fixture/html', '*.input.js')
+  )) {
+    test(path.basename(file), async function() {
+      const result = await documentation.build(
+        [file],
+        readOptionsFromFile(file)
+      );
+      const html = await outputHtml(result, {});
+      const clean = html
+        .sort((a, b) => a.path > b.path)
+        .filter(r => r.path.match(/(html)$/))
+        .map(r =>
+          r.contents
+            .toString()
+            .replace(/documentation \d+\.\d+\.\d+(-\w+(\.\d+)?)?/g, '')
+            .replace(/<code>\d+\.\d+\.\d+(-\w+(\.\d+)?)?<\/code>/g, '')
+        )
+        .join('\n');
+      expect(clean).toMatchSnapshot();
     });
+  }
 });
 
 describe('outputs', function() {
-  glob
-    .sync(path.join(__dirname, 'fixture', '*.input.js'))
-    .forEach(function(file) {
-      describe(path.basename(file), async function() {
-        let result = null;
-        beforeEach(async function() {
-          result = await documentation.build([file], readOptionsFromFile(file));
-        });
+  for (const file of glob.sync(path.join(__dirname, 'fixture', '*.input.js'))) {
+    test(path.basename(file), async function() {
+      const result = await documentation.build(
+        [file],
+        readOptionsFromFile(file)
+      );
+      const md = await outputMarkdown(_.cloneDeep(result), {
+        markdownToc: true
+      });
+      expect(result.toString()).toMatchSnapshot();
 
-        test('markdown', async function() {
-          const md = await outputMarkdown(_.cloneDeep(result), {
-            markdownToc: true
-          });
-          expect(result.toString()).toMatchSnapshot();
+      if (file.match(/es6.input.js/)) {
+        const txt = await outputMarkdown(_.cloneDeep(result), {
+          markdownToc: false
         });
+        expect(result.toString()).toMatchSnapshot();
+      }
 
-        if (file.match(/es6.input.js/)) {
-          test('no markdown TOC', async function() {
-            const txt = await outputMarkdown(_.cloneDeep(result), {
-              markdownToc: false
-            });
-            expect(result.toString()).toMatchSnapshot();
-          });
-        }
+      const ast = await outputMarkdownAST(_.cloneDeep(result), {});
+      expect(ast).toMatchSnapshot();
 
-        test('markdown AST', async function() {
-          const ast = await outputMarkdownAST(_.cloneDeep(result), {});
-          expect(ast).toMatchSnapshot();
-        });
-
-        test('JSON', function() {
-          normalize(result);
-          result.forEach(function(comment) {
-            validate(comment, documentationSchema.jsonSchema).errors.forEach(
-              function(error) {
-                expect(error).toBeFalsy();
-              }
-            );
-          });
-          expect(makePOJO(result)).toMatchSnapshot();
-        });
+      normalize(result);
+      result.forEach(function(comment) {
+        validate(comment, documentationSchema.jsonSchema).errors.forEach(
+          function(error) {
+            expect(error).toBeFalsy();
+          }
+        );
+        expect(makePOJO(result)).toMatchSnapshot();
       });
     });
+  }
 });
 
 test('highlightAuto md output', async function() {

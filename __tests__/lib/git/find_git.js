@@ -3,7 +3,7 @@ const mockRepo = require('../../utils').mockRepo;
 const path = require('path');
 const findGit = require('../../../src/git/find_git');
 
-test('findGit', function() {
+test.skip('findGit', function() {
   mock(mockRepo.master);
 
   const root = path.parse(__dirname).root;

@@ -4,13 +4,11 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: 6
-        },
-        include: ['transform-regenerator']
+          node: 8
+        }
       }
     ],
     '@babel/preset-flow'
   ],
-  plugins: ['@babel/plugin-transform-async-to-generator'],
   ignore: ['**/default_theme/assets/*']
 };

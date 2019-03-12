@@ -77,7 +77,7 @@ function formatLint(comments) {
         new VFile({
           path: p
         });
-      vFiles[p].warn(error.message, {
+      vFiles[p].message(error.message, {
         line: comment.loc.start.line + (error.commentLineNumber || 0)
       });
     });
