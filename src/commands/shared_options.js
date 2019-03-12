@@ -2,6 +2,12 @@
  * Adds shared options to any command that runs documentation
  */
 module.exports.sharedInputOptions = {
+  babel: {
+    describe:
+      'path to babelrc or babel.options.js to override default babel config',
+    type: 'string',
+    default: null
+  },
   shallow: {
     describe:
       'shallow mode turns off dependency resolution, ' +
