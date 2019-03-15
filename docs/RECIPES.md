@@ -183,7 +183,7 @@ documented in a similar manner to arrays:
 ```js
 /**
  * Find a person's phone number in the database
- * @param {string} person's name
+ * @param {string} name person's name
  * @returns {Promise<string>} promise with the phone number
  */
 function findPersonAge(name) {
