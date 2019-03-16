@@ -8,6 +8,7 @@ const opts = {
     'exportDefaultFrom',
     'optionalChaining',
     'classConstructorCall',
+    'classPrivateProperties',
     'classProperties',
     ['decorators', { decoratorsBeforeExport: false }],
     'doExpressions',
