@@ -174,3 +174,25 @@ The first documentation describes how you can call getTheTime without
 any arguments, and the second describes how you can call getTheTime with
 an argument. `documentation` will output two documented functions when you
 use this style.
+
+## Promises
+
+Promises have become a widely used feature in modern JavaScript. They are
+documented in a similar manner to arrays:
+
+```js
+/**
+ * Find a person's phone number in the database
+ * @param {string} name person's name
+ * @returns {Promise<string>} promise with the phone number
+ */
+function findPersonAge(name) {
+  return new Promise((resolve, reject) => {
+    db.find({ name: name })
+    .then(object => resolve(object.age))
+    .catch(err => reject(err))
+  })
+}
+```
+
+Multiple parameters within the `resolve` can be documented like so: `Promise<string, number>`.
