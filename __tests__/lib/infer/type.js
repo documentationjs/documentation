@@ -2,17 +2,18 @@ const parse = require('../../../src/parsers/javascript');
 const inferKind = require('../../../src/infer/kind');
 const inferType = require('../../../src/infer/type');
 
-function toComment(code) {
+function toComment(fn, filename) {
   return parse(
     {
-      source: code
+      file: filename,
+      source: fn instanceof Function ? '(' + fn.toString() + ')' : fn
     },
     {}
   )[0];
 }
 
-function evaluate(code) {
-  return inferType(inferKind(toComment(code)));
+function evaluate(code, filename) {
+  return inferType(inferKind(toComment(code, filename)));
 }
 
 test('inferType', function() {
@@ -98,6 +99,26 @@ test('inferType', function() {
 
   expect(evaluate('class C {' + '/** */' + 'x: number;' + '}').type).toEqual({
     name: 'number',
+    type: 'NameExpression'
+  });
+
+  expect(evaluate('class Foo { /** */ get b(): string { } }').type).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(evaluate('class Foo { /** */ set b(s: string) { } }').type).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(evaluate('class Foo { /** */ get b(): string { } }', 'test.ts').type).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(evaluate('class Foo { /** */ set b(s: string) { } }', 'test.ts').type).toEqual({
+    name: 'string',
     type: 'NameExpression'
   });
 

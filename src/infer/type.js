@@ -1,5 +1,6 @@
 const findTarget = require('./finders').findTarget;
 const flowDoctrine = require('../flow_doctrine');
+const tsDoctrine = require('../ts_doctrine');
 const t = require('@babel/types');
 
 const constTypeMapping = {
@@ -9,7 +10,7 @@ const constTypeMapping = {
 };
 
 /**
- * Infers type tags by using Flow type annotations
+ * Infers type tags by using Flow/TypeScript type annotations
  *
  * @name inferType
  * @param {Object} comment parsed comment
@@ -37,15 +38,27 @@ function inferType(comment) {
     case 'ClassProperty':
       type = n.typeAnnotation;
       break;
+    case 'ClassMethod':
+      if (n.kind === 'get') {
+        type = n.returnType;
+      } else if (n.kind === 'set' && n.params[0]) {
+        type = n.params[0].typeAnnotation;
+      }
+      break;
     case 'TypeAlias':
       type = n.right;
       break;
   }
   if (type) {
-    if (t.isTypeAnnotation(type)) {
-      type = type.typeAnnotation;
+    if (t.isTSTypeAnnotation(type)) {
+      comment.type = tsDoctrine(type.typeAnnotation);
+    } else {
+      if (t.isTypeAnnotation(type)) {
+        type = type.typeAnnotation;
+      }
+
+      comment.type = flowDoctrine(type);
     }
-    comment.type = flowDoctrine(type);
   }
   return comment;
 }
