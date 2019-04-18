@@ -23,6 +23,7 @@ const flatteners = {
   alias: flattenName,
   arg: synonym('param'),
   argument: synonym('param'),
+  async: flattenBoolean,
   /**
    * Parse tag
    * @private

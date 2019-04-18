@@ -25,6 +25,9 @@ function inferKind(comment) {
         comment.kind = 'class';
       } else {
         comment.kind = 'function';
+        if (node.async) {
+          comment.async = true;
+        }
       }
     } else if (t.isTypeAlias(node)) {
       comment.kind = 'typedef';
