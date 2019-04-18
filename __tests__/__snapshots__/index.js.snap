@@ -58,6 +58,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 9,
@@ -172,6 +173,7 @@ exports[`build 3`] = `
     },
     \\"augments\\": [],
     \\"examples\\": [],
+    \\"implements\\": [],
     \\"params\\": [],
     \\"properties\\": [],
     \\"returns\\": [],

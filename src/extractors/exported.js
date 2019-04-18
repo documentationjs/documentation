@@ -182,7 +182,7 @@ function getCachedData(dataCache, filePath) {
   let value = dataCache.get(path);
   if (!value) {
     const input = fs.readFileSync(path, 'utf-8');
-    const ast = parseToAst(input);
+    const ast = parseToAst(input, filePath);
     value = {
       data: {
         file: path,

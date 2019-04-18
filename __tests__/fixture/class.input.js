@@ -1,6 +1,7 @@
 /**
  * This is my class, a demo thing.
  * @class MyClass
+ * @implements {MyInterface}
  * @property {number} howMany how many things it contains
  */
 function MyClass() {

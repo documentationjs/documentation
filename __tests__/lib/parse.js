@@ -302,7 +302,22 @@ test('parse - description', function() {
 
 test('parse - @emits', function() {});
 
-test('parse - @enum', function() {});
+test('parse - @enum', function() {
+  expect(
+    pick(
+      evaluate(function() {
+        /** @enum {string} */
+      })[0],
+      ['kind', 'type']
+    )
+  ).toEqual({
+    kind: 'enum',
+    type: {
+      type: 'NameExpression',
+      name: 'string'
+    }
+  });
+});
 
 test('parse - @event', function() {
   expect(
@@ -494,7 +509,13 @@ test('parse - @ignore', function() {
   ).toBe(true);
 });
 
-test('parse - @implements', function() {});
+test('parse - @implements', function() {
+  expect(
+    evaluate(function() {
+      /** @implements {Foo} */
+    })[0].implements[0].name
+  ).toEqual('Foo');
+});
 
 test('parse - @inheritdoc', function() {});
 
@@ -518,8 +539,8 @@ test('parse - @interface', function() {
   expect(
     evaluate(function() {
       /** @interface */
-    })[0].interface
-  ).toEqual(true);
+    })[0].kind
+  ).toEqual('interface');
 
   expect(
     evaluate(function() {

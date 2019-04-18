@@ -26,7 +26,7 @@ function findTarget(path) {
   } else if (t.isExpressionStatement(path)) {
     // foo.x = TARGET
     path = path.get('expression').get('right');
-  } else if (t.isObjectProperty(path)) {
+  } else if (t.isObjectProperty(path) || t.isObjectTypeProperty(path)) {
     // var foo = { x: TARGET }; object property
     path = path.get('value');
   } else if (t.isClassProperty(path) && path.get('value').node) {

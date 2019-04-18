@@ -193,6 +193,12 @@ test('inferName', function() {
 
   expect(evaluate('/** Test */ export class Wizard {}').name).toBe('Wizard');
 
+  expect(evaluate('/** Test */ interface Wizard {}').name).toBe('Wizard');
+  expect(evaluate('/** Test */ interface Wizard {}', 'test.ts').name).toBe('Wizard');
+
+  expect(evaluate('/** Test */ enum Wizard {}', 'test.ts').name).toBe('Wizard');
+  expect(evaluate('enum Wizard { /** Test */ A }', 'test.ts').name).toBe('A');
+
   expect(
     evaluate(
       '/** Test */ export default class Warlock {}',

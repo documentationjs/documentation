@@ -36,7 +36,7 @@ function parseJavaScript(data, config) {
   const visited = new Set();
   const commentsByNode = new Map();
 
-  const ast = parseToAst(data.source);
+  const ast = parseToAst(data.source, data.file);
   const addComment = _addComment.bind(null, visited, commentsByNode);
 
   return _.flatMap(

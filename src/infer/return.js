@@ -1,6 +1,20 @@
 const findTarget = require('./finders').findTarget;
 const t = require('@babel/types');
-const flowDoctrine = require('../flow_doctrine');
+const typeAnnotation = require('../type_annotation');
+
+// TypeScript does not currently support typing the return value of a generator function.
+// This is coming in TypeScript 3.3 - https://github.com/Microsoft/TypeScript/pull/30790
+const TS_GENERATORS = {
+  Iterator: 1,
+  Iterable: 1,
+  IterableIterator: 1
+};
+
+const FLOW_GENERATORS = {
+  Iterator: 1,
+  Iterable: 1,
+  Generator: 3
+};
 
 /**
  * Infers returns tags by using Flow return type annotations
@@ -29,28 +43,50 @@ function inferReturn(comment) {
     fn = fn.init;
   }
 
-  if (t.isFunction(fn) && fn.returnType && fn.returnType.typeAnnotation) {
-    let returnType = flowDoctrine(fn.returnType.typeAnnotation);
-    if (comment.returns && comment.returns.length > 0) {
-      comment.returns[0].type = returnType;
-    } else {
-      if (
-        fn.generator &&
-        returnType.type === 'TypeApplication' &&
-        returnType.expression.name === 'Generator' &&
-        returnType.applications.length === 3
-      ) {
-        comment.generator = true;
+  const fnReturnType = getReturnType(fn);
+  if (fnReturnType) {
+    let returnType = typeAnnotation(fnReturnType);
+    let yieldsType = null;
+
+    if (fn.generator && returnType.type === 'TypeApplication') {
+      comment.generator = true;
+      let numArgs;
+
+      if (t.isFlow(fnReturnType)) {
+        numArgs = FLOW_GENERATORS[returnType.expression.name];
+      } else if (t.isTSTypeAnnotation(fnReturnType)) {
+        numArgs = TS_GENERATORS[returnType.expression.name];
+      }
+
+      if (returnType.applications.length === numArgs) {
+        yieldsType = returnType.applications[0];
+
+        if (numArgs > 1) {
+          returnType = returnType.applications[1];
+        } else {
+          returnType = {
+            type: 'VoidLiteral'
+          };
+        }
+      }
+    }
+
+    if (yieldsType) {
+      if (comment.yields && comment.yields.length > 0) {
+        comment.yields[0].type = yieldsType;
+      } else {
         comment.yields = [
           {
             title: 'yields',
-            type: returnType.applications[0]
+            type: yieldsType
           }
         ];
-
-        returnType = returnType.applications[1];
       }
+    }
 
+    if (comment.returns && comment.returns.length > 0) {
+      comment.returns[0].type = returnType;
+    } else {
       comment.returns = [
         {
           title: 'returns',
@@ -60,6 +96,16 @@ function inferReturn(comment) {
     }
   }
   return comment;
+}
+
+function getReturnType(fn) {
+  if (t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn) || t.isFunctionTypeAnnotation(fn)) {
+    return fn.returnType;
+  }
+
+  if (t.isTSMethodSignature(fn)) {
+    return fn.typeAnnotation;
+  }
 }
 
 module.exports = inferReturn;
