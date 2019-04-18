@@ -144,6 +144,23 @@ test('inferMembership - explicit', function() {
   expect(
     pick(
       evaluate(function() {
+        Foo.bar = {
+          baz: {
+            /** Test */
+            test: 0
+          }
+        };
+      })[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo.bar.baz',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(function() {
         Foo.prototype = {
           /** Test */
           bar: 0
@@ -305,6 +322,167 @@ test('inferMembership - explicit', function() {
     )
   ).toEqual({
     memberof: 'bar.Foo',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        /** @memberof bar */
+        abstract class Foo {
+          /** */
+          abstract baz();
+        }
+      `, 'test.ts')[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        /** @memberof bar */
+        interface Foo {
+          /** */
+          baz(): string;
+        }
+      `)[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        /** @memberof bar */
+        interface Foo {
+          /** */
+          baz(): string;
+        }
+      `, 'test.ts')[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        interface Foo {
+          bar: {
+            /** */
+            baz: string;
+          }
+        }
+      `)[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo.bar',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        interface Foo {
+          bar: {
+            /** */
+            baz: string;
+          }
+        }
+      `, 'test.ts')[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo.bar',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        type Foo = {
+          /** */
+          bar: string;
+        }
+      `)[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        type Foo = {
+          bar: {
+            /** */
+            baz: string;
+          }
+        }
+      `)[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo.bar',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        type Foo = {
+          /** */
+          bar: string;
+        }
+      `, 'test.ts')[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        type Foo = {
+          bar: {
+            /** */
+            baz: string;
+          }
+        }
+      `, 'test.ts')[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo.bar',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
+      evaluate(`
+        enum Foo {
+          /** */
+          A
+        }
+      `, 'test.ts')[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
     scope: 'static'
   });
 

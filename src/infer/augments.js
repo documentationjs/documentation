@@ -31,7 +31,7 @@ function inferAugments(comment) {
         name: generate(path.node.superClass).code
       });
     }
-  } else if (path.isInterfaceDeclaration()) {
+  } else if ((path.isInterfaceDeclaration() || path.isTSInterfaceDeclaration()) && path.node.extends) {
     /*
      * extends is an array of interface identifiers or
      * qualified type identifiers, so we generate code

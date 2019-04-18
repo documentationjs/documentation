@@ -12,8 +12,8 @@ function toComment(fn, filename) {
   )[0];
 }
 
-function evaluate(code) {
-  return inferAugments(toComment(code));
+function evaluate(code, filename) {
+  return inferAugments(toComment(code, filename));
 }
 
 test('inferAugments', function() {
@@ -21,6 +21,28 @@ test('inferAugments', function() {
     {
       name: 'B',
       title: 'augments'
+    }
+  ]);
+
+  expect(evaluate('/** */interface A extends B, C {}').augments).toEqual([
+    {
+      name: 'B',
+      title: 'extends'
+    },
+    {
+      name: 'C',
+      title: 'extends'
+    }
+  ]);
+
+  expect(evaluate('/** */interface A extends B, C {}', 'test.ts').augments).toEqual([
+    {
+      name: 'B',
+      title: 'extends'
+    },
+    {
+      name: 'C',
+      title: 'extends'
     }
   ]);
 });
