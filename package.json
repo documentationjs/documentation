@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.3.5-quiq",
+  "version": "5.3.6-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -30,7 +30,7 @@
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
     "highlight.js": "^9.12.0",
-    "js-yaml": "^3.10.0",
+    "js-yaml": "^3.13.1",
     "lodash": "^4.17.4",
     "mdast-util-inject": "^1.1.0",
     "micromatch": "^3.1.5",
@@ -53,7 +53,7 @@
     "vfile-sort": "^2.1.0",
     "vinyl": "^2.1.0",
     "vinyl-fs": "^3.0.2",
-    "yargs": "^9.0.1"
+    "yargs": "^12.0.2"
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
