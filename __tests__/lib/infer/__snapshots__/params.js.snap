@@ -217,6 +217,21 @@ Array [
 ]
 `;
 
+exports[`inferParams 8`] = `
+Array [
+  Object {
+    "default": "4",
+    "lineNumber": 1,
+    "name": "x",
+    "title": "param",
+    "type": Object {
+      "name": "number",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
 exports[`mergeTrees 1`] = `
 Object {
   "errors": Array [

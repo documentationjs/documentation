@@ -191,4 +191,15 @@ test('inferParams', function() {
       }
     `).params
   ).toEqual([]);
+
+  expect(
+    evaluate(
+      `
+    /** Test
+     * @param x
+    */
+    function f(x: number = 4) {}
+  `
+    ).params
+  ).toMatchSnapshot();
 });

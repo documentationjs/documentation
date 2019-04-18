@@ -338,7 +338,9 @@ function combineTags(inferredTag, explicitTag) {
   let defaultValue;
   if (!explicitTag.type) {
     type = inferredTag.type;
-  } else if (!explicitTag.default && inferredTag.default) {
+  }
+
+  if (!explicitTag.default && inferredTag.default) {
     defaultValue = inferredTag.default;
   }
 
