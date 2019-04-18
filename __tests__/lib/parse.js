@@ -460,6 +460,14 @@ test('parse - @function', function() {
   ).toBeUndefined();
 });
 
+test('parse - @generator', function() {
+  expect(
+    evaluate(function() {
+      /** @generator */
+    })[0].generator
+  ).toBe(true);
+});
+
 test('parse - @global', function() {
   expect(
     evaluate(function() {
@@ -1049,6 +1057,54 @@ test('parse - @variation', function() {
 test('parse - @version', function() {});
 
 test('parse - @virtual', function() {});
+
+test('parse - @yield', function() {
+  expect(
+    evaluate(function() {
+      /** @yield test */
+    })[0].yields[0]
+  ).toEqual({
+    title: 'yields',
+    description: remark().parse('test')
+  });
+
+  expect(
+    evaluate(function() {
+      /** @yield {number} test */
+    })[0].yields[0]
+  ).toEqual({
+    description: remark().parse('test'),
+    title: 'yields',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  });
+});
+
+test('parse - @yields', function() {
+  expect(
+    evaluate(function() {
+      /** @yields test */
+    })[0].yields[0]
+  ).toEqual({
+    title: 'yields',
+    description: remark().parse('test')
+  });
+
+  expect(
+    evaluate(function() {
+      /** @yields {number} test */
+    })[0].yields[0]
+  ).toEqual({
+    description: remark().parse('test'),
+    title: 'yields',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  });
+});
 
 test('parse - unknown tag', function() {
   expect(

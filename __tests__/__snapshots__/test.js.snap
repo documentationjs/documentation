@@ -176,6 +176,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -277,6 +278,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -453,6 +455,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -554,6 +557,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -797,6 +801,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -969,6 +974,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -1141,6 +1147,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -1322,6 +1329,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -3072,6 +3080,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -3244,6 +3253,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -3336,6 +3346,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -3816,6 +3827,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -3993,6 +4005,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -4092,6 +4105,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -4672,6 +4686,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -4782,6 +4797,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -4982,6 +4998,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -5001,6 +5018,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5058,6 +5076,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5149,6 +5168,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5207,6 +5227,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5271,6 +5292,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -5331,6 +5353,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5389,6 +5412,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5453,6 +5477,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -5481,6 +5506,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5536,6 +5562,7 @@ Array [
       "name": "boolean",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5585,6 +5612,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5704,6 +5732,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5794,6 +5823,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5851,6 +5881,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5914,6 +5945,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5969,6 +6001,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -6026,6 +6059,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6043,6 +6077,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6094,6 +6129,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6145,6 +6181,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6200,6 +6237,7 @@ Array [
       "name": "number",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6255,6 +6293,7 @@ Array [
       "name": "string",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6310,6 +6349,7 @@ Array [
       "name": "string",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6371,6 +6411,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6461,6 +6502,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6478,6 +6520,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6590,6 +6633,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6680,6 +6724,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6697,6 +6742,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -7609,6 +7655,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -7666,6 +7713,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -7754,6 +7802,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -7923,6 +7972,7 @@ have any parameter descriptions.",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -8062,6 +8112,7 @@ have any parameter descriptions.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -8329,6 +8380,7 @@ have any parameter descriptions.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -8530,6 +8582,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8639,6 +8692,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8766,6 +8820,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8880,6 +8935,7 @@ as a property.",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -8991,6 +9047,7 @@ as a property.",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -9162,6 +9219,7 @@ class A {
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9334,6 +9392,7 @@ class A {
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9595,6 +9654,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9706,6 +9766,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9821,6 +9882,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "async": true,
@@ -9924,6 +9986,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10096,6 +10159,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10205,6 +10269,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "access": "protected",
@@ -10314,6 +10379,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "access": "public",
@@ -10423,6 +10489,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10523,6 +10590,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10701,6 +10769,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10821,6 +10890,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -13459,6 +13529,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -13664,6 +13735,7 @@ Array [
             "name": "string",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -13704,6 +13776,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -13834,6 +13907,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -14461,6 +14535,7 @@ Array [
             "name": "boolean",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -14590,6 +14665,7 @@ Array [
             "name": "string",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -14609,6 +14685,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -14879,6 +14956,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -15124,6 +15202,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -15224,6 +15303,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -15396,6 +15476,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -15986,6 +16067,7 @@ Array [
       "name": "Object",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
 ]
 `;
@@ -16471,6 +16553,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -16813,6 +16896,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -17083,6 +17167,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17142,6 +17227,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17265,6 +17351,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -17594,6 +17681,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -17775,6 +17863,7 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17912,6 +18001,7 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -18049,6 +18139,7 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
   },
 ]
 `;
@@ -18619,6 +18710,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -18638,6 +18730,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -18854,6 +18947,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -18913,6 +19007,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -19249,6 +19344,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -19675,6 +19771,7 @@ and ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -20370,6 +20467,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -20692,6 +20790,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -20989,6 +21088,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -21240,6 +21340,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -21491,6 +21592,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -21525,6 +21627,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -22176,6 +22279,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -22262,6 +22366,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -22832,6 +22937,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -23011,6 +23117,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -23042,6 +23149,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -23703,6 +23811,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -24412,6 +24521,7 @@ Array [
     "throws": Array [],
     "todos": Array [],
     "version": "1.0.0",
+    "yields": Array [],
   },
 ]
 `;
@@ -25061,6 +25171,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -25303,6 +25414,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -26206,6 +26318,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -27105,6 +27218,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -27577,6 +27691,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -28686,6 +28801,7 @@ still work in the markdown table.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -28973,6 +29089,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -29194,6 +29311,7 @@ Array [
       ],
       "type": "RecordType",
     },
+    "yields": Array [],
   },
 ]
 `;
@@ -29597,6 +29715,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -29798,6 +29917,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -29922,6 +30042,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30188,6 +30309,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -30207,6 +30329,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30405,6 +30528,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -30422,6 +30546,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30879,6 +31004,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31429,6 +31555,7 @@ The latter is preferable in case of large GeoJSON files.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31679,6 +31806,7 @@ values specified in code.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31852,6 +31980,7 @@ or any type information we could infer from annotations.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -32217,6 +32346,7 @@ iterator destructure (RestElement)",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -34903,6 +35033,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -35101,6 +35232,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35210,6 +35342,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35357,6 +35490,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -35376,6 +35510,7 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35575,6 +35710,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -35695,6 +35831,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -35714,6 +35851,7 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35816,6 +35954,7 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -36435,6 +36574,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -36820,6 +36960,7 @@ plus 3.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -37083,6 +37224,7 @@ plus 3.",
       "name": "Function",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
 ]
 `;
@@ -37741,6 +37883,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -38178,6 +38321,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -38508,6 +38652,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38566,6 +38711,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38624,6 +38770,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38682,6 +38829,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -38701,6 +38849,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -38792,6 +38941,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38850,6 +39000,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38908,6 +39059,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38966,6 +39118,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -38985,6 +39138,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39036,6 +39190,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39087,6 +39242,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -39285,6 +39441,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39393,6 +39550,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -39526,6 +39684,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39666,6 +39825,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -39698,6 +39858,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39838,6 +39999,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -39870,6 +40032,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -40285,6 +40448,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -40538,6 +40702,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
