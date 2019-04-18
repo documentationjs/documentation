@@ -72,6 +72,14 @@ test('parse - @arg', function() {});
 
 test('parse - @argument', function() {});
 
+test('parse - @async', function() {
+  expect(
+    evaluate(function() {
+      /** @async */
+    })[0].async
+  ).toBe(true);
+});
+
 test('parse - @augments', function() {
   expect(
     evaluate(function() {

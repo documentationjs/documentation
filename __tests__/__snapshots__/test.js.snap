@@ -9823,6 +9823,7 @@ It takes a ",
     "todos": Array [],
   },
   Object {
+    "async": true,
     "augments": Array [],
     "context": Object {
       "loc": Object {
