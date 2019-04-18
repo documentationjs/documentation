@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.0.0"></a>
+# [10.0.0](https://github.com/documentationjs/documentation/compare/v10.0.0-alpha.0...v10.0.0) (2019-04-18)
+
+
+### Features
+
+* Add flow inference for generators ([7947e97](https://github.com/documentationjs/documentation/commit/7947e97))
+* Support async functions ([d31c3b7](https://github.com/documentationjs/documentation/commit/d31c3b7))
+* Support classPrivateProperties in parser ([64ef671](https://github.com/documentationjs/documentation/commit/64ef671)), closes [#1216](https://github.com/documentationjs/documentation/issues/1216)
+* Support generator functions ([8e3cd47](https://github.com/documentationjs/documentation/commit/8e3cd47))
+
+
+
 <a name="10.0.0-alpha.0"></a>
 # [10.0.0-alpha.0](https://github.com/documentationjs/documentation/compare/v9.3.1...v10.0.0-alpha.0) (2019-03-12)
 
