@@ -41,4 +41,26 @@ test('inferReturn', function() {
     name: 'string',
     type: 'NameExpression'
   });
+  const generatorFn = evaluate(
+    '/** */function *a(): Generator<Foo, Bar, Baz> {}'
+  );
+  expect(generatorFn.generator).toBe(true);
+  expect(generatorFn.yields).toEqual([
+    {
+      title: 'yields',
+      type: {
+        name: 'Foo',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+  expect(generatorFn.returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        name: 'Bar',
+        type: 'NameExpression'
+      }
+    }
+  ]);
 });

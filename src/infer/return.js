@@ -30,10 +30,27 @@ function inferReturn(comment) {
   }
 
   if (t.isFunction(fn) && fn.returnType && fn.returnType.typeAnnotation) {
-    const returnType = flowDoctrine(fn.returnType.typeAnnotation);
+    let returnType = flowDoctrine(fn.returnType.typeAnnotation);
     if (comment.returns && comment.returns.length > 0) {
       comment.returns[0].type = returnType;
     } else {
+      if (
+        fn.generator &&
+        returnType.type === 'TypeApplication' &&
+        returnType.expression.name === 'Generator' &&
+        returnType.applications.length === 3
+      ) {
+        comment.generator = true;
+        comment.yields = [
+          {
+            title: 'yields',
+            type: returnType.applications[0]
+          }
+        ];
+
+        returnType = returnType.applications[1];
+      }
+
       comment.returns = [
         {
           title: 'returns',
