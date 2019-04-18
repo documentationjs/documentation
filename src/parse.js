@@ -158,6 +158,7 @@ const flatteners = {
   fires: todo,
   func: synonym('function'),
   function: flattenKindShorthand,
+  generator: flattenBoolean,
   /**
    * Parse tag
    * @private
@@ -401,7 +402,27 @@ const flatteners = {
     result.variation = tag.variation;
   },
   version: flattenDescription,
-  virtual: synonym('abstract')
+  virtual: synonym('abstract'),
+  yield: synonym('yields'),
+  /**
+   * Parse tag
+   * @private
+   * @param {Object} result target comment
+   * @param {Object} tag the tag
+   * @returns {undefined} has side-effects
+   */
+  yields(result, tag) {
+    const yields = {
+      description: parseMarkdown(tag.description),
+      title: 'yields'
+    };
+
+    if (tag.type) {
+      yields.type = tag.type;
+    }
+
+    result.yields.push(yields);
+  }
 };
 
 /**
@@ -593,6 +614,7 @@ function parseJSDoc(comment, loc, context) {
   result.sees = [];
   result.throws = [];
   result.todos = [];
+  result.yields = [];
 
   if (result.description) {
     result.description = parseMarkdown(result.description);

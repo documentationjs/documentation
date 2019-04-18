@@ -89,6 +89,13 @@ test('inferKind', function() {
   expect(asyncFunction.kind).toBe('function');
   expect(asyncFunction.async).toBe(true);
 
+  const generatorFunction = inferKind(
+    toComment('/** Generator function */' + 'function *foo() {}')
+  );
+
+  expect(generatorFunction.kind).toBe('function');
+  expect(generatorFunction.generator).toBe(true);
+
   expect(
     inferKind(toComment('class Foo { /** set b */ set b(v) { } }')).kind
   ).toBe('member');
@@ -110,6 +117,12 @@ test('inferKind', function() {
   );
   expect(asyncMethod.kind).toBe('function');
   expect(asyncMethod.async).toBe(true);
+
+  const generatorMethod = inferKind(
+    toComment('class Foo { /** b */ *b(v) { } }')
+  );
+  expect(generatorMethod.kind).toBe('function');
+  expect(generatorMethod.generator).toBe(true);
 
   expect(
     inferKind(

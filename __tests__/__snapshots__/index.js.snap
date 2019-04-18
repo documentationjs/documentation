@@ -90,6 +90,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -177,6 +178,7 @@ exports[`build 3`] = `
     \\"sees\\": [],
     \\"throws\\": [],
     \\"todos\\": [],
+    \\"yields\\": [],
     \\"name\\": \\"name\\",
     \\"members\\": {
       \\"global\\": [],

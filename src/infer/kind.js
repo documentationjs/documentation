@@ -28,6 +28,9 @@ function inferKind(comment) {
         if (node.async) {
           comment.async = true;
         }
+        if (node.generator) {
+          comment.generator = true;
+        }
       }
     } else if (t.isTypeAlias(node)) {
       comment.kind = 'typedef';
