@@ -82,13 +82,12 @@ test('inferKind', function() {
     ).kind
   ).toBe('function');
 
-  expect(
-    inferKind(
-      toComment(
-        '/** Export default function */' + 'export default function foo() {}'
-      )
-    ).kind
-  ).toBe('function');
+  const asyncFunction = inferKind(
+    toComment('/** Async function */' + 'async function foo() {}')
+  );
+
+  expect(asyncFunction.kind).toBe('function');
+  expect(asyncFunction.async).toBe(true);
 
   expect(
     inferKind(toComment('class Foo { /** set b */ set b(v) { } }')).kind
@@ -105,6 +104,12 @@ test('inferKind', function() {
   expect(inferKind(toComment('class Foo { /** b */ b(v) { } }')).kind).toBe(
     'function'
   );
+
+  const asyncMethod = inferKind(
+    toComment('class Foo { /** b */ async b(v) { } }')
+  );
+  expect(asyncMethod.kind).toBe('function');
+  expect(asyncMethod.async).toBe(true);
 
   expect(
     inferKind(
