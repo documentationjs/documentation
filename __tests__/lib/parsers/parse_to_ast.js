@@ -18,6 +18,6 @@ describe('flow comments', () => {
   });
 
   test('valid js', () => {
-    expect(() => parseToAst(src)).not.toThrowError();
+    expect(() => parseToAst(src, 'test.js')).not.toThrowError();
   });
 });

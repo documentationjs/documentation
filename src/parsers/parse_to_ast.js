@@ -1,27 +1,35 @@
 const babelParser = require('@babel/parser');
+const path = require('path');
 
-const opts = {
-  allowImportExportEverywhere: true,
-  sourceType: 'module',
-  plugins: [
-    'asyncGenerators',
-    'exportDefaultFrom',
-    'optionalChaining',
-    'classConstructorCall',
-    'classPrivateProperties',
-    'classProperties',
-    ['decorators', { decoratorsBeforeExport: false }],
-    'doExpressions',
-    'exportExtensions',
-    'flow',
-    'functionBind',
-    'functionSent',
-    'jsx',
-    'objectRestSpread',
-    'dynamicImport',
-    'logicalAssignment'
-  ]
+const TYPESCRIPT_EXTS = {
+  '.ts': true,
+  '.tsx': true
 };
+
+function getParserOpts(file) {
+  return {
+    allowImportExportEverywhere: true,
+    sourceType: 'module',
+    plugins: [
+      'asyncGenerators',
+      'exportDefaultFrom',
+      'optionalChaining',
+      'classConstructorCall',
+      'classPrivateProperties',
+      'classProperties',
+      ['decorators', { decoratorsBeforeExport: false }],
+      'doExpressions',
+      'exportExtensions',
+      TYPESCRIPT_EXTS[path.extname(file || '')] ? 'typescript' : 'flow',
+      'functionBind',
+      'functionSent',
+      'jsx',
+      'objectRestSpread',
+      'dynamicImport',
+      'logicalAssignment'
+    ]
+  };
+}
 
 /**
  * Convert flow comment types into flow annotations so that
@@ -37,8 +45,8 @@ function commentToFlow(source) {
     .replace(/\/\*:\s*([^]+?)\s*\*\//g, ':$1');
 }
 
-function parseToAst(source) {
-  return babelParser.parse(commentToFlow(source), opts);
+function parseToAst(source, file) {
+  return babelParser.parse(commentToFlow(source), getParserOpts(file));
 }
 module.exports.commentToFlow = commentToFlow;
 module.exports.parseToAst = parseToAst;
