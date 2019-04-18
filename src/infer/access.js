@@ -1,3 +1,5 @@
+const t = require('@babel/types');
+
 /**
  * Given a string with a pattern that might infer access level, like `^_`,
  * create an inference method.
@@ -17,6 +19,12 @@ function inferAccessWithPattern(pattern) {
    * @returns {Object} comment with access inferred
    */
   return function inferAccess(comment) {
+    // Support typescript access modifiers
+    const ast = comment.context.ast;
+    if (ast && ast.isClassMethod() && ast.node.accessibility) {
+      comment.access = ast.node.accessibility;
+    }
+
     // This needs to run after inferName beacuse we infer the access based on
     // the name.
     if (
