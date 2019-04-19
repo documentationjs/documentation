@@ -38,9 +38,9 @@ function inferKind(comment) {
           comment.abstract = true;
         }
       }
-    } else if (t.isTypeAlias(node)) {
+    } else if (t.isTypeAlias(node) || t.isTSTypeAliasDeclaration(node)) {
       comment.kind = 'typedef';
-    } else if (t.isInterfaceDeclaration(node)) {
+    } else if (t.isInterfaceDeclaration(node) || t.isTSInterfaceDeclaration(node)) {
       comment.kind = 'interface';
     } else if (t.isVariableDeclaration(node)) {
       if (node.kind === 'const') {
@@ -64,6 +64,8 @@ function inferKind(comment) {
     } else if (t.isProperty(node)) {
       // { foo: function() {} }
       findKind(node.value);
+    } else if (t.isTSModuleDeclaration(node)) {
+      comment.kind = 'namespace';
     }
   }
 

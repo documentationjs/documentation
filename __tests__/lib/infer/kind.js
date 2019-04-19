@@ -68,6 +68,11 @@ test('inferKind', function() {
   ).toBe('interface');
 
   expect(
+    inferKind(toComment('/** Exported interface */' + 'interface myinter {}', 'test.ts'))
+      .kind
+  ).toBe('interface');
+
+  expect(
     inferKind(
       toComment(
         '/** Exported interface */' + 'module.exports.foo = function() {}'
@@ -167,4 +172,30 @@ test('inferKind', function() {
       )
     ).kind
   ).toBe('constant');
+
+  expect(
+    inferKind(
+      toComment(
+        '/** */' + 'type Foo = string'
+      )
+    ).kind
+  ).toBe('typedef');
+
+  expect(
+    inferKind(
+      toComment(
+        '/** */' + 'type Foo = string',
+        'test.ts'
+      )
+    ).kind
+  ).toBe('typedef');
+
+  const namespace = inferKind(
+    toComment(
+      '/** */ namespace Test { /** */ export function foo() {} }',
+      'test.ts'
+    )
+  );
+
+  expect(namespace.kind).toBe('namespace');
 });
