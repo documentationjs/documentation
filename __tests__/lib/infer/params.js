@@ -203,3 +203,46 @@ test('inferParams', function() {
     ).params
   ).toMatchSnapshot();
 });
+
+test('inferParams (typescript)', function() {
+  expect(
+    evaluate(`/** Test */function f(a: string) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f([a: string, b, {c}]) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test
+     * @param x
+    */
+    function f(x: number = 4) {}
+  `
+  , 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test */
+    function f(opts: { x: string }) {}
+  ` , 'test.ts'
+    ).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test */
+    function f(opts: { [foo]: string }) {}
+  ` , 'test.ts'
+    ).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(...a: string) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+});

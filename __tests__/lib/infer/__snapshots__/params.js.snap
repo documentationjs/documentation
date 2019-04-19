@@ -1,5 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`inferParams (typescript) 1`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "name": "string",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 2`] = `
+Array [
+  Object {
+    "anonymous": true,
+    "name": "$0",
+    "properties": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "$0.0",
+        "title": "param",
+        "type": Object {
+          "name": "string",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "lineNumber": 1,
+        "name": "$0.1",
+        "title": "param",
+      },
+      Object {
+        "anonymous": true,
+        "name": "$0.2",
+        "properties": Array [
+          Object {
+            "lineNumber": 1,
+            "name": "$0.2.c",
+            "title": "param",
+          },
+        ],
+        "title": "param",
+        "type": Object {
+          "name": "Object",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "title": "param",
+    "type": Object {
+      "name": "Array",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 3`] = `
+Array [
+  Object {
+    "default": "4",
+    "lineNumber": 1,
+    "name": "x",
+    "title": "param",
+    "type": Object {
+      "name": "number",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 4`] = `
+Array [
+  Object {
+    "lineNumber": 3,
+    "name": "opts",
+    "title": "param",
+    "type": Object {
+      "fields": Array [
+        Object {
+          "key": "x",
+          "type": "FieldType",
+          "value": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+        },
+      ],
+      "type": "RecordType",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 5`] = `
+Array [
+  Object {
+    "lineNumber": 3,
+    "name": "opts",
+    "title": "param",
+    "type": Object {
+      "fields": Array [
+        Object {
+          "key": "foo",
+          "type": "FieldType",
+          "value": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+        },
+      ],
+      "type": "RecordType",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 6`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+      "type": "RestType",
+    },
+  },
+]
+`;
+
 exports[`inferParams 1`] = `
 Array [
   Object {
