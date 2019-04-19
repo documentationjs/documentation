@@ -49,7 +49,17 @@ function inferParams(comment) {
 }
 
 function inferAndCombineParams(params, comment) {
-  const inferredParams = params.map((param, i) => paramToDoc(param, '', i));
+  const inferredParams = params.map((param, i) => {
+    const doc = paramToDoc(param, '', i);
+    if (param.optional) {
+      return {
+        type: 'OptionalType',
+        expression: doc
+      };
+    }
+
+    return doc;
+  });
   const paramsToMerge = comment.params;
   if (comment.constructorComment) {
     paramsToMerge.push.apply(paramsToMerge, comment.constructorComment.params);
