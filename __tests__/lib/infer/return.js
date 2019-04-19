@@ -12,11 +12,11 @@ function toComment(fn, filename) {
   )[0];
 }
 
-function evaluate(code) {
-  return inferReturn(toComment(code));
+function evaluate(code, filename) {
+  return inferReturn(toComment(code, filename));
 }
 
-test('inferReturn', function() {
+test('inferReturn (flow)', function() {
   expect(evaluate('/** */function a(): number {}').returns).toEqual([
     {
       title: 'returns',
@@ -60,6 +60,55 @@ test('inferReturn', function() {
       type: {
         name: 'Bar',
         type: 'NameExpression'
+      }
+    }
+  ]);
+});
+
+test('inferReturn (typescript)', function() {
+  expect(evaluate('/** */function a(): number {}', 'test.ts').returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        name: 'number',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+  expect(evaluate('/** */var a = function(): number {}', 'test.ts').returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        name: 'number',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+  expect(
+    evaluate('/** @returns {string} */function a(): number {}', 'test.ts').returns[0].type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+  const generatorFn = evaluate(
+    '/** */function *a(): IterableIterator<Foo> {}',
+    'test.ts'
+  );
+  expect(generatorFn.generator).toBe(true);
+  expect(generatorFn.yields).toEqual([
+    {
+      title: 'yields',
+      type: {
+        name: 'Foo',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+  expect(generatorFn.returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        type: 'VoidLiteral'
       }
     }
   ]);

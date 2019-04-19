@@ -1,6 +1,20 @@
 const findTarget = require('./finders').findTarget;
 const t = require('@babel/types');
-const typeAnnotation = require('../flow_doctrine');
+const typeAnnotation = require('../type_annotation');
+
+// TypeScript does not currently support typing the return value of a generator function.
+// This is coming in TypeScript 3.3 - https://github.com/Microsoft/TypeScript/pull/30790
+const TS_GENERATORS = {
+  Iterator: 1,
+  Iterable: 1,
+  IterableIterator: 1
+};
+
+const FLOW_GENERATORS = {
+  Iterator: 1,
+  Iterable: 1,
+  Generator: 3
+};
 
 /**
  * Infers returns tags by using Flow return type annotations
@@ -29,26 +43,37 @@ function inferReturn(comment) {
     fn = fn.init;
   }
 
-  if (t.isFunction(fn) && fn.returnType && fn.returnType.typeAnnotation) {
-    let returnType = typeAnnotation(fn.returnType.typeAnnotation);
+  if (t.isFunction(fn) && fn.returnType) {
+    let returnType = typeAnnotation(fn.returnType);
     if (comment.returns && comment.returns.length > 0) {
       comment.returns[0].type = returnType;
     } else {
-      if (
-        fn.generator &&
-        returnType.type === 'TypeApplication' &&
-        returnType.expression.name === 'Generator' &&
-        returnType.applications.length === 3
-      ) {
+      if (fn.generator && returnType.type === 'TypeApplication') {
         comment.generator = true;
-        comment.yields = [
-          {
-            title: 'yields',
-            type: returnType.applications[0]
-          }
-        ];
+        let numArgs;
 
-        returnType = returnType.applications[1];
+        if (t.isFlow(fn.returnType)) {
+          numArgs = FLOW_GENERATORS[returnType.expression.name];
+        } else if (t.isTSTypeAnnotation(fn.returnType)) {
+          numArgs = TS_GENERATORS[returnType.expression.name];
+        }
+
+        if (returnType.applications.length === numArgs) {
+          comment.yields = [
+            {
+              title: 'yields',
+              type: returnType.applications[0]
+            }
+          ];
+  
+          if (numArgs > 1) {
+            returnType = returnType.applications[1];
+          } else {
+            returnType = {
+              type: 'VoidLiteral'
+            };
+          }
+        }
       }
 
       comment.returns = [
