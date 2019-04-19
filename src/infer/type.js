@@ -47,6 +47,9 @@ function inferType(comment) {
     case 'TypeAlias':
       type = n.right;
       break;
+    case 'TSTypeAliasDeclaration':
+      type = n.typeAnnotation;
+      break;
   }
   if (type) {
     comment.type = typeAnnotation(type);

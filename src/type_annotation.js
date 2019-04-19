@@ -3,15 +3,19 @@ const flowDoctrine = require('./flow_doctrine');
 const tsDoctrine = require('./ts_doctrine');
 
 function typeAnnotation(type) {
-  if (t.isTSTypeAnnotation(type)) {
-    return tsDoctrine(type.typeAnnotation);
+  if (t.isFlow(type)) {
+    if (t.isTypeAnnotation(type)) {
+      type = type.typeAnnotation;
+    }
+  
+    return flowDoctrine(type);  
   }
   
-  if (t.isTypeAnnotation(type)) {
+  if (t.isTSTypeAnnotation(type)) {
     type = type.typeAnnotation;
   }
 
-  return flowDoctrine(type);
+  return tsDoctrine(type);
 }
 
 module.exports = typeAnnotation;
