@@ -1,5 +1,3 @@
-const t = require('@babel/types');
-
 /**
  * Given a string with a pattern that might infer access level, like `^_`,
  * create an inference method.

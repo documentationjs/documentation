@@ -1,6 +1,5 @@
 const findTarget = require('./finders').findTarget;
 const typeAnnotation = require('../type_annotation');
-const t = require('@babel/types');
 
 const constTypeMapping = {
   BooleanLiteral: { type: 'BooleanTypeAnnotation' },
