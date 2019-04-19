@@ -12,7 +12,7 @@ function inferAccessWithPattern(pattern) {
   const re = pattern && new RegExp(pattern);
 
   /**
-   * Infers access (only private atm) from the name.
+   * Infers access from TypeScript annotations, and from the name (only private atm).
    *
    * @name inferAccess
    * @param {Object} comment parsed comment
@@ -23,6 +23,10 @@ function inferAccessWithPattern(pattern) {
     const ast = comment.context.ast;
     if (ast && ast.isClassMethod() && ast.node.accessibility) {
       comment.access = ast.node.accessibility;
+    }
+
+    if (ast && ast.node.readonly) {
+      comment.readonly = true;
     }
 
     // This needs to run after inferName beacuse we infer the access based on

@@ -71,4 +71,22 @@ test('inferAccess', function() {
       }
     `, '_$', 'test.ts').access
   ).toBe('public');
+
+  expect(
+    evaluate(`
+      class Test {
+        /** */
+        readonly name: string;
+      }
+    `, '_$', 'test.ts').readonly
+  ).toBe(true);
+
+  expect(
+    evaluate(`
+      interface Test {
+        /** */
+        readonly name: string;
+      }
+    `, '_$', 'test.ts').readonly
+  ).toBe(true);
 });

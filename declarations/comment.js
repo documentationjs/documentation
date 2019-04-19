@@ -68,7 +68,8 @@ type CommentTag = {
   default?: any,
   lineNumber?: number,
   type?: DoctrineType,
-  properties?: Array<CommentTag>
+  properties?: Array<CommentTag>,
+  readonly?: boolean
 };
 
 type Comment = {
@@ -98,6 +99,7 @@ type Comment = {
   memberof?: string,
   scope?: Scope,
   access?: Access,
+  readonly?: boolean,
   alias?: string,
 
   copyright?: string,
