@@ -38,6 +38,10 @@ test('inferKind', function() {
     ).kind
   ).toBe('class');
 
+  const abstractClass = inferKind(toComment('/** */ abstract class C {}', 'test.ts'));
+  expect(abstractClass.kind).toBe('class');
+  expect(abstractClass.abstract).toBe(true);
+
   expect(
     inferKind(
       toComment(function() {
@@ -123,6 +127,10 @@ test('inferKind', function() {
   );
   expect(generatorMethod.kind).toBe('function');
   expect(generatorMethod.generator).toBe(true);
+
+  const abstractMethod = inferKind(toComment('abstract class C { /** */ abstract foo() {} }', 'test.ts'));
+  expect(abstractMethod.kind).toBe('function');
+  expect(abstractMethod.abstract).toBe(true);
 
   expect(
     inferKind(

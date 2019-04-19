@@ -18,6 +18,9 @@ function inferKind(comment) {
 
     if (t.isClassDeclaration(node)) {
       comment.kind = 'class';
+      if (node.abstract) {
+        comment.abstract = true;
+      }
     } else if (t.isFunction(node)) {
       if (node.kind === 'get' || node.kind === 'set') {
         comment.kind = 'member';
@@ -30,6 +33,9 @@ function inferKind(comment) {
         }
         if (node.generator) {
           comment.generator = true;
+        }
+        if (node.abstract) {
+          comment.abstract = true;
         }
       }
     } else if (t.isTypeAlias(node)) {

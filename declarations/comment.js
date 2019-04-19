@@ -100,6 +100,7 @@ type Comment = {
   scope?: Scope,
   access?: Access,
   readonly?: boolean,
+  abstract?: boolean,
   alias?: string,
 
   copyright?: string,
