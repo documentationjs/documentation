@@ -2,7 +2,7 @@ const t = require('@babel/types');
 const generate = require('@babel/generator').default;
 const _ = require('lodash');
 const finders = require('./finders');
-const flowDoctrine = require('../flow_doctrine');
+const typeAnnotation = require('../type_annotation');
 
 /**
  * Infers param tags by reading function parameter names
@@ -129,7 +129,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -145,7 +145,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: prefixedName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -169,7 +169,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param)) || {
             type: 'NameExpression',
             name: 'Array'
           },
@@ -211,7 +211,7 @@ function paramToDoc(param, prefix, i) {
         type: 'RestType'
       };
       if (param.typeAnnotation) {
-        type.expression = flowDoctrine(param.typeAnnotation.typeAnnotation);
+        type.expression = typeAnnotation(param.typeAnnotation);
       }
       return {
         title: 'param',
@@ -230,7 +230,7 @@ function paramToDoc(param, prefix, i) {
 
       // Flow/TS annotations
       if (param.typeAnnotation && param.typeAnnotation.typeAnnotation) {
-        newParam.type = flowDoctrine(param.typeAnnotation.typeAnnotation);
+        newParam.type = typeAnnotation(param.typeAnnotation.typeAnnotation);
       }
 
       return newParam;

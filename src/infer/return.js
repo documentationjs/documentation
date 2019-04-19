@@ -1,6 +1,6 @@
 const findTarget = require('./finders').findTarget;
 const t = require('@babel/types');
-const flowDoctrine = require('../flow_doctrine');
+const typeAnnotation = require('../flow_doctrine');
 
 /**
  * Infers returns tags by using Flow return type annotations
@@ -30,7 +30,7 @@ function inferReturn(comment) {
   }
 
   if (t.isFunction(fn) && fn.returnType && fn.returnType.typeAnnotation) {
-    let returnType = flowDoctrine(fn.returnType.typeAnnotation);
+    let returnType = typeAnnotation(fn.returnType.typeAnnotation);
     if (comment.returns && comment.returns.length > 0) {
       comment.returns[0].type = returnType;
     } else {

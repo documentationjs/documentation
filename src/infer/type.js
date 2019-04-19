@@ -1,6 +1,5 @@
 const findTarget = require('./finders').findTarget;
-const flowDoctrine = require('../flow_doctrine');
-const tsDoctrine = require('../ts_doctrine');
+const typeAnnotation = require('../type_annotation');
 const t = require('@babel/types');
 
 const constTypeMapping = {
@@ -50,15 +49,7 @@ function inferType(comment) {
       break;
   }
   if (type) {
-    if (t.isTSTypeAnnotation(type)) {
-      comment.type = tsDoctrine(type.typeAnnotation);
-    } else {
-      if (t.isTypeAnnotation(type)) {
-        type = type.typeAnnotation;
-      }
-
-      comment.type = flowDoctrine(type);
-    }
+    comment.type = typeAnnotation(type);
   }
   return comment;
 }

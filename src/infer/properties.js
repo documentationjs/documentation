@@ -1,4 +1,4 @@
-const flowDoctrine = require('../flow_doctrine');
+const typeAnnotation = require('../type_annotation');
 const findTarget = require('./finders').findTarget;
 
 function prefixedName(name, prefix) {
@@ -9,7 +9,8 @@ function prefixedName(name, prefix) {
 }
 
 function propertyToDoc(property, prefix) {
-  let type = flowDoctrine(property.value);
+  const value = property.value || property.typeAnnotation;
+  let type = typeAnnotation(value);
   const name = property.key.name || property.key.value;
   if (property.optional) {
     type = {
@@ -38,15 +39,19 @@ function inferProperties(comment) {
   comment.properties.forEach(prop => explicitProperties.add(prop.name));
 
   function inferProperties(value, prefix) {
-    if (value.type === 'ObjectTypeAnnotation') {
-      value.properties.forEach(function(property) {
+    if (value.type === 'ObjectTypeAnnotation' || value.type === 'TSTypeLiteral' || 'TSInterfaceBody') {
+      const properties = value.properties || value.members || value.body || [];
+      properties.forEach(function(property) {
         if (!explicitProperties.has(prefixedName(property.key.name, prefix))) {
           comment.properties = comment.properties.concat(
             propertyToDoc(property, prefix)
           );
+
           // Nested type parameters
-          if (property.value.type === 'ObjectTypeAnnotation') {
+          if (property.value && property.value.type === 'ObjectTypeAnnotation') {
             inferProperties(property.value, prefix.concat(property.key.name));
+          } else if (property.typeAnnotation && property.typeAnnotation.type === 'TSTypeAnnotation' && property.typeAnnotation.typeAnnotation.type === 'TSTypeLiteral') {
+            inferProperties(property.typeAnnotation.typeAnnotation, prefix.concat(property.key.name));
           }
         }
       });
@@ -59,6 +64,10 @@ function inferProperties(comment) {
     if (path.isTypeAlias()) {
       inferProperties(path.node.right, []);
     } else if (path.isInterfaceDeclaration()) {
+      inferProperties(path.node.body, []);
+    } else if (path.isTSTypeAliasDeclaration()) {
+      inferProperties(path.node.typeAnnotation, []);
+    } else if (path.isTSInterfaceDeclaration()) {
       inferProperties(path.node.body, []);
     }
   }
