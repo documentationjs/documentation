@@ -245,7 +245,12 @@ Array [
       },
       "type": "root",
     },
-    "errors": Array [],
+    "errors": Array [
+      Object {
+        "commentLineNumber": 0,
+        "message": "@memberof reference to .props not found",
+      },
+    ],
     "examples": Array [],
     "implements": Array [],
     "loc": SourceLocation {
@@ -258,6 +263,7 @@ Array [
         "line": 10,
       },
     },
+    "memberof": ".props",
     "members": Object {
       "events": Array [],
       "global": Array [],
@@ -266,16 +272,18 @@ Array [
       "static": Array [],
     },
     "name": "myNumber",
-    "namespace": "myNumber",
+    "namespace": ".myNumber",
     "params": Array [],
     "path": Array [
       Object {
         "kind": undefined,
         "name": "myNumber",
+        "scope": "static",
       },
     ],
     "properties": Array [],
     "returns": Array [],
+    "scope": "static",
     "sees": Array [],
     "tags": Array [],
     "throws": Array [],
@@ -293,7 +301,7 @@ Array [
       "loc": SourceLocation {
         "end": Position {
           "column": 1,
-          "line": 19,
+          "line": 20,
         },
         "start": Position {
           "column": 0,
@@ -465,12 +473,12 @@ Array [
     "context": Object {
       "loc": SourceLocation {
         "end": Position {
-          "column": 3,
-          "line": 17,
+          "column": 1,
+          "line": 19,
         },
         "start": Position {
-          "column": 2,
-          "line": 14,
+          "column": 0,
+          "line": 10,
         },
       },
     },
@@ -481,9 +489,9 @@ Array [
             Object {
               "position": Position {
                 "end": Object {
-                  "column": 17,
+                  "column": 6,
                   "line": 1,
-                  "offset": 16,
+                  "offset": 5,
                 },
                 "indent": Array [],
                 "start": Object {
@@ -493,14 +501,14 @@ Array [
                 },
               },
               "type": "text",
-              "value": "This is a number",
+              "value": "props",
             },
           ],
           "position": Position {
             "end": Object {
-              "column": 17,
+              "column": 6,
               "line": 1,
-              "offset": 16,
+              "offset": 5,
             },
             "indent": Array [],
             "start": Object {
@@ -514,9 +522,9 @@ Array [
       ],
       "position": Object {
         "end": Object {
-          "column": 17,
+          "column": 6,
           "line": 1,
-          "offset": 16,
+          "offset": 5,
         },
         "start": Object {
           "column": 1,
@@ -526,37 +534,157 @@ Array [
       },
       "type": "root",
     },
-    "errors": Array [],
+    "errors": Array [
+      Object {
+        "commentLineNumber": 0,
+        "message": "@memberof reference to vue.input not found",
+      },
+    ],
     "examples": Array [],
     "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
-        "column": 5,
-        "line": 13,
+        "column": 12,
+        "line": 9,
       },
       "start": Position {
-        "column": 2,
-        "line": 11,
+        "column": 0,
+        "line": 9,
       },
     },
+    "memberof": "vue.input",
     "members": Object {
       "events": Array [],
       "global": Array [],
       "inner": Array [],
       "instance": Array [],
-      "static": Array [],
+      "static": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 3,
+                "line": 18,
+              },
+              "start": Position {
+                "column": 2,
+                "line": 15,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Position {
+                      "end": Object {
+                        "column": 17,
+                        "line": 1,
+                        "offset": 16,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is a number",
+                  },
+                ],
+                "position": Position {
+                  "end": Object {
+                    "column": 17,
+                    "line": 1,
+                    "offset": 16,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 17,
+                "line": 1,
+                "offset": 16,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "implements": Array [],
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 5,
+              "line": 14,
+            },
+            "start": Position {
+              "column": 2,
+              "line": 12,
+            },
+          },
+          "memberof": "vue.input.props",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "myNumber",
+          "namespace": ".props.myNumber",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": undefined,
+              "name": "props",
+              "scope": "static",
+            },
+            Object {
+              "kind": undefined,
+              "name": "myNumber",
+              "scope": "static",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "static",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "yields": Array [],
+        },
+      ],
     },
-    "name": "myNumber",
-    "namespace": "myNumber",
+    "name": "props",
+    "namespace": ".props",
     "params": Array [],
     "path": Array [
       Object {
         "kind": undefined,
-        "name": "myNumber",
+        "name": "props",
+        "scope": "static",
       },
     ],
     "properties": Array [],
     "returns": Array [],
+    "scope": "static",
     "sees": Array [],
     "tags": Array [],
     "throws": Array [],
