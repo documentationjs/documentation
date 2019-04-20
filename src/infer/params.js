@@ -163,7 +163,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -179,7 +179,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: prefixedName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -203,7 +203,7 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param)) || {
+          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Array'
           },
