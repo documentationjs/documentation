@@ -494,7 +494,13 @@ test('parse - @ignore', function() {
   ).toBe(true);
 });
 
-test('parse - @implements', function() {});
+test('parse - @implements', function() {
+  expect(
+    evaluate(function() {
+      /** @implements {Foo} */
+    })[0].implements[0].name
+  ).toEqual('Foo');
+});
 
 test('parse - @inheritdoc', function() {});
 

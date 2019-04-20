@@ -74,6 +74,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 3,
@@ -246,6 +247,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 7,
@@ -353,6 +355,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 3,
@@ -525,6 +528,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 5,
@@ -768,6 +772,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -871,6 +876,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -1044,6 +1050,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -1226,6 +1233,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -2899,6 +2907,7 @@ Array [
 // result is 6",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -3150,6 +3159,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -3277,6 +3287,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -3499,11 +3510,11 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 8,
+          "line": 9,
         },
         "start": Object {
           "column": 0,
-          "line": 6,
+          "line": 7,
         },
       },
     },
@@ -3561,11 +3572,23 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [
+      Object {
+        "description": null,
+        "lineNumber": 3,
+        "name": "MyInterface",
+        "title": "implements",
+        "type": Object {
+          "name": "MyInterface",
+          "type": "NameExpression",
+        },
+      },
+    ],
     "kind": "class",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 5,
+        "line": 6,
       },
       "start": Object {
         "column": 0,
@@ -3583,11 +3606,11 @@ Array [
             "loc": Object {
               "end": Object {
                 "column": 2,
-                "line": 17,
+                "line": 18,
               },
               "start": Object {
                 "column": 0,
-                "line": 15,
+                "line": 16,
               },
             },
           },
@@ -3645,15 +3668,16 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
               "column": 3,
-              "line": 14,
+              "line": 15,
             },
             "start": Object {
               "column": 0,
-              "line": 10,
+              "line": 11,
             },
           },
           "memberof": "MyClass",
@@ -3835,11 +3859,11 @@ Array [
             "loc": Object {
               "end": Object {
                 "column": 47,
-                "line": 23,
+                "line": 24,
               },
               "start": Object {
                 "column": 0,
-                "line": 23,
+                "line": 24,
               },
             },
           },
@@ -3897,15 +3921,16 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
               "column": 3,
-              "line": 22,
+              "line": 23,
             },
             "start": Object {
               "column": 0,
-              "line": 19,
+              "line": 20,
             },
           },
           "memberof": "MyClass",
@@ -4073,7 +4098,7 @@ Array [
           },
           "type": "root",
         },
-        "lineNumber": 3,
+        "lineNumber": 4,
         "name": "howMany",
         "title": "property",
         "type": Object {
@@ -4093,8 +4118,18 @@ Array [
         "type": null,
       },
       Object {
-        "description": "how many things it contains",
+        "description": null,
         "lineNumber": 3,
+        "name": "MyInterface",
+        "title": "implements",
+        "type": Object {
+          "name": "MyInterface",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "description": "how many things it contains",
+        "lineNumber": 4,
         "name": "howMany",
         "title": "property",
         "type": Object {
@@ -4653,6 +4688,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -4761,6 +4797,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -4925,6 +4962,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -4958,6 +4996,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5037,6 +5076,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -5095,6 +5135,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -5128,6 +5169,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5187,6 +5229,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5246,6 +5289,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5313,6 +5357,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5372,6 +5417,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5431,6 +5477,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5525,6 +5572,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -5581,6 +5629,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 18,
@@ -5682,6 +5731,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -5751,6 +5801,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -5784,6 +5835,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5842,6 +5894,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5900,6 +5953,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5964,6 +6018,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 10,
@@ -6020,6 +6075,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -6096,6 +6152,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6148,6 +6205,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6200,6 +6258,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6256,6 +6315,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6312,6 +6372,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6368,6 +6429,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6430,6 +6492,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -6463,6 +6526,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -6590,6 +6654,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6652,6 +6717,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -6685,6 +6751,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -7624,6 +7691,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -7679,6 +7747,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 7,
@@ -7771,6 +7840,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 18,
@@ -7906,6 +7976,7 @@ have any parameter descriptions.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -8046,6 +8117,7 @@ have any parameter descriptions.",
         "description": "destructure([1, 2, 3])",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -8182,6 +8254,7 @@ have any parameter descriptions.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -8458,6 +8531,7 @@ class A {
 }",
       },
     ],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -8542,6 +8616,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -8652,6 +8727,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -8762,6 +8838,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -8895,6 +8972,7 @@ as a property.",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -9007,6 +9085,7 @@ as a property.",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -9289,6 +9368,7 @@ class A {
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9551,6 +9631,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9724,6 +9805,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9836,6 +9918,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9953,6 +10036,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10056,6 +10140,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10229,6 +10314,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10340,6 +10426,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10450,6 +10537,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10559,6 +10647,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -10660,6 +10749,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10839,6 +10929,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -13496,6 +13587,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -13599,6 +13691,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -13683,6 +13776,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 7,
@@ -13846,6 +13940,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -14397,6 +14492,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -14481,6 +14577,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -14605,6 +14702,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -14911,6 +15009,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -15093,6 +15192,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -15272,6 +15372,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -15373,6 +15474,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -15872,6 +15974,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "event",
     "loc": Object {
       "end": Object {
@@ -16444,6 +16547,7 @@ Array [
         "description": "foo(1);",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -16863,6 +16967,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -17064,6 +17169,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -17186,6 +17292,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -17302,6 +17409,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -17648,6 +17756,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -17815,6 +17924,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 9,
@@ -17933,6 +18043,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -18071,6 +18182,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -18586,6 +18698,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -18670,6 +18783,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -18914,6 +19028,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -18966,6 +19081,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -19169,6 +19285,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -19596,6 +19713,7 @@ and ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -20415,6 +20533,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "interface",
     "loc": Object {
       "end": Object {
@@ -20499,6 +20618,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -20613,6 +20733,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -21005,6 +21126,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -21214,6 +21336,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -21298,6 +21421,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 19,
@@ -21406,6 +21530,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -21658,6 +21783,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -22423,6 +22549,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -22546,6 +22673,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -22918,6 +23046,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -23003,6 +23132,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -23257,6 +23387,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -23890,6 +24021,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -24438,6 +24570,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "license": "BSD",
     "loc": Object {
@@ -25310,6 +25443,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -25489,6 +25623,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -26108,6 +26243,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -27122,6 +27258,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -27485,6 +27622,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -28940,6 +29078,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -29290,6 +29429,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -29480,6 +29620,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -29821,6 +29962,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -30033,6 +30175,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -30235,6 +30378,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -30360,6 +30504,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -30444,6 +30589,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -30647,6 +30793,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -30731,6 +30878,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -30903,6 +31051,7 @@ Array [
         "description": "var address = new Address6('2001::/32');",
       },
     ],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -31357,6 +31506,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -31878,6 +32028,7 @@ values specified in code.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -32129,6 +32280,7 @@ or any type information we could infer from annotations.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -32303,6 +32455,7 @@ iterator destructure (RestElement)",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35248,6 +35401,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35447,6 +35601,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35550,6 +35705,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35609,6 +35765,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -35698,6 +35855,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -35828,6 +35986,7 @@ that doesn't crash anything!",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35912,6 +36071,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -36028,6 +36188,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -36169,6 +36330,7 @@ that doesn't crash anything!",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -36719,6 +36881,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -37031,6 +37194,7 @@ plus 3.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -37278,6 +37442,7 @@ plus 3.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -38028,6 +38193,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -38388,6 +38554,7 @@ Array [
 // result is 6",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -38827,6 +38994,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -38860,6 +39028,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38919,6 +39088,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38978,6 +39148,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39037,6 +39208,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39116,6 +39288,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -39149,6 +39322,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39208,6 +39382,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39267,6 +39442,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39326,6 +39502,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -39405,6 +39582,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -39457,6 +39635,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -39649,6 +39828,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -39764,6 +39944,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 5,
@@ -39891,6 +40072,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "module",
     "loc": Object {
       "end": Object {
@@ -39951,6 +40133,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -40035,6 +40218,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 31,
@@ -40125,6 +40309,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -40209,6 +40394,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 36,
@@ -40565,6 +40751,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -40899,6 +41086,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {

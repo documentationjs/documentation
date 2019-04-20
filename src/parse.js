@@ -171,7 +171,14 @@ const flatteners = {
   hideconstructor: flattenBoolean,
   host: synonym('external'),
   ignore: flattenBoolean,
-  implements: todo,
+  implements(result, tag) {
+    // Match @extends/@augments above.
+    if (!tag.name && tag.type && tag.type.name) {
+      tag.name = tag.type.name;
+    }
+
+    result.implements.push(tag);
+  },
   inheritdoc: todo,
   /**
    * Parse tag
@@ -608,6 +615,7 @@ function parseJSDoc(comment, loc, context) {
   result.augments = [];
   result.errors = [];
   result.examples = [];
+  result.implements = [];
   result.params = [];
   result.properties = [];
   result.returns = [];
