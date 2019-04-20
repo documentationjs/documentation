@@ -45,37 +45,47 @@ function inferReturn(comment) {
 
   if ((t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn)) && fn.returnType) {
     let returnType = typeAnnotation(fn.returnType);
+    let yieldsType = null;
+
+    if (fn.generator && returnType.type === 'TypeApplication') {
+      comment.generator = true;
+      let numArgs;
+
+      if (t.isFlow(fn.returnType)) {
+        numArgs = FLOW_GENERATORS[returnType.expression.name];
+      } else if (t.isTSTypeAnnotation(fn.returnType)) {
+        numArgs = TS_GENERATORS[returnType.expression.name];
+      }
+
+      if (returnType.applications.length === numArgs) {
+        yieldsType = returnType.applications[0];
+
+        if (numArgs > 1) {
+          returnType = returnType.applications[1];
+        } else {
+          returnType = {
+            type: 'VoidLiteral'
+          };
+        }
+      }
+    }
+
+    if (yieldsType) {
+      if (comment.yields && comment.yields.length > 0) {
+        comment.yields[0].type = yieldsType;
+      } else {
+        comment.yields = [
+          {
+            title: 'yields',
+            type: yieldsType
+          }
+        ];
+      }
+    }
+
     if (comment.returns && comment.returns.length > 0) {
       comment.returns[0].type = returnType;
     } else {
-      if (fn.generator && returnType.type === 'TypeApplication') {
-        comment.generator = true;
-        let numArgs;
-
-        if (t.isFlow(fn.returnType)) {
-          numArgs = FLOW_GENERATORS[returnType.expression.name];
-        } else if (t.isTSTypeAnnotation(fn.returnType)) {
-          numArgs = TS_GENERATORS[returnType.expression.name];
-        }
-
-        if (returnType.applications.length === numArgs) {
-          comment.yields = [
-            {
-              title: 'yields',
-              type: returnType.applications[0]
-            }
-          ];
-  
-          if (numArgs > 1) {
-            returnType = returnType.applications[1];
-          } else {
-            returnType = {
-              type: 'VoidLiteral'
-            };
-          }
-        }
-      }
-
       comment.returns = [
         {
           title: 'returns',

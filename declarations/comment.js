@@ -101,6 +101,7 @@ type Comment = {
   access?: Access,
   readonly?: boolean,
   abstract?: boolean,
+  generator?: boolean,
   alias?: string,
 
   copyright?: string,
