@@ -9,8 +9,14 @@ function prefixedName(name, prefix) {
 }
 
 function propertyToDoc(property, prefix) {
-  const value = property.value || property.typeAnnotation;
-  let type = typeAnnotation(value);
+  let type;
+  if (property.type === 'ObjectTypeProperty') { // flow
+    type = typeAnnotation(property.value);
+  } else if (property.type === 'TSPropertySignature') { // typescript
+    type = typeAnnotation(property.typeAnnotation);
+  } else if (property.type === 'TSMethodSignature') { // typescript
+    type = typeAnnotation(property);
+  }
   const name = property.key.name || property.key.value;
   if (property.optional) {
     type = {
@@ -39,7 +45,7 @@ function inferProperties(comment) {
   comment.properties.forEach(prop => explicitProperties.add(prop.name));
 
   function inferProperties(value, prefix) {
-    if (value.type === 'ObjectTypeAnnotation' || value.type === 'TSTypeLiteral' || 'TSInterfaceBody') {
+    if (value.type === 'ObjectTypeAnnotation' || value.type === 'TSTypeLiteral') {
       const properties = value.properties || value.members || value.body || [];
       properties.forEach(function(property) {
         if (!explicitProperties.has(prefixedName(property.key.name, prefix))) {
@@ -63,12 +69,8 @@ function inferProperties(comment) {
   if (path) {
     if (path.isTypeAlias()) {
       inferProperties(path.node.right, []);
-    } else if (path.isInterfaceDeclaration()) {
-      inferProperties(path.node.body, []);
     } else if (path.isTSTypeAliasDeclaration()) {
       inferProperties(path.node.typeAnnotation, []);
-    } else if (path.isTSInterfaceDeclaration()) {
-      inferProperties(path.node.body, []);
     }
   }
 

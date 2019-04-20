@@ -43,17 +43,18 @@ function inferReturn(comment) {
     fn = fn.init;
   }
 
-  if ((t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn)) && fn.returnType) {
-    let returnType = typeAnnotation(fn.returnType);
+  const fnReturnType = getReturnType(fn);
+  if (fnReturnType) {
+    let returnType = typeAnnotation(fnReturnType);
     let yieldsType = null;
 
     if (fn.generator && returnType.type === 'TypeApplication') {
       comment.generator = true;
       let numArgs;
 
-      if (t.isFlow(fn.returnType)) {
+      if (t.isFlow(fnReturnType)) {
         numArgs = FLOW_GENERATORS[returnType.expression.name];
-      } else if (t.isTSTypeAnnotation(fn.returnType)) {
+      } else if (t.isTSTypeAnnotation(fnReturnType)) {
         numArgs = TS_GENERATORS[returnType.expression.name];
       }
 
@@ -95,6 +96,16 @@ function inferReturn(comment) {
     }
   }
   return comment;
+}
+
+function getReturnType(fn) {
+  if (t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn) || t.isFunctionTypeAnnotation(fn)) {
+    return fn.returnType;
+  }
+
+  if (t.isTSMethodSignature(fn)) {
+    return fn.typeAnnotation;
+  }
 }
 
 module.exports = inferReturn;

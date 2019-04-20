@@ -19,7 +19,8 @@ function inferType(comment) {
     return comment;
   }
 
-  const path = findTarget(comment.context.ast);
+  const ast = comment.context.ast;
+  const path = findTarget(ast);
   if (!path) {
     return comment;
   }
@@ -34,6 +35,8 @@ function inferType(comment) {
       }
       break;
     case 'ClassProperty':
+    case 'TSTypeAliasDeclaration':
+    case 'TSPropertySignature':
       type = n.typeAnnotation;
       break;
     case 'ClassMethod':
@@ -47,9 +50,10 @@ function inferType(comment) {
     case 'TypeAlias':
       type = n.right;
       break;
-    case 'TSTypeAliasDeclaration':
-      type = n.typeAnnotation;
-      break;
+    default:
+      if (ast.isObjectTypeProperty() && !ast.node.method) {
+        type = ast.node.value;
+      }
   }
   if (type) {
     comment.type = typeAnnotation(type);

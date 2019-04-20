@@ -104,6 +104,7 @@ function tsDoctrine(type) {
     // (y: number) => bool
     case 'TSFunctionType':
     case 'TSConstructorType':
+    case 'TSMethodSignature':
       return {
         type: 'FunctionType',
         params: type.parameters.map(param => {

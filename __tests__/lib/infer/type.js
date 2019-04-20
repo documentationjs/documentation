@@ -126,6 +126,20 @@ test('inferType (flow)', function() {
     name: 'boolean',
     type: 'NameExpression'
   });
+
+  expect(
+    evaluate('interface Foo { /** */ bar: string; }').type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('type Foo = { /** */ bar: string; }').type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
 });
 
 test('inferType (typescript)', function() {
@@ -246,6 +260,20 @@ test('inferType (typescript)', function() {
 
   expect(evaluate('/** */' + 'const x = true;', 'test.ts').type).toEqual({
     name: 'boolean',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('interface Foo { /** */ bar: string; }', 'test.ts').type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('type Foo = { /** */ bar: string; }', 'test.ts').type
+  ).toEqual({
+    name: 'string',
     type: 'NameExpression'
   });
 });

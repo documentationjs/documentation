@@ -63,6 +63,20 @@ test('inferReturn (flow)', function() {
       }
     }
   ]);
+
+  expect(
+    evaluate('interface Foo { /** */ bar(): string; }').returns[0].type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('type Foo = { /** */ bar(): string; }').returns[0].type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
 });
 
 test('inferReturn (typescript)', function() {
@@ -132,4 +146,18 @@ test('inferReturn (typescript)', function() {
       }
     }
   ]);
+
+  expect(
+    evaluate('interface Foo { /** */ bar(): string; }', 'test.ts').returns[0].type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('type Foo = { /** */ bar(): string; }', 'test.ts').returns[0].type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
 });

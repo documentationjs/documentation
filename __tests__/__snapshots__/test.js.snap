@@ -20353,7 +20353,7 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 7,
+          "line": 9,
         },
         "start": Object {
           "column": 0,
@@ -20430,7 +20430,236 @@ Array [
       "events": Array [],
       "global": Array [],
       "inner": Array [],
-      "instance": Array [],
+      "instance": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 15,
+                "line": 6,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 6,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 15,
+                        "line": 1,
+                        "offset": 14,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is prop 1",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 23,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "memberof": "Foo",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "prop1",
+          "namespace": "Foo#prop1",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "interface",
+              "name": "Foo",
+            },
+            Object {
+              "kind": "member",
+              "name": "prop1",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "number",
+            "type": "NameExpression",
+          },
+          "yields": Array [],
+        },
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 15,
+                "line": 8,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 8,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 15,
+                        "line": 1,
+                        "offset": 14,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is prop 2",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 23,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 7,
+            },
+          },
+          "memberof": "Foo",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "prop2",
+          "namespace": "Foo#prop2",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "interface",
+              "name": "Foo",
+            },
+            Object {
+              "kind": "member",
+              "name": "prop2",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+          "yields": Array [],
+        },
+      ],
       "static": Array [],
     },
     "name": "Foo",
@@ -20442,26 +20671,7 @@ Array [
         "name": "Foo",
       },
     ],
-    "properties": Array [
-      Object {
-        "lineNumber": 5,
-        "name": "prop1",
-        "title": "property",
-        "type": Object {
-          "name": "number",
-          "type": "NameExpression",
-        },
-      },
-      Object {
-        "lineNumber": 6,
-        "name": "prop2",
-        "title": "property",
-        "type": Object {
-          "name": "string",
-          "type": "NameExpression",
-        },
-      },
-    ],
+    "properties": Array [],
     "returns": Array [],
     "sees": Array [],
     "tags": Array [],
@@ -20548,7 +20758,7 @@ Object {
       "children": Array [
         Object {
           "type": "text",
-          "value": "Properties",
+          "value": "prop1",
         },
       ],
       "depth": 3,
@@ -20557,84 +20767,122 @@ Object {
     Object {
       "children": Array [
         Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "inlineCode",
-                  "value": "prop1",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "type": "text",
-                          "value": "number",
-                        },
-                      ],
-                      "identifier": "1",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "type": "strong",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-              ],
-              "type": "paragraph",
+          "position": Position {
+            "end": Object {
+              "column": 15,
+              "line": 1,
+              "offset": 14,
             },
-          ],
-          "type": "listItem",
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is prop 1",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 15,
+          "line": 1,
+          "offset": 14,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
         },
         Object {
           "children": Array [
             Object {
-              "children": Array [
-                Object {
-                  "type": "inlineCode",
-                  "value": "prop2",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "type": "text",
-                          "value": "string",
-                        },
-                      ],
-                      "identifier": "2",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "type": "strong",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-              ],
-              "type": "paragraph",
+              "type": "text",
+              "value": "number",
             },
           ],
-          "type": "listItem",
+          "identifier": "1",
+          "referenceType": "full",
+          "type": "linkReference",
         },
       ],
-      "ordered": false,
-      "type": "list",
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "prop2",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 15,
+              "line": 1,
+              "offset": 14,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is prop 2",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 15,
+          "line": 1,
+          "offset": 14,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "2",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
+      "type": "paragraph",
     },
     Object {
       "identifier": "1",

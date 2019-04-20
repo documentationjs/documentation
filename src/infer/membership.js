@@ -359,7 +359,7 @@ module.exports = function() {
       }
 
       const declarationNode = path.parentPath.parentPath.node;
-      if (!declarationNode.id) {
+      if (!declarationNode.id && !declarationNode.key) {
         // export default function () {}
         // export default class {}
         // Use module name instead.
@@ -374,6 +374,20 @@ module.exports = function() {
         comment,
         inferClassMembership(path.parentPath.parentPath),
         scope
+      );
+    }
+
+    // interface Foo { bar(): void; }
+    // interface Foo { bar: string; }
+    if (
+      (path.isObjectTypeProperty() || path.isTSTypeElement()) &&
+      (path.parentPath.isObjectTypeAnnotation() || path.parentPath.isTSInterfaceBody()) &&
+      (path.parentPath.parentPath.isInterfaceDeclaration() || path.parentPath.parentPath.isTSInterfaceDeclaration())
+    ) {
+      return inferMembershipFromIdentifiers(
+        comment,
+        inferClassMembership(path.parentPath.parentPath),
+        'instance'
       );
     }
 

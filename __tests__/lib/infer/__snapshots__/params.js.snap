@@ -206,6 +206,51 @@ Array [
 ]
 `;
 
+exports[`inferParams (typescript) 11`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "name": "string",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 12`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "name": "string",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams (typescript) 13`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+      "type": "RestType",
+    },
+  },
+]
+`;
+
 exports[`inferParams 1`] = `
 Array [
   Object {
@@ -433,6 +478,51 @@ Array [
     "type": Object {
       "name": "number",
       "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 9`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "name": "string",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 10`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "name": "string",
+      "type": "NameExpression",
+    },
+  },
+]
+`;
+
+exports[`inferParams 11`] = `
+Array [
+  Object {
+    "lineNumber": 1,
+    "name": "v",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+      "type": "RestType",
     },
   },
 ]

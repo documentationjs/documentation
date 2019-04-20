@@ -137,6 +137,22 @@ test('inferKind', function() {
   expect(abstractMethod.kind).toBe('function');
   expect(abstractMethod.abstract).toBe(true);
 
+  expect(inferKind(toComment('interface Foo { /** b */ b(v): void; }')).kind).toBe(
+    'function'
+  );
+
+  expect(inferKind(toComment('interface Foo { /** b */ b: string; }')).kind).toBe(
+    'member'
+  );
+
+  expect(inferKind(toComment('interface Foo { /** b */ b(v): void; }', 'test.ts')).kind).toBe(
+    'function'
+  );
+
+  expect(inferKind(toComment('interface Foo { /** b */ b: string; }', 'test.ts')).kind).toBe(
+    'member'
+  );
+
   expect(
     inferKind(
       toComment(function() {

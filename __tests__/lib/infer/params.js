@@ -202,6 +202,18 @@ test('inferParams', function() {
   `
     ).params
   ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(v: string): void; }`).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`type Foo = { /** b */ b(v: string): void }`).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(...v: string): void; }`).params
+  ).toMatchSnapshot();
 });
 
 test('inferParams (typescript)', function() {
@@ -260,5 +272,17 @@ test('inferParams (typescript)', function() {
 
   expect(
     evaluate(`abstract class Foo { /** */ abstract f(a?: string); }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(v: string): void; }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`type Foo = { /** b */ b(v: string): void }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(...v: string): void; }`, 'test.ts').params
   ).toMatchSnapshot();
 });
