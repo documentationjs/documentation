@@ -253,4 +253,12 @@ test('inferParams (typescript)', function() {
   expect(
     evaluate(`/** Test */function f(a?: string) {};`, 'test.ts').params
   ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(a?: string);`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`abstract class Foo { /** */ abstract f(a?: string); }`, 'test.ts').params
+  ).toMatchSnapshot();
 });

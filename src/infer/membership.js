@@ -341,7 +341,7 @@ module.exports = function() {
     // class Foo { prop: T }
     // var Foo = class { prop: T }
     if (
-      (path.isClassMethod() || path.isClassProperty()) &&
+      (path.isClassMethod() || path.isClassProperty() || path.isTSDeclareMethod()) &&
       path.parentPath.isClassBody() &&
       path.parentPath.parentPath.isClass()
     ) {

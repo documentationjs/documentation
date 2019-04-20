@@ -133,7 +133,7 @@ test('inferKind', function() {
   expect(generatorMethod.kind).toBe('function');
   expect(generatorMethod.generator).toBe(true);
 
-  const abstractMethod = inferKind(toComment('abstract class C { /** */ abstract foo() {} }', 'test.ts'));
+  const abstractMethod = inferKind(toComment('abstract class C { /** */ abstract foo(); }', 'test.ts'));
   expect(abstractMethod.kind).toBe('function');
   expect(abstractMethod.abstract).toBe(true);
 

@@ -172,6 +172,40 @@ Array [
 ]
 `;
 
+exports[`inferParams (typescript) 9`] = `
+Array [
+  Object {
+    "expression": Object {
+      "lineNumber": 1,
+      "name": "a",
+      "title": "param",
+      "type": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+    },
+    "type": "OptionalType",
+  },
+]
+`;
+
+exports[`inferParams (typescript) 10`] = `
+Array [
+  Object {
+    "expression": Object {
+      "lineNumber": 1,
+      "name": "a",
+      "title": "param",
+      "type": Object {
+        "name": "string",
+        "type": "NameExpression",
+      },
+    },
+    "type": "OptionalType",
+  },
+]
+`;
+
 exports[`inferParams 1`] = `
 Array [
   Object {

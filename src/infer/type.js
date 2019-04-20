@@ -37,6 +37,7 @@ function inferType(comment) {
       type = n.typeAnnotation;
       break;
     case 'ClassMethod':
+    case 'TSDeclareMethod':
       if (n.kind === 'get') {
         type = n.returnType;
       } else if (n.kind === 'set' && n.params[0]) {

@@ -21,7 +21,7 @@ function inferKind(comment) {
       if (node.abstract) {
         comment.abstract = true;
       }
-    } else if (t.isFunction(node)) {
+    } else if (t.isFunction(node) || t.isTSDeclareMethod(node) || t.isTSDeclareFunction(node)) {
       if (node.kind === 'get' || node.kind === 'set') {
         comment.kind = 'member';
       } else if (node.id && node.id.name && !!/^[A-Z]/.exec(node.id.name)) {

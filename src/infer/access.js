@@ -19,7 +19,7 @@ function inferAccessWithPattern(pattern) {
   return function inferAccess(comment) {
     // Support typescript access modifiers
     const ast = comment.context.ast;
-    if (ast && ast.isClassMethod() && ast.node.accessibility) {
+    if (ast && ast.node.accessibility) {
       comment.access = ast.node.accessibility;
     }
 

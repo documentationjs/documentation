@@ -112,4 +112,24 @@ test('inferReturn (typescript)', function() {
       }
     }
   ]);
+
+  expect(evaluate('/** */function a(): number;', 'test.ts').returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        name: 'number',
+        type: 'NameExpression'
+      }
+    }
+  ]);
+
+  expect(evaluate('abstract class Test { /** */abstract a(): number; }', 'test.ts').returns).toEqual([
+    {
+      title: 'returns',
+      type: {
+        name: 'number',
+        type: 'NameExpression'
+      }
+    }
+  ]);
 });

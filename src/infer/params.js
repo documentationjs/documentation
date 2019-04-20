@@ -37,7 +37,7 @@ function inferParams(comment) {
     }
   }
 
-  if (!t.isFunction(path)) {
+  if (!t.isFunction(path) && !t.isTSDeclareFunction(path) && !t.isTSDeclareMethod(path)) {
     return comment;
   }
 

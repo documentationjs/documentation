@@ -76,6 +76,15 @@ test('inferAccess', function() {
     evaluate(`
       class Test {
         /** */
+        public abstract foo();
+      }
+    `, '_$', 'test.ts').access
+  ).toBe('public');
+
+  expect(
+    evaluate(`
+      class Test {
+        /** */
         readonly name: string;
       }
     `, '_$', 'test.ts').readonly

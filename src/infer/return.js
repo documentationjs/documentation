@@ -43,7 +43,7 @@ function inferReturn(comment) {
     fn = fn.init;
   }
 
-  if (t.isFunction(fn) && fn.returnType) {
+  if ((t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn)) && fn.returnType) {
     let returnType = typeAnnotation(fn.returnType);
     if (comment.returns && comment.returns.length > 0) {
       comment.returns[0].type = returnType;

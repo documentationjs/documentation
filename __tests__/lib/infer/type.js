@@ -224,6 +224,16 @@ test('inferType (typescript)', function() {
     type: 'NameExpression'
   });
 
+  expect(evaluate('abstract class Foo { /** */ abstract get b(): string; }', 'test.ts').type).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(evaluate('abstract class Foo { /** */ abstract set b(s: string); }', 'test.ts').type).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
   expect(evaluate('/** */' + 'const x = 42;', 'test.ts').type).toEqual({
     name: 'number',
     type: 'NameExpression'

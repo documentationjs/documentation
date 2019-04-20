@@ -310,6 +310,22 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
+      evaluate(`
+        /** @memberof bar */
+        abstract class Foo {
+          /** */
+          abstract baz();
+        }
+      `, 'test.ts')[1], // [0] is an description for class Foo
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'bar.Foo',
+    scope: 'instance'
+  });
+
+  expect(
+    pick(
       evaluate(function() {
         /** Test */
         module.exports = function() {};
