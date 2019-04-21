@@ -61,15 +61,6 @@ test('inferProperties (flow)', function() {
           }
         ]
       }
-    },
-    {
-      lineNumber: 1,
-      name: 'b.c',
-      title: 'property',
-      type: {
-        type: 'NumericLiteralType',
-        value: 2
-      }
     }
   ]);
 });
@@ -118,15 +109,6 @@ test('inferProperties (typescript)', function() {
             }
           }
         ]
-      }
-    },
-    {
-      lineNumber: 1,
-      name: 'b.c',
-      title: 'property',
-      type: {
-        type: 'NumericLiteralType',
-        value: 2
       }
     }
   ]);

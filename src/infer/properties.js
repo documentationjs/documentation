@@ -52,13 +52,6 @@ function inferProperties(comment) {
           comment.properties = comment.properties.concat(
             propertyToDoc(property, prefix)
           );
-
-          // Nested type parameters
-          if (property.value && property.value.type === 'ObjectTypeAnnotation') {
-            inferProperties(property.value, prefix.concat(property.key.name));
-          } else if (property.typeAnnotation && property.typeAnnotation.type === 'TSTypeAnnotation' && property.typeAnnotation.typeAnnotation.type === 'TSTypeLiteral') {
-            inferProperties(property.typeAnnotation.typeAnnotation, prefix.concat(property.key.name));
-          }
         }
       });
     }
