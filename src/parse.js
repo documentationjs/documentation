@@ -82,7 +82,10 @@ const flatteners = {
   desc: synonym('description'),
   description: flattenMarkdownDescription,
   emits: synonym('fires'),
-  enum: todo,
+  enum(result, tag) {
+    result.kind = 'enum';
+    result.type = tag.type;
+  },
   /**
    * Parse tag
    * @private
@@ -206,7 +209,7 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   interface(result, tag) {
-    result.interface = true;
+    result.kind = 'interface';
     if (tag.description) {
       result.name = tag.description;
     }
