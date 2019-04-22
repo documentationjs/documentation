@@ -276,4 +276,29 @@ test('inferType (typescript)', function() {
     name: 'string',
     type: 'NameExpression'
   });
+
+  expect(
+    evaluate('enum Foo { /** */ A }', 'test.ts').type
+  ).toEqual({
+    name: 'number',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('enum Foo { /** */ A = 2 }', 'test.ts').type
+  ).toEqual({
+    name: 'number',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('enum Foo { /** */ A = "test" }', 'test.ts').type
+  ).toEqual({
+    name: 'string',
+    type: 'NameExpression'
+  });
+
+  expect(
+    evaluate('enum Foo { /** */ A = foo }', 'test.ts').type
+  ).toBe(undefined);
 });

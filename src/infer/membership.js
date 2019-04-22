@@ -456,6 +456,17 @@ module.exports = function() {
       }
     }
 
+    // TypeScript enums
+    // enum Foo { A }
+    if (path.isTSEnumMember()) {
+      const enumPath = path.parentPath;
+      return inferMembershipFromIdentifiers(
+        comment,
+        [enumPath.node.id.name],
+        'static'
+      );
+    }
+
     // var function Foo() {
     //   function bar() {}
     //   return { bar: bar };

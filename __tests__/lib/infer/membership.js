@@ -473,6 +473,21 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
+      evaluate(`
+        enum Foo {
+          /** */
+          A
+        }
+      `, 'test.ts')[0],
+      ['memberof', 'scope']
+    )
+  ).toEqual({
+    memberof: 'Foo',
+    scope: 'static'
+  });
+
+  expect(
+    pick(
       evaluate(function() {
         /** Test */
         module.exports = function() {};

@@ -65,7 +65,7 @@ function inferKind(comment) {
     } else if (t.isExpressionStatement(node)) {
       // module.exports = function() {}
       findKind(node.expression.right);
-    } else if (t.isClassProperty(node) || t.isTSPropertySignature(node)) {
+    } else if (t.isClassProperty(node) || t.isTSPropertySignature(node) || t.isTSEnumMember(node)) {
       comment.kind = 'member';
     } else if (t.isProperty(node)) {
       // { foo: function() {} }
@@ -78,6 +78,8 @@ function inferKind(comment) {
       } else {
         comment.kind = 'member';
       }
+    } else if (t.isTSEnumDeclaration(node)) {
+      comment.kind = 'enum';
     }
   }
 

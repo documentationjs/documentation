@@ -153,6 +153,14 @@ test('inferKind', function() {
     'member'
   );
 
+  expect(inferKind(toComment('/** */ enum Foo { A }', 'test.ts')).kind).toBe(
+    'enum'
+  );
+
+  expect(inferKind(toComment('enum Foo { /** */ A }', 'test.ts')).kind).toBe(
+    'member'
+  );
+
   expect(
     inferKind(
       toComment(function() {

@@ -50,6 +50,15 @@ function inferType(comment) {
     case 'TypeAlias':
       type = n.right;
       break;
+    case 'TSEnumMember':
+      if (n.initializer) {
+        if (constTypeMapping[n.initializer.type]) {
+          type = constTypeMapping[n.initializer.type];
+        }
+      } else {
+        type = constTypeMapping.NumericLiteral;
+      }
+      break;
     default:
       if (ast.isObjectTypeProperty() && !ast.node.method) {
         type = ast.node.value;
