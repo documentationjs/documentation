@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="10.1.0"></a>
+# [10.1.0](https://github.com/documentationjs/documentation/compare/v10.0.0...v10.1.0) (2019-04-25)
+
+
+### Features
+
+* TypeScript support & inference ([3773e02](https://github.com/documentationjs/documentation/commit/3773e02))
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/documentationjs/documentation/compare/v10.0.0-alpha.0...v10.0.0) (2019-04-18)
 
