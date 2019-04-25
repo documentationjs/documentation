@@ -28,7 +28,7 @@ function inferImplements(comment) {
       comment.implements.push({
         title: 'implements',
         name: generate(impl).code
-      });  
+      });
     });
   }
 

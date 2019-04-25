@@ -22,10 +22,10 @@ function inferKind(comment) {
         comment.abstract = true;
       }
     } else if (
-      t.isFunction(node) || 
-      t.isTSDeclareMethod(node) || 
-      t.isTSDeclareFunction(node) || 
-      t.isFunctionTypeAnnotation(node) || 
+      t.isFunction(node) ||
+      t.isTSDeclareMethod(node) ||
+      t.isTSDeclareFunction(node) ||
+      t.isFunctionTypeAnnotation(node) ||
       t.isTSMethodSignature(node)
     ) {
       if (node.kind === 'get' || node.kind === 'set') {
@@ -46,7 +46,10 @@ function inferKind(comment) {
       }
     } else if (t.isTypeAlias(node) || t.isTSTypeAliasDeclaration(node)) {
       comment.kind = 'typedef';
-    } else if (t.isInterfaceDeclaration(node) || t.isTSInterfaceDeclaration(node)) {
+    } else if (
+      t.isInterfaceDeclaration(node) ||
+      t.isTSInterfaceDeclaration(node)
+    ) {
       comment.kind = 'interface';
     } else if (t.isVariableDeclaration(node)) {
       if (node.kind === 'const') {
@@ -65,7 +68,11 @@ function inferKind(comment) {
     } else if (t.isExpressionStatement(node)) {
       // module.exports = function() {}
       findKind(node.expression.right);
-    } else if (t.isClassProperty(node) || t.isTSPropertySignature(node) || t.isTSEnumMember(node)) {
+    } else if (
+      t.isClassProperty(node) ||
+      t.isTSPropertySignature(node) ||
+      t.isTSEnumMember(node)
+    ) {
       comment.kind = 'member';
     } else if (t.isProperty(node)) {
       // { foo: function() {} }

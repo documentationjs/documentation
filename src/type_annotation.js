@@ -7,10 +7,10 @@ function typeAnnotation(type) {
     if (t.isTypeAnnotation(type)) {
       type = type.typeAnnotation;
     }
-  
-    return flowDoctrine(type);  
+
+    return flowDoctrine(type);
   }
-  
+
   if (t.isTSTypeAnnotation(type)) {
     type = type.typeAnnotation;
   }
