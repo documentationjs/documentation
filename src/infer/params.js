@@ -38,8 +38,8 @@ function inferParams(comment) {
   }
 
   if (
-    !t.isFunction(path) && 
-    !t.isTSDeclareFunction(path) && 
+    !t.isFunction(path) &&
+    !t.isTSDeclareFunction(path) &&
     !t.isTSDeclareMethod(path) &&
     !t.isFunctionTypeAnnotation(path) &&
     !t.isTSMethodSignature(path)
@@ -51,7 +51,9 @@ function inferParams(comment) {
     return comment;
   }
 
-  let params = t.isTSMethodSignature(path) ? path.node.parameters : path.node.params;
+  let params = t.isTSMethodSignature(path)
+    ? path.node.parameters
+    : path.node.params;
 
   // Flow function annotations separate rest parameters into a different list
   if (t.isFunctionTypeAnnotation(path) && path.node.rest) {
@@ -163,7 +165,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -179,7 +182,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: prefixedName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -203,7 +207,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && typeAnnotation(param.typeAnnotation)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Array'
           },
@@ -259,7 +264,9 @@ function paramToDoc(param, prefix, i) {
         title: 'param',
         name: prefix ? prefix + '.' + param.name.name : param.name.name,
         lineNumber: param.loc.start.line,
-        type: param.typeAnnotation ? typeAnnotation(param.typeAnnotation) : undefined
+        type: param.typeAnnotation
+          ? typeAnnotation(param.typeAnnotation)
+          : undefined
       };
     default: {
       // (a)

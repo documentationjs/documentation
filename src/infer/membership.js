@@ -341,7 +341,9 @@ module.exports = function() {
     // class Foo { prop: T }
     // var Foo = class { prop: T }
     if (
-      (path.isClassMethod() || path.isClassProperty() || path.isTSDeclareMethod()) &&
+      (path.isClassMethod() ||
+        path.isClassProperty() ||
+        path.isTSDeclareMethod()) &&
       path.parentPath.isClassBody() &&
       path.parentPath.parentPath.isClass()
     ) {
@@ -402,7 +404,11 @@ module.exports = function() {
       const objectKeys = [];
 
       while (!objectParent.isStatement()) {
-        if (objectParent.isObjectProperty() || objectParent.isObjectTypeProperty() || objectParent.isTSPropertySignature()) {
+        if (
+          objectParent.isObjectProperty() ||
+          objectParent.isObjectTypeProperty() ||
+          objectParent.isTSPropertySignature()
+        ) {
           objectKeys.unshift(objectParent.node.key.name);
         }
 
@@ -413,15 +419,18 @@ module.exports = function() {
           findLendsIdentifiers(objectParent.get('properties')[0]);
 
         if (lendsIdentifiers) {
-          return inferMembershipFromIdentifiers(comment, [...lendsIdentifiers, ...objectKeys]);
+          return inferMembershipFromIdentifiers(comment, [
+            ...lendsIdentifiers,
+            ...objectKeys
+          ]);
         } else if (objectParent.parentPath.isAssignmentExpression()) {
           // Foo = { ... };
           // Foo.prototype = { ... };
           // Foo.bar = { ... };
-          return inferMembershipFromIdentifiers(
-            comment,
-            [...extractIdentifiers(objectParent.parentPath.get('left')), ...objectKeys]
-          );
+          return inferMembershipFromIdentifiers(comment, [
+            ...extractIdentifiers(objectParent.parentPath.get('left')),
+            ...objectKeys
+          ]);
         } else if (objectParent.parentPath.isVariableDeclarator()) {
           // var Foo = { ... };
           return inferMembershipFromIdentifiers(comment, [
@@ -434,20 +443,23 @@ module.exports = function() {
             inferModuleName(currentModule || comment),
             ...objectKeys
           ]);
-        } else if (objectParent.parentPath.isTypeAlias() || objectParent.parentPath.isTSTypeAliasDeclaration()) {
+        } else if (
+          objectParent.parentPath.isTypeAlias() ||
+          objectParent.parentPath.isTSTypeAliasDeclaration()
+        ) {
           // type X = { ... }
           return inferMembershipFromIdentifiers(comment, [
             objectParent.parentPath.node.id.name,
             ...objectKeys
           ]);
-        } else if (objectParent.parentPath.isInterfaceDeclaration() || objectParent.parentPath.isTSInterfaceDeclaration()) {
+        } else if (
+          objectParent.parentPath.isInterfaceDeclaration() ||
+          objectParent.parentPath.isTSInterfaceDeclaration()
+        ) {
           // interface Foo { ... }
           return inferMembershipFromIdentifiers(
             comment,
-            [
-              ...inferClassMembership(objectParent.parentPath),
-              ...objectKeys
-            ],
+            [...inferClassMembership(objectParent.parentPath), ...objectKeys],
             'instance'
           );
         }

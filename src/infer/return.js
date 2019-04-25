@@ -99,7 +99,12 @@ function inferReturn(comment) {
 }
 
 function getReturnType(fn) {
-  if (t.isFunction(fn) || t.isTSDeclareFunction(fn) || t.isTSDeclareMethod(fn) || t.isFunctionTypeAnnotation(fn)) {
+  if (
+    t.isFunction(fn) ||
+    t.isTSDeclareFunction(fn) ||
+    t.isTSDeclareMethod(fn) ||
+    t.isFunctionTypeAnnotation(fn)
+  ) {
     return fn.returnType;
   }
 

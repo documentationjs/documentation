@@ -10,11 +10,14 @@ function prefixedName(name, prefix) {
 
 function propertyToDoc(property, prefix) {
   let type;
-  if (property.type === 'ObjectTypeProperty') { // flow
+  if (property.type === 'ObjectTypeProperty') {
+    // flow
     type = typeAnnotation(property.value);
-  } else if (property.type === 'TSPropertySignature') { // typescript
+  } else if (property.type === 'TSPropertySignature') {
+    // typescript
     type = typeAnnotation(property.typeAnnotation);
-  } else if (property.type === 'TSMethodSignature') { // typescript
+  } else if (property.type === 'TSMethodSignature') {
+    // typescript
     type = typeAnnotation(property);
   }
   const name = property.key.name || property.key.value;
@@ -45,7 +48,10 @@ function inferProperties(comment) {
   comment.properties.forEach(prop => explicitProperties.add(prop.name));
 
   function inferProperties(value, prefix) {
-    if (value.type === 'ObjectTypeAnnotation' || value.type === 'TSTypeLiteral') {
+    if (
+      value.type === 'ObjectTypeAnnotation' ||
+      value.type === 'TSTypeLiteral'
+    ) {
       const properties = value.properties || value.members || value.body || [];
       properties.forEach(function(property) {
         if (!explicitProperties.has(prefixedName(property.key.name, prefix))) {
