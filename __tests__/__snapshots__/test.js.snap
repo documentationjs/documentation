@@ -11111,10 +11111,114 @@ It takes a ",
     "todos": Array [],
     "yields": Array [],
   },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 1,
+          "line": 189,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 177,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 21,
+                  "line": 1,
+                  "offset": 20,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "babel parser plugins",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+              "offset": 20,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "class",
+    "loc": Object {
+      "end": Object {
+        "column": 27,
+        "line": 176,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 176,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "A",
+    "namespace": "A",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "class",
+        "name": "A",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
 ]
 `;
 
-exports[`outputs es6.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs es6.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
 
 exports[`outputs es6.input.js markdown AST 1`] = `
 Object {
@@ -13586,6 +13690,51 @@ It takes a ",
       "type": "paragraph",
     },
     Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "A",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+              "offset": 20,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "babel parser plugins",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
       "identifier": "1",
       "title": undefined,
       "type": "definition",
@@ -13638,7 +13787,7 @@ It takes a ",
 }
 `;
 
-exports[`outputs es6.input.js no markdown TOC 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs es6.input.js no markdown TOC 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
 
 exports[`outputs es6-class.input.js JSON 1`] = `
 Array [
