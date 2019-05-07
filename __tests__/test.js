@@ -129,7 +129,7 @@ describe('outputs', function() {
           const md = await outputMarkdown(_.cloneDeep(result), {
             markdownToc: true
           });
-          expect(result.toString()).toMatchSnapshot();
+          expect(md.toString()).toMatchSnapshot();
         });
 
         if (file.match(/es6.input.js/)) {
