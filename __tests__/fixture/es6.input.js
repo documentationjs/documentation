@@ -172,3 +172,18 @@ export function isArrayEqualWith<T>(
 export function paramWithMemberType(a: atype.property): boolean {
   return true;
 }
+
+/** babel parser plugins */
+class A {
+  // classPrivateProperties
+  #b = 1;
+  // classPrivateMethods
+  #c(a, b) {
+    // numericSeparator
+    let y = 100_000;
+    // nullishCoalescingOperator
+    let x = a ?? b;
+    // logicalAssignment
+    return x &&= b?.b |> String.fromCharCode;
+  }
+}

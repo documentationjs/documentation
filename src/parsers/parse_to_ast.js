@@ -6,28 +6,42 @@ const TYPESCRIPT_EXTS = {
   '.tsx': true
 };
 
+const standardBabelParserPlugins = [
+  'asyncGenerators',
+  'bigInt',
+  'classProperties',
+  'classConstructorCall',
+  'classPrivateProperties',
+  'classPrivateMethods',
+  'doExpressions',
+  'dynamicImport',
+  'exportDefaultFrom',
+  'exportNamespaceFrom',
+  'exportExtensions',
+  'functionBind',
+  'functionSent',
+  'jsx',
+  'logicalAssignment',
+  'nullishCoalescingOperator',
+  'numericSeparator',
+  'objectRestSpread',
+  'optionalCatchBinding',
+  'optionalChaining',
+  'partialApplication',
+  ['pipelineOperator', { proposal: 'minimal' }],
+  'throwExpressions'
+];
+
+module.exports.standardBabelParserPlugins = standardBabelParserPlugins;
+
 function getParserOpts(file) {
   return {
     allowImportExportEverywhere: true,
     sourceType: 'module',
     plugins: [
-      'asyncGenerators',
-      'exportDefaultFrom',
-      'exportNamespaceFrom',
-      'optionalChaining',
-      'classConstructorCall',
-      'classPrivateProperties',
-      'classProperties',
+      ...standardBabelParserPlugins,
       ['decorators', { decoratorsBeforeExport: false }],
-      'doExpressions',
-      'exportExtensions',
-      TYPESCRIPT_EXTS[path.extname(file || '')] ? 'typescript' : 'flow',
-      'functionBind',
-      'functionSent',
-      'jsx',
-      'objectRestSpread',
-      'dynamicImport',
-      'logicalAssignment'
+      TYPESCRIPT_EXTS[path.extname(file || '')] ? 'typescript' : 'flow'
     ]
   };
 }

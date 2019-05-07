@@ -3,6 +3,7 @@ const path = require('path');
 const babelify = require('babelify');
 const concat = require('concat-stream');
 const moduleFilters = require('../module_filters');
+const { standardBabelParserPlugins } = require('../parsers/parse_to_ast');
 const smartGlob = require('../smart_glob.js');
 
 const STANDARD_BABEL_CONFIG = {
@@ -10,6 +11,7 @@ const STANDARD_BABEL_CONFIG = {
   compact: false,
   cwd: path.resolve(__dirname, '../../'),
   presets: ['@babel/preset-react', '@babel/preset-env', '@babel/preset-flow'],
+  parserOpts: { plugins: standardBabelParserPlugins },
   plugins: [
     // Stage 0
     '@babel/plugin-proposal-function-bind',
@@ -21,7 +23,7 @@ const STANDARD_BABEL_CONFIG = {
     ['@babel/plugin-proposal-nullish-coalescing-operator', { loose: false }],
     '@babel/plugin-proposal-do-expressions',
     // Stage 2
-    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
     '@babel/plugin-proposal-function-sent',
     '@babel/plugin-proposal-export-namespace-from',
     '@babel/plugin-proposal-numeric-separator',
