@@ -13,6 +13,7 @@ function getParserOpts(file) {
     plugins: [
       'asyncGenerators',
       'exportDefaultFrom',
+      'exportNamespaceFrom',
       'optionalChaining',
       'classConstructorCall',
       'classPrivateProperties',
