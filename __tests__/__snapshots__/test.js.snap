@@ -19444,6 +19444,136 @@ Array [
     },
     "yields": Array [],
   },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 42,
+          "line": 16,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 16,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "T3",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 3,
+          "line": 1,
+          "offset": 2,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "typedef",
+    "loc": Object {
+      "end": Object {
+        "column": 9,
+        "line": 15,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 15,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "T3",
+    "namespace": "T3",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "typedef",
+        "name": "T3",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "type": Object {
+      "params": Array [
+        Object {
+          "expression": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+          "name": "a",
+          "type": "ParameterType",
+        },
+      ],
+      "result": Object {
+        "fields": Array [
+          Object {
+            "key": "num",
+            "type": "FieldType",
+            "value": Object {
+              "name": "number",
+              "type": "NameExpression",
+            },
+          },
+        ],
+        "type": "RecordType",
+      },
+      "type": "FunctionType",
+    },
+    "yields": Array [],
+  },
 ]
 `;
 
@@ -19455,24 +19585,31 @@ exports[`outputs flow-unnamed-params.input.js markdown 1`] = `
 -   [x2][1]
 -   [T][2]
 -   [T2][3]
+-   [T3][4]
 
 ## x2
 
 x2
 
-Type: function (a: [T][4]): [string][5]
+Type: function (a: [T][5]): [string][6]
 
 ## T
 
 T
 
-Type: function ([Array][6]&lt;[string][5]>): {num: [number][7]}
+Type: function ([Array][7]&lt;[string][6]>): {num: [number][8]}
 
 ## T2
 
 T2
 
-Type: function (a: [Array][6]&lt;[string][5]>): {num: [number][7]}
+Type: function (a: [Array][7]&lt;[string][6]>): {num: [number][8]}
+
+## T3
+
+T3
+
+Type: function (a: [string][6]): {num: [number][8]}
 
 [1]: #x2
 
@@ -19480,13 +19617,15 @@ Type: function (a: [Array][6]&lt;[string][5]>): {num: [number][7]}
 
 [3]: #t2
 
-[4]: #t
+[4]: #t3
 
-[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[5]: #t
 
-[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
@@ -19796,6 +19935,110 @@ Object {
         Object {
           "type": "text",
           "value": ">",
+        },
+        Object {
+          "type": "text",
+          "value": ")",
+        },
+        Object {
+          "type": "text",
+          "value": ": ",
+        },
+        Object {
+          "type": "text",
+          "value": "{",
+        },
+        Object {
+          "type": "text",
+          "value": "num: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "number",
+            },
+          ],
+          "identifier": "4",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+        Object {
+          "type": "text",
+          "value": "}",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "T3",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "T3",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 3,
+          "line": 1,
+          "offset": 2,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "type": "text",
+          "value": "function (",
+        },
+        Object {
+          "type": "text",
+          "value": "a: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "2",
+          "referenceType": "full",
+          "type": "linkReference",
         },
         Object {
           "type": "text",

@@ -78,9 +78,9 @@ function inferAndCombineParams(params, comment) {
   const inferredParams = params.map((param, i) => {
     const doc = paramToDoc(param, '', i);
     if (param.optional) {
-      return {
+      doc.type = {
         type: 'OptionalType',
-        expression: doc
+        expression: doc.type
       };
     }
 
