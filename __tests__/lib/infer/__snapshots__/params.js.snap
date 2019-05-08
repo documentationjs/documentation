@@ -141,16 +141,16 @@ Array [
 exports[`inferParams (typescript) 7`] = `
 Array [
   Object {
-    "expression": Object {
-      "lineNumber": 1,
-      "name": "a",
-      "title": "param",
-      "type": Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
         "name": "string",
         "type": "NameExpression",
       },
+      "type": "OptionalType",
     },
-    "type": "OptionalType",
   },
 ]
 `;
@@ -158,16 +158,16 @@ Array [
 exports[`inferParams (typescript) 8`] = `
 Array [
   Object {
-    "expression": Object {
-      "lineNumber": 1,
-      "name": "a",
-      "title": "param",
-      "type": Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
         "name": "string",
         "type": "NameExpression",
       },
+      "type": "OptionalType",
     },
-    "type": "OptionalType",
   },
 ]
 `;
@@ -175,16 +175,16 @@ Array [
 exports[`inferParams (typescript) 9`] = `
 Array [
   Object {
-    "expression": Object {
-      "lineNumber": 1,
-      "name": "a",
-      "title": "param",
-      "type": Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
         "name": "string",
         "type": "NameExpression",
       },
+      "type": "OptionalType",
     },
-    "type": "OptionalType",
   },
 ]
 `;
@@ -192,16 +192,16 @@ Array [
 exports[`inferParams (typescript) 10`] = `
 Array [
   Object {
-    "expression": Object {
-      "lineNumber": 1,
-      "name": "a",
-      "title": "param",
-      "type": Object {
+    "lineNumber": 1,
+    "name": "a",
+    "title": "param",
+    "type": Object {
+      "expression": Object {
         "name": "string",
         "type": "NameExpression",
       },
+      "type": "OptionalType",
     },
-    "type": "OptionalType",
   },
 ]
 `;
