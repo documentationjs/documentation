@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/documentationjs/documentation/compare/v10.1.0...v11.0.0) (2019-05-08)
+
+
+### Bug Fixes
+
+* Fix parsing of optional parameters with annotations ([ca17de5](https://github.com/documentationjs/documentation/commit/ca17de5))
+
+
+### Features
+
+* Enable all parser plugins ([fa1b0b5](https://github.com/documentationjs/documentation/commit/fa1b0b5))
+* Support exportNamespaceFrom in parser ([8fa141d](https://github.com/documentationjs/documentation/commit/8fa141d))
+
+
+### BREAKING CHANGES
+
+* this removes support for legacy decorators, because
+in one place we had legacy and in another we didn't.
+
+
+
 <a name="10.1.0"></a>
 # [10.1.0](https://github.com/documentationjs/documentation/compare/v10.0.0...v10.1.0) (2019-04-25)
 
