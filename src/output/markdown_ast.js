@@ -311,8 +311,15 @@ function buildMarkdownAST(comments, config) {
         )
         .filter(Boolean);
     }
+    let name;
+    if (comment.kind === 'function' || comment.kind === undefined) {
+      name =
+        comment.name + '(' + comment.params.map(p => p.name).join(', ') + ')';
+    } else {
+      name = comment.name;
+    }
 
-    return [u('heading', { depth }, [u('text', comment.name || '')])]
+    return [u('heading', { depth }, [u('text', name || '')])]
       .concat(githubLink(comment))
       .concat(augmentsLink(comment))
       .concat(seeLink(comment))
