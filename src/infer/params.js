@@ -2,7 +2,7 @@ const t = require('@babel/types');
 const generate = require('@babel/generator').default;
 const _ = require('lodash');
 const finders = require('./finders');
-const flowDoctrine = require('../flow_doctrine');
+const typeAnnotation = require('../type_annotation');
 
 /**
  * Infers param tags by reading function parameter names
@@ -37,7 +37,13 @@ function inferParams(comment) {
     }
   }
 
-  if (!t.isFunction(path)) {
+  if (
+    !t.isFunction(path) &&
+    !t.isTSDeclareFunction(path) &&
+    !t.isTSDeclareMethod(path) &&
+    !t.isFunctionTypeAnnotation(path) &&
+    !t.isTSMethodSignature(path)
+  ) {
     return comment;
   }
 
@@ -45,11 +51,41 @@ function inferParams(comment) {
     return comment;
   }
 
-  return inferAndCombineParams(path.node.params, comment);
+  let params = t.isTSMethodSignature(path)
+    ? path.node.parameters
+    : path.node.params;
+
+  // Flow function annotations separate rest parameters into a different list
+  if (t.isFunctionTypeAnnotation(path) && path.node.rest) {
+    params = params.concat(path.node.rest);
+  }
+
+  const result = inferAndCombineParams(params, comment);
+
+  // Wrap flow rest parameter with a RestType
+  if (t.isFunctionTypeAnnotation(path) && path.node.rest) {
+    const rest = result.params[result.params.length - 1];
+    rest.type = {
+      type: 'RestType',
+      expression: rest.type
+    };
+  }
+
+  return result;
 }
 
 function inferAndCombineParams(params, comment) {
-  const inferredParams = params.map((param, i) => paramToDoc(param, '', i));
+  const inferredParams = params.map((param, i) => {
+    const doc = paramToDoc(param, '', i);
+    if (param.optional) {
+      doc.type = {
+        type: 'OptionalType',
+        expression: doc.type
+      };
+    }
+
+    return doc;
+  });
   const paramsToMerge = comment.params;
   if (comment.constructorComment) {
     paramsToMerge.push.apply(paramsToMerge, comment.constructorComment.params);
@@ -129,7 +165,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -145,7 +182,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: prefixedName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Object'
           },
@@ -169,7 +207,8 @@ function paramToDoc(param, prefix, i) {
           title: 'param',
           name: autoName,
           anonymous: true,
-          type: (param.typeAnnotation && flowDoctrine(param)) || {
+          type: (param.typeAnnotation &&
+            typeAnnotation(param.typeAnnotation)) || {
             type: 'NameExpression',
             name: 'Array'
           },
@@ -211,7 +250,7 @@ function paramToDoc(param, prefix, i) {
         type: 'RestType'
       };
       if (param.typeAnnotation) {
-        type.expression = flowDoctrine(param.typeAnnotation.typeAnnotation);
+        type.expression = typeAnnotation(param.typeAnnotation);
       }
       return {
         title: 'param',
@@ -220,6 +259,15 @@ function paramToDoc(param, prefix, i) {
         type
       };
     }
+    case 'FunctionTypeParam': // flow interface method signature
+      return {
+        title: 'param',
+        name: prefix ? prefix + '.' + param.name.name : param.name.name,
+        lineNumber: param.loc.start.line,
+        type: param.typeAnnotation
+          ? typeAnnotation(param.typeAnnotation)
+          : undefined
+      };
     default: {
       // (a)
       const newParam = {
@@ -230,7 +278,7 @@ function paramToDoc(param, prefix, i) {
 
       // Flow/TS annotations
       if (param.typeAnnotation && param.typeAnnotation.typeAnnotation) {
-        newParam.type = flowDoctrine(param.typeAnnotation.typeAnnotation);
+        newParam.type = typeAnnotation(param.typeAnnotation.typeAnnotation);
       }
 
       return newParam;
@@ -338,7 +386,9 @@ function combineTags(inferredTag, explicitTag) {
   let defaultValue;
   if (!explicitTag.type) {
     type = inferredTag.type;
-  } else if (!explicitTag.default && inferredTag.default) {
+  }
+
+  if (!explicitTag.default && inferredTag.default) {
     defaultValue = inferredTag.default;
   }
 

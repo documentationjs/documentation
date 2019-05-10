@@ -18,17 +18,38 @@ function inferKind(comment) {
 
     if (t.isClassDeclaration(node)) {
       comment.kind = 'class';
-    } else if (t.isFunction(node)) {
+      if (node.abstract) {
+        comment.abstract = true;
+      }
+    } else if (
+      t.isFunction(node) ||
+      t.isTSDeclareMethod(node) ||
+      t.isTSDeclareFunction(node) ||
+      t.isFunctionTypeAnnotation(node) ||
+      t.isTSMethodSignature(node)
+    ) {
       if (node.kind === 'get' || node.kind === 'set') {
         comment.kind = 'member';
       } else if (node.id && node.id.name && !!/^[A-Z]/.exec(node.id.name)) {
         comment.kind = 'class';
       } else {
         comment.kind = 'function';
+        if (node.async) {
+          comment.async = true;
+        }
+        if (node.generator) {
+          comment.generator = true;
+        }
+        if (node.abstract) {
+          comment.abstract = true;
+        }
       }
-    } else if (t.isTypeAlias(node)) {
+    } else if (t.isTypeAlias(node) || t.isTSTypeAliasDeclaration(node)) {
       comment.kind = 'typedef';
-    } else if (t.isInterfaceDeclaration(node)) {
+    } else if (
+      t.isInterfaceDeclaration(node) ||
+      t.isTSInterfaceDeclaration(node)
+    ) {
       comment.kind = 'interface';
     } else if (t.isVariableDeclaration(node)) {
       if (node.kind === 'const') {
@@ -47,11 +68,25 @@ function inferKind(comment) {
     } else if (t.isExpressionStatement(node)) {
       // module.exports = function() {}
       findKind(node.expression.right);
-    } else if (t.isClassProperty(node)) {
+    } else if (
+      t.isClassProperty(node) ||
+      t.isTSPropertySignature(node) ||
+      t.isTSEnumMember(node)
+    ) {
       comment.kind = 'member';
     } else if (t.isProperty(node)) {
       // { foo: function() {} }
       findKind(node.value);
+    } else if (t.isTSModuleDeclaration(node)) {
+      comment.kind = 'namespace';
+    } else if (t.isObjectTypeProperty(node)) {
+      if (t.isFunctionTypeAnnotation(node.value)) {
+        findKind(node.value);
+      } else {
+        comment.kind = 'member';
+      }
+    } else if (t.isTSEnumDeclaration(node)) {
+      comment.kind = 'enum';
     }
   }
 

@@ -74,6 +74,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 3,
@@ -176,6 +177,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -243,8 +245,14 @@ Array [
       },
       "type": "root",
     },
-    "errors": Array [],
+    "errors": Array [
+      Object {
+        "commentLineNumber": 0,
+        "message": "@memberof reference to .props not found",
+      },
+    ],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 7,
@@ -255,6 +263,7 @@ Array [
         "line": 10,
       },
     },
+    "memberof": ".props",
     "members": Object {
       "events": Array [],
       "global": Array [],
@@ -263,20 +272,23 @@ Array [
       "static": Array [],
     },
     "name": "myNumber",
-    "namespace": "myNumber",
+    "namespace": ".myNumber",
     "params": Array [],
     "path": Array [
       Object {
         "kind": undefined,
         "name": "myNumber",
+        "scope": "static",
       },
     ],
     "properties": Array [],
     "returns": Array [],
+    "scope": "static",
     "sees": Array [],
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -289,7 +301,7 @@ Array [
       "loc": SourceLocation {
         "end": Position {
           "column": 1,
-          "line": 19,
+          "line": 20,
         },
         "start": Position {
           "column": 0,
@@ -351,6 +363,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 3,
@@ -453,18 +466,19 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
     "context": Object {
       "loc": SourceLocation {
         "end": Position {
-          "column": 3,
-          "line": 17,
+          "column": 1,
+          "line": 19,
         },
         "start": Position {
-          "column": 2,
-          "line": 14,
+          "column": 0,
+          "line": 10,
         },
       },
     },
@@ -475,9 +489,9 @@ Array [
             Object {
               "position": Position {
                 "end": Object {
-                  "column": 17,
+                  "column": 6,
                   "line": 1,
-                  "offset": 16,
+                  "offset": 5,
                 },
                 "indent": Array [],
                 "start": Object {
@@ -487,14 +501,14 @@ Array [
                 },
               },
               "type": "text",
-              "value": "This is a number",
+              "value": "props",
             },
           ],
           "position": Position {
             "end": Object {
-              "column": 17,
+              "column": 6,
               "line": 1,
-              "offset": 16,
+              "offset": 5,
             },
             "indent": Array [],
             "start": Object {
@@ -508,9 +522,9 @@ Array [
       ],
       "position": Object {
         "end": Object {
-          "column": 17,
+          "column": 6,
           "line": 1,
-          "offset": 16,
+          "offset": 5,
         },
         "start": Object {
           "column": 1,
@@ -520,40 +534,162 @@ Array [
       },
       "type": "root",
     },
-    "errors": Array [],
+    "errors": Array [
+      Object {
+        "commentLineNumber": 0,
+        "message": "@memberof reference to vue.input not found",
+      },
+    ],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
-        "column": 5,
-        "line": 13,
+        "column": 12,
+        "line": 9,
       },
       "start": Position {
-        "column": 2,
-        "line": 11,
+        "column": 0,
+        "line": 9,
       },
     },
+    "memberof": "vue.input",
     "members": Object {
       "events": Array [],
       "global": Array [],
       "inner": Array [],
       "instance": Array [],
-      "static": Array [],
+      "static": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 3,
+                "line": 18,
+              },
+              "start": Position {
+                "column": 2,
+                "line": 15,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Position {
+                      "end": Object {
+                        "column": 17,
+                        "line": 1,
+                        "offset": 16,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is a number",
+                  },
+                ],
+                "position": Position {
+                  "end": Object {
+                    "column": 17,
+                    "line": 1,
+                    "offset": 16,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 17,
+                "line": 1,
+                "offset": 16,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "implements": Array [],
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 5,
+              "line": 14,
+            },
+            "start": Position {
+              "column": 2,
+              "line": 12,
+            },
+          },
+          "memberof": "vue.input.props",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "myNumber",
+          "namespace": ".props.myNumber",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": undefined,
+              "name": "props",
+              "scope": "static",
+            },
+            Object {
+              "kind": undefined,
+              "name": "myNumber",
+              "scope": "static",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "static",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "yields": Array [],
+        },
+      ],
     },
-    "name": "myNumber",
-    "namespace": "myNumber",
+    "name": "props",
+    "namespace": ".props",
     "params": Array [],
     "path": Array [
       Object {
         "kind": undefined,
-        "name": "myNumber",
+        "name": "props",
+        "scope": "static",
       },
     ],
     "properties": Array [],
     "returns": Array [],
+    "scope": "static",
     "sees": Array [],
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -764,6 +900,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -797,6 +934,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -866,6 +1004,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -969,6 +1108,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -1038,6 +1178,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -1141,6 +1282,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -1219,6 +1361,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -1322,6 +1465,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -2891,6 +3035,7 @@ Array [
 // result is 6",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -3072,6 +3217,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -3141,6 +3287,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": SourceLocation {
       "end": Position {
@@ -3244,6 +3391,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -3267,6 +3415,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -3336,11 +3485,33 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs boolean-literal-type.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs boolean-literal-type.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [f][1]
+    -   [Parameters][2]
+
+## f
+
+### Parameters
+
+-   \`t\` **\`true\`** 
+-   \`f\` **\`false\`** 
+
+Returns **\\\\[\`true\`, \`false\`]** 
+
+[1]: #f
+
+[2]: #parameters
+"
+`;
 
 exports[`outputs boolean-literal-type.input.js markdown AST 1`] = `
 Object {
@@ -3488,11 +3659,11 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 8,
+          "line": 9,
         },
         "start": Object {
           "column": 0,
-          "line": 6,
+          "line": 7,
         },
       },
     },
@@ -3550,11 +3721,23 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [
+      Object {
+        "description": null,
+        "lineNumber": 3,
+        "name": "MyInterface",
+        "title": "implements",
+        "type": Object {
+          "name": "MyInterface",
+          "type": "NameExpression",
+        },
+      },
+    ],
     "kind": "class",
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 5,
+        "line": 6,
       },
       "start": Object {
         "column": 0,
@@ -3572,11 +3755,11 @@ Array [
             "loc": Object {
               "end": Object {
                 "column": 2,
-                "line": 17,
+                "line": 18,
               },
               "start": Object {
                 "column": 0,
-                "line": 15,
+                "line": 16,
               },
             },
           },
@@ -3634,15 +3817,16 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
               "column": 3,
-              "line": 14,
+              "line": 15,
             },
             "start": Object {
               "column": 0,
-              "line": 10,
+              "line": 11,
             },
           },
           "memberof": "MyClass",
@@ -3816,6 +4000,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -3823,11 +4008,11 @@ Array [
             "loc": Object {
               "end": Object {
                 "column": 47,
-                "line": 23,
+                "line": 24,
               },
               "start": Object {
                 "column": 0,
-                "line": 23,
+                "line": 24,
               },
             },
           },
@@ -3885,15 +4070,16 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
               "column": 3,
-              "line": 22,
+              "line": 23,
             },
             "start": Object {
               "column": 0,
-              "line": 19,
+              "line": 20,
             },
           },
           "memberof": "MyClass",
@@ -3993,6 +4179,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -4060,7 +4247,7 @@ Array [
           },
           "type": "root",
         },
-        "lineNumber": 3,
+        "lineNumber": 4,
         "name": "howMany",
         "title": "property",
         "type": Object {
@@ -4080,8 +4267,18 @@ Array [
         "type": null,
       },
       Object {
-        "description": "how many things it contains",
+        "description": null,
         "lineNumber": 3,
+        "name": "MyInterface",
+        "title": "implements",
+        "type": Object {
+          "name": "MyInterface",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "description": "how many things it contains",
+        "lineNumber": 4,
         "name": "howMany",
         "title": "property",
         "type": Object {
@@ -4092,11 +4289,63 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs class.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs class.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [MyClass][1]
+    -   [Properties][2]
+    -   [getFoo][3]
+        -   [Parameters][4]
+    -   [getUndefined][5]
+
+## MyClass
+
+This is my class, a demo thing.
+
+### Properties
+
+-   \`howMany\` **[number][6]** how many things it contains
+
+### getFoo
+
+Get the number 42
+
+#### Parameters
+
+-   \`getIt\` **[boolean][7]** whether to get the number
+
+Returns **[number][6]** forty-two
+
+### getUndefined
+
+Get undefined
+
+Returns **[undefined][8]** does not return anything.
+
+[1]: #myclass
+
+[2]: #properties
+
+[3]: #getfoo
+
+[4]: #parameters
+
+[5]: #getundefined
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined
+"
+`;
 
 exports[`outputs class.input.js markdown AST 1`] = `
 Object {
@@ -4639,6 +4888,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -4672,6 +4922,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -4746,6 +4997,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -4782,11 +5034,32 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs default-export-function.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs default-export-function.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [default-export-function.input][1]
+-   [bar][2]
+
+## default-export-function.input
+
+i am foo
+
+## bar
+
+i am foo's son
+
+[1]: #default-export-functioninput
+
+[2]: #bar
+"
+`;
 
 exports[`outputs default-export-function.input.js markdown AST 1`] = `
 Object {
@@ -4909,6 +5182,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -4942,6 +5216,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -4982,6 +5257,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -5001,6 +5277,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5019,6 +5296,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -5058,6 +5336,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5076,6 +5355,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -5109,6 +5389,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5149,6 +5430,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5167,6 +5449,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5207,6 +5490,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5225,6 +5509,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5271,6 +5556,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -5291,6 +5577,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5331,6 +5618,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5349,6 +5637,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5389,6 +5678,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5407,6 +5697,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5453,6 +5744,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -5481,6 +5773,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5499,6 +5792,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -5536,6 +5830,7 @@ Array [
       "name": "boolean",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5554,6 +5849,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 18,
@@ -5585,6 +5881,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5654,6 +5951,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -5704,6 +6002,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -5722,6 +6021,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -5755,6 +6055,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -5794,6 +6095,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5812,6 +6114,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5851,6 +6154,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5869,6 +6173,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -5914,6 +6219,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5932,6 +6238,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 10,
@@ -5969,6 +6276,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -5987,6 +6295,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -6026,6 +6335,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6043,6 +6353,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6061,6 +6372,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6094,6 +6406,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6112,6 +6425,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6145,6 +6459,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6163,6 +6478,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6200,6 +6516,7 @@ Array [
       "name": "number",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6218,6 +6535,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6255,6 +6573,7 @@ Array [
       "name": "string",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6273,6 +6592,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -6310,6 +6630,7 @@ Array [
       "name": "string",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6328,6 +6649,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6371,6 +6693,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6389,6 +6712,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -6422,6 +6746,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -6461,6 +6786,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6478,6 +6804,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6547,6 +6874,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -6590,6 +6918,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -6608,6 +6937,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -6641,6 +6971,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -6680,6 +7011,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -6697,11 +7029,244 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs document-exported.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs document-exported.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [z][1]
+    -   [zMethod][2]
+-   [x][3]
+    -   [Parameters][4]
+-   [Class][5]
+    -   [Parameters][6]
+    -   [classMethod][7]
+    -   [classGetter][8]
+    -   [classSetter][9]
+        -   [Parameters][10]
+    -   [staticMethod][11]
+    -   [staticGetter][12]
+    -   [staticSetter][13]
+        -   [Parameters][14]
+-   [T5][15]
+-   [y2Default][16]
+-   [y4][17]
+    -   [Parameters][18]
+-   [object][19]
+    -   [method][20]
+    -   [getter][21]
+    -   [setter][22]
+        -   [Parameters][23]
+    -   [prop][24]
+    -   [func][25]
+-   [f1][26]
+-   [f3][27]
+-   [T][28]
+-   [T2][29]
+-   [T4][30]
+-   [f4][31]
+    -   [Parameters][32]
+-   [o1][33]
+    -   [om1][34]
+-   [f5][35]
+    -   [Parameters][36]
+-   [o2][37]
+    -   [om2][38]
+
+## z
+
+### zMethod
+
+## x
+
+### Parameters
+
+-   \`yparam\`  
+
+## Class
+
+### Parameters
+
+-   \`a\` **[string][39]** 
+
+### classMethod
+
+### classGetter
+
+### classSetter
+
+#### Parameters
+
+-   \`v\`  
+
+### staticMethod
+
+### staticGetter
+
+### staticSetter
+
+#### Parameters
+
+-   \`v\`  
+
+## T5
+
+Type: [boolean][40]
+
+## y2Default
+
+## y4
+
+Description of y3
+
+### Parameters
+
+-   \`p\` **[number][41]** 
+
+Returns **void** 
+
+## object
+
+### method
+
+### getter
+
+### setter
+
+#### Parameters
+
+-   \`v\`  
+
+### prop
+
+### func
+
+## f1
+
+## f3
+
+## T
+
+Type: [number][41]
+
+## T2
+
+Type: [string][39]
+
+## T4
+
+Type: [string][39]
+
+## f4
+
+### Parameters
+
+-   \`x\` **X** 
+
+## o1
+
+### om1
+
+## f5
+
+f5 comment
+
+### Parameters
+
+-   \`y\` **Y** 
+
+## o2
+
+### om2
+
+[1]: #z
+
+[2]: #zmethod
+
+[3]: #x
+
+[4]: #parameters
+
+[5]: #class
+
+[6]: #parameters-1
+
+[7]: #classmethod
+
+[8]: #classgetter
+
+[9]: #classsetter
+
+[10]: #parameters-2
+
+[11]: #staticmethod
+
+[12]: #staticgetter
+
+[13]: #staticsetter
+
+[14]: #parameters-3
+
+[15]: #t5
+
+[16]: #y2default
+
+[17]: #y4
+
+[18]: #parameters-4
+
+[19]: #object
+
+[20]: #method
+
+[21]: #getter
+
+[22]: #setter
+
+[23]: #parameters-5
+
+[24]: #prop
+
+[25]: #func
+
+[26]: #f1
+
+[27]: #f3
+
+[28]: #t
+
+[29]: #t2
+
+[30]: #t4
+
+[31]: #f4
+
+[32]: #parameters-6
+
+[33]: #o1
+
+[34]: #om1
+
+[35]: #f5
+
+[36]: #parameters-7
+
+[37]: #o2
+
+[38]: #om2
+
+[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[40]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[41]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs document-exported.input.js markdown AST 1`] = `
 Object {
@@ -7578,6 +8143,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 2,
@@ -7609,6 +8175,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -7632,6 +8199,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 7,
@@ -7666,11 +8234,28 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs document-exported-export-default-object.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs document-exported-export-default-object.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [document-exported-export-default-object.input][1]
+-   [x][2]
+
+## document-exported-export-default-object.input
+
+## x
+
+[1]: #document-exported-export-default-objectinput
+
+[2]: #x
+"
+`;
 
 exports[`outputs document-exported-export-default-object.input.js markdown AST 1`] = `
 Object {
@@ -7723,6 +8308,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 18,
@@ -7754,11 +8340,23 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs document-exported-export-default-value.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs document-exported-export-default-value.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [document-exported-export-default-value.input][1]
+
+## document-exported-export-default-value.input
+
+[1]: #document-exported-export-default-valueinput
+"
+`;
 
 exports[`outputs document-exported-export-default-value.input.js markdown AST 1`] = `
 Object {
@@ -7857,6 +8455,7 @@ have any parameter descriptions.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -7923,6 +8522,7 @@ have any parameter descriptions.",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -7996,6 +8596,7 @@ have any parameter descriptions.",
         "description": "destructure([1, 2, 3])",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -8062,6 +8663,7 @@ have any parameter descriptions.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -8131,6 +8733,7 @@ have any parameter descriptions.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -8329,6 +8932,7 @@ have any parameter descriptions.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -8406,6 +9010,7 @@ class A {
 }",
       },
     ],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -8490,6 +9095,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -8530,6 +9136,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8599,6 +9206,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -8639,6 +9247,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8708,6 +9317,7 @@ class A {
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -8766,6 +9376,7 @@ class A {
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -8840,6 +9451,7 @@ as a property.",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -8880,6 +9492,7 @@ as a property.",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -8951,6 +9564,7 @@ as a property.",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -8991,6 +9605,7 @@ as a property.",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -9162,6 +9777,7 @@ class A {
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9231,6 +9847,7 @@ class A {
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9334,6 +9951,7 @@ class A {
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9492,6 +10110,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9595,6 +10214,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9664,6 +10284,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9706,6 +10327,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9775,6 +10397,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9821,8 +10444,10 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
+    "async": true,
     "augments": Array [],
     "context": Object {
       "loc": Object {
@@ -9890,6 +10515,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -9923,6 +10549,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -9992,6 +10619,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10095,6 +10723,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10164,6 +10793,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10204,6 +10834,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "access": "protected",
@@ -10274,6 +10905,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10313,6 +10945,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "access": "public",
@@ -10383,6 +11016,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10422,6 +11056,7 @@ It takes a ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10491,6 +11126,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -10522,6 +11158,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10591,6 +11228,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10700,6 +11338,7 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -10769,6 +11408,7 @@ It takes a ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -10820,11 +11460,409 @@ It takes a ",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 1,
+          "line": 189,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 177,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 21,
+                  "line": 1,
+                  "offset": 20,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "babel parser plugins",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+              "offset": 20,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "class",
+    "loc": Object {
+      "end": Object {
+        "column": 27,
+        "line": 176,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 176,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "A",
+    "namespace": "A",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "class",
+        "name": "A",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs es6.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs es6.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [destructure][1]
+    -   [Parameters][2]
+-   [destructure][3]
+    -   [Parameters][4]
+    -   [Examples][5]
+-   [multiply][6]
+    -   [Parameters][7]
+-   [Sink][8]
+    -   [Parameters][9]
+    -   [Examples][10]
+    -   [staticProp][11]
+    -   [empty][12]
+    -   [classprop][13]
+        -   [Parameters][14]
+    -   [aGetter][15]
+    -   [hello][16]
+-   [makeABasket][17]
+-   [makeASink][18]
+-   [functionWithRest][19]
+    -   [Parameters][20]
+-   [functionWithRestAndType][21]
+    -   [Parameters][22]
+-   [foo][23]
+-   [es6.input][24]
+-   [veryImportantTransform][25]
+    -   [Parameters][26]
+-   [iAmProtected][27]
+-   [iAmPublic][28]
+-   [execute][29]
+-   [isArrayEqualWith][30]
+    -   [Parameters][31]
+-   [paramWithMemberType][32]
+    -   [Parameters][33]
+-   [A][34]
+
+## destructure
+
+This function destructures with defaults. It should not
+have any parameter descriptions.
+
+### Parameters
+
+-   \`$0\` **[Object][35]**  (optional, default \`{}\`)
+    -   \`$0.phoneNumbers\`   (optional, default \`[]\`)
+    -   \`$0.emailAddresses\`   (optional, default \`[]\`)
+    -   \`$0.params\` **...any** 
+
+## destructure
+
+Similar, but with an array
+
+### Parameters
+
+-   \`$0\` **[Array][36]** 
+    -   \`$0.0\`  
+    -   \`$0.1\`  
+    -   \`$0.2\`  
+
+### Examples
+
+\`\`\`javascript
+destructure([1, 2, 3])
+\`\`\`
+
+## multiply
+
+This function returns the number one.
+
+### Parameters
+
+-   \`a\` **[Array][36]&lt;[Number][37]>** an array of numbers
+-   \`b\`  
+
+Returns **[Number][37]** numberone
+
+## Sink
+
+This is a sink
+
+### Parameters
+
+-   \`height\` **[number][37]** the height of the thing
+-   \`width\` **[number][37]** the width of the thing
+
+### Examples
+
+\`\`\`javascript
+@abc
+class A {
+  @bind
+  say() {}
+}
+\`\`\`
+
+### staticProp
+
+This is a property of the sink.
+
+### empty
+
+Is it empty
+
+### classprop
+
+This uses the class property transform
+
+#### Parameters
+
+-   \`a\` **[number][37]** 
+
+Returns **[string][38]** 
+
+### aGetter
+
+This is a getter method: it should be documented
+as a property.
+
+### hello
+
+This method says hello
+
+## makeABasket
+
+This method returns a basket. The type should not be linked.
+
+Returns **Basket** a basket
+
+## makeASink
+
+This method returns a [sink][8]. The type should be linked.
+It takes a [number][39] which should also be linked.
+
+Returns **[Sink][40]** a sink
+
+## functionWithRest
+
+This function takes rest params
+
+### Parameters
+
+-   \`someParams\` **...any** 
+
+## functionWithRestAndType
+
+So does this one, with types
+
+### Parameters
+
+-   \`someParams\` **...[number][37]** 
+
+## foo
+
+This is an async method
+
+## es6.input
+
+This function returns the number one.
+
+Returns **[Number][37]** numberone
+
+## veryImportantTransform
+
+This tests our support of optional parameters in ES6
+
+### Parameters
+
+-   \`foo\`   (optional, default \`'bar'\`)
+
+## iAmProtected
+
+A protected function
+
+## iAmPublic
+
+A public function
+
+## execute
+
+This is re-exported
+
+## isArrayEqualWith
+
+Regression check for #498
+
+### Parameters
+
+-   \`array1\` **[Array][36]&lt;T>** 
+-   \`array2\` **[Array][36]&lt;T>** 
+-   \`compareFunction\` **function (a: T, b: T): [boolean][41]**  (optional, default \`(a:T,b:T):boolean=>a===b\`)
+
+Returns **[boolean][41]** 
+
+## paramWithMemberType
+
+Regression check for #749
+
+### Parameters
+
+-   \`a\` **atype.property** 
+
+Returns **[boolean][41]** 
+
+## A
+
+babel parser plugins
+
+[1]: #destructure
+
+[2]: #parameters
+
+[3]: #destructure-1
+
+[4]: #parameters-1
+
+[5]: #examples
+
+[6]: #multiply
+
+[7]: #parameters-2
+
+[8]: #sink
+
+[9]: #parameters-3
+
+[10]: #examples-1
+
+[11]: #staticprop
+
+[12]: #empty
+
+[13]: #classprop
+
+[14]: #parameters-4
+
+[15]: #agetter
+
+[16]: #hello
+
+[17]: #makeabasket
+
+[18]: #makeasink
+
+[19]: #functionwithrest
+
+[20]: #parameters-5
+
+[21]: #functionwithrestandtype
+
+[22]: #parameters-6
+
+[23]: #foo
+
+[24]: #es6input
+
+[25]: #veryimportanttransform
+
+[26]: #parameters-7
+
+[27]: #iamprotected
+
+[28]: #iampublic
+
+[29]: #execute
+
+[30]: #isarrayequalwith
+
+[31]: #parameters-8
+
+[32]: #paramwithmembertype
+
+[33]: #parameters-9
+
+[34]: #a
+
+[35]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[36]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[37]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[38]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[40]: #sink
+
+[41]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+"
+`;
 
 exports[`outputs es6.input.js markdown AST 1`] = `
 Object {
@@ -13296,6 +14334,51 @@ It takes a ",
       "type": "paragraph",
     },
     Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "A",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+              "offset": 20,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "babel parser plugins",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 21,
+          "line": 1,
+          "offset": 20,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
       "identifier": "1",
       "title": undefined,
       "type": "definition",
@@ -13348,7 +14431,7 @@ It takes a ",
 }
 `;
 
-exports[`outputs es6.input.js no markdown TOC 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs es6.input.js no markdown TOC 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
 
 exports[`outputs es6-class.input.js JSON 1`] = `
 Array [
@@ -13425,6 +14508,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -13458,6 +14542,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -13527,6 +14612,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -13611,6 +14697,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 7,
@@ -13663,6 +14750,7 @@ Array [
             "name": "string",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -13703,6 +14791,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -13772,6 +14861,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -13833,11 +14923,71 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs es6-class.input.js markdown 1`] = `"[object Object],[object Object],[object Object]"`;
+exports[`outputs es6-class.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Foo][1]
+-   [Bar][2]
+    -   [Parameters][3]
+    -   [bar][4]
+-   [Baz][5]
+    -   [Parameters][6]
+
+## Foo
+
+**Extends React.Component**
+
+This is my component. This is from issue #458
+
+## Bar
+
+Does nothing. This is from issue #556
+
+### Parameters
+
+-   \`str\` **[string][7]** 
+
+### bar
+
+A useless property
+
+Type: [string][7]
+
+## Baz
+
+This class has fully inferred constructor parameters.
+
+### Parameters
+
+-   \`n\` **[number][8]** 
+-   \`l\` **[Array][9]&lt;[string][7]>** 
+
+[1]: #foo
+
+[2]: #bar
+
+[3]: #parameters
+
+[4]: #bar-1
+
+[5]: #baz
+
+[6]: #parameters-1
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+"
+`;
 
 exports[`outputs es6-class.input.js markdown AST 1`] = `
 Object {
@@ -14322,6 +15472,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -14406,6 +15557,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -14460,6 +15612,7 @@ Array [
             "name": "boolean",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -14529,6 +15682,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "member",
           "loc": Object {
             "end": Object {
@@ -14589,6 +15743,7 @@ Array [
             "name": "string",
             "type": "NameExpression",
           },
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -14608,11 +15763,47 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs es6-class-property.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs es6-class-property.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Issue906][1]
+    -   [readWriteProp][2]
+    -   [readOnlyProp][3]
+
+## Issue906
+
+This is for issue 906.
+
+### readWriteProp
+
+This is a read-write property.
+
+Type: [boolean][4]
+
+### readOnlyProp
+
+This is a read-only property.
+
+Type: [string][5]
+
+[1]: #issue906
+
+[2]: #readwriteprop
+
+[3]: #readonlyprop
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+"
+`;
 
 exports[`outputs es6-class-property.input.js markdown AST 1`] = `
 Object {
@@ -14833,6 +16024,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -14878,11 +16070,30 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs es6-default2.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs es6-default2.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [es6-default2.input][1]
+    -   [Parameters][2]
+
+## es6-default2.input
+
+### Parameters
+
+-   \`thisIsTheArgument\`  
+
+[1]: #es6-default2input
+
+[2]: #parameters
+"
+`;
 
 exports[`outputs es6-default2.input.js markdown AST 1`] = `
 Object {
@@ -15014,6 +16225,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -15123,6 +16335,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -15192,6 +16405,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -15223,6 +16437,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -15292,6 +16507,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -15395,11 +16611,52 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs es6-import.input.js markdown 1`] = `"[object Object],[object Object],[object Object]"`;
+exports[`outputs es6-import.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [multiplyTwice][1]
+    -   [Parameters][2]
+-   [es6-ext][3]
+-   [simple.input][4]
+
+## multiplyTwice
+
+This function returns the number one.
+
+### Parameters
+
+-   \`a\`  
+
+Returns **[Number][5]** numberone
+
+## es6-ext
+
+This is the default export frogs!
+
+## simple.input
+
+This function returns the number one.
+
+Returns **[number][5]** numberone
+
+[1]: #multiplytwice
+
+[2]: #parameters
+
+[3]: #es6-ext
+
+[4]: #simpleinput
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs es6-import.input.js markdown AST 1`] = `
 Object {
@@ -15790,6 +17047,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "event",
     "loc": Object {
       "end": Object {
@@ -15985,11 +17243,39 @@ Array [
       "name": "Object",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs event.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs event.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Map#mousemove][1]
+    -   [Properties][2]
+
+## Map#mousemove
+
+Mouse event
+
+Type: [Object][3]
+
+### Properties
+
+-   \`point\` **Point** the pixel location of the event
+-   \`originalEvent\` **[Event][4]** the original DOM event
+
+[1]: #mapmousemove
+
+[2]: #properties
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[4]: https://developer.mozilla.org/docs/Web/API/Event
+"
+`;
 
 exports[`outputs event.input.js markdown AST 1`] = `
 Object {
@@ -16361,6 +17647,7 @@ Array [
         "description": "foo(1);",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -16470,11 +17757,41 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs example-caption.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs example-caption.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [foo][1]
+    -   [Examples][2]
+
+## foo
+
+This function returns the number one.
+
+### Examples
+
+demonstrates how to run foo
+
+
+\`\`\`javascript
+foo(1);
+\`\`\`
+
+Returns **[Number][3]** numberone
+
+[1]: #foo
+
+[2]: #examples
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs example-caption.input.js markdown AST 1`] = `
 Object {
@@ -16779,6 +18096,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -16812,11 +18130,25 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs external.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs external.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [foo][1]
+
+## foo
+
+I am in \`external.input.js\`.
+
+[1]: #foo
+"
+`;
 
 exports[`outputs external.input.js markdown AST 1`] = `
 Object {
@@ -16979,6 +18311,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -17082,6 +18415,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17100,6 +18434,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -17141,6 +18476,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17215,6 +18551,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -17264,11 +18601,48 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs factory.input.js markdown 1`] = `"[object Object],[object Object],[object Object]"`;
+exports[`outputs factory.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [area][1]
+-   [area][2]
+-   [data][3]
+    -   [Parameters][4]
+
+## area
+
+an area chart generator
+
+Returns **[area][5]** chart
+
+## area
+
+## data
+
+Sets the chart data.
+
+### Parameters
+
+-   \`_\`  
+
+[1]: #area
+
+[2]: #area-1
+
+[3]: #data
+
+[4]: #parameters
+
+[5]: #area
+"
+`;
 
 exports[`outputs factory.input.js markdown AST 1`] = `
 Object {
@@ -17560,6 +18934,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -17593,11 +18968,25 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs flow-optional-chaining.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs flow-optional-chaining.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [value][1]
+
+## value
+
+value
+
+[1]: #value
+"
+`;
 
 exports[`outputs flow-optional-chaining.input.js markdown AST 1`] = `
 Object {
@@ -17726,6 +19115,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 9,
@@ -17774,6 +19164,7 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17843,6 +19234,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -17911,6 +19303,7 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -17980,6 +19373,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -18048,11 +19442,192 @@ Array [
       },
       "type": "FunctionType",
     },
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 42,
+          "line": 16,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 16,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "T3",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 3,
+          "line": 1,
+          "offset": 2,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "typedef",
+    "loc": Object {
+      "end": Object {
+        "column": 9,
+        "line": 15,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 15,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "T3",
+    "namespace": "T3",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "typedef",
+        "name": "T3",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "type": Object {
+      "params": Array [
+        Object {
+          "expression": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+          "name": "a",
+          "type": "ParameterType",
+        },
+      ],
+      "result": Object {
+        "fields": Array [
+          Object {
+            "key": "num",
+            "type": "FieldType",
+            "value": Object {
+              "name": "number",
+              "type": "NameExpression",
+            },
+          },
+        ],
+        "type": "RecordType",
+      },
+      "type": "FunctionType",
+    },
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs flow-unnamed-params.input.js markdown 1`] = `"[object Object],[object Object],[object Object]"`;
+exports[`outputs flow-unnamed-params.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [x2][1]
+-   [T][2]
+-   [T2][3]
+-   [T3][4]
+
+## x2
+
+x2
+
+Type: function (a: [T][5]): [string][6]
+
+## T
+
+T
+
+Type: function ([Array][7]&lt;[string][6]>): {num: [number][8]}
+
+## T2
+
+T2
+
+Type: function (a: [Array][7]&lt;[string][6]>): {num: [number][8]}
+
+## T3
+
+T3
+
+Type: function (a: [string][6]): {num: [number][8]}
+
+[1]: #x2
+
+[2]: #t
+
+[3]: #t2
+
+[4]: #t3
+
+[5]: #t
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs flow-unnamed-params.input.js markdown AST 1`] = `
 Object {
@@ -18396,6 +19971,110 @@ Object {
       "type": "paragraph",
     },
     Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "T3",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 3,
+              "line": 1,
+              "offset": 2,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "T3",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 3,
+          "line": 1,
+          "offset": 2,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "type": "text",
+          "value": "function (",
+        },
+        Object {
+          "type": "text",
+          "value": "a: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "2",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+        Object {
+          "type": "text",
+          "value": ")",
+        },
+        Object {
+          "type": "text",
+          "value": ": ",
+        },
+        Object {
+          "type": "text",
+          "value": "{",
+        },
+        Object {
+          "type": "text",
+          "value": "num: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "number",
+            },
+          ],
+          "identifier": "4",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+        Object {
+          "type": "text",
+          "value": "}",
+        },
+      ],
+      "type": "paragraph",
+    },
+    Object {
       "identifier": "1",
       "title": undefined,
       "type": "definition",
@@ -18494,6 +20173,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -18578,6 +20258,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -18618,6 +20299,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -18637,11 +20319,32 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs infer-private.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs infer-private.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [C][1]
+    -   [m][2]
+
+## C
+
+C description
+
+### m
+
+m description
+
+[1]: #c
+
+[2]: #m
+"
+`;
 
 exports[`outputs infer-private.input.js markdown AST 1`] = `
 Object {
@@ -18820,6 +20523,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -18853,6 +20557,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -18871,6 +20576,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -18912,11 +20618,32 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs inheritance.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs inheritance.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [SpecialArray][1]
+-   [Foo][2]
+
+## SpecialArray
+
+**Extends Array**
+
+With ES6, built-in types are extensible!
+
+## Foo
+
+[1]: #specialarray
+
+[2]: #foo
+"
+`;
 
 exports[`outputs inheritance.input.js markdown AST 1`] = `
 Object {
@@ -19073,6 +20800,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -19248,6 +20976,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -19499,6 +21228,7 @@ and ",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -19674,11 +21404,61 @@ and ",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs inline-link.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs inline-link.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [addOne][1]
+    -   [Parameters][2]
+-   [inline-link.input][3]
+    -   [Parameters][4]
+
+## addOne
+
+Adds one to a number
+
+### Parameters
+
+-   \`a\` **[number][5]** the input
+
+Returns **[number][5]** the output
+
+## inline-link.input
+
+This function returns the number one. Internally, this uses
+[addOne][1] to do the math. This demonstrates
+[Addition][6]
+and [https://en.wikipedia.org/wiki/Addition][6]
+
+This link refers to nothing: [nothing][7]
+
+### Parameters
+
+-   \`a\` **[number][5]** the input
+
+Returns **[number][5]** numberone
+
+[1]: #addone
+
+[2]: #parameters
+
+[3]: #inline-linkinput
+
+[4]: #parameters-1
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[6]: https://en.wikipedia.org/wiki/Addition
+
+[7]: nothing
+"
+`;
 
 exports[`outputs inline-link.input.js markdown AST 1`] = `
 Object {
@@ -20255,7 +22035,7 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 1,
-          "line": 7,
+          "line": 9,
         },
         "start": Object {
           "column": 0,
@@ -20317,6 +22097,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "interface",
     "loc": Object {
       "end": Object {
@@ -20332,7 +22113,238 @@ Array [
       "events": Array [],
       "global": Array [],
       "inner": Array [],
-      "instance": Array [],
+      "instance": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 15,
+                "line": 6,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 6,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 15,
+                        "line": 1,
+                        "offset": 14,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is prop 1",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "implements": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 23,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "memberof": "Foo",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "prop1",
+          "namespace": "Foo#prop1",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "interface",
+              "name": "Foo",
+            },
+            Object {
+              "kind": "member",
+              "name": "prop1",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "number",
+            "type": "NameExpression",
+          },
+          "yields": Array [],
+        },
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 15,
+                "line": 8,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 8,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 15,
+                        "line": 1,
+                        "offset": 14,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "This is prop 2",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 15,
+                    "line": 1,
+                    "offset": 14,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 15,
+                "line": 1,
+                "offset": 14,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "implements": Array [],
+          "kind": "member",
+          "loc": Object {
+            "end": Object {
+              "column": 23,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 7,
+            },
+          },
+          "memberof": "Foo",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "prop2",
+          "namespace": "Foo#prop2",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "interface",
+              "name": "Foo",
+            },
+            Object {
+              "kind": "member",
+              "name": "prop2",
+              "scope": "instance",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "scope": "instance",
+          "sees": Array [],
+          "tags": Array [],
+          "throws": Array [],
+          "todos": Array [],
+          "type": Object {
+            "name": "string",
+            "type": "NameExpression",
+          },
+          "yields": Array [],
+        },
+      ],
       "static": Array [],
     },
     "name": "Foo",
@@ -20344,36 +22356,55 @@ Array [
         "name": "Foo",
       },
     ],
-    "properties": Array [
-      Object {
-        "lineNumber": 5,
-        "name": "prop1",
-        "title": "property",
-        "type": Object {
-          "name": "number",
-          "type": "NameExpression",
-        },
-      },
-      Object {
-        "lineNumber": 6,
-        "name": "prop2",
-        "title": "property",
-        "type": Object {
-          "name": "string",
-          "type": "NameExpression",
-        },
-      },
-    ],
+    "properties": Array [],
     "returns": Array [],
     "sees": Array [],
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs interface.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs interface.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Foo][1]
+    -   [prop1][2]
+    -   [prop2][3]
+
+## Foo
+
+**Extends Bar, Baz**
+
+This is my interface.
+
+### prop1
+
+This is prop 1
+
+Type: [number][4]
+
+### prop2
+
+This is prop 2
+
+Type: [string][5]
+
+[1]: #foo
+
+[2]: #prop1
+
+[3]: #prop2
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+"
+`;
 
 exports[`outputs interface.input.js markdown AST 1`] = `
 Object {
@@ -20449,7 +22480,7 @@ Object {
       "children": Array [
         Object {
           "type": "text",
-          "value": "Properties",
+          "value": "prop1",
         },
       ],
       "depth": 3,
@@ -20458,84 +22489,122 @@ Object {
     Object {
       "children": Array [
         Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "inlineCode",
-                  "value": "prop1",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "type": "text",
-                          "value": "number",
-                        },
-                      ],
-                      "identifier": "1",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "type": "strong",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-              ],
-              "type": "paragraph",
+          "position": Position {
+            "end": Object {
+              "column": 15,
+              "line": 1,
+              "offset": 14,
             },
-          ],
-          "type": "listItem",
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is prop 1",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 15,
+          "line": 1,
+          "offset": 14,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
         },
         Object {
           "children": Array [
             Object {
-              "children": Array [
-                Object {
-                  "type": "inlineCode",
-                  "value": "prop2",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "type": "text",
-                          "value": "string",
-                        },
-                      ],
-                      "identifier": "2",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "type": "strong",
-                },
-                Object {
-                  "type": "text",
-                  "value": " ",
-                },
-              ],
-              "type": "paragraph",
+              "type": "text",
+              "value": "number",
             },
           ],
-          "type": "listItem",
+          "identifier": "1",
+          "referenceType": "full",
+          "type": "linkReference",
         },
       ],
-      "ordered": false,
-      "type": "list",
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "prop2",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 15,
+              "line": 1,
+              "offset": 14,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "This is prop 2",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 15,
+          "line": 1,
+          "offset": 14,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Type: ",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "string",
+            },
+          ],
+          "identifier": "2",
+          "referenceType": "full",
+          "type": "linkReference",
+        },
+      ],
+      "type": "paragraph",
     },
     Object {
       "identifier": "1",
@@ -20658,6 +22727,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -20691,11 +22761,25 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs internal.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs internal.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [foo][1]
+
+## foo
+
+I am in \`external.input.js\`.
+
+[1]: #foo
+"
+`;
 
 exports[`outputs internal.input.js markdown AST 1`] = `
 Object {
@@ -20866,6 +22950,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -20950,6 +23035,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 19,
@@ -20988,6 +23074,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -21057,6 +23144,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -21239,6 +23327,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -21308,6 +23397,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -21490,6 +23580,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -21524,11 +23615,68 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs lends.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs lends.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [TheClass][1]
+    -   [my-field][2]
+    -   [foo][3]
+        -   [Parameters][4]
+    -   [bar][5]
+        -   [Parameters][6]
+
+## TheClass
+
+**Extends Augmented**
+
+A neat layout view
+
+### my-field
+
+My field
+
+### foo
+
+My neat function
+
+#### Parameters
+
+-   \`word\` **[string][7]** your word
+
+Returns **[string][7]** your word but one better
+
+### bar
+
+My neat function
+
+#### Parameters
+
+-   \`word\` **[string][7]** your word
+
+Returns **[string][7]** your word but one better
+
+[1]: #theclass
+
+[2]: #my-field
+
+[3]: #foo
+
+[4]: #parameters
+
+[5]: #bar
+
+[6]: #parameters-1
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+"
+`;
 
 exports[`outputs lends.input.js markdown AST 1`] = `
 Object {
@@ -22071,6 +24219,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -22175,6 +24324,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -22193,6 +24343,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -22261,11 +24412,42 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs literal_types.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs literal_types.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [f][1]
+    -   [Parameters][2]
+-   [g][3]
+    -   [Parameters][4]
+
+## f
+
+### Parameters
+
+-   \`x\` **(\`\\"a\\"\` \\\\| \`\\"b\\"\` \\\\| \`\\"\\"\` \\\\| \`0\` \\\\| \`-42\` \\\\| \`3.14\`)** 
+
+## g
+
+### Parameters
+
+-   \`x\` **(\`\\"a\\"\` \\\\| \`\\"b\\"\` \\\\| \`\\"\\"\` \\\\| \`0\` \\\\| \`-42\` \\\\| \`3.14\`)** 
+
+[1]: #f
+
+[2]: #parameters
+
+[3]: #g
+
+[4]: #parameters-1
+"
+`;
 
 exports[`outputs literal_types.input.js markdown AST 1`] = `
 Object {
@@ -22564,6 +24746,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -22649,6 +24832,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -22831,6 +25015,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [
@@ -22902,6 +25087,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -23010,6 +25196,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -23041,11 +25228,56 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs memberedclass.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs memberedclass.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [MyClass][1]
+    -   [getFoo][2]
+        -   [Parameters][3]
+    -   [getUndefined][4]
+
+## MyClass
+
+This is my class, a demo thing.
+
+### getFoo
+
+Get the number 42
+
+#### Parameters
+
+-   \`getIt\` **[boolean][5]** whether to get the number
+
+Returns **[number][6]** forty-two
+
+### getUndefined
+
+Get undefined
+
+Returns **[undefined][7]** does not return anything.
+
+[1]: #myclass
+
+[2]: #getfoo
+
+[3]: #parameters
+
+[4]: #getundefined
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined
+"
+`;
 
 exports[`outputs memberedclass.input.js markdown AST 1`] = `
 Object {
@@ -23533,6 +25765,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -23702,11 +25935,36 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs merge-infered-type.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs merge-infered-type.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [addFive][1]
+    -   [Parameters][2]
+
+## addFive
+
+Add five to \`x\`.
+
+### Parameters
+
+-   \`x\` **[number][3]** The number to add five to.
+
+Returns **[number][3]** x plus five.
+
+[1]: #addfive
+
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs merge-infered-type.input.js markdown AST 1`] = `
 Object {
@@ -24080,6 +26338,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "license": "BSD",
     "loc": Object {
@@ -24411,11 +26670,45 @@ Array [
     "throws": Array [],
     "todos": Array [],
     "version": "1.0.0",
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs meta.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs meta.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [meta.input][1]
+
+## meta.input
+
+-   **See: [github][2]**
+-   **See: TestCase**
+-   **See: [markdown link][3]**
+
+This function returns the number one.
+
+Returns **[number][4]** numberone
+
+**Meta**
+
+-   **version**: 1.0.0
+-   **since**: 2.0.0
+-   **copyright**: Tom MacWright
+
+-   **license**: BSD
+
+[1]: #metainput
+
+[2]: http://github.com/
+
+[3]: http://foo.com/
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs meta.input.js markdown AST 1`] = `
 Object {
@@ -24951,6 +27244,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -25060,6 +27354,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -25129,6 +27424,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -25302,11 +27598,54 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs multisignature.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs multisignature.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [getTheTime][1]
+    -   [Parameters][2]
+-   [getTheTime][3]
+    -   [Parameters][4]
+
+## getTheTime
+
+Get the time
+
+### Parameters
+
+-   \`time\`  
+
+Returns **[Date][5]** the current date
+
+## getTheTime
+
+Set the time
+
+### Parameters
+
+-   \`time\` **[Date][5]** the current time
+
+Returns **[undefined][6]** nothing
+
+[1]: #getthetime
+
+[2]: #parameters
+
+[3]: #getthetime-1
+
+[4]: #parameters-1
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined
+"
+`;
 
 exports[`outputs multisignature.input.js markdown AST 1`] = `
 Object {
@@ -25747,6 +28086,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -26205,11 +28545,45 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs nearby_params.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs nearby_params.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [sessions.create][1]
+    -   [Parameters][2]
+
+## sessions.create
+
+Attempt to establish a cookie-based session in exchange for credentials.
+
+### Parameters
+
+-   \`credentials\` **[object][3]** 
+    -   \`credentials.name\` **[string][4]** Login username. Also accepted as \`username\` or \`email\`.
+    -   \`credentials.password\` **[string][4]** Login password
+-   \`callback\` **[function][5]?** Gets passed \`(err, { success:Boolean })\`.
+
+Returns **[Promise][6]** promise, to be resolved on success or rejected on failure
+
+[1]: #sessionscreate
+
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+"
+`;
 
 exports[`outputs nearby_params.input.js markdown AST 1`] = `
 Object {
@@ -26760,6 +29134,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -27104,6 +29479,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -27122,6 +29498,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -27576,11 +29953,67 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs nest_params.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs nest_params.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [foo][1]
+    -   [Parameters][2]
+-   [foo][3]
+    -   [Parameters][4]
+    -   [Properties][5]
+
+## foo
+
+### Parameters
+
+-   \`employees\` **[Array][6]&lt;[Object][7]>** The employees who are responsible for the project.
+    -   \`employees[].name\` **[string][8]** The name of an employee.
+    -   \`employees[].department\` **[string][8]** The employee's department.
+-   \`type\` **[string][8]** The employee's type. (optional, default \`minion\`)
+
+## foo
+
+### Parameters
+
+-   \`options\` **[Object][7]** some options
+    -   \`options.much\` **[number][9]** how much
+-   \`bar\` **[number][9]** something else
+
+### Properties
+
+-   \`theTime\` **[Object][7]** the current time
+    -   \`theTime.hours\` **[number][9]** 
+    -   \`theTime.minutes\` **[number][9]** 
+    -   \`theTime.seconds\` **[number][9]** 
+
+Returns **[Object][7]** foo something else
+
+[1]: #foo
+
+[2]: #parameters
+
+[3]: #foo-1
+
+[4]: #parameters-1
+
+[5]: #properties
+
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs nest_params.input.js markdown AST 1`] = `
 Object {
@@ -28576,6 +31009,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -28685,11 +31119,33 @@ still work in the markdown table.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs newline-in-description.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs newline-in-description.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Parameters][1]
+
+## 
+
+A function.
+
+### Parameters
+
+-   \`a\` **[Number][2]** The input to the function.
+    I should be able to continue the description on a new line, and have it
+    still work in the markdown table.
+
+[1]: #parameters
+
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs newline-in-description.input.js markdown AST 1`] = `
 Object {
@@ -28925,6 +31381,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -28972,11 +31429,31 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs no-name.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs no-name.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Parameters][1]
+
+## 
+
+Set the time
+
+### Parameters
+
+-   \`bar\` **[number][2]** 
+
+[1]: #parameters
+
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs no-name.input.js markdown AST 1`] = `
 Object {
@@ -29114,6 +31591,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -29193,11 +31671,37 @@ Array [
       ],
       "type": "RecordType",
     },
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs optional-record-field-type.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs optional-record-field-type.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Record][1]
+    -   [Properties][2]
+
+## Record
+
+Type: {opt: [number][3]?, req: [string][4]}
+
+### Properties
+
+-   \`opt\` **[number][3]?** 
+-   \`req\` **[string][4]** 
+
+[1]: #record
+
+[2]: #properties
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+"
+`;
 
 exports[`outputs optional-record-field-type.input.js markdown AST 1`] = `
 Object {
@@ -29454,6 +31958,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -29596,6 +32101,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -29665,6 +32171,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -29797,6 +32304,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -29866,6 +32374,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -29921,6 +32430,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -29990,6 +32500,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -30074,6 +32585,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -30187,6 +32699,7 @@ Array [
           ],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -30206,6 +32719,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30275,6 +32789,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 3,
@@ -30359,6 +32874,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -30404,6 +32920,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
     },
@@ -30421,6 +32938,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30529,6 +33047,7 @@ Array [
         "description": "var address = new Address6('2001::/32');",
       },
     ],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -30878,6 +33397,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -30982,6 +33502,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -31428,6 +33949,7 @@ The latter is preferable in case of large GeoJSON files.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31502,6 +34024,7 @@ values specified in code.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -31678,6 +34201,7 @@ values specified in code.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31752,6 +34276,7 @@ or any type information we could infer from annotations.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -31851,6 +34376,7 @@ or any type information we could infer from annotations.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -31925,6 +34451,7 @@ iterator destructure (RestElement)",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -32216,11 +34743,218 @@ iterator destructure (RestElement)",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs params.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs params.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [addThem][1]
+    -   [Parameters][2]
+-   [fishesAndFoxes][3]
+    -   [Parameters][4]
+-   [withDefault][5]
+    -   [Parameters][6]
+-   [Foo][7]
+    -   [method][8]
+        -   [Parameters][9]
+-   [TraditionalObject][10]
+    -   [traditionalMethod][11]
+        -   [Parameters][12]
+-   [Address6][13]
+    -   [Parameters][14]
+    -   [Examples][15]
+-   [GeoJSONSource][16]
+    -   [Parameters][17]
+-   [myfunc][18]
+    -   [Parameters][19]
+-   [foo][20]
+    -   [Parameters][21]
+-   [rotate][22]
+    -   [Parameters][23]
+
+## addThem
+
+This function returns the number one.
+
+### Parameters
+
+-   \`a\`  
+-   \`b\` **[number][24]** the second param
+-   \`c\`  
+-   \`$3\` **[Object][25]** 
+    -   \`$3.d\`  
+    -   \`$3.e\`  
+    -   \`$3.f\`  
+
+## fishesAndFoxes
+
+This method has partially inferred params
+
+### Parameters
+
+-   \`options\` **[Object][25]** 
+    -   \`options.fishes\` **[String][26]** number of kinds of fish
+    -   \`options.foxes\`  
+
+## withDefault
+
+This method has a type in the description and a default in the code
+
+### Parameters
+
+-   \`x\` **[number][24]**  (optional, default \`2\`)
+
+## Foo
+
+This is foo's documentation
+
+### method
+
+The method
+
+#### Parameters
+
+-   \`x\` **[number][24]** Param to method
+
+## TraditionalObject
+
+Traditional object
+
+### traditionalMethod
+
+This method should acquire the param x
+
+#### Parameters
+
+-   \`x\`  
+
+## Address6
+
+Represents an IPv6 address
+
+This tests  our support of optional parameters
+
+### Parameters
+
+-   \`address\` **[string][26]** An IPv6 address string
+-   \`groups\` **[number][24]** How many octets to parse (optional, default \`8\`)
+-   \`third\` **[number][24]?** A third argument
+-   \`foo\` **[Array][27]** to properly be parsed (optional, default \`[1]\`)
+
+### Examples
+
+\`\`\`javascript
+var address = new Address6('2001::/32');
+\`\`\`
+
+## GeoJSONSource
+
+Create a GeoJSON data source instance given an options object
+
+This tests our support of nested parameters
+
+### Parameters
+
+-   \`options\` **[Object][25]?** optional options
+    -   \`options.data\` **([Object][25] \\\\| [string][26])** A GeoJSON data object or URL to it.
+        The latter is preferable in case of large GeoJSON files.
+    -   \`options.maxzoom\` **[number][24]** Maximum zoom to preserve detail at. (optional, default \`14\`)
+    -   \`options.buffer\` **[number][24]?** Tile buffer on each side.
+    -   \`options.tolerance\` **[number][24]?** Simplification tolerance (higher means simpler).
+
+## myfunc
+
+This tests our support for parameters with explicit types but with default
+values specified in code.
+
+### Parameters
+
+-   \`x\` **[number][24]** an argument (optional, default \`123\`)
+
+Returns **[number][24]** some
+
+## foo
+
+This tests our support of JSDoc param tags without type information,
+or any type information we could infer from annotations.
+
+### Parameters
+
+-   \`address\`  An IPv6 address string
+
+## rotate
+
+This tests our support for iterator rest inside an
+iterator destructure (RestElement)
+
+### Parameters
+
+-   \`input\` **[Array][27]** 
+    -   \`input.0\` **any** head of iterator
+    -   \`input.xs\` **...any** body of iterator
+
+Returns **[Array][27]&lt;any>** rotated such that the last element was the first
+
+[1]: #addthem
+
+[2]: #parameters
+
+[3]: #fishesandfoxes
+
+[4]: #parameters-1
+
+[5]: #withdefault
+
+[6]: #parameters-2
+
+[7]: #foo
+
+[8]: #method
+
+[9]: #parameters-3
+
+[10]: #traditionalobject
+
+[11]: #traditionalmethod
+
+[12]: #parameters-4
+
+[13]: #address6
+
+[14]: #parameters-5
+
+[15]: #examples
+
+[16]: #geojsonsource
+
+[17]: #parameters-6
+
+[18]: #myfunc
+
+[19]: #parameters-7
+
+[20]: #foo-1
+
+[21]: #parameters-8
+
+[22]: #rotate
+
+[23]: #parameters-9
+
+[24]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[25]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[26]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+
+[27]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+"
+`;
 
 exports[`outputs params.input.js markdown AST 1`] = `
 Object {
@@ -34869,6 +37603,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -34902,11 +37637,25 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs react-jsx.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs react-jsx.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [apples][1]
+
+## apples
+
+apples
+
+[1]: #apples
+"
+`;
 
 exports[`outputs react-jsx.input.js markdown AST 1`] = `
 Object {
@@ -34967,7 +37716,12 @@ Object {
 
 exports[`outputs require-json.input.js JSON 1`] = `Array []`;
 
-exports[`outputs require-json.input.js markdown 1`] = `""`;
+exports[`outputs require-json.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+"
+`;
 
 exports[`outputs require-json.input.js markdown AST 1`] = `
 Object {
@@ -34983,7 +37737,12 @@ Object {
 
 exports[`outputs require-json-no-extension.input.js JSON 1`] = `Array []`;
 
-exports[`outputs require-json-no-extension.input.js markdown 1`] = `""`;
+exports[`outputs require-json-no-extension.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+"
+`;
 
 exports[`outputs require-json-no-extension.input.js markdown AST 1`] = `
 Object {
@@ -35067,6 +37826,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35100,6 +37860,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35169,6 +37930,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35209,6 +37971,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35227,6 +37990,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -35316,6 +38080,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -35356,6 +38121,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -35375,6 +38141,7 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35444,6 +38211,7 @@ that doesn't crash anything!",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35528,6 +38296,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -35574,6 +38343,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -35643,6 +38413,7 @@ that doesn't crash anything!",
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -35694,6 +38465,7 @@ that doesn't crash anything!",
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -35713,6 +38485,7 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -35782,6 +38555,7 @@ that doesn't crash anything!",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -35815,11 +38589,88 @@ that doesn't crash anything!",
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs sections.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs sections.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [first][1]
+-   [first][2]
+-   [AClass][3]
+    -   [second][4]
+-   [second][5]
+    -   [foo][6]
+        -   [Parameters][7]
+    -   [bar][8]
+        -   [Parameters][9]
+-   [third][10]
+
+## first
+
+This function is first
+
+## first
+
+forgot a memberof here... sure hope that doesn't crash anything!
+
+## AClass
+
+### second
+
+shares a name with a top level item referenced in the TOC... sure hope
+that doesn't crash anything!
+
+## second
+
+This class has some members
+
+### foo
+
+second::foo
+
+#### Parameters
+
+-   \`pork\`  
+
+### bar
+
+second::bar
+
+#### Parameters
+
+-   \`beans\`  
+-   \`rice\`  
+
+## third
+
+This function is third
+
+[1]: #first
+
+[2]: #first-1
+
+[3]: #aclass
+
+[4]: #second
+
+[5]: #second-1
+
+[6]: #foo
+
+[7]: #parameters
+
+[8]: #bar
+
+[9]: #parameters-1
+
+[10]: #third
+"
+`;
 
 exports[`outputs sections.input.js markdown AST 1`] = `
 Object {
@@ -36331,6 +39182,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -36434,11 +39286,29 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs simple.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs simple.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [simple.input][1]
+
+## simple.input
+
+This function returns the number one.
+
+Returns **[number][2]** numberone
+
+[1]: #simpleinput
+
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs simple.input.js markdown AST 1`] = `
 Object {
@@ -36642,6 +39512,7 @@ plus 3.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -36819,6 +39690,7 @@ plus 3.",
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -36888,6 +39760,7 @@ plus 3.",
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "typedef",
     "loc": Object {
       "end": Object {
@@ -37082,11 +39955,59 @@ plus 3.",
       "name": "Function",
       "type": "NameExpression",
     },
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs simple-callback.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs simple-callback.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [takesSimpleCallback][1]
+    -   [Parameters][2]
+-   [simpleCallback][3]
+    -   [Parameters][4]
+
+## takesSimpleCallback
+
+This takes a number and a callback and calls the callback with the number
+plus 3.
+
+### Parameters
+
+-   \`n\` **[Number][5]** The number.
+-   \`cb\` **[simpleCallback][6]** The callback.
+
+## simpleCallback
+
+This callback takes an error and a number.
+
+Type: [Function][7]
+
+### Parameters
+
+-   \`err\` **[Error][8]?** The error.
+-   \`n\` **[Number][5]** The number.
+
+[1]: #takessimplecallback
+
+[2]: #parameters
+
+[3]: #simplecallback
+
+[4]: #parameters-1
+
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[6]: #simplecallback
+
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error
+"
+`;
 
 exports[`outputs simple-callback.input.js markdown AST 1`] = `
 Object {
@@ -37637,6 +40558,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -37740,11 +40662,29 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs simple-hashbang.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs simple-hashbang.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [simple-hashbang.input][1]
+
+## simple-hashbang.input
+
+This function returns the number one.
+
+Returns **[Number][2]** numberone
+
+[1]: #simple-hashbanginput
+
+[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs simple-hashbang.input.js markdown AST 1`] = `
 Object {
@@ -37875,7 +40815,12 @@ Object {
 
 exports[`outputs simple-private.input.js JSON 1`] = `Array []`;
 
-exports[`outputs simple-private.input.js markdown 1`] = `""`;
+exports[`outputs simple-private.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+"
+`;
 
 exports[`outputs simple-private.input.js markdown AST 1`] = `
 Object {
@@ -37891,7 +40836,12 @@ Object {
 
 exports[`outputs simple-singlestar.input.js JSON 1`] = `Array []`;
 
-exports[`outputs simple-singlestar.input.js markdown 1`] = `""`;
+exports[`outputs simple-singlestar.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+"
+`;
 
 exports[`outputs simple-singlestar.input.js markdown AST 1`] = `
 Object {
@@ -37907,7 +40857,12 @@ Object {
 
 exports[`outputs simple-triplestar.input.js JSON 1`] = `Array []`;
 
-exports[`outputs simple-triplestar.input.js markdown 1`] = `""`;
+exports[`outputs simple-triplestar.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+"
+`;
 
 exports[`outputs simple-triplestar.input.js markdown AST 1`] = `
 Object {
@@ -37996,6 +40951,7 @@ Array [
 // result is 6",
       },
     ],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -38177,11 +41133,46 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs simple-two.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs simple-two.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [returnTwo][1]
+    -   [Parameters][2]
+    -   [Examples][3]
+
+## returnTwo
+
+This function returns the number plus two.
+
+### Parameters
+
+-   \`a\` **[Number][4]** the number
+
+### Examples
+
+\`\`\`javascript
+var result = returnTwo(4);
+// result is 6
+\`\`\`
+
+Returns **[Number][4]** numbertwo
+
+[1]: #returntwo
+
+[2]: #parameters
+
+[3]: #examples
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+"
+`;
 
 exports[`outputs simple-two.input.js markdown AST 1`] = `
 Object {
@@ -38434,6 +41425,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -38467,6 +41459,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38507,6 +41500,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38525,6 +41519,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38565,6 +41560,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38583,6 +41579,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38623,6 +41620,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38641,6 +41639,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38681,6 +41680,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -38700,6 +41700,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -38718,6 +41719,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -38751,6 +41753,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38791,6 +41794,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38809,6 +41813,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38849,6 +41854,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38867,6 +41873,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38907,6 +41914,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
         Object {
           "augments": Array [],
@@ -38925,6 +41933,7 @@ Array [
           "description": "",
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "kind": "function",
           "loc": Object {
             "end": Object {
@@ -38965,6 +41974,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -38984,6 +41994,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39002,6 +42013,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -39035,6 +42047,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39053,6 +42066,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -39086,11 +42100,78 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs sort-order-alpha.input.js markdown 1`] = `"[object Object],[object Object],[object Object],[object Object]"`;
+exports[`outputs sort-order-alpha.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [C][1]
+    -   [A][2]
+    -   [a][3]
+    -   [B][4]
+    -   [b][5]
+-   [D][6]
+    -   [A][7]
+    -   [a][8]
+    -   [B][9]
+    -   [b][10]
+-   [a][11]
+-   [b][12]
+
+## C
+
+### A
+
+### a
+
+### B
+
+### b
+
+## D
+
+### A
+
+### a
+
+### B
+
+### b
+
+## a
+
+## b
+
+[1]: #c
+
+[2]: #a
+
+[3]: #a-1
+
+[4]: #b
+
+[5]: #b-1
+
+[6]: #d
+
+[7]: #a-2
+
+[8]: #a-3
+
+[9]: #b-2
+
+[10]: #b-3
+
+[11]: #a-4
+
+[12]: #b-4
+"
+`;
 
 exports[`outputs sort-order-alpha.input.js markdown AST 1`] = `
 Object {
@@ -39244,6 +42325,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "constant",
     "loc": Object {
       "end": Object {
@@ -39284,6 +42366,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39358,6 +42441,7 @@ Array [
       },
     ],
     "examples": Array [],
+    "implements": Array [],
     "loc": Object {
       "end": Object {
         "column": 5,
@@ -39392,11 +42476,30 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs string-literal-key.input.js markdown 1`] = `"[object Object],[object Object]"`;
+exports[`outputs string-literal-key.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [MyContainerObject][1]
+-   [foo][2]
+
+## MyContainerObject
+
+## foo
+
+The foo property
+
+[1]: #mycontainerobject
+
+[2]: #foo
+"
+`;
 
 exports[`outputs string-literal-key.input.js markdown AST 1`] = `
 Object {
@@ -39484,6 +42587,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "module",
     "loc": Object {
       "end": Object {
@@ -39525,6 +42629,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39543,6 +42648,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -39627,6 +42733,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 31,
@@ -39665,6 +42772,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -39697,6 +42805,7 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
   Object {
     "augments": Array [],
@@ -39715,6 +42824,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -39799,6 +42909,7 @@ Array [
           },
           "errors": Array [],
           "examples": Array [],
+          "implements": Array [],
           "loc": Object {
             "end": Object {
               "column": 36,
@@ -39837,6 +42948,7 @@ Array [
           "tags": Array [],
           "throws": Array [],
           "todos": Array [],
+          "yields": Array [],
         },
       ],
       "static": Array [],
@@ -39869,11 +42981,61 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs this-class.input.js markdown 1`] = `"[object Object],[object Object],[object Object]"`;
+exports[`outputs this-class.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [bookshelf][1]
+-   [Book][2]
+    -   [Parameters][3]
+    -   [title][4]
+-   [BookShelf][5]
+    -   [Parameters][6]
+    -   [title][7]
+
+## bookshelf
+
+## Book
+
+### Parameters
+
+-   \`title\`  
+
+### title
+
+The title of the book.
+
+## BookShelf
+
+### Parameters
+
+-   \`title\`  
+
+### title
+
+The title of the bookshelf.
+
+[1]: #bookshelf
+
+[2]: #book
+
+[3]: #parameters
+
+[4]: #title
+
+[5]: #bookshelf-1
+
+[6]: #parameters-1
+
+[7]: #title-1
+"
+`;
 
 exports[`outputs this-class.input.js markdown AST 1`] = `
 Object {
@@ -40153,6 +43315,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "class",
     "loc": Object {
       "end": Object {
@@ -40284,11 +43447,36 @@ Array [
     ],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs type_application.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs type_application.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Address6][1]
+    -   [Parameters][2]
+
+## Address6
+
+Represents an IPv6 address
+
+### Parameters
+
+-   \`address\` **[Array][3]&lt;[string][4]>** An IPv6 address string
+
+[1]: #address6
+
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+"
+`;
 
 exports[`outputs type_application.input.js markdown AST 1`] = `
 Object {
@@ -40486,6 +43674,7 @@ Array [
     "description": "",
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "kind": "function",
     "loc": Object {
       "end": Object {
@@ -40537,11 +43726,36 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
 
-exports[`outputs var-function-param-return.input.js markdown 1`] = `"[object Object]"`;
+exports[`outputs var-function-param-return.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [f][1]
+    -   [Parameters][2]
+
+## f
+
+### Parameters
+
+-   \`x\` **[number][3]** 
+
+Returns **[boolean][4]** 
+
+[1]: #f
+
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+"
+`;
 
 exports[`outputs var-function-param-return.input.js markdown AST 1`] = `
 Object {

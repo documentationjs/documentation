@@ -1,6 +1,5 @@
 const findTarget = require('./finders').findTarget;
-const flowDoctrine = require('../flow_doctrine');
-const t = require('@babel/types');
+const typeAnnotation = require('../type_annotation');
 
 const constTypeMapping = {
   BooleanLiteral: { type: 'BooleanTypeAnnotation' },
@@ -9,7 +8,7 @@ const constTypeMapping = {
 };
 
 /**
- * Infers type tags by using Flow type annotations
+ * Infers type tags by using Flow/TypeScript type annotations
  *
  * @name inferType
  * @param {Object} comment parsed comment
@@ -20,7 +19,8 @@ function inferType(comment) {
     return comment;
   }
 
-  const path = findTarget(comment.context.ast);
+  const ast = comment.context.ast;
+  const path = findTarget(ast);
   if (!path) {
     return comment;
   }
@@ -35,17 +35,37 @@ function inferType(comment) {
       }
       break;
     case 'ClassProperty':
+    case 'TSTypeAliasDeclaration':
+    case 'TSPropertySignature':
       type = n.typeAnnotation;
+      break;
+    case 'ClassMethod':
+    case 'TSDeclareMethod':
+      if (n.kind === 'get') {
+        type = n.returnType;
+      } else if (n.kind === 'set' && n.params[0]) {
+        type = n.params[0].typeAnnotation;
+      }
       break;
     case 'TypeAlias':
       type = n.right;
       break;
+    case 'TSEnumMember':
+      if (n.initializer) {
+        if (constTypeMapping[n.initializer.type]) {
+          type = constTypeMapping[n.initializer.type];
+        }
+      } else {
+        type = constTypeMapping.NumericLiteral;
+      }
+      break;
+    default:
+      if (ast.isObjectTypeProperty() && !ast.node.method) {
+        type = ast.node.value;
+      }
   }
   if (type) {
-    if (t.isTypeAnnotation(type)) {
-      type = type.typeAnnotation;
-    }
-    comment.type = flowDoctrine(type);
+    comment.type = typeAnnotation(type);
   }
   return comment;
 }

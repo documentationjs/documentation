@@ -72,6 +72,14 @@ test('parse - @arg', function() {});
 
 test('parse - @argument', function() {});
 
+test('parse - @async', function() {
+  expect(
+    evaluate(function() {
+      /** @async */
+    })[0].async
+  ).toBe(true);
+});
+
 test('parse - @augments', function() {
   expect(
     evaluate(function() {
@@ -294,7 +302,22 @@ test('parse - description', function() {
 
 test('parse - @emits', function() {});
 
-test('parse - @enum', function() {});
+test('parse - @enum', function() {
+  expect(
+    pick(
+      evaluate(function() {
+        /** @enum {string} */
+      })[0],
+      ['kind', 'type']
+    )
+  ).toEqual({
+    kind: 'enum',
+    type: {
+      type: 'NameExpression',
+      name: 'string'
+    }
+  });
+});
 
 test('parse - @event', function() {
   expect(
@@ -452,6 +475,14 @@ test('parse - @function', function() {
   ).toBeUndefined();
 });
 
+test('parse - @generator', function() {
+  expect(
+    evaluate(function() {
+      /** @generator */
+    })[0].generator
+  ).toBe(true);
+});
+
 test('parse - @global', function() {
   expect(
     evaluate(function() {
@@ -478,7 +509,13 @@ test('parse - @ignore', function() {
   ).toBe(true);
 });
 
-test('parse - @implements', function() {});
+test('parse - @implements', function() {
+  expect(
+    evaluate(function() {
+      /** @implements {Foo} */
+    })[0].implements[0].name
+  ).toEqual('Foo');
+});
 
 test('parse - @inheritdoc', function() {});
 
@@ -502,8 +539,8 @@ test('parse - @interface', function() {
   expect(
     evaluate(function() {
       /** @interface */
-    })[0].interface
-  ).toEqual(true);
+    })[0].kind
+  ).toEqual('interface');
 
   expect(
     evaluate(function() {
@@ -1041,6 +1078,54 @@ test('parse - @variation', function() {
 test('parse - @version', function() {});
 
 test('parse - @virtual', function() {});
+
+test('parse - @yield', function() {
+  expect(
+    evaluate(function() {
+      /** @yield test */
+    })[0].yields[0]
+  ).toEqual({
+    title: 'yields',
+    description: remark().parse('test')
+  });
+
+  expect(
+    evaluate(function() {
+      /** @yield {number} test */
+    })[0].yields[0]
+  ).toEqual({
+    description: remark().parse('test'),
+    title: 'yields',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  });
+});
+
+test('parse - @yields', function() {
+  expect(
+    evaluate(function() {
+      /** @yields test */
+    })[0].yields[0]
+  ).toEqual({
+    title: 'yields',
+    description: remark().parse('test')
+  });
+
+  expect(
+    evaluate(function() {
+      /** @yields {number} test */
+    })[0].yields[0]
+  ).toEqual({
+    description: remark().parse('test'),
+    title: 'yields',
+    type: {
+      name: 'number',
+      type: 'NameExpression'
+    }
+  });
+});
 
 test('parse - unknown tag', function() {
   expect(

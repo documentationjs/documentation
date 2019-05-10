@@ -341,7 +341,9 @@ module.exports = function() {
     // class Foo { prop: T }
     // var Foo = class { prop: T }
     if (
-      (path.isClassMethod() || path.isClassProperty()) &&
+      (path.isClassMethod() ||
+        path.isClassProperty() ||
+        path.isTSDeclareMethod()) &&
       path.parentPath.isClassBody() &&
       path.parentPath.parentPath.isClass()
     ) {
@@ -359,7 +361,7 @@ module.exports = function() {
       }
 
       const declarationNode = path.parentPath.parentPath.node;
-      if (!declarationNode.id) {
+      if (!declarationNode.id && !declarationNode.key) {
         // export default function () {}
         // export default class {}
         // Use module name instead.
@@ -392,37 +394,89 @@ module.exports = function() {
       objectParent = path.parentPath.parentPath;
     } else if (path.isObjectMethod() && path.parentPath.isObjectExpression()) {
       objectParent = path.parentPath;
+    } else if (path.isObjectTypeProperty() || path.isTSTypeElement()) {
+      objectParent = path.parentPath;
     }
 
     // Confirm that the thing being documented is a property of an object.
     if (objectParent) {
-      // The @lends comment is sometimes attached to the first property rather than
-      // the object expression itself.
-      const lendsIdentifiers =
-        findLendsIdentifiers(objectParent) ||
-        findLendsIdentifiers(objectParent.get('properties')[0]);
+      // Collect all keys of parent nested object keys, e.g. {foo: bar: {baz: 1}}
+      const objectKeys = [];
 
-      if (lendsIdentifiers) {
-        return inferMembershipFromIdentifiers(comment, lendsIdentifiers);
-      } else if (objectParent.parentPath.isAssignmentExpression()) {
-        // Foo = { ... };
-        // Foo.prototype = { ... };
-        // Foo.bar = { ... };
-        return inferMembershipFromIdentifiers(
-          comment,
-          extractIdentifiers(objectParent.parentPath.get('left'))
-        );
-      } else if (objectParent.parentPath.isVariableDeclarator()) {
-        // var Foo = { ... };
-        return inferMembershipFromIdentifiers(comment, [
-          objectParent.parentPath.get('id').node.name
-        ]);
-      } else if (objectParent.parentPath.isExportDefaultDeclaration()) {
-        // export default { ... };
-        return inferMembershipFromIdentifiers(comment, [
-          inferModuleName(currentModule || comment)
-        ]);
+      while (!objectParent.isStatement()) {
+        if (
+          objectParent.isObjectProperty() ||
+          objectParent.isObjectTypeProperty() ||
+          objectParent.isTSPropertySignature()
+        ) {
+          objectKeys.unshift(objectParent.node.key.name);
+        }
+
+        // The @lends comment is sometimes attached to the first property rather than
+        // the object expression itself.
+        const lendsIdentifiers =
+          findLendsIdentifiers(objectParent) ||
+          findLendsIdentifiers(objectParent.get('properties')[0]);
+
+        if (lendsIdentifiers) {
+          return inferMembershipFromIdentifiers(comment, [
+            ...lendsIdentifiers,
+            ...objectKeys
+          ]);
+        } else if (objectParent.parentPath.isAssignmentExpression()) {
+          // Foo = { ... };
+          // Foo.prototype = { ... };
+          // Foo.bar = { ... };
+          return inferMembershipFromIdentifiers(comment, [
+            ...extractIdentifiers(objectParent.parentPath.get('left')),
+            ...objectKeys
+          ]);
+        } else if (objectParent.parentPath.isVariableDeclarator()) {
+          // var Foo = { ... };
+          return inferMembershipFromIdentifiers(comment, [
+            objectParent.parentPath.get('id').node.name,
+            ...objectKeys
+          ]);
+        } else if (objectParent.parentPath.isExportDefaultDeclaration()) {
+          // export default { ... };
+          return inferMembershipFromIdentifiers(comment, [
+            inferModuleName(currentModule || comment),
+            ...objectKeys
+          ]);
+        } else if (
+          objectParent.parentPath.isTypeAlias() ||
+          objectParent.parentPath.isTSTypeAliasDeclaration()
+        ) {
+          // type X = { ... }
+          return inferMembershipFromIdentifiers(comment, [
+            objectParent.parentPath.node.id.name,
+            ...objectKeys
+          ]);
+        } else if (
+          objectParent.parentPath.isInterfaceDeclaration() ||
+          objectParent.parentPath.isTSInterfaceDeclaration()
+        ) {
+          // interface Foo { ... }
+          return inferMembershipFromIdentifiers(
+            comment,
+            [...inferClassMembership(objectParent.parentPath), ...objectKeys],
+            'instance'
+          );
+        }
+
+        objectParent = objectParent.parentPath;
       }
+    }
+
+    // TypeScript enums
+    // enum Foo { A }
+    if (path.isTSEnumMember()) {
+      const enumPath = path.parentPath;
+      return inferMembershipFromIdentifiers(
+        comment,
+        [enumPath.node.id.name],
+        'static'
+      );
     }
 
     // var function Foo() {

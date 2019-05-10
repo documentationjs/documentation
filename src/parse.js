@@ -23,6 +23,7 @@ const flatteners = {
   alias: flattenName,
   arg: synonym('param'),
   argument: synonym('param'),
+  async: flattenBoolean,
   /**
    * Parse tag
    * @private
@@ -81,7 +82,10 @@ const flatteners = {
   desc: synonym('description'),
   description: flattenMarkdownDescription,
   emits: synonym('fires'),
-  enum: todo,
+  enum(result, tag) {
+    result.kind = 'enum';
+    result.type = tag.type;
+  },
   /**
    * Parse tag
    * @private
@@ -157,6 +161,7 @@ const flatteners = {
   fires: todo,
   func: synonym('function'),
   function: flattenKindShorthand,
+  generator: flattenBoolean,
   /**
    * Parse tag
    * @private
@@ -169,7 +174,14 @@ const flatteners = {
   hideconstructor: flattenBoolean,
   host: synonym('external'),
   ignore: flattenBoolean,
-  implements: todo,
+  implements(result, tag) {
+    // Match @extends/@augments above.
+    if (!tag.name && tag.type && tag.type.name) {
+      tag.name = tag.type.name;
+    }
+
+    result.implements.push(tag);
+  },
   inheritdoc: todo,
   /**
    * Parse tag
@@ -197,7 +209,7 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   interface(result, tag) {
-    result.interface = true;
+    result.kind = 'interface';
     if (tag.description) {
       result.name = tag.description;
     }
@@ -400,7 +412,27 @@ const flatteners = {
     result.variation = tag.variation;
   },
   version: flattenDescription,
-  virtual: synonym('abstract')
+  virtual: synonym('abstract'),
+  yield: synonym('yields'),
+  /**
+   * Parse tag
+   * @private
+   * @param {Object} result target comment
+   * @param {Object} tag the tag
+   * @returns {undefined} has side-effects
+   */
+  yields(result, tag) {
+    const yields = {
+      description: parseMarkdown(tag.description),
+      title: 'yields'
+    };
+
+    if (tag.type) {
+      yields.type = tag.type;
+    }
+
+    result.yields.push(yields);
+  }
 };
 
 /**
@@ -586,12 +618,14 @@ function parseJSDoc(comment, loc, context) {
   result.augments = [];
   result.errors = [];
   result.examples = [];
+  result.implements = [];
   result.params = [];
   result.properties = [];
   result.returns = [];
   result.sees = [];
   result.throws = [];
   result.todos = [];
+  result.yields = [];
 
   if (result.description) {
     result.description = parseMarkdown(result.description);

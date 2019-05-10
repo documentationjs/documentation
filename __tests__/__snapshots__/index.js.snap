@@ -58,6 +58,7 @@ Array [
     },
     "errors": Array [],
     "examples": Array [],
+    "implements": Array [],
     "loc": SourceLocation {
       "end": Position {
         "column": 9,
@@ -90,6 +91,7 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
+    "yields": Array [],
   },
 ]
 `;
@@ -171,12 +173,14 @@ exports[`build 3`] = `
     },
     \\"augments\\": [],
     \\"examples\\": [],
+    \\"implements\\": [],
     \\"params\\": [],
     \\"properties\\": [],
     \\"returns\\": [],
     \\"sees\\": [],
     \\"throws\\": [],
     \\"todos\\": [],
+    \\"yields\\": [],
     \\"name\\": \\"name\\",
     \\"members\\": {
       \\"global\\": [],

@@ -13,6 +13,7 @@ const hierarchy = require('./hierarchy');
 const inferName = require('./infer/name');
 const inferKind = require('./infer/kind');
 const inferAugments = require('./infer/augments');
+const inferImplements = require('./infer/implements');
 const inferParams = require('./infer/params');
 const inferProperties = require('./infer/properties');
 const inferMembership = require('./infer/membership');
@@ -89,6 +90,7 @@ function buildInternal(inputsAndConfig) {
     inferName,
     inferAccess(config.inferPrivate),
     inferAugments,
+    inferImplements,
     inferKind,
     nest,
     inferParams,

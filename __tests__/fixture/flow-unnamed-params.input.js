@@ -11,3 +11,6 @@ type T = (string[]) => { num: number };
 
 /** T2 */
 type T2 = (a: string[]) => { num: number };
+
+/** T3 */
+type T3 = (a?: string) => { num: number };

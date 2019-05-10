@@ -191,4 +191,98 @@ test('inferParams', function() {
       }
     `).params
   ).toEqual([]);
+
+  expect(
+    evaluate(
+      `
+    /** Test
+     * @param x
+    */
+    function f(x: number = 4) {}
+  `
+    ).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(v: string): void; }`).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`type Foo = { /** b */ b(v: string): void }`).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(...v: string): void; }`).params
+  ).toMatchSnapshot();
+});
+
+test('inferParams (typescript)', function() {
+  expect(
+    evaluate(`/** Test */function f(a: string) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f([a: string, b, {c}]) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test
+     * @param x
+    */
+    function f(x: number = 4) {}
+  `
+  , 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test */
+    function f(opts: { x: string }) {}
+  ` , 'test.ts'
+    ).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(
+      `
+    /** Test */
+    function f(opts: { [foo]: string }) {}
+  ` , 'test.ts'
+    ).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(...a: string) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(a?: string) {};`).params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(a?: string) {};`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`/** Test */function f(a?: string);`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`abstract class Foo { /** */ abstract f(a?: string); }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(v: string): void; }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`type Foo = { /** b */ b(v: string): void }`, 'test.ts').params
+  ).toMatchSnapshot();
+
+  expect(
+    evaluate(`interface Foo { /** b */ b(...v: string): void; }`, 'test.ts').params
+  ).toMatchSnapshot();
 });
