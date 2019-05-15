@@ -312,7 +312,7 @@ function buildMarkdownAST(comments, config) {
         .filter(Boolean);
     }
     let name;
-    if (comment.kind === 'function' || comment.kind === undefined) {
+    if (comment.kind === 'function' /*|| comment.kind === undefined*/) {
       name =
         comment.name + '(' + comment.params.map(p => p.name).join(', ') + ')';
     } else {
