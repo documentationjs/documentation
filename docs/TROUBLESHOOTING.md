@@ -17,8 +17,8 @@ might not understand it. If:
 ## Error: watch ENOSPC
 
 Linux systems can have a low limit of 'watchable files'. To increase this
-limit, follow [the advice in this StackOverflow answer](http://stackoverflow.com/a/17437601/229001).
+limit, follow [the advice in this StackOverflow answer](https://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc/17437601#17437601).
 
 ## Error: EMFILE: too many open files
 
-You'll need to increase the `ulimit` maximum for your system: [here's a StackOverflow issue explaining how](http://unix.stackexchange.com/questions/108174/how-to-persist-ulimit-settings-in-osx-mavericks).
+You'll need to increase the `ulimit` maximum for your system: [here's a StackOverflow issue explaining how](https://unix.stackexchange.com/questions/108174/how-to-persistently-control-maximum-system-resource-consumption-on-mac).
