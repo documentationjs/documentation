@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset='utf-8' />
+  <meta charset='utf-8'>
   <title><%- config['project-name'] %> <%- config['project-version'] %> | Documentation</title><% if (config['project-description']) { %>
   <meta name='description' content='<%- config['project-description'] %>'><% } %>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' rel='stylesheet' />
-  <link href='assets/style.css' rel='stylesheet' />
-  <link href='assets/github.css' rel='stylesheet' />
-  <link href='assets/split.css' rel='stylesheet' /><% if (config['favicon']) { %>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'><% if (config['favicon']) { %>
   <link href='<%- config['favicon'] %>' rel='icon' ><% } %>
 </head>
 <body class='documentation m0'>
