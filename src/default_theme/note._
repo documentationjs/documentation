@@ -1,12 +1,10 @@
-<% if (!note.children) { %>
-  <section class='py2 clearfix'>
+<section class='py2 clearfix'>
 
-    <h2 id='<%- slug(note.namespace) %>' class='mt0'>
-      <%- note.name %>
-    </h2>
+  <h2 id='<%- slug(note.namespace) %>' class='mt0'>
+    <%- note.name %>
+  </h2>
 
-    <% if (note.description) { %>
-      <%= md(note.description) %>
-    <% } %>
-  </section>
-<% } %>
+  <% if (note.description) { %>
+    <%= md(note.description) %>
+  <% } %>
+</section>
