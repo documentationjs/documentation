@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="11.0.1"></a>
+## [11.0.1](https://github.com/documentationjs/documentation/compare/v11.0.0...v11.0.1) (2019-06-12)
+
+
+### Bug Fixes
+
+* toc with children getting displayed as "note" ([#1253](https://github.com/documentationjs/documentation/issues/1253)) ([14298bb](https://github.com/documentationjs/documentation/commit/14298bb))
+
+
+
 <a name="11.0.0"></a>
 # [11.0.0](https://github.com/documentationjs/documentation/compare/v10.1.0...v11.0.0) (2019-05-08)
 

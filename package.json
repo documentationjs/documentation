@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "11.0.0",
+  "version": "11.0.1",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
