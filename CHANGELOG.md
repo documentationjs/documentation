@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="12.0.1"></a>
+## [12.0.1](https://github.com/documentationjs/documentation/compare/v12.0.0...v12.0.1) (2019-07-10)
+
+
+### Bug Fixes
+
+* Crash when called with no inputs. yargs now variadic positional arguments undefined instead of [] ([821a15e](https://github.com/documentationjs/documentation/commit/821a15e))
+
+
+
 <a name="12.0.0"></a>
 # [12.0.0](https://github.com/documentationjs/documentation/compare/v11.0.1...v12.0.0) (2019-07-10)
 
