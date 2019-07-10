@@ -43,7 +43,7 @@ module.exports.handler = function build(argv) {
   let watcher;
   argv._handled = true;
 
-  if (!argv.input.length) {
+  if (!(argv.input && argv.input.length)) {
     try {
       argv.input = [
         JSON.parse(fs.readFileSync(path.resolve('package.json'), 'utf8'))
