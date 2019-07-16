@@ -5,7 +5,7 @@ const documentation = require('../');
 const sharedOptions = require('./shared_options');
 const inject = require('mdast-util-inject');
 const chalk = require('chalk');
-const disparity = require('disparity');
+const diff = require('diff');
 const getReadmeFile = require('../get-readme-file');
 
 module.exports.command = 'readme [input..]';
@@ -94,22 +94,48 @@ module.exports.handler = function readme(argv) {
         .process(readmeContent)
     )
     .then(file => {
-      const diffOutput = disparity.unified(readmeContent, file.contents, {
-        paths: [argv.readmeFile, argv.readmeFile]
-      });
-      if (!diffOutput.length) {
+      const diffRaw = diff.createPatch(
+        '',
+        readmeContent,
+        file.contents,
+        '',
+        ''
+      );
+      if (!diffRaw.length) {
         log(`${argv.readmeFile} is up to date.`);
         process.exit(0);
       }
 
+      // Replace diff headers with real values
+      const cleanedDiff = diffRaw
+        .replace(/^([^\n]+)\n([^\n]+)\n/m, '')
+        .replace(/^---.*/gm, `--- ${argv.readmeFile}\tremoved`)
+        .replace(/^\+\+\+.*/gm, `+++ ${argv.readmeFile}\tadded`);
+
+      // Includes newlines for easier joins
+      const diffLines = cleanedDiff.split(/^/m);
+      const diffHeader = diffLines
+        .slice(0, 2)
+        .join('')
+        .replace(/[^\n\r]+/g, chalk.yellow('$&'));
+      const diffBody = diffLines
+        .slice(2)
+        .join('')
+        .replace(/^-[^\n\r]*/gm, chalk.red('$&'))
+        .replace(/^\+[^\n\r]*/gm, chalk.green('$&'))
+        .replace(/^@@.+@@/gm, chalk.magenta('$&'));
+
       if (argv.d) {
         log(
           chalk.bold(`${argv.readmeFile} needs the following updates:`),
-          `\n${diffOutput}`
+          `\n${diffHeader}${diffBody}`
         );
         process.exit(1);
       } else {
-        log(chalk.bold(`Updating ${argv.readmeFile}`), `\n${diffOutput}`);
+        log(
+          chalk.bold(`Updating ${argv.readmeFile}`),
+          `\n${diffHeader}${diffBody}`
+        );
       }
 
       fs.writeFileSync(argv.readmeFile, file.contents);
