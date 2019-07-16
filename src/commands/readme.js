@@ -6,7 +6,6 @@ const sharedOptions = require('./shared_options');
 const inject = require('mdast-util-inject');
 const chalk = require('chalk');
 const diff = require('diff');
-const ansi = require('ansi-styles');
 const getReadmeFile = require('../get-readme-file');
 
 module.exports.command = 'readme [input..]';
@@ -118,13 +117,13 @@ module.exports.handler = function readme(argv) {
       const diffHeader = diffLines
         .slice(0, 2)
         .join('')
-        .replace(/[^\n\r]+/g, `${ansi.yellow.open}$&${ansi.yellow.close}`);
+        .replace(/[^\n\r]+/g, chalk.yellow('$&'));
       const diffBody = diffLines
         .slice(2)
         .join('')
-        .replace(/^-[^\n\r]*/gm, `${ansi.red.open}$&${ansi.red.close}`)
-        .replace(/^\+[^\n\r]*/gm, `${ansi.green.open}$&${ansi.green.close}`)
-        .replace(/^@@.+@@/gm, `${ansi.magenta.open}$&${ansi.magenta.close}`);
+        .replace(/^-[^\n\r]*/gm, chalk.red('$&'))
+        .replace(/^\+[^\n\r]*/gm, chalk.green('$&'))
+        .replace(/^@@.+@@/gm, chalk.magenta('$&'));
 
       if (argv.d) {
         log(
