@@ -625,9 +625,9 @@ function parseJSDoc(comment, loc, context) {
 
   // Using the @name tag, or any other tag that sets the name of a comment,
   // disconnects the comment from its surrounding code.
-  if (context && result.name) {
-    delete context.ast;
-  }
+  // if (context && result.name) {
+  //   delete context.ast;
+  // }
 
   return result;
 }
