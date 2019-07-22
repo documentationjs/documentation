@@ -273,7 +273,10 @@ function paramToDoc(param, prefix, i) {
       const newParam = {
         title: 'param',
         name: prefix ? prefixedName : param.name,
-        lineNumber: param.loc.start.line
+        // A skipped array argument like ([, a]);
+        // looks like { name: '0', indexed: true }, and thus has no location,
+        // so we allow location to be undefined here.
+        lineNumber: param.loc ? param.loc.start.line : undefined
       };
 
       // Flow/TS annotations

@@ -11,9 +11,9 @@ function destructure({
 /**
  * Similar, but with an array
  * @example
- * destructure([1, 2, 3])
+ * destructure([0, 1, 2, 3])
  */
-function destructure([a, b, c]) {}
+function destructure([, a, b, c]) {}
 
 /**
  * This function returns the number one.
@@ -184,6 +184,6 @@ class A {
     // nullishCoalescingOperator
     let x = a ?? b;
     // logicalAssignment
-    return x &&= b?.b |> String.fromCharCode;
+    return (x &&= b?.b |> String.fromCharCode);
   }
 }

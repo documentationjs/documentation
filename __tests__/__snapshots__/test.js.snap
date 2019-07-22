@@ -8529,7 +8529,7 @@ have any parameter descriptions.",
     "context": Object {
       "loc": Object {
         "end": Object {
-          "column": 34,
+          "column": 36,
           "line": 16,
         },
         "start": Object {
@@ -8593,7 +8593,7 @@ have any parameter descriptions.",
     "errors": Array [],
     "examples": Array [
       Object {
-        "description": "destructure([1, 2, 3])",
+        "description": "destructure([0, 1, 2, 3])",
       },
     ],
     "implements": Array [],
@@ -8623,7 +8623,6 @@ have any parameter descriptions.",
         "name": "$0",
         "properties": Array [
           Object {
-            "lineNumber": 16,
             "name": "$0.0",
             "title": "param",
           },
@@ -8635,6 +8634,11 @@ have any parameter descriptions.",
           Object {
             "lineNumber": 16,
             "name": "$0.2",
+            "title": "param",
+          },
+          Object {
+            "lineNumber": 16,
+            "name": "$0.3",
             "title": "param",
           },
         ],
@@ -8656,7 +8660,7 @@ have any parameter descriptions.",
     "sees": Array [],
     "tags": Array [
       Object {
-        "description": "destructure([1, 2, 3])",
+        "description": "destructure([0, 1, 2, 3])",
         "lineNumber": 2,
         "title": "example",
       },
@@ -11631,11 +11635,12 @@ Similar, but with an array
     -   \`$0.0\`  
     -   \`$0.1\`  
     -   \`$0.2\`  
+    -   \`$0.3\`  
 
 ### Examples
 
 \`\`\`javascript
-destructure([1, 2, 3])
+destructure([0, 1, 2, 3])
 \`\`\`
 
 ## multiply
@@ -12271,6 +12276,28 @@ have any parameter descriptions.",
                   ],
                   "type": "listItem",
                 },
+                Object {
+                  "children": Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "inlineCode",
+                          "value": "$0.3",
+                        },
+                        Object {
+                          "type": "text",
+                          "value": " ",
+                        },
+                        Object {
+                          "type": "text",
+                          "value": " ",
+                        },
+                      ],
+                      "type": "paragraph",
+                    },
+                  ],
+                  "type": "listItem",
+                },
               ],
               "ordered": false,
               "type": "list",
@@ -12295,7 +12322,7 @@ have any parameter descriptions.",
     Object {
       "lang": "javascript",
       "type": "code",
-      "value": "destructure([1, 2, 3])",
+      "value": "destructure([0, 1, 2, 3])",
     },
     Object {
       "children": Array [
