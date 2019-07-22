@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="12.0.3"></a>
+## [12.0.3](https://github.com/documentationjs/documentation/compare/v12.0.2...v12.0.3) (2019-07-22)
+
+
+### Bug Fixes
+
+* Allow skipped array arguments in destructuring. Fixes [#1247](https://github.com/documentationjs/documentation/issues/1247) ([#1266](https://github.com/documentationjs/documentation/issues/1266)) ([f9039e9](https://github.com/documentationjs/documentation/commit/f9039e9))
+
+
+
 <a name="12.0.2"></a>
 ## [12.0.2](https://github.com/documentationjs/documentation/compare/v12.0.1...v12.0.2) (2019-07-16)
 
