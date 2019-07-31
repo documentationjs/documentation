@@ -10,15 +10,16 @@ const getGithubURLPrefix = require('./git/url_prefix');
  * @returns {Object} comment with github inferred
  */
 module.exports = function(comment) {
-  const repoPath = findGit(comment.context.file);
-  const root = repoPath ? path.dirname(repoPath) : '.';
-  const urlPrefix = getGithubURLPrefix(root);
-  const fileRelativePath = comment.context.file
-    .replace(root + path.sep, '')
-    .split(path.sep)
-    .join('/');
+  const paths = findGit(comment.context.file);
+
+  const urlPrefix = paths && getGithubURLPrefix(paths);
 
   if (urlPrefix) {
+    const fileRelativePath = comment.context.file
+      .replace(paths.root + path.sep, '')
+      .split(path.sep)
+      .join('/');
+
     let startLine;
     let endLine;
 

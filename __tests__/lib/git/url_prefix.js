@@ -5,20 +5,33 @@ const parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
 
 test('getGithubURLPrefix', function() {
   mock(mockRepo.master);
-
-  expect(getGithubURLPrefix('/my/repository/path/')).toBe(
-    'https://github.com/foo/bar/blob/this_is_the_sha/'
-  );
-
+  const masterUrl = getGithubURLPrefix({
+    git: '/my/repository/path/.git',
+    root: '/my/repository/path'
+  });
   mock.restore();
 
-  mock(mockRepo.detached);
+  expect(masterUrl).toBe('https://github.com/foo/bar/blob/this_is_the_sha/');
 
-  expect(getGithubURLPrefix('/my/repository/path/')).toBe(
+  mock(mockRepo.detached);
+  const detachedUrl = getGithubURLPrefix({
+    git: '/my/repository/path/.git',
+    root: '/my/repository/path'
+  });
+  mock.restore();
+
+  expect(detachedUrl).toBe(
     'https://github.com/foo/bar/blob/e4cb2ffe677571d0503e659e4e64e01f45639c62/'
   );
 
+  mock(mockRepo.submodule);
+  const submoduleUrl = getGithubURLPrefix({
+    git: '/my/repository/.git/modules/path',
+    root: '/my/repository/path'
+  });
   mock.restore();
+
+  expect(submoduleUrl).toBe('https://github.com/foo/bar/blob/this_is_the_sha/');
 });
 
 test('parsePackedRefs', function() {
