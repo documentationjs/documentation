@@ -5,12 +5,22 @@ const findGit = require('../../../src/git/find_git');
 
 test('findGit', function() {
   mock(mockRepo.master);
-
-  const root = path.parse(__dirname).root;
-
-  expect(
-    findGit(root + path.join('my', 'repository', 'path', 'index.js'))
-  ).toBe(root + path.join('my', 'repository', 'path', '.git'));
-
+  const root =
+    path.parse(__dirname).root + path.join('my', 'repository', 'path');
+  const masterPaths = findGit(path.join(root, 'index.js'));
   mock.restore();
+
+  expect(masterPaths).toEqual({
+    git: path.join(root, '.git'),
+    root: root
+  });
+
+  mock(mockRepo.submodule);
+  const submodulePaths = findGit(path.join(root, 'index.js'));
+  mock.restore();
+
+  expect(submodulePaths).toEqual({
+    git: path.join(path.dirname(root), '.git', 'modules', 'path'),
+    root: root
+  });
 });

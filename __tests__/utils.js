@@ -74,6 +74,29 @@ module.exports.mockRepo = {
       }
     }
   },
+  submodule: {
+    '/my': {
+      repository: {
+        path: {
+          '.git': 'gitdir: ../.git/modules/path',
+          'index.js': 'module.exports = 42;',
+          'package.json': '{"repository": "foo/bar"}'
+        },
+        '.git': {
+          modules: {
+            path: {
+              HEAD: 'ref: refs/heads/master',
+              refs: {
+                heads: {
+                  master: 'this_is_the_sha'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   malformed: {
     '/my': {
       repository: {
