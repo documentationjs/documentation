@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const gitUrlParse = require('git-url-parse');
-const getRemoteOrigin = require('remote-origin-url');
-const getPkgRepo = require('get-pkg-repo');
+const ini = require('ini');
 
 /**
  * Sometimes git will [pack refs](https://git-scm.com/docs/git-pack-refs)
@@ -58,20 +57,21 @@ function getGithubURLPrefix({ git, root }) {
       sha = head;
     }
     if (sha) {
-      let githubRootUrl;
+      let origin;
       if (git.indexOf(root) === 0) {
-        const origin = getRemoteOrigin.sync(root);
-        const parsed = gitUrlParse(origin);
-        parsed.git_suffix = false; // eslint-disable-line
-        githubRootUrl = parsed.toString('https');
-      } else {
-        // git submodule; try looking at package.json
-        const repo = getPkgRepo(
-          JSON.parse(fs.readFileSync(path.join(root, 'package.json')))
+        const config = ini.parse(
+          fs.readFileSync(path.join(git, 'config'), 'utf8')
         );
-        githubRootUrl = repo.browse();
+        origin = config['remote "origin"'].url;
+      } else {
+        const config = ini.parse(
+          fs.readFileSync(path.join(git, '..', '..', 'config'), 'utf8')
+        );
+        origin = config[`submodule "${path.basename(git)}"`].url;
       }
-      return githubRootUrl + '/blob/' + sha.trim() + '/';
+      const parsed = gitUrlParse(origin);
+      parsed.git_suffix = false; // eslint-disable-line
+      return parsed.toString('https') + '/blob/' + sha.trim() + '/';
     }
   } catch (e) {
     return null;

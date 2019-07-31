@@ -12,7 +12,7 @@ test('findGit', function() {
 
   expect(masterPaths).toEqual({
     git: path.join(root, '.git'),
-    root: root
+    root
   });
 
   mock(mockRepo.submodule);
@@ -21,6 +21,6 @@ test('findGit', function() {
 
   expect(submodulePaths).toEqual({
     git: path.join(path.dirname(root), '.git', 'modules', 'path'),
-    root: root
+    root
   });
 });
