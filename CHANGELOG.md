@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="12.1.1"></a>
+## [12.1.1](https://github.com/documentationjs/documentation/compare/v12.1.0...v12.1.1) (2019-08-01)
+
+
+### Bug Fixes
+
+* Git submodule support for repo names with a dot ([#1271](https://github.com/documentationjs/documentation/issues/1271)) ([27a29be](https://github.com/documentationjs/documentation/commit/27a29be))
+
+
+
 <a name="12.1.0"></a>
 # [12.1.0](https://github.com/documentationjs/documentation/compare/v12.0.3...v12.1.0) (2019-07-31)
 
