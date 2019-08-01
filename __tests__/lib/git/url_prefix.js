@@ -26,8 +26,8 @@ test('getGithubURLPrefix', function() {
 
   mock(mockRepo.submodule);
   const submoduleUrl = getGithubURLPrefix({
-    git: '/my/repository/.git/modules/path',
-    root: '/my/repository/path'
+    git: '/my/repository/.git/modules/my.submodule',
+    root: '/my/repository/my.submodule'
   });
   mock.restore();
 

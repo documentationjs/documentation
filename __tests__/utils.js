@@ -77,17 +77,17 @@ module.exports.mockRepo = {
   submodule: {
     '/my': {
       repository: {
-        path: {
-          '.git': 'gitdir: ../.git/modules/path',
+        'my.submodule': {
+          '.git': 'gitdir: ../.git/modules/my.submodule',
           'index.js': 'module.exports = 42;'
         },
         '.git': {
           config:
-            '[submodule "path"]\n' +
+            '[submodule "my.submodule"]\n' +
             'url = https://github.com/foo/bar\n' +
             'active = true',
           modules: {
-            path: {
+            'my.submodule': {
               HEAD: 'ref: refs/heads/master',
               refs: {
                 heads: {
