@@ -59,14 +59,10 @@ function getGithubURLPrefix({ git, root }) {
     if (sha) {
       let origin;
       if (git.indexOf(root) === 0) {
-        const config = ini.parse(
-          fs.readFileSync(path.join(git, 'config'), 'utf8')
-        );
+        const config = parseGitConfig(path.join(git, 'config'));
         origin = config['remote "origin"'].url;
       } else {
-        const config = ini.parse(
-          fs.readFileSync(path.join(git, '..', '..', 'config'), 'utf8')
-        );
+        const config = parseGitConfig(path.join(git, '..', '..', 'config'));
         origin = config[`submodule "${path.basename(git)}"`].url;
       }
       const parsed = gitUrlParse(origin);
@@ -76,6 +72,16 @@ function getGithubURLPrefix({ git, root }) {
   } catch (e) {
     return null;
   }
+}
+
+function parseGitConfig(configPath) {
+  const str = fs
+    .readFileSync(configPath, 'utf8')
+    .replace(
+      /\[(\S+) "(.+)"\]/g,
+      (match, key, value) => `[${key} "${value.split('.').join('\\.')}"]`
+    );
+  return ini.parse(str);
 }
 
 module.exports = getGithubURLPrefix;

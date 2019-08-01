@@ -16,11 +16,17 @@ test('findGit', function() {
   });
 
   mock(mockRepo.submodule);
-  const submodulePaths = findGit(path.join(root, 'index.js'));
+  const submoduleRoot = path.join(root, '..', 'my.submodule');
+  const submodulePaths = findGit(path.join(submoduleRoot, 'index.js'));
   mock.restore();
 
   expect(submodulePaths).toEqual({
-    git: path.join(path.dirname(root), '.git', 'modules', 'path'),
-    root
+    git: path.join(
+      path.dirname(submoduleRoot),
+      '.git',
+      'modules',
+      'my.submodule'
+    ),
+    root: submoduleRoot
   });
 });
