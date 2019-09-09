@@ -101,7 +101,7 @@ module.exports.handler = function readme(argv) {
         '',
         ''
       );
-      if (!diffRaw.length) {
+      if (diffRaw.split('\n').length === 5) {
         log(`${argv.readmeFile} is up to date.`);
         process.exit(0);
       }
