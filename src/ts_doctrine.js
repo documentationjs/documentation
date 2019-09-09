@@ -32,7 +32,7 @@ function propertyToField(property) {
   }
   return {
     type: 'FieldType',
-    key: property.key.name || property.key.value,
+    key: property.key ? property.key.name || property.key.value : '',
     value: type
   };
 }
