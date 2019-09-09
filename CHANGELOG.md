@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="12.1.2"></a>
+## [12.1.2](https://github.com/documentationjs/documentation/compare/v12.1.1...v12.1.2) (2019-09-09)
+
+
+### Bug Fixes
+
+* check for empty diff ([#1273](https://github.com/documentationjs/documentation/issues/1273)) ([3e0958b](https://github.com/documentationjs/documentation/commit/3e0958b))
+
+
+
 <a name="12.1.1"></a>
 ## [12.1.1](https://github.com/documentationjs/documentation/compare/v12.1.0...v12.1.1) (2019-08-01)
 
