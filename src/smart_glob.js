@@ -80,7 +80,7 @@ function resolveFileGlobPatterns(patterns, extensions) {
 }
 
 /**
- * Build a list of absolute filesnames on which ESLint will act.
+ * Build a list of absolute filenames on which ESLint will act.
  * Ignored files are excluded from the results, as are duplicates.
  *
  * @param globPatterns            Glob patterns.
