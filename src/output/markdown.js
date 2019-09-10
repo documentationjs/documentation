@@ -3,7 +3,7 @@ const markdownAST = require('./markdown_ast');
 
 /**
  * Formats documentation as
- * [Markdown](http://daringfireball.net/projects/markdown/).
+ * [Markdown](https://daringfireball.net/projects/markdown/).
  *
  * @param {Array<Object>} comments parsed comments
  * @param {Object} args Options that can customize the output
