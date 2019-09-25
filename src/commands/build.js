@@ -94,6 +94,11 @@ module.exports.handler = function build(argv) {
     } else if (Array.isArray(output)) {
       streamArray(output).pipe(vfs.dest(argv.output));
     } else {
+      // creates the directory if it doesn't exist — `recursive` is `true` so
+      // as to not throw error `EEXIST: file already exists` when the
+      // directory exists; otherwise, we'd need a `try...catch` to handle
+      const { dir } = path.parse(argv.output);
+      fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(argv.output, output);
     }
   }
