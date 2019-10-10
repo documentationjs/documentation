@@ -52,7 +52,7 @@ documentation.
 * The JSDoc syntax exposes a powerful, standardized type syntax to, for example,
   express parameter types like 'an array of strings'.
   as `Array<String>`, and to support custom object types with inter-linking
-* The [eslint valid-jsdoc rule](http://eslint.org/docs/rules/valid-jsdoc.html)
+* The [eslint valid-jsdoc rule](https://eslint.org/docs/rules/valid-jsdoc.html)
   makes it possible to require documentation as part of your linting step,
   ensuring that new code doesn't lower documentation coverage.
 
