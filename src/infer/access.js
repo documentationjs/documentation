@@ -27,7 +27,7 @@ function inferAccessWithPattern(pattern) {
       comment.readonly = true;
     }
 
-    // This needs to run after inferName beacuse we infer the access based on
+    // This needs to run after inferName because we infer the access based on
     // the name.
     if (
       re &&
