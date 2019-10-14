@@ -98,7 +98,7 @@ names with the parent object. Here's an example:
 
 ```js
 /**
- * This method has hierachical params
+ * This method has hierarchical params
  * @param {Object} animals different kinds of animals
  * @param {String} animals.fishes number of kinds of fish
  */
@@ -113,8 +113,8 @@ explicit syntax is required.
 
 ## Object Factories
 
-Libraries like [d3](http://d3js.org/) eschew JavaScript's `new` operator
-in favor of the ['object factory' or 'module pattern'](http://www.macwright.org/2012/06/04/the-module-pattern.html).
+Libraries like [d3](https://d3js.org) eschew JavaScript's `new` operator
+in favor of the ['object factory' or 'module pattern'](https://macwright.org/2012/06/04/the-module-pattern.html).
 
 The factory function is a normal function that yields an object. That object
 has properties. In this case, we don't use the `@class` tag because
