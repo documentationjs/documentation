@@ -3,6 +3,7 @@
   "description": "a documentation generator",
   "version": "12.1.2",
   "author": "Tom MacWright",
+  "homepage": "https://documentation.js.org",
   "bin": {
     "documentation": "./bin/documentation.js"
   },
