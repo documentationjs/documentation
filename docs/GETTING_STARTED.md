@@ -7,7 +7,7 @@ in the JSDoc format.
 **But don't worry! Even though it's embedded in your code, JSDoc is not code. It's a simple and standard
 syntax for writing documentation. You don't need to be a developer to use it.**
 
-Before you continue, make sure `documentation` is on your system (do `npm install -g documentation`, if not installed).
+Before you continue, make sure `documentation` is on your system (do `npm install -g documentation,` if not installed).
 
 Now, let's dive in.
 
@@ -62,7 +62,7 @@ On the second line:
 
 * `@param` is **a tag**: This tag indicates that we'll be documenting a function's parameter.
 * `{number}` is **a type**. It says that the input to this function is
-  a JavaScript "number". It could also say `{string}`,
+  A JavaScript "number." It could also say `{string}`,
   `{Object}`, `{Date}`, or any other JavaScript built-in type. And if you
   defined a custom class, like `FooClass`, you can use it as a type too by
   saying `{FooClass}`.
@@ -97,7 +97,7 @@ populates @name, @kind, and @memberof tags based on its reading of the
 code.
 
 **Normalization**: JSDoc has multiple words for the same thing: you can
-say @augments or @extends and they'll do the same thing.
+say @augments or @extends, and they'll do the same thing.
 
 ## Development Process
 
@@ -112,7 +112,7 @@ automated style check.
 JSDoc syntax, and is a great reference. The most commonly used tags
 are:
 
-* @param - input given to a function as an argument
+* @param - input is given to a function as an argument
 * @returns - output value of a function
 * @name - explicitly set the documented name of a function, class, or variable
 * @private - you can use @private to document
