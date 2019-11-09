@@ -228,4 +228,4 @@ Returns **[Promise][21]&lt;[string][18]>**
 
 [22]: https://developer.mozilla.org/docs/Web/API/Comment/Comment
 
-[23]: http://daringfireball.net/projects/markdown/
+[23]: https://daringfireball.net/projects/markdown/
