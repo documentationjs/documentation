@@ -7,3 +7,9 @@
 circle.yml
 coverage
 __tests__
+.circleci
+.github
+.prettierignore
+.prettierrc
+CODE_OF_CONDUCT.md
+ISSUE_TEMPLATE.md
