@@ -7,7 +7,7 @@ in the JSDoc format.
 **But don't worry! Even though it's embedded in your code, JSDoc is not code. It's a simple and standard
 syntax for writing documentation. You don't need to be a developer to use it.**
 
-Before you continue, make sure `documentation` is on your system (do `npm install -g documentation`, if not installed).
+Before you continue, make sure `documentation` is on your system. (If it's not installed, run `npm install -g documentation`.)
 
 Now, let's dive in.
 
@@ -31,7 +31,7 @@ function addOne(input) {
 The comment before the `addOne` function is a JSDoc comment. Note that it
 begins with `/**` instead of `/*`. JSDoc requires this.
 
-If you were to write a comment like
+If you were to write a comment like this:
 
 ```js
 // --- INVALID - this is ignored by JSDOC ---
@@ -40,7 +40,7 @@ If you were to write a comment like
 // @returns {number} that number, plus one.
 ```
 
-the comment would be ignored by `documentation` because it uses `//` syntax instead of `/**`.
+...the comment would be ignored by `documentation`,  because it uses `//` syntax instead of `/**`.
 It's not valid JSDoc syntax.
 
 Let's break down the earlier JSDoc example:
@@ -64,8 +64,7 @@ On the second line:
 * `{number}` is **a type**. It says that the input to this function is
   a JavaScript "number". It could also say `{string}`,
   `{Object}`, `{Date}`, or any other JavaScript built-in type. And if you
-  defined a custom class, like `FooClass`, you can use it as a type too by
-  saying `{FooClass}`.
+  defined a custom class, like `FooClass`, you can use it as a type, too! Just say `{FooClass}`.
 * `input` is the name of the input variable. It matches what the code
   says right below it (`function addOne(input)`).
 * `any number` is the description of the input.
@@ -82,7 +81,7 @@ This is the syntax that describes an optional parameter:
  * @param {number} [input=5] any number
 ```
 
-If an input is omitted, the default value of 5 will be passed to the function.
+If an input is omitted, the default value of `5` will be passed to the function.
 
 ## What `documentation` does, so you don't have to
 
@@ -90,14 +89,14 @@ If an input is omitted, the default value of 5 will be passed to the function.
 you want to read the code for yourself, here's a summary of its magic:
 
 **Inference**: JSDoc lets you specify absolutely everything about your code:
-use @name to say what something is called, @kind for whether it's a function
-or a class, @param for its parameters, and so on. But writing all of that
+use `@name` to say what something is called, `@kind` for whether it's a function
+or a class, `@param` for its parameters, and so on. But writing all of that
 explicitly is tedious, so where it can, `documentation` automatically
-populates @name, @kind, and @memberof tags based on its reading of the
+populates `@name`, `@kind`, and `@memberof` tags based on its reading of the
 code.
 
 **Normalization**: JSDoc has multiple words for the same thing: you can
-say @augments or @extends and they'll do the same thing.
+say `@augments` or `@extends` and they'll do the same thing.
 
 ## Development Process
 
@@ -108,17 +107,18 @@ automated style check.
 
 ## The Tags
 
-[usejsdoc.com](http://usejsdoc.org/index.html) covers all available tags in the
-JSDoc syntax, and is a great reference. The most commonly used tags
-are:
+[**`usejsdoc.com`**](http://usejsdoc.org) covers all available tags in the
+JSDoc syntax, and is a great reference. 
 
-* @param - input given to a function as an argument
-* @returns - output value of a function
-* @name - explicitly set the documented name of a function, class, or variable
-* @private - you can use @private to document
-  code and not have it included in the generated documentation,
-  maybe it's not part of the public API. There's also @public and @protected 
-* @example - you can use the @example tag to add inline code examples with your
+The most commonly used tags are:
+
+* `@param` - input given to a function as an argument
+* `@returns` - output value of a function
+* `@name` - explicitly set the documented name of a function, class, or variable
+* `@private` - you can use `@private` to document
+  code and not have it included in the generated documentation;
+  maybe it's not part of the public API. There's also `@public` and `@protected`
+* `@example` - you can use the `@example` tag to add inline code examples with your
   documentation
 
 If your text editor does not highlight JSDoc tags, 
@@ -126,7 +126,7 @@ try [using a plugin for JSDoc](https://github.com/documentationjs/documentation/
 
 ## Flow type annotations
 
-Alternatively, [Flow](https://flow.org/) type annotations allows for a more compact syntax:
+Alternatively, [Flow](https://flow.org) type annotations allows for a more compact syntax:
 
 ```js
 /**
