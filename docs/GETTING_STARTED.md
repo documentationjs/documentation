@@ -107,7 +107,7 @@ automated style check.
 
 ## The Tags
 
-[**`usejsdoc.com`**](http://usejsdoc.org) covers all available tags in the
+[**`jsdoc.app`**](https://jsdoc.app/) covers all available tags in the
 JSDoc syntax, and is a great reference. 
 
 The most commonly used tags are:
