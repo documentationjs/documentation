@@ -7,7 +7,7 @@ in the JSDoc format.
 **But don't worry! Even though it's embedded in your code, JSDoc is not code. It's a simple and standard
 syntax for writing documentation. You don't need to be a developer to use it.**
 
-Before you continue, make sure `documentation` is on your system (do `npm install -g documentation,` if not installed).
+Before you continue, make sure `documentation` is on your system (do `npm install -g documentation`, if not installed).
 
 Now, let's dive in.
 
