@@ -62,7 +62,7 @@ On the second line:
 
 * `@param` is **a tag**: This tag indicates that we'll be documenting a function's parameter.
 * `{number}` is **a type**. It says that the input to this function is
-  A JavaScript "number." It could also say `{string}`,
+  a JavaScript "number." It could also say `{string}`,
   `{Object}`, `{Date}`, or any other JavaScript built-in type. And if you
   defined a custom class, like `FooClass`, you can use it as a type, too! Just say `{FooClass}`.
 * `input` is the name of the input variable. It matches what the code
