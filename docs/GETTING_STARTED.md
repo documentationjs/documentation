@@ -62,7 +62,7 @@ On the second line:
 
 * `@param` is **a tag**: This tag indicates that we'll be documenting a function's parameter.
 * `{number}` is **a type**. It says that the input to this function is
-  a JavaScript "number". It could also say `{string}`,
+  a JavaScript "number." It could also say `{string}`,
   `{Object}`, `{Date}`, or any other JavaScript built-in type. And if you
   defined a custom class, like `FooClass`, you can use it as a type, too! Just say `{FooClass}`.
 * `input` is the name of the input variable. It matches what the code
@@ -96,7 +96,7 @@ populates `@name`, `@kind`, and `@memberof` tags based on its reading of the
 code.
 
 **Normalization**: JSDoc has multiple words for the same thing: you can
-say `@augments` or `@extends` and they'll do the same thing.
+say `@augments` or `@extends`, and they'll do the same thing.
 
 ## Development Process
 
@@ -108,17 +108,16 @@ automated style check.
 ## The Tags
 
 [**`jsdoc.app`**](https://jsdoc.app/) covers all available tags in the
-JSDoc syntax, and is a great reference. 
+JSDoc syntax, and is a great reference. The most commonly used tags
+are:
 
-The most commonly used tags are:
-
-* `@param` - input given to a function as an argument
-* `@returns` - output value of a function
-* `@name` - explicitly set the documented name of a function, class, or variable
-* `@private` - you can use `@private` to document
-  code and not have it included in the generated documentation;
-  maybe it's not part of the public API. There's also `@public` and `@protected`
-* `@example` - you can use the `@example` tag to add inline code examples with your
+* @param - input is given to a function as an argument
+* @returns - output value of a function
+* @name - explicitly set the documented name of a function, class, or variable
+* @private - you can use @private to document
+  code and not have it included in the generated documentation,
+  maybe it's not part of the public API. There's also @public and @protected 
+* @example - you can use the @example tag to add inline code examples with your
   documentation
 
 If your text editor does not highlight JSDoc tags, 
