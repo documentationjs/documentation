@@ -231,7 +231,7 @@ function buildMarkdownAST(comments, config) {
           { ordered: false },
           comment.sees.map(see =>
             u('listItem', [
-              u('strong', [u('text', 'See: ')].concat(see.children))
+              u('strong', [u('text', 'See: ')].concat(see.description))
             ])
           )
         )
