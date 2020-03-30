@@ -115,8 +115,8 @@
   <% } %>
 
   <% if (section.sees && section.sees.length) { %>
+    <div class='py1 quiet mt1 prose-big'>Related</div>
     <% section.sees.forEach(function(see) { %>
-      <div class='py1 quiet mt1 prose-big'>Related</div>
       <% if (see.description) { %>
         <%= md(see.description, true) %>
       <% }%>
