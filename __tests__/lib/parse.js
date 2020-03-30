@@ -943,15 +943,15 @@ test('parse - @returns', function() {
 test('parse - @see', function() {
   expect(
     evaluate(function() {
-      /** @see test */
+      /** @see [test](#test) */
     })[0].sees
   ).toEqual([remark().parse('test')]);
 
   expect(
     evaluate(function() {
       /**
-       * @see a
-       * @see b
+       * @see [a](#a)
+       * @see [b](#b)
        */
     })[0].sees
   ).toEqual([remark().parse('a'), remark().parse('b')]);
