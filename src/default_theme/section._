@@ -114,6 +114,15 @@
     <% }) %>
   <% } %>
 
+  <% if (section.sees && section.sees.length) { %>
+    <div class='py1 quiet mt1 prose-big'>Related</div>
+    <% section.sees.forEach(function(see) { %>
+      <% if (see.description) { %>
+        <%= md(see.description, true) %>
+      <% }%>
+    <% }) %>
+  <% } %>
+
   <% if (section.throws && section.throws.length) { %>
     <div class='py1 quiet mt1 prose-big'>Throws</div>
     <ul>

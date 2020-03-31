@@ -1805,6 +1805,8 @@ exports[`html nested.input.js 1`] = `
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class=\\"clearfix\\">
   
@@ -1881,6 +1883,8 @@ This is a [link to something that does not exist]<a href=\\"DoesNot\\">DoesNot</
   
 
   
+
+  
 </section>
 
       </div>
@@ -1937,6 +1941,8 @@ the referenced class type</p>
 
       
     
+  
+
   
 
   
@@ -2028,6 +2034,8 @@ the referenced class type</p>
   
 
   
+
+  
 </section>
 
       </div>
@@ -2089,6 +2097,8 @@ the referenced class type</p>
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -2132,6 +2142,8 @@ k.isArrayOfBuffers();</pre>
   
   
   
+  
+
   
 
   
@@ -2201,6 +2213,8 @@ k.isArrayOfBuffers();</pre>
 
       
     
+  
+
   
 
   
@@ -2321,6 +2335,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
       </div>
@@ -2423,6 +2439,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
       </div>
@@ -2461,6 +2479,8 @@ k.isArrayOfBuffers();</pre>
   
   
   
+  
+
   
 
   
@@ -2562,6 +2582,8 @@ k.isArrayOfBuffers();</pre>
   
 
   
+
+  
 </section>
 
           
@@ -2607,6 +2629,8 @@ like a <a href=\\"#klass\\">klass</a></p>
 
       
     
+  
+
   
 
   
@@ -2689,6 +2713,8 @@ like a <a href=\\"#klass\\">klass</a></p>
   
 
   
+
+  
 </section>
 
           
@@ -2747,6 +2773,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 
   
+
+  
 </section>
 
           
@@ -2791,6 +2819,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class=\\"clearfix\\">
   
@@ -2817,6 +2847,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
   
   
+  
+
   
 
   
@@ -2890,6 +2922,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
 
   
+
+  
     <div class='py1 quiet mt1 prose-big'>Static Members</div>
     <div class=\\"clearfix\\">
   
@@ -2916,6 +2950,8 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
   
   
   
+  
+
   
 
   
@@ -26254,11 +26290,11 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 2,
-          "line": 16,
+          "line": 14,
         },
         "start": Object {
           "column": 0,
-          "line": 13,
+          "line": 11,
         },
       },
     },
@@ -26374,7 +26410,7 @@ Array [
     "loc": Object {
       "end": Object {
         "column": 3,
-        "line": 12,
+        "line": 10,
       },
       "start": Object {
         "column": 0,
@@ -26461,188 +26497,79 @@ Array [
     ],
     "sees": Array [
       Object {
-        "children": Array [
-          Object {
-            "children": Array [
-              Object {
-                "children": Array [
-                  Object {
-                    "type": "text",
-                    "value": "github",
-                  },
-                ],
-                "jsdoc": true,
-                "position": Object {
-                  "end": Object {
-                    "column": 34,
-                    "line": 1,
-                    "offset": 33,
-                  },
-                  "indent": Array [],
-                  "start": Object {
-                    "column": 1,
-                    "line": 1,
-                    "offset": 0,
-                  },
-                },
-                "title": null,
-                "type": "link",
-                "url": "http://github.com/",
-              },
-            ],
-            "position": Object {
-              "end": Object {
-                "column": 34,
-                "line": 1,
-                "offset": 33,
-              },
-              "indent": Array [],
-              "start": Object {
-                "column": 1,
-                "line": 1,
-                "offset": 0,
-              },
-            },
-            "type": "paragraph",
-          },
-        ],
-        "position": Object {
-          "end": Object {
-            "column": 34,
-            "line": 1,
-            "offset": 33,
-          },
-          "start": Object {
-            "column": 1,
-            "line": 1,
-            "offset": 0,
-          },
-        },
-        "type": "root",
-      },
-      Object {
-        "children": Array [
-          Object {
-            "children": Array [
-              Object {
-                "position": Object {
-                  "end": Object {
-                    "column": 9,
-                    "line": 1,
-                    "offset": 8,
-                  },
-                  "indent": Array [],
-                  "start": Object {
-                    "column": 1,
-                    "line": 1,
-                    "offset": 0,
-                  },
-                },
-                "type": "text",
-                "value": "TestCase",
-              },
-            ],
-            "position": Object {
-              "end": Object {
-                "column": 9,
-                "line": 1,
-                "offset": 8,
-              },
-              "indent": Array [],
-              "start": Object {
-                "column": 1,
-                "line": 1,
-                "offset": 0,
-              },
-            },
-            "type": "paragraph",
-          },
-        ],
-        "position": Object {
-          "end": Object {
-            "column": 9,
-            "line": 1,
-            "offset": 8,
-          },
-          "start": Object {
-            "column": 1,
-            "line": 1,
-            "offset": 0,
-          },
-        },
-        "type": "root",
-      },
-      Object {
-        "children": Array [
-          Object {
-            "children": Array [
-              Object {
-                "children": Array [
-                  Object {
-                    "position": Object {
-                      "end": Object {
-                        "column": 15,
-                        "line": 1,
-                        "offset": 14,
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "children": Array [
+                    Object {
+                      "position": Object {
+                        "end": Object {
+                          "column": 15,
+                          "line": 1,
+                          "offset": 14,
+                        },
+                        "indent": Array [],
+                        "start": Object {
+                          "column": 2,
+                          "line": 1,
+                          "offset": 1,
+                        },
                       },
-                      "indent": Array [],
-                      "start": Object {
-                        "column": 2,
-                        "line": 1,
-                        "offset": 1,
-                      },
+                      "type": "text",
+                      "value": "markdown link",
                     },
-                    "type": "text",
-                    "value": "markdown link",
+                  ],
+                  "position": Object {
+                    "end": Object {
+                      "column": 33,
+                      "line": 1,
+                      "offset": 32,
+                    },
+                    "indent": Array [],
+                    "start": Object {
+                      "column": 1,
+                      "line": 1,
+                      "offset": 0,
+                    },
                   },
-                ],
-                "position": Object {
-                  "end": Object {
-                    "column": 33,
-                    "line": 1,
-                    "offset": 32,
-                  },
-                  "indent": Array [],
-                  "start": Object {
-                    "column": 1,
-                    "line": 1,
-                    "offset": 0,
-                  },
+                  "title": null,
+                  "type": "link",
+                  "url": "http://foo.com/",
                 },
-                "title": null,
-                "type": "link",
-                "url": "http://foo.com/",
+              ],
+              "position": Object {
+                "end": Object {
+                  "column": 33,
+                  "line": 1,
+                  "offset": 32,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
               },
-            ],
-            "position": Object {
-              "end": Object {
-                "column": 33,
-                "line": 1,
-                "offset": 32,
-              },
-              "indent": Array [],
-              "start": Object {
-                "column": 1,
-                "line": 1,
-                "offset": 0,
-              },
+              "type": "paragraph",
             },
-            "type": "paragraph",
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 33,
+              "line": 1,
+              "offset": 32,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
           },
-        ],
-        "position": Object {
-          "end": Object {
-            "column": 33,
-            "line": 1,
-            "offset": 32,
-          },
-          "start": Object {
-            "column": 1,
-            "line": 1,
-            "offset": 0,
-          },
+          "type": "root",
         },
-        "type": "root",
+        "title": "sees",
       },
     ],
     "since": "2.0.0",
@@ -26662,38 +26589,28 @@ Array [
         "title": "description",
       },
       Object {
-        "description": "{@link http://github.com/|github}",
+        "description": "[markdown link](http://foo.com/)",
         "lineNumber": 4,
         "title": "see",
       },
       Object {
-        "description": "TestCase",
-        "lineNumber": 5,
-        "title": "see",
-      },
-      Object {
-        "description": "[markdown link](http://foo.com/)",
-        "lineNumber": 6,
-        "title": "see",
-      },
-      Object {
         "description": "1.0.0",
-        "lineNumber": 7,
+        "lineNumber": 5,
         "title": "version",
       },
       Object {
         "description": "2.0.0",
-        "lineNumber": 8,
+        "lineNumber": 6,
         "title": "since",
       },
       Object {
         "description": "Tom MacWright",
-        "lineNumber": 9,
+        "lineNumber": 7,
         "title": "copyright",
       },
       Object {
         "description": "BSD",
-        "lineNumber": 10,
+        "lineNumber": 8,
         "title": "license",
       },
     ],
@@ -26714,13 +26631,12 @@ exports[`outputs meta.input.js markdown 1`] = `
 
 ## meta.input
 
--   **See: [github][2]**
--   **See: TestCase**
--   **See: [markdown link][3]**
+-   **See: [markdown link][2]
+    **
 
 This function returns the number one.
 
-Returns **[number][4]** numberone
+Returns **[number][3]** numberone
 
 **Meta**
 
@@ -26732,11 +26648,9 @@ Returns **[number][4]** numberone
 
 [1]: #metainput
 
-[2]: http://github.com/
+[2]: http://foo.com/
 
-[3]: http://foo.com/
-
-[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
@@ -26772,52 +26686,35 @@ Object {
                     Object {
                       "children": Array [
                         Object {
-                          "type": "text",
-                          "value": "github",
+                          "children": Array [
+                            Object {
+                              "position": Position {
+                                "end": Object {
+                                  "column": 15,
+                                  "line": 1,
+                                  "offset": 14,
+                                },
+                                "indent": Array [],
+                                "start": Object {
+                                  "column": 2,
+                                  "line": 1,
+                                  "offset": 1,
+                                },
+                              },
+                              "type": "text",
+                              "value": "markdown link",
+                            },
+                          ],
+                          "identifier": "1",
+                          "referenceType": "full",
+                          "type": "linkReference",
                         },
                       ],
-                      "identifier": "1",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "position": Position {
-                    "end": Object {
-                      "column": 34,
-                      "line": 1,
-                      "offset": 33,
-                    },
-                    "indent": Array [],
-                    "start": Object {
-                      "column": 1,
-                      "line": 1,
-                      "offset": 0,
-                    },
-                  },
-                  "type": "paragraph",
-                },
-              ],
-              "type": "strong",
-            },
-          ],
-          "type": "listItem",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "text",
-                  "value": "See: ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
                       "position": Position {
                         "end": Object {
-                          "column": 9,
+                          "column": 33,
                           "line": 1,
-                          "offset": 8,
+                          "offset": 32,
                         },
                         "indent": Array [],
                         "start": Object {
@@ -26826,80 +26723,22 @@ Object {
                           "offset": 0,
                         },
                       },
-                      "type": "text",
-                      "value": "TestCase",
+                      "type": "paragraph",
                     },
                   ],
-                  "position": Position {
-                    "end": Object {
-                      "column": 9,
-                      "line": 1,
-                      "offset": 8,
-                    },
-                    "indent": Array [],
-                    "start": Object {
-                      "column": 1,
-                      "line": 1,
-                      "offset": 0,
-                    },
-                  },
-                  "type": "paragraph",
-                },
-              ],
-              "type": "strong",
-            },
-          ],
-          "type": "listItem",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "text",
-                  "value": "See: ",
-                },
-                Object {
-                  "children": Array [
-                    Object {
-                      "children": Array [
-                        Object {
-                          "position": Position {
-                            "end": Object {
-                              "column": 15,
-                              "line": 1,
-                              "offset": 14,
-                            },
-                            "indent": Array [],
-                            "start": Object {
-                              "column": 2,
-                              "line": 1,
-                              "offset": 1,
-                            },
-                          },
-                          "type": "text",
-                          "value": "markdown link",
-                        },
-                      ],
-                      "identifier": "2",
-                      "referenceType": "full",
-                      "type": "linkReference",
-                    },
-                  ],
-                  "position": Position {
+                  "position": Object {
                     "end": Object {
                       "column": 33,
                       "line": 1,
                       "offset": 32,
                     },
-                    "indent": Array [],
                     "start": Object {
                       "column": 1,
                       "line": 1,
                       "offset": 0,
                     },
                   },
-                  "type": "paragraph",
+                  "type": "root",
                 },
               ],
               "type": "strong",
@@ -26961,7 +26800,7 @@ Object {
                   "value": "number",
                 },
               ],
-              "identifier": "3",
+              "identifier": "2",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -27185,16 +27024,10 @@ Object {
       "identifier": "1",
       "title": null,
       "type": "definition",
-      "url": "http://github.com/",
-    },
-    Object {
-      "identifier": "2",
-      "title": null,
-      "type": "definition",
       "url": "http://foo.com/",
     },
     Object {
-      "identifier": "3",
+      "identifier": "2",
       "title": undefined,
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",

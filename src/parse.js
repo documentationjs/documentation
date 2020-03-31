@@ -351,7 +351,16 @@ const flatteners = {
    * @returns {undefined} has side-effects
    */
   see(result, tag) {
-    result.sees.push(parseMarkdown(tag.description));
+    const sees = {
+      description: parseMarkdown(tag.description),
+      title: 'sees'
+    };
+
+    if (tag.type) {
+      sees.type = tag.type;
+    }
+
+    result.sees.push(sees);
   },
   since: flattenDescription,
   /**

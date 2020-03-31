@@ -943,18 +943,32 @@ test('parse - @returns', function() {
 test('parse - @see', function() {
   expect(
     evaluate(function() {
-      /** @see test */
+      /** @see [test](#test) */
     })[0].sees
-  ).toEqual([remark().parse('test')]);
+  ).toEqual([
+    {
+      title: 'sees',
+      description: remark().parse('[test](#test)')
+    }
+  ]);
 
   expect(
     evaluate(function() {
       /**
-       * @see a
-       * @see b
+       * @see [a](#a)
+       * @see [b](#b)
        */
     })[0].sees
-  ).toEqual([remark().parse('a'), remark().parse('b')]);
+  ).toEqual([
+    {
+      title: 'sees',
+      description: remark().parse('[a](#a)')
+    },
+    {
+      title: 'sees',
+      description: remark().parse('[b](#b)')
+    }
+  ]);
 });
 
 test('parse - @since', function() {});
