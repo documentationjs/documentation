@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="12.2.0"></a>
+# [12.2.0](https://github.com/documentationjs/documentation/compare/v12.1.4...v12.2.0) (2020-03-31)
+
+
+### Features
+
+* support for the [@see](https://github.com/see) tag in Markdown & HTML ([48bb7a2](https://github.com/documentationjs/documentation/commit/48bb7a2))
+
+
+
 <a name="12.1.4"></a>
 ## [12.1.4](https://github.com/documentationjs/documentation/compare/v12.1.3...v12.1.4) (2019-11-15)
 
