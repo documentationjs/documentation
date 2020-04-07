@@ -311,6 +311,7 @@ test('flowDoctrine', function() {
     'InterfaceTypeAnnotation',
     'IntersectionTypeAnnotation',
     'EmptyTypeAnnotation',
+    'SymbolTypeAnnotation',
     'TypeofTypeAnnotation'
   ]);
 });

@@ -3,7 +3,8 @@ const generate = require('@babel/generator').default;
 const namedTypes = {
   NumberTypeAnnotation: 'number',
   BooleanTypeAnnotation: 'boolean',
-  StringTypeAnnotation: 'string'
+  StringTypeAnnotation: 'string',
+  SymbolTypeAnnotation: 'symbol'
 };
 
 const oneToOne = {
