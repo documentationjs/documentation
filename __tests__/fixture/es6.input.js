@@ -11,9 +11,9 @@ function destructure({
 /**
  * Similar, but with an array
  * @example
- * destructure([0, 1, 2, 3])
+ * destructure2([0, 1, 2, 3])
  */
-function destructure([, a, b, c]) {}
+function destructure2([, a, b, c]) {}
 
 /**
  * This function returns the number one.
