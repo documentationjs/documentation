@@ -1,6 +1,7 @@
 const generate = require('@babel/generator').default;
 
 const namedTypes = {
+  TSBigIntKeyword: 'bigint',
   TSNumberKeyword: 'number',
   TSBooleanKeyword: 'boolean',
   TSStringKeyword: 'string',
