@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="13.0.0"></a>
+# [13.0.0](https://github.com/documentationjs/documentation/compare/v12.3.0...v13.0.0) (2020-05-09)
+
+
+### Chores
+
+* Update Node minimum version to 10 ([45a5257](https://github.com/documentationjs/documentation/commit/45a5257))
+
+
+### BREAKING CHANGES
+
+* documentation.js will now require node 10 or later.
+
+
+
 <a name="12.3.0"></a>
 # [12.3.0](https://github.com/documentationjs/documentation/compare/v12.2.0...v12.3.0) (2020-04-07)
 
