@@ -1,4 +1,3 @@
-// properties
 const typeAnnotation = require('../type_annotation');
 const findTarget = require('./finders').findTarget;
 
@@ -35,7 +34,7 @@ function propertyToDoc(property, prefix) {
     name = property.key.name || property.key.value;
   }
 
-  // Special handing for { ...$Exact<Type> }
+  // Special handling for { ...$Exact<Type> }
   if (isObjectSpreadAndExactUtilTypeProperty(property)) {
     name = property.argument.id.name;
     type = {
@@ -83,7 +82,7 @@ function inferProperties(comment) {
           name = property.key.name;
         }
 
-        // Special handing for { ...$Exact<Type> }
+        // Special handling for { ...$Exact<Type> }
         if (isObjectSpreadAndExactUtilTypeProperty(property)) {
           name = property.argument.id.name;
         }
