@@ -5209,65 +5209,6 @@ Array [
     "context": Object {
       "loc": Object {
         "end": Object {
-          "column": 28,
-          "line": 1,
-        },
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
-    },
-    "description": "",
-    "errors": Array [],
-    "examples": Array [],
-    "implements": Array [],
-    "kind": "function",
-    "loc": Object {
-      "end": Object {
-        "column": 28,
-        "line": 1,
-      },
-      "start": Object {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "members": Object {
-      "events": Array [],
-      "global": Array [],
-      "inner": Array [],
-      "instance": Array [],
-      "static": Array [],
-    },
-    "name": "x",
-    "namespace": "x",
-    "params": Array [
-      Object {
-        "lineNumber": 1,
-        "name": "yparam",
-        "title": "param",
-      },
-    ],
-    "path": Array [
-      Object {
-        "kind": "function",
-        "name": "x",
-      },
-    ],
-    "properties": Array [],
-    "returns": Array [],
-    "sees": Array [],
-    "tags": Array [],
-    "throws": Array [],
-    "todos": Array [],
-    "yields": Array [],
-  },
-  Object {
-    "augments": Array [],
-    "context": Object {
-      "loc": Object {
-        "end": Object {
           "column": 1,
           "line": 3,
         },
@@ -5367,6 +5308,65 @@ Array [
       Object {
         "kind": "class",
         "name": "z",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 28,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+    },
+    "description": "",
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": Object {
+      "end": Object {
+        "column": 28,
+        "line": 1,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "x",
+    "namespace": "x",
+    "params": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "yparam",
+        "title": "param",
+      },
+    ],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "x",
       },
     ],
     "properties": Array [],
@@ -7078,10 +7078,10 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 
 ### Table of Contents
 
--   [x][1]
-    -   [Parameters][2]
--   [z][3]
-    -   [zMethod][4]
+-   [z][1]
+    -   [zMethod][2]
+-   [x][3]
+    -   [Parameters][4]
 -   [Class][5]
     -   [Parameters][6]
     -   [classMethod][7]
@@ -7117,15 +7117,15 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 -   [o2][37]
     -   [om2][38]
 
+## z
+
+### zMethod
+
 ## x
 
 ### Parameters
 
 -   \`yparam\`  
-
-## z
-
-### zMethod
 
 ## Class
 
@@ -7223,13 +7223,13 @@ f5 comment
 
 ### om2
 
-[1]: #x
+[1]: #z
 
-[2]: #parameters
+[2]: #zmethod
 
-[3]: #z
+[3]: #x
 
-[4]: #zmethod
+[4]: #parameters
 
 [5]: #class
 
@@ -7318,6 +7318,26 @@ Object {
       "children": Array [
         Object {
           "type": "text",
+          "value": "z",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "zMethod",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
           "value": "x",
         },
       ],
@@ -7361,26 +7381,6 @@ Object {
       ],
       "ordered": false,
       "type": "list",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "type": "text",
-          "value": "z",
-        },
-      ],
-      "depth": 2,
-      "type": "heading",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "type": "text",
-          "value": "zMethod",
-        },
-      ],
-      "depth": 3,
-      "type": "heading",
     },
     Object {
       "children": Array [
@@ -31972,30 +31972,6 @@ Array [
     "tags": Array [],
     "throws": Array [],
     "todos": Array [],
-    "type": Object {
-      "fields": Array [
-        Object {
-          "key": "opt",
-          "type": "FieldType",
-          "value": Object {
-            "expression": Object {
-              "name": "number",
-              "type": "NameExpression",
-            },
-            "type": "OptionalType",
-          },
-        },
-        Object {
-          "key": "req",
-          "type": "FieldType",
-          "value": Object {
-            "name": "string",
-            "type": "NameExpression",
-          },
-        },
-      ],
-      "type": "RecordType",
-    },
     "yields": Array [],
   },
 ]
@@ -32010,8 +31986,6 @@ exports[`outputs optional-record-field-type.input.js markdown 1`] = `
     -   [Properties][2]
 
 ## Record
-
-Type: {opt: [number][3]?, req: [string][4]}
 
 ### Properties
 
@@ -32044,61 +32018,6 @@ Object {
       ],
       "depth": 2,
       "type": "heading",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "type": "text",
-          "value": "Type: ",
-        },
-        Object {
-          "type": "text",
-          "value": "{",
-        },
-        Object {
-          "type": "text",
-          "value": "opt: ",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "type": "text",
-              "value": "number",
-            },
-          ],
-          "identifier": "1",
-          "referenceType": "full",
-          "type": "linkReference",
-        },
-        Object {
-          "type": "text",
-          "value": "?",
-        },
-        Object {
-          "type": "text",
-          "value": ", ",
-        },
-        Object {
-          "type": "text",
-          "value": "req: ",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "type": "text",
-              "value": "string",
-            },
-          ],
-          "identifier": "2",
-          "referenceType": "full",
-          "type": "linkReference",
-        },
-        Object {
-          "type": "text",
-          "value": "}",
-        },
-      ],
-      "type": "paragraph",
     },
     Object {
       "children": Array [
