@@ -41,28 +41,6 @@ test('inferType (flow)', function() {
     type: 'TypeApplication'
   });
 
-  expect(evaluate('/** */' + "type V = {a:number,'b':string}").type).toEqual({
-    fields: [
-      {
-        key: 'a',
-        type: 'FieldType',
-        value: {
-          name: 'number',
-          type: 'NameExpression'
-        }
-      },
-      {
-        key: 'b',
-        type: 'FieldType',
-        value: {
-          name: 'string',
-          type: 'NameExpression'
-        }
-      }
-    ],
-    type: 'RecordType'
-  });
-
   expect(evaluate('/** */' + 'type V = Array<T>').type).toEqual({
     applications: [
       {
@@ -127,16 +105,12 @@ test('inferType (flow)', function() {
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('interface Foo { /** */ bar: string; }').type
-  ).toEqual({
+  expect(evaluate('interface Foo { /** */ bar: string; }').type).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('type Foo = { /** */ bar: string; }').type
-  ).toEqual({
+  expect(evaluate('type Foo = { /** */ bar: string; }').type).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
@@ -165,28 +139,6 @@ test('inferType (typescript)', function() {
       type: 'NameExpression'
     },
     type: 'TypeApplication'
-  });
-
-  expect(evaluate('/** */' + "type V = {a:number,'b':string}", 'test.ts').type).toEqual({
-    fields: [
-      {
-        key: 'a',
-        type: 'FieldType',
-        value: {
-          name: 'number',
-          type: 'NameExpression'
-        }
-      },
-      {
-        key: 'b',
-        type: 'FieldType',
-        value: {
-          name: 'string',
-          type: 'NameExpression'
-        }
-      }
-    ],
-    type: 'RecordType'
   });
 
   expect(evaluate('/** */' + 'type V = Array<T>', 'test.ts').type).toEqual({
@@ -223,27 +175,43 @@ test('inferType (typescript)', function() {
     type: 'NameExpression'
   });
 
-  expect(evaluate('class C {' + '/** */' + 'x: number;' + '}', 'test.ts').type).toEqual({
+  expect(
+    evaluate('class C {' + '/** */' + 'x: number;' + '}', 'test.ts').type
+  ).toEqual({
     name: 'number',
     type: 'NameExpression'
   });
 
-  expect(evaluate('class Foo { /** */ get b(): string { } }', 'test.ts').type).toEqual({
+  expect(
+    evaluate('class Foo { /** */ get b(): string { } }', 'test.ts').type
+  ).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
 
-  expect(evaluate('class Foo { /** */ set b(s: string) { } }', 'test.ts').type).toEqual({
+  expect(
+    evaluate('class Foo { /** */ set b(s: string) { } }', 'test.ts').type
+  ).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
 
-  expect(evaluate('abstract class Foo { /** */ abstract get b(): string; }', 'test.ts').type).toEqual({
+  expect(
+    evaluate(
+      'abstract class Foo { /** */ abstract get b(): string; }',
+      'test.ts'
+    ).type
+  ).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
 
-  expect(evaluate('abstract class Foo { /** */ abstract set b(s: string); }', 'test.ts').type).toEqual({
+  expect(
+    evaluate(
+      'abstract class Foo { /** */ abstract set b(s: string); }',
+      'test.ts'
+    ).type
+  ).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
@@ -277,28 +245,22 @@ test('inferType (typescript)', function() {
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('enum Foo { /** */ A }', 'test.ts').type
-  ).toEqual({
+  expect(evaluate('enum Foo { /** */ A }', 'test.ts').type).toEqual({
     name: 'number',
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('enum Foo { /** */ A = 2 }', 'test.ts').type
-  ).toEqual({
+  expect(evaluate('enum Foo { /** */ A = 2 }', 'test.ts').type).toEqual({
     name: 'number',
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('enum Foo { /** */ A = "test" }', 'test.ts').type
-  ).toEqual({
+  expect(evaluate('enum Foo { /** */ A = "test" }', 'test.ts').type).toEqual({
     name: 'string',
     type: 'NameExpression'
   });
 
-  expect(
-    evaluate('enum Foo { /** */ A = foo }', 'test.ts').type
-  ).toBe(undefined);
+  expect(evaluate('enum Foo { /** */ A = foo }', 'test.ts').type).toBe(
+    undefined
+  );
 });
