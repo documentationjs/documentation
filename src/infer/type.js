@@ -64,7 +64,9 @@ function inferType(comment) {
         type = ast.node.value;
       }
   }
-  if (type) {
+  // Don't provide a `type` section when it's an ObjectTypeAnnotation,
+  // `properties` already exists and renders better.
+  if (type && type.type !== 'ObjectTypeAnnotation') {
     comment.type = typeAnnotation(type);
   }
   return comment;
