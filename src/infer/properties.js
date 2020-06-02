@@ -1,3 +1,4 @@
+// properties
 const typeAnnotation = require('../type_annotation');
 const findTarget = require('./finders').findTarget;
 
@@ -8,8 +9,17 @@ function prefixedName(name, prefix) {
   return name;
 }
 
+function isObjectSpreadAndExactUtilTypeProperty(property) {
+  return (
+    property.type === 'ObjectTypeSpreadProperty' &&
+    property.argument.id.name === '$Exact'
+  );
+}
+
 function propertyToDoc(property, prefix) {
   let type;
+  let name;
+
   if (property.type === 'ObjectTypeProperty') {
     // flow
     type = typeAnnotation(property.value);
@@ -20,7 +30,20 @@ function propertyToDoc(property, prefix) {
     // typescript
     type = typeAnnotation(property);
   }
-  const name = property.key.name || property.key.value;
+
+  if (property.key) {
+    name = property.key.name || property.key.value;
+  }
+
+  // Special handing for { ...$Exact<Type> }
+  if (isObjectSpreadAndExactUtilTypeProperty(property)) {
+    name = property.argument.id.name;
+    type = {
+      type: 'NameExpression',
+      name: property.argument.typeParameters.params[0].id.name
+    };
+  }
+
   if (property.optional) {
     type = {
       type: 'OptionalType',
@@ -54,7 +77,18 @@ function inferProperties(comment) {
     ) {
       const properties = value.properties || value.members || value.body || [];
       properties.forEach(function(property) {
-        if (!explicitProperties.has(prefixedName(property.key.name, prefix))) {
+        let name;
+
+        if (property.key) {
+          name = property.key.name;
+        }
+
+        // Special handing for { ...$Exact<Type> }
+        if (isObjectSpreadAndExactUtilTypeProperty(property)) {
+          name = property.argument.id.name;
+        }
+
+        if (!explicitProperties.has(prefixedName(name, prefix))) {
           comment.properties = comment.properties.concat(
             propertyToDoc(property, prefix)
           );
