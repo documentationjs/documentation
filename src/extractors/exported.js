@@ -224,7 +224,8 @@ function findExportDeclaration(
           if (
             declaration.isFunctionDeclaration() ||
             declaration.isClassDeclaration() ||
-            declaration.isTypeAlias()
+            declaration.isTypeAlias() ||
+            declaration.isOpaqueType()
           ) {
             bindingName = declaration.node.id.name;
           } else if (declaration.isVariableDeclaration()) {
