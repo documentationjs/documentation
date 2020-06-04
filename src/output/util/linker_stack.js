@@ -8,7 +8,7 @@ const { walk } = require('../../walk');
  * @returns {Function} linker
  */
 function pathsLinker(paths /* Object */) {
-  return function(namespace) {
+  return function (namespace) {
     if (paths[namespace]) {
       return paths[namespace];
     }

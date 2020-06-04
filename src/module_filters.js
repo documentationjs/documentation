@@ -52,7 +52,7 @@ module.exports = {
       });
     }
 
-    return function(id, file, pkg) {
+    return function (id, file, pkg) {
       const internal = internalModuleRegexp.test(id);
       return (
         internal || (externalFilters && externalFilters.some(f => f(file, pkg)))

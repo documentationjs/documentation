@@ -75,7 +75,7 @@ function inferProperties(comment) {
       value.type === 'TSTypeLiteral'
     ) {
       const properties = value.properties || value.members || value.body || [];
-      properties.forEach(function(property) {
+      properties.forEach(function (property) {
         let name;
 
         if (property.key) {

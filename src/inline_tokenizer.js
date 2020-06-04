@@ -9,7 +9,7 @@
  * @returns {Function} tokenizer
  */
 function makeTokenizer(type, regex) {
-  const tokenizer = function(eat, value) {
+  const tokenizer = function (eat, value) {
     const match = regex.exec(value);
 
     if (!match) {
@@ -31,7 +31,7 @@ function makeTokenizer(type, regex) {
   };
 
   tokenizer.notInLink = true;
-  tokenizer.locator = function(value, fromIndex) {
+  tokenizer.locator = function (value, fromIndex) {
     return value.indexOf('{@' + type, fromIndex);
   };
 
@@ -55,7 +55,7 @@ const tokenizeTutorial = makeTokenizer(
  *
  * @returns {undefined}
  */
-module.exports = function(/* options: Object*/) {
+module.exports = function (/* options: Object*/) {
   const proto = this.Parser.prototype;
   proto.inlineTokenizers.tokenizeLink = tokenizeLink;
   proto.inlineTokenizers.tokenizeTutorial = tokenizeTutorial;

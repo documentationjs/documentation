@@ -10,9 +10,7 @@ const inlineTokenizer = require('./inline_tokenizer');
  * @private
  */
 function parseMarkdown(string) {
-  return remark()
-    .use(inlineTokenizer)
-    .parse(string);
+  return remark().use(inlineTokenizer).parse(string);
 }
 
 module.exports = parseMarkdown;

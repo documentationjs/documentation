@@ -457,7 +457,7 @@ function todo() {}
  * @returns {Function} a flattener that remembers that key
  */
 function synonym(key) {
-  return function(result, tag) {
+  return function (result, tag) {
     const fun = flatteners[key];
     fun.apply(null, [result, tag, key].slice(0, fun.length));
   };
@@ -641,7 +641,7 @@ function parseJSDoc(comment, loc, context) {
   }
 
   // Reject parameter tags without a parameter name
-  result.tags.filter(function(tag) {
+  result.tags.filter(function (tag) {
     if (tag.title === 'param' && tag.name === undefined) {
       result.errors.push({
         message: 'A @param tag without a parameter name was rejected'
@@ -651,7 +651,7 @@ function parseJSDoc(comment, loc, context) {
     return true;
   });
 
-  result.tags.forEach(function(tag) {
+  result.tags.forEach(function (tag) {
     if (tag.errors) {
       for (let j = 0; j < tag.errors.length; j++) {
         result.errors.push({ message: tag.errors[j] });

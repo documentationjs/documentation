@@ -60,9 +60,7 @@ const nestTag = (
             if (tag.name.match(/^(\$\d+)/)) {
               errors.push({
                 message:
-                  `Parent of ${
-                    tag.name
-                  } not found. To document a destructuring\n` +
+                  `Parent of ${tag.name} not found. To document a destructuring\n` +
                   `type, add a @param tag in its position to specify the name of the\n` +
                   `destructured parameter`,
                 commentLineNumber: tag.lineNumber

@@ -343,8 +343,9 @@ function mergeTopNodes(inferred, explicit) {
   const errors = explicitTagsWithoutInference.map(tag => {
     return {
       message:
-        `An explicit parameter named ${tag.name ||
-          ''} was specified but didn't match ` +
+        `An explicit parameter named ${
+          tag.name || ''
+        } was specified but didn't match ` +
         `inferred information ${Array.from(inferredNames).join(', ')}`,
       commentLineNumber: tag.lineNumber
     };

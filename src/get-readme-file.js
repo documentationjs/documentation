@@ -10,7 +10,7 @@ module.exports = function findReadme(dir) {
     'readme.md'
   ];
 
-  const readmeFile = fs.readdirSync(dir).find(function(filename) {
+  const readmeFile = fs.readdirSync(dir).find(function (filename) {
     return readmeFilenames.indexOf(filename) >= 0;
   });
 

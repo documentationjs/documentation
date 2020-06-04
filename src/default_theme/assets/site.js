@@ -7,7 +7,7 @@ anchors.add('h3');
 // Filter UI
 var tocElements = document.getElementById('toc').getElementsByTagName('li');
 
-document.getElementById('filter-input').addEventListener('keyup', function(e) {
+document.getElementById('filter-input').addEventListener('keyup', function (e) {
   var i, element, children;
 
   // enter key
@@ -22,14 +22,14 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
     }
   }
 
-  var match = function() {
+  var match = function () {
     return true;
   };
 
   var value = this.value.toLowerCase();
 
   if (!value.match(/^\s*$/)) {
-    match = function(element) {
+    match = function (element) {
       var html = element.firstChild.innerHTML;
       return html && html.toLowerCase().indexOf(value) !== -1;
     };
@@ -114,12 +114,12 @@ var cw_without_sb = split_left.clientWidth;
 split_left.style.overflow = '';
 
 Split(['#split-left', '#split-right'], {
-  elementStyle: function(dimension, size, gutterSize) {
+  elementStyle: function (dimension, size, gutterSize) {
     return {
       'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)'
     };
   },
-  gutterStyle: function(dimension, gutterSize) {
+  gutterStyle: function (dimension, gutterSize) {
     return {
       'flex-basis': gutterSize + 'px'
     };
@@ -152,9 +152,9 @@ function loadState(ev) {
   }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   // Restore after Firefox scrolls to hash.
-  setTimeout(function() {
+  setTimeout(function () {
     loadState();
     // Update with initial scroll position.
     updateState();

@@ -49,7 +49,7 @@ function pick(comment) {
  * @returns {Array<Object>} nested comments, with only root comments
  * at the top level.
  */
-module.exports = function(comments) {
+module.exports = function (comments) {
   let id = 0;
   const root = {
     members: getMembers()
@@ -119,7 +119,7 @@ module.exports = function(comments) {
 
     node.comments.push(comment);
   });
-  namesToUnroot.forEach(function(name) {
+  namesToUnroot.forEach(function (name) {
     delete root.members.static[name];
   });
 
@@ -201,10 +201,7 @@ module.exports = function(comments) {
 
         comment.members.events = events;
 
-        comment.path = path
-          .map(pick)
-          .concat(pick(comment))
-          .filter(Boolean);
+        comment.path = path.map(pick).concat(pick(comment)).filter(Boolean);
 
         const scopeChars = {
           instance: '#',

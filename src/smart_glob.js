@@ -34,7 +34,7 @@ function processPath(extensions) {
   const cwd = process.cwd();
   extensions = extensions || ['.js'];
 
-  extensions = extensions.map(function(ext) {
+  extensions = extensions.map(function (ext) {
     return ext.replace(/^\./, '');
   });
 
@@ -53,7 +53,7 @@ function processPath(extensions) {
    * @returns {string} The glob path or the file path itself
    * @private
    */
-  return function(pathname) {
+  return function (pathname) {
     let newPath = pathname;
     const resolvedPath = path.resolve(cwd, pathname);
 
@@ -106,7 +106,7 @@ function listFilesToProcess(globPatterns) {
     added.add(filename);
   }
 
-  globPatterns.forEach(function(pattern) {
+  globPatterns.forEach(function (pattern) {
     const file = path.resolve(cwd, pattern);
     if (fs.existsSync(file) && fs.statSync(file).isFile()) {
       addFile(fs.realpathSync(file));
@@ -117,7 +117,7 @@ function listFilesToProcess(globPatterns) {
         cwd
       };
 
-      glob.sync(pattern, globOptions).forEach(function(globMatch) {
+      glob.sync(pattern, globOptions).forEach(function (globMatch) {
         addFile(path.resolve(cwd, globMatch));
       });
     }

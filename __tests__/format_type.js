@@ -12,7 +12,7 @@ function stringify(children) {
   });
 }
 
-test('formatType', function() {
+test('formatType', function () {
   const linkerStack = new LinkerStack({});
   const formatType = _formatType.bind(undefined, linkerStack.link);
   [
@@ -81,7 +81,7 @@ test('formatType', function() {
       'undefined',
       '[undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)'
     ]
-  ].forEach(function(example) {
+  ].forEach(function (example) {
     expect(
       stringify(
         formatType(
@@ -102,7 +102,7 @@ test('formatType', function() {
   expect(
     stringify(
       _formatType(
-        function(str) {
+        function (str) {
           return str.toUpperCase();
         },
         parse('@param {Foo} a', {
@@ -114,7 +114,7 @@ test('formatType', function() {
 
   expect(stringify(formatType())).toEqual('any');
 
-  expect(function() {
+  expect(function () {
     formatType({});
   }).toThrow();
 });

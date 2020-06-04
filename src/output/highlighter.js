@@ -18,7 +18,7 @@ function visitor(node) {
   }
 }
 
-module.exports = function(ast) {
+module.exports = function (ast) {
   visit(ast, 'code', visitor);
   return ast;
 };

@@ -81,7 +81,7 @@ function dependencyStream(indexes, config) {
   return new Promise((resolve, reject) => {
     md.once('error', reject);
     md.pipe(
-      concat(function(inputs) {
+      concat(function (inputs) {
         resolve(
           inputs
             .filter(
