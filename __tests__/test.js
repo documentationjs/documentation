@@ -31,7 +31,7 @@ function readOptionsFromFile(file) {
 }
 
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
-  test('git option', async function() {
+  test('git option', async function () {
     jest.setTimeout(10000); // 10 second timeout. After update flow.js on 0.56 version the test is executed more time.
     const file = path.join(__dirname, './fixture/simple.input.js');
     const result = await documentation.build([file], { github: true });
@@ -43,7 +43,7 @@ if (fs.existsSync(path.join(__dirname, '../.git'))) {
   });
 }
 
-test('document-exported error', async function() {
+test('document-exported error', async function () {
   const file = path.join(__dirname, 'fixture', 'document-exported-bad', 'x.js');
   try {
     await documentation.build([file], { documentExported: true });
@@ -52,7 +52,7 @@ test('document-exported error', async function() {
   }
 });
 
-test('external modules option', async function() {
+test('external modules option', async function () {
   const result = await documentation.build(
     [path.join(__dirname, 'fixture', 'external.input.js')],
     {
@@ -68,11 +68,11 @@ test('external modules option', async function() {
   expect(result).toMatchSnapshot();
 });
 
-test('bad input', function() {
+test('bad input', function () {
   glob
     .sync(path.join(__dirname, 'fixture/bad', '*.input.js'))
-    .forEach(function(file) {
-      test(path.basename(file), function() {
+    .forEach(function (file) {
+      test(path.basename(file), function () {
         return documentation
           .build([file], readOptionsFromFile(file))
           .then(res => {
@@ -90,11 +90,11 @@ test('bad input', function() {
     });
 });
 
-describe('html', function() {
+describe('html', function () {
   glob
     .sync(path.join(__dirname, 'fixture/html', '*.input.js'))
-    .forEach(function(file) {
-      test(path.basename(file), async function() {
+    .forEach(function (file) {
+      test(path.basename(file), async function () {
         const result = await documentation.build(
           [file],
           readOptionsFromFile(file)
@@ -115,17 +115,17 @@ describe('html', function() {
     });
 });
 
-describe('outputs', function() {
+describe('outputs', function () {
   glob
     .sync(path.join(__dirname, 'fixture', '*.input.js'))
-    .forEach(function(file) {
-      describe(path.basename(file), async function() {
+    .forEach(function (file) {
+      describe(path.basename(file), function () {
         let result = null;
-        beforeEach(async function() {
+        beforeEach(async function () {
           result = await documentation.build([file], readOptionsFromFile(file));
         });
 
-        test('markdown', async function() {
+        test('markdown', async function () {
           const md = await outputMarkdown(_.cloneDeep(result), {
             markdownToc: true
           });
@@ -133,7 +133,7 @@ describe('outputs', function() {
         });
 
         if (file.match(/es6.input.js/)) {
-          test('no markdown TOC', async function() {
+          test('no markdown TOC', async function () {
             const txt = await outputMarkdown(_.cloneDeep(result), {
               markdownToc: false
             });
@@ -141,16 +141,16 @@ describe('outputs', function() {
           });
         }
 
-        test('markdown AST', async function() {
+        test('markdown AST', async function () {
           const ast = await outputMarkdownAST(_.cloneDeep(result), {});
           expect(ast).toMatchSnapshot();
         });
 
-        test('JSON', function() {
+        test('JSON', function () {
           normalize(result);
-          result.forEach(function(comment) {
+          result.forEach(function (comment) {
             validate(comment, documentationSchema.jsonSchema).errors.forEach(
-              function(error) {
+              function (error) {
                 expect(error).toBeFalsy();
               }
             );
@@ -161,7 +161,7 @@ describe('outputs', function() {
     });
 });
 
-test('highlightAuto md output', async function() {
+test('highlightAuto md output', async function () {
   const file = path.join(
     __dirname,
     'fixture/auto_lang_hljs/multilanguage.input.js'
@@ -175,7 +175,7 @@ test('highlightAuto md output', async function() {
   expect(md.toString()).toMatchSnapshot();
 });
 
-test('config', async function() {
+test('config', async function () {
   const file = path.join(__dirname, 'fixture', 'class.input.js');
   const outputfile = path.join(__dirname, 'fixture', 'class.config.output.md');
   const out = await documentation.build([file], {
@@ -185,7 +185,7 @@ test('config', async function() {
   expect(md).toMatchSnapshot();
 });
 
-test('config with nested sections', async function() {
+test('config with nested sections', async function () {
   const file = path.join(__dirname, 'fixture', 'sections.input.js');
   const out = await documentation.build([file], {
     config: path.join(__dirname, 'fixture', 'sections.config.yml')
@@ -194,7 +194,7 @@ test('config with nested sections', async function() {
   expect(md).toMatchSnapshot();
 });
 
-test('multi-file input', async function() {
+test('multi-file input', async function () {
   const result = await documentation.build(
     [
       path.join(__dirname, 'fixture', 'simple.input.js'),
@@ -206,7 +206,7 @@ test('multi-file input', async function() {
   expect(result).toMatchSnapshot();
 });
 
-test('accepts simple relative paths', async function() {
+test('accepts simple relative paths', async function () {
   await pify(chdir)(__dirname);
   const data = await documentation.build(
     '__tests__/fixture/simple.input.js',
@@ -215,7 +215,7 @@ test('accepts simple relative paths', async function() {
   expect(data.length).toBe(1);
 });
 
-test('.lint', async function() {
+test('.lint', async function () {
   await pify(chdir)(__dirname);
   const data = await documentation.lint(
     '__tests__/fixture/simple.input.js',
@@ -224,7 +224,7 @@ test('.lint', async function() {
   expect(data).toBe('');
 });
 
-test('.lint with bad input', async function() {
+test('.lint with bad input', async function () {
   await pify(chdir)(__dirname);
   try {
     await documentation.lint('__tests__/fixture/bad/syntax.input', {
@@ -235,14 +235,14 @@ test('.lint with bad input', async function() {
   }
 });
 
-test('Vue file', async function() {
+test('Vue file', async function () {
   await pify(chdir)(__dirname);
   const data = await documentation.build('__tests__/fixture/vue.input.vue', {});
   normalize(data);
   expect(data).toMatchSnapshot();
 });
 
-test('Vue file', async function() {
+test('Vue file', async function () {
   await pify(chdir)(__dirname);
   const data = await documentation.build(
     '__tests__/fixture/vue-no-script.input.vue',
@@ -252,7 +252,7 @@ test('Vue file', async function() {
   expect(data).toMatchSnapshot();
 });
 
-test('Use Source attribute only', async function() {
+test('Use Source attribute only', async function () {
   await pify(chdir)(__dirname);
   const documentationSource = `
 /**

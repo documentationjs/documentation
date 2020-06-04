@@ -215,7 +215,7 @@ function normalizeMemberof(comment) {
  * @private
  * @returns {Object} comment with membership inferred
  */
-module.exports = function() {
+module.exports = function () {
   let currentModule;
 
   /**
@@ -296,10 +296,7 @@ module.exports = function() {
     if (
       path.isExpressionStatement() &&
       path.get('expression').isAssignmentExpression() &&
-      path
-        .get('expression')
-        .get('left')
-        .isMemberExpression()
+      path.get('expression').get('left').isMemberExpression()
     ) {
       path = path.get('expression').get('left');
     }

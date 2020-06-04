@@ -1,12 +1,12 @@
 const http = require('http');
-import { walk } from '../src/walk';
+const { walk } = require('../src/walk');
 const concat = require('concat-stream');
 
 function get(url, callback) {
   return new Promise((resolve, reject) => {
-    http.get(url, function(res) {
+    http.get(url, function (res) {
       res.pipe(
-        concat(function(text) {
+        concat(function (text) {
           if (res.statusCode >= 400) {
             return reject(res.statusCode);
           }
@@ -18,7 +18,7 @@ function get(url, callback) {
 }
 
 function normalize(comments) {
-  return walk(comments, function(comment) {
+  return walk(comments, function (comment) {
     const hasGithub = !!comment.context.github;
     const path = comment.context.path;
     comment.context = {

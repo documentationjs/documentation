@@ -1,6 +1,6 @@
 const LinkerStack = require('../src/output/util/linker_stack');
 
-test('linkerStack', function() {
+test('linkerStack', function () {
   const linkerStack = new LinkerStack({});
 
   expect(linkerStack.link('string')).toBe(
@@ -35,7 +35,7 @@ test('linkerStack', function() {
         namespace: 'Image'
       }
     ],
-    function(namespace) {
+    function (namespace) {
       return '#' + namespace;
     }
   );

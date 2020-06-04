@@ -21,7 +21,7 @@ function cleanup(comments) {
   });
 }
 
-test('lint', async function() {
+test('lint', async function () {
   const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });
@@ -30,7 +30,7 @@ test('lint', async function() {
   expect(data).toEqual('');
 });
 
-test('build', async function() {
+test('build', async function () {
   const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });
@@ -46,7 +46,7 @@ test('build', async function() {
   expect(json).toMatchSnapshot();
 });
 
-test('expandInputs', async function() {
+test('expandInputs', async function () {
   const { paths } = inputs({
     'index.js': '/** hi */var name = 1;'
   });

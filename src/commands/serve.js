@@ -56,7 +56,7 @@ module.exports.handler = function serve(argv) {
     const server = new Server(port);
     let watcher;
 
-    server.on('listening', function() {
+    server.on('listening', function () {
       process.stdout.write(`documentation.js serving on port ${port}\n`);
     });
 

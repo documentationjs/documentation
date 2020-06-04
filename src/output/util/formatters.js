@@ -13,7 +13,7 @@ const formatType = require('./format_type');
  * @param getHref linker method
  * @returns {formatters} formatter object
  */
-module.exports = function(getHref) {
+module.exports = function (getHref) {
   const rerouteLinks = _rerouteLinks.bind(undefined, getHref);
 
   const formatters = {};
@@ -27,7 +27,7 @@ module.exports = function(getHref) {
    * @param {boolean} short whether to cut the details and make it skimmable
    * @returns {string} formatted parameter representation.
    */
-  formatters.parameter = function(param, short) {
+  formatters.parameter = function (param, short) {
     if (short) {
       if (param.type && param.type.type == Syntax.OptionalType) {
         if (param.default) {
@@ -45,7 +45,7 @@ module.exports = function(getHref) {
    * @param {Object} ast remark-compatible AST
    * @returns {string} HTML
    */
-  formatters.markdown = function(ast) {
+  formatters.markdown = function (ast) {
     if (ast) {
       return remark()
         .use(html)
@@ -60,7 +60,7 @@ module.exports = function(getHref) {
    * @param {Object} type doctrine-format type
    * @returns {string} HTML
    */
-  formatters.type = function(type) {
+  formatters.type = function (type) {
     return formatters
       .markdown(u('root', formatType(getHref, type)))
       .replace(/\n/g, '');
@@ -71,7 +71,7 @@ module.exports = function(getHref) {
    * @param {string} text inner text of the link
    * @returns {string} potentially linked HTML
    */
-  formatters.autolink = function(text) {
+  formatters.autolink = function (text) {
     const href = getHref(text);
     if (href) {
       // TODO: this is a temporary fix until we drop remark 3.x support,
@@ -102,12 +102,12 @@ module.exports = function(getHref) {
    * @param {boolean} short whether to cut the details and make it skimmable
    * @returns {string} formatted parameters
    */
-  formatters.parameters = function(section, short) {
+  formatters.parameters = function (section, short) {
     if (section.params) {
       return (
         '(' +
         section.params
-          .map(function(param) {
+          .map(function (param) {
             return formatters.parameter(param, short);
           })
           .join(', ') +

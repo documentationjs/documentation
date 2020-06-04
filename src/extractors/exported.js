@@ -45,7 +45,7 @@ function walkExported(ast, data /*: {
     }
 
     return comments
-      .map(function(comment) {
+      .map(function (comment) {
         return addComment(
           data,
           comment.value,
@@ -61,7 +61,7 @@ function walkExported(ast, data /*: {
   function addComments(data, path, overrideName) {
     const comments = getComments(data, path);
     if (overrideName) {
-      comments.forEach(function(comment) {
+      comments.forEach(function (comment) {
         comment.name = overrideName;
       });
     }

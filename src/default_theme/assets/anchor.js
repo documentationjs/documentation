@@ -6,7 +6,7 @@
 /* eslint-env amd, node */
 
 // https://github.com/umdjs/umd/blob/master/templates/returnExports.js
-(function(root, factory) {
+(function (root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -21,7 +21,7 @@
     root.AnchorJS = factory();
     root.anchors = new root.AnchorJS();
   }
-})(this, function() {
+})(this, function () {
   'use strict';
   function AnchorJS(options) {
     this.options = options || {};
@@ -51,7 +51,7 @@
      * https://github.com/Modernizr/Modernizr/blob/da22eb27631fc4957f67607fe6042e85c0a84656/feature-detects/touchevents.js#L40
      * @returns {Boolean} - true if the current device supports touch.
      */
-    this.isTouchDevice = function() {
+    this.isTouchDevice = function () {
       return !!(
         'ontouchstart' in window ||
         (window.DocumentTouch && document instanceof DocumentTouch)
@@ -64,7 +64,7 @@
      *                                            to. Also accepts an array or nodeList containing the relavant elements.
      * @returns {this}                           - The AnchorJS object
      */
-    this.add = function(selector) {
+    this.add = function (selector) {
       var elements,
         elsWithIds,
         idList,
@@ -193,7 +193,7 @@
      *                                            OR a nodeList / array containing the DOM elements.
      * @returns {this}                           - The AnchorJS object
      */
-    this.remove = function(selector) {
+    this.remove = function (selector) {
       var index,
         domAnchor,
         elements = _getElements(selector);
@@ -216,7 +216,7 @@
     /**
      * Removes all anchorjs links. Mostly used for tests.
      */
-    this.removeAll = function() {
+    this.removeAll = function () {
       this.remove(this.elements);
     };
 
@@ -229,7 +229,7 @@
      * @param  {String} text - Any text. Usually pulled from the webpage element we are linking to.
      * @returns {String}      - hyphen-delimited text for use in IDs and URLs.
      */
-    this.urlify = function(text) {
+    this.urlify = function (text) {
       // Regex for finding the nonsafe URL characters (many need escaping): & +$,:;=?@"#{}|^~[`%!'<>]./()*\
       var nonsafeChars = /[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\]/g,
         urlText;
@@ -260,7 +260,7 @@
      * @param    {HTMLElemnt}  el - a DOM node
      * @returns   {Boolean}     true/false
      */
-    this.hasAnchorJSLink = function(el) {
+    this.hasAnchorJSLink = function (el) {
       var hasLeftAnchor =
           el.firstChild &&
           (' ' + el.firstChild.className + ' ').indexOf(' anchorjs-link ') > -1,

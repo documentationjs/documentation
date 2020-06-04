@@ -8,7 +8,7 @@ const visit = require('unist-util-visit');
  * @private
  */
 module.exports = function rerouteLinks(getHref, ast) {
-  visit(ast, 'link', function(node) {
+  visit(ast, 'link', function (node) {
     if (
       node.jsdoc &&
       !node.url.match(/^(http|https|\.)/) &&

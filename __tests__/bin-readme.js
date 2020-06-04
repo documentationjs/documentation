@@ -22,7 +22,7 @@ function documentation(args, options, parseJSON) {
   });
 }
 
-describe('readme autodetection of different filenames', function() {
+describe('readme autodetection of different filenames', function () {
   const fixtures = path.join(__dirname, 'fixture/readme');
   const sourceFile = path.join(fixtures, 'index.js');
   let d;
@@ -38,14 +38,14 @@ describe('readme autodetection of different filenames', function() {
     fs.copySync(path.join(fixtures, 'index.js'), path.join(d, 'index.js'));
   });
 
-  test('updates readme.markdown', async function() {
+  test('updates readme.markdown', async function () {
     await documentation(['readme index.js -s API'], { cwd: d });
     const outputPath = path.join(d, 'readme.markdown');
     expect(fs.readFileSync(outputPath, 'utf-8')).toMatchSnapshot();
   });
 });
 
-describe('readme command', function() {
+describe('readme command', function () {
   const fixtures = path.join(__dirname, 'fixture/readme');
   const sourceFile = path.join(fixtures, 'index.js');
   let d;
@@ -63,7 +63,7 @@ describe('readme command', function() {
 
   // run tests after setting up temp dir
 
-  test('--diff-only: changes needed', async function() {
+  test('--diff-only: changes needed', async function () {
     const before = fs.readFileSync(path.join(d, 'README.md'), 'utf-8');
     try {
       await documentation(['readme index.js --diff-only -s API'], {
@@ -77,13 +77,13 @@ describe('readme command', function() {
     }
   });
 
-  test('updates README.md', async function() {
+  test('updates README.md', async function () {
     await documentation(['readme index.js -s API'], { cwd: d });
     const outputPath = path.join(d, 'README.md');
     expect(fs.readFileSync(outputPath, 'utf-8')).toMatchSnapshot();
   });
 
-  test('--readme-file', async function() {
+  test('--readme-file', async function () {
     fs.copySync(
       path.join(fixtures, 'README.input.md'),
       path.join(d, 'other.md')
@@ -95,7 +95,7 @@ describe('readme command', function() {
     expect(actual).toMatchSnapshot();
   });
 
-  test('--diff-only: changes NOT needed', function() {
+  test('--diff-only: changes NOT needed', function () {
     fs.copySync(
       path.join(fixtures, 'README.output.md'),
       path.join(d, 'uptodate.md')
@@ -108,7 +108,7 @@ describe('readme command', function() {
     });
   });
 
-  test('-s: not found', async function() {
+  test('-s: not found', async function () {
     fs.copySync(
       path.join(fixtures, 'README.output.md'),
       path.join(d, 'uptodate.md')
@@ -123,7 +123,7 @@ describe('readme command', function() {
     }
   });
 
-  test('requires -s option', async function() {
+  test('requires -s option', async function () {
     try {
       await documentation(['readme index.js'], { cwd: d });
     } catch (err) {
@@ -134,7 +134,7 @@ describe('readme command', function() {
   });
 
   const badFixturePath = path.join(__dirname, 'fixture/bad/syntax.input');
-  test('errors on invalid syntax', async function() {
+  test('errors on invalid syntax', async function () {
     try {
       await documentation(
         ['readme ' + badFixturePath + ' -s API --parseExtension input'],

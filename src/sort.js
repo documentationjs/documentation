@@ -21,7 +21,7 @@ module.exports = function sortDocs(comments, options) {
   const toBeSorted = Object.create(null);
   const paths = Object.create(null);
   const fixed = [];
-  const walk = function(tocPath, val) {
+  const walk = function (tocPath, val) {
     if (typeof val === 'object' && val.name) {
       val.kind = 'note';
       indexes[val.name] = i++;
@@ -59,7 +59,7 @@ module.exports = function sortDocs(comments, options) {
   // in the YAML list
   options.toc.forEach(walk.bind(null, []));
   const unfixed = [];
-  comments.forEach(function(comment) {
+  comments.forEach(function (comment) {
     let commentPath;
     if (!comment.memberof && (commentPath = paths[comment.name])) {
       comment.path = commentPath;

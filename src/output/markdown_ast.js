@@ -155,7 +155,7 @@ function buildMarkdownAST(comments, config) {
       return (
         comment.examples.length > 0 &&
         [u('heading', { depth: depth + 1 }, [u('text', 'Examples')])].concat(
-          comment.examples.reduce(function(memo, example) {
+          comment.examples.reduce(function (memo, example) {
             const language = hljsOptions.highlightAuto
               ? hljs.highlightAuto(example.description).language
               : DEFAULT_LANGUAGE;

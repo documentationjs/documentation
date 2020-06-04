@@ -16,7 +16,7 @@ const smartGlob = require('../smart_glob.js');
  * @param config parsing options
  * @returns promise with parsed files
  */
-module.exports = function(indexes, config) {
+module.exports = function (indexes, config) {
   const objects = [];
   const strings = [];
   for (const index of indexes) {

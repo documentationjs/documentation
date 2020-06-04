@@ -102,7 +102,7 @@ function buildInternal(inputsAndConfig) {
     garbageCollect
   ]);
 
-  const extractedComments = _.flatMap(inputs, function(sourceFile) {
+  const extractedComments = _.flatMap(inputs, function (sourceFile) {
     if (!sourceFile.source) {
       sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
     }

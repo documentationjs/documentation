@@ -22,7 +22,7 @@ const CANONICAL = {
  * @returns {Array<Object>} array of errors
  */
 function lintComments(comment) {
-  comment.tags.forEach(function(tag) {
+  comment.tags.forEach(function (tag) {
     function nameInvariant(name) {
       if (name && typeof CANONICAL[name] === 'string') {
         comment.errors.push({
@@ -69,8 +69,8 @@ function lintComments(comment) {
  */
 function formatLint(comments) {
   const vFiles = {};
-  walk(comments, function(comment) {
-    comment.errors.forEach(function(error) {
+  walk(comments, function (comment) {
+    comment.errors.forEach(function (error) {
       const p = comment.context.file;
       vFiles[p] =
         vFiles[p] ||

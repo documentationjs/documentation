@@ -20,7 +20,7 @@ function documentation(args, options) {
 }
 
 function normalize(result) {
-  result.forEach(function(item) {
+  result.forEach(function (item) {
     item.context.file = '[path]';
   });
   return result;
@@ -28,7 +28,7 @@ function normalize(result) {
 
 const timeout = 20000;
 
-test.skip('harness', function() {
+test.skip('harness', function () {
   const docProcess = documentation(['serve', 'fixture/simple.input.js']);
   expect(docProcess).toBeTruthy();
   docProcess.kill();
@@ -36,14 +36,14 @@ test.skip('harness', function() {
 
 test.skip(
   'provides index.html',
-  function() {
+  function () {
     const docProcess = documentation(['serve', 'fixture/simple.input.js']);
-    return pEvent(docProcess.stdout, 'data').then(function(data) {
+    return pEvent(docProcess.stdout, 'data').then(function (data) {
       const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
-      return get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+      return get(`http://localhost:${portNumber[1]}/`).then(function (text) {
         expect(text.match(/<html>/)).toBeTruthy();
         docProcess.kill();
       });
@@ -54,18 +54,18 @@ test.skip(
 
 test.skip(
   'accepts port argument',
-  function() {
+  function () {
     const docProcess = documentation([
       'serve',
       'fixture/simple.input.js',
       '--port=4004'
     ]);
-    return pEvent(docProcess.stdout, 'data').then(function(data) {
+    return pEvent(docProcess.stdout, 'data').then(function (data) {
       const portNumber = data
         .toString()
         .match(/documentation.js serving on port 4004/);
       expect(portNumber).toBeTruthy();
-      return get(`http://localhost:4004/`).then(function(text) {
+      return get(`http://localhost:4004/`).then(function (text) {
         expect(text.match(/<html>/)).toBeTruthy();
         docProcess.kill();
       });
@@ -76,20 +76,20 @@ test.skip(
 
 test.skip(
   '--watch',
-  function(done) {
+  function (done) {
     const tmpFile = path.join(os.tmpdir(), '/simple.js');
     fs.writeFileSync(tmpFile, '/** a function */function apples() {}');
     const docProcess = documentation(['serve', tmpFile, '--watch']);
-    pEvent(docProcess.stdout, 'data').then(function(data) {
+    pEvent(docProcess.stdout, 'data').then(function (data) {
       const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
-      return get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+      return get(`http://localhost:${portNumber[1]}/`).then(function (text) {
         expect(text.match(/apples/)).toBeTruthy();
         fs.writeFileSync(tmpFile, '/** a function */function bananas() {}');
         function doGet() {
-          get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+          get(`http://localhost:${portNumber[1]}/`).then(function (text) {
             if (text.match(/bananas/)) {
               docProcess.kill();
               done();
@@ -107,23 +107,23 @@ test.skip(
 
 test.skip(
   '--watch',
-  function(done) {
+  function (done) {
     const tmpDir = os.tmpdir();
     const a = path.join(tmpDir, '/simple.js');
     const b = path.join(tmpDir, '/required.js');
     fs.writeFileSync(a, 'require("./required")');
     fs.writeFileSync(b, '/** soup */function soup() {}');
     const docProcess = documentation(['serve', a, '--watch']);
-    docProcess.stdout.once('data', function(data) {
+    docProcess.stdout.once('data', function (data) {
       const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
-      get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+      get(`http://localhost:${portNumber[1]}/`).then(function (text) {
         expect(text.match(/soup/)).toBeTruthy();
         fs.writeFileSync(b, '/** nuts */function nuts() {}');
         function doGet() {
-          get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+          get(`http://localhost:${portNumber[1]}/`).then(function (text) {
             if (text.match(/nuts/)) {
               docProcess.kill();
               done();
@@ -141,17 +141,17 @@ test.skip(
 
 test.skip(
   'error page',
-  function() {
+  function () {
     const tmpDir = os.tmpdir();
     const a = path.join(tmpDir, '/simple.js');
     fs.writeFileSync(a, '**');
     const docProcess = documentation(['serve', a, '--watch']);
-    return pEvent(docProcess.stdout, 'data').then(function(data) {
+    return pEvent(docProcess.stdout, 'data').then(function (data) {
       const portNumber = data
         .toString()
         .match(/documentation.js serving on port (\d+)/);
       expect(portNumber).toBeTruthy();
-      return get(`http://localhost:${portNumber[1]}/`).then(function(text) {
+      return get(`http://localhost:${portNumber[1]}/`).then(function (text) {
         expect(text.match(/Unexpected token/)).toBeTruthy();
         docProcess.kill();
       });
