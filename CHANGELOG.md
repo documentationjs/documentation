@@ -1,6 +1,14 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [13.0.1](https://github.com/documentationjs/documentation/compare/v13.0.0...v13.0.1) (2020-06-04)
+
+
+### Bug Fixes
+
+* 🐛 Error with flow opaque type and readme command ([78db9a4](https://github.com/documentationjs/documentation/commit/78db9a443a65bbe8ff202083351655e0cfa60004)), closes [#1322](https://github.com/documentationjs/documentation/issues/1322)
+* 🐛 Fixes an issue when using object spread and $Exact ([106945c](https://github.com/documentationjs/documentation/commit/106945c6354f0b70335adf737c7b7fa296952cc3)), closes [#1324](https://github.com/documentationjs/documentation/issues/1324)
 
 <a name="13.0.0"></a>
 # [13.0.0](https://github.com/documentationjs/documentation/compare/v12.3.0...v13.0.0) (2020-05-09)
