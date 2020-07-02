@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.0.2](https://github.com/documentationjs/documentation/compare/v13.0.1...v13.0.2) (2020-07-02)
+
+
+### Bug Fixes
+
+* Additional safety around detecting functions in HTML output ([a8b6ce1](https://github.com/documentationjs/documentation/commit/a8b6ce144ea380ad21ba99f03574f6258be10666))
+
 ### [13.0.1](https://github.com/documentationjs/documentation/compare/v13.0.0...v13.0.1) (2020-06-04)
 
 
