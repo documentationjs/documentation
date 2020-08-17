@@ -29619,6 +29619,368 @@ Object {
 }
 `;
 
+exports[`outputs nest_events.input.js JSON 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 6,
+          "line": 13,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 13,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "position": Object {
+                "end": Object {
+                  "column": 18,
+                  "line": 1,
+                  "offset": 17,
+                },
+                "indent": Array [],
+                "start": Object {
+                  "column": 1,
+                  "line": 1,
+                  "offset": 0,
+                },
+              },
+              "type": "text",
+              "value": "Klass description",
+            },
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 18,
+              "line": 1,
+              "offset": 17,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "paragraph",
+        },
+      ],
+      "position": Object {
+        "end": Object {
+          "column": 18,
+          "line": 1,
+          "offset": 17,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "class",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 5,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [
+        Object {
+          "augments": Array [],
+          "context": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 6,
+                "line": 13,
+              },
+              "start": Object {
+                "column": 0,
+                "line": 13,
+              },
+            },
+          },
+          "description": Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "position": Object {
+                      "end": Object {
+                        "column": 12,
+                        "line": 1,
+                        "offset": 11,
+                      },
+                      "indent": Array [],
+                      "start": Object {
+                        "column": 1,
+                        "line": 1,
+                        "offset": 0,
+                      },
+                    },
+                    "type": "text",
+                    "value": "Klass event",
+                  },
+                ],
+                "position": Object {
+                  "end": Object {
+                    "column": 12,
+                    "line": 1,
+                    "offset": 11,
+                  },
+                  "indent": Array [],
+                  "start": Object {
+                    "column": 1,
+                    "line": 1,
+                    "offset": 0,
+                  },
+                },
+                "type": "paragraph",
+              },
+            ],
+            "position": Object {
+              "end": Object {
+                "column": 12,
+                "line": 1,
+                "offset": 11,
+              },
+              "start": Object {
+                "column": 1,
+                "line": 1,
+                "offset": 0,
+              },
+            },
+            "type": "root",
+          },
+          "errors": Array [],
+          "examples": Array [],
+          "implements": Array [],
+          "kind": "event",
+          "loc": Object {
+            "end": Object {
+              "column": 3,
+              "line": 12,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 8,
+            },
+          },
+          "memberof": "Klass",
+          "members": Object {
+            "events": Array [],
+            "global": Array [],
+            "inner": Array [],
+            "instance": Array [],
+            "static": Array [],
+          },
+          "name": "bar",
+          "namespace": "Klass.event:bar",
+          "params": Array [],
+          "path": Array [
+            Object {
+              "kind": "class",
+              "name": "Klass",
+            },
+            Object {
+              "kind": "event",
+              "name": "bar",
+            },
+          ],
+          "properties": Array [],
+          "returns": Array [],
+          "sees": Array [],
+          "tags": Array [
+            Object {
+              "description": "bar",
+              "lineNumber": 2,
+              "title": "event",
+            },
+            Object {
+              "description": "Klass",
+              "lineNumber": 3,
+              "title": "memberof",
+            },
+          ],
+          "throws": Array [],
+          "todos": Array [],
+          "yields": Array [],
+        },
+      ],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "Klass",
+    "namespace": "Klass",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "class",
+        "name": "Klass",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 3,
+        "name": "Klass",
+        "title": "class",
+        "type": null,
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+]
+`;
+
+exports[`outputs nest_events.input.js markdown 1`] = `
+"<!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+
+### Table of Contents
+
+-   [Klass][1]
+    -   [bar][2]
+
+## Klass
+
+Klass description
+
+### bar
+
+Klass event
+
+[1]: #klass
+
+[2]: #bar
+"
+`;
+
+exports[`outputs nest_events.input.js markdown AST 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "type": "html",
+      "value": "<!-- Generated by documentation.js. Update this documentation by updating the source code. -->",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "Klass",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 18,
+              "line": 1,
+              "offset": 17,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "Klass description",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 18,
+          "line": 1,
+          "offset": 17,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "type": "text",
+          "value": "bar",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "position": Position {
+            "end": Object {
+              "column": 12,
+              "line": 1,
+              "offset": 11,
+            },
+            "indent": Array [],
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "type": "text",
+          "value": "Klass event",
+        },
+      ],
+      "position": Position {
+        "end": Object {
+          "column": 12,
+          "line": 1,
+          "offset": 11,
+        },
+        "indent": Array [],
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "paragraph",
+    },
+  ],
+  "type": "root",
+}
+`;
+
 exports[`outputs nest_params.input.js JSON 1`] = `
 Array [
   Object {
