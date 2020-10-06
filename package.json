@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.3.6-quiq",
+  "version": "5.3.7-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -22,7 +22,7 @@
     "chalk": "^2.3.0",
     "chokidar": "^2.0.0",
     "concat-stream": "^1.6.0",
-    "disparity": "^2.0.0",
+    "disparity": "^3.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-port": "^3.2.0",
     "git-url-parse": "^8.0.0",
