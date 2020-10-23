@@ -33,7 +33,7 @@
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-stage-0": "^7.8.3",
     "@babel/traverse": "^7.9.0",
-    "@babel/types": "^7.9.0",
+    "@babel/types": "^7.12.1",
     "ansi-html": "^0.0.7",
     "babelify": "^10.0.0",
     "chalk": "^2.3.0",
