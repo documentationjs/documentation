@@ -64,6 +64,8 @@ Array [
         "column": 9,
         "line": 1,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 1,
