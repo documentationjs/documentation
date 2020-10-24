@@ -352,6 +352,13 @@ function buildMarkdownAST(comments, config) {
             []
           )
       )
+      .concat(
+        !!comment.members.events.length &&
+          comment.members.events.reduce(
+            (memo, child) => memo.concat(generate(depth + 1, child)),
+            []
+          )
+      )
       .filter(Boolean);
   }
 
