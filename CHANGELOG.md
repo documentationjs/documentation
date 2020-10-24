@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.1.0](https://github.com/documentationjs/documentation/compare/v13.0.2...v13.1.0) (2020-10-24)
+
+
+### Features
+
+* Add event members to md output ([#1336](https://github.com/documentationjs/documentation/issues/1336)) ([bc3233f](https://github.com/documentationjs/documentation/commit/bc3233fe7e414e65756cf50450ebad069e37506a))
+
 ### [13.0.2](https://github.com/documentationjs/documentation/compare/v13.0.1...v13.0.2) (2020-07-02)
 
 
