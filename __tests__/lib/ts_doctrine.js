@@ -12,7 +12,7 @@ function toComment(fn, filename) {
   )[0];
 }
 
-test('tsDoctrine', function() {
+test('tsDoctrine', function () {
   const types = TSTYPE_TYPES.slice();
 
   function toDoctrineType(flowType) {
@@ -393,6 +393,7 @@ test('tsDoctrine', function() {
 
   expect(types).toEqual([
     'TSBigIntKeyword',
+    'TSIntrinsicKeyword',
     'TSTypePredicate',
     'TSTypeQuery',
     'TSOptionalType', // handled - not top-level.

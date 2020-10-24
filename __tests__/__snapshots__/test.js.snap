@@ -10,6 +10,8 @@ Array [
           "column": 1,
           "line": 18,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 6,
@@ -80,6 +82,8 @@ Array [
         "column": 3,
         "line": 5,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 2,
@@ -187,6 +191,8 @@ Array [
           "column": 5,
           "line": 16,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 4,
           "line": 13,
@@ -258,6 +264,8 @@ Array [
         "column": 7,
         "line": 12,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 4,
         "line": 10,
@@ -303,6 +311,8 @@ Array [
           "column": 1,
           "line": 20,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 7,
@@ -369,6 +379,8 @@ Array [
         "column": 3,
         "line": 6,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 3,
@@ -476,6 +488,8 @@ Array [
           "column": 1,
           "line": 19,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 10,
@@ -547,6 +561,8 @@ Array [
         "column": 12,
         "line": 9,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 9,
@@ -567,6 +583,8 @@ Array [
                 "column": 3,
                 "line": 18,
               },
+              "filename": undefined,
+              "identifierName": undefined,
               "start": Position {
                 "column": 2,
                 "line": 15,
@@ -633,6 +651,8 @@ Array [
               "column": 5,
               "line": 14,
             },
+            "filename": undefined,
+            "identifierName": undefined,
             "start": Position {
               "column": 2,
               "line": 12,
@@ -806,6 +826,8 @@ Array [
           "column": 1,
           "line": 10,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 8,
@@ -907,6 +929,8 @@ Array [
         "column": 3,
         "line": 7,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 5,
@@ -944,6 +968,8 @@ Array [
           "column": 2,
           "line": 10,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 7,
@@ -1011,6 +1037,8 @@ Array [
         "column": 3,
         "line": 6,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 3,
@@ -1118,6 +1146,8 @@ Array [
           "column": 2,
           "line": 8,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 5,
@@ -1185,6 +1215,8 @@ Array [
         "column": 3,
         "line": 4,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 1,
@@ -1301,6 +1333,8 @@ Array [
           "column": 2,
           "line": 8,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 5,
@@ -1368,6 +1402,8 @@ Array [
         "column": 3,
         "line": 4,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 1,
@@ -3009,6 +3045,8 @@ Array [
           "column": 1,
           "line": 13,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 10,
@@ -3081,6 +3119,8 @@ Array [
         "column": 3,
         "line": 9,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 1,
@@ -3266,6 +3306,8 @@ Array [
           "column": 2,
           "line": 8,
         },
+        "filename": undefined,
+        "identifierName": undefined,
         "start": Position {
           "column": 0,
           "line": 5,
@@ -3333,6 +3375,8 @@ Array [
         "column": 3,
         "line": 4,
       },
+      "filename": undefined,
+      "identifierName": undefined,
       "start": Position {
         "column": 0,
         "line": 1,
