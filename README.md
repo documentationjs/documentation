@@ -77,6 +77,9 @@ documentation readme index.js --section=API
 # build docs for all values exported by index.js
 documentation build --document-exported index.js
 
+# build html docs for a TypeScript project
+documentation build index.ts --parse-extension ts -f html -o docs
+
 Commands:
   serve [input..]   generate, update, and display HTML documentation
   build [input..]   build documentation
