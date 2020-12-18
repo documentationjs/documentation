@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.3.7-quiq",
+  "version": "5.3.8-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -29,7 +29,7 @@
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^9.18.2",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.4",
     "mdast-util-inject": "^1.1.0",
@@ -82,6 +82,9 @@
     "regenerator-runtime": "^0.11.1",
     "standard-version": "^4.3.0",
     "tmp": "^0.0.33"
+  },
+  "resolutions": {
+    "trim": "^0.0.3"
   },
   "keywords": [
     "documentation",
