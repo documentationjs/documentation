@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.3.8-quiq",
+  "version": "5.3.9-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -29,7 +29,7 @@
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
-    "highlight.js": "^9.18.2",
+    "highlight.js": "^10.4.1",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.4",
     "mdast-util-inject": "^1.1.0",
