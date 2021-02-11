@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "13.1.0",
+  "version": "13.1.1",
   "author": "Tom MacWright",
   "homepage": "https://documentation.js.org",
   "bin": {
@@ -46,7 +46,7 @@
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
-    "highlight.js": "^9.15.5",
+    "highlight.js": "^10.5.0",
     "ini": "^1.3.5",
     "js-yaml": "^3.10.0",
     "lodash": "^4.17.10",
