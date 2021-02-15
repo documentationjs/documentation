@@ -33,6 +33,35 @@ for some ideas.
 
 - You can now make changes that will show up when you generate your docs using your theme.   Example `package.json` `scripts` entry: `"documentation build index.js -f html -o docs --theme node_modules/docjs-theme"`
 
+#### Changes to Default Theme Via documentation.yml
+If a documentation.yml file is used to establish a table of contents for your documentation, small changes to the default style can be made via a <style> element in the documentation.yml file. 
+  
+For example, if you have you have a section header and text to describe the section, you can put it at the same level of the text as shown below:
+
+```
+- name: Section Header Name
+    description: |
+      <head>
+        <style>
+        h2{
+          color:black;
+        }
+          code.black{
+            background-color: #295377;
+            overflow: hidden;
+            padding: 0.5rem;
+            color: white;
+            font: 0.8rem Inconsolata, monospace;
+            width:100%;          
+          }
+        </style>
+      </head>
+
+      ### Sub Section header
+      Text that describes the section and sub-section here.
+```
+Any changes to elements and classes that also exist in the standard theme will be overwridden by what is in the documentation.yml. This opens up the possiblitity of the same CSS being defined twice, which can be confusing and is not best practice. However, it is easy to change HTML style this way. Recommend only using classes defined this way that do not exist in the standard documentation.js theme.
+
 ### Theming Markdown
 
 The default Markdown generator for documentation.js isn't customizable - instead
