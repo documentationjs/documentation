@@ -2751,15 +2751,6 @@ detect-newline@^3.0.0, detect-newline@^3.1.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
-detective@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/detective/-/detective-5.2.0.tgz#feb2a77e85b904ecdea459ad897cc90a99bd2a7b"
-  integrity sha512-6SsIx+nUUbuK0EthKjv0zrdnajCCXVYGmbYYiYjFVpzcjwEs/JMDZ8tPRG29J/HhN56t3GJp2cGSWDRjjot8Pg==
-  dependencies:
-    acorn-node "^1.6.1"
-    defined "^1.0.0"
-    minimist "^1.1.1"
-
 diff-sequences@^26.6.2:
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-26.6.2.tgz#48ba99157de1923412eed41db6b6d4aa9ca7c0b1"
@@ -5371,9 +5362,10 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-"module-deps-sortable@github:arlac77/module-deps":
-  version "5.0.1"
-  resolved "https://codeload.github.com/arlac77/module-deps/tar.gz/a71eb31d6a3b4319114b09624e94d36ab1f65af0"
+module-deps-sortable@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/module-deps-sortable/-/module-deps-sortable-5.0.2.tgz#5b71ba69cebcb978cc1aefd6c08bd5d345db9b10"
+  integrity sha512-ygKn33AIxt9PByiDkdh6db4MxBC/UZJQAR7igCnd3/CVUN28mSfKEaPy6nAvRufJlc5p+phra6XkeVj/fR/P8w==
   dependencies:
     JSONStream "^1.0.3"
     browser-resolve "^1.7.0"
