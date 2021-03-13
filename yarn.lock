@@ -5380,9 +5380,10 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-"module-deps-sortable@https://github.com/Mogztter/module-deps#fallback":
-  version "5.0.2"
-  resolved "https://github.com/Mogztter/module-deps#f78550a9140166b0fea48f308be453a5d1d240af"
+module-deps-sortable@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/module-deps-sortable/-/module-deps-sortable-5.0.3.tgz#e640e7450e0869f4ae8e03437665ca2a8a28f843"
+  integrity sha512-eiyIZj/A0dj1o4ywXWqicazUL3l0HP3TydUR6xF0X3xh3LGBMLqW8a9aFe6MuNH4mxNMk53QKBHM6LOPR8kSgw==
   dependencies:
     JSONStream "^1.0.3"
     browser-resolve "^1.7.0"

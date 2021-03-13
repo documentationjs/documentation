@@ -53,7 +53,7 @@
     "mdast-util-inject": "^1.1.0",
     "micromatch": "^3.1.5",
     "mime": "^2.2.0",
-    "module-deps-sortable": "https://github.com/Mogztter/module-deps#fallback",
+    "module-deps-sortable": "^5.0.3",
     "parse-filepath": "^1.0.2",
     "pify": "^5.0.0",
     "read-pkg-up": "^4.0.0",
