@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [13.2.0](https://github.com/documentationjs/documentation/compare/v13.1.1...v13.2.0) (2021-03-13)
+
+
+### Features
+
+* Support import.meta ([d449e7c](https://github.com/documentationjs/documentation/commit/d449e7c3ca0abb7379ea4159b0ef0281059077eb)), closes [#1345](https://github.com/documentationjs/documentation/issues/1345)
+
 ### [13.1.1](https://github.com/documentationjs/documentation/compare/v13.1.0...v13.1.1) (2021-01-19)
 
 ## [13.1.0](https://github.com/documentationjs/documentation/compare/v13.0.2...v13.1.0) (2020-10-24)
