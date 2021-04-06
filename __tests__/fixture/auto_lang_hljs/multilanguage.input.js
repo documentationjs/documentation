@@ -5,7 +5,7 @@
  * var myFoo = new Foo('[data-foo]');
  * myFoo.foo(42);
  * @example
- * <p data-foo>Data-Foo Element in the dom</p>
+ * <p data-foo=bar>Data-Foo Element in the dom</p>
  * @example
  * [data-foo] {
  *    background-color: red;
