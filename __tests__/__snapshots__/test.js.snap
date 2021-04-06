@@ -1540,7 +1540,7 @@ myFoo.foo(42);
 \`\`\`
 
 \`\`\`html
-<p data-foo>Data-Foo Element in the dom</p>
+<p data-foo=bar>Data-Foo Element in the dom</p>
 \`\`\`
 
 \`\`\`css
