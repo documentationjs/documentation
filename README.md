@@ -56,8 +56,8 @@ Usage:
 # generate markdown docs for index.js and files it references
 documentation build index.js -f md
 
-# generate html docs for all files in src
-documentation build src/** -f html -o docs
+# generate html docs for all files in src, and include links to source files in github
+documentation build src/** -f html --github -o docs
 
 # document index.js, ignoring any files it requires or imports
 documentation build index.js -f md --shallow
