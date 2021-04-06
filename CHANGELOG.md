@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.2.1](https://github.com/documentationjs/documentation/compare/v13.2.0...v13.2.1) (2021-04-06)
+
 ## [13.2.0](https://github.com/documentationjs/documentation/compare/v13.1.1...v13.2.0) (2021-03-13)
 
 
