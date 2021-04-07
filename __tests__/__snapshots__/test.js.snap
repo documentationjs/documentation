@@ -11704,6 +11704,7 @@ have any parameter descriptions.
 ### Parameters
 
 -   \`$0\` **[Object][35]**  (optional, default \`{}\`)
+
     -   \`$0.phoneNumbers\`   (optional, default \`[]\`)
     -   \`$0.emailAddresses\`   (optional, default \`[]\`)
     -   \`$0.params\` **...any** 
@@ -11715,6 +11716,7 @@ Similar, but with an array
 ### Parameters
 
 -   \`$0\` **[Array][36]** 
+
     -   \`$0.0\`  
     -   \`$0.1\`  
     -   \`$0.2\`  
@@ -29143,6 +29145,7 @@ Attempt to establish a cookie-based session in exchange for credentials.
 ### Parameters
 
 -   \`credentials\` **[object][3]** 
+
     -   \`credentials.name\` **[string][4]** Login username. Also accepted as \`username\` or \`email\`.
     -   \`credentials.password\` **[string][4]** Login password
 -   \`callback\` **[function][5]?** Gets passed \`(err, { success:Boolean })\`.
@@ -30914,6 +30917,7 @@ exports[`outputs nest_params.input.js markdown 1`] = `
 ### Parameters
 
 -   \`employees\` **[Array][6]&lt;[Object][7]>** The employees who are responsible for the project.
+
     -   \`employees[].name\` **[string][8]** The name of an employee.
     -   \`employees[].department\` **[string][8]** The employee's department.
 -   \`type\` **[string][8]** The employee's type. (optional, default \`minion\`)
@@ -30923,12 +30927,14 @@ exports[`outputs nest_params.input.js markdown 1`] = `
 ### Parameters
 
 -   \`options\` **[Object][7]** some options
+
     -   \`options.much\` **[number][9]** how much
 -   \`bar\` **[number][9]** something else
 
 ### Properties
 
 -   \`theTime\` **[Object][7]** the current time
+
     -   \`theTime.hours\` **[number][9]** 
     -   \`theTime.minutes\` **[number][9]** 
     -   \`theTime.seconds\` **[number][9]** 
@@ -35646,6 +35652,7 @@ This function returns the number one.
 -   \`b\` **[number][24]** the second param
 -   \`c\`  
 -   \`$3\` **[Object][25]** 
+
     -   \`$3.d\`  
     -   \`$3.e\`  
     -   \`$3.f\`  
@@ -35657,6 +35664,7 @@ This method has partially inferred params
 ### Parameters
 
 -   \`options\` **[Object][25]** 
+
     -   \`options.fishes\` **[String][26]** number of kinds of fish
     -   \`options.foxes\`  
 
@@ -35720,6 +35728,7 @@ This tests our support of nested parameters
 ### Parameters
 
 -   \`options\` **[Object][25]?** optional options
+
     -   \`options.data\` **([Object][25] \\\\| [string][26])** A GeoJSON data object or URL to it.
         The latter is preferable in case of large GeoJSON files.
     -   \`options.maxzoom\` **[number][24]** Maximum zoom to preserve detail at. (optional, default \`14\`)
@@ -35754,6 +35763,7 @@ iterator destructure (RestElement)
 ### Parameters
 
 -   \`input\` **[Array][27]** 
+
     -   \`input.0\` **any** head of iterator
     -   \`input.xs\` **...any** body of iterator
 

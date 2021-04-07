@@ -29,6 +29,7 @@ of lint information intended for human-readable output.
 
 -   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
 -   `args` **[Object][19]** args
+
     -   `args.external` **[Array][17]&lt;[string][18]>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
@@ -65,6 +66,7 @@ comments, given a root file as a path.
 
 -   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
 -   `args` **[Object][19]** args
+
     -   `args.external` **[Array][17]&lt;[string][18]>** a string regex / glob match pattern
         that defines what external modules will be whitelisted and included in the
         generated documentation.
@@ -75,6 +77,7 @@ comments, given a root file as a path.
     -   `args.access` **[Array][17]&lt;[string][18]>** an array of access levels
         to output in documentation (optional, default `[]`)
     -   `args.hljs` **[Object][19]?** hljs optional args
+
         -   `args.hljs.highlightAuto` **[boolean][20]** hljs automatically detect language (optional, default `false`)
         -   `args.hljs.languages` **[Array][17]?** languages for hljs to choose from
     -   `args.inferPrivate` **[string][18]?** a valid regular expression string
@@ -116,6 +119,7 @@ Formats documentation as HTML.
 
 -   `comments` **[Array][17]&lt;[Comment][22]>** parsed comments
 -   `config` **[Object][19]** Options that can customize the output
+
     -   `config.theme` **[string][18]** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
 
 ### Examples
