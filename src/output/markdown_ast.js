@@ -223,15 +223,20 @@ function buildMarkdownAST(comments, config) {
       );
     }
 
-    function seeLink(comment) {
+    function seeLink({ sees = [] }) {
       return (
-        comment.sees.length > 0 &&
+        sees.length > 0 &&
         u(
           'list',
           { ordered: false },
-          comment.sees.map(see =>
+          sees.map(see =>
             u('listItem', [
-              u('strong', [u('text', 'See: ')].concat(see.description))
+              u(
+                'paragraph',
+                [u('strong', [u('text', 'See')]), u('text', ': ')].concat(
+                  see.description
+                )
+              )
             ])
           )
         )

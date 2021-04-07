@@ -27337,8 +27337,8 @@ exports[`outputs meta.input.js markdown 1`] = `
 
 ## meta.input
 
--   **See: [markdown link][2]
-    **
+-   **See**: [markdown link][2]
+
 
 This function returns the number one.
 
@@ -27384,8 +27384,17 @@ Object {
             Object {
               "children": Array [
                 Object {
+                  "children": Array [
+                    Object {
+                      "type": "text",
+                      "value": "See",
+                    },
+                  ],
+                  "type": "strong",
+                },
+                Object {
                   "type": "text",
-                  "value": "See: ",
+                  "value": ": ",
                 },
                 Object {
                   "children": Array [
@@ -27447,7 +27456,7 @@ Object {
                   "type": "root",
                 },
               ],
-              "type": "strong",
+              "type": "paragraph",
             },
           ],
           "type": "listItem",
