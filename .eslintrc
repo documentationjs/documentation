@@ -1,8 +1,8 @@
 {
   "root": true,
-  "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2020
   },
   "rules": {
     "no-var": 2,
@@ -26,10 +26,7 @@
     "no-shadow": 0,
     "no-undef": 2
   },
-  "extends": [
-    "eslint:recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "prettier"],
   "env": {
     "node": true,
     "es6": true
