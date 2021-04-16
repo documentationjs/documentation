@@ -1,5 +1,6 @@
 const remark = require('remark');
 const parse = require('../../../src/parsers/javascript');
+const remarkParse = remark().use({ settings: { position: false } }).parse;
 
 function toComments(source, filename, opts) {
   source = typeof source === 'string' ? source : '(' + source.toString() + ')';
@@ -12,41 +13,41 @@ function toComments(source, filename, opts) {
   );
 }
 
-test('parse - leading comment', function() {
+test('parse - leading comment', function () {
   expect(
-    toComments(function() {
+    toComments(function () {
       /** one */
       /** two */
       function two() {}
-    }).map(function(c) {
+    }).map(function (c) {
       return c.description;
     })
-  ).toEqual([remark().parse('one'), remark().parse('two')]);
+  ).toEqual([remarkParse('one'), remarkParse('two')]);
 });
 
-test('parse - trailing comment', function() {
+test('parse - trailing comment', function () {
   expect(
-    toComments(function() {
+    toComments(function () {
       /** one */
       function one() {}
       /** two */
-    }).map(function(c) {
+    }).map(function (c) {
       return c.description;
     })
-  ).toEqual([remark().parse('one'), remark().parse('two')]);
+  ).toEqual([remarkParse('one'), remarkParse('two')]);
 });
 
-test('parse - unknown tag', function() {
+test('parse - unknown tag', function () {
   expect(
-    toComments(function() {
+    toComments(function () {
       /** @unknown */
     })[0].tags[0].title
   ).toBe('unknown');
 });
 
-test('parse - error', function() {
+test('parse - error', function () {
   expect(
-    toComments(function() {
+    toComments(function () {
       /** @param {foo */
     })[0].errors
   ).toEqual([
@@ -55,7 +56,7 @@ test('parse - error', function() {
   ]);
 });
 
-test('parse - document exported', function() {
+test('parse - document exported', function () {
   expect(
     toComments(
       `
@@ -85,7 +86,7 @@ test('parse - document exported', function() {
   ).toBe(2);
 });
 
-test('parse - constructor comments', function() {
+test('parse - constructor comments', function () {
   expect(
     toComments(`
       class Test {

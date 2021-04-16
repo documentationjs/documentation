@@ -334,51 +334,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Position {
-                "end": Object {
-                  "column": 28,
-                  "line": 1,
-                  "offset": 27,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "renamed destructuring param",
             },
           ],
-          "position": Position {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-              "offset": 27,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 28,
-          "line": 1,
-          "offset": 27,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "lineNumber": 2,

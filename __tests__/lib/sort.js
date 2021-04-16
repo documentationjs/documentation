@@ -1,7 +1,7 @@
 const sort = require('../../src/sort');
 const path = require('path');
 
-test('sort stream alphanumeric', function() {
+test('sort stream alphanumeric', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   const banana = { context: { sortKey: 'c' }, name: 'bananas' };
@@ -11,7 +11,7 @@ test('sort stream alphanumeric', function() {
   expect(sort([carrot, apples, banana])).toEqual([apples, carrot, banana]);
 });
 
-test('sort stream with configuration', function() {
+test('sort stream with configuration', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
@@ -23,7 +23,7 @@ test('sort stream with configuration', function() {
   ).toEqual([carrot, bananas, apples]);
 });
 
-test('sort stream with configuration and a section', function() {
+test('sort stream with configuration and a section', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
@@ -43,49 +43,11 @@ test('sort stream with configuration and a section', function() {
           children: [
             {
               type: 'text',
-              value: 'here lies bananas',
-              position: {
-                start: {
-                  line: 1,
-                  column: 1,
-                  offset: 0
-                },
-                end: {
-                  line: 1,
-                  column: 18,
-                  offset: 17
-                },
-                indent: []
-              }
+              value: 'here lies bananas'
             }
-          ],
-          position: {
-            start: {
-              line: 1,
-              column: 1,
-              offset: 0
-            },
-            end: {
-              line: 1,
-              column: 18,
-              offset: 17
-            },
-            indent: []
-          }
+          ]
         }
-      ],
-      position: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0
-        },
-        end: {
-          line: 1,
-          column: 18,
-          offset: 17
-        }
-      }
+      ]
     },
     kind: 'note',
     path: [
@@ -103,7 +65,7 @@ test('sort stream with configuration and a section', function() {
   ).toEqual([carrot, sectionMarkdown, bananas, apples]);
 });
 
-test('sort an already-sorted stream containing a section/description', function() {
+test('sort an already-sorted stream containing a section/description', function () {
   // this happens in the 'serve' task
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
@@ -123,49 +85,11 @@ test('sort an already-sorted stream containing a section/description', function(
           children: [
             {
               type: 'text',
-              value: 'here lies bananas',
-              position: {
-                start: {
-                  line: 1,
-                  column: 1,
-                  offset: 0
-                },
-                end: {
-                  line: 1,
-                  column: 18,
-                  offset: 17
-                },
-                indent: []
-              }
+              value: 'here lies bananas'
             }
-          ],
-          position: {
-            start: {
-              line: 1,
-              column: 1,
-              offset: 0
-            },
-            end: {
-              line: 1,
-              column: 18,
-              offset: 17
-            },
-            indent: []
-          }
+          ]
         }
-      ],
-      position: {
-        start: {
-          line: 1,
-          column: 1,
-          offset: 0
-        },
-        end: {
-          line: 1,
-          column: 18,
-          offset: 17
-        }
-      }
+      ]
     },
     kind: 'note',
     path: [
@@ -185,7 +109,7 @@ test('sort an already-sorted stream containing a section/description', function(
   expect(sortTwice).toEqual([carrot, sectionMarkdown, bananas, apples]);
 });
 
-test('sort toc with files', function() {
+test('sort toc with files', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
@@ -202,7 +126,7 @@ test('sort toc with files', function() {
   ).toMatchSnapshot();
 });
 
-test('sort toc with files absolute path', function() {
+test('sort toc with files absolute path', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };
   const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
   const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
@@ -218,7 +142,7 @@ test('sort toc with files absolute path', function() {
   ).toMatchSnapshot();
 });
 
-test('sort toc with files absolute path', function() {
+test('sort toc with files absolute path', function () {
   const apples = {
     context: { sortKey: 'a' },
     name: 'apples',

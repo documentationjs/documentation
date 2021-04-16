@@ -1563,51 +1563,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 19,
-                  "line": 1,
-                  "offset": 18,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "Bananas are yellow",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 19,
-              "line": 1,
-              "offset": 18,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 19,
-          "line": 1,
-          "offset": 18,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -1665,51 +1627,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 20,
-                  "line": 1,
-                  "offset": 19,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "Carrots are awesome",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-              "offset": 19,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 20,
-          "line": 1,
-          "offset": 19,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -1767,51 +1691,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 15,
-                  "line": 1,
-                  "offset": 14,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "Apples are red",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 15,
-              "line": 1,
-              "offset": 14,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 15,
-          "line": 1,
-          "offset": 14,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -2110,51 +1996,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 5,
-                  "line": 1,
-                  "offset": 4,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "test",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 5,
-              "line": 1,
-              "offset": 4,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 5,
-          "line": 1,
-          "offset": 4,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -2190,18 +2038,6 @@ Array [
       Object {
         "description": Object {
           "children": Array [],
-          "position": Object {
-            "end": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "root",
         },
         "title": "returns",
@@ -2251,51 +2087,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 5,
-                  "line": 1,
-                  "offset": 4,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "test",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 5,
-              "line": 1,
-              "offset": 4,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 5,
-          "line": 1,
-          "offset": 4,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -2331,18 +2129,6 @@ Array [
       Object {
         "description": Object {
           "children": Array [],
-          "position": Object {
-            "end": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "root",
         },
         "title": "returns",
@@ -2387,51 +2173,13 @@ Array [
         Object {
           "children": Array [
             Object {
-              "position": Object {
-                "end": Object {
-                  "column": 5,
-                  "line": 1,
-                  "offset": 4,
-                },
-                "indent": Array [],
-                "start": Object {
-                  "column": 1,
-                  "line": 1,
-                  "offset": 0,
-                },
-              },
               "type": "text",
               "value": "test",
             },
           ],
-          "position": Object {
-            "end": Object {
-              "column": 5,
-              "line": 1,
-              "offset": 4,
-            },
-            "indent": Array [],
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "paragraph",
         },
       ],
-      "position": Object {
-        "end": Object {
-          "column": 5,
-          "line": 1,
-          "offset": 4,
-        },
-        "start": Object {
-          "column": 1,
-          "line": 1,
-          "offset": 0,
-        },
-      },
       "type": "root",
     },
     "examples": Array [],
@@ -2467,18 +2215,6 @@ Array [
       Object {
         "description": Object {
           "children": Array [],
-          "position": Object {
-            "end": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-            "start": Object {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
           "type": "root",
         },
         "title": "returns",
