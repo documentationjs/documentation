@@ -1,10 +1,11 @@
 const parse = require('../../src/parsers/javascript');
 const remark = require('remark');
 const visit = require('unist-util-visit');
+const remarkParse = remark().use({ settings: { position: false } }).parse;
 
 function pick(obj, props) {
   if (Array.isArray(props)) {
-    return props.reduce(function(memo, prop) {
+    return props.reduce(function (memo, prop) {
       if (obj[prop] !== undefined) {
         memo[prop] = obj[prop];
       }
@@ -25,79 +26,72 @@ function evaluate(fn, filename) {
 }
 
 function addJSDocTag(tree) {
-  visit(tree, 'link', function(node) {
+  visit(tree, 'link', function (node) {
     node.jsdoc = true;
   });
   return tree;
 }
 
-function removePosition(tree) {
-  visit(tree, function(node) {
-    delete node.position;
-  });
-  return tree;
-}
-
-test('parse - @abstract', function() {
+test('parse - @abstract', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @abstract */
     })[0].abstract
   ).toBe(true);
 });
 
-test('parse - @access', function() {
+test('parse - @access', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @access public */
     })[0].access
   ).toBe('public');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @access protected */
     })[0].access
   ).toBe('protected');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @access private */
     })[0].access
   ).toBe('private');
 });
 
-test('parse - @alias', function() {});
+test('parse - @alias', function () {});
 
-test('parse - @arg', function() {});
+test('parse - @arg', function () {});
 
-test('parse - @argument', function() {});
+test('parse - @argument', function () {});
 
-test('parse - @async', function() {
+test('parse - @async', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @async */
     })[0].async
   ).toBe(true);
 });
 
-test('parse - @augments', function() {
+test('parse - @augments', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @augments Foo */
     })[0].augments[0].name
   ).toBe('Foo');
 });
 
-test('parse - @description', function() {
+test('parse - @description', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * This is a free-form description
        * @description This tagged description wins, and [is markdown](http://markdown.com).
        */
     })[0].description
   ).toEqual(
-    remark().parse(
+    remarkParse(
       'This tagged description wins, and [is markdown](http://markdown.com).'
     )
   );
@@ -107,30 +101,30 @@ test('parse - @description', function() {
  * Dossier-style augments tag
  * https://github.com/google/closure-library/issues/746
  */
-test('parse - @augments in dossier style', function() {
+test('parse - @augments in dossier style', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @augments {Foo} */
     })[0].augments[0].name
   ).toBe('Foo');
 });
 
-test('parse - @augments of complex passes through', function() {
+test('parse - @augments of complex passes through', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @augments {function()} */
     })[0].augments
   ).toEqual([]);
 });
 
-test('parse - @author', function() {});
+test('parse - @author', function () {});
 
-test('parse - @borrows', function() {});
+test('parse - @borrows', function () {});
 
-test('parse - @callback', function() {
+test('parse - @callback', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @callback name */
       })[0],
       ['kind', 'name', 'type']
@@ -145,10 +139,10 @@ test('parse - @callback', function() {
   });
 });
 
-test('parse - @class', function() {
+test('parse - @class', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @class */
       })[0],
       ['kind', 'name', 'type']
@@ -159,7 +153,7 @@ test('parse - @class', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @class name */
       })[0],
       ['kind', 'name', 'type']
@@ -171,7 +165,7 @@ test('parse - @class', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @class {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -186,20 +180,20 @@ test('parse - @class', function() {
   });
 });
 
-test('parse - @classdesc', function() {
+test('parse - @classdesc', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @classdesc test */
     })[0].classdesc
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @const', function() {});
+test('parse - @const', function () {});
 
-test('parse - @constant', function() {
+test('parse - @constant', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @constant */
       })[0],
       ['kind', 'name', 'type']
@@ -210,7 +204,7 @@ test('parse - @constant', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @constant name */
       })[0],
       ['kind', 'name', 'type']
@@ -222,7 +216,7 @@ test('parse - @constant', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @constant {Object} */
       })[0],
       ['kind', 'name', 'type']
@@ -237,7 +231,7 @@ test('parse - @constant', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @constant {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -252,60 +246,60 @@ test('parse - @constant', function() {
   });
 });
 
-test('parse - @constructor', function() {});
+test('parse - @constructor', function () {});
 
-test('parse - @constructs', function() {});
+test('parse - @constructs', function () {});
 
-test('parse - @copyright', function() {
+test('parse - @copyright', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @copyright test */
     })[0].copyright
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @default', function() {});
+test('parse - @default', function () {});
 
-test('parse - @defaultvalue', function() {});
+test('parse - @defaultvalue', function () {});
 
-test('parse - @deprecated', function() {
+test('parse - @deprecated', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @deprecated test */
     })[0].deprecated
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @desc', function() {
+test('parse - @desc', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @desc test */
     })[0].description
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @description', function() {
+test('parse - @description', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @description test */
     })[0].description
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - description', function() {
+test('parse - description', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** test */
     })[0].description
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @emits', function() {});
+test('parse - @emits', function () {});
 
-test('parse - @enum', function() {
+test('parse - @enum', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @enum {string} */
       })[0],
       ['kind', 'type']
@@ -319,10 +313,10 @@ test('parse - @enum', function() {
   });
 });
 
-test('parse - @event', function() {
+test('parse - @event', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @event name */
       })[0],
       ['kind', 'name']
@@ -333,9 +327,9 @@ test('parse - @event', function() {
   });
 });
 
-test('parse - @example', function() {
+test('parse - @example', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @example test */
     })[0].examples[0]
   ).toEqual({
@@ -343,7 +337,7 @@ test('parse - @example', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @example
        * a
@@ -355,7 +349,7 @@ test('parse - @example', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @example <caption>caption</caption>
        * a
@@ -364,11 +358,11 @@ test('parse - @example', function() {
     })[0].examples[0]
   ).toEqual({
     description: 'a\nb',
-    caption: remark().parse('caption')
+    caption: remarkParse('caption')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @example */
     })[0].errors[0]
   ).toEqual({
@@ -377,22 +371,22 @@ test('parse - @example', function() {
   });
 });
 
-test('parse - @exception', function() {});
+test('parse - @exception', function () {});
 
-test('parse - @exports', function() {});
+test('parse - @exports', function () {});
 
-test('parse - @extends', function() {
+test('parse - @extends', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @extends Foo */
     })[0].augments[0].name
   ).toEqual('Foo');
 });
 
-test('parse - @external', function() {
+test('parse - @external', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @external name */
       })[0],
       ['kind', 'name']
@@ -403,10 +397,10 @@ test('parse - @external', function() {
   });
 });
 
-test('parse - @file', function() {
+test('parse - @file', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @file */
       })[0],
       ['kind']
@@ -417,27 +411,27 @@ test('parse - @file', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @file desc */
       })[0],
       ['kind', 'description']
     )
   ).toEqual({
     kind: 'file',
-    description: remark().parse('desc')
+    description: remarkParse('desc')
   });
 });
 
-test('parse - @fileoverview', function() {});
+test('parse - @fileoverview', function () {});
 
-test('parse - @fires', function() {});
+test('parse - @fires', function () {});
 
-test('parse - @func', function() {});
+test('parse - @func', function () {});
 
-test('parse - @function', function() {
+test('parse - @function', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @function */
       })[0],
       ['kind', 'name']
@@ -448,7 +442,7 @@ test('parse - @function', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @function name */
       })[0],
       ['kind', 'name']
@@ -461,110 +455,110 @@ test('parse - @function', function() {
   // When @function takes a name, it is acting as a shorthand for @name and
   // should detach from code the same way @name does.
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @function */
       function foo() {}
     })[0].context.ast
   ).toBeDefined();
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @function name */
       function foo() {}
     })[0].context.ast
   ).toBeUndefined();
 });
 
-test('parse - @generator', function() {
+test('parse - @generator', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @generator */
     })[0].generator
   ).toBe(true);
 });
 
-test('parse - @global', function() {
+test('parse - @global', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @global */
     })[0].scope
   ).toBe('global');
 });
 
-test('parse - @hideconstructor', function() {
+test('parse - @hideconstructor', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @hideconstructor */
     })[0].hideconstructor
   ).toBe(true);
 });
 
-test('parse - @host', function() {});
+test('parse - @host', function () {});
 
-test('parse - @ignore', function() {
+test('parse - @ignore', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @ignore */
     })[0].ignore
   ).toBe(true);
 });
 
-test('parse - @implements', function() {
+test('parse - @implements', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @implements {Foo} */
     })[0].implements[0].name
   ).toEqual('Foo');
 });
 
-test('parse - @inheritdoc', function() {});
+test('parse - @inheritdoc', function () {});
 
-test('parse - @inner', function() {
+test('parse - @inner', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @inner*/
     })[0].scope
   ).toBe('inner');
 });
 
-test('parse - @instance', function() {
+test('parse - @instance', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @instance*/
     })[0].scope
   ).toBe('instance');
 });
 
-test('parse - @interface', function() {
+test('parse - @interface', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @interface */
     })[0].kind
   ).toEqual('interface');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @interface Foo */
     })[0].name
   ).toEqual('Foo');
 });
 
-test('parse - @kind', function() {
+test('parse - @kind', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @kind class */
     })[0].kind
   ).toBe('class');
 });
 
-test('parse - @license', function() {});
+test('parse - @license', function () {});
 
-test('parse - @listens', function() {});
+test('parse - @listens', function () {});
 
-test('parse - @member', function() {
+test('parse - @member', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @member */
       })[0],
       ['kind', 'name', 'type']
@@ -575,7 +569,7 @@ test('parse - @member', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @member name */
       })[0],
       ['kind', 'name', 'type']
@@ -587,7 +581,7 @@ test('parse - @member', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @member {Object} */
       })[0],
       ['kind', 'name', 'type']
@@ -602,7 +596,7 @@ test('parse - @member', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @member {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -617,22 +611,22 @@ test('parse - @member', function() {
   });
 });
 
-test('parse - @memberof', function() {
+test('parse - @memberof', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @memberof test */
     })[0].memberof
   ).toBe('test');
 });
 
-test('parse - @method', function() {});
+test('parse - @method', function () {});
 
-test('parse - @mixes', function() {});
+test('parse - @mixes', function () {});
 
-test('parse - @mixin', function() {
+test('parse - @mixin', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @mixin */
       })[0],
       ['kind', 'name']
@@ -643,7 +637,7 @@ test('parse - @mixin', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @mixin name */
       })[0],
       ['kind', 'name']
@@ -654,10 +648,10 @@ test('parse - @mixin', function() {
   });
 });
 
-test('parse - @module', function() {
+test('parse - @module', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @module */
       })[0],
       ['kind', 'name', 'type']
@@ -668,7 +662,7 @@ test('parse - @module', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @module name */
       })[0],
       ['kind', 'name', 'type']
@@ -680,7 +674,7 @@ test('parse - @module', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @module {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -695,25 +689,25 @@ test('parse - @module', function() {
   });
 });
 
-test('parse - @name', function() {
+test('parse - @name', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @name test */
     })[0].name
   ).toBe('test');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @name foo */
       const bar = 0;
     })[0].context.ast
   ).toBeUndefined();
 });
 
-test('parse - @namespace', function() {
+test('parse - @namespace', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @namespace */
       })[0],
       ['kind', 'name', 'type']
@@ -724,7 +718,7 @@ test('parse - @namespace', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @namespace name */
       })[0],
       ['kind', 'name', 'type']
@@ -736,7 +730,7 @@ test('parse - @namespace', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @namespace {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -751,19 +745,19 @@ test('parse - @namespace', function() {
   });
 });
 
-test('parse - @override', function() {
+test('parse - @override', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @override */
     })[0].override
   ).toBe(true);
 });
 
-test('parse - @overview', function() {});
+test('parse - @overview', function () {});
 
-test('parse - @param', function() {
+test('parse - @param', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @param test */
     })[0].params[0]
   ).toEqual({
@@ -773,7 +767,7 @@ test('parse - @param', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @param {number} test */
     })[0].params[0]
   ).toEqual({
@@ -787,7 +781,7 @@ test('parse - @param', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @param {number} test - desc */
     })[0].params[0]
   ).toEqual({
@@ -797,22 +791,22 @@ test('parse - @param', function() {
       name: 'number',
       type: 'NameExpression'
     },
-    description: remark().parse('desc'),
+    description: remarkParse('desc'),
     lineNumber: 0
   });
 });
 
-test('parse - @private', function() {
+test('parse - @private', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @private */
     })[0].access
   ).toBe('private');
 });
 
-test('parse - @prop', function() {
+test('parse - @prop', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @prop {number} test */
     })[0].properties[0]
   ).toEqual({
@@ -826,7 +820,7 @@ test('parse - @prop', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @prop {number} test - desc */
     })[0].properties[0]
   ).toEqual({
@@ -836,14 +830,14 @@ test('parse - @prop', function() {
       name: 'number',
       type: 'NameExpression'
     },
-    description: remark().parse('desc'),
+    description: remarkParse('desc'),
     lineNumber: 0
   });
 });
 
-test('parse - @property', function() {
+test('parse - @property', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @property {number} test */
     })[0].properties[0]
   ).toEqual({
@@ -857,7 +851,7 @@ test('parse - @property', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @property {number} test - desc */
     })[0].properties[0]
   ).toEqual({
@@ -867,47 +861,47 @@ test('parse - @property', function() {
       name: 'number',
       type: 'NameExpression'
     },
-    description: remark().parse('desc'),
+    description: remarkParse('desc'),
     lineNumber: 0
   });
 });
 
-test('parse - @protected', function() {
+test('parse - @protected', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @protected */
     })[0].access
   ).toBe('protected');
 });
 
-test('parse - @public', function() {});
+test('parse - @public', function () {});
 
-test('parse - @readonly', function() {
+test('parse - @readonly', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @readonly */
     })[0].readonly
   ).toBe(true);
 });
 
-test('parse - @requires', function() {});
+test('parse - @requires', function () {});
 
-test('parse - @return', function() {
+test('parse - @return', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @return test */
     })[0].returns[0]
   ).toEqual({
     title: 'returns',
-    description: remark().parse('test')
+    description: remarkParse('test')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @return {number} test */
     })[0].returns[0]
   ).toEqual({
-    description: remark().parse('test'),
+    description: remarkParse('test'),
     title: 'returns',
     type: {
       name: 'number',
@@ -916,22 +910,22 @@ test('parse - @return', function() {
   });
 });
 
-test('parse - @returns', function() {
+test('parse - @returns', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @returns test */
     })[0].returns[0]
   ).toEqual({
     title: 'returns',
-    description: remark().parse('test')
+    description: remarkParse('test')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @returns {number} test */
     })[0].returns[0]
   ).toEqual({
-    description: remark().parse('test'),
+    description: remarkParse('test'),
     title: 'returns',
     type: {
       name: 'number',
@@ -940,20 +934,20 @@ test('parse - @returns', function() {
   });
 });
 
-test('parse - @see', function() {
+test('parse - @see', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @see [test](#test) */
     })[0].sees
   ).toEqual([
     {
       title: 'sees',
-      description: remark().parse('[test](#test)')
+      description: remarkParse('[test](#test)')
     }
   ]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @see [a](#a)
        * @see [b](#b)
@@ -962,46 +956,46 @@ test('parse - @see', function() {
   ).toEqual([
     {
       title: 'sees',
-      description: remark().parse('[a](#a)')
+      description: remarkParse('[a](#a)')
     },
     {
       title: 'sees',
-      description: remark().parse('[b](#b)')
+      description: remarkParse('[b](#b)')
     }
   ]);
 });
 
-test('parse - @since', function() {});
+test('parse - @since', function () {});
 
-test('parse - @static', function() {
+test('parse - @static', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @static */
     })[0].scope
   ).toBe('static');
 });
 
-test('parse - @summary', function() {
+test('parse - @summary', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @summary test */
     })[0].summary
-  ).toEqual(remark().parse('test'));
+  ).toEqual(remarkParse('test'));
 });
 
-test('parse - @this', function() {});
+test('parse - @this', function () {});
 
-test('parse - @throws', function() {
+test('parse - @throws', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @throws desc */
     })[0].throws[0]
   ).toEqual({
-    description: remark().parse('desc')
+    description: remarkParse('desc')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @throws {Error} */
     })[0].throws[0]
   ).toEqual({
@@ -1012,7 +1006,7 @@ test('parse - @throws', function() {
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @throws {Error} desc */
     })[0].throws[0]
   ).toEqual({
@@ -1020,11 +1014,11 @@ test('parse - @throws', function() {
       name: 'Error',
       type: 'NameExpression'
     },
-    description: remark().parse('desc')
+    description: remarkParse('desc')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @throws a
        * @throws b
@@ -1032,39 +1026,39 @@ test('parse - @throws', function() {
     })[0].throws
   ).toEqual([
     {
-      description: remark().parse('a')
+      description: remarkParse('a')
     },
     {
-      description: remark().parse('b')
+      description: remarkParse('b')
     }
   ]);
 });
 
-test('parse - @todo', function() {
+test('parse - @todo', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @todo test */
     })[0].todos
-  ).toEqual([remark().parse('test')]);
+  ).toEqual([remarkParse('test')]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @todo a
        * @todo b
        */
     })[0].todos
-  ).toEqual([remark().parse('a'), remark().parse('b')]);
+  ).toEqual([remarkParse('a'), remarkParse('b')]);
 });
 
-test('parse - @tutorial', function() {});
+test('parse - @tutorial', function () {});
 
-test('parse - @type', function() {});
+test('parse - @type', function () {});
 
-test('parse - @typedef', function() {
+test('parse - @typedef', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @typedef {Object} name */
       })[0],
       ['kind', 'name', 'type']
@@ -1079,36 +1073,36 @@ test('parse - @typedef', function() {
   });
 });
 
-test('parse - @var', function() {});
+test('parse - @var', function () {});
 
-test('parse - @variation', function() {
+test('parse - @variation', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @variation 1 */
     })[0].variation
   ).toBe(1);
 });
 
-test('parse - @version', function() {});
+test('parse - @version', function () {});
 
-test('parse - @virtual', function() {});
+test('parse - @virtual', function () {});
 
-test('parse - @yield', function() {
+test('parse - @yield', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @yield test */
     })[0].yields[0]
   ).toEqual({
     title: 'yields',
-    description: remark().parse('test')
+    description: remarkParse('test')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @yield {number} test */
     })[0].yields[0]
   ).toEqual({
-    description: remark().parse('test'),
+    description: remarkParse('test'),
     title: 'yields',
     type: {
       name: 'number',
@@ -1117,22 +1111,22 @@ test('parse - @yield', function() {
   });
 });
 
-test('parse - @yields', function() {
+test('parse - @yields', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @yields test */
     })[0].yields[0]
   ).toEqual({
     title: 'yields',
-    description: remark().parse('test')
+    description: remarkParse('test')
   });
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @yields {number} test */
     })[0].yields[0]
   ).toEqual({
-    description: remark().parse('test'),
+    description: remarkParse('test'),
     title: 'yields',
     type: {
       name: 'number',
@@ -1141,9 +1135,9 @@ test('parse - @yields', function() {
   });
 });
 
-test('parse - unknown tag', function() {
+test('parse - unknown tag', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @unknown */
     })[0].errors[0]
   ).toEqual({
@@ -1152,43 +1146,35 @@ test('parse - unknown tag', function() {
   });
 });
 
-test('parse - {@link}', function() {
+test('parse - {@link}', function () {
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@link Foo} */
-      })[0].description
-    )
-  ).toEqual(addJSDocTag(removePosition(remark().parse('[Foo](Foo)'))));
+    evaluate(function () {
+      /** {@link Foo} */
+    })[0].description
+  ).toEqual(addJSDocTag(remarkParse('[Foo](Foo)')));
 
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@link Foo|text} */
-      })[0].description
-    )
-  ).toEqual(addJSDocTag(removePosition(remark().parse('[text](Foo)'))));
+    evaluate(function () {
+      /** {@link Foo|text} */
+    })[0].description
+  ).toEqual(addJSDocTag(remarkParse('[text](Foo)')));
 
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@link Foo text} */
-      })[0].description
-    )
-  ).toEqual(addJSDocTag(removePosition(remark().parse('[text](Foo)'))));
+    evaluate(function () {
+      /** {@link Foo text} */
+    })[0].description
+  ).toEqual(addJSDocTag(remarkParse('[text](Foo)')));
 });
 
-test('parse - {@linkcode}', function() {});
+test('parse - {@linkcode}', function () {});
 
-test('parse - {@linkplain}', function() {});
+test('parse - {@linkplain}', function () {});
 
-test('parse - {@tutorial}', function() {
+test('parse - {@tutorial}', function () {
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@tutorial id} */
-      })[0].description
-    )
+    evaluate(function () {
+      /** {@tutorial id} */
+    })[0].description
   ).toEqual({
     type: 'root',
     children: [
@@ -1213,11 +1199,9 @@ test('parse - {@tutorial}', function() {
   });
 
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@tutorial id|text} */
-      })[0].description
-    )
+    evaluate(function () {
+      /** {@tutorial id|text} */
+    })[0].description
   ).toEqual({
     type: 'root',
     children: [
@@ -1242,11 +1226,9 @@ test('parse - {@tutorial}', function() {
   });
 
   expect(
-    removePosition(
-      evaluate(function() {
-        /** {@tutorial id text} */
-      })[0].description
-    )
+    evaluate(function () {
+      /** {@tutorial id text} */
+    })[0].description
   ).toEqual({
     type: 'root',
     children: [
