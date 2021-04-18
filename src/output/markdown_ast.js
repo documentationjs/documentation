@@ -73,7 +73,7 @@ function buildMarkdownAST(comments, config) {
       if (params.length === 0) return [];
       return u(
         'list',
-        { ordered: false },
+        { ordered: false, spread: false },
         params.map(param =>
           u(
             'listItem',
@@ -126,7 +126,7 @@ function buildMarkdownAST(comments, config) {
     function propertyList(properties) {
       return u(
         'list',
-        { ordered: false },
+        { ordered: false, spread: false },
         properties.map(property =>
           u(
             'listItem',
@@ -192,7 +192,7 @@ function buildMarkdownAST(comments, config) {
         comment.throws.length > 0 &&
         u(
           'list',
-          { ordered: false },
+          { ordered: false, spread: false },
           comment.throws.map(returns =>
             u('listItem', [
               u(
@@ -228,7 +228,7 @@ function buildMarkdownAST(comments, config) {
         sees.length > 0 &&
         u(
           'list',
-          { ordered: false },
+          { ordered: false, spread: false },
           sees.map(see =>
             u('listItem', [
               u(
@@ -283,7 +283,7 @@ function buildMarkdownAST(comments, config) {
         [u('strong', [u('text', 'Meta')])].concat(
           u(
             'list',
-            { ordered: false },
+            { ordered: false, spread: false },
             meta.map(tag => {
               let metaContent;
               if (tag === 'copyright' || tag === 'deprecated') {

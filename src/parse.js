@@ -1,5 +1,5 @@
 const doctrine = require('doctrine-temporary-fork');
-const parseMarkdown = require('./parse_markdown');
+const parseMarkdown = require('./remark-parse');
 
 /**
  * Flatteners: these methods simplify the structure of JSDoc comments

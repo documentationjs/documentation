@@ -1,4 +1,4 @@
-const parseMarkdown = require('./parse_markdown');
+const parseMarkdown = require('./remark-parse');
 const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
