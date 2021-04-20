@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.2.2](https://github.com/documentationjs/documentation/compare/v13.2.1...v13.2.2) (2021-04-20)
+
+
+### Bug Fixes
+
+* [@see](https://github.com/see) tags incorrectly formatted in markdown ouput fixed [#1337](https://github.com/documentationjs/documentation/issues/1337) ([5d8d450](https://github.com/documentationjs/documentation/commit/5d8d4504d52a5bb0a0432bf399bbd82d9e5ea7fc))
+
 ### [13.2.1](https://github.com/documentationjs/documentation/compare/v13.2.0...v13.2.1) (2021-04-06)
 
 ## [13.2.0](https://github.com/documentationjs/documentation/compare/v13.1.1...v13.2.0) (2021-03-13)
