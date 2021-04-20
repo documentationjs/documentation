@@ -7,26 +7,14 @@ const TYPESCRIPT_EXTS = {
 };
 
 const standardBabelParserPlugins = [
-  'asyncGenerators',
-  'bigInt',
   'classProperties',
-  'classConstructorCall',
   'classPrivateProperties',
   'classPrivateMethods',
   'doExpressions',
-  'dynamicImport',
   'exportDefaultFrom',
-  'exportNamespaceFrom',
   'exportExtensions',
   'functionBind',
-  'functionSent',
   'jsx',
-  'logicalAssignment',
-  'nullishCoalescingOperator',
-  'numericSeparator',
-  'objectRestSpread',
-  'optionalCatchBinding',
-  'optionalChaining',
   'partialApplication',
   ['pipelineOperator', { proposal: 'minimal' }],
   'throwExpressions'
