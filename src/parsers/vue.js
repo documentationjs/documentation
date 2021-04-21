@@ -1,5 +1,4 @@
 const parseJavaScript = require('./javascript');
-const vuecompiler = require('vue-template-compiler');
 
 /**
  * Receives a module-dep item,
@@ -10,9 +9,24 @@ const vuecompiler = require('vue-template-compiler');
  * @returns {Array<Object>} an array of parsed comments
  */
 function parseVueScript(data, config) {
-  const component = vuecompiler.parseComponent(data.source);
+  let component = {};
+  try {
+    const vuecompiler = require('@vue/compiler-sfc');
+    component = vuecompiler.parse(data.source).descriptor;
+  } catch (e) {
+    try {
+      const vuecompiler = require('vue-template-compiler');
+      component = vuecompiler.parseComponent(data.source);
+    } catch (e) {
+      console.error(
+        'You need to load package vue-template-compiler for Vue 2 or @vue/compiler-sfc for Vue 3'
+      );
+    }
+  }
+
   if (!component.script) return [];
   data.source = component.script.content;
+
   return parseJavaScript(data, config);
 }
 
