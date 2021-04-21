@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.2.4](https://github.com/documentationjs/documentation/compare/v13.2.3...v13.2.4) (2021-04-21)
+
+
+### Bug Fixes
+
+* add support Vue 3 fixed [#1339](https://github.com/documentationjs/documentation/issues/1339) ([#1372](https://github.com/documentationjs/documentation/issues/1372)) ([cd7d123](https://github.com/documentationjs/documentation/commit/cd7d12366cc499ae8d40a64905354c3479f802f6))
+
 ### [13.2.3](https://github.com/documentationjs/documentation/compare/v13.2.2...v13.2.3) (2021-04-20)
 
 ### [13.2.2](https://github.com/documentationjs/documentation/compare/v13.2.1...v13.2.2) (2021-04-20)
