@@ -52,8 +52,11 @@
     "vfile-sort": "^2.1.0",
     "vinyl": "^2.1.0",
     "vinyl-fs": "^3.0.2",
-    "vue-template-compiler": "^2.5.16",
     "yargs": "^15.3.1"
+  },
+  "optionalDependencies": {
+    "vue-template-compiler": "^2.6.12",
+    "@vue/compiler-sfc": "^3.0.11"
   },
   "devDependencies": {
     "chdir": "0.0.0",
