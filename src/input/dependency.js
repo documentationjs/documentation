@@ -8,7 +8,7 @@ const smartGlob = require('../smart_glob.js');
 
 const STANDARD_BABEL_CONFIG = {
   compact: false,
-  parserOpts: { plugins: [...standardBabelParserPlugins, 'flow'] }
+  parserOpts: { plugins: [...standardBabelParserPlugins, 'flow', 'jsx'] }
 };
 
 /**

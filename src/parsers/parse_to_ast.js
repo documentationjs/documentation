@@ -2,8 +2,8 @@ const babelParser = require('@babel/parser');
 const path = require('path');
 
 const TYPESCRIPT_EXTS = {
-  '.ts': true,
-  '.tsx': true
+  '.ts': ['typescript'],
+  '.tsx': ['typescript', 'jsx']
 };
 
 const standardBabelParserPlugins = [
@@ -14,7 +14,6 @@ const standardBabelParserPlugins = [
   'exportDefaultFrom',
   'exportExtensions',
   'functionBind',
-  'jsx',
   'partialApplication',
   ['pipelineOperator', { proposal: 'minimal' }],
   'throwExpressions'
@@ -29,7 +28,7 @@ function getParserOpts(file) {
     plugins: [
       ...standardBabelParserPlugins,
       ['decorators', { decoratorsBeforeExport: false }],
-      TYPESCRIPT_EXTS[path.extname(file || '')] ? 'typescript' : 'flow'
+      ...(TYPESCRIPT_EXTS[path.extname(file || '')] || ['flow', 'jsx'])
     ]
   };
 }
