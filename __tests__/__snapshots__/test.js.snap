@@ -1212,6 +1212,16 @@ exports[`html nested.input.js 1`] = `
                 
                 </li>
               
+                
+                <li><a
+                  href='#tableobj'
+                  class=\\"\\">
+                  tableObj
+                  
+                </a>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -2451,6 +2461,76 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
     </div>
   
 </div>
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='tableobj'>
+      tableObj
+    </h3>
+    
+    
+  </div>
+  
+
+  <table>
+<thead>
+<tr>
+<th>Col 1</th>
+<th>Col 2</th>
+<th>Col 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dat 1</td>
+<td>Dat 2</td>
+<td>Dat 3</td>
+</tr>
+<tr>
+<td>Dat 4</td>
+<td>Dat 5</td>
+<td>Dat 6</td>
+</tr>
+</tbody>
+</table>
+
+    <div class='pre p1 fill-light mt0'>tableObj</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

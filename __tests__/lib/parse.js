@@ -1,10 +1,7 @@
 const parse = require('../../src/parsers/javascript');
-const remarkP = require('remark')().parse;
-const removePosition = require('../../src/remark-remove-position')();
+const removePosition = require('../../src/remark-remove-position');
+const remarkParse = require('remark')().use(removePosition).parse;
 const visit = require('unist-util-visit');
-const remarkParse = function (str) {
-  return removePosition(remarkP(str));
-};
 
 function pick(obj, props) {
   if (Array.isArray(props)) {

@@ -1,9 +1,6 @@
-const remarkP = require('remark')().parse;
-const removePosition = require('../../../src/remark-remove-position')();
+const removePosition = require('../../../src/remark-remove-position');
+const remarkParse = require('remark')().use(removePosition).parse;
 const parse = require('../../../src/parsers/javascript');
-const remarkParse = function (str) {
-  return removePosition(remarkP(str));
-};
 
 function toComments(source, filename, opts) {
   source = typeof source === 'string' ? source : '(' + source.toString() + ')';

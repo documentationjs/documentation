@@ -158,3 +158,11 @@ var customStreams = {};
 customStreams.passthrough = function() {
   this.custom = true;
 };
+
+/**
+ * | Col 1 | Col 2 | Col 3 |
+ * |-------|-------|-------|
+ * | Dat 1 | Dat 2 | Dat 3 |
+ * | Dat 4 | Dat 5 | Dat 6 |
+ */
+ var tableObj = {};
