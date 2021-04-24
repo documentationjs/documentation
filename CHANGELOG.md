@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [13.2.5](https://github.com/documentationjs/documentation/compare/v13.2.4...v13.2.5) (2021-04-24)
+
+
+### Bug Fixes
+
+* add gfm format for remark fixed [#1374](https://github.com/documentationjs/documentation/issues/1374) ([#1375](https://github.com/documentationjs/documentation/issues/1375)) ([6b5bc25](https://github.com/documentationjs/documentation/commit/6b5bc2548db23fdab3fd8d29ac1aeedea7ad3a47))
+* jsx should be included for tsx files but not for ts fixed [#1359](https://github.com/documentationjs/documentation/issues/1359) ([#1373](https://github.com/documentationjs/documentation/issues/1373)) ([00d434f](https://github.com/documentationjs/documentation/commit/00d434f8576969b00d53a20efebb52a880acf350))
+
 ### [13.2.4](https://github.com/documentationjs/documentation/compare/v13.2.3...v13.2.4) (2021-04-21)
 
 
