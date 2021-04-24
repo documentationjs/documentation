@@ -1,6 +1,7 @@
 const remark = require('remark');
-const removePosition = require('./remark-remove-position')();
-const jsDocLink = require('./remark-jsDoc-link')();
+const gfm = require('remark-gfm');
+const removePosition = require('./remark-remove-position');
+const jsDocLink = require('./remark-jsDoc-link');
 
 /**
  * Parse a string of Markdown into a Remark
@@ -10,9 +11,4 @@ const jsDocLink = require('./remark-jsDoc-link')();
  * @returns {Object} abstract syntax tree
  * @private
  */
-module.exports = function (string) {
-  const treeAst = remark().parse(string);
-  removePosition(treeAst);
-  jsDocLink(treeAst);
-  return treeAst;
-};
+module.exports = remark().use([jsDocLink, gfm, removePosition]).parse;

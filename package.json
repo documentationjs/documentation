@@ -38,6 +38,7 @@
     "pify": "^5.0.0",
     "read-pkg-up": "^4.0.0",
     "remark": "^13.0.0",
+    "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
     "remark-reference-links": "^5.0.0",
     "remark-toc": "^7.2.0",
@@ -55,8 +56,8 @@
     "yargs": "^15.3.1"
   },
   "optionalDependencies": {
-    "vue-template-compiler": "^2.6.12",
-    "@vue/compiler-sfc": "^3.0.11"
+    "@vue/compiler-sfc": "^3.0.11",
+    "vue-template-compiler": "^2.6.12"
   },
   "devDependencies": {
     "chdir": "0.0.0",
