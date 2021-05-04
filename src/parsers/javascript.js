@@ -9,22 +9,6 @@ const findTarget = require('../infer/finders').findTarget;
 const { parseToAst } = require('./parse_to_ast');
 
 /**
- * Left-pad a string so that it can be sorted lexicographically. We sort
- * comments to keep them in order.
- * @param {string} str the string
- * @param {number} width the width to pad to
- * @returns {string} a padded string with the correct width
- * @private
- */
-function leftPad(str, width) {
-  str = str.toString();
-  while (str.length < width) {
-    str = '0' + str;
-  }
-  return str;
-}
-
-/**
  * Receives a module-dep item,
  * reads the file, parses the JavaScript, and parses the JSDoc.
  *
@@ -77,7 +61,8 @@ function _addComment(
     }*/ = {
       loc: nodeLoc,
       file: data.file,
-      sortKey: data.sortKey + ' ' + leftPad(nodeLoc.start.line, 8)
+      sortKey:
+        data.sortKey + ' ' + nodeLoc.start.line.toString().padStart(8, '0')
     };
 
     if (includeContext) {

@@ -33,7 +33,7 @@ function errorPage(error) {
   }
   return new File({
     path: 'index.html',
-    contents: new Buffer(template + errorText)
+    contents: Buffer.from(template + errorText)
   });
 }
 

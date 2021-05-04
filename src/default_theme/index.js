@@ -115,7 +115,7 @@ module.exports = function (comments, config) {
           files.concat(
             new File({
               path: 'index.html',
-              contents: new Buffer(
+              contents: Buffer.from(
                 pageTemplate({
                   docs: comments,
                   config

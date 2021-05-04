@@ -7,33 +7,33 @@ const jsFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/file.js',
-  contents: new Buffer('var test = 123;')
+  contents: Buffer.from('var test = 123;')
 });
 
 const coffeeFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/file.coffee',
-  contents: new Buffer('test = 123')
+  contents: Buffer.from('test = 123')
 });
 
 const indexFile = new File({
   cwd: '/',
   base: '/test/',
   path: '/test/index.html',
-  contents: new Buffer('<html>')
+  contents: Buffer.from('<html>')
 });
 
-test('server - throws on bad port', function() {
-  expect(function() {
+test('server - throws on bad port', function () {
+  expect(function () {
     const server = new Server('${port}');
   }).toThrow();
-  expect(function() {
+  expect(function () {
     const server = new Server();
   }).toThrow();
 });
 
-test('server', async function() {
+test('server', async function () {
   const port = await getPort();
   const server = new Server(port, true);
   expect(server).toBeTruthy();

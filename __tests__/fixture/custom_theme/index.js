@@ -9,7 +9,7 @@ module.exports = function(comments, options, callback) {
     new File({
       base: '/',
       path: '/index.html',
-      contents: new Buffer('Hello world')
+      contents: Buffer.from('Hello world')
     })
   ]);
 };
