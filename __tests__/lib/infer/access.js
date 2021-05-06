@@ -16,86 +16,110 @@ function evaluate(fn, re, filename) {
   return inferAccess(re)(inferName(toComment(fn, filename)));
 }
 
-test('inferAccess', function() {
+test('inferAccess', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
       function _name() {}
     }, '^_').access
   ).toBe('private');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @private */
       function name() {}
     }, '^_').access
   ).toBe('private');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @public */
       function _name() {}
     }, '^_').access
   ).toBe('public');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
       function name_() {}
     }, '_$').access
   ).toBe('private');
 
   expect(
-    evaluate(`
+    evaluate(
+      `
       class Test {
         /** */
         private foo() {}
       }
-    `, '_$', 'test.ts').access
+    `,
+      '_$',
+      'test.ts'
+    ).access
   ).toBe('private');
 
   expect(
-    evaluate(`
+    evaluate(
+      `
       class Test {
         /** */
         protected foo() {}
       }
-    `, '_$', 'test.ts').access
+    `,
+      '_$',
+      'test.ts'
+    ).access
   ).toBe('protected');
 
   expect(
-    evaluate(`
+    evaluate(
+      `
       class Test {
         /** */
         public foo() {}
       }
-    `, '_$', 'test.ts').access
+    `,
+      '_$',
+      'test.ts'
+    ).access
   ).toBe('public');
 
   expect(
-    evaluate(`
-      class Test {
+    evaluate(
+      `
+    abstract class Test {
         /** */
         public abstract foo();
       }
-    `, '_$', 'test.ts').access
+    `,
+      '_$',
+      'test.ts'
+    ).access
   ).toBe('public');
 
   expect(
-    evaluate(`
+    evaluate(
+      `
       class Test {
         /** */
         readonly name: string;
       }
-    `, '_$', 'test.ts').readonly
+    `,
+      '_$',
+      'test.ts'
+    ).readonly
   ).toBe(true);
 
   expect(
-    evaluate(`
+    evaluate(
+      `
       interface Test {
         /** */
         readonly name: string;
       }
-    `, '_$', 'test.ts').readonly
+    `,
+      '_$',
+      'test.ts'
+    ).readonly
   ).toBe(true);
 });

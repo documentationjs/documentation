@@ -7,12 +7,8 @@ const TYPESCRIPT_EXTS = {
 };
 
 const standardBabelParserPlugins = [
-  'classProperties',
-  'classPrivateProperties',
-  'classPrivateMethods',
   'doExpressions',
   'exportDefaultFrom',
-  'exportExtensions',
   'functionBind',
   'partialApplication',
   ['pipelineOperator', { proposal: 'minimal' }],
