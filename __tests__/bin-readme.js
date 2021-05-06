@@ -1,5 +1,4 @@
 const path = require('path');
-const os = require('os');
 const exec = require('child_process').exec;
 const tmp = require('tmp');
 const fs = require('fs-extra');

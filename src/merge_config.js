@@ -1,3 +1,4 @@
+const conf = require('./config');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const pify = require('pify');
@@ -5,16 +6,15 @@ const readPkgUp = require('read-pkg-up');
 const path = require('path');
 const stripComments = require('strip-json-comments');
 
-function processToc(config, absFilePath) {
+function normalizeToc(config, basePath) {
   if (!config || !config.toc) {
     return config;
   }
 
   config.toc = config.toc.map(entry => {
     if (entry && entry.file) {
-      entry.file = path.join(path.dirname(absFilePath), entry.file);
+      entry.file = path.join(basePath, entry.file);
     }
-
     return entry;
   });
 
@@ -25,72 +25,60 @@ function processToc(config, absFilePath) {
  * Use the nearest package.json file for the default
  * values of `name` and `version` config.
  *
- * @param {Object} config the user-provided config, usually via argv
+ * @param {boolean} noPackage options which prevent ge info about project from package.json
  * @returns {Promise<Object>} configuration with inferred parameters
- * @throws {Error} if the file cannot be read.
  */
-function mergePackage(config) {
-  if (config.noPackage) {
-    return Promise.resolve(config);
+async function readPackage(noPackage) {
+  const global = conf.globalConfig;
+  if (noPackage) {
+    return {};
   }
-  return (
-    readPkgUp()
-      .then(pkg => {
-        ['name', 'homepage', 'version', 'description'].forEach(key => {
-          config[`project-${key}`] = config[`project-${key}`] || pkg.pkg[key];
-        });
-        return config;
-      })
-      // Allow this to fail: this inference is not required.
-      .catch(() => config)
-  );
+  const param = ['name', 'homepage', 'version', 'description'];
+  try {
+    const { pkg } = await readPkgUp();
+    return param.reduce((res, key) => {
+      res[`project-${key}`] = global[key] || pkg[key];
+      return res;
+    }, {});
+  } catch (e) {
+    return {};
+  }
 }
 
 /**
  * Merge a configuration file into program config, assuming that the location
  * of the configuration file is given as one of those config.
  *
- * @param {Object} config the user-provided config, usually via argv
- * @returns {Promise<Object>} configuration, if it can be parsed
+ * @param {String} config the user-provided config path, usually via argv
+ * @returns {Promise<Object>} configuration, which are parsed
  * @throws {Error} if the file cannot be read.
  */
-function mergeConfigFile(config) {
-  if (config && typeof config.config === 'string') {
-    const filePath = config.config;
-    const ext = path.extname(filePath);
-    const absFilePath = path.resolve(process.cwd(), filePath);
-    return pify(fs)
-      .readFile(absFilePath, 'utf8')
-      .then(rawFile => {
-        if (ext === '.json') {
-          return Object.assign(
-            {},
-            config,
-            processToc(JSON.parse(stripComments(rawFile)), absFilePath)
-          );
-        }
-        return Object.assign(
-          {},
-          config,
-          processToc(yaml.safeLoad(rawFile), absFilePath)
-        );
-      });
+async function readConfigFile(config) {
+  if (typeof config !== 'string') {
+    return {};
   }
+  const filePath = config;
+  const absFilePath = path.resolve(process.cwd(), filePath);
+  const rawFile = await pify(fs).readFile(absFilePath, 'utf8');
+  const basePath = path.dirname(absFilePath);
 
-  return Promise.resolve(config || {});
+  let obj = null;
+  if (path.extname(filePath) === '.json') {
+    obj = JSON.parse(stripComments(rawFile));
+  } else {
+    obj = yaml.safeLoad(rawFile);
+  }
+  if ('noPackage' in obj) {
+    obj['no-package'] = obj.noPackage;
+    delete obj.noPackage;
+  }
+  return normalizeToc(obj, basePath);
 }
 
-function mergeConfig(config) {
-  config.parseExtension = (config.parseExtension || []).concat([
-    'mjs',
-    'js',
-    'jsx',
-    'es5',
-    'es6',
-    'vue'
-  ]);
+module.exports = async function mergeConfig(config = {}) {
+  conf.add(config);
+  conf.add(await readConfigFile(conf.globalConfig.config));
+  conf.add(await readPackage(conf.globalConfig['no-package']));
 
-  return mergeConfigFile(config).then(mergePackage);
-}
-
-module.exports = mergeConfig;
+  return conf.globalConfig;
+};

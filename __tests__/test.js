@@ -11,6 +11,7 @@ const path = require('path');
 const fs = require('fs');
 const _ = require('lodash');
 const chdir = require('chdir');
+const config = require('../src/config');
 
 const UPDATE = !!process.env.UPDATE;
 
@@ -29,6 +30,10 @@ function readOptionsFromFile(file) {
   }
   return {};
 }
+
+beforeEach(function () {
+  config.reset();
+});
 
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', async function () {
@@ -95,10 +100,8 @@ describe('html', function () {
     .sync(path.join(__dirname, 'fixture/html', '*.input.js'))
     .forEach(function (file) {
       test(path.basename(file), async function () {
-        const result = await documentation.build(
-          [file],
-          readOptionsFromFile(file)
-        );
+        const options = readOptionsFromFile(file);
+        const result = await documentation.build([file], options);
         const html = await outputHtml(result, {});
         const clean = html
           .sort((a, b) => a.path > b.path)
