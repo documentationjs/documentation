@@ -1,42 +1,46 @@
 const path = require('path');
-const _ = require('lodash');
+const config = require('../../src/config');
 const mergeConfig = require('../../src/merge_config');
 
-test('bad config', async function() {
-  try {
-    await mergeConfig({ config: 'DOES-NOT-EXIST' });
-  } catch (err) {
-    expect(err).toBeTruthy();
-  }
-});
+describe('single config tests', function () {
+  beforeEach(function () {
+    config.reset();
+  });
 
-test('right merging package configuration', async function() {
-  // Omit configuration from output, for simplicity
-  const nc = _.curryRight(_.omit, 2)([
-    'config',
-    'no-package',
-    'parseExtension',
-    'project-homepage',
-    'project-version',
-    'project-description'
-  ]);
-  return mergeConfig({
-    config: path.join(__dirname, '../config_fixture/config.json'),
-    'no-package': true,
-    'project-name': 'cool Documentation'
-  })
-    .then(nc)
-    .then(res => {
-      expect(res).toEqual({
-        'project-name': 'cool Documentation',
-        foo: 'bar'
-      });
+  test('Should be failed on bad config', async function () {
+    try {
+      await mergeConfig({ config: 'DOES-NOT-EXIST' });
+    } catch (err) {
+      expect(err).toBeTruthy();
+      return;
+    }
+    return Promise.reject(new Error('should be failed on bad config'));
+  });
+
+  test('right merging package configuration', async function () {
+    const list = [
+      'config',
+      'no-package',
+      'parseExtension',
+      'project-homepage',
+      'project-version',
+      'project-description'
+    ];
+    await mergeConfig({
+      config: path.join(__dirname, '../config_fixture/config.json'),
+      'no-package': true,
+      'project-name': 'cool Documentation'
     });
-});
 
-test('nc(mergeConfig)', async function() {
-  // Omit configuration from output, for simplicity
-  const nc = _.curryRight(_.omit, 2)([
+    const res = config.globalConfig;
+    list.forEach(key => delete res[key]);
+    expect(res).toEqual({
+      'project-name': 'cool Documentation',
+      foo: 'bar'
+    });
+  });
+
+  const list = [
     'config',
     'no-package',
     'parseExtension',
@@ -44,60 +48,61 @@ test('nc(mergeConfig)', async function() {
     'project-name',
     'project-version',
     'project-description'
-  ]);
+  ];
 
-  return Promise.all(
+  [
     [
-      [
-        { config: path.join(__dirname, '../config_fixture/config.json') },
-        { foo: 'bar' }
-      ],
-      [
-        {
-          passThrough: true,
-          config: path.join(__dirname, '../config_fixture/config.json')
-        },
-        { foo: 'bar', passThrough: true }
-      ],
-      [
-        {
-          config: path.join(__dirname, '../config_fixture/config_comments.json')
-        },
-        { foo: 'bar' }
-      ],
-      [
-        { config: path.join(__dirname, '../config_fixture/config.yaml') },
-        { foo: 'bar' }
-      ],
-      [
-        { config: path.join(__dirname, '../config_fixture/config.yml') },
-        { foo: 'bar' }
-      ],
-      [
-        { config: path.join(__dirname, '../config_fixture/config') },
-        { foo: 'bar' }
-      ],
-      [
-        { config: path.join(__dirname, '../config_fixture/config_links.yml') },
-        { foo: 'hello [link](https://github.com/my/link) world' }
-      ],
-      [
-        { config: path.join(__dirname, '../config_fixture/config_file.yml') },
-        {
-          toc: [
-            {
-              name: 'snowflake',
-              file: path.join(__dirname, '../fixture/snowflake.md')
-            }
-          ]
-        }
-      ]
-    ].map(pair =>
-      mergeConfig(Object.assign(pair[0], { 'no-package': true }))
-        .then(nc)
-        .then(res => {
-          expect(res).toEqual(pair[1]);
-        })
-    )
-  );
+      { config: path.join(__dirname, '../config_fixture/config.json') },
+      { foo: 'bar' }
+    ],
+    [
+      {
+        passThrough: true,
+        config: path.join(__dirname, '../config_fixture/config.json')
+      },
+      { foo: 'bar', passThrough: true }
+    ],
+    [
+      {
+        config: path.join(__dirname, '../config_fixture/config_comments.json')
+      },
+      { foo: 'bar' }
+    ],
+    [
+      { config: path.join(__dirname, '../config_fixture/config.yaml') },
+      { foo: 'bar' }
+    ],
+    [
+      { config: path.join(__dirname, '../config_fixture/config.yml') },
+      { foo: 'bar' }
+    ],
+    [
+      { config: path.join(__dirname, '../config_fixture/config') },
+      { foo: 'bar' }
+    ],
+    [
+      {
+        config: path.join(__dirname, '../config_fixture/config_links.yml')
+      },
+      { foo: 'hello [link](https://github.com/my/link) world' }
+    ],
+    [
+      { config: path.join(__dirname, '../config_fixture/config_file.yml') },
+      {
+        toc: [
+          {
+            name: 'snowflake',
+            file: path.join(__dirname, '../fixture/snowflake.md')
+          }
+        ]
+      }
+    ]
+  ].forEach((pair, index) => {
+    test(`nc(mergeConfig) ${index}`, async function () {
+      await mergeConfig(Object.assign(pair[0], { 'no-package': true }));
+      const res = config.globalConfig;
+      list.forEach(key => delete res[key]);
+      expect(res).toEqual(pair[1]);
+    });
+  });
 });
