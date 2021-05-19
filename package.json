@@ -31,6 +31,7 @@
     "lodash": "^4.17.10",
     "mdast-util-find-and-replace": "^1.1.1",
     "mdast-util-inject": "^1.1.0",
+    "micromark": "^2.11.4",
     "micromatch": "^3.1.5",
     "mime": "^2.2.0",
     "module-deps-sortable": "^5.0.3",
