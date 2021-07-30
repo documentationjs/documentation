@@ -28,6 +28,6 @@ jobs:
         cache: 'yarn'
     - name: Install Yarn
       run: npm i yarn --global
-    - run: yarn install
+    - run: yarn install --frozen-lockfile
     - run: yarn build
     - run: yarn test
