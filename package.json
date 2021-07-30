@@ -18,7 +18,7 @@
     "chalk": "^4.1.1",
     "chokidar": "^3.4.0",
     "concat-stream": "^2.0.0",
-    "diff": "^4.0.1",
+    "diff": "^5.0.0",
     "doctrine-temporary-fork": "2.1.0",
     "get-port": "^5.0.0",
     "git-url-parse": "^11.1.2",
