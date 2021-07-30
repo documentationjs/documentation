@@ -17,7 +17,7 @@
     "babelify": "^10.0.0",
     "chalk": "^2.3.0",
     "chokidar": "^3.4.0",
-    "concat-stream": "^1.6.0",
+    "concat-stream": "^2.0.0",
     "diff": "^4.0.1",
     "doctrine-temporary-fork": "2.1.0",
     "get-port": "^5.0.0",
