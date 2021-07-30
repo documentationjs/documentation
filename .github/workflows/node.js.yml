@@ -30,4 +30,4 @@ jobs:
       run: npm i yarn --global
     - run: yarn install --frozen-lockfile
     - run: yarn build
-    - run: yarn test
+    - run: yarn test-ci
