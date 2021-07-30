@@ -32,7 +32,7 @@
     "mdast-util-find-and-replace": "^1.1.1",
     "mdast-util-inject": "^1.1.0",
     "micromark": "^2.11.4",
-    "micromatch": "^3.1.5",
+    "micromatch": "^4.0.4",
     "mime": "^2.2.0",
     "module-deps-sortable": "^5.0.3",
     "parse-filepath": "^1.0.2",
