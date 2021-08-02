@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "7.14.8",
     "@babel/generator": "7.14.8",
-    "@babel/parser": "7.14.8",
+    "@babel/parser": "7.14.9",
     "@babel/traverse": "^7.14.0",
     "@babel/types": "^7.14.1",
     "ansi-html": "^0.0.7",
