@@ -12,21 +12,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore Yarn Package Cache
+          name: Restore npm Package Cache
           keys:
-            - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-packages-{{ .Branch }}
-            - yarn-packages-master
-            - yarn-packages-
+            - npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - npm-packages-{{ .Branch }}
+            - npm-packages-master
+            - npm-packages-
       - run:
           name: Install dependencies
-          command: yarn --frozen-lockfile
+          command: npm ci
       - run:
           name: Test
-          command: yarn test-ci
+          command: npm run test-ci
       - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          name: Save npm Package Cache
+          key: npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - node_modules/
   node-v12:
