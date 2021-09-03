@@ -6,8 +6,6 @@ const exec = require('child_process').exec;
 const tmp = require('tmp');
 const fs = require('fs-extra');
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
-
 function documentation(args, options, parseJSON) {
   if (!options) {
     options = {};
