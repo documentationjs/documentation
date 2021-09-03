@@ -66,7 +66,7 @@ async function readConfigFile(config) {
   if (path.extname(filePath) === '.json') {
     obj = JSON.parse(stripComments(rawFile));
   } else {
-    obj = yaml.safeLoad(rawFile);
+    obj = yaml.load(rawFile);
   }
   if ('noPackage' in obj) {
     obj['no-package'] = obj.noPackage;
