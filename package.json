@@ -8,9 +8,9 @@
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/generator": "7.15.4",
-    "@babel/parser": "7.15.4",
+    "@babel/core": "^7.15.8",
+    "@babel/generator": "^7.15.4",
+    "@babel/parser": "^7.15.4",
     "@babel/traverse": "^7.14.0",
     "@babel/types": "^7.14.1",
     "ansi-html": "^0.0.7",
@@ -116,7 +116,7 @@
     }
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "lint-staged": {
     "*.js": [
