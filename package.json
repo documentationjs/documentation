@@ -41,7 +41,7 @@
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
-    "remark-reference-links": "^5.0.0",
+    "remark-reference-links": "^6.0.0",
     "remark-toc": "^7.2.0",
     "resolve": "^1.8.1",
     "stream-array": "^1.1.2",
