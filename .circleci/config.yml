@@ -2,7 +2,7 @@ workflows:
   version: 2
   node-multi-build:
     jobs:
-      - node-v12
+      - node-v14
 
 version: 2
 jobs:
@@ -29,7 +29,7 @@ jobs:
           key: npm-packages-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - node_modules/
-  node-v12:
+  node-v14:
     <<: *node-base
     docker:
-      - image: node:12
+      - image: node:14
