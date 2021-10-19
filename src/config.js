@@ -15,7 +15,7 @@ function normalaze(config, global) {
   return config;
 }
 
-module.exports = {
+export default {
   globalConfig: {
     ...defaultConfig
   },

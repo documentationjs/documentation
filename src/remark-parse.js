@@ -1,7 +1,7 @@
-const remark = require('remark');
-const gfm = require('remark-gfm');
-const removePosition = require('./remark-remove-position');
-const jsDocLink = require('./remark-jsDoc-link');
+import remark from 'remark';
+import gfm from 'remark-gfm';
+import removePosition from './remark-remove-position.js';
+import jsDocLink from './remark-jsDoc-link.js';
 
 /**
  * Parse a string of Markdown into a Remark
@@ -11,4 +11,4 @@ const jsDocLink = require('./remark-jsDoc-link');
  * @returns {Object} abstract syntax tree
  * @private
  */
-module.exports = remark().use([jsDocLink, gfm, removePosition]).parse;
+export default remark().use([jsDocLink, gfm, removePosition]).parse;

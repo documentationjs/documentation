@@ -1,5 +1,7 @@
-const traverse = require('@babel/traverse').default;
-const isJSDocComment = require('../is_jsdoc_comment');
+import babelTraverse from '@babel/traverse';
+import isJSDocComment from '../is_jsdoc_comment.js';
+
+const traverse = babelTraverse.default;
 
 /**
  * Iterate through the abstract syntax tree, finding a different kind of comment
@@ -13,7 +15,13 @@ const isJSDocComment = require('../is_jsdoc_comment');
  * @returns  comments
  * @private
  */
-function walkComments(type, includeContext, ast, data, addComment) {
+export default function walkComments(
+  type,
+  includeContext,
+  ast,
+  data,
+  addComment
+) {
   const newResults = [];
 
   traverse(ast, {
@@ -51,5 +59,3 @@ function walkComments(type, includeContext, ast, data, addComment) {
 
   return newResults;
 }
-
-module.exports = walkComments;

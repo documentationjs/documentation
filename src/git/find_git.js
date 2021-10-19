@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
 
 /**
  * Given a full path to a single file, iterate upwards through the filesystem
@@ -7,7 +7,7 @@ const fs = require('fs');
  * @param  filename any file within a repository
  * @returns  repository root & its .git folder paths
  */
-function findGit(filename) {
+export default function findGit(filename) {
   let root = path.resolve(filename);
   while (root) {
     root = path.dirname(root);
@@ -25,5 +25,3 @@ function findGit(filename) {
   }
   return null;
 }
-
-module.exports = findGit;

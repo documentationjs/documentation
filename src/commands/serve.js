@@ -1,33 +1,28 @@
-const errorPage = require('../serve/error_page');
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
-const sharedOptions = require('./shared_options');
-const Server = require('../serve/server');
-const _ = require('lodash');
-const getPort = require('get-port');
-const documentation = require('../');
+import errorPage from '../serve/error_page.js';
+import fs from 'fs';
+import path from 'path';
+import chokidar from 'chokidar';
+import { sharedOutputOptions, sharedInputOptions } from './shared_options.js';
+import Server from '../serve/server.js';
+import _ from 'lodash';
+import getPort from 'get-port';
+import * as documentation from '../index.js';
 
-module.exports.command = 'serve [input..]';
-module.exports.description = 'generate, update, and display HTML documentation';
+const command = 'serve [input..]';
+const description = 'generate, update, and display HTML documentation';
 /**
  * Add yargs parsing for the serve command
  * @param {Object} yargs module instance
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = Object.assign(
-  {},
-  sharedOptions.sharedOutputOptions,
-  sharedOptions.sharedInputOptions,
-  {
-    port: {
-      describe: 'preferred port for the local server',
-      type: 'number',
-      default: 4001
-    }
+const builder = Object.assign({}, sharedOutputOptions, sharedInputOptions, {
+  port: {
+    describe: 'preferred port for the local server',
+    type: 'number',
+    default: 4001
   }
-);
+});
 
 /**
  * Wrap the documentation build command along with a server, making it possible
@@ -36,7 +31,7 @@ module.exports.builder = Object.assign(
  * @param {Object} argv cli input
  * @returns {undefined} has side effects
  */
-module.exports.handler = function serve(argv) {
+const handler = function serve(argv) {
   argv._handled = true;
 
   if (!argv.input.length) {
@@ -97,3 +92,5 @@ module.exports.handler = function serve(argv) {
     updateServer();
   });
 };
+
+export default { command, description, builder, handler };

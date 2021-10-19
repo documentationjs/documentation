@@ -1,10 +1,10 @@
-const mdeps = require('module-deps-sortable');
-const path = require('path');
-const babelify = require('babelify');
-const concat = require('concat-stream');
-const moduleFilters = require('../module_filters');
-const { standardBabelParserPlugins } = require('../parsers/parse_to_ast');
-const smartGlob = require('../smart_glob.js');
+import mdeps from 'module-deps-sortable';
+import path from 'path';
+import babelify from 'babelify';
+import concat from 'concat-stream';
+import moduleFilters from '../module_filters.js';
+import { standardBabelParserPlugins } from '../parsers/parse_to_ast.js';
+import smartGlob from '../smart_glob.js';
 
 const STANDARD_BABEL_CONFIG = {
   compact: false,
@@ -22,7 +22,7 @@ const STANDARD_BABEL_CONFIG = {
  * @param config optional options passed
  * @returns results
  */
-function dependencyStream(indexes, config) {
+export default function dependencyStream(indexes, config) {
   const babelConfig = config.babel
     ? { configFile: path.resolve(__dirname, '../../../../', config.babel) }
     : STANDARD_BABEL_CONFIG;
@@ -79,5 +79,3 @@ function dependencyStream(indexes, config) {
     );
   });
 }
-
-module.exports = dependencyStream;

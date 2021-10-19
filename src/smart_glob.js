@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+import fs from 'fs';
+import path from 'path';
+import glob from 'glob';
 
 /**
  * Replace Windows with posix style paths
@@ -126,8 +126,6 @@ function listFilesToProcess(globPatterns) {
   return files;
 }
 
-function smartGlob(indexes, extensions) {
+export default function smartGlob(indexes, extensions) {
   return listFilesToProcess(resolveFileGlobPatterns(indexes, extensions));
 }
-
-module.exports = smartGlob;

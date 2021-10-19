@@ -1,5 +1,5 @@
-const globalsDocs = require('globals-docs');
-const { walk } = require('../../walk');
+import globalsDocs from 'globals-docs';
+import walk from '../../walk.js';
 
 /**
  * Generate a linker method that links given hardcoded namepaths to URLs
@@ -39,7 +39,7 @@ function firstPass(fns, input) {
  * @param {Object} config - configuration value
  * @returns {Function} linker method
  */
-class LinkerStack {
+export default class LinkerStack {
   constructor(config) {
     this.stack = [];
 
@@ -106,5 +106,3 @@ class LinkerStack {
     return firstPass(this.stack, namepath);
   }
 }
-
-module.exports = LinkerStack;

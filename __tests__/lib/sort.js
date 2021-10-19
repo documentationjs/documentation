@@ -1,5 +1,9 @@
-const sort = require('../../src/sort');
-const path = require('path');
+import sort from '../../src/sort.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 test('sort stream alphanumeric', function () {
   const apples = { context: { sortKey: 'a' }, name: 'apples' };

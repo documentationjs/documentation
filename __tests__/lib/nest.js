@@ -1,4 +1,4 @@
-const nestTag = require('../../src/nest').nestTag;
+import { nestTag } from '../../src/nest.js';
 
 // Print a tree of tags in a way that's easy to test.
 const printTree = indent => node =>
@@ -9,7 +9,7 @@ const printTree = indent => node =>
 const printNesting = params =>
   printTree(0)({ properties: nestTag(params), name: 'root' });
 
-test('nest params - basic', function() {
+test('nest params - basic', function () {
   const params = [
     'foo',
     'foo.bar',
@@ -27,7 +27,7 @@ test('nest params - basic', function() {
   );
 });
 
-test('nest params - multiple roots', function() {
+test('nest params - multiple roots', function () {
   const params = ['a', 'b', 'c'].map(name => ({ name }));
   expect(printNesting(params)).toBe(
     `- root
@@ -37,14 +37,14 @@ test('nest params - multiple roots', function() {
   );
 });
 
-test('nest params - missing parent', function() {
+test('nest params - missing parent', function () {
   const params = ['foo', 'foo.bar.third'].map(name => ({ name }));
   expect(() => {
     nestTag(params);
   }).toThrow();
 });
 
-test('nest params - #658', function() {
+test('nest params - #658', function () {
   const params = [
     'state',
     'payload',
@@ -68,7 +68,7 @@ test('nest params - #658', function() {
   );
 });
 
-test('nest params - #554', function() {
+test('nest params - #554', function () {
   const params = [
     'x',
     'yIn',

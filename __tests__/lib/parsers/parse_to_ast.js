@@ -1,8 +1,8 @@
-const fs = require('fs');
-const {
-  commentToFlow,
-  parseToAst
-} = require('../../../src/parsers/parse_to_ast');
+import fs from 'fs';
+import { createRequire } from 'module';
+import { commentToFlow, parseToAst } from '../../../src/parsers/parse_to_ast';
+
+const require = createRequire(import.meta.url);
 
 describe('flow comments', () => {
   const f = require.resolve('../../fixture/flow/comment-types');

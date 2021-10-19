@@ -1,5 +1,7 @@
-const parseJavaScript = require('./javascript');
+import parseJavaScript from './javascript.js';
+import { createRequire } from 'module';
 
+const require = createRequire(import.meta.url);
 /**
  * Receives a module-dep item,
  * reads the file, parses the VueScript, and parses the JSDoc.
@@ -8,7 +10,7 @@ const parseJavaScript = require('./javascript');
  * @param {Object} config config
  * @returns {Array<Object>} an array of parsed comments
  */
-function parseVueScript(data, config) {
+export default function parseVueScript(data, config) {
   let component = {};
   try {
     const vuecompiler = require('@vue/compiler-sfc');
@@ -29,5 +31,3 @@ function parseVueScript(data, config) {
 
   return parseJavaScript(data, config);
 }
-
-module.exports = parseVueScript;

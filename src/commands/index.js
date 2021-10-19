@@ -8,10 +8,9 @@
  * the main CLI help, and optionally a `parseArgs(yargs, parentArgv)` function
  * to parse additional arguments.
  */
+import build from './build.js';
+import serve from './serve.js';
+import lint from './lint.js';
+import readme from './readme.js';
 
-module.exports = {
-  build: require('./build'),
-  serve: require('./serve'),
-  lint: require('./lint'),
-  readme: require('./readme')
-};
+export default { build, serve, lint, readme };

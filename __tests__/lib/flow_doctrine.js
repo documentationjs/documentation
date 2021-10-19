@@ -1,6 +1,6 @@
-const flowDoctrine = require('../../src/flow_doctrine.js');
-const parse = require('../../src/parsers/javascript');
-const FLOW_TYPES = require('@babel/types').FLOW_TYPES;
+import flowDoctrine from '../../src/flow_doctrine.js';
+import parse from '../../src/parsers/javascript';
+import { FLOW_TYPES } from '@babel/types';
 
 function toComment(fn, filename) {
   return parse(
@@ -12,8 +12,8 @@ function toComment(fn, filename) {
   )[0];
 }
 
-test('flowDoctrine', function() {
-  const types = FLOW_TYPES.filter(function(type) {
+test('flowDoctrine', function () {
+  const types = FLOW_TYPES.filter(function (type) {
     return type.match(/\wTypeAnnotation$/);
   });
 

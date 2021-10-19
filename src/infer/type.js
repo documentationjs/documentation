@@ -1,5 +1,5 @@
-const findTarget = require('./finders').findTarget;
-const typeAnnotation = require('../type_annotation');
+import findTarget from './finders.js';
+import typeAnnotation from '../type_annotation.js';
 
 const constTypeMapping = {
   BooleanLiteral: { type: 'BooleanTypeAnnotation' },
@@ -14,7 +14,7 @@ const constTypeMapping = {
  * @param {Object} comment parsed comment
  * @returns {Object} comment with type tag inferred
  */
-function inferType(comment) {
+export default function inferType(comment) {
   if (comment.type) {
     return comment;
   }
@@ -71,5 +71,3 @@ function inferType(comment) {
   }
   return comment;
 }
-
-module.exports = inferType;

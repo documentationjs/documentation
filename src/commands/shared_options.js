@@ -1,7 +1,7 @@
 /**
  * Adds shared options to any command that runs documentation
  */
-module.exports.sharedInputOptions = {
+export const sharedInputOptions = {
   babel: {
     describe:
       'path to babelrc or babel.options.js to override default babel config',
@@ -95,7 +95,7 @@ module.exports.sharedInputOptions = {
 /**
  * Adds shared options to any command that runs documentation
  */
-module.exports.sharedOutputOptions = {
+export const sharedOutputOptions = {
   theme: {
     describe: 'specify a theme: this must be a valid theme module',
     alias: 't'

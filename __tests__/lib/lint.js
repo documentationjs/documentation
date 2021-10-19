@@ -1,6 +1,5 @@
-const parse = require('../../src/parsers/javascript');
-const lintComments = require('../../src/lint').lintComments;
-const formatLint = require('../../src/lint').formatLint;
+import parse from '../../src/parsers/javascript.js';
+import { lintComments, formatLint } from '../../src/lint.js';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,9 +15,9 @@ function evaluate(fn) {
   return lintComments(toComment(fn, 'input.js'));
 }
 
-test('lintComments', function() {
+test('lintComments', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @param {foo
        */
@@ -29,7 +28,7 @@ test('lintComments', function() {
   ]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @param {Object} foo.bar
        */
@@ -37,7 +36,7 @@ test('lintComments', function() {
   ).toEqual([{ commentLineNumber: 1, message: 'Parent of foo.bar not found' }]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @param {String} foo
        * @param {array} bar
@@ -52,7 +51,7 @@ test('lintComments', function() {
   ]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @param {string} foo
        */
@@ -60,8 +59,8 @@ test('lintComments', function() {
   ).toEqual([]);
 });
 
-test('formatLint', function() {
-  const comment = evaluate(function() {
+test('formatLint', function () {
+  const comment = evaluate(function () {
     // 2
     // 3
     /** 4

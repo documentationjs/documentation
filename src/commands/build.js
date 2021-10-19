@@ -1,14 +1,14 @@
-const streamArray = require('stream-array');
-const sharedOptions = require('./shared_options');
-const path = require('path');
-const fs = require('fs');
-const vfs = require('vinyl-fs');
-const chokidar = require('chokidar');
-const documentation = require('../');
-const _ = require('lodash');
+import streamArray from 'stream-array';
+import { sharedOutputOptions, sharedInputOptions } from './shared_options.js';
+import path from 'path';
+import fs from 'fs';
+import vfs from 'vinyl-fs';
+import chokidar from 'chokidar';
+import * as documentation from '../index.js';
+import _ from 'lodash';
 
-module.exports.command = 'build [input..]';
-module.exports.describe = 'build documentation';
+const command = 'build [input..]';
+const describe = 'build documentation';
 
 /**
  * Add yargs parsing for the build command
@@ -16,20 +16,15 @@ module.exports.describe = 'build documentation';
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = Object.assign(
-  {},
-  sharedOptions.sharedOutputOptions,
-  sharedOptions.sharedInputOptions,
-  {
-    output: {
-      describe:
-        'output location. omit for stdout, otherwise is a filename ' +
-        'for single-file outputs and a directory name for multi-file outputs like html',
-      default: 'stdout',
-      alias: 'o'
-    }
+const builder = Object.assign({}, sharedOutputOptions, sharedInputOptions, {
+  output: {
+    describe:
+      'output location. omit for stdout, otherwise is a filename ' +
+      'for single-file outputs and a directory name for multi-file outputs like html',
+    default: 'stdout',
+    alias: 'o'
   }
-);
+});
 
 /*
  * The `build` command.  Requires either `--output` or the `callback` argument.
@@ -39,7 +34,7 @@ module.exports.builder = Object.assign(
  * The former case, with the callback, is used by the `serve` command, which is
  * just a thin wrapper around this one.
  */
-module.exports.handler = function build(argv) {
+const handler = function build(argv) {
   let watcher;
   argv._handled = true;
 
@@ -114,3 +109,5 @@ module.exports.handler = function build(argv) {
 
   return generator();
 };
+
+export default { command, describe, builder, handler };

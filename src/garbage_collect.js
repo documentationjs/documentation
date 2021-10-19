@@ -4,4 +4,4 @@ function garbageCollect(comment) {
   return comment;
 }
 
-module.exports = garbageCollect;
+export default garbageCollect;

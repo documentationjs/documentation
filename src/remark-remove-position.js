@@ -1,6 +1,6 @@
-const visit = require('unist-util-visit');
+import visit from 'unist-util-visit';
 
-module.exports = function () {
+export default function () {
   const data = this.data();
   add('fromMarkdownExtensions', {
     transforms: [
@@ -13,4 +13,4 @@ module.exports = function () {
     if (data[field]) data[field].push(value);
     else data[field] = [value];
   }
-};
+}

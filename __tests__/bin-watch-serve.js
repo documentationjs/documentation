@@ -1,9 +1,9 @@
-const path = require('path');
-const os = require('os');
-const get = require('./utils').get;
-const spawn = require('child_process').spawn;
-const fs = require('fs');
-const pEvent = require('p-event');
+import path from 'path';
+import os from 'os';
+import { get } from './utils';
+import { spawn } from 'child_process';
+import fs from 'fs';
+import pEvent from 'p-event';
 
 function documentation(args, options) {
   if (!options) {

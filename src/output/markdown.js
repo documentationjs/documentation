@@ -1,5 +1,5 @@
-const remark = require('remark');
-const markdownAST = require('./markdown_ast');
+import remark from 'remark';
+import markdownAST from './markdown_ast.js';
 
 /**
  * Formats documentation as
@@ -21,11 +21,9 @@ const markdownAST = require('./markdown_ast');
  *     fs.writeFileSync('./output.md', output);
  *   });
  */
-function markdown(comments, args) {
+export default function markdown(comments, args) {
   if (!args) {
     args = {};
   }
   return markdownAST(comments, args).then(ast => remark().stringify(ast));
 }
-
-module.exports = markdown;

@@ -1,5 +1,5 @@
-const path = require('path');
-const micromatch = require('micromatch');
+import path from 'path';
+import micromatch from 'micromatch';
 
 // Skip external modules. Based on http://git.io/pzPO.
 const internalModuleRegexp =
@@ -11,7 +11,7 @@ const internalModuleRegexp =
 /**
  * Module filters
  */
-module.exports = {
+export default {
   internalOnly: internalModuleRegexp.test.bind(internalModuleRegexp),
 
   /**

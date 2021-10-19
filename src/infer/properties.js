@@ -1,5 +1,5 @@
-const typeAnnotation = require('../type_annotation');
-const findTarget = require('./finders').findTarget;
+import typeAnnotation from '../type_annotation.js';
+import findTarget from './finders.js';
 
 function prefixedName(name, prefix) {
   if (prefix.length) {
@@ -63,7 +63,7 @@ function propertyToDoc(property, prefix) {
  * @param {Object} comment parsed comment
  * @returns {Object} comment with inferred properties
  */
-function inferProperties(comment) {
+export default function inferProperties(comment) {
   const explicitProperties = new Set();
   // Ensure that explicitly specified properties are not overridden
   // by inferred properties
@@ -108,5 +108,3 @@ function inferProperties(comment) {
 
   return comment;
 }
-
-module.exports = inferProperties;

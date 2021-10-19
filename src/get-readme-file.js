@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
-module.exports = function findReadme(dir) {
+export default function findReadme(dir) {
   const readmeFilenames = [
     'README.markdown',
     'README.md',
@@ -19,4 +19,4 @@ module.exports = function findReadme(dir) {
   }
 
   return 'README.md';
-};
+}

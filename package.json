@@ -4,6 +4,7 @@
   "version": "13.2.5",
   "author": "Tom MacWright",
   "homepage": "https://documentation.js.org",
+  "type": "module",
   "bin": {
     "documentation": "./bin/documentation.js"
   },
@@ -11,7 +12,7 @@
     "@babel/core": "^7.15.8",
     "@babel/generator": "^7.15.4",
     "@babel/parser": "^7.15.4",
-    "@babel/traverse": "^7.14.0",
+    "@babel/traverse": "^7.15.4",
     "@babel/types": "^7.14.1",
     "ansi-html": "^0.0.7",
     "babelify": "^10.0.0",
@@ -94,12 +95,11 @@
   "scripts": {
     "build": "npm run doc",
     "release": "standard-version",
-    "prepublish": "npm run build",
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js'",
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
-    "test": "eslint . && jest",
-    "test-ci": "eslint . && jest --runInBand"
+    "test": "eslint . && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test-ci": "eslint . && node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -107,8 +107,9 @@
       "utils.js",
       "fixture"
     ],
+    "transform": {},
     "collectCoverage": true,
-    "testEnvironment": "node"
+    "testEnvironment": "jest-environment-node"
   },
   "config": {
     "commitizen": {

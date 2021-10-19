@@ -1,9 +1,11 @@
-const mock = require('mock-fs');
-const mockRepo = require('../../utils').mockRepo;
-const getGithubURLPrefix = require('../../../src/git/url_prefix');
-const parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
+import mock from 'mock-fs';
+import { mockRepo } from '../../utils.js';
+import {
+  getGithubURLPrefix,
+  parsePackedRefs
+} from '../../../src/git/url_prefix.js';
 
-test('getGithubURLPrefix', function() {
+test('getGithubURLPrefix', function () {
   mock(mockRepo.master);
   const masterUrl = getGithubURLPrefix({
     git: '/my/repository/path/.git',
@@ -34,7 +36,7 @@ test('getGithubURLPrefix', function() {
   expect(submoduleUrl).toBe('https://github.com/foo/bar/blob/this_is_the_sha/');
 });
 
-test('parsePackedRefs', function() {
+test('parsePackedRefs', function () {
   const input =
     '# pack-refs with: peeled fully-peeled\n' +
     '4acd658617928bd17ae7364ef2512630d97c007a refs/heads/babel-6\n' +

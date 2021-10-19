@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import _ from 'lodash';
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
@@ -49,7 +49,7 @@ function pick(comment) {
  * @returns {Array<Object>} nested comments, with only root comments
  * at the top level.
  */
-module.exports = function (comments) {
+export default function (comments) {
   let id = 0;
   const root = {
     members: getMembers()
@@ -244,4 +244,4 @@ module.exports = function (comments) {
   }
 
   return toComments(root.members.static);
-};
+}

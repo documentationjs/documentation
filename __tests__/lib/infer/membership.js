@@ -1,5 +1,6 @@
-const parse = require('../../../src/parsers/javascript');
-const inferMembership = require('../../../src/infer/membership')();
+import parse from '../../../src/parsers/javascript.js';
+import infer from '../../../src/infer/membership';
+const inferMembership = infer();
 
 function toComment(fn, file) {
   return parse(
@@ -12,7 +13,7 @@ function toComment(fn, file) {
 }
 
 function pick(obj, props) {
-  return props.reduce(function(memo, prop) {
+  return props.reduce(function (memo, prop) {
     if (obj[prop] !== undefined) {
       memo[prop] = obj[prop];
     }
@@ -27,10 +28,10 @@ function evaluate(fn, file) {
 function Foo() {}
 function lend() {}
 
-test('inferMembership - explicit', function() {
+test('inferMembership - explicit', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /**
          * Test
          * @memberof Bar
@@ -47,7 +48,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /**
          * Test
          * @memberof Bar#
@@ -63,7 +64,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /**
          * Test
          * @memberof Bar.prototype
@@ -79,7 +80,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** Test */
         Foo.bar = 0;
       })[0],
@@ -92,7 +93,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** Test */
         Foo.prototype.bar = 0;
       })[0],
@@ -105,7 +106,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** Test */
         Foo.bar.baz = 0;
       })[0],
@@ -118,7 +119,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** Test */
         (0).baz = 0;
       })[0],
@@ -128,7 +129,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.bar = {
           /** Test */
           baz: 0
@@ -143,7 +144,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.bar = {
           baz: {
             /** Test */
@@ -160,7 +161,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.prototype = {
           /** Test */
           bar: 0
@@ -176,12 +177,12 @@ test('inferMembership - explicit', function() {
   /* eslint object-shorthand: 0 */
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.prototype = {
           /**
            * Test
            */
-          bar: function() {}
+          bar: function () {}
         };
       })[0],
       ['memberof', 'scope']
@@ -193,7 +194,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.prototype = {
           /**
            * Test
@@ -210,7 +211,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         const Foo = {
           /** Test */
           baz: 0
@@ -226,10 +227,10 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         const Foo = {
           /** Test */
-          baz: function() {}
+          baz: function () {}
         };
         return Foo;
       })[0],
@@ -242,7 +243,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         function Foo() {
           {
             /** */
@@ -259,7 +260,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         const Foo = function Bar() {
           {
             /** */
@@ -276,7 +277,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         class Foo {
           constructor() {
             {
@@ -295,7 +296,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @memberof bar */
         class Foo {
           /** */
@@ -311,7 +312,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** @memberof bar */
         class Foo {
           /** */
@@ -327,13 +328,16 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         /** @memberof bar */
         abstract class Foo {
           /** */
           abstract baz();
         }
-      `, 'test.ts')[1], // [0] is an description for class Foo
+      `,
+        'test.ts'
+      )[1], // [0] is an description for class Foo
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -359,13 +363,16 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         /** @memberof bar */
         interface Foo {
           /** */
           baz(): string;
         }
-      `, 'test.ts')[1], // [0] is an description for class Foo
+      `,
+        'test.ts'
+      )[1], // [0] is an description for class Foo
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -392,14 +399,17 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         interface Foo {
           bar: {
             /** */
             baz: string;
           }
         }
-      `, 'test.ts')[0],
+      `,
+        'test.ts'
+      )[0],
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -441,12 +451,15 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         type Foo = {
           /** */
           bar: string;
         }
-      `, 'test.ts')[0],
+      `,
+        'test.ts'
+      )[0],
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -456,14 +469,17 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         type Foo = {
           bar: {
             /** */
             baz: string;
           }
         }
-      `, 'test.ts')[0],
+      `,
+        'test.ts'
+      )[0],
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -473,12 +489,15 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(`
+      evaluate(
+        `
         enum Foo {
           /** */
           A
         }
-      `, 'test.ts')[0],
+      `,
+        'test.ts'
+      )[0],
       ['memberof', 'scope']
     )
   ).toEqual({
@@ -488,9 +507,9 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         /** Test */
-        module.exports = function() {};
+        module.exports = function () {};
       })[0],
       ['memberof', 'scope']
     )
@@ -501,7 +520,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         lend(
           /** @lends Foo */ {
             /** Test */
@@ -518,11 +537,11 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         lend(
           /** @lends Foo */ {
             /** Test */
-            bar: function() {}
+            bar: function () {}
           }
         );
       })[0],
@@ -535,7 +554,7 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         lend(
           /** @lends Foo.prototype */ {
             /** Test */
@@ -552,11 +571,11 @@ test('inferMembership - explicit', function() {
 
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         lend(
           /** @lends Foo.prototype */ {
             /** Test */
-            bar: function() {}
+            bar: function () {}
           }
         );
       })[0],
@@ -582,16 +601,16 @@ test('inferMembership - explicit', function() {
   // }, 'inferMembership - revealing, static, function');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       lend(/** @lends Foo */ {});
       /** Test */
     })[0].memberof
   ).toBe(undefined);
 });
 
-test('inferMembership - exports', function() {
+test('inferMembership - exports', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** foo */
       exports.foo = 1;
@@ -599,15 +618,15 @@ test('inferMembership - exports', function() {
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** foo */
-      exports.foo = function() {};
+      exports.foo = function () {};
     })[1].memberof
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** bar */
       exports.foo.bar = 1;
@@ -615,7 +634,7 @@ test('inferMembership - exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       exports.foo = {
         /** bar */
@@ -625,7 +644,7 @@ test('inferMembership - exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       exports.foo = {
         /** bar */
@@ -635,15 +654,15 @@ test('inferMembership - exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** bar */
-      exports.foo.prototype.bar = function() {};
+      exports.foo.prototype.bar = function () {};
     })[1].memberof
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       exports.foo.prototype = {
         /** bar */
@@ -653,9 +672,9 @@ test('inferMembership - exports', function() {
   ).toBe('mod.foo');
 });
 
-test('inferMembership - module.exports', function() {
+test('inferMembership - module.exports', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** foo */
       module.exports.foo = 1;
@@ -663,15 +682,15 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** foo */
-      module.exports.foo = function() {};
+      module.exports.foo = function () {};
     })[1].memberof
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** bar */
       module.exports.foo.bar = 1;
@@ -679,7 +698,7 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       module.exports.foo = {
         /** bar */
@@ -689,7 +708,7 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       module.exports.foo = {
         /** bar */
@@ -699,15 +718,15 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod.foo');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       /** bar */
-      module.exports.prototype.bar = function() {};
+      module.exports.prototype.bar = function () {};
     })[1].memberof
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       module.exports.prototype = {
         /** bar */
@@ -717,7 +736,7 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @module mod
        * @name exports
@@ -727,17 +746,17 @@ test('inferMembership - module.exports', function() {
   ).toBe(undefined);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @module mod
        * @name exports
        */
-      module.exports = function() {};
+      module.exports = function () {};
     })[0].memberof
   ).toBe(undefined);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module mod */
       module.exports = {
         /** foo */
@@ -747,8 +766,8 @@ test('inferMembership - module.exports', function() {
   ).toBe('mod');
 });
 
-test('inferMembership - not module exports', function() {
-  const result = evaluate(function() {
+test('inferMembership - not module exports', function () {
+  const result = evaluate(function () {
     /**
      * @module mod
      */
@@ -760,8 +779,8 @@ test('inferMembership - not module exports', function() {
   expect(result[0].memberof).not.toBe('mod');
 });
 
-test('inferMembership - anonymous @module', function() {
-  const result = evaluate(function() {
+test('inferMembership - anonymous @module', function () {
+  const result = evaluate(function () {
     /**
      * @module
      */
@@ -773,8 +792,8 @@ test('inferMembership - anonymous @module', function() {
   expect(result[1].memberof).toBe('mod');
 });
 
-test('inferMembership - no @module', function() {
-  const result = evaluate(function() {
+test('inferMembership - no @module', function () {
+  const result = evaluate(function () {
     /** Test */
     exports.foo = 1;
   }, '/path/mod.js');
@@ -783,10 +802,10 @@ test('inferMembership - no @module', function() {
   expect(result[0].memberof).toBe('mod');
 });
 
-test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function() {
+test('inferMembership - https://github.com/documentationjs/documentation/issues/378', function () {
   expect(
     pick(
-      evaluate(function() {
+      evaluate(function () {
         Foo.prototype = {
           /** Test */
           bar() {
@@ -803,7 +822,7 @@ test('inferMembership - https://github.com/documentationjs/documentation/issues/
   });
 });
 
-test('inferMembership - export', function() {
+test('inferMembership - export', function () {
   expect(
     pick(
       evaluate(

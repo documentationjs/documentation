@@ -1,10 +1,11 @@
-const remark = require('remark');
-const html = require('remark-html');
-const Syntax = require('doctrine-temporary-fork').Syntax;
-const u = require('unist-builder');
-const _rerouteLinks = require('./reroute_links');
-const highlighter = require('../highlighter');
-const formatType = require('./format_type');
+import remark from 'remark';
+import html from 'remark-html';
+import doctrine from 'doctrine-temporary-fork';
+const Syntax = doctrine.Syntax;
+import u from 'unist-builder';
+import _rerouteLinks from './reroute_links.js';
+import highlighter from '../highlighter.js';
+import formatType from './format_type.js';
 
 /**
  * Create a formatter group, given a linker method that resolves
@@ -13,7 +14,7 @@ const formatType = require('./format_type');
  * @param getHref linker method
  * @returns {formatters} formatter object
  */
-module.exports = function (getHref) {
+export default function (getHref) {
   const rerouteLinks = _rerouteLinks.bind(undefined, getHref);
 
   const formatters = {};
@@ -118,4 +119,4 @@ module.exports = function (getHref) {
   };
 
   return formatters;
-};
+}

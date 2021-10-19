@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const gitUrlParse = require('git-url-parse');
-const ini = require('ini');
+import fs from 'fs';
+import path from 'path';
+import gitUrlParse from 'git-url-parse';
+import ini from 'ini';
 
 /**
  * Sometimes git will [pack refs](https://git-scm.com/docs/git-pack-refs)
@@ -14,7 +14,7 @@ const ini = require('ini');
  * @param {string} branchName the branch name to resolve to
  * @returns {string} sha hash referring to current tree
  */
-function parsePackedRefs(packedRefs, branchName) {
+export function parsePackedRefs(packedRefs, branchName) {
   return packedRefs
     .split(/\n/)
     .filter(line => line[0] !== '#' && line[0] !== '^')
@@ -32,7 +32,7 @@ function parsePackedRefs(packedRefs, branchName) {
  * @returns {string} base HTTPS url of the GitHub repository
  * @throws {Error} if the root is not a git repo
  */
-function getGithubURLPrefix({ git, root }) {
+export function getGithubURLPrefix({ git, root }) {
   let sha;
   try {
     const head = fs.readFileSync(path.join(git, 'HEAD'), 'utf8');
@@ -83,6 +83,3 @@ function parseGitConfig(configPath) {
     );
   return ini.parse(str);
 }
-
-module.exports = getGithubURLPrefix;
-module.exports.parsePackedRefs = parsePackedRefs;

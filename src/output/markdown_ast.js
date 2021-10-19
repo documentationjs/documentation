@@ -1,13 +1,13 @@
-const u = require('unist-builder');
-const remark = require('remark');
-const mergeConfig = require('../merge_config');
-const toc = require('remark-toc');
-const links = require('remark-reference-links');
-const hljs = require('highlight.js');
-const GithubSlugger = require('github-slugger');
-const LinkerStack = require('./util/linker_stack');
-const rerouteLinks = require('./util/reroute_links');
-const _formatType = require('./util/format_type');
+import u from 'unist-builder';
+import remark from 'remark';
+import mergeConfig from '../merge_config.js';
+import toc from 'remark-toc';
+import links from 'remark-reference-links';
+import hljs from 'highlight.js';
+import GithubSlugger from 'github-slugger';
+import LinkerStack from './util/linker_stack.js';
+import rerouteLinks from './util/reroute_links.js';
+import _formatType from './util/format_type.js';
 
 const DEFAULT_LANGUAGE = 'javascript';
 
@@ -23,7 +23,7 @@ const DEFAULT_LANGUAGE = 'javascript';
  * consult hljs.configure for the full list.
  * @returns {Promise<Object>} returns an eventual Markdown value
  */
-function markdownAST(comments, args) {
+export default function markdownAST(comments, args) {
   return mergeConfig(args).then(config => buildMarkdownAST(comments, config));
 }
 
@@ -393,5 +393,3 @@ function buildMarkdownAST(comments, config) {
 
   return Promise.resolve(root);
 }
-
-module.exports = markdownAST;

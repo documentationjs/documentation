@@ -1,6 +1,6 @@
 /* eslint no-console: 0 */
-const File = require('vinyl');
-const ansiHTML = require('ansi-html');
+import File from 'vinyl';
+import ansiHTML from 'ansi-html';
 
 const template =
   '<head><style>' +
@@ -25,7 +25,7 @@ ansiHTML.setColors({
  * @param error parse or generation error
  * @returns {Object} vinyl file object
  */
-function errorPage(error) {
+export default function errorPage(error) {
   let errorText = error.toString();
   console.error(error);
   if (error.codeFrame) {
@@ -36,5 +36,3 @@ function errorPage(error) {
     contents: Buffer.from(template + errorText)
   });
 }
-
-module.exports = errorPage;

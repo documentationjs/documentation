@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-const inferAugments = require('../../../src/infer/augments');
-const parse = require('../../../src/parsers/javascript');
+import inferAugments from '../../../src/infer/augments';
+import parse from '../../../src/parsers/javascript';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,7 +16,7 @@ function evaluate(code, filename) {
   return inferAugments(toComment(code, filename));
 }
 
-test('inferAugments', function() {
+test('inferAugments', function () {
   expect(evaluate('/** */class A extends B {}').augments).toEqual([
     {
       name: 'B',
@@ -35,7 +35,9 @@ test('inferAugments', function() {
     }
   ]);
 
-  expect(evaluate('/** */interface A extends B, C {}', 'test.ts').augments).toEqual([
+  expect(
+    evaluate('/** */interface A extends B, C {}', 'test.ts').augments
+  ).toEqual([
     {
       name: 'B',
       title: 'extends'

@@ -1,15 +1,15 @@
-const fs = require('fs');
-const remark = require('remark');
-const path = require('path');
-const documentation = require('../');
-const sharedOptions = require('./shared_options');
-const inject = require('mdast-util-inject');
-const chalk = require('chalk');
-const diff = require('diff');
-const getReadmeFile = require('../get-readme-file');
+import fs from 'fs';
+import remark from 'remark';
+import path from 'path';
+import * as documentation from '../index.js';
+import { sharedOutputOptions, sharedInputOptions } from './shared_options.js';
+import inject from 'mdast-util-inject';
+import chalk from 'chalk';
+import { createPatch } from 'diff';
+import getReadmeFile from '../get-readme-file.js';
 
-module.exports.command = 'readme [input..]';
-module.exports.description = 'inject documentation into your README.md';
+const command = 'readme [input..]';
+const description = 'inject documentation into your README.md';
 
 const defaultReadmeFile = getReadmeFile('.');
 
@@ -19,35 +19,30 @@ const defaultReadmeFile = getReadmeFile('.');
  * @returns {Object} yargs with options
  * @private
  */
-module.exports.builder = Object.assign(
-  {},
-  sharedOptions.sharedOutputOptions,
-  sharedOptions.sharedInputOptions,
-  {
-    'readme-file': {
-      describe: 'The markdown file into which to inject documentation',
-      default: defaultReadmeFile
-    },
-    section: {
-      alias: 's',
-      describe:
-        'The section heading after which to inject generated documentation',
-      required: true
-    },
-    'diff-only': {
-      alias: 'd',
-      describe:
-        'Instead of updating the given README with the generated documentation,' +
-        ' just check if its contents match, exiting nonzero if not.',
-      default: false
-    },
-    quiet: {
-      alias: 'q',
-      describe: 'Quiet mode: do not print messages or README diff to stdout.',
-      default: false
-    }
+const builder = Object.assign({}, sharedOutputOptions, sharedInputOptions, {
+  'readme-file': {
+    describe: 'The markdown file into which to inject documentation',
+    default: defaultReadmeFile
+  },
+  section: {
+    alias: 's',
+    describe:
+      'The section heading after which to inject generated documentation',
+    required: true
+  },
+  'diff-only': {
+    alias: 'd',
+    describe:
+      'Instead of updating the given README with the generated documentation,' +
+      ' just check if its contents match, exiting nonzero if not.',
+    default: false
+  },
+  quiet: {
+    alias: 'q',
+    describe: 'Quiet mode: do not print messages or README diff to stdout.',
+    default: false
   }
-);
+});
 
 /**
  * Insert API documentation into a Markdown readme
@@ -55,7 +50,7 @@ module.exports.builder = Object.assign(
  * @param {Object} argv args from the CLI option parser
  * @returns {undefined} has the side-effect of writing a file or printing to stdout
  */
-module.exports.handler = function readme(argv) {
+const handler = function readme(argv) {
   argv._handled = true;
 
   if (!argv.input.length) {
@@ -94,13 +89,7 @@ module.exports.handler = function readme(argv) {
         .process(readmeContent)
     )
     .then(file => {
-      const diffRaw = diff.createPatch(
-        '',
-        readmeContent,
-        file.contents,
-        '',
-        ''
-      );
+      const diffRaw = createPatch('', readmeContent, file.contents, '', '');
       if (diffRaw.split('\n').length === 5) {
         log(`${argv.readmeFile} is up to date.`);
         process.exit(0);
@@ -155,3 +144,5 @@ function plugin(options) {
     next();
   };
 }
+
+export default { command, description, builder, handler };

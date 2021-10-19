@@ -1,7 +1,7 @@
-const parseMarkdown = require('./remark-parse');
-const chalk = require('chalk');
-const path = require('path');
-const fs = require('fs');
+import parseMarkdown from './remark-parse.js';
+import chalk from 'chalk';
+import path from 'path';
+import fs from 'fs';
 
 /**
  * Sort two documentation objects, given an optional order object. Returns
@@ -12,7 +12,7 @@ const fs = require('fs');
  * @returns {number} sorting value
  * @private
  */
-module.exports = function sortDocs(comments, options) {
+export default function (comments, options) {
   if (!options || !options.toc) {
     return sortComments(comments, options && options.sortOrder);
   }
@@ -101,7 +101,7 @@ module.exports = function sortDocs(comments, options) {
       );
     });
   return fixed.concat(unfixed);
-};
+}
 
 function compareCommentsByName(a, b) {
   const akey = a.name;

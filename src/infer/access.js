@@ -6,7 +6,7 @@
  * @returns {Function} inference method
  * @private
  */
-function inferAccessWithPattern(pattern) {
+export default function inferAccessWithPattern(pattern) {
   const re = pattern && new RegExp(pattern);
 
   /**
@@ -41,5 +41,3 @@ function inferAccessWithPattern(pattern) {
     return comment;
   };
 }
-
-module.exports = inferAccessWithPattern;

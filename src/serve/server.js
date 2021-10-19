@@ -1,11 +1,12 @@
 // This file triggers https://github.com/prettier/prettier/issues/1151
 
-const http = require('http');
-const mime = require('mime');
-const pify = require('pify');
-const EventEmitter = require('events').EventEmitter;
-const liveReload = require('tiny-lr');
-const sep = require('path').sep;
+import http from 'http';
+import mime from 'mime';
+import pify from 'pify';
+import events from 'events';
+const EventEmitter = events.EventEmitter;
+import liveReload from 'tiny-lr';
+import { sep } from 'path';
 
 /**
  * A static file server designed to support documentation.js's --serve
@@ -16,7 +17,7 @@ const sep = require('path').sep;
  * @class
  * @param port server port to serve on.
  */
-class Server extends EventEmitter {
+export default class Server extends EventEmitter {
   constructor(port, disableLiveReload) {
     super();
     if (typeof port !== 'number') {
@@ -114,5 +115,3 @@ class Server extends EventEmitter {
     });
   }
 }
-
-module.exports = Server;

@@ -1,6 +1,6 @@
-const path = require('path');
-const findGit = require('./git/find_git');
-const getGithubURLPrefix = require('./git/url_prefix');
+import path from 'path';
+import findGit from './git/find_git.js';
+import { getGithubURLPrefix } from './git/url_prefix.js';
 
 /**
  * Attempts to link code to its place on GitHub.
@@ -9,7 +9,7 @@ const getGithubURLPrefix = require('./git/url_prefix');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with github inferred
  */
-module.exports = function (comment) {
+export default function (comment) {
   const paths = findGit(comment.context.file);
 
   const urlPrefix = paths && getGithubURLPrefix(paths);
@@ -38,4 +38,4 @@ module.exports = function (comment) {
     };
   }
   return comment;
-};
+}

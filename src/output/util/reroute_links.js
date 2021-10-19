@@ -1,4 +1,4 @@
-const visit = require('unist-util-visit');
+import visit from 'unist-util-visit';
 
 /**
  * Reroute inline jsdoc links in documentation
@@ -7,7 +7,7 @@ const visit = require('unist-util-visit');
  * @returns {Object} that ast with rerouted links
  * @private
  */
-module.exports = function rerouteLinks(getHref, ast) {
+export default function rerouteLinks(getHref, ast) {
   visit(ast, 'link', function (node) {
     if (
       node.jsdoc &&
@@ -18,4 +18,4 @@ module.exports = function rerouteLinks(getHref, ast) {
     }
   });
   return ast;
-};
+}

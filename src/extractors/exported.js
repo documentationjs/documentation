@@ -1,10 +1,14 @@
-const traverse = require('@babel/traverse').default;
-const isJSDocComment = require('../is_jsdoc_comment');
-const t = require('@babel/types');
-const nodePath = require('path');
-const fs = require('fs');
-const { parseToAst } = require('../parsers/parse_to_ast');
-const findTarget = require('../infer/finders').findTarget;
+import babelTraverse from '@babel/traverse';
+import isJSDocComment from '../is_jsdoc_comment.js';
+import t from '@babel/types';
+import nodePath from 'path';
+import fs from 'fs';
+import { parseToAst } from '../parsers/parse_to_ast.js';
+import findTarget from '../infer/finders.js';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const traverse = babelTraverse.default;
 
 /**
  * Iterate through the abstract syntax tree, finding ES6-style exports,
@@ -17,9 +21,13 @@ const findTarget = require('../infer/finders').findTarget;
  * @returns {Array<Object>} comments
  * @private
  */
-function walkExported(ast, data /*: {
+export default function walkExported(
+  ast,
+  data /*: {
   file: string
-} */, addComment) {
+} */,
+  addComment
+) {
   const newResults = [];
   const filename = data.file;
   const dataCache = new Map();
@@ -316,5 +324,3 @@ function findLocalType(scope, local) {
   });
   return rv;
 }
-
-module.exports = walkExported;

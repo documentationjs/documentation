@@ -1,7 +1,7 @@
-const n = require('@babel/types');
-const pathParse = require('parse-filepath');
-const isJSDocComment = require('../is_jsdoc_comment');
-const parse = require('../parse');
+import n from '@babel/types';
+import pathParse from 'parse-filepath';
+import isJSDocComment from '../is_jsdoc_comment.js';
+import parse from '../parse.js';
 
 function inferModuleName(comment) {
   return (
@@ -215,7 +215,7 @@ function normalizeMemberof(comment) {
  * @private
  * @returns {Object} comment with membership inferred
  */
-module.exports = function () {
+export default function () {
   let currentModule;
 
   /**
@@ -490,4 +490,4 @@ module.exports = function () {
 
     return comment;
   };
-};
+}

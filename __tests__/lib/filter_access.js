@@ -1,6 +1,6 @@
-const filterAccess = require('../../src/filter_access');
+import filterAccess from '../../src/filter_access.js';
 
-test('filterAccess ignore', function() {
+test('filterAccess ignore', function () {
   expect(
     filterAccess(
       ['public', 'protected', 'undefined'],
@@ -14,7 +14,7 @@ test('filterAccess ignore', function() {
   ).toEqual([]);
 });
 
-test('filterAccess public, protected, undefined, no private', function() {
+test('filterAccess public, protected, undefined, no private', function () {
   expect(
     filterAccess(
       ['public', 'protected', 'undefined'],
@@ -46,7 +46,7 @@ test('filterAccess public, protected, undefined, no private', function() {
   ]);
 });
 
-test('filterAccess explicit public', function() {
+test('filterAccess explicit public', function () {
   expect(
     filterAccess(
       ['public'],
@@ -64,7 +64,7 @@ test('filterAccess explicit public', function() {
   ]);
 });
 
-test('filterAccess override', function() {
+test('filterAccess override', function () {
   expect(
     filterAccess(
       ['private'],
@@ -81,7 +81,7 @@ test('filterAccess override', function() {
   ]);
 });
 
-test('filterAccess nesting', function() {
+test('filterAccess nesting', function () {
   expect(
     filterAccess(
       ['public', 'protected', 'undefined'],
