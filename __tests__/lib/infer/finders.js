@@ -1,5 +1,5 @@
-const parse = require('../../../src/parsers/javascript');
-const findTarget = require('../../../src/infer/finders').findTarget;
+import parse from '../../../src/parsers/javascript.js';
+import findTarget from '../../../src/infer/finders';
 
 function toComment(fn) {
   if (typeof fn == 'function') {
@@ -18,10 +18,10 @@ function evaluate(fn, re) {
   return toComment(fn);
 }
 
-test('findTarget', function() {
+test('findTarget', function () {
   expect(
     findTarget(
-      toComment(function() {
+      toComment(function () {
         /** Test */
         const x = 10;
       }).context.ast
@@ -30,7 +30,7 @@ test('findTarget', function() {
 
   expect(
     findTarget(
-      toComment(function() {
+      toComment(function () {
         const z = {};
 
         /** Test */
@@ -41,7 +41,7 @@ test('findTarget', function() {
 
   expect(
     findTarget(
-      toComment(function() {
+      toComment(function () {
         const z = {
           /** Test */
           y: 10

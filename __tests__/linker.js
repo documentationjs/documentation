@@ -1,4 +1,4 @@
-const LinkerStack = require('../src/output/util/linker_stack');
+import LinkerStack from '../src/output/util/linker_stack.js';
 
 test('linkerStack', function () {
   const linkerStack = new LinkerStack({});

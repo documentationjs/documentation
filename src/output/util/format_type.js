@@ -1,5 +1,6 @@
-const Syntax = require('doctrine-temporary-fork').Syntax;
-const u = require('unist-builder');
+import doctrine from 'doctrine-temporary-fork';
+const Syntax = doctrine.Syntax;
+import u from 'unist-builder';
 
 /**
  * Shortcut to create a new text node
@@ -99,7 +100,7 @@ function decorate(formatted, str, prefix) {
  * formatType({ type: 'NameExpression', name: 'String' })[0].url
  * // => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
  */
-function formatType(getHref, node) {
+export default function formatType(getHref, node) {
   let result = [];
 
   if (!node) {
@@ -193,5 +194,3 @@ function formatType(getHref, node) {
       throw new Error('Unknown type ' + node.type);
   }
 }
-
-module.exports = formatType;

@@ -1,19 +1,22 @@
-const documentationSchema = require('documentation-schema');
-const validate = require('json-schema');
-const documentation = require('../');
-const outputMarkdown = require('../src/output/markdown.js');
-const outputMarkdownAST = require('../src/output/markdown_ast.js');
-const outputHtml = require('../src/output/html.js');
-const normalize = require('./utils').normalize;
-const glob = require('glob');
-const pify = require('pify');
-const path = require('path');
-const fs = require('fs');
-const _ = require('lodash');
-const chdir = require('chdir');
-const config = require('../src/config');
+import documentationSchema from 'documentation-schema';
+import validate from 'json-schema';
+import * as documentation from '../src/index';
+import outputMarkdown from '../src/output/markdown.js';
+import outputMarkdownAST from '../src/output/markdown_ast.js';
+import outputHtml from '../src/output/html.js';
+import { normalize } from './utils';
+import glob from 'glob';
+import pify from 'pify';
+import path from 'path';
+import fs from 'fs';
+import _ from 'lodash';
+import chdir from 'chdir';
+import config from '../src/config';
+import { fileURLToPath } from 'url';
 
 const UPDATE = !!process.env.UPDATE;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function makePOJO(ast) {
   return JSON.parse(JSON.stringify(ast));
@@ -37,7 +40,6 @@ beforeEach(function () {
 
 if (fs.existsSync(path.join(__dirname, '../.git'))) {
   test('git option', async function () {
-    jest.setTimeout(10000); // 10 second timeout. After update flow.js on 0.56 version the test is executed more time.
     const file = path.join(__dirname, './fixture/simple.input.js');
     const result = await documentation.build([file], { github: true });
     normalize(result);

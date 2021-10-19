@@ -1,12 +1,13 @@
-const _ = require('lodash');
-const t = require('@babel/types');
-const parse = require('../parse');
-const walkComments = require('../extractors/comments');
-const walkExported = require('../extractors/exported');
-const util = require('util');
+import _ from 'lodash';
+import t from '@babel/types';
+import parse from '../parse.js';
+import walkComments from '../extractors/comments.js';
+import walkExported from '../extractors/exported.js';
+import util from 'util';
+import findTarget from '../infer/finders.js';
+import { parseToAst } from './parse_to_ast.js';
+
 const debuglog = util.debuglog('documentation');
-const findTarget = require('../infer/finders').findTarget;
-const { parseToAst } = require('./parse_to_ast');
 
 /**
  * Receives a module-dep item,
@@ -16,7 +17,7 @@ const { parseToAst } = require('./parse_to_ast');
  * @param {Object} config config
  * @returns {Array<Object>} an array of parsed comments
  */
-function parseJavaScript(data, config) {
+export default function parseJavaScript(data, config) {
   const visited = new Set();
   const commentsByNode = new Map();
 
@@ -110,5 +111,3 @@ function _addComment(
     return comment;
   }
 }
-
-module.exports = parseJavaScript;

@@ -1,6 +1,7 @@
-const formatters = require('../../../../src/output/util/formatters')(getHref);
+import fromat from '../../../../src/output/util/formatters.js';
+const formatters = fromat(getHref);
 
-test('formatters.parameters -- long form', function() {
+test('formatters.parameters -- long form', function () {
   expect(formatters.parameters({})).toEqual('()');
   expect(formatters.parameters({ params: [] })).toEqual('()');
   expect(formatters.parameters({ params: [{ name: 'foo' }] })).toEqual(
@@ -13,7 +14,7 @@ test('formatters.parameters -- long form', function() {
   ).toEqual('(foo: any?)');
 });
 
-test('formatters.parameters -- short form', function() {
+test('formatters.parameters -- short form', function () {
   expect(formatters.parameters({}, true)).toEqual('()');
   expect(formatters.parameters({ params: [] }, true)).toEqual('()');
   expect(formatters.parameters({ params: [{ name: 'foo' }] }, true)).toEqual(

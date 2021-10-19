@@ -1,5 +1,5 @@
-const path = require('path');
-const mergeConfig = require('../merge_config');
+import path from 'path';
+import mergeConfig from '../merge_config.js';
 
 /**
  * Formats documentation as HTML.
@@ -21,17 +21,11 @@ const mergeConfig = require('../merge_config');
  *     streamArray(output).pipe(vfs.dest('./output-directory'));
  *   });
  */
-function html(comments, config) {
-  if (!config) {
-    config = {};
-  }
-  return mergeConfig(config).then(config => {
-    let themePath = '../default_theme/';
-    if (config.theme) {
-      themePath = path.resolve(process.cwd(), config.theme);
-    }
-    return require(themePath)(comments, config);
-  });
-}
+export default async function html(comments, localConfig = {}) {
+  const config = await mergeConfig(localConfig);
+  const themePath =
+    (config.theme && path.resolve(process.cwd(), config.theme)) ||
+    '../default_theme/index.js';
 
-module.exports = html;
+  return (await import(themePath)).default(comments, config);
+}

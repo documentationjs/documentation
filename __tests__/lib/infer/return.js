@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-const inferReturn = require('../../../src/infer/return');
-const parse = require('../../../src/parsers/javascript');
+import inferReturn from '../../../src/infer/return';
+import parse from '../../../src/parsers/javascript';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,7 +16,7 @@ function evaluate(code, filename) {
   return inferReturn(toComment(code, filename));
 }
 
-test('inferReturn (flow)', function() {
+test('inferReturn (flow)', function () {
   expect(evaluate('/** */function a(): number {}').returns).toEqual([
     {
       title: 'returns',
@@ -79,7 +79,7 @@ test('inferReturn (flow)', function() {
   });
 });
 
-test('inferReturn (typescript)', function() {
+test('inferReturn (typescript)', function () {
   expect(evaluate('/** */function a(): number {}', 'test.ts').returns).toEqual([
     {
       title: 'returns',
@@ -89,7 +89,9 @@ test('inferReturn (typescript)', function() {
       }
     }
   ]);
-  expect(evaluate('/** */var a = function(): number {}', 'test.ts').returns).toEqual([
+  expect(
+    evaluate('/** */var a = function(): number {}', 'test.ts').returns
+  ).toEqual([
     {
       title: 'returns',
       type: {
@@ -99,7 +101,8 @@ test('inferReturn (typescript)', function() {
     }
   ]);
   expect(
-    evaluate('/** @returns {string} */function a(): number {}', 'test.ts').returns[0].type
+    evaluate('/** @returns {string} */function a(): number {}', 'test.ts')
+      .returns[0].type
   ).toEqual({
     name: 'string',
     type: 'NameExpression'
@@ -137,7 +140,10 @@ test('inferReturn (typescript)', function() {
     }
   ]);
 
-  expect(evaluate('abstract class Test { /** */abstract a(): number; }', 'test.ts').returns).toEqual([
+  expect(
+    evaluate('abstract class Test { /** */abstract a(): number; }', 'test.ts')
+      .returns
+  ).toEqual([
     {
       title: 'returns',
       type: {
@@ -148,7 +154,8 @@ test('inferReturn (typescript)', function() {
   ]);
 
   expect(
-    evaluate('interface Foo { /** */ bar(): string; }', 'test.ts').returns[0].type
+    evaluate('interface Foo { /** */ bar(): string; }', 'test.ts').returns[0]
+      .type
   ).toEqual({
     name: 'string',
     type: 'NameExpression'

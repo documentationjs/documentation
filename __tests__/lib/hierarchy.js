@@ -1,5 +1,5 @@
-const parse = require('../../src/parsers/javascript');
-const hierarchy = require('../../src/hierarchy');
+import parse from '../../src/parsers/javascript.js';
+import hierarchy from '../../src/hierarchy.js';
 
 function toComments(fn, filename) {
   return parse(
@@ -16,13 +16,13 @@ function evaluate(fn, callback) {
 }
 
 function map(arr, prop) {
-  return arr.map(function(item) {
+  return arr.map(function (item) {
     return item[prop];
   });
 }
 
-test('hierarchy', function() {
-  const comments = evaluate(function() {
+test('hierarchy', function () {
+  const comments = evaluate(function () {
     /**
      * @name Class
      * @class
@@ -66,8 +66,8 @@ test('hierarchy', function() {
   expect(map(classMembers.events[0].path, 'name')).toEqual(['Class', 'event']);
 });
 
-test('hierarchy - nesting', function() {
-  const comments = evaluate(function() {
+test('hierarchy - nesting', function () {
+  const comments = evaluate(function () {
     /**
      * @name Parent
      * @class
@@ -105,8 +105,8 @@ test('hierarchy - nesting', function() {
   ]);
 });
 
-test('hierarchy - multisignature', function() {
-  const comments = evaluate(function() {
+test('hierarchy - multisignature', function () {
+  const comments = evaluate(function () {
     /**
      * @name Parent
      * @class
@@ -126,8 +126,8 @@ test('hierarchy - multisignature', function() {
   expect(map(comments[0].members.instance, 'name')).toEqual(['foo', 'foo']);
 });
 
-test('hierarchy - missing memberof', function() {
-  const test = evaluate(function() {
+test('hierarchy - missing memberof', function () {
+  const test = evaluate(function () {
     /**
      * @name test
      * @memberof DoesNotExist
@@ -142,8 +142,8 @@ test('hierarchy - missing memberof', function() {
   ]);
 });
 
-test('hierarchy - anonymous', function() {
-  const result = evaluate(function() {
+test('hierarchy - anonymous', function () {
+  const result = evaluate(function () {
     /** Test */
   })[0];
 
@@ -154,8 +154,8 @@ test('hierarchy - anonymous', function() {
   ]);
 });
 
-test('hierarchy - object prototype member names', function() {
-  const comments = evaluate(function() {
+test('hierarchy - object prototype member names', function () {
+  const comments = evaluate(function () {
     /**
      * @name should
      * @function

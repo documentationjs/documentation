@@ -1,9 +1,13 @@
-const mock = require('mock-fs');
-const mockRepo = require('../../utils').mockRepo;
-const path = require('path');
-const findGit = require('../../../src/git/find_git');
+import mock from 'mock-fs';
+import { mockRepo } from '../../utils.js';
+import path from 'path';
+import findGit from '../../../src/git/find_git.js';
+import { fileURLToPath } from 'url';
 
-test('findGit', function() {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+test('findGit', function () {
   mock(mockRepo.master);
   const root =
     path.parse(__dirname).root + path.join('my', 'repository', 'path');

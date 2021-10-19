@@ -1,30 +1,34 @@
-const fs = require('fs');
-const path = require('path');
-const _ = require('lodash');
-const sort = require('./sort');
-const nest = require('./nest');
-const filterAccess = require('./filter_access');
-const dependency = require('./input/dependency');
-const shallow = require('./input/shallow');
-const parseJavaScript = require('./parsers/javascript');
-const parseVueScript = require('./parsers/vue');
-const github = require('./github');
-const hierarchy = require('./hierarchy');
-const inferName = require('./infer/name');
-const inferKind = require('./infer/kind');
-const inferAugments = require('./infer/augments');
-const inferImplements = require('./infer/implements');
-const inferParams = require('./infer/params');
-const inferProperties = require('./infer/properties');
-const inferMembership = require('./infer/membership');
-const inferReturn = require('./infer/return');
-const inferAccess = require('./infer/access');
-const inferType = require('./infer/type');
-const formatLint = require('./lint').formatLint;
-const garbageCollect = require('./garbage_collect');
-const lintComments = require('./lint').lintComments;
-const markdownAST = require('./output/markdown_ast');
-const mergeConfig = require('./merge_config');
+import fs from 'fs';
+import path from 'path';
+import _ from 'lodash';
+import sort from './sort.js';
+import { nest } from './nest.js';
+import filterAccess from './filter_access.js';
+import dependency from './input/dependency.js';
+import shallow from './input/shallow.js';
+import parseJavaScript from './parsers/javascript.js';
+import parseVueScript from './parsers/vue.js';
+import github from './github.js';
+import hierarchy from './hierarchy.js';
+import inferName from './infer/name.js';
+import inferKind from './infer/kind.js';
+import inferAugments from './infer/augments.js';
+import inferImplements from './infer/implements.js';
+import inferParams from './infer/params.js';
+import inferProperties from './infer/properties.js';
+import inferMembership from './infer/membership.js';
+import inferReturn from './infer/return.js';
+import inferAccess from './infer/access.js';
+import inferType from './infer/type.js';
+import { formatLint, lintComments } from './lint.js';
+import garbageCollect from './garbage_collect.js';
+import markdownAST from './output/markdown_ast.js';
+import mergeConfig from './merge_config.js';
+import html from './output/html.js';
+import md from './output/markdown.js';
+import json from './output/json.js';
+import createFormatters from './output/util/formatters.js';
+import LinkerStack from './output/util/linker_stack.js';
 
 /**
  * Build a pipeline of comment handlers.
@@ -67,7 +71,7 @@ function configure(indexes, args) {
  * @param {Object} config options
  * @returns {Promise<Array<string>>} promise with results
  */
-function expandInputs(indexes, config) {
+export function expandInputs(indexes, config) {
   // Ensure that indexes is an array of strings
   indexes = [].concat(indexes);
 
@@ -182,7 +186,8 @@ function lintInternal(inputsAndConfig) {
  *   }
  * });
  */
-const lint = (indexes, args) => configure(indexes, args).then(lintInternal);
+export const lint = (indexes, args) =>
+  configure(indexes, args).then(lintInternal);
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -222,7 +227,8 @@ const lint = (indexes, args) => configure(indexes, args).then(lintInternal);
  *   // any other kind of code data.
  * });
  */
-const build = (indexes, args) => configure(indexes, args).then(buildInternal);
+export const build = (indexes, args) =>
+  configure(indexes, args).then(buildInternal);
 
 /**
  * Documentation's formats are modular methods that take comments
@@ -231,20 +237,15 @@ const build = (indexes, args) => configure(indexes, args).then(buildInternal);
  * output.
  * @public
  */
-const formats = {
-  html: require('./output/html'),
-  md: require('./output/markdown'),
+export const formats = {
+  html,
+  md,
   remark: (comments, config) =>
     markdownAST(comments, config).then(res => JSON.stringify(res, null, 2)),
-  json: require('./output/json')
+  json
 };
 
-module.exports.lint = lint;
-module.exports.expandInputs = expandInputs;
-module.exports.build = build;
-module.exports.formats = formats;
-
-module.exports.util = {
-  createFormatters: require('./output/util/formatters'),
-  LinkerStack: require('./output/util/linker_stack')
+export const util = {
+  createFormatters,
+  LinkerStack
 };

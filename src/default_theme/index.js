@@ -1,13 +1,18 @@
-var fs = require('fs'),
-  path = require('path'),
-  File = require('vinyl'),
-  vfs = require('vinyl-fs'),
-  _ = require('lodash'),
-  concat = require('concat-stream'),
-  GithubSlugger = require('github-slugger'),
-  createFormatters = require('../').util.createFormatters,
-  LinkerStack = require('../').util.LinkerStack,
-  hljs = require('highlight.js');
+import fs from 'fs';
+import path from 'path';
+import File from 'vinyl';
+import vfs from 'vinyl-fs';
+import _ from 'lodash';
+import concat from 'concat-stream';
+import GithubSlugger from 'github-slugger';
+import { util } from '../index';
+import hljs from 'highlight.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const { LinkerStack, createFormatters } = util;
 
 function isFunction(section) {
   return (
@@ -19,7 +24,7 @@ function isFunction(section) {
   );
 }
 
-module.exports = function (comments, config) {
+export default function (comments, config) {
   var linkerStack = new LinkerStack(config).namespaceResolver(
     comments,
     function (namespace) {
@@ -128,4 +133,4 @@ module.exports = function (comments, config) {
       })
     );
   });
-};
+}

@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
 const PATH_SPLIT = /(?:\[])?\./g;
 
@@ -30,7 +30,7 @@ const tagDepth = tag => tag.name.split(PATH_SPLIT).length;
  * @param {Array<CommentTag>} tags a list of tags
  * @returns {Object} nested comment
  */
-const nestTag = (
+export const nestTag = (
   tags,
   errors
   // Use lodash here both for brevity and also because, unlike JavaScript's
@@ -95,11 +95,8 @@ const nestTag = (
  * @param {Object} comment input comment
  * @returns {Object} nested comment
  */
-const nest = comment =>
+export const nest = comment =>
   Object.assign(comment, {
     params: nestTag(comment.params, comment.errors),
     properties: nestTag(comment.properties, comment.errors)
   });
-
-module.exports = nest;
-module.exports.nestTag = nestTag;

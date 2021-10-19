@@ -1,8 +1,8 @@
-const http = require('http');
-const { walk } = require('../src/walk');
-const concat = require('concat-stream');
+import walk from '../src/walk.js';
+import http from 'http';
+import concat from 'concat-stream';
 
-function get(url, callback) {
+export function get(url, callback) {
   return new Promise((resolve, reject) => {
     http.get(url, function (res) {
       res.pipe(
@@ -17,7 +17,7 @@ function get(url, callback) {
   });
 }
 
-function normalize(comments) {
+export function normalize(comments) {
   return walk(comments, function (comment) {
     const hasGithub = !!comment.context.github;
     const path = comment.context.path;
@@ -36,7 +36,7 @@ function normalize(comments) {
   });
 }
 
-module.exports.mockRepo = {
+export const mockRepo = {
   master: {
     '/my': {
       repository: {
@@ -132,6 +132,3 @@ module.exports.mockRepo = {
     }
   }
 };
-
-module.exports.get = get;
-module.exports.normalize = normalize;

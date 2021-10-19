@@ -1,6 +1,6 @@
-const parse = require('../../../src/parsers/javascript');
-const inferKind = require('../../../src/infer/kind');
-const inferType = require('../../../src/infer/type');
+import parse from '../../../src/parsers/javascript';
+import inferKind from '../../../src/infer/kind';
+import inferType from '../../../src/infer/type';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,7 +16,7 @@ function evaluate(code, filename) {
   return inferType(inferKind(toComment(code, filename)));
 }
 
-test('inferType (flow)', function() {
+test('inferType (flow)', function () {
   expect(evaluate('/** @typedef {T} V */').type).toEqual({
     name: 'T',
     type: 'NameExpression'
@@ -116,7 +116,7 @@ test('inferType (flow)', function() {
   });
 });
 
-test('inferType (typescript)', function() {
+test('inferType (typescript)', function () {
   expect(evaluate('/** @typedef {T} V */', 'test.ts').type).toEqual({
     name: 'T',
     type: 'NameExpression'

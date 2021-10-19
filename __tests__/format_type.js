@@ -1,9 +1,10 @@
 /*eslint max-len: 0 */
 
-const _formatType = require('../src/output/util/format_type');
-const LinkerStack = require('../src/output/util/linker_stack');
-const remark = require('remark');
-const parse = require('doctrine-temporary-fork').parse;
+import _formatType from '../src/output/util/format_type.js';
+import LinkerStack from '../src/output/util/linker_stack';
+import remark from 'remark';
+import doctrine from 'doctrine-temporary-fork';
+const parse = doctrine.parse;
 
 function stringify(children) {
   return remark().stringify({

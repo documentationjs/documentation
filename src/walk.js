@@ -7,7 +7,7 @@
  * @param {Object} [options] options passed through to walker function
  * @returns {Array<Object>} comments
  */
-module.exports.walk = function walk(comments, fn, options) {
+export default function walk(comments, fn, options) {
   comments.forEach(comment => {
     fn(comment, options);
     for (const scope in comment.members) {
@@ -15,4 +15,4 @@ module.exports.walk = function walk(comments, fn, options) {
     }
   });
   return comments;
-};
+}

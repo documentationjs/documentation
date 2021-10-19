@@ -1,10 +1,10 @@
 /* global jasmine */
 
-const path = require('path');
-const os = require('os');
-const exec = require('child_process').exec;
-const tmp = require('tmp');
-const fs = require('fs-extra');
+import path from 'path';
+import os from 'os';
+import { exec } from 'child_process';
+import tmp from 'tmp';
+import fs from 'fs-extra';
 
 function documentation(args, options, parseJSON) {
   if (!options) {
@@ -157,7 +157,8 @@ describe('invalid arguments', function () {
   });
 });
 
-const semver = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
+const semver =
+  /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
 test.skip('--config', async function () {
   const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);

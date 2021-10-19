@@ -1,10 +1,10 @@
-const conf = require('./config');
-const yaml = require('js-yaml');
-const fs = require('fs');
-const pify = require('pify');
-const readPkgUp = require('read-pkg-up');
-const path = require('path');
-const stripComments = require('strip-json-comments');
+import conf from './config.js';
+import yaml from 'js-yaml';
+import fs from 'fs';
+import pify from 'pify';
+import readPkgUp from 'read-pkg-up';
+import path from 'path';
+import stripComments from 'strip-json-comments';
 
 function normalizeToc(config, basePath) {
   if (!config || !config.toc) {
@@ -75,10 +75,10 @@ async function readConfigFile(config) {
   return normalizeToc(obj, basePath);
 }
 
-module.exports = async function mergeConfig(config = {}) {
+export default async function mergeConfig(config = {}) {
   conf.add(config);
   conf.add(await readConfigFile(conf.globalConfig.config));
   conf.add(await readPackage(conf.globalConfig['no-package']));
 
   return conf.globalConfig;
-};
+}

@@ -1,12 +1,12 @@
-const babelParser = require('@babel/parser');
-const path = require('path');
+import babelParser from '@babel/parser';
+import path from 'path';
 
 const TYPESCRIPT_EXTS = {
   '.ts': ['typescript'],
   '.tsx': ['typescript', 'jsx']
 };
 
-const standardBabelParserPlugins = [
+export const standardBabelParserPlugins = [
   'doExpressions',
   'exportDefaultFrom',
   'functionBind',
@@ -14,8 +14,6 @@ const standardBabelParserPlugins = [
   ['pipelineOperator', { proposal: 'minimal' }],
   'throwExpressions'
 ];
-
-module.exports.standardBabelParserPlugins = standardBabelParserPlugins;
 
 function getParserOpts(file) {
   return {
@@ -36,15 +34,13 @@ function getParserOpts(file) {
  * @param {*} source code with flow type comments
  * @returns {string} code with flow annotations
  */
-function commentToFlow(source) {
+export function commentToFlow(source) {
   if (!/@flow/.test(source)) return source;
   return source
     .replace(/\/\*::([^]+?)\*\//g, '$1')
     .replace(/\/\*:\s*([^]+?)\s*\*\//g, ':$1');
 }
 
-function parseToAst(source, file) {
+export function parseToAst(source, file) {
   return babelParser.parse(commentToFlow(source), getParserOpts(file));
 }
-module.exports.commentToFlow = commentToFlow;
-module.exports.parseToAst = parseToAst;

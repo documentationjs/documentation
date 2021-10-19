@@ -1,5 +1,5 @@
-const doctrine = require('doctrine-temporary-fork');
-const parseMarkdown = require('./remark-parse');
+import doctrine from 'doctrine-temporary-fork';
+import parseMarkdown from './remark-parse.js';
 
 /**
  * Flatteners: these methods simplify the structure of JSDoc comments
@@ -609,7 +609,7 @@ function flattenKindShorthand(result, tag, key) {
  * @returns {Comment} an object conforming to the
  * [documentation schema](https://github.com/documentationjs/api-json)
  */
-function parseJSDoc(comment, loc, context) {
+export default function parseJSDoc(comment, loc, context) {
   const result = doctrine.parse(comment, {
     // have doctrine itself remove the comment asterisks from content
     unwrap: true,
@@ -674,5 +674,3 @@ function parseJSDoc(comment, loc, context) {
 
   return result;
 }
-
-module.exports = parseJSDoc;

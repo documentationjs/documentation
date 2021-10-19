@@ -1,6 +1,6 @@
-const parse = require('../../../src/parsers/javascript');
-const inferName = require('../../../src/infer/name');
-const inferAccess = require('../../../src/infer/access');
+import parse from '../../../src/parsers/javascript.js';
+import inferName from '../../../src/infer/name.js';
+import inferAccess from '../../../src/infer/access.js';
 
 function toComment(fn, filename) {
   return parse(

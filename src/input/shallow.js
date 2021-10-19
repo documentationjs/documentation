@@ -1,4 +1,4 @@
-const smartGlob = require('../smart_glob.js');
+import smartGlob from '../smart_glob.js';
 
 /**
  * A readable source for content that doesn't do dependency resolution, but
@@ -16,7 +16,7 @@ const smartGlob = require('../smart_glob.js');
  * @param config parsing options
  * @returns promise with parsed files
  */
-module.exports = function (indexes, config) {
+export default function (indexes, config) {
   const objects = [];
   const strings = [];
   for (const index of indexes) {
@@ -37,4 +37,4 @@ module.exports = function (indexes, config) {
       }))
     )
   );
-};
+}

@@ -1,6 +1,6 @@
-const findTarget = require('./finders').findTarget;
-const t = require('@babel/types');
-const typeAnnotation = require('../type_annotation');
+import findTarget from './finders.js';
+import t from '@babel/types';
+import typeAnnotation from '../type_annotation.js';
 
 // TypeScript does not currently support typing the return value of a generator function.
 // This is coming in TypeScript 3.3 - https://github.com/Microsoft/TypeScript/pull/30790
@@ -23,7 +23,7 @@ const FLOW_GENERATORS = {
  * @param {Object} comment parsed comment
  * @returns {Object} comment with return tag inferred
  */
-function inferReturn(comment) {
+export default function inferReturn(comment) {
   if (
     Array.isArray(comment.returns) &&
     comment.returns.length &&
@@ -112,5 +112,3 @@ function getReturnType(fn) {
     return fn.typeAnnotation;
   }
 }
-
-module.exports = inferReturn;

@@ -1,7 +1,7 @@
-const get = require('../utils').get;
-const File = require('vinyl');
-const getPort = require('get-port');
-const Server = require('../../src/serve/server');
+import { get } from '../utils';
+import File from 'vinyl';
+import getPort from 'get-port';
+import Server from '../../src/serve/server.js';
 
 const jsFile = new File({
   cwd: '/',

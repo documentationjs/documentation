@@ -1,8 +1,10 @@
-const t = require('@babel/types');
-const generate = require('@babel/generator').default;
-const _ = require('lodash');
-const finders = require('./finders');
-const typeAnnotation = require('../type_annotation');
+import t from '@babel/types';
+import babelGenerate from '@babel/generator';
+import _ from 'lodash';
+import findTarget from './finders.js';
+import typeAnnotation from '../type_annotation.js';
+
+const generate = babelGenerate.default;
 
 /**
  * Infers param tags by reading function parameter names
@@ -10,8 +12,8 @@ const typeAnnotation = require('../type_annotation');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with parameters
  */
-function inferParams(comment) {
-  let path = finders.findTarget(comment.context.ast);
+export default function inferParams(comment) {
+  let path = findTarget(comment.context.ast);
   if (!path) {
     return comment;
   }
@@ -312,7 +314,7 @@ function renameTree(node, explicitName) {
   }
 }
 
-function mergeTrees(inferred, explicit) {
+export function mergeTrees(inferred, explicit) {
   // The first order of business is ensuring that the root types are specified
   // in the right order. For the order of arguments, the inferred reality
   // is the ground-truth: a function like
@@ -414,6 +416,3 @@ function combineTags(inferredTag, explicitTag) {
     defaultValue ? { default: defaultValue } : {}
   );
 }
-
-module.exports = inferParams;
-module.exports.mergeTrees = mergeTrees;

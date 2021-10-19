@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-const inferImplements = require('../../../src/infer/implements');
-const parse = require('../../../src/parsers/javascript');
+import inferImplements from '../../../src/infer/implements';
+import parse from '../../../src/parsers/javascript';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,7 +16,7 @@ function evaluate(code, filename) {
   return inferImplements(toComment(code, filename));
 }
 
-test('inferImplements (flow)', function() {
+test('inferImplements (flow)', function () {
   expect(evaluate('/** */class A implements B {}').implements).toEqual([
     {
       name: 'B',
@@ -36,15 +36,19 @@ test('inferImplements (flow)', function() {
   ]);
 });
 
-test('inferImplements (typescript)', function() {
-  expect(evaluate('/** */class A implements B {}', 'test.ts').implements).toEqual([
+test('inferImplements (typescript)', function () {
+  expect(
+    evaluate('/** */class A implements B {}', 'test.ts').implements
+  ).toEqual([
     {
       name: 'B',
       title: 'implements'
     }
   ]);
 
-  expect(evaluate('/** */class A implements B, C {}', 'test.ts').implements).toEqual([
+  expect(
+    evaluate('/** */class A implements B, C {}', 'test.ts').implements
+  ).toEqual([
     {
       name: 'B',
       title: 'implements'

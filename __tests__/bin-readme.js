@@ -1,7 +1,11 @@
-const path = require('path');
-const exec = require('child_process').exec;
-const tmp = require('tmp');
-const fs = require('fs-extra');
+import path from 'path';
+import { exec } from 'child_process';
+import tmp from 'tmp';
+import fs from 'fs-extra';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function documentation(args, options, parseJSON) {
   return new Promise((resolve, reject) => {

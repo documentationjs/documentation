@@ -1,7 +1,7 @@
-const walk = require('../../src/walk').walk;
+import walk from '../../src/walk.js';
 
-describe('walk', function() {
-  test('flat comments', function() {
+describe('walk', function () {
+  test('flat comments', function () {
     const comments = [{ name: 'Tom' }];
 
     function renamer(comment, options) {
@@ -19,7 +19,7 @@ describe('walk', function() {
     ]);
   });
 
-  test('nested comments', function() {
+  test('nested comments', function () {
     const comments = [
       {
         name: 'Tom',

@@ -1,14 +1,14 @@
-const documentation = require('../');
-const fs = require('fs');
-const path = require('path');
-const sharedOptions = require('./shared_options');
+import * as documentation from '../index.js';
+import fs from 'fs';
+import path from 'path';
+import { sharedInputOptions } from './shared_options.js';
 
 /* eslint no-console: 0 */
 
-module.exports.command = 'lint [input..]';
-module.exports.description = 'check for common style and uniformity mistakes';
-module.exports.builder = {
-  shallow: sharedOptions.sharedInputOptions.shallow
+const command = 'lint [input..]';
+const description = 'check for common style and uniformity mistakes';
+const builder = {
+  shallow: sharedInputOptions.shallow
 };
 
 /**
@@ -19,7 +19,7 @@ module.exports.builder = {
  * @returns {undefined} has side-effects
  * @private
  */
-module.exports.handler = function (argv) {
+const handler = function (argv) {
   argv._handled = true;
   if (!argv.input.length) {
     try {
@@ -49,3 +49,5 @@ module.exports.handler = function (argv) {
       process.exit(1);
     });
 };
+
+export default { command, description, builder, handler };

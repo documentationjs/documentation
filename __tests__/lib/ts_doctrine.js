@@ -1,6 +1,7 @@
-const tsDoctrine = require('../../src/ts_doctrine.js');
-const parse = require('../../src/parsers/javascript');
-const TSTYPE_TYPES = require('@babel/types').TSTYPE_TYPES;
+import tsDoctrine from '../../src/ts_doctrine.js';
+import parse from '../../src/parsers/javascript';
+import babelTypes from '@babel/types';
+const TSTYPE_TYPES = babelTypes.TSTYPE_TYPES;
 
 function toComment(fn, filename) {
   return parse(

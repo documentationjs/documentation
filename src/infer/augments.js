@@ -1,5 +1,7 @@
-const generate = require('@babel/generator').default;
-const findTarget = require('./finders').findTarget;
+import babelGenerate from '@babel/generator';
+import findTarget from './finders.js';
+
+const generate = babelGenerate.default;
 
 /**
  * Infers an `augments` tag from an ES6 class declaration
@@ -7,7 +9,7 @@ const findTarget = require('./finders').findTarget;
  * @param {Object} comment parsed comment
  * @returns {Object} comment with kind inferred
  */
-function inferAugments(comment) {
+export default function inferAugments(comment) {
   if (comment.augments.length) {
     return comment;
   }
@@ -51,5 +53,3 @@ function inferAugments(comment) {
 
   return comment;
 }
-
-module.exports = inferAugments;

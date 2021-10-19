@@ -1,5 +1,5 @@
-const visit = require('unist-util-visit');
-const hljs = require('highlight.js');
+import visit from 'unist-util-visit';
+import hljs from 'highlight.js';
 
 /**
  * Adapted from remark-highlight.js
@@ -18,7 +18,7 @@ function visitor(node) {
   }
 }
 
-module.exports = function (ast) {
+export default function (ast) {
   visit(ast, 'code', visitor);
   return ast;
-};
+}

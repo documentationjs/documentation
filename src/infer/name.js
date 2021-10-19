@@ -1,5 +1,5 @@
-const pathParse = require('parse-filepath');
-const t = require('@babel/types');
+import pathParse from 'parse-filepath';
+import t from '@babel/types';
 
 /**
  * Infers a `name` tag from the context.
@@ -8,7 +8,7 @@ const t = require('@babel/types');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with name inferred
  */
-function inferName(comment) {
+export default function inferName(comment) {
   if (comment.name) {
     return comment;
   }
@@ -98,5 +98,3 @@ function inferName(comment) {
 
   return comment;
 }
-
-module.exports = inferName;

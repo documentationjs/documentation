@@ -1,6 +1,10 @@
-const path = require('path');
-const config = require('../../src/config');
-const mergeConfig = require('../../src/merge_config');
+import path from 'path';
+import config from '../../src/config.js';
+import mergeConfig from '../../src/merge_config.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('single config tests', function () {
   beforeEach(function () {

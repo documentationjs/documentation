@@ -10,7 +10,7 @@
  * @param {Object} comment an ast path of the comment
  * @returns {boolean} whether it is valid
  */
-module.exports = function isJSDocComment(
+export default function isJSDocComment(
   comment /*: {
   value: string,
   type: string
@@ -20,4 +20,4 @@ module.exports = function isJSDocComment(
   return (
     comment.type === 'CommentBlock' && asterisks && asterisks[1].length === 1
   );
-};
+}

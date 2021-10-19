@@ -1,4 +1,4 @@
-const t = require('@babel/types');
+import t from '@babel/types';
 
 /**
  * Infers a `kind` tag from the context.
@@ -6,7 +6,7 @@ const t = require('@babel/types');
  * @param {Object} comment parsed comment
  * @returns {Object} comment with kind inferred
  */
-function inferKind(comment) {
+export default function inferKind(comment) {
   if (comment.kind) {
     return comment;
   }
@@ -96,5 +96,3 @@ function inferKind(comment) {
 
   return comment;
 }
-
-module.exports = inferKind;

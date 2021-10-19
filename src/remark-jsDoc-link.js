@@ -1,5 +1,5 @@
-const findAndReplace = require('mdast-util-find-and-replace');
-const markdownLineEnding = require('micromark/dist/character/markdown-line-ending');
+import findAndReplace from 'mdast-util-find-and-replace';
+import markdownLineEnding from 'micromark/dist/character/markdown-line-ending.js';
 
 const link = '@link';
 const tutorial = '@tutorial';
@@ -60,7 +60,7 @@ const tutorialRegExp = /\{@tutorial\s+(.+?)(?:[\s|](.*?))?\}/;
  *
  * @returns {Function}
  */
-module.exports = function () {
+export default function () {
   const data = this.data();
   function replace(type) {
     return (match, matchUrl, matchValue) => {
@@ -112,4 +112,4 @@ module.exports = function () {
     if (data[field]) data[field].push(value);
     else data[field] = [value];
   }
-};
+}

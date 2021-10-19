@@ -1,4 +1,4 @@
-const t = require('@babel/types');
+import t from '@babel/types';
 
 /**
  * Try to find the part of JavaScript a comment is referring to, by
@@ -8,7 +8,7 @@ const t = require('@babel/types');
  * @returns {?Object} ast path, if one is found.
  * @private
  */
-function findTarget(path) {
+export default function findTarget(path) {
   if (!path) {
     return path;
   }
@@ -36,5 +36,3 @@ function findTarget(path) {
 
   return path.node && path;
 }
-
-module.exports.findTarget = findTarget;

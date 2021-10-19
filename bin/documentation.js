@@ -2,8 +2,8 @@
 
 /* eslint no-console: 0 */
 
-const yargs = require('yargs');
-const commands = require('../src/commands');
+import yargs from 'yargs';
+import commands from '../src/commands/index.js';
 
 const argv = yargs
   .strict()
@@ -11,7 +11,7 @@ const argv = yargs
   .command(commands.build)
   .command(commands.lint)
   .command(commands.readme)
-  .fail(function(msg, error) {
+  .fail(function (msg, error) {
     if (error) {
       throw error;
     } else {

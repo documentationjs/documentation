@@ -1,5 +1,5 @@
-const parse = require('../../../src/parsers/javascript');
-const inferParams = require('../../../src/infer/params');
+import parse from '../../../src/parsers/javascript';
+import inferParams, { mergeTrees } from '../../../src/infer/params';
 
 function toComment(fn, file) {
   return parse(
@@ -15,9 +15,9 @@ function evaluate(fn, file) {
   return inferParams(toComment(fn, file));
 }
 
-test('mergeTrees', function() {
+test('mergeTrees', function () {
   expect(
-    inferParams.mergeTrees(
+    mergeTrees(
       [],
       [
         {
@@ -34,7 +34,7 @@ test('mergeTrees', function() {
   ).toMatchSnapshot();
 
   expect(
-    inferParams.mergeTrees(
+    mergeTrees(
       [
         {
           title: 'param',
@@ -74,18 +74,18 @@ test('mergeTrees', function() {
   ).toMatchSnapshot();
 });
 
-test('inferParams', function() {
+test('inferParams', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
       function f(x) {}
     }).params
   ).toEqual([{ lineNumber: 3, name: 'x', title: 'param' }]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
-      const f = function(x) {};
+      const f = function (x) {};
     }).params
   ).toEqual([{ lineNumber: 3, name: 'x', title: 'param' }]);
 
@@ -114,13 +114,13 @@ test('inferParams', function() {
   ]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       const x = 1;
-      const g = function(y) {};
+      const g = function (y) {};
       /** Test */
-      const f = function(x) {};
+      const f = function (x) {};
     }).params
-  ).toEqual([{ lineNumber: 8, name: 'x', title: 'param' }]);
+  ).toEqual([{ lineNumber: 5, name: 'x', title: 'param' }]);
 
   expect(
     evaluate(
@@ -169,7 +169,7 @@ test('inferParams', function() {
   ).toEqual([{ lineNumber: 1, name: 'x', title: 'param' }]);
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /**
        * @class
        * @hideconstructor
@@ -216,7 +216,7 @@ test('inferParams', function() {
   ).toMatchSnapshot();
 });
 
-test('inferParams (typescript)', function() {
+test('inferParams (typescript)', function () {
   expect(
     evaluate(`/** Test */function f(a: string) {};`, 'test.ts').params
   ).toMatchSnapshot();
@@ -232,8 +232,9 @@ test('inferParams (typescript)', function() {
      * @param x
     */
     function f(x: number = 4) {}
-  `
-  , 'test.ts').params
+  `,
+      'test.ts'
+    ).params
   ).toMatchSnapshot();
 
   expect(
@@ -241,7 +242,8 @@ test('inferParams (typescript)', function() {
       `
     /** Test */
     function f(opts: { x: string }) {}
-  ` , 'test.ts'
+  `,
+      'test.ts'
     ).params
   ).toMatchSnapshot();
 
@@ -250,7 +252,8 @@ test('inferParams (typescript)', function() {
       `
     /** Test */
     function f(opts: { [foo]: string }) {}
-  ` , 'test.ts'
+  `,
+      'test.ts'
     ).params
   ).toMatchSnapshot();
 
@@ -271,7 +274,8 @@ test('inferParams (typescript)', function() {
   ).toMatchSnapshot();
 
   expect(
-    evaluate(`abstract class Foo { /** */ abstract f(a?: string); }`, 'test.ts').params
+    evaluate(`abstract class Foo { /** */ abstract f(a?: string); }`, 'test.ts')
+      .params
   ).toMatchSnapshot();
 
   expect(
@@ -283,6 +287,7 @@ test('inferParams (typescript)', function() {
   ).toMatchSnapshot();
 
   expect(
-    evaluate(`interface Foo { /** b */ b(...v: string): void; }`, 'test.ts').params
+    evaluate(`interface Foo { /** b */ b(...v: string): void; }`, 'test.ts')
+      .params
   ).toMatchSnapshot();
 });

@@ -1,5 +1,5 @@
-const parse = require('../../../src/parsers/javascript');
-const inferName = require('../../../src/infer/name');
+import parse from '../../../src/parsers/javascript.js';
+import inferName from '../../../src/infer/name.js';
 
 function toComment(fn, file) {
   return parse(
@@ -15,9 +15,9 @@ function evaluate(fn, file) {
   return inferName(toComment(fn, file));
 }
 
-test('inferName', function() {
+test('inferName', function () {
   expect(
-    evaluate(function() {
+    evaluate(function () {
       // ExpressionStatement (comment attached here)
       //   AssignmentExpression
       //     MemberExpression
@@ -28,18 +28,18 @@ test('inferName', function() {
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       // ExpressionStatement
       //   AssignmentExpression
       //     MemberExpression (comment attached here)
       //     FunctionExpression
       /** Test */
-      exports.name = function() {};
+      exports.name = function () {};
     }).name
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       exports = {
         // Property (comment attached here)
         //   Identifier
@@ -51,7 +51,7 @@ test('inferName', function() {
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       exports = {
         // Property
         //   Identifier (comment attached here)
@@ -63,7 +63,7 @@ test('inferName', function() {
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       exports = {
         // Property
         //   Identifier (comment attached here)
@@ -75,98 +75,98 @@ test('inferName', function() {
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
       function name() {}
     }).name
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
-      const name = function() {};
+      const name = function () {};
     }).name
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** Test */
       const name = function name2() {};
     }).name
   ).toBe('name');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @name explicitName */
       function implicitName() {}
     }).name
   ).toBe('explicitName');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @alias explicitAlias */
       function implicitName() {}
     }).name
   ).toBe('explicitAlias');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @class ExplicitClass */
       function ImplicitClass() {}
     }).name
   ).toBe('ExplicitClass');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @class */
       function ImplicitClass() {}
     }).name
   ).toBe('ImplicitClass');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @event explicitEvent */
       function implicitName() {}
     }).name
   ).toBe('explicitEvent');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @typedef {Object} ExplicitTypedef */
       function implicitName() {}
     }).name
   ).toBe('ExplicitTypedef');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @callback explicitCallback */
       function implicitName() {}
     }).name
   ).toBe('explicitCallback');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module explicitModule */
       function implicitName() {}
     }).name
   ).toBe('explicitModule');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module {Function} explicitModule */
       function implicitName() {}
     }).name
   ).toBe('explicitModule');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module */
       function implicitName() {}
     }, '/path/inferred-from-file.js').name
   ).toBe('inferred-from-file');
 
   expect(
-    evaluate(function() {
+    evaluate(function () {
       /** @module */
     }, '/path/inferred-from-file.js').name
   ).toBe('inferred-from-file');
@@ -194,7 +194,9 @@ test('inferName', function() {
   expect(evaluate('/** Test */ export class Wizard {}').name).toBe('Wizard');
 
   expect(evaluate('/** Test */ interface Wizard {}').name).toBe('Wizard');
-  expect(evaluate('/** Test */ interface Wizard {}', 'test.ts').name).toBe('Wizard');
+  expect(evaluate('/** Test */ interface Wizard {}', 'test.ts').name).toBe(
+    'Wizard'
+  );
 
   expect(evaluate('/** Test */ enum Wizard {}', 'test.ts').name).toBe('Wizard');
   expect(evaluate('enum Wizard { /** Test */ A }', 'test.ts').name).toBe('A');

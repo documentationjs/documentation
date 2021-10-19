@@ -1,7 +1,7 @@
-const documentation = require('../src/');
-const os = require('os');
-const path = require('path');
-const fs = require('fs');
+import * as documentation from '../src/index.js';
+import os from 'os';
+import path from 'path';
+import fs from 'fs';
 
 function inputs(contents) {
   const dirEntry = os.tmpdir();

@@ -1,7 +1,11 @@
-const path = require('path');
-const shallow = require('../../../src/input/shallow');
+import path from 'path';
+import shallow from '../../../src/input/shallow.js';
+import { fileURLToPath } from 'url';
 
-test('shallow deps', async function() {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+test('shallow deps', async function () {
   const deps = await shallow(
     [path.resolve(path.join(__dirname, '../../fixture/es6.input.js'))],
     {}
@@ -10,7 +14,7 @@ test('shallow deps', async function() {
   expect(deps[0]).toBeTruthy();
 });
 
-test('shallow deps multi', async function() {
+test('shallow deps multi', async function () {
   const deps = await shallow(
     [
       path.resolve(path.join(__dirname, '../../fixture/es6.input.js')),
@@ -22,7 +26,7 @@ test('shallow deps multi', async function() {
   expect(deps[0]).toBeTruthy();
 });
 
-test('shallow deps directory', async function() {
+test('shallow deps directory', async function () {
   const deps = await shallow(
     [path.resolve(path.join(__dirname, '../../fixture/html'))],
     {}
@@ -31,13 +35,13 @@ test('shallow deps directory', async function() {
   expect(deps[0].file.match(/input.js/)).toBeTruthy();
 });
 
-test('throws on non-string or object input', function() {
+test('throws on non-string or object input', function () {
   return shallow([true], {}).catch(err => {
     expect(err.message).toBe('Indexes should be either strings or objects');
   });
 });
 
-test('shallow deps literal', async function() {
+test('shallow deps literal', async function () {
   const obj = {
     file: 'foo.js',
     source: '//bar'

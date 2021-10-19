@@ -1,4 +1,4 @@
-const { walk } = require('./walk');
+import walk from './walk.js';
 
 /**
  * Exclude given access levels from the generated documentation: this allows
@@ -26,4 +26,4 @@ function filterAccess(levels, comments) {
   return walk(comments.filter(filter), recurse);
 }
 
-module.exports = filterAccess;
+export default filterAccess;

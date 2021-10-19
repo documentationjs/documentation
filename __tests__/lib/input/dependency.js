@@ -1,7 +1,7 @@
-const os = require('os');
-const path = require('path');
-const fs = require('fs');
-const dependency = require('../../../src/input/dependency');
+import os from 'os';
+import path from 'path';
+import fs from 'fs';
+import dependency from '../../../src/input/dependency.js';
 
 function inputs(contents) {
   const dirEntry = os.tmpdir();
@@ -15,7 +15,7 @@ function inputs(contents) {
   };
 }
 
-test('dependency', async function() {
+test('dependency', async function () {
   const { paths, cleanup } = inputs({
     'index.js': 'module.exports = 1;',
     'requires.js': "module.exports = require('./foo');",

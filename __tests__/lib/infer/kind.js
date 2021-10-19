@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-const inferKind = require('../../../src/infer/kind');
-const parse = require('../../../src/parsers/javascript');
+import inferKind from '../../../src/infer/kind';
+import parse from '../../../src/parsers/javascript';
 
 function toComment(fn, filename) {
   return parse(
@@ -12,7 +12,7 @@ function toComment(fn, filename) {
   )[0];
 }
 
-test('inferKind', function() {
+test('inferKind', function () {
   expect(
     inferKind({
       kind: 'class',
@@ -38,13 +38,15 @@ test('inferKind', function() {
     ).kind
   ).toBe('class');
 
-  const abstractClass = inferKind(toComment('/** */ abstract class C {}', 'test.ts'));
+  const abstractClass = inferKind(
+    toComment('/** */ abstract class C {}', 'test.ts')
+  );
   expect(abstractClass.kind).toBe('class');
   expect(abstractClass.abstract).toBe(true);
 
   expect(
     inferKind(
-      toComment(function() {
+      toComment(function () {
         /** function */
         function foo() {}
         foo();
@@ -54,9 +56,9 @@ test('inferKind', function() {
 
   expect(
     inferKind(
-      toComment(function() {
+      toComment(function () {
         /** function */
-        const foo = function() {};
+        const foo = function () {};
         foo();
       })
     ).kind
@@ -68,8 +70,9 @@ test('inferKind', function() {
   ).toBe('interface');
 
   expect(
-    inferKind(toComment('/** Exported interface */' + 'interface myinter {}', 'test.ts'))
-      .kind
+    inferKind(
+      toComment('/** Exported interface */' + 'interface myinter {}', 'test.ts')
+    ).kind
   ).toBe('interface');
 
   expect(
@@ -133,25 +136,29 @@ test('inferKind', function() {
   expect(generatorMethod.kind).toBe('function');
   expect(generatorMethod.generator).toBe(true);
 
-  const abstractMethod = inferKind(toComment('abstract class C { /** */ abstract foo(); }', 'test.ts'));
+  const abstractMethod = inferKind(
+    toComment('abstract class C { /** */ abstract foo(); }', 'test.ts')
+  );
   expect(abstractMethod.kind).toBe('function');
   expect(abstractMethod.abstract).toBe(true);
 
-  expect(inferKind(toComment('interface Foo { /** b */ b(v): void; }')).kind).toBe(
-    'function'
-  );
+  expect(
+    inferKind(toComment('interface Foo { /** b */ b(v): void; }')).kind
+  ).toBe('function');
 
-  expect(inferKind(toComment('interface Foo { /** b */ b: string; }')).kind).toBe(
-    'member'
-  );
+  expect(
+    inferKind(toComment('interface Foo { /** b */ b: string; }')).kind
+  ).toBe('member');
 
-  expect(inferKind(toComment('interface Foo { /** b */ b(v): void; }', 'test.ts')).kind).toBe(
-    'function'
-  );
+  expect(
+    inferKind(toComment('interface Foo { /** b */ b(v): void; }', 'test.ts'))
+      .kind
+  ).toBe('function');
 
-  expect(inferKind(toComment('interface Foo { /** b */ b: string; }', 'test.ts')).kind).toBe(
-    'member'
-  );
+  expect(
+    inferKind(toComment('interface Foo { /** b */ b: string; }', 'test.ts'))
+      .kind
+  ).toBe('member');
 
   expect(inferKind(toComment('/** */ enum Foo { A }', 'test.ts')).kind).toBe(
     'enum'
@@ -163,7 +170,7 @@ test('inferKind', function() {
 
   expect(
     inferKind(
-      toComment(function() {
+      toComment(function () {
         /** class */
         function Foo() {}
       })
@@ -172,7 +179,7 @@ test('inferKind', function() {
 
   expect(
     inferKind(
-      toComment(function() {
+      toComment(function () {
         /** undefined */
       })
     ).kind
@@ -197,21 +204,12 @@ test('inferKind', function() {
     ).kind
   ).toBe('constant');
 
-  expect(
-    inferKind(
-      toComment(
-        '/** */' + 'type Foo = string'
-      )
-    ).kind
-  ).toBe('typedef');
+  expect(inferKind(toComment('/** */' + 'type Foo = string')).kind).toBe(
+    'typedef'
+  );
 
   expect(
-    inferKind(
-      toComment(
-        '/** */' + 'type Foo = string',
-        'test.ts'
-      )
-    ).kind
+    inferKind(toComment('/** */' + 'type Foo = string', 'test.ts')).kind
   ).toBe('typedef');
 
   const namespace = inferKind(

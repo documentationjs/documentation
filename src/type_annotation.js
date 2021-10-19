@@ -1,6 +1,6 @@
-const t = require('@babel/types');
-const flowDoctrine = require('./flow_doctrine');
-const tsDoctrine = require('./ts_doctrine');
+import t from '@babel/types';
+import flowDoctrine from './flow_doctrine.js';
+import tsDoctrine from './ts_doctrine.js';
 
 function typeAnnotation(type) {
   if (t.isFlow(type)) {
@@ -18,4 +18,4 @@ function typeAnnotation(type) {
   return tsDoctrine(type);
 }
 
-module.exports = typeAnnotation;
+export default typeAnnotation;

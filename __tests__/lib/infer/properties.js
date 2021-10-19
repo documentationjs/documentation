@@ -1,6 +1,6 @@
 /*eslint-disable no-unused-vars*/
-const inferProperties = require('../../../src/infer/properties');
-const parse = require('../../../src/parsers/javascript');
+import inferProperties from '../../../src/infer/properties';
+import parse from '../../../src/parsers/javascript';
 
 function toComment(fn, filename) {
   return parse(
@@ -16,7 +16,7 @@ function evaluate(code, filename) {
   return inferProperties(toComment(code, filename));
 }
 
-test('inferProperties (flow)', function() {
+test('inferProperties (flow)', function () {
   expect(evaluate('/** */type a = { b: 1 };').properties).toEqual([
     {
       lineNumber: 1,
@@ -65,7 +65,7 @@ test('inferProperties (flow)', function() {
   ]);
 });
 
-test('inferProperties (typescript)', function() {
+test('inferProperties (typescript)', function () {
   expect(evaluate('/** */type a = { b: 1 };', 'test.ts').properties).toEqual([
     {
       lineNumber: 1,
@@ -79,7 +79,8 @@ test('inferProperties (typescript)', function() {
   ]);
 
   expect(
-    evaluate('/** @property {number} b */ type a = { b: 1 };', 'test.ts').properties
+    evaluate('/** @property {number} b */ type a = { b: 1 };', 'test.ts')
+      .properties
   ).toEqual([
     {
       lineNumber: 0,
@@ -92,7 +93,9 @@ test('inferProperties (typescript)', function() {
     }
   ]);
 
-  expect(evaluate('/** */type a = { b: { c: 2 } };', 'test.ts').properties).toEqual([
+  expect(
+    evaluate('/** */type a = { b: { c: 2 } };', 'test.ts').properties
+  ).toEqual([
     {
       lineNumber: 1,
       name: 'b',
