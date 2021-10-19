@@ -124,11 +124,6 @@
       "git add"
     ]
   },
-  "greenkeeper": {
-    "ignore": [
-      "remote-origin-url"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
