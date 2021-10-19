@@ -1,7 +1,7 @@
-import VFile from 'vfile';
+import { VFile } from 'vfile';
 import walk from './walk.js';
-import vfileSort from 'vfile-sort';
-import reporter from 'vfile-reporter';
+import { sort as vfileSort } from 'vfile-sort';
+import { reporter } from 'vfile-reporter';
 import { nest } from './nest.js';
 
 const CANONICAL = {
