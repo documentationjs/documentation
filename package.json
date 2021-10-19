@@ -38,7 +38,7 @@
     "module-deps-sortable": "^5.0.3",
     "parse-filepath": "^1.0.2",
     "pify": "^5.0.0",
-    "read-pkg-up": "^4.0.0",
+    "read-pkg-up": "^9.0.0",
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
