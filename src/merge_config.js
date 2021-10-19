@@ -2,7 +2,7 @@ import conf from './config.js';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import pify from 'pify';
-import readPkgUp from 'read-pkg-up';
+import { readPackageUp } from 'read-pkg-up';
 import path from 'path';
 import stripComments from 'strip-json-comments';
 
@@ -35,9 +35,9 @@ async function readPackage(noPackage) {
   }
   const param = ['name', 'homepage', 'version', 'description'];
   try {
-    const { pkg } = await readPkgUp();
+    const { packageJson } = await readPackageUp();
     return param.reduce((res, key) => {
-      res[`project-${key}`] = global[key] || pkg[key];
+      res[`project-${key}`] = global[key] || packageJson[key];
       return res;
     }, {});
   } catch (e) {
