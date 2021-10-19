@@ -30,7 +30,7 @@
     "ini": "^2.0.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.10",
-    "mdast-util-find-and-replace": "^1.1.1",
+    "mdast-util-find-and-replace": "^2.1.0",
     "mdast-util-inject": "^1.1.0",
     "micromark-util-character": "^1.1.0",
     "micromatch": "^4.0.4",
