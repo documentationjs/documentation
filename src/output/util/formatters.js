@@ -1,4 +1,4 @@
-import remark from 'remark';
+import { remark } from 'remark';
 import html from 'remark-html';
 import doctrine from 'doctrine-temporary-fork';
 const Syntax = doctrine.Syntax;

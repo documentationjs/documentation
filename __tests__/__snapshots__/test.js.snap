@@ -526,7 +526,7 @@ second::foo
 
 ###### Parameters
 
-*   \`pork\`  
+*   \`pork\` &#x20;
 
 ##### bar
 
@@ -534,8 +534,8 @@ second::bar
 
 ###### Parameters
 
-*   \`beans\`  
-*   \`rice\`  
+*   \`beans\` &#x20;
+*   \`rice\` &#x20;
 
 ## AClass
 
@@ -2913,10 +2913,10 @@ exports[`outputs boolean-literal-type.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`t\` **\`true\`** 
-*   \`f\` **\`false\`** 
+*   \`t\` **\`true\`**&#x20;
+*   \`f\` **\`false\`**&#x20;
 
-Returns **\\\\[\`true\`, \`false\`]** 
+Returns **\\\\[\`true\`, \`false\`]**&#x20;
 
 [1]: #f
 
@@ -3763,19 +3763,19 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     },
@@ -5844,7 +5844,7 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`yparam\`  
+*   \`yparam\` &#x20;
 
 ## z
 
@@ -5854,7 +5854,7 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`a\` **[string][39]** 
+*   \`a\` **[string][39]**&#x20;
 
 ### classMethod
 
@@ -5864,7 +5864,7 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 
 #### Parameters
 
-*   \`v\`  
+*   \`v\` &#x20;
 
 ### staticMethod
 
@@ -5874,7 +5874,7 @@ exports[`outputs document-exported.input.js markdown 1`] = `
 
 #### Parameters
 
-*   \`v\`  
+*   \`v\` &#x20;
 
 ## T5
 
@@ -5888,9 +5888,9 @@ Description of y3
 
 ### Parameters
 
-*   \`p\` **[number][41]** 
+*   \`p\` **[number][41]**&#x20;
 
-Returns **void** 
+Returns **void**&#x20;
 
 ## object
 
@@ -5902,7 +5902,7 @@ Returns **void**
 
 #### Parameters
 
-*   \`v\`  
+*   \`v\` &#x20;
 
 ### prop
 
@@ -5928,7 +5928,7 @@ Type: [string][39]
 
 ### Parameters
 
-*   \`x\` **X** 
+*   \`x\` **X**&#x20;
 
 ## o1
 
@@ -5940,7 +5940,7 @@ f5 comment
 
 ### Parameters
 
-*   \`y\` **Y** 
+*   \`y\` **Y**&#x20;
 
 ## o2
 
@@ -6821,19 +6821,19 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -9172,11 +9172,11 @@ have any parameter descriptions.
 
 ### Parameters
 
-*   \`$0\` **[Object][35]**  (optional, default \`{}\`)
+*   \`$0\` **[Object][35]** &#x20;(optional, default \`{}\`)
 
-    *   \`$0.phoneNumbers\`   (optional, default \`[]\`)
-    *   \`$0.emailAddresses\`   (optional, default \`[]\`)
-    *   \`$0.params\` **...any** 
+    *   \`$0.phoneNumbers\`  &#x20;(optional, default \`[]\`)
+    *   \`$0.emailAddresses\`  &#x20;(optional, default \`[]\`)
+    *   \`$0.params\` **...any**&#x20;
 
 ## destructure2
 
@@ -9184,12 +9184,12 @@ Similar, but with an array
 
 ### Parameters
 
-*   \`$0\` **[Array][36]** 
+*   \`$0\` **[Array][36]**&#x20;
 
-    *   \`$0.0\`  
-    *   \`$0.1\`  
-    *   \`$0.2\`  
-    *   \`$0.3\`  
+    *   \`$0.0\` &#x20;
+    *   \`$0.1\` &#x20;
+    *   \`$0.2\` &#x20;
+    *   \`$0.3\` &#x20;
 
 ### Examples
 
@@ -9204,7 +9204,7 @@ This function returns the number one.
 ### Parameters
 
 *   \`a\` **[Array][36]<[Number][37]>** an array of numbers
-*   \`b\`  
+*   \`b\` &#x20;
 
 Returns **[Number][37]** numberone
 
@@ -9241,9 +9241,9 @@ This uses the class property transform
 
 #### Parameters
 
-*   \`a\` **[number][37]** 
+*   \`a\` **[number][37]**&#x20;
 
-Returns **[string][38]** 
+Returns **[string][38]**&#x20;
 
 ### aGetter
 
@@ -9263,9 +9263,9 @@ Returns **Basket** a basket
 ## makeASink
 
 This method returns a [sink][8]. The type should be linked.
-It takes a [number][39] which should also be linked.
+It takes a [number][37] which should also be linked.
 
-Returns **[Sink][40]** a sink
+Returns **[Sink][8]** a sink
 
 ## functionWithRest
 
@@ -9273,7 +9273,7 @@ This function takes rest params
 
 ### Parameters
 
-*   \`someParams\` **...any** 
+*   \`someParams\` **...any**&#x20;
 
 ## functionWithRestAndType
 
@@ -9281,7 +9281,7 @@ So does this one, with types
 
 ### Parameters
 
-*   \`someParams\` **...[number][37]** 
+*   \`someParams\` **...[number][37]**&#x20;
 
 ## foo
 
@@ -9299,7 +9299,7 @@ This tests our support of optional parameters in ES6
 
 ### Parameters
 
-*   \`foo\`   (optional, default \`'bar'\`)
+*   \`foo\`  &#x20;(optional, default \`'bar'\`)
 
 ## iAmProtected
 
@@ -9319,11 +9319,11 @@ Regression check for #498
 
 ### Parameters
 
-*   \`array1\` **[Array][36]\\\\<T>** 
-*   \`array2\` **[Array][36]\\\\<T>** 
-*   \`compareFunction\` **function (a: T, b: T): [boolean][41]**  (optional, default \`(a:T,b:T):boolean=>a===b\`)
+*   \`array1\` **[Array][36]\\\\<T>**&#x20;
+*   \`array2\` **[Array][36]\\\\<T>**&#x20;
+*   \`compareFunction\` **function (a: T, b: T): [boolean][39]** &#x20;(optional, default \`(a:T,b:T):boolean=>a===b\`)
 
-Returns **[boolean][41]** 
+Returns **[boolean][39]**&#x20;
 
 ## paramWithMemberType
 
@@ -9331,9 +9331,9 @@ Regression check for #749
 
 ### Parameters
 
-*   \`a\` **atype.property** 
+*   \`a\` **atype.property**&#x20;
 
-Returns **[boolean][41]** 
+Returns **[boolean][39]**&#x20;
 
 ## A
 
@@ -9415,11 +9415,7 @@ babel parser plugins
 
 [38]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
-
-[40]: #sink
-
-[41]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[39]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 "
 `;
 
@@ -10406,7 +10402,7 @@ It takes a ",
               "value": "number",
             },
           ],
-          "identifier": "6",
+          "identifier": "3",
           "referenceType": "full",
           "type": "linkReference",
         },
@@ -10432,7 +10428,7 @@ It takes a ",
                   "value": "Sink",
                 },
               ],
-              "identifier": "7",
+              "identifier": "5",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -10996,7 +10992,7 @@ It takes a ",
                           "value": "boolean",
                         },
                       ],
-                      "identifier": "8",
+                      "identifier": "6",
                       "referenceType": "full",
                       "type": "linkReference",
                     },
@@ -11050,7 +11046,7 @@ It takes a ",
                   "value": "boolean",
                 },
               ],
-              "identifier": "8",
+              "identifier": "6",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -11146,7 +11142,7 @@ It takes a ",
                   "value": "boolean",
                 },
               ],
-              "identifier": "8",
+              "identifier": "6",
               "referenceType": "full",
               "type": "linkReference",
             },
@@ -11181,49 +11177,37 @@ It takes a ",
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "5",
-      "title": null,
+      "title": "",
       "type": "definition",
       "url": "#sink",
     },
     Object {
       "identifier": "6",
-      "title": null,
-      "type": "definition",
-      "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    },
-    Object {
-      "identifier": "7",
-      "title": undefined,
-      "type": "definition",
-      "url": "#sink",
-    },
-    Object {
-      "identifier": "8",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },
@@ -11601,7 +11585,7 @@ Does nothing. This is from issue #556
 
 ### Parameters
 
-*   \`str\` **[string][7]** 
+*   \`str\` **[string][7]**&#x20;
 
 ### bar
 
@@ -11615,8 +11599,8 @@ This class has fully inferred constructor parameters.
 
 ### Parameters
 
-*   \`n\` **[number][8]** 
-*   \`l\` **[Array][9]<[string][7]>** 
+*   \`n\` **[number][8]**&#x20;
+*   \`l\` **[Array][9]<[string][7]>**&#x20;
 
 [1]: #foo
 
@@ -11928,19 +11912,19 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
@@ -12344,13 +12328,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -12442,7 +12426,7 @@ exports[`outputs es6-default2.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`thisIsTheArgument\`  
+*   \`thisIsTheArgument\` &#x20;
 
 [1]: #es6-default2input
 
@@ -12798,7 +12782,7 @@ This function returns the number one.
 
 ### Parameters
 
-*   \`a\`  
+*   \`a\` &#x20;
 
 Returns **[Number][5]** numberone
 
@@ -13005,7 +12989,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -13352,13 +13336,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/API/Event",
     },
@@ -13624,7 +13608,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -14031,7 +14015,7 @@ exports[`outputs factory.input.js markdown 1`] = `
 
 an area chart generator
 
-Returns **[area][5]** chart
+Returns **[area][1]** chart
 
 ## area
 
@@ -14041,7 +14025,7 @@ Sets the chart data.
 
 ### Parameters
 
-*   \`_\`  
+*   \`_\` &#x20;
 
 [1]: #area
 
@@ -14050,8 +14034,6 @@ Sets the chart data.
 [3]: #data
 
 [4]: #parameters
-
-[5]: #area
 "
 `;
 
@@ -14189,7 +14171,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "#area",
     },
@@ -14603,7 +14585,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -15088,31 +15070,31 @@ exports[`outputs flow-unnamed-params.input.js markdown 1`] = `
 
 x
 
-Type: function ([T][6]): [string][7]
+Type: function ([T][3]): [string][6]
 
 ## x2
 
 x2
 
-Type: function (a: [T][6]): [string][7]
+Type: function (a: [T][3]): [string][6]
 
 ## T
 
 T
 
-Type: function ([Array][8]<[string][7]>): {num: [number][9]}
+Type: function ([Array][7]<[string][6]>): {num: [number][8]}
 
 ## T2
 
 T2
 
-Type: function (a: [Array][8]<[string][7]>): {num: [number][9]}
+Type: function (a: [Array][7]<[string][6]>): {num: [number][8]}
 
 ## T3
 
 T3
 
-Type: function (a: [string][7]): {num: [number][9]}
+Type: function (a: [string][6]): {num: [number][8]}
 
 [1]: #x
 
@@ -15124,13 +15106,11 @@ Type: function (a: [string][7]): {num: [number][9]}
 
 [5]: #t3
 
-[6]: #t
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
-
-[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
@@ -15539,25 +15519,25 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "#t",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -16725,25 +16705,25 @@ and ",
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": null,
+      "title": "",
       "type": "definition",
       "url": "#addone",
     },
     Object {
       "identifier": "3",
-      "title": null,
+      "title": "",
       "type": "definition",
       "url": "https://en.wikipedia.org/wiki/Addition",
     },
     Object {
       "identifier": "4",
-      "title": null,
+      "title": "",
       "type": "definition",
       "url": "nothing",
     },
@@ -17150,13 +17130,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -18107,7 +18087,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -18347,13 +18327,13 @@ exports[`outputs literal_types.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`x\` **(\`\\"a\\"\` | \`\\"b\\"\` | \`\\"\\"\` | \`0\` | \`-42\` | \`3.14\`)** 
+*   \`x\` **(\`\\"a\\"\` | \`\\"b\\"\` | \`\\"\\"\` | \`0\` | \`-42\` | \`3.14\`)**&#x20;
 
 ## g
 
 ### Parameters
 
-*   \`x\` **(\`\\"a\\"\` | \`\\"b\\"\` | \`\\"\\"\` | \`0\` | \`-42\` | \`3.14\`)** 
+*   \`x\` **(\`\\"a\\"\` | \`\\"b\\"\` | \`\\"\\"\` | \`0\` | \`-42\` | \`3.14\`)**&#x20;
 
 [1]: #f
 
@@ -19175,19 +19155,19 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     },
@@ -19499,7 +19479,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -19964,13 +19944,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": null,
+      "title": "",
       "type": "definition",
       "url": "http://foo.com/",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -20234,7 +20214,7 @@ Get the time
 
 ### Parameters
 
-*   \`time\`  
+*   \`time\` &#x20;
 
 Returns **[Date][5]** the current date
 
@@ -20488,13 +20468,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     },
@@ -20783,7 +20763,7 @@ Attempt to establish a cookie-based session in exchange for credentials.
 
 ### Parameters
 
-*   \`credentials\` **[object][3]** 
+*   \`credentials\` **[object][3]**&#x20;
 
     *   \`credentials.name\` **[string][4]** Login username. Also accepted as \`username\` or \`email\`.
     *   \`credentials.password\` **[string][4]** Login password
@@ -21102,25 +21082,25 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise",
     },
@@ -21883,7 +21863,7 @@ exports[`outputs nest_params.input.js markdown 1`] = `
 
     *   \`employees[].name\` **[string][8]** The name of an employee.
     *   \`employees[].department\` **[string][8]** The employee's department.
-*   \`type\` **[string][8]** The employee's type. (optional, default \`minion\`)
+*   \`type\` **[string][8]** The employee's type.&#x20;(optional, default \`minion\`)
 
 ## foo
 
@@ -21898,9 +21878,9 @@ exports[`outputs nest_params.input.js markdown 1`] = `
 
 *   \`theTime\` **[Object][7]** the current time
 
-    *   \`theTime.hours\` **[number][9]** 
-    *   \`theTime.minutes\` **[number][9]** 
-    *   \`theTime.seconds\` **[number][9]** 
+    *   \`theTime.hours\` **[number][9]**&#x20;
+    *   \`theTime.minutes\` **[number][9]**&#x20;
+    *   \`theTime.seconds\` **[number][9]**&#x20;
 
 Returns **[Object][7]** foo something else
 
@@ -22589,25 +22569,25 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -22728,7 +22708,8 @@ exports[`outputs newline-in-description.input.js markdown 1`] = `
 
 ### Table of Contents
 
-*   [Parameters][1]
+*   [][1]
+    *   [Parameters][2]
 
 ##
 
@@ -22736,13 +22717,15 @@ A function.
 
 ### Parameters
 
-*   \`a\` **[Number][2]** The input to the function.
+*   \`a\` **[Number][3]** The input to the function.
     I should be able to continue the description on a new line, and have it
     still work in the markdown table.
 
-[1]: #parameters
+[1]: #
 
-[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
@@ -22840,7 +22823,7 @@ still work in the markdown table.",
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -22943,7 +22926,8 @@ exports[`outputs no-name.input.js markdown 1`] = `
 
 ### Table of Contents
 
-*   [Parameters][1]
+*   [][1]
+    *   [Parameters][2]
 
 ##
 
@@ -22951,11 +22935,13 @@ Set the time
 
 ### Parameters
 
-*   \`bar\` **[number][2]** 
+*   \`bar\` **[number][3]**&#x20;
 
-[1]: #parameters
+[1]: #
 
-[2]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[2]: #parameters
+
+[3]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 "
 `;
 
@@ -23042,7 +23028,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -23143,8 +23129,8 @@ exports[`outputs optional-record-field-type.input.js markdown 1`] = `
 
 ### Properties
 
-*   \`opt\` **[number][3]?** 
-*   \`req\` **[string][4]** 
+*   \`opt\` **[number][3]?**&#x20;
+*   \`req\` **[string][4]**&#x20;
 
 [1]: #record
 
@@ -23272,13 +23258,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -24974,14 +24960,14 @@ This function returns the number one.
 
 ### Parameters
 
-*   \`a\`  
+*   \`a\` &#x20;
 *   \`b\` **[number][24]** the second param
-*   \`c\`  
-*   \`$3\` **[Object][25]** 
+*   \`c\` &#x20;
+*   \`$3\` **[Object][25]**&#x20;
 
-    *   \`$3.d\`  
-    *   \`$3.e\`  
-    *   \`$3.f\`  
+    *   \`$3.d\` &#x20;
+    *   \`$3.e\` &#x20;
+    *   \`$3.f\` &#x20;
 
 ## fishesAndFoxes
 
@@ -24989,10 +24975,10 @@ This method has partially inferred params
 
 ### Parameters
 
-*   \`options\` **[Object][25]** 
+*   \`options\` **[Object][25]**&#x20;
 
     *   \`options.fishes\` **[String][26]** number of kinds of fish
-    *   \`options.foxes\`  
+    *   \`options.foxes\` &#x20;
 
 ## withDefault
 
@@ -25000,7 +24986,7 @@ This method has a type in the description and a default in the code
 
 ### Parameters
 
-*   \`x\` **[number][24]**  (optional, default \`2\`)
+*   \`x\` **[number][24]** &#x20;(optional, default \`2\`)
 
 ## Foo
 
@@ -25024,7 +25010,7 @@ This method should acquire the param x
 
 #### Parameters
 
-*   \`x\`  
+*   \`x\` &#x20;
 
 ## Address6
 
@@ -25035,9 +25021,9 @@ This tests  our support of optional parameters
 ### Parameters
 
 *   \`address\` **[string][26]** An IPv6 address string
-*   \`groups\` **[number][24]** How many octets to parse (optional, default \`8\`)
+*   \`groups\` **[number][24]** How many octets to parse&#x20;(optional, default \`8\`)
 *   \`third\` **[number][24]?** A third argument
-*   \`foo\` **[Array][27]** to properly be parsed (optional, default \`[1]\`)
+*   \`foo\` **[Array][27]** to properly be parsed&#x20;(optional, default \`[1]\`)
 
 ### Examples
 
@@ -25057,7 +25043,7 @@ This tests our support of nested parameters
 
     *   \`options.data\` **([Object][25] | [string][26])** A GeoJSON data object or URL to it.
         The latter is preferable in case of large GeoJSON files.
-    *   \`options.maxzoom\` **[number][24]** Maximum zoom to preserve detail at. (optional, default \`14\`)
+    *   \`options.maxzoom\` **[number][24]** Maximum zoom to preserve detail at.&#x20;(optional, default \`14\`)
     *   \`options.buffer\` **[number][24]?** Tile buffer on each side.
     *   \`options.tolerance\` **[number][24]?** Simplification tolerance (higher means simpler).
 
@@ -25068,7 +25054,7 @@ values specified in code.
 
 ### Parameters
 
-*   \`x\` **[number][24]** an argument (optional, default \`123\`)
+*   \`x\` **[number][24]** an argument&#x20;(optional, default \`123\`)
 
 Returns **[number][24]** some
 
@@ -25088,7 +25074,7 @@ iterator destructure (RestElement)
 
 ### Parameters
 
-*   \`input\` **[Array][27]** 
+*   \`input\` **[Array][27]**&#x20;
 
     *   \`input.0\` **any** head of iterator
     *   \`input.xs\` **...any** body of iterator
@@ -26867,25 +26853,25 @@ iterator destructure (RestElement)",
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
@@ -27662,7 +27648,7 @@ second::foo
 
 #### Parameters
 
-*   \`pork\`  
+*   \`pork\` &#x20;
 
 ### bar
 
@@ -27670,8 +27656,8 @@ second::bar
 
 #### Parameters
 
-*   \`beans\`  
-*   \`rice\`  
+*   \`beans\` &#x20;
+*   \`rice\` &#x20;
 
 ## third
 
@@ -28143,7 +28129,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -28461,17 +28447,17 @@ plus 3.
 ### Parameters
 
 *   \`n\` **[Number][5]** The number.
-*   \`cb\` **[simpleCallback][6]** The callback.
+*   \`cb\` **[simpleCallback][3]** The callback.
 
 ## simpleCallback
 
 This callback takes an error and a number.
 
-Type: [Function][7]
+Type: [Function][6]
 
 ### Parameters
 
-*   \`err\` **[Error][8]?** The error.
+*   \`err\` **[Error][7]?** The error.
 *   \`n\` **[Number][5]** The number.
 
 [1]: #takessimplecallback
@@ -28484,11 +28470,9 @@ Type: [Function][7]
 
 [5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-[6]: #simplecallback
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
 
-[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
-
-[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error
 "
 `;
 
@@ -28786,25 +28770,25 @@ plus 3.",
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "#simplecallback",
     },
     Object {
       "identifier": "3",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function",
     },
     Object {
       "identifier": "4",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error",
     },
@@ -29001,7 +28985,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -29403,7 +29387,7 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
@@ -30871,7 +30855,7 @@ exports[`outputs this-class.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`title\`  
+*   \`title\` &#x20;
 
 ### title
 
@@ -30881,7 +30865,7 @@ The title of the book.
 
 ### Parameters
 
-*   \`title\`  
+*   \`title\` &#x20;
 
 ### title
 
@@ -31329,13 +31313,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String",
     },
@@ -31432,9 +31416,9 @@ exports[`outputs var-function-param-return.input.js markdown 1`] = `
 
 ### Parameters
 
-*   \`x\` **[number][3]** 
+*   \`x\` **[number][3]**&#x20;
 
-Returns **[boolean][4]** 
+Returns **[boolean][4]**&#x20;
 
 [1]: #f
 
@@ -31549,13 +31533,13 @@ Object {
     },
     Object {
       "identifier": "1",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number",
     },
     Object {
       "identifier": "2",
-      "title": undefined,
+      "title": "",
       "type": "definition",
       "url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     },

@@ -1,5 +1,5 @@
 import u from 'unist-builder';
-import remark from 'remark';
+import { remark } from 'remark';
 import mergeConfig from '../merge_config.js';
 import toc from 'remark-toc';
 import links from 'remark-reference-links';
