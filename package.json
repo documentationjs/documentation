@@ -46,7 +46,7 @@
     "remark-toc": "^8.0.0",
     "resolve": "^1.8.1",
     "stream-array": "^1.1.2",
-    "strip-json-comments": "^2.0.1",
+    "strip-json-comments": "^4.0.0",
     "tiny-lr": "^2.0.0",
     "unist-builder": "^2.0.3",
     "unist-util-visit": "^2.0.3",
