@@ -1,5 +1,5 @@
 import removePosition from '../../../src/remark-remove-position.js';
-import remark from 'remark';
+import { remark } from 'remark';
 const remarkParse = remark().use(removePosition).parse;
 import parse from '../../../src/parsers/javascript';
 

@@ -1,4 +1,4 @@
-import remark from 'remark';
+import { remark } from 'remark';
 import gfm from 'remark-gfm';
 import removePosition from './remark-remove-position.js';
 import jsDocLink from './remark-jsDoc-link.js';

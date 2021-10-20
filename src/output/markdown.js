@@ -1,4 +1,4 @@
-import remark from 'remark';
+import { remark } from 'remark';
 import markdownAST from './markdown_ast.js';
 
 /**

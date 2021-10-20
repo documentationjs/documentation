@@ -1,4 +1,4 @@
-import findAndReplace from 'mdast-util-find-and-replace';
+import { findAndReplace } from 'mdast-util-find-and-replace';
 import { markdownLineEnding } from 'micromark-util-character';
 
 const link = '@link';

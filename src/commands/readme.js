@@ -1,5 +1,5 @@
 import fs from 'fs';
-import remark from 'remark';
+import { remark } from 'remark';
 import path from 'path';
 import * as documentation from '../index.js';
 import { sharedOutputOptions, sharedInputOptions } from './shared_options.js';
@@ -89,7 +89,7 @@ const handler = function readme(argv) {
         .process(readmeContent)
     )
     .then(file => {
-      const diffRaw = createPatch('', readmeContent, file.contents, '', '');
+      const diffRaw = createPatch('', readmeContent, file.value, '', '');
       if (diffRaw.split('\n').length === 5) {
         log(`${argv.readmeFile} is up to date.`);
         process.exit(0);
@@ -127,7 +127,7 @@ const handler = function readme(argv) {
         );
       }
 
-      fs.writeFileSync(argv.readmeFile, file.contents);
+      fs.writeFileSync(argv.readmeFile, file.value);
     })
     .catch(err => {
       console.error(err);
