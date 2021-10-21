@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
+import glob from 'tiny-glob';
 
 /**
  * Replace Windows with posix style paths
@@ -30,20 +30,17 @@ function convertPathToPosix(filepath) {
  *                     matches all files with the provided extensions if
  *                     pathname is a directory.
  */
-function processPath(extensions) {
+function processPath(extensions = ['.js']) {
   const cwd = process.cwd();
-  extensions = extensions || ['.js'];
 
-  extensions = extensions.map(function (ext) {
-    return ext.replace(/^\./, '');
-  });
+  extensions = extensions.map(ext => ext.replace(/^\./, ''));
 
-  let suffix = '/**';
+  let suffix = '/**/*.';
 
   if (extensions.length === 1) {
-    suffix += '/*.' + extensions[0];
+    suffix += extensions[0];
   } else {
-    suffix += '/*.{' + extensions.join(',') + '}';
+    suffix += `{${extensions.join(',')}}`;
   }
 
   /**
@@ -79,6 +76,13 @@ function resolveFileGlobPatterns(patterns, extensions) {
   return patterns.map(processPathExtensions);
 }
 
+const cwd = process.cwd();
+const globOptions = {
+  filesOnly: true,
+  dot: true,
+  cwd
+};
+
 /**
  * Build a list of absolute filenames on which ESLint will act.
  * Ignored files are excluded from the results, as are duplicates.
@@ -86,44 +90,19 @@ function resolveFileGlobPatterns(patterns, extensions) {
  * @param globPatterns            Glob patterns.
  * @returns Resolved absolute filenames.
  */
-function listFilesToProcess(globPatterns) {
-  const files = [];
-  const added = new Set();
-
-  const cwd = process.cwd();
-
-  /**
-   * Executes the linter on a file defined by the `filename`. Skips
-   * unsupported file extensions and any files that are already linted.
-   * @param {string} filename The file to be processed
-   * @returns {void}
-   */
-  function addFile(filename) {
-    if (added.has(filename)) {
-      return;
-    }
-    files.push(filename);
-    added.add(filename);
-  }
-
-  globPatterns.forEach(function (pattern) {
+async function listFilesToProcess(globPatterns) {
+  const promises = globPatterns.map(async pattern => {
     const file = path.resolve(cwd, pattern);
     if (fs.existsSync(file) && fs.statSync(file).isFile()) {
-      addFile(fs.realpathSync(file));
-    } else {
-      const globOptions = {
-        nodir: true,
-        dot: true,
-        cwd
-      };
-
-      glob.sync(pattern, globOptions).forEach(function (globMatch) {
-        addFile(path.resolve(cwd, globMatch));
-      });
+      return fs.realpathSync(file);
     }
+    return (await glob(pattern, globOptions)).map(globMatch =>
+      path.resolve(cwd, globMatch)
+    );
   });
 
-  return files;
+  const files = (await Promise.all(promises)).flat();
+  return Array.from(new Set(files));
 }
 
 export default function smartGlob(indexes, extensions) {

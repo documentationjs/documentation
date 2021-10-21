@@ -3,3 +3,5 @@ src/default_theme/*
 coverage/*
 lib/*
 declarations/*
+documentation.js
+bin/*

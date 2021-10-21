@@ -104,5 +104,5 @@ class Deps {
 
 export default async function (input = [], opts = {}) {
   const dep = new Deps(opts);
-  return dep.flush(Array.from(new Set(input)));
+  return dep.flush(input);
 }

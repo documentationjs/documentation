@@ -28,7 +28,9 @@ export default async function (indexes, config) {
     return typeof v === 'string';
   });
   const files = await Promise.all(
-    smartGlob(paths, config.parseExtension).map(async file => ({
+    (
+      await smartGlob(paths, config.parseExtension)
+    ).map(async file => ({
       source: await readFileCode(file),
       file
     }))
