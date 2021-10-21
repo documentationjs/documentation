@@ -45,12 +45,6 @@ export const sharedInputOptions = {
     type: 'array',
     alias: 'pe'
   },
-  private: {
-    describe: 'generate documentation tagged as private',
-    type: 'boolean',
-    default: false,
-    alias: 'p'
-  },
   access: {
     describe:
       'Include only comments with a given access level, out of private, ' +

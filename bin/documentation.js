@@ -6,7 +6,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import commands from '../src/commands/index.js';
 
-const argv = yargs(hideBin(process.argv))
+yargs(hideBin(process.argv))
   .strict()
   .command(commands.serve)
   .command(commands.build)
@@ -42,10 +42,3 @@ const argv = yargs(hideBin(process.argv))
   )
   .recommendCommands()
   .help().argv;
-
-if (argv.private) {
-  console.error(
-    '--private is deprecated, please use the --access (or -a) option instead'
-  );
-  console.error('for example: -a public -a private -a protected -a undefined');
-}
