@@ -3,23 +3,15 @@
 /* eslint no-console: 0 */
 
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import commands from '../src/commands/index.js';
 
-const argv = yargs
+const argv = yargs(hideBin(process.argv))
   .strict()
   .command(commands.serve)
   .command(commands.build)
   .command(commands.lint)
   .command(commands.readme)
-  .fail(function (msg, error) {
-    if (error) {
-      throw error;
-    } else {
-      yargs.showHelp('error');
-      console.error(msg);
-      return yargs.exit(1);
-    }
-  })
   .example('documentation build foo.js -f md > API.md')
   .example('documentation readme index.js -s "API Docs" --github')
   .version()
@@ -56,9 +48,4 @@ if (argv.private) {
     '--private is deprecated, please use the --access (or -a) option instead'
   );
   console.error('for example: -a public -a private -a protected -a undefined');
-}
-
-if (!argv._handled) {
-  yargs.showHelp('error');
-  process.exit(1);
 }

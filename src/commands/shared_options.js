@@ -37,14 +37,12 @@ export const sharedInputOptions = {
     describe:
       "additional extensions to include in require() and import's search algorithm." +
       'For instance, adding .es5 would allow require("adder") to find "adder.es5"',
-    // Ensure that the value is an array
-    coerce: value => [].concat(value),
+    type: 'array',
     alias: 're'
   },
   'parse-extension': {
     describe: 'additional extensions to parse as source code.',
-    // Ensure that the value is an array
-    coerce: value => [].concat(value),
+    type: 'array',
     alias: 'pe'
   },
   private: {
