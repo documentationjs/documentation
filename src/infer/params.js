@@ -4,7 +4,7 @@ import _ from 'lodash';
 import findTarget from './finders.js';
 import typeAnnotation from '../type_annotation.js';
 
-const generate = babelGenerate.default;
+const generate = babelGenerate.default || babelGenerate;
 
 /**
  * Infers param tags by reading function parameter names

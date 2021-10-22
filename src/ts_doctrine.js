@@ -1,5 +1,5 @@
 import generator from '@babel/generator';
-const generate = generator.default;
+const generate = generator.default || generator;
 
 const namedTypes = {
   TSBigIntKeyword: 'bigint',

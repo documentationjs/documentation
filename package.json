@@ -54,7 +54,6 @@
     "vfile-reporter": "^7.0.2",
     "vfile-sort": "^3.0.0",
     "vinyl": "^2.1.0",
-    "vinyl-fs": "^3.0.2",
     "yargs": "^17.2.1"
   },
   "optionalDependencies": {

@@ -106,15 +106,9 @@ describe('html', function () {
         const result = await documentation.build([file], options);
         const html = await outputHtml(result, {});
         const clean = html
-          .sort((a, b) => a.path > b.path)
-          .filter(r => r.path.match(/(html)$/))
-          .map(r =>
-            r.contents
-              .toString()
-              .replace(/documentation \d+\.\d+\.\d+(-\w+(\.\d+)?)?/g, '')
-              .replace(/<code>\d+\.\d+\.\d+(-\w+(\.\d+)?)?<\/code>/g, '')
-          )
-          .join('\n');
+          .replace(/documentation \d+\.\d+\.\d+(-\w+(\.\d+)?)?/g, '')
+          .replace(/<code>\d+\.\d+\.\d+(-\w+(\.\d+)?)?<\/code>/g, '');
+
         expect(clean).toMatchSnapshot();
       });
     });

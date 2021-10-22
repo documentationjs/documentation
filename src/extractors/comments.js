@@ -1,7 +1,7 @@
 import babelTraverse from '@babel/traverse';
 import isJSDocComment from '../is_jsdoc_comment.js';
 
-const traverse = babelTraverse.default;
+const traverse = babelTraverse.default || babelTraverse;
 
 /**
  * Iterate through the abstract syntax tree, finding a different kind of comment

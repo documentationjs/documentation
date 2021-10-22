@@ -1,8 +1,6 @@
-import streamArray from 'stream-array';
 import { sharedOutputOptions, sharedInputOptions } from './shared_options.js';
 import path from 'path';
 import fs from 'fs';
-import vfs from 'vinyl-fs';
 import chokidar from 'chokidar';
 import * as documentation from '../index.js';
 import _ from 'lodash';
@@ -79,6 +77,10 @@ const handler = function build(argv) {
       updateWatcher();
     }
 
+    if (!output) {
+      return;
+    }
+
     if (argv.output === 'stdout') {
       if (argv.watch) {
         // In watch mode, clear the screen first to make updated outputs
@@ -86,8 +88,6 @@ const handler = function build(argv) {
         process.stdout.write('\u001b[2J');
       }
       process.stdout.write(output);
-    } else if (Array.isArray(output)) {
-      streamArray(output).pipe(vfs.dest(argv.output));
     } else {
       fs.writeFileSync(argv.output, output);
     }
