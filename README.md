@@ -14,28 +14,28 @@
 
 [:date: Current maintenance status](https://github.com/documentationjs/documentation/wiki/Current-maintenance-status)
 
-* Supports modern JavaScript: ES5, ES2017, JSX, Vue and [Flow](https://flow.org/) type annotations.
-* Infers parameters, types, membership, and more. Write less documentation: let the computer write it for you.
-* Integrates with GitHub to link directly from documentation to the code it refers to.
-* Customizable output: HTML, JSON, Markdown, and more
+- Supports modern JavaScript: ES5, ES2017, JSX, Vue and [Flow](https://flow.org/) type annotations.
+- Infers parameters, types, membership, and more. Write less documentation: let the computer write it for you.
+- Integrates with GitHub to link directly from documentation to the code it refers to.
+- Customizable output: HTML, JSON, Markdown, and more
 
 ## Examples
 
--   [HTML output with default template](https://documentation.js.org/html-example/)
--   [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
--   [JSON](https://documentation.js.org/html-example/index.json)
+- [HTML output with default template](https://documentation.js.org/html-example/)
+- [Markdown](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md)
+- [JSON](https://documentation.js.org/html-example/index.json)
 
 ## Documentation
 
--   [Getting Started](docs/GETTING_STARTED.md): start here
--   [Usage](docs/USAGE.md): how to use documentation.js
--   [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
--   [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
--   [Configuring documentation.js](docs/CONFIG.md)
--   [FAQ](docs/FAQ.md)
--   [Troubleshooting](docs/TROUBLESHOOTING.md)
--   [Theming](docs/THEMING.md): tips for theming documentation output in HTML
--   [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
+- [Getting Started](docs/GETTING_STARTED.md): start here
+- [Usage](docs/USAGE.md): how to use documentation.js
+- [Recipes](docs/RECIPES.md): tricks for writing effective JSDoc docs
+- [Node API](docs/NODE_API.md): documentation.js's self-generated documentation
+- [Configuring documentation.js](docs/CONFIG.md)
+- [FAQ](docs/FAQ.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [Theming](docs/THEMING.md): tips for theming documentation output in HTML
+- [See also](https://github.com/documentationjs/documentation/wiki/See-also): a list of projects similar to documentation.js
 
 ## User Guide
 
@@ -62,12 +62,6 @@ documentation build src/** -f html --github -o docs
 # document index.js, ignoring any files it requires or imports
 documentation build index.js -f md --shallow
 
-# build and serve HTML docs for app.js
-documentation serve app.js
-
-# build, serve, and live-update HTML docs for app.js
-documentation serve --watch app.js
-
 # validate JSDoc syntax in util.js
 documentation lint util.js
 
@@ -81,7 +75,6 @@ documentation build --document-exported index.js
 documentation build index.ts --parse-extension ts -f html -o docs
 
 Commands:
-  serve [input..]   generate, update, and display HTML documentation
   build [input..]   build documentation
   lint [input..]    check for common style and uniformity mistakes
   readme [input..]  inject documentation into your README.md
@@ -97,9 +90,9 @@ _We have plenty of
 [issues](https://github.com/documentationjs/documentation/issues) that we'd
 love help with._
 
--   Robust and complete `JSDoc` support, including typedefs.
--   Strong support for HTML and Markdown output
--   Documentation coverage, statistics, and validation
+- Robust and complete `JSDoc` support, including typedefs.
+- Strong support for HTML and Markdown output
+- Documentation coverage, statistics, and validation
 
 documentation is an OPEN Open Source Project. This means that:
 
