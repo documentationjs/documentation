@@ -8,7 +8,6 @@ import commands from '../src/commands/index.js';
 
 yargs(hideBin(process.argv))
   .strict()
-  .command(commands.serve)
   .command(commands.build)
   .command(commands.lint)
   .command(commands.readme)

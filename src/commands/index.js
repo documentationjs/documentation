@@ -9,8 +9,7 @@
  * to parse additional arguments.
  */
 import build from './build.js';
-import serve from './serve.js';
 import lint from './lint.js';
 import readme from './readme.js';
 
-export default { build, serve, lint, readme };
+export default { build, lint, readme };
