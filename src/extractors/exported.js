@@ -8,7 +8,7 @@ import findTarget from '../infer/finders.js';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const traverse = babelTraverse.default;
+const traverse = babelTraverse.default || babelTraverse;
 
 /**
  * Iterate through the abstract syntax tree, finding ES6-style exports,

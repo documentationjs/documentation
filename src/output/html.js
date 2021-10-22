@@ -23,9 +23,10 @@ import mergeConfig from '../merge_config.js';
  */
 export default async function html(comments, localConfig = {}) {
   const config = await mergeConfig(localConfig);
-  const themePath =
-    (config.theme && path.resolve(process.cwd(), config.theme)) ||
-    '../default_theme/index.js';
+  const themePath = config.theme && path.resolve(process.cwd(), config.theme);
+  if (themePath) {
+    return (await import(themePath)).default(comments, config);
+  }
 
-  return (await import(themePath)).default(comments, config);
+  return (await import('../default_theme/index.js')).default(comments, config);
 }

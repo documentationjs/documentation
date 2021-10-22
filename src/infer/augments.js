@@ -1,7 +1,7 @@
 import babelGenerate from '@babel/generator';
 import findTarget from './finders.js';
 
-const generate = babelGenerate.default;
+const generate = babelGenerate.default || babelGenerate;
 
 /**
  * Infers an `augments` tag from an ES6 class declaration

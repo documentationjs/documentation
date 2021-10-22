@@ -5,6 +5,10 @@ import os from 'os';
 import { exec } from 'child_process';
 import tmp from 'tmp';
 import fs from 'fs-extra';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function documentation(args, options, parseJSON) {
   if (!options) {
@@ -44,7 +48,7 @@ function normalize(result) {
   return result;
 }
 
-test.skip('documentation binary', async function () {
+test('documentation binary', async function () {
   const data = await documentation(['build fixture/simple.input.js'], {});
   expect(data.length).toBe(1);
 });
@@ -56,14 +60,14 @@ test.skip('defaults to parsing package.json main', async function () {
   expect(data.length).toBeTruthy();
 });
 
-test.skip('accepts config file', async function () {
+test('accepts config file', async function () {
   const data = await documentation([
     'build fixture/sorting/input.js -c fixture/config.json'
   ]);
   expect(normalize(data)).toMatchSnapshot();
 });
 
-test.skip('accepts config file - reports failures', async function () {
+test('accepts config file - reports failures', async function () {
   try {
     await documentation(
       ['build fixture/sorting/input.js -c fixture/config-bad.yml'],
@@ -75,7 +79,7 @@ test.skip('accepts config file - reports failures', async function () {
   }
 });
 
-test.skip('accepts config file - reports parse failures', async function () {
+test('accepts config file - reports parse failures', async function () {
   try {
     await documentation(
       ['build fixture/sorting/input.js -c fixture/config-malformed.json'],
@@ -87,14 +91,14 @@ test.skip('accepts config file - reports parse failures', async function () {
   }
 });
 
-test.skip('--shallow option', async function () {
+test('--shallow option', async function () {
   const data = await documentation([
     'build --shallow fixture/internal.input.js'
   ]);
   expect(data.length).toBe(0);
 });
 
-test.skip('external modules option', async function () {
+test('external modules option', async function () {
   const data = await documentation([
     'build fixture/external.input.js ' +
       '--external=external --external=external/node_modules'
@@ -102,14 +106,14 @@ test.skip('external modules option', async function () {
   expect(data.length).toBe(2);
 });
 
-test.skip('when a file is specified both in a glob and explicitly, it is only documented once', async function () {
+test('when a file is specified both in a glob and explicitly, it is only documented once', async function () {
   const data = await documentation([
     'build fixture/simple.input.js fixture/simple.input.*'
   ]);
   expect(data.length).toBe(1);
 });
 
-test.skip('extension option', async function () {
+test('extension option', async function () {
   const data = await documentation([
     'build fixture/extension/index.otherextension ' +
       '--requireExtension=otherextension --parseExtension=otherextension'
@@ -117,12 +121,12 @@ test.skip('extension option', async function () {
   expect(data.length).toBe(1);
 });
 
-test.skip('extension option', function () {
+test('extension option', function () {
   return documentation(['build fixture/extension.jsx']);
 });
 
 describe('invalid arguments', function () {
-  test.skip('bad -f option', async function () {
+  test('bad -f option', async function () {
     try {
       await documentation(
         ['build -f DOES-NOT-EXIST fixture/internal.input.js'],
@@ -134,7 +138,7 @@ describe('invalid arguments', function () {
     }
   });
 
-  test.skip('html with no destination', async function () {
+  test('html with no destination', async function () {
     try {
       await documentation(['build -f html fixture/internal.input.js']);
     } catch (err) {
@@ -148,7 +152,7 @@ describe('invalid arguments', function () {
     }
   });
 
-  test.skip('bad command', async function () {
+  test('bad command', async function () {
     try {
       await documentation(['-f html fixture/internal.input.js'], {}, false);
     } catch (err) {
@@ -159,7 +163,7 @@ describe('invalid arguments', function () {
 
 const semver =
   /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
-test.skip('--config', async function () {
+test('--config', async function () {
   const dst = path.join(os.tmpdir(), (Date.now() + Math.random()).toString());
   fs.mkdirSync(dst);
   const outputIndex = path.join(dst, 'index.html');
@@ -172,18 +176,18 @@ test.skip('--config', async function () {
     false
   );
   let output = fs.readFileSync(outputIndex, 'utf8');
-  const version = require('../package.json').version;
+  const version = (await import('../package.json')).default.version;
   output = output.replace(new RegExp(version.replace(/\./g, '\\.'), 'g'), '');
   expect(output).toMatchSnapshot();
 });
 
-test.skip('--version', async function () {
+test('--version', async function () {
   const output = await documentation(['--version'], {}, false);
   expect(output).toBeTruthy();
 });
 
 describe('lint command', function () {
-  test.skip('generates lint output', async function () {
+  test('generates lint output', async function () {
     try {
       await documentation(['lint fixture/lint/lint.input.js'], {}, false);
     } catch (err) {
@@ -192,7 +196,7 @@ describe('lint command', function () {
     }
   });
 
-  test.skip('generates no output on a good file', async function () {
+  test('generates no output on a good file', async function () {
     const data = await documentation(
       ['lint fixture/simple.input.js'],
       {},
@@ -201,7 +205,7 @@ describe('lint command', function () {
     expect(data).toBe('');
   });
 
-  test.skip('exposes syntax error on a bad file', async function () {
+  test('exposes syntax error on a bad file', async function () {
     try {
       await documentation(
         ['lint fixture/bad/syntax.input', '--parseExtension input'],
@@ -213,7 +217,7 @@ describe('lint command', function () {
     }
   });
 
-  test.skip('lint with no inputs', async function () {
+  test('lint with no inputs', async function () {
     try {
       await documentation(
         ['lint'],
@@ -227,7 +231,7 @@ describe('lint command', function () {
     }
   });
 
-  test.skip('generates lint output with shallow', async function () {
+  test('generates lint output with shallow', async function () {
     const data = await documentation(
       ['lint fixture/lint/lint.input.shallow.js --shallow'],
       {},
@@ -237,7 +241,7 @@ describe('lint command', function () {
   });
 });
 
-test.skip('given no files', async function () {
+test('given no files', async function () {
   try {
     await documentation(['build']);
   } catch (err) {
@@ -251,7 +255,7 @@ test.skip('given no files', async function () {
   }
 });
 
-test.skip('with an invalid command', async function () {
+test('with an invalid command', async function () {
   try {
     await documentation(['invalid'], {}, false);
   } catch (err) {

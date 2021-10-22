@@ -1,11 +1,8 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
-import File from 'vinyl';
-import vfs from 'vinyl-fs';
-import _ from 'lodash';
-import concat from 'concat-stream';
+import template from 'lodash/template.js';
 import GithubSlugger from 'github-slugger';
-import { util } from '../index';
+import { util } from '../index.js';
 import hljs from 'highlight.js';
 import { fileURLToPath } from 'url';
 
@@ -13,6 +10,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const { LinkerStack, createFormatters } = util;
+
+async function copyDir(sorce, dest) {
+  await fs.mkdir(dest, { recursive: true });
+  let entries = await fs.readdir(sorce, { withFileTypes: true });
+
+  for (let entry of entries) {
+    let srcPath = path.join(sorce, entry.name);
+    let destPath = path.join(dest, entry.name);
+
+    entry.isDirectory()
+      ? await copyDir(srcPath, destPath)
+      : await fs.copyFile(srcPath, destPath);
+  }
+}
 
 function isFunction(section) {
   return (
@@ -24,7 +35,7 @@ function isFunction(section) {
   );
 }
 
-export default function (comments, config) {
+export default async function (comments, config) {
   var linkerStack = new LinkerStack(config).namespaceResolver(
     comments,
     function (namespace) {
@@ -90,47 +101,34 @@ export default function (comments, config) {
     }
   };
 
-  sharedImports.imports.renderSectionList = _.template(
-    fs.readFileSync(path.join(__dirname, 'section_list._'), 'utf8'),
+  sharedImports.imports.renderSectionList = template(
+    await fs.readFile(path.join(__dirname, 'section_list._'), 'utf8'),
     sharedImports
   );
-  sharedImports.imports.renderSection = _.template(
-    fs.readFileSync(path.join(__dirname, 'section._'), 'utf8'),
+  sharedImports.imports.renderSection = template(
+    await fs.readFile(path.join(__dirname, 'section._'), 'utf8'),
     sharedImports
   );
-  sharedImports.imports.renderNote = _.template(
-    fs.readFileSync(path.join(__dirname, 'note._'), 'utf8'),
+  sharedImports.imports.renderNote = template(
+    await fs.readFile(path.join(__dirname, 'note._'), 'utf8'),
     sharedImports
   );
-  sharedImports.imports.renderParamProperty = _.template(
-    fs.readFileSync(path.join(__dirname, 'paramProperty._'), 'utf8'),
-    sharedImports
-  );
-
-  var pageTemplate = _.template(
-    fs.readFileSync(path.join(__dirname, 'index._'), 'utf8'),
+  sharedImports.imports.renderParamProperty = template(
+    await fs.readFile(path.join(__dirname, 'paramProperty._'), 'utf8'),
     sharedImports
   );
 
-  // push assets into the pipeline as well.
-  return new Promise(resolve => {
-    vfs.src([__dirname + '/assets/**'], { base: __dirname }).pipe(
-      concat(function (files) {
-        resolve(
-          files.concat(
-            new File({
-              path: 'index.html',
-              contents: Buffer.from(
-                pageTemplate({
-                  docs: comments,
-                  config
-                }),
-                'utf8'
-              )
-            })
-          )
-        );
-      })
-    );
-  });
+  var pageTemplate = template(
+    await fs.readFile(path.join(__dirname, 'index._'), 'utf8'),
+    sharedImports
+  );
+
+  const string = pageTemplate({ docs: comments, config });
+
+  if (!config.output) {
+    return string;
+  }
+
+  await copyDir(__dirname + '/assets/', config.output + '/assets/');
+  await fs.writeFile(config.output + '/index.html', string, 'utf8');
 }
