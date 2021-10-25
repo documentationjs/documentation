@@ -272,15 +272,6 @@ test.skip('--access flag', async function () {
   expect(data).toBe('[]');
 });
 
-test.skip('--private flag', async function () {
-  const data = await documentation(
-    ['build fixture/internal.input.js --private'],
-    {},
-    false
-  );
-  expect(data.length > 2).toBeTruthy();
-});
-
 test.skip('--infer-private flag', async function () {
   const data = await documentation(
     ['build fixture/infer-private.input.js --infer-private ^_'],
