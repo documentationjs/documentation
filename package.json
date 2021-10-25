@@ -44,7 +44,7 @@
     "resolve": "^1.8.1",
     "stream-array": "^1.1.2",
     "strip-json-comments": "^4.0.0",
-    "unist-builder": "^2.0.3",
+    "unist-builder": "^3.0.0",
     "unist-util-visit": "^2.0.3",
     "vfile": "^5.1.1",
     "vfile-reporter": "^7.0.2",
