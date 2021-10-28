@@ -618,8 +618,8 @@ the referenced class type</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class=\\"hljs-keyword\\">var</span> k = <span class=\\"hljs-keyword\\">new</span> Klass();
-k.isArrayOfBuffers();</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class=\\"hljs-keyword\\">var</span> k = <span class=\\"hljs-keyword\\">new</span> <span class=\\"hljs-title class_\\">Klass</span>();
+k.<span class=\\"hljs-title function_\\">isArrayOfBuffers</span>();</pre>
     
   
 
@@ -740,7 +740,7 @@ k.isArrayOfBuffers();</pre>
     
       <p><p>this shows you how to getFoo</p>
 </p>
-      <pre class='p1 overflow-auto round fill-light'><span class=\\"hljs-keyword\\">var</span> x = foo.getFoo();</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class=\\"hljs-keyword\\">var</span> x = foo.<span class=\\"hljs-title function_\\">getFoo</span>();</pre>
     
   
 

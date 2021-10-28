@@ -2,7 +2,7 @@ import parse from '../../src/parsers/javascript.js';
 import removePosition from '../../src/remark-remove-position.js';
 import { remark } from 'remark';
 const remarkParse = remark().use(removePosition).parse;
-import visit from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 
 function pick(obj, props) {
   if (Array.isArray(props)) {
