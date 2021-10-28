@@ -2,7 +2,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import doctrine from 'doctrine-temporary-fork';
 const Syntax = doctrine.Syntax;
-import u from 'unist-builder';
+import { u } from 'unist-builder';
 import _rerouteLinks from './reroute_links.js';
 import highlighter from '../highlighter.js';
 import formatType from './format_type.js';

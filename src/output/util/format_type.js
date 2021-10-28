@@ -1,6 +1,6 @@
 import doctrine from 'doctrine-temporary-fork';
 const Syntax = doctrine.Syntax;
-import u from 'unist-builder';
+import { u } from 'unist-builder';
 
 /**
  * Shortcut to create a new text node

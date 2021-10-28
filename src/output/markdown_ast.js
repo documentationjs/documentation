@@ -1,4 +1,4 @@
-import u from 'unist-builder';
+import { u } from 'unist-builder';
 import { remark } from 'remark';
 import mergeConfig from '../merge_config.js';
 import toc from 'remark-toc';
