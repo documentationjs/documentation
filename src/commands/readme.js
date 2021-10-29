@@ -11,7 +11,7 @@ import getReadmeFile from '../get-readme-file.js';
 const command = 'readme [input..]';
 const description = 'inject documentation into your README.md';
 
-const defaultReadmeFile = getReadmeFile('.');
+const defaultReadmeFile = getReadmeFile(process.cwd());
 
 /**
  * Add yargs parsing for the readme command
