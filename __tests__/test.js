@@ -59,19 +59,15 @@ test('document-exported error', async function () {
   }
 });
 
-test('external modules option', async function () {
-  const result = await documentation.build(
-    [path.join(__dirname, 'fixture', 'external.input.js')],
-    {
-      external: '(external|external/node_modules/*)'
-    }
-  );
+test('Check that external modules could parse as input', async function () {
+  const dir = path.join(__dirname, 'fixture');
+  const result = await documentation.build([
+    path.join(dir, 'node_modules', 'external', 'lib', 'main.js'),
+    path.join(dir, 'node_modules', 'external2', 'index.js'),
+    path.join(dir, 'external.input.js')
+  ]);
   normalize(result);
-  const outputfile = path.join(
-    __dirname,
-    'fixture',
-    '_external-deps-included.json'
-  );
+  const outputfile = path.join(dir, '_external-deps-included.json');
   expect(result).toMatchSnapshot();
 });
 

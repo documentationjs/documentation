@@ -40,15 +40,10 @@ Options:
   --no-package, --np         dont find and use package.json for project-
                              configuration option defaults
                                                       [boolean] [default: false]
-  --external                 a string / glob match pattern that defines which
-                             external modules will be whitelisted and included
-                             in the generated documentation.     [default: null]
   --require-extension, --re  additional extensions to include in require() and
                              import's search algorithm.For instance, adding .es5
                              would allow require("adder") to find "adder.es5"
   --parse-extension, --pe    additional extensions to parse as source code.
-  --private, -p              generate documentation tagged as private
-                                                      [boolean] [default: false]
   --access, -a               Include only comments with a given access level,
                              out of private, protected, public, undefined. By
                              default, public, protected, and undefined access

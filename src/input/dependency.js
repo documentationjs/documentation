@@ -1,15 +1,8 @@
 import mdeps from 'module-deps-sortable';
 import path from 'path';
-import babelify from 'babelify';
 import concat from 'concat-stream';
-import moduleFilters from '../module_filters.js';
-import { standardBabelParserPlugins } from '../parsers/parse_to_ast.js';
+import internalOnly from '../module_filters.js';
 import smartGlob from '../smart_glob.js';
-
-const STANDARD_BABEL_CONFIG = {
-  compact: false,
-  parserOpts: { plugins: [...standardBabelParserPlugins, 'flow', 'jsx'] }
-};
 
 /**
  * Returns a readable stream of dependencies, given an array of entry
@@ -23,22 +16,17 @@ const STANDARD_BABEL_CONFIG = {
  * @returns results
  */
 export default function dependencyStream(indexes, config) {
-  const babelConfig = config.babel
-    ? { configFile: path.resolve(__dirname, '../../../../', config.babel) }
-    : STANDARD_BABEL_CONFIG;
   const md = mdeps({
     /**
      * Determine whether a module should be included in documentation
      * @param {string} id path to a module
      * @returns {boolean} true if the module should be included.
      */
-    filter: id => !!config.external || moduleFilters.internalOnly(id),
+    filter: id => internalOnly(id),
     extensions: []
       .concat(config.requireExtension || [])
       .map(ext => '.' + ext.replace(/^\./, ''))
       .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
-    transform: [babelify.configure(babelConfig)],
-    postFilter: moduleFilters.externals(indexes, config),
     resolve:
       config.resolve === 'node' &&
       ((id, opts, cb) => {
