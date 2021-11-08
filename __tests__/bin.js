@@ -98,14 +98,6 @@ test('--shallow option', async function () {
   expect(data.length).toBe(0);
 });
 
-test('external modules option', async function () {
-  const data = await documentation([
-    'build fixture/external.input.js ' +
-      '--external=external --external=external/node_modules'
-  ]);
-  expect(data.length).toBe(2);
-});
-
 test('when a file is specified both in a glob and explicitly, it is only documented once', async function () {
   const data = await documentation([
     'build fixture/simple.input.js fixture/simple.input.*'

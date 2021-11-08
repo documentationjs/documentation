@@ -1,5 +1,292 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check that external modules could parse as input 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 1,
+          "line": 10,
+        },
+        "filename": undefined,
+        "identifierName": undefined,
+        "start": Position {
+          "column": 0,
+          "line": 8,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "I am in ",
+            },
+            Object {
+              "type": "inlineCode",
+              "value": "external.input.js",
+            },
+            Object {
+              "type": "text",
+              "value": ".",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 7,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 5,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "foo",
+    "namespace": "foo",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "foo",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 2,
+          "line": 10,
+        },
+        "filename": undefined,
+        "identifierName": undefined,
+        "start": Position {
+          "column": 0,
+          "line": 7,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "This function returns the number one.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 6,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 3,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "main",
+    "namespace": "main",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "main",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "numberone",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "numberone",
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 2,
+          "line": 8,
+        },
+        "filename": undefined,
+        "identifierName": undefined,
+        "start": Position {
+          "column": 0,
+          "line": 5,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "This function returns the number one.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 4,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "index",
+    "namespace": "index",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "index",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "numberone",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "numberone",
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+]
+`;
+
 exports[`Use Source attribute only 1`] = `
 Array [
   Object {
@@ -544,293 +831,6 @@ second::bar
 shares a name with a top level item referenced in the TOC... sure hope
 that doesn't crash anything!
 "
-`;
-
-exports[`external modules option 1`] = `
-Array [
-  Object {
-    "augments": Array [],
-    "context": Object {
-      "loc": SourceLocation {
-        "end": Position {
-          "column": 1,
-          "line": 10,
-        },
-        "filename": undefined,
-        "identifierName": undefined,
-        "start": Position {
-          "column": 0,
-          "line": 8,
-        },
-      },
-    },
-    "description": Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "type": "text",
-              "value": "I am in ",
-            },
-            Object {
-              "type": "inlineCode",
-              "value": "external.input.js",
-            },
-            Object {
-              "type": "text",
-              "value": ".",
-            },
-          ],
-          "type": "paragraph",
-        },
-      ],
-      "type": "root",
-    },
-    "errors": Array [],
-    "examples": Array [],
-    "implements": Array [],
-    "kind": "function",
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 3,
-        "line": 7,
-      },
-      "filename": undefined,
-      "identifierName": undefined,
-      "start": Position {
-        "column": 0,
-        "line": 5,
-      },
-    },
-    "members": Object {
-      "events": Array [],
-      "global": Array [],
-      "inner": Array [],
-      "instance": Array [],
-      "static": Array [],
-    },
-    "name": "foo",
-    "namespace": "foo",
-    "params": Array [],
-    "path": Array [
-      Object {
-        "kind": "function",
-        "name": "foo",
-      },
-    ],
-    "properties": Array [],
-    "returns": Array [],
-    "sees": Array [],
-    "tags": Array [],
-    "throws": Array [],
-    "todos": Array [],
-    "yields": Array [],
-  },
-  Object {
-    "augments": Array [],
-    "context": Object {
-      "loc": SourceLocation {
-        "end": Position {
-          "column": 2,
-          "line": 10,
-        },
-        "filename": undefined,
-        "identifierName": undefined,
-        "start": Position {
-          "column": 0,
-          "line": 7,
-        },
-      },
-    },
-    "description": Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "type": "text",
-              "value": "This function returns the number one.",
-            },
-          ],
-          "type": "paragraph",
-        },
-      ],
-      "type": "root",
-    },
-    "errors": Array [],
-    "examples": Array [],
-    "implements": Array [],
-    "kind": "function",
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 3,
-        "line": 6,
-      },
-      "filename": undefined,
-      "identifierName": undefined,
-      "start": Position {
-        "column": 0,
-        "line": 3,
-      },
-    },
-    "members": Object {
-      "events": Array [],
-      "global": Array [],
-      "inner": Array [],
-      "instance": Array [],
-      "static": Array [],
-    },
-    "name": "main",
-    "namespace": "main",
-    "params": Array [],
-    "path": Array [
-      Object {
-        "kind": "function",
-        "name": "main",
-      },
-    ],
-    "properties": Array [],
-    "returns": Array [
-      Object {
-        "description": Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "text",
-                  "value": "numberone",
-                },
-              ],
-              "type": "paragraph",
-            },
-          ],
-          "type": "root",
-        },
-        "title": "returns",
-        "type": Object {
-          "name": "Number",
-          "type": "NameExpression",
-        },
-      },
-    ],
-    "sees": Array [],
-    "tags": Array [
-      Object {
-        "description": "numberone",
-        "lineNumber": 2,
-        "title": "returns",
-        "type": Object {
-          "name": "Number",
-          "type": "NameExpression",
-        },
-      },
-    ],
-    "throws": Array [],
-    "todos": Array [],
-    "yields": Array [],
-  },
-  Object {
-    "augments": Array [],
-    "context": Object {
-      "loc": SourceLocation {
-        "end": Position {
-          "column": 2,
-          "line": 8,
-        },
-        "filename": undefined,
-        "identifierName": undefined,
-        "start": Position {
-          "column": 0,
-          "line": 5,
-        },
-      },
-    },
-    "description": Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "type": "text",
-              "value": "This function returns the number one.",
-            },
-          ],
-          "type": "paragraph",
-        },
-      ],
-      "type": "root",
-    },
-    "errors": Array [],
-    "examples": Array [],
-    "implements": Array [],
-    "kind": "function",
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 3,
-        "line": 4,
-      },
-      "filename": undefined,
-      "identifierName": undefined,
-      "start": Position {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "members": Object {
-      "events": Array [],
-      "global": Array [],
-      "inner": Array [],
-      "instance": Array [],
-      "static": Array [],
-    },
-    "name": "index",
-    "namespace": "index",
-    "params": Array [],
-    "path": Array [
-      Object {
-        "kind": "function",
-        "name": "index",
-      },
-    ],
-    "properties": Array [],
-    "returns": Array [
-      Object {
-        "description": Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "text",
-                  "value": "numberone",
-                },
-              ],
-              "type": "paragraph",
-            },
-          ],
-          "type": "root",
-        },
-        "title": "returns",
-        "type": Object {
-          "name": "Number",
-          "type": "NameExpression",
-        },
-      },
-    ],
-    "sees": Array [],
-    "tags": Array [
-      Object {
-        "description": "numberone",
-        "lineNumber": 2,
-        "title": "return",
-        "type": Object {
-          "name": "Number",
-          "type": "NameExpression",
-        },
-      },
-    ],
-    "throws": Array [],
-    "todos": Array [],
-    "yields": Array [],
-  },
-]
 `;
 
 exports[`git option 1`] = `
