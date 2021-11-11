@@ -5,21 +5,16 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const apples = { context: { sortKey: 'a' }, name: 'apples' };
+const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
+const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
+
 test('sort stream alphanumeric', function () {
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const banana = { context: { sortKey: 'c' }, name: 'bananas' };
-
-  expect(sort([apples, carrot, banana])).toEqual([apples, carrot, banana]);
-
-  expect(sort([carrot, apples, banana])).toEqual([apples, carrot, banana]);
+  expect(sort([apples, carrot, bananas])).toEqual([apples, carrot, bananas]);
+  expect(sort([carrot, apples, bananas])).toEqual([apples, carrot, bananas]);
 });
 
 test('sort stream with configuration', function () {
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
-
   expect(
     sort([apples, carrot, bananas], {
       toc: ['carrot', 'bananas']
@@ -28,10 +23,6 @@ test('sort stream with configuration', function () {
 });
 
 test('sort stream with configuration and a section', function () {
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
-
   const section = {
     name: 'This is the banana type',
     description: 'here lies bananas'
@@ -71,10 +62,6 @@ test('sort stream with configuration and a section', function () {
 
 test('sort an already-sorted stream containing a section/description', function () {
   // this happens in the 'serve' task
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
-
   const section = {
     name: 'This is the banana type',
     description: 'here lies bananas'
@@ -114,10 +101,6 @@ test('sort an already-sorted stream containing a section/description', function 
 });
 
 test('sort toc with files', function () {
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
-
   const snowflake = {
     name: 'snowflake',
     file: path.join(__dirname, '../fixture/snowflake.md')
@@ -131,10 +114,6 @@ test('sort toc with files', function () {
 });
 
 test('sort toc with files absolute path', function () {
-  const apples = { context: { sortKey: 'a' }, name: 'apples' };
-  const carrot = { context: { sortKey: 'b' }, name: 'carrot' };
-  const bananas = { context: { sortKey: 'c' }, name: 'bananas' };
-
   const snowflake = {
     name: 'snowflake',
     file: path.join(__dirname, '../fixture/snowflake.md')
@@ -150,6 +129,7 @@ test('sort toc with files absolute path', function () {
   const apples = {
     context: { sortKey: 'a' },
     name: 'apples',
+    kind: 'function',
     memberof: 'classB'
   };
   const carrot = {
@@ -160,6 +140,7 @@ test('sort toc with files absolute path', function () {
   const bananas = {
     context: { sortKey: 'c' },
     name: 'bananas',
+    kind: 'function',
     memberof: 'classB'
   };
 
@@ -169,7 +150,13 @@ test('sort toc with files absolute path', function () {
   };
   expect(
     sort([carrot, apples, bananas], {
-      sortOrder: 'alpha'
+      sortOrder: ['alpha']
+    })
+  ).toMatchSnapshot();
+
+  expect(
+    sort([carrot, apples, bananas], {
+      sortOrder: ['kind', 'alpha']
     })
   ).toMatchSnapshot();
 });

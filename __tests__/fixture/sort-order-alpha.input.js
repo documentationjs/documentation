@@ -1,4 +1,4 @@
-// Options: {"sortOrder": "alpha"}
+// Options: {"sortOrder": ["alpha"]}
 
 /** */
 function b() {}
