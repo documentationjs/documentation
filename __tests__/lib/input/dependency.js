@@ -23,13 +23,13 @@ test('dependency', async function () {
   });
   {
     const dependencies = await dependency([paths['index.js']], {
-      parseExtension: ['js']
+      parseExtension: ['.js']
     });
     expect(dependencies.length).toEqual(1);
   }
   {
     const dependencies = await dependency([paths['requires.js']], {
-      parseExtension: ['js']
+      parseExtension: ['.js']
     });
     expect(dependencies.length).toEqual(2);
   }

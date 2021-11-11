@@ -12,14 +12,9 @@ import mergeConfig from '../merge_config.js';
  * @public
  * @example
  * var documentation = require('documentation');
- * var streamArray = require('stream-array');
- * var vfs = require('vinyl-fs');
  *
  * documentation.build(['index.js'])
- *   .then(documentation.formats.html)
- *   .then(output => {
- *     streamArray(output).pipe(vfs.dest('./output-directory'));
- *   });
+ *   .then(documentation.formats.html);
  */
 export default async function html(comments, localConfig = {}) {
   const config = await mergeConfig(localConfig);
