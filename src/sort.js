@@ -103,9 +103,9 @@ export default function (comments, options) {
   return fixed.concat(unfixed);
 }
 
-function compareCommentsByName(a, b) {
-  const akey = a.name;
-  const bkey = b.name;
+function compareCommentsByField(field, a, b) {
+  const akey = a[field];
+  const bkey = b[field];
 
   if (akey && bkey) {
     return akey.localeCompare(bkey, undefined, { caseFirst: 'upper' });
@@ -117,10 +117,19 @@ function compareCommentsBySourceLocation(a, b) {
   return a.context.sortKey.localeCompare(b.context.sortKey);
 }
 
+const sortFns = {
+  alpha: compareCommentsByField.bind(null, 'name'),
+  source: compareCommentsBySourceLocation,
+  kind: compareCommentsByField.bind(null, 'kind'),
+  access: compareCommentsByField.bind(null, 'access')
+};
+
 function sortComments(comments, sortOrder) {
-  return comments.sort(
-    sortOrder === 'alpha'
-      ? compareCommentsByName
-      : compareCommentsBySourceLocation
-  );
+  return comments.sort((a, b) => {
+    for (const sortMethod of sortOrder || ['source']) {
+      const r = sortFns[sortMethod](a, b);
+      if (r !== 0) return r;
+    }
+    return 0;
+  });
 }

@@ -74,8 +74,9 @@ export const sharedInputOptions = {
   },
   'sort-order': {
     describe: 'The order to sort the documentation',
-    choices: ['source', 'alpha'],
-    default: 'source'
+    array: true,
+    choices: ['source', 'alpha', 'kind', 'access'],
+    default: ['source']
   },
   resolve: {
     describe: 'Dependency resolution algorithm.',
