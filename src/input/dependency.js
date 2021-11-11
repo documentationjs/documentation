@@ -1,11 +1,9 @@
-import mdeps from 'module-deps-sortable';
-import path from 'path';
-import concat from 'concat-stream';
+import mdeps from './moduleDeps.js';
 import internalOnly from '../module_filters.js';
 import smartGlob from '../smart_glob.js';
 
 /**
- * Returns a readable stream of dependencies, given an array of entry
+ * Returns a array of dependencies, given an array of entry
  * points and an object of options to provide to module-deps.
  *
  * This stream requires filesystem access, and thus isn't suitable
@@ -15,55 +13,19 @@ import smartGlob from '../smart_glob.js';
  * @param config optional options passed
  * @returns results
  */
-export default function dependencyStream(indexes, config) {
-  const md = mdeps({
+export default async function dependencyStream(
+  indexes,
+  { parseExtension = [], requireExtension = [] }
+) {
+  const md = await mdeps(smartGlob(indexes, parseExtension), {
     /**
      * Determine whether a module should be included in documentation
      * @param {string} id path to a module
      * @returns {boolean} true if the module should be included.
      */
     filter: id => internalOnly(id),
-    extensions: []
-      .concat(config.requireExtension || [])
-      .map(ext => '.' + ext.replace(/^\./, ''))
-      .concat(['.mjs', '.js', '.json', '.es6', '.jsx']),
-    resolve:
-      config.resolve === 'node' &&
-      ((id, opts, cb) => {
-        const r = require('resolve');
-        opts.basedir = path.dirname(opts.filename);
-        r(id, opts, cb);
-      })
+    extensions: [...parseExtension, ...requireExtension]
   });
-  smartGlob(indexes, config.parseExtension).forEach(index => {
-    md.write(path.resolve(index));
-  });
-  md.end();
 
-  return new Promise((resolve, reject) => {
-    md.once('error', reject);
-    md.pipe(
-      concat(function (inputs) {
-        resolve(
-          inputs
-            .filter(
-              input =>
-                // At this point, we may have allowed a JSON file to be caught by
-                // module-deps, or anything else allowed by requireExtension.
-                // otherwise module-deps would complain about
-                // it not being found. But Babel can't parse JSON, so we filter non-JavaScript
-                // files away.
-                config.parseExtension.indexOf(
-                  path.extname(input.file).replace(/^\./, '')
-                ) > -1
-            )
-            .map(input => {
-              // remove source file, since it's transformed anyway
-              delete input.source;
-              return input;
-            })
-        );
-      })
-    );
-  });
+  return md;
 }

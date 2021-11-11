@@ -126,14 +126,9 @@ Formats documentation as HTML.
 
 ```javascript
 var documentation = require('documentation');
-var streamArray = require('stream-array');
-var vfs = require('vinyl-fs');
 
 documentation.build(['index.js'])
-  .then(documentation.formats.html)
-  .then(output => {
-    streamArray(output).pipe(vfs.dest('./output-directory'));
-  });
+  .then(documentation.formats.html);
 ```
 
 Returns **[Promise][21]<[Array][17]<[Object][19]>>** Promise with results
