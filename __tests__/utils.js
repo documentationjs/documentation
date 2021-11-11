@@ -1,21 +1,5 @@
 import walk from '../src/walk.js';
 import http from 'http';
-import concat from 'concat-stream';
-
-export function get(url, callback) {
-  return new Promise((resolve, reject) => {
-    http.get(url, function (res) {
-      res.pipe(
-        concat(function (text) {
-          if (res.statusCode >= 400) {
-            return reject(res.statusCode);
-          }
-          resolve(text.toString());
-        })
-      );
-    });
-  });
-}
 
 export function normalize(comments) {
   return walk(comments, function (comment) {
