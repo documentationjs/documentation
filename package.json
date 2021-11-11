@@ -60,7 +60,7 @@
     "eslint-config-prettier": "^8.3.0",
     "concat-stream": "^2.0.0",
     "fs-extra": "^10.0.0",
-    "husky": "^4.3.8",
+    "husky": "^7.0.4",
     "jest": "^27.1.0",
     "json-schema": "^0.3.0",
     "lint-staged": "^11.1.2",
