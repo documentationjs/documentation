@@ -35,12 +35,6 @@ test('shallow deps directory', async function () {
   expect(deps[0].file.match(/input.js/)).toBeTruthy();
 });
 
-test('throws on non-string or object input', function () {
-  return shallow([true], {}).catch(err => {
-    expect(err.message).toBe('Indexes should be either strings or objects');
-  });
-});
-
 test('shallow deps literal', async function () {
   const obj = {
     file: 'foo.js',

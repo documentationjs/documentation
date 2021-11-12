@@ -37,7 +37,6 @@
     "remark-html": "^15.0.0",
     "remark-reference-links": "^6.0.0",
     "remark-toc": "^8.0.1",
-    "detective": "^5.2.0",
     "konan": "^2.1.1",
     "resolve": "^1.20.0",
     "strip-json-comments": "^4.0.0",

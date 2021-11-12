@@ -1,4 +1,5 @@
-import smartGlob from '../smart_glob.js';
+import smartGlob from './smart_glob.js';
+import readFileCode from './readFileCode.js';
 
 /**
  * A readable source for content that doesn't do dependency resolution, but
@@ -16,25 +17,22 @@ import smartGlob from '../smart_glob.js';
  * @param config parsing options
  * @returns promise with parsed files
  */
-export default function (indexes, config) {
+export default async function (indexes, config) {
   const objects = [];
-  const strings = [];
-  for (const index of indexes) {
-    if (typeof index === 'string') {
-      strings.push(index);
-    } else if (typeof index === 'object') {
-      objects.push(index);
-    } else {
-      return Promise.reject(
-        new Error('Indexes should be either strings or objects')
-      );
+  const paths = indexes.filter(v => {
+    if (typeof v === 'object') {
+      v.file = v.file ?? '';
+      objects.push(v);
+      return false;
     }
-  }
-  return Promise.resolve(
-    objects.concat(
-      smartGlob(strings, config.parseExtension).map(file => ({
-        file
-      }))
-    )
+    return typeof v === 'string';
+  });
+  const files = await Promise.all(
+    smartGlob(paths, config.parseExtension).map(async file => ({
+      source: await readFileCode(file),
+      file
+    }))
   );
+
+  return [...objects, ...files];
 }

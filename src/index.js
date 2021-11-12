@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
 import sort from './sort.js';
 import { nest } from './nest.js';
@@ -7,7 +5,6 @@ import filterAccess from './filter_access.js';
 import dependency from './input/dependency.js';
 import shallow from './input/shallow.js';
 import parseJavaScript from './parsers/javascript.js';
-import parseVueScript from './parsers/vue.js';
 import github from './github.js';
 import hierarchy from './hierarchy.js';
 import inferName from './infer/name.js';
@@ -107,17 +104,6 @@ function buildInternal(inputsAndConfig) {
   ]);
 
   const extractedComments = _.flatMap(inputs, function (sourceFile) {
-    if (!sourceFile.source) {
-      sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
-    }
-
-    if (!sourceFile.file) {
-      sourceFile.file = '';
-    }
-
-    if (path.extname(sourceFile.file) === '.vue') {
-      return parseVueScript(sourceFile, config).map(buildPipeline);
-    }
     return parseJavaScript(sourceFile, config).map(buildPipeline);
   }).filter(Boolean);
 
@@ -146,10 +132,6 @@ function lintInternal(inputsAndConfig) {
   ]);
 
   const extractedComments = _.flatMap(inputs, sourceFile => {
-    if (!sourceFile.source) {
-      sourceFile.source = fs.readFileSync(sourceFile.file, 'utf8');
-    }
-
     return parseJavaScript(sourceFile, config).map(lintPipeline);
   }).filter(Boolean);
 
