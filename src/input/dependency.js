@@ -1,6 +1,6 @@
 import mdeps from './moduleDeps.js';
 import internalOnly from '../module_filters.js';
-import smartGlob from '../smart_glob.js';
+import smartGlob from './smart_glob.js';
 
 /**
  * Returns a array of dependencies, given an array of entry
