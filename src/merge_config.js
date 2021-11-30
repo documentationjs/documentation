@@ -79,6 +79,36 @@ export default async function mergeConfig(config = {}) {
   conf.add(config);
   conf.add(await readConfigFile(conf.globalConfig.config));
   conf.add(await readPackage(conf.globalConfig['no-package']));
+  if (conf.globalConfig.plugin) {
+    await loadPlugins(conf.globalConfig);
+  }
 
   return conf.globalConfig;
+}
+
+/**
+ * Load the external plugins
+ *
+ * @param {Object} configuration plugins section of the configuration
+ * @returns {void}
+ */
+async function loadPlugins(config) {
+  if (!config._module)
+    Object.defineProperty(config, '_module', {
+      enumerable: false,
+      writable: false,
+      configurable: false,
+      value: {}
+    });
+  for (const plugin of config.plugin) {
+    try {
+      config._module[plugin] = await import(plugin);
+      if (config._module[plugin].init) {
+        await config._module[plugin].init();
+      }
+    } catch (e) {
+      console.error(`Failed loading ${plugin}`);
+      throw e;
+    }
+  }
 }

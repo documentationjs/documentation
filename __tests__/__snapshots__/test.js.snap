@@ -287,6 +287,170 @@ Array [
 ]
 `;
 
+exports[`Check that plugins are loaded 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 2,
+          "line": 8,
+        },
+        "filename": undefined,
+        "identifierName": undefined,
+        "start": Position {
+          "column": 0,
+          "line": 5,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "This function returns the number one.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 4,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "simple.input",
+    "namespace": "simple.input",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "simple.input",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "numberone",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "numberone",
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "after": "",
+    "api": false,
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+    },
+    "end": 19,
+    "errors": Array [
+      Object {
+        "message": "could not determine @name for hierarchy",
+      },
+    ],
+    "examples": Array [],
+    "implements": Array [],
+    "loc": Object {
+      "end": Object {
+        "column": 1,
+        "line": 2,
+      },
+      "start": Object {
+        "column": 1,
+        "line": 0,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "namespace": "",
+    "params": Array [],
+    "path": Array [],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "start": 0,
+    "tags": Array [],
+    "throws": Array [],
+    "todos": Array [],
+    "type": "CommentBlock",
+    "value": "*
+ * @method dummy
+ ",
+    "yields": Array [],
+  },
+]
+`;
+
 exports[`Use Source attribute only 1`] = `
 Array [
   Object {

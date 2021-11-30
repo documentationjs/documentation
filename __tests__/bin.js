@@ -3,7 +3,6 @@
 import path from 'path';
 import os from 'os';
 import { exec } from 'child_process';
-import tmp from 'tmp';
 import fs from 'fs-extra';
 import { fileURLToPath } from 'url';
 
@@ -58,6 +57,13 @@ test.skip('defaults to parsing package.json main', async function () {
     cwd: path.join(__dirname, '..')
   });
   expect(data.length).toBeTruthy();
+});
+
+test('load a plugin', async function () {
+  const data = await documentation([
+    'build fixture/simple.input.js fixture/plugin.txt --plugin=../src/mock_plugin.js'
+  ]);
+  expect(normalize(data)).toMatchSnapshot();
 });
 
 test('accepts config file', async function () {

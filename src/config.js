@@ -1,11 +1,11 @@
 const defaultConfig = {
-  // package.json ignored and don't get project infromation
+  // package.json ignored and don't get project information
   'no-package': false,
-  // Extenstions which by dafault are parse
+  // Extensions which by default are parsed
   parseExtension: ['.mjs', '.js', '.jsx', '.es5', '.es6', '.vue', '.ts', '.tsx']
 };
 
-function normalaze(config, global) {
+function normalize(config, global) {
   if (config.parseExtension) {
     config.parseExtension = Array.from(
       new Set([...config.parseExtension, ...global.parseExtension])
@@ -24,6 +24,6 @@ export default {
     this.globalConfig.parseExtension = [...defaultConfig.parseExtension];
   },
   add(parameters) {
-    Object.assign(this.globalConfig, normalaze(parameters, this.globalConfig));
+    Object.assign(this.globalConfig, normalize(parameters, this.globalConfig));
   }
 };

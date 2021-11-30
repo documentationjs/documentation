@@ -26,6 +26,7 @@ import md from './output/markdown.js';
 import json from './output/json.js';
 import createFormatters from './output/util/formatters.js';
 import LinkerStack from './output/util/linker_stack.js';
+import pluginAPI from './plugin_api.js';
 
 /**
  * Build a pipeline of comment handlers.
@@ -76,7 +77,24 @@ export function expandInputs(indexes, config) {
     return shallow(indexes, config);
   }
 
-  return dependency(indexes, config);
+  let idxShallow = [];
+  if (config.plugin) {
+    for (const plugin of config.plugin) {
+      if (config._module[plugin].shallow) {
+        idxShallow = idxShallow.concat(
+          indexes.filter(idx =>
+            config._module[plugin].shallow(idx, config, pluginAPI)
+          )
+        );
+      }
+    }
+  }
+  const depsShallow = shallow(idxShallow, config);
+
+  const idxFull = indexes.filter(idx => !idxShallow.includes(idx));
+  const depsFull = dependency(idxFull, config);
+
+  return Promise.all([depsShallow, depsFull]).then(([a, b]) => a.concat(b));
 }
 
 function buildInternal(inputsAndConfig) {
@@ -104,6 +122,14 @@ function buildInternal(inputsAndConfig) {
   ]);
 
   const extractedComments = _.flatMap(inputs, function (sourceFile) {
+    if (config.plugin) {
+      for (const plugin of config.plugin) {
+        if (config._module[plugin].parse) {
+          const r = config._module[plugin].parse(sourceFile, config, pluginAPI);
+          if (r) return r.map(buildPipeline);
+        }
+      }
+    }
     return parseJavaScript(sourceFile, config).map(buildPipeline);
   }).filter(Boolean);
 
@@ -132,6 +158,14 @@ function lintInternal(inputsAndConfig) {
   ]);
 
   const extractedComments = _.flatMap(inputs, sourceFile => {
+    if (config.plugin) {
+      for (const plugin of config.plugin) {
+        if (config._module[plugin].parse) {
+          const r = config._module[plugin].parse(sourceFile, config, pluginAPI);
+          if (r) return r.map(lintPipeline);
+        }
+      }
+    }
     return parseJavaScript(sourceFile, config).map(lintPipeline);
   }).filter(Boolean);
 
@@ -180,6 +214,7 @@ export const lint = (indexes, args) =>
  * @param {Array<string>} args.external a string regex / glob match pattern
  * that defines what external modules will be whitelisted and included in the
  * generated documentation.
+ * @param {Array<string>} [args.plugin=[]] load plugins
  * @param {boolean} [args.shallow=false] whether to avoid dependency parsing
  * even in JavaScript code.
  * @param {Array<string|Object>} [args.order=[]] optional array that

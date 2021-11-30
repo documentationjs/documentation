@@ -45,6 +45,10 @@ export const sharedInputOptions = {
     type: 'array',
     alias: 'pe'
   },
+  plugin: {
+    type: 'array',
+    describe: 'load a plugin'
+  },
   access: {
     describe:
       'Include only comments with a given access level, out of private, ' +
