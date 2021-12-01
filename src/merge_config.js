@@ -104,7 +104,7 @@ async function loadPlugins(config) {
     try {
       config._module[plugin] = await import(plugin);
       if (config._module[plugin].init) {
-        await config._module[plugin].init();
+        await config._module[plugin].init(config);
       }
     } catch (e) {
       console.error(`Failed loading ${plugin}`);

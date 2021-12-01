@@ -81,12 +81,14 @@ test('Check that plugins are loaded', async function () {
   const dir = path.join(__dirname, 'fixture');
   const result = await documentation.build(
     [path.join(dir, 'simple.input.js'), path.join(dir, 'plugin.txt')],
-    { plugin: ['./mock_plugin.js'] }
+    { plugin: ['./mock_plugin.js'], order: 'test' }
   );
   normalize(result);
   expect(result).toMatchSnapshot();
 
   expect(initCb.mock.calls.length).toBe(1);
+  expect(initCb.mock.calls[0][0].order).toBe('test');
+
   expect(parseCb.mock.calls.length).toBe(2);
   expect(
     parseCb.mock.calls[0][0].file.includes('fixture/plugin.txt')
