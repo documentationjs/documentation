@@ -636,6 +636,20 @@ export default function parseJSDoc(comment, loc, context) {
   result.todos = [];
   result.yields = [];
 
+  for (const tag of [
+    'kind',
+    'name',
+    'returns',
+    'params',
+    'properties',
+    'errors',
+    'augments',
+    'throws',
+    'yields',
+    'implements'
+  ])
+    if (context[tag]) result[tag] = context[tag];
+
   if (result.description) {
     result.description = parseMarkdown(result.description);
   }
@@ -665,20 +679,6 @@ export default function parseJSDoc(comment, loc, context) {
       });
     }
   });
-
-  for (const tag of [
-    'kind',
-    'name',
-    'returns',
-    'params',
-    'properties',
-    'errors',
-    'augments',
-    'throws',
-    'yields',
-    'implements'
-  ])
-    if (context[tag]) result[tag] = context[tag];
 
   // Using the @name tag, or any other tag that sets the name of a comment,
   // disconnects the comment from its surrounding code.
