@@ -636,19 +636,21 @@ export default function parseJSDoc(comment, loc, context) {
   result.todos = [];
   result.yields = [];
 
-  for (const tag of [
-    'kind',
-    'name',
-    'returns',
-    'params',
-    'properties',
-    'errors',
-    'augments',
-    'throws',
-    'yields',
-    'implements'
-  ])
-    if (context[tag]) result[tag] = context[tag];
+  if (context) {
+    for (const tag of [
+      'kind',
+      'name',
+      'returns',
+      'params',
+      'properties',
+      'errors',
+      'augments',
+      'throws',
+      'yields',
+      'implements'
+    ])
+      if (context[tag]) result[tag] = context[tag];
+  }
 
   if (result.description) {
     result.description = parseMarkdown(result.description);
