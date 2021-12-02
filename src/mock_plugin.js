@@ -1,9 +1,8 @@
-let initCb, parseCb, depCb, dummy;
+let initCb, parseCb, dummy;
 
-export function mockInit(init, parse, dep) {
+export function mockInit(init, parse) {
   initCb = init;
   parseCb = parse;
-  depCb = dep;
 }
 
 export async function init() {
@@ -47,11 +46,5 @@ export function parse(file, _config, api) {
   if (parseCb) parseCb(...arguments);
   if (file.file.includes('plugin.txt'))
     return dummy.map(c => api.parseJSDoc(c.value, c.log, c.context));
-  return false;
-}
-
-export function shallow(file) {
-  if (depCb) depCb(...arguments);
-  if (file.includes('plugin.txt')) return true;
   return false;
 }

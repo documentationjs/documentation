@@ -100,10 +100,10 @@ test('Check that plugins are loaded and used', async function () {
 
   expect(parseCb.mock.calls.length).toBe(2);
   expect(
-    parseCb.mock.calls[0][0].file.includes('fixture/plugin.txt')
+    parseCb.mock.calls[0][0].file.includes('fixture/simple-two.input.js')
   ).toBeTruthy();
   expect(
-    parseCb.mock.calls[1][0].file.includes('fixture/simple-two.input.js')
+    parseCb.mock.calls[1][0].file.includes('fixture/plugin.txt')
   ).toBeTruthy();
 });
 

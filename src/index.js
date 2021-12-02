@@ -77,24 +77,7 @@ export function expandInputs(indexes, config) {
     return shallow(indexes, config);
   }
 
-  let idxShallow = [];
-  if (config.plugin) {
-    for (const plugin of config.plugin) {
-      if (config._module[plugin].shallow) {
-        idxShallow = idxShallow.concat(
-          indexes.filter(idx =>
-            config._module[plugin].shallow(idx, config, pluginAPI)
-          )
-        );
-      }
-    }
-  }
-  const depsShallow = shallow(idxShallow, config);
-
-  const idxFull = indexes.filter(idx => !idxShallow.includes(idx));
-  const depsFull = dependency(idxFull, config);
-
-  return Promise.all([depsShallow, depsFull]).then(([a, b]) => a.concat(b));
+  return dependency(indexes, config);
 }
 
 function buildInternal(inputsAndConfig) {
