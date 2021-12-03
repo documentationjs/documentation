@@ -123,7 +123,8 @@ const sortFns = {
   alpha: compareCommentsByField.bind(null, 'name'),
   source: compareCommentsBySourceLocation,
   kind: compareCommentsByField.bind(null, 'kind'),
-  access: compareCommentsByField.bind(null, 'access')
+  access: compareCommentsByField.bind(null, 'access'),
+  memberof: compareCommentsByField.bind(null, 'memberof')
 };
 
 function sortComments(comments, sortOrder) {
