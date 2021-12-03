@@ -75,7 +75,7 @@ export const sharedInputOptions = {
   'sort-order': {
     describe: 'The order to sort the documentation',
     array: true,
-    choices: ['source', 'alpha', 'kind', 'access'],
+    choices: ['source', 'alpha', 'kind', 'access', 'memberof'],
     default: ['source']
   },
   resolve: {

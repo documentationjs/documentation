@@ -139,7 +139,7 @@ Array [
       "sortKey": "c",
     },
     "kind": "function",
-    "memberof": "classB",
+    "memberof": "classA",
     "name": "bananas",
   },
   Object {
@@ -174,8 +174,36 @@ Array [
       "sortKey": "c",
     },
     "kind": "function",
-    "memberof": "classB",
+    "memberof": "classA",
     "name": "bananas",
+  },
+]
+`;
+
+exports[`sort toc with files absolute path 4`] = `
+Array [
+  Object {
+    "context": Object {
+      "sortKey": "c",
+    },
+    "kind": "function",
+    "memberof": "classA",
+    "name": "bananas",
+  },
+  Object {
+    "context": Object {
+      "sortKey": "b",
+    },
+    "memberof": "classB",
+    "name": "carrot",
+  },
+  Object {
+    "context": Object {
+      "sortKey": "a",
+    },
+    "kind": "function",
+    "memberof": "classB",
+    "name": "apples",
   },
 ]
 `;
