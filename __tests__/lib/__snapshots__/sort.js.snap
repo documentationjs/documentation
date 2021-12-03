@@ -156,6 +156,13 @@ exports[`sort toc with files absolute path 3`] = `
 Array [
   Object {
     "context": Object {
+      "sortKey": "b",
+    },
+    "memberof": "classB",
+    "name": "carrot",
+  },
+  Object {
+    "context": Object {
       "sortKey": "a",
     },
     "kind": "function",
@@ -169,13 +176,6 @@ Array [
     "kind": "function",
     "memberof": "classB",
     "name": "bananas",
-  },
-  Object {
-    "context": Object {
-      "sortKey": "b",
-    },
-    "memberof": "classB",
-    "name": "carrot",
   },
 ]
 `;

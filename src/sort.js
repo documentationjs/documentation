@@ -110,6 +110,8 @@ function compareCommentsByField(field, a, b) {
   if (akey && bkey) {
     return akey.localeCompare(bkey, undefined, { caseFirst: 'upper' });
   }
+  if (akey) return 1;
+  if (bkey) return -1;
   return 0;
 }
 
