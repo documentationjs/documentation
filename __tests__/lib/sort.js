@@ -141,7 +141,7 @@ test('sort toc with files absolute path', function () {
     context: { sortKey: 'c' },
     name: 'bananas',
     kind: 'function',
-    memberof: 'classB'
+    memberof: 'classA'
   };
 
   const snowflake = {
@@ -157,6 +157,38 @@ test('sort toc with files absolute path', function () {
   expect(
     sort([carrot, apples, bananas], {
       sortOrder: ['kind', 'alpha']
+    })
+  ).toMatchSnapshot();
+
+  expect(
+    sort([carrot, apples, bananas], {
+      sortOrder: ['memberof', 'kind', 'alpha']
+    })
+  ).toMatchSnapshot();
+});
+
+test('sort by custom order', function () {
+  const apples = {
+    context: { sortKey: 'a' },
+    name: 'apples',
+    kind: 'method',
+    memberof: 'classB'
+  };
+  const carrot = {
+    context: { sortKey: 'b' },
+    name: 'carrot',
+    memberof: 'classB'
+  };
+  const bananas = {
+    context: { sortKey: 'c' },
+    name: 'bananas',
+    kind: 'typedef',
+    memberof: 'classA'
+  };
+
+  expect(
+    sort([carrot, apples, bananas], {
+      sortOrder: [{ kind: ['typedef', 'method'] }, 'alpha']
     })
   ).toMatchSnapshot();
 });

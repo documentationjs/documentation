@@ -2024,6 +2024,277 @@ f5 comment
 
 exports[`lint command generates lint output 1`] = `""`;
 
+exports[`load a plugin 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "loc": Object {
+        "end": Object {
+          "column": 2,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 5,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "This function returns the number one.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": Object {
+      "end": Object {
+        "column": 3,
+        "line": 4,
+      },
+      "start": Object {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "simple.input",
+    "namespace": "simple.input",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "simple.input",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "numberone",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "numberone",
+        "lineNumber": 2,
+        "title": "returns",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+    },
+    "description": "",
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "dummy",
+    "namespace": "dummy",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "dummy",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "dummy",
+        "title": "method",
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "kind": "method",
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+      "name": "dummy_method",
+    },
+    "description": "",
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "method",
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "dummy_method",
+    "namespace": "dummy_method",
+    "params": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "dummy_param",
+        "title": "param",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "path": Array [
+      Object {
+        "kind": "method",
+        "name": "dummy_method",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "dummy_param",
+        "title": "param",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "file": "[path]",
+      "kind": "SHOULD_NOT_APPEAR_IN_THE_RESULT",
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+      "name": "SHOULD_NOT_APPEAR_IN_THE_RESULT",
+    },
+    "description": "",
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "not_so_dummy",
+    "namespace": "not_so_dummy",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "not_so_dummy",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "not_so_dummy",
+        "title": "method",
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+]
+`;
+
 exports[`should use browser resolve 1`] = `
 Array [
   Object {

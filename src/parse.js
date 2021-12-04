@@ -636,6 +636,22 @@ export default function parseJSDoc(comment, loc, context) {
   result.todos = [];
   result.yields = [];
 
+  if (context) {
+    for (const tag of [
+      'kind',
+      'name',
+      'returns',
+      'params',
+      'properties',
+      'errors',
+      'augments',
+      'throws',
+      'yields',
+      'implements'
+    ])
+      if (context[tag]) result[tag] = context[tag];
+  }
+
   if (result.description) {
     result.description = parseMarkdown(result.description);
   }
@@ -669,7 +685,7 @@ export default function parseJSDoc(comment, loc, context) {
   // Using the @name tag, or any other tag that sets the name of a comment,
   // disconnects the comment from its surrounding code.
   if (context && result.name) {
-    delete context.ast;
+    if (context.ast) delete context.ast;
   }
 
   return result;

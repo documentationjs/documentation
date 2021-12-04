@@ -13,6 +13,7 @@ import _ from 'lodash';
 import chdir from 'chdir';
 import config from '../src/config';
 import { fileURLToPath } from 'url';
+import { jest } from '@jest/globals';
 
 const UPDATE = !!process.env.UPDATE;
 const __filename = fileURLToPath(import.meta.url);
@@ -69,6 +70,41 @@ test('Check that external modules could parse as input', async function () {
   normalize(result);
   const outputfile = path.join(dir, '_external-deps-included.json');
   expect(result).toMatchSnapshot();
+});
+
+test('Check that plugins are loaded and used', async function () {
+  const initCb = jest.fn();
+  const parseCb = jest.fn();
+  const mockPlugin = await import('../src/mock_plugin.js');
+  mockPlugin.mockInit(initCb, parseCb);
+
+  const dir = path.join(__dirname, 'fixture');
+  const result = await documentation.build(
+    [path.join(dir, 'simple-two.input.js'), path.join(dir, 'plugin.txt')],
+    { plugin: ['./mock_plugin.js'], order: 'test' }
+  );
+  normalize(result);
+  expect(result).toMatchSnapshot();
+
+  // name from JSDoc tag
+  expect(result[1].name).toBe('dummy');
+
+  // name parsed by the plugin
+  expect(result[2].name).toBe('dummy_method');
+
+  // name from plugin parsing overridden by JSDoc tag
+  expect(result[3].name).toBe('not_so_dummy');
+
+  expect(initCb.mock.calls.length).toBe(1);
+  expect(initCb.mock.calls[0][0].order).toBe('test');
+
+  expect(parseCb.mock.calls.length).toBe(2);
+  expect(
+    parseCb.mock.calls[0][0].file.includes('fixture/simple-two.input.js')
+  ).toBeTruthy();
+  expect(
+    parseCb.mock.calls[1][0].file.includes('fixture/plugin.txt')
+  ).toBeTruthy();
 });
 
 test('bad input', function () {

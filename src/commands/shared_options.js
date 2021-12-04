@@ -45,6 +45,10 @@ export const sharedInputOptions = {
     type: 'array',
     alias: 'pe'
   },
+  plugin: {
+    type: 'array',
+    describe: 'load a plugin'
+  },
   access: {
     describe:
       'Include only comments with a given access level, out of private, ' +
@@ -75,7 +79,7 @@ export const sharedInputOptions = {
   'sort-order': {
     describe: 'The order to sort the documentation',
     array: true,
-    choices: ['source', 'alpha', 'kind', 'access'],
+    choices: ['source', 'alpha', 'kind', 'access', 'memberof'],
     default: ['source']
   },
   resolve: {

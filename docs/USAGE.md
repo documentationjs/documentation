@@ -58,7 +58,7 @@ Options:
                                                       [boolean] [default: false]
   --sort-order               The order to sort the documentation, may be
                              specified multiple times
-                                [choices: "source", "alpha", "kind"]
+                                [choices: "source", "alpha", "kind", "memberof"]
                                                              [default: "source"]
   --output, -o               output location. omit for stdout, otherwise is a
                              filename for single-file outputs and a directory

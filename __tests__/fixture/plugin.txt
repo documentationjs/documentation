@@ -1,0 +1,6 @@
+/**
+ * @method test
+ */
+
+test
+

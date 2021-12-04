@@ -287,6 +287,325 @@ Array [
 ]
 `;
 
+exports[`Check that plugins are loaded and used 1`] = `
+Array [
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": SourceLocation {
+        "end": Position {
+          "column": 1,
+          "line": 13,
+        },
+        "filename": undefined,
+        "identifierName": undefined,
+        "start": Position {
+          "column": 0,
+          "line": 10,
+        },
+      },
+    },
+    "description": Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "This function returns the number plus two.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "root",
+    },
+    "errors": Array [],
+    "examples": Array [
+      Object {
+        "description": "var result = returnTwo(4);
+// result is 6",
+      },
+    ],
+    "implements": Array [],
+    "kind": "function",
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 9,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "returnTwo",
+    "namespace": "returnTwo",
+    "params": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "the number",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "lineNumber": 3,
+        "name": "a",
+        "title": "param",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "returnTwo",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [
+      Object {
+        "description": Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "numbertwo",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "root",
+        },
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": "the number",
+        "lineNumber": 3,
+        "name": "a",
+        "title": "param",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "description": "numbertwo",
+        "lineNumber": 4,
+        "title": "returns",
+        "type": Object {
+          "name": "Number",
+          "type": "NameExpression",
+        },
+      },
+      Object {
+        "description": "var result = returnTwo(4);
+// result is 6",
+        "lineNumber": 5,
+        "title": "example",
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+    },
+    "description": "",
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": undefined,
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "dummy",
+    "namespace": "dummy",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "dummy",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "dummy",
+        "title": "method",
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+    },
+    "description": "",
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "method",
+    "loc": undefined,
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "dummy_method",
+    "namespace": "dummy_method",
+    "params": Array [
+      Object {
+        "lineNumber": 1,
+        "name": "dummy_param",
+        "title": "param",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "path": Array [
+      Object {
+        "kind": "method",
+        "name": "dummy_method",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "dummy_param",
+        "title": "param",
+        "type": Object {
+          "name": "number",
+          "type": "NameExpression",
+        },
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+  Object {
+    "augments": Array [],
+    "context": Object {
+      "loc": Object {
+        "end": Object {
+          "column": 4,
+          "line": 5,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 5,
+        },
+      },
+    },
+    "description": "",
+    "errors": Array [],
+    "examples": Array [],
+    "implements": Array [],
+    "kind": "function",
+    "loc": undefined,
+    "members": Object {
+      "events": Array [],
+      "global": Array [],
+      "inner": Array [],
+      "instance": Array [],
+      "static": Array [],
+    },
+    "name": "not_so_dummy",
+    "namespace": "not_so_dummy",
+    "params": Array [],
+    "path": Array [
+      Object {
+        "kind": "function",
+        "name": "not_so_dummy",
+      },
+    ],
+    "properties": Array [],
+    "returns": Array [],
+    "sees": Array [],
+    "tags": Array [
+      Object {
+        "description": null,
+        "lineNumber": 1,
+        "name": "not_so_dummy",
+        "title": "method",
+      },
+    ],
+    "throws": Array [],
+    "todos": Array [],
+    "yields": Array [],
+  },
+]
+`;
+
 exports[`Use Source attribute only 1`] = `
 Array [
   Object {
