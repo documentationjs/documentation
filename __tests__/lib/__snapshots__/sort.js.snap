@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`sort by custom order 1`] = `
+Array [
+  Object {
+    "context": Object {
+      "sortKey": "b",
+    },
+    "memberof": "classB",
+    "name": "carrot",
+  },
+  Object {
+    "context": Object {
+      "sortKey": "c",
+    },
+    "kind": "typedef",
+    "memberof": "classA",
+    "name": "bananas",
+  },
+  Object {
+    "context": Object {
+      "sortKey": "a",
+    },
+    "kind": "method",
+    "memberof": "classB",
+    "name": "apples",
+  },
+]
+`;
+
 exports[`sort toc with files 1`] = `
 Array [
   Object {

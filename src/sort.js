@@ -103,11 +103,16 @@ export default function (comments, options) {
   return fixed.concat(unfixed);
 }
 
-function compareCommentsByField(field, a, b) {
+function compareCommentsByField(field, a, b, customOrder) {
   const akey = a[field];
   const bkey = b[field];
 
   if (akey && bkey) {
+    if (customOrder) {
+      const aIdx = customOrder.findIndex(o => o == akey);
+      const bIdx = customOrder.findIndex(o => o == bkey);
+      return aIdx - bIdx;
+    }
     return akey.localeCompare(bkey, undefined, { caseFirst: 'upper' });
   }
   if (akey) return 1;
@@ -130,7 +135,12 @@ const sortFns = {
 function sortComments(comments, sortOrder) {
   return comments.sort((a, b) => {
     for (const sortMethod of sortOrder || ['source']) {
-      const r = sortFns[sortMethod](a, b);
+      const sortMethodName =
+        typeof sortMethod === 'object'
+          ? Object.keys(sortMethod)[0]
+          : sortMethod;
+      const customOrder = sortMethod[sortMethodName];
+      const r = sortFns[sortMethodName](a, b, customOrder);
       if (r !== 0) return r;
     }
     return 0;

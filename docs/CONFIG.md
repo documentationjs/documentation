@@ -72,3 +72,31 @@ toc:
       - shortestPath
       - salesman
 ```
+
+## Sorting
+
+Sorting options can be specified in the configuration file. Example:
+
+```yml
+sortOrder:
+  - memberof
+  - alpha
+```
+
+Additionally, a custom sort order can be given, which is not possible when using the CLI option. Example:
+
+```yml
+sortOrder:
+  - kind:
+    - namespace
+    - class
+    - interface
+    - typedef
+    - enum
+    - constant
+    - function
+    - property
+    - member
+  - memberof
+  - alpha
+```
