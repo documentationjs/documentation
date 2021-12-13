@@ -17,7 +17,8 @@ export default async function dependencyStream(
   indexes,
   { parseExtension = [], requireExtension = [] }
 ) {
-  const md = await mdeps(smartGlob(indexes, parseExtension), {
+  const inputs = await smartGlob(indexes, parseExtension);
+  const md = await mdeps(inputs, {
     /**
      * Determine whether a module should be included in documentation
      * @param {string} id path to a module
