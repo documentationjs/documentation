@@ -7,7 +7,7 @@
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
-    "ansi-html": "^0.0.7",
+    "ansi-html-community": "^0.0.8",
     "babel-core": "^6.26.0",
     "babel-generator": "^6.26.0",
     "babel-plugin-system-import-transformer": "3.1.0",

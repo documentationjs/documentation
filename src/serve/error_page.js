@@ -1,7 +1,7 @@
 /* @flow */
 /* eslint no-console: 0 */
 const File = require('vinyl');
-const ansiHTML = require('ansi-html');
+const ansiHTML = require('ansi-html-community');
 
 const template =
   '<head><style>' +
