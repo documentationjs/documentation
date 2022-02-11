@@ -146,6 +146,17 @@ class Foo {
 }
 
 /**
+ * This is Foobar
+ * must have a distinct id from Foo.bar
+ */
+class Foobar {
+  /**
+   * This is bar
+   */
+  get bar() { }
+}
+
+/**
  * I am the container of stream types
  */
 var customStreams = {};

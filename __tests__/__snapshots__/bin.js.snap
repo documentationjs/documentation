@@ -196,6 +196,34 @@ exports[`--config 1`] = `
               
                 
                 <li><a
+                  href='#foobar-1'
+                  class=\\" toggle-sibling\\">
+                  Foobar
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  
+                    <ul class='list-reset py1-ul pl1'>
+                      <li class='h5'><span>Instance members</span></li>
+                      
+                      <li><a
+                        href='#foobarbar'
+                        class='regular pre-open'>
+                        #bar
+                      </a></li>
+                      
+                    </ul>
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#customstreams'
                   class=\\" toggle-sibling\\">
                   customStreams
@@ -1341,6 +1369,112 @@ like a <a href=\\"#klass\\">klass</a>. This needs a <a href=\\"https://developer
     <div class=\\"clearfix\\">
   
     <div class='border-bottom' id='foobar'>
+      <div class=\\"clearfix small pointer toggle-sibling\\">
+        <div class=\\"py1 contain\\">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>bar</span>
+        </div>
+      </div>
+      <div class=\\"clearfix display-none toggle-target\\">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>This is bar</p>
+
+    <div class='pre p1 fill-light mt0'>bar</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='foobar-1'>
+      Foobar
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This is Foobar
+must have a distinct id from Foo.bar</p>
+
+    <div class='pre p1 fill-light mt0'>new Foobar()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
+    <div class=\\"clearfix\\">
+  
+    <div class='border-bottom' id='foobarbar'>
       <div class=\\"clearfix small pointer toggle-sibling\\">
         <div class=\\"py1 contain\\">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
