@@ -35,12 +35,21 @@ function isFunction(section) {
   );
 }
 
+const slugger = new GithubSlugger();
+const slugs = {};
+
+function getSlug(str) {
+  if (slugs[str] === undefined) {
+    slugs[str] = slugger.slug(str);
+  }
+  return slugs[str];
+}
+
 export default async function (comments, config) {
   var linkerStack = new LinkerStack(config).namespaceResolver(
     comments,
     function (namespace) {
-      var slugger = new GithubSlugger();
-      return '#' + slugger.slug(namespace);
+      return '#' + getSlug(namespace);
     }
   );
 
@@ -51,8 +60,7 @@ export default async function (comments, config) {
   var sharedImports = {
     imports: {
       slug(str) {
-        var slugger = new GithubSlugger();
-        return slugger.slug(str);
+        return getSlug(str);
       },
       shortSignature(section) {
         var prefix = '';
