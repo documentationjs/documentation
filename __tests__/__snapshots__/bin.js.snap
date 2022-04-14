@@ -1594,10 +1594,12 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 2,
+          "index": 150,
           "line": 13,
         },
         "start": Object {
           "column": 0,
+          "index": 102,
           "line": 11,
         },
       },
@@ -1622,10 +1624,12 @@ Array [
     "loc": Object {
       "end": Object {
         "column": 3,
+        "index": 101,
         "line": 10,
       },
       "start": Object {
         "column": 0,
+        "index": 72,
         "line": 8,
       },
     },
@@ -1660,10 +1664,12 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 2,
+          "index": 232,
           "line": 20,
         },
         "start": Object {
           "column": 0,
+          "index": 183,
           "line": 18,
         },
       },
@@ -1688,10 +1694,12 @@ Array [
     "loc": Object {
       "end": Object {
         "column": 3,
+        "index": 182,
         "line": 17,
       },
       "start": Object {
         "column": 0,
+        "index": 152,
         "line": 15,
       },
     },
@@ -1726,10 +1734,12 @@ Array [
       "loc": Object {
         "end": Object {
           "column": 2,
+          "index": 70,
           "line": 6,
         },
         "start": Object {
           "column": 0,
+          "index": 26,
           "line": 4,
         },
       },
@@ -1754,10 +1764,12 @@ Array [
     "loc": Object {
       "end": Object {
         "column": 3,
+        "index": 25,
         "line": 3,
       },
       "start": Object {
         "column": 0,
+        "index": 0,
         "line": 1,
       },
     },
