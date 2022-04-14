@@ -9,18 +9,18 @@
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/generator": "^7.16.0",
-    "@babel/parser": "^7.16.3",
-    "@babel/traverse": "^7.16.3",
-    "@babel/types": "^7.16.0",
+    "@babel/core": "^7.17.9",
+    "@babel/generator": "^7.17.9",
+    "@babel/parser": "^7.17.9",
+    "@babel/traverse": "^7.17.9",
+    "@babel/types": "^7.17.0",
     "chalk": "^4.1.2",
     "chokidar": "^3.5.3",
     "diff": "^5.0.0",
     "doctrine-temporary-fork": "2.1.0",
     "git-url-parse": "^11.6.0",
     "github-slugger": "1.4.0",
-    "glob": "^7.1.2",
+    "glob": "^8.0.1",
     "globals-docs": "^2.4.1",
     "highlight.js": "^11.5.1",
     "ini": "^3.0.0",
@@ -45,11 +45,11 @@
     "vfile": "^5.3.2",
     "vfile-reporter": "^7.0.4",
     "vfile-sort": "^3.0.0",
-    "yargs": "^17.2.1"
+    "yargs": "^17.4.1"
   },
   "optionalDependencies": {
-    "@vue/compiler-sfc": "^3.0.11",
-    "vue-template-compiler": "^2.6.12"
+    "@vue/compiler-sfc": "^3.2.33",
+    "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "chdir": "0.0.0",
