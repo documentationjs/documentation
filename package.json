@@ -20,7 +20,7 @@
     "doctrine-temporary-fork": "2.1.0",
     "git-url-parse": "^12.0.0",
     "github-slugger": "1.4.0",
-    "glob": "^7.1.2",
+    "glob": "^8.0.3",
     "globals-docs": "^2.4.1",
     "highlight.js": "^11.5.1",
     "ini": "^3.0.0",
