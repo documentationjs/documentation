@@ -22,7 +22,7 @@
     "github-slugger": "1.4.0",
     "glob": "^8.0.3",
     "globals-docs": "^2.4.1",
-    "highlight.js": "^11.5.1",
+    "highlight.js": "^11.6.0",
     "ini": "^3.0.0",
     "js-yaml": "^4.1.0",
     "konan": "^2.1.1",
