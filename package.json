@@ -16,7 +16,7 @@
     "@babel/types": "^7.17.0",
     "chalk": "^5.0.1",
     "chokidar": "^3.5.3",
-    "diff": "^5.0.0",
+    "diff": "^5.1.0",
     "doctrine-temporary-fork": "2.1.0",
     "git-url-parse": "^12.0.0",
     "github-slugger": "1.4.0",
