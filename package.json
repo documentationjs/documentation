@@ -13,7 +13,7 @@
     "@babel/generator": "^7.17.9",
     "@babel/parser": "^7.17.9",
     "@babel/traverse": "^7.17.9",
-    "@babel/types": "^7.17.0",
+    "@babel/types": "^7.17.9",
     "chalk": "^5.0.1",
     "chokidar": "^3.5.3",
     "diff": "^5.1.0",
