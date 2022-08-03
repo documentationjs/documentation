@@ -31,7 +31,7 @@
     "mdast-util-inject": "^1.1.0",
     "micromark-util-character": "^1.1.0",
     "parse-filepath": "^1.0.2",
-    "pify": "^5.0.0",
+    "pify": "^6.0.0",
     "read-pkg-up": "^9.1.0",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
