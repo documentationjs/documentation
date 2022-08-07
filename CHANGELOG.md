@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.0.0-alpha.1](https://github.com/documentationjs/documentation/compare/v14.0.0-alpha.0...v14.0.0-alpha.1) (2022-08-07)
+
+
+### Features
+
+* :sparkles: update Babel, copy list of plugins from Prettier ([3f187d7](https://github.com/documentationjs/documentation/commit/3f187d73132c6667a9140bd491c5f703c1f37c40))
+
 ## [14.0.0-alpha.0](https://github.com/documentationjs/documentation/compare/v13.2.5...v14.0.0-alpha.0) (2022-08-05)
 
 
