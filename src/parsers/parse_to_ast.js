@@ -1,35 +1,34 @@
 import babelParser from '@babel/parser';
 import path from 'path';
 
-// this list is roughly the same as the one in prettier
-// https://github.com/prettier/prettier/blob/24d39a906834cf449304dc684b280a5ca9a0a6d7/src/language-js/parser-babel.js#L23
-export const standardBabelParserPlugins = [
-  'doExpressions',
-  'classProperties',
-  'exportDefaultFrom',
-  'functionBind',
-  'functionSent',
-  'classPrivateProperties',
-  'throwExpressions',
-  'classPrivateMethods',
-  'v8intrinsic',
-  'partialApplication',
-  ['decorators', { decoratorsBeforeExport: false }],
-  'privateIn',
-  'importAssertions',
-  ['recordAndTuple', { syntaxType: 'hash' }],
-  'decimal',
-  'moduleStringNames',
-  'classStaticBlock',
-  'moduleBlocks',
-
-  ['pipelineOperator', { proposal: 'minimal' }]
-];
-
 const TYPESCRIPT_EXTS = {
   '.ts': ['typescript'],
   '.tsx': ['typescript', 'jsx']
 };
+
+// this list is roughly the same as the one in prettier
+// https://github.com/prettier/prettier/blob/24d39a906834cf449304dc684b280a5ca9a0a6d7/src/language-js/parser-babel.js#L23
+export const standardBabelParserPlugins = [
+  'classPrivateMethods',
+  'classPrivateProperties',
+  'classProperties',
+  'classStaticBlock',
+  'decimal',
+  ['decorators', { decoratorsBeforeExport: false }],
+  'doExpressions',
+  'exportDefaultFrom',
+  'functionBind',
+  'functionSent',
+  'importAssertions',
+  'moduleBlocks',
+  'moduleStringNames',
+  'partialApplication',
+  ['pipelineOperator', { proposal: 'minimal' }],
+  'privateIn',
+  ['recordAndTuple', { syntaxType: 'hash' }],
+  'throwExpressions',
+  'v8intrinsic'
+];
 
 function getParserOpts(file) {
   return {
