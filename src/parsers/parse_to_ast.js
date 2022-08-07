@@ -6,13 +6,28 @@ const TYPESCRIPT_EXTS = {
   '.tsx': ['typescript', 'jsx']
 };
 
+// this list is roughly the same as the one in prettier
+// https://github.com/prettier/prettier/blob/24d39a906834cf449304dc684b280a5ca9a0a6d7/src/language-js/parser-babel.js#L23
 export const standardBabelParserPlugins = [
+  'classPrivateMethods',
+  'classPrivateProperties',
+  'classProperties',
+  'classStaticBlock',
+  'decimal',
+  ['decorators', { decoratorsBeforeExport: false }],
   'doExpressions',
   'exportDefaultFrom',
   'functionBind',
+  'functionSent',
+  'importAssertions',
+  'moduleBlocks',
+  'moduleStringNames',
   'partialApplication',
   ['pipelineOperator', { proposal: 'minimal' }],
-  'throwExpressions'
+  'privateIn',
+  ['recordAndTuple', { syntaxType: 'hash' }],
+  'throwExpressions',
+  'v8intrinsic'
 ];
 
 function getParserOpts(file) {
@@ -21,7 +36,6 @@ function getParserOpts(file) {
     sourceType: 'module',
     plugins: [
       ...standardBabelParserPlugins,
-      ['decorators', { decoratorsBeforeExport: false }],
       ...(TYPESCRIPT_EXTS[path.extname(file || '')] || ['flow', 'jsx'])
     ]
   };
