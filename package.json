@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.4.2-quiq",
+  "version": "5.4.3-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -25,7 +25,7 @@
     "disparity": "^3.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-port": "^3.2.0",
-    "git-url-parse": "^11.6.0",
+    "git-url-parse": "^12.0.0",
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
@@ -87,9 +87,15 @@
     "trim": "^0.0.3",
     "minimist": "^1.2.6",
     "json-schema": "^0.4.0",
-    "set-value": "3.0.1",
+    "set-value": "4.1.0",
     "deep-extend": "0.6.0",
-    "cryptiles": "4.1.2"
+    "cryptiles": "4.1.2",
+    "hawk": "9.0.1",
+    "ansi-regex": "5.0.1",
+    "glob-parent": "6.0.2",
+    "trim-newlines": "4.0.2",
+    "dot-prop": "4.2.1",
+    "kind-of": "6.0.3"
   },
   "keywords": [
     "documentation",
