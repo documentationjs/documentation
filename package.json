@@ -1,15 +1,15 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.4.1-quiq",
+  "version": "5.4.2-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
     "ansi-html-community": "^0.0.8",
-    "babel-core": "^6.26.0",
-    "babel-generator": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-generator": "^6.26.1",
     "babel-plugin-system-import-transformer": "3.1.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.6.1",
@@ -25,7 +25,7 @@
     "disparity": "^3.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-port": "^3.2.0",
-    "git-url-parse": "^8.0.0",
+    "git-url-parse": "^11.6.0",
     "github-slugger": "1.2.0",
     "glob": "^7.1.2",
     "globals-docs": "^2.4.0",
@@ -58,22 +58,22 @@
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.3",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
     "chdir": "0.0.0",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
     "documentation-schema": "0.0.1",
     "eslint": "^4.16.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.41.0",
     "flow-bin": "^0.64.0",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^9.1.0",
     "husky": "^0.14.3",
-    "jest": "^22.1.4",
+    "jest": "^28.1.3",
     "json-schema": "0.4.0",
     "lint-staged": "^6.0.1",
     "mock-fs": "^4.4.2",
@@ -84,7 +84,12 @@
     "tmp": "^0.0.33"
   },
   "resolutions": {
-    "trim": "^0.0.3"
+    "trim": "^0.0.3",
+    "minimist": "^1.2.6",
+    "json-schema": "^0.4.0",
+    "set-value": "3.0.1",
+    "deep-extend": "0.6.0",
+    "cryptiles": "4.1.2"
   },
   "keywords": [
     "documentation",
