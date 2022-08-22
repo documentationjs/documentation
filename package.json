@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.4.3-quiq",
+  "version": "5.4.4-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -67,9 +67,9 @@
     "coveralls": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
     "documentation-schema": "0.0.1",
-    "eslint": "^4.16.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-flowtype": "^7.0.0",
     "flow-bin": "^0.64.0",
     "fs-extra": "^9.1.0",
     "husky": "^0.14.3",
@@ -95,7 +95,10 @@
     "glob-parent": "6.0.2",
     "trim-newlines": "4.0.2",
     "dot-prop": "4.2.1",
-    "kind-of": "6.0.3"
+    "kind-of": "6.0.3",
+    "js-yaml": "3.13.1",
+    "ajv": "6.12.3",
+    "yargs-parser": "21.1.1"
   },
   "keywords": [
     "documentation",
