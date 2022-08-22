@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "5.4.4-quiq",
+  "version": "5.4.5-quiq",
   "author": "Tom MacWright",
   "bin": {
     "documentation": "./bin/documentation.js"
@@ -98,7 +98,8 @@
     "kind-of": "6.0.3",
     "js-yaml": "3.13.1",
     "ajv": "6.12.3",
-    "yargs-parser": "21.1.1"
+    "yargs-parser": "21.1.1",
+    "tar": "6.1.11"
   },
   "keywords": [
     "documentation",
