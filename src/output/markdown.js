@@ -1,4 +1,5 @@
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import markdownAST from './markdown_ast.js';
 
 /**
@@ -25,5 +26,7 @@ export default function markdown(comments, args) {
   if (!args) {
     args = {};
   }
-  return markdownAST(comments, args).then(ast => remark().stringify(ast));
+  return markdownAST(comments, args).then(ast =>
+    remark().use(remarkGfm).stringify(ast)
+  );
 }
