@@ -83,6 +83,17 @@ This is the syntax that describes an optional parameter:
 
 If an input is omitted, the default value of `5` will be passed to the function.
 
+<br/>
+
+### **Show Options passing Value**
+
+```js
+ * @param {{status : "active" | "inactive" | "inprocess"}}
+```
+<img src="../screenshorts/show options.jpg" />
+<br/>
+<br/>
+
 ## What `documentation` does, so you don't have to
 
 `documentation` does some minor magic to auto-generate documentation. Unless
