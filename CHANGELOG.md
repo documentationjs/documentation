@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [14.0.1](https://github.com/documentationjs/documentation/compare/v14.0.0-0...v14.0.1) (2022-12-14)
+## [14.0.1](https://github.com/documentationjs/documentation/compare/v14.0.0...v14.0.1) (2022-12-14)
 
 ### Improvements
 * chore: upgrade git-url-parse to 13.1.0 to fix vulnerabilities  [#1565](https://github.com/documentationjs/documentation/pull/1565)
