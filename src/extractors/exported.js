@@ -15,6 +15,8 @@ const traverse = babelTraverse.default || babelTraverse;
  * and inserting blank comments into documentation.js's processing stream.
  * Through inference steps, these comments gain more information and are automatically
  * documented as well as we can.
+ * @param {Object} config
+ * @param {Object} [config.extensions] extensions to try when resolving
  * @param {Object} ast the babel-parsed syntax tree
  * @param {Object} data the name of the file
  * @param {Function} addComment a method that creates a new comment if necessary
@@ -22,6 +24,7 @@ const traverse = babelTraverse.default || babelTraverse;
  * @private
  */
 export default function walkExported(
+  config /* { extensions?: string[] } */,
   ast,
   data /*: {
   file: string
@@ -120,7 +123,8 @@ export default function walkExported(
               local,
               exportKind,
               filename,
-              source.value
+              source.value,
+              config.extensions
             );
             bindingPath = tmp.ast;
             specData = tmp.data;
@@ -181,16 +185,40 @@ function traverseExportedSubtree(path, data, addComments, overrideName) {
   }
 }
 
-function getCachedData(dataCache, filePath) {
-  let path = filePath;
-  if (!nodePath.extname(path)) {
-    path = require.resolve(path);
+function resolveFile(filePath, extensions = []) {
+  try {
+    // First try resolving the file with the default extensions.
+    return require.resolve(filePath);
+  } catch {
+    // If that fails, try resolving the file with the extensions passed in.
   }
+
+  // Then try all other extensions in order.
+  for (const extension of extensions) {
+    try {
+      return require.resolve(
+        `${filePath}${extension.startsWith('.') ? extension : `.${extension}`}`
+      );
+    } catch {
+      continue;
+    }
+  }
+
+  throw new Error(
+    `Could not resolve \`${filePath}\` with any of the extensions: ${[
+      ...require.extensions,
+      ...extensions
+    ].join(', ')}`
+  );
+}
+
+function getCachedData(dataCache, filePath, extensions) {
+  const path = resolveFile(filePath, extensions);
 
   let value = dataCache.get(path);
   if (!value) {
     const input = fs.readFileSync(path, 'utf-8');
-    const ast = parseToAst(input, filePath);
+    const ast = parseToAst(input, path);
     value = {
       data: {
         file: path,
@@ -209,10 +237,11 @@ function findExportDeclaration(
   name,
   exportKind,
   referrer,
-  filename
+  filename,
+  extensions
 ) {
   const depPath = nodePath.resolve(nodePath.dirname(referrer), filename);
-  const tmp = getCachedData(dataCache, depPath);
+  const tmp = getCachedData(dataCache, depPath, extensions);
   const ast = tmp.ast;
   let data = tmp.data;
 
@@ -273,7 +302,8 @@ function findExportDeclaration(
                 local,
                 exportKind,
                 depPath,
-                source.value
+                source.value,
+                extensions
               );
               rv = tmp.ast;
               data = tmp.data;

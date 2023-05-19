@@ -24,9 +24,13 @@ export default function parseJavaScript(data, config) {
   const ast = parseToAst(data.source, data.file);
   const addComment = _addComment.bind(null, visited, commentsByNode);
 
+  const extensions = []
+    .concat(config.parseExtension, config.requireExtension)
+    .filter(Boolean);
+
   return _.flatMap(
     config.documentExported
-      ? [walkExported]
+      ? [walkExported.bind(null, { extensions })]
       : [
           walkComments.bind(null, 'leadingComments', true),
           walkComments.bind(null, 'innerComments', false),
