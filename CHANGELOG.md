@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [14.0.2](https://github.com/documentationjs/documentation/compare/v14.0.1...v14.0.2) (2023-05-19)
+
+
+### Bug Fixes
+
+* **exported:** respect `parse-extension` & `require-extension` ([#1484](https://github.com/documentationjs/documentation/issues/1484)) ([798fa10](https://github.com/documentationjs/documentation/commit/798fa10595d7523032ac187ae9c8aa943c15e8da)), closes [#1272](https://github.com/documentationjs/documentation/issues/1272) [#1258](https://github.com/documentationjs/documentation/issues/1258)
+
 ## [14.0.1](https://github.com/documentationjs/documentation/compare/v14.0.0...v14.0.1) (2022-12-14)
 
 ### Improvements
