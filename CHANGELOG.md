@@ -28,13 +28,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-* all Extensions whould contains '.' so that mean if you have just 'ts' then need to convert to '.ts'
+* all Extensions should contains '.' so that mean if you have just 'ts' then need to convert to '.ts'
 * external parameter was removed
 Migration plan propose to move all external resources to input usages
 Motivation: packages has many inputs which describe in package.json
-so that mean need each time to parse all package.json of exsternal resources to understand which etry point need to pick.
-But it is base on guesses because entry point may could not contains a documentation and the best way to handle it manualy.
-* The serve parametr was remove, you can use any other tools which could be refresh and store your html site
+so that mean need each time to parse all package.json of external resources to understand which entry point need to pick.
+But it is base on guesses because entry point may could not contains a documentation and the best way to handle it manually.
+* The serve parameter was removed, you can use any other tools which could be refresh and store your html site
 The private parameter has removed, use a access
 * documentation.js will now require node 14 or later.
 
