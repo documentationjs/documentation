@@ -95,7 +95,7 @@ class Deps {
   parseDeps(file, src) {
     try {
       const ast = parseToAst(src, file);
-      return konan(ast).strings;
+      return konan(ast, { dynamicImport: false }).strings;
     } catch (ex) {
       console.error(`Parsing file ${file}: ${ex}`);
     }

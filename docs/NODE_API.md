@@ -34,7 +34,7 @@ of lint information intended for human-readable output.
         that defines what external modules will be whitelisted and included in the
         generated documentation.
     *   `args.shallow` **[boolean][20]** whether to avoid dependency parsing
-        even in JavaScript code. (optional, default `false`)
+        even in JavaScript code.&#x20;(optional, default `false`)
     *   `args.inferPrivate` **[string][18]?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
         For instance, you can specify `inferPrivate: '^_'` to automatically treat
@@ -71,14 +71,14 @@ comments, given a root file as a path.
         that defines what external modules will be whitelisted and included in the
         generated documentation.
     *   `args.shallow` **[boolean][20]** whether to avoid dependency parsing
-        even in JavaScript code. (optional, default `false`)
+        even in JavaScript code.&#x20;(optional, default `false`)
     *   `args.order` **[Array][17]<([string][18] | [Object][19])>** optional array that
-        defines sorting order of documentation (optional, default `[]`)
+        defines sorting order of documentation&#x20;(optional, default `[]`)
     *   `args.access` **[Array][17]<[string][18]>** an array of access levels
-        to output in documentation (optional, default `[]`)
+        to output in documentation&#x20;(optional, default `[]`)
     *   `args.hljs` **[Object][19]?** hljs optional args
 
-        *   `args.hljs.highlightAuto` **[boolean][20]** hljs automatically detect language (optional, default `false`)
+        *   `args.hljs.highlightAuto` **[boolean][20]** hljs automatically detect language&#x20;(optional, default `false`)
         *   `args.hljs.languages` **[Array][17]?** languages for hljs to choose from
     *   `args.inferPrivate` **[string][18]?** a valid regular expression string
         to infer whether a code element should be private, given its naming structure.
@@ -120,7 +120,7 @@ Formats documentation as HTML.
 *   `comments` **[Array][17]<[Comment][22]>** parsed comments
 *   `config` **[Object][19]** Options that can customize the output
 
-    *   `config.theme` **[string][18]** Name of a module used for an HTML theme. (optional, default `'default_theme'`)
+    *   `config.theme` **[string][18]** Name of a module used for an HTML theme.&#x20;(optional, default `'default_theme'`)
 
 ### Examples
 
@@ -181,7 +181,7 @@ documentation.build(['index.js'])
   });
 ```
 
-Returns **[Promise][21]<[string][18]>** 
+Returns **[Promise][21]<[string][18]>**&#x20;
 
 [1]: #lint
 
