@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [14.0.2](https://github.com/documentationjs/documentation/compare/v14.0.1...v14.0.2) (2023-05-19)
+
+
+### Bug Fixes
+
+* **exported:** respect `parse-extension` & `require-extension` ([#1484](https://github.com/documentationjs/documentation/issues/1484)) ([798fa10](https://github.com/documentationjs/documentation/commit/798fa10595d7523032ac187ae9c8aa943c15e8da)), closes [#1272](https://github.com/documentationjs/documentation/issues/1272) [#1258](https://github.com/documentationjs/documentation/issues/1258)
+
+## [14.0.1](https://github.com/documentationjs/documentation/compare/v14.0.0...v14.0.1) (2022-12-14)
+
+### Improvements
+* chore: upgrade git-url-parse to 13.1.0 to fix vulnerabilities  [#1565](https://github.com/documentationjs/documentation/pull/1565)
+
+## [14.0.0](https://github.com/documentationjs/documentation/compare/v14.0.0-alpha.1...v14.0.0) (2022-08-19)
+
+## [14.0.0-alpha.1](https://github.com/documentationjs/documentation/compare/v14.0.0-alpha.0...v14.0.0-alpha.1) (2022-08-07)
+
+
+### Features
+
+* :sparkles: update Babel, copy list of plugins from Prettier ([3f187d7](https://github.com/documentationjs/documentation/commit/3f187d73132c6667a9140bd491c5f703c1f37c40))
+
+## [14.0.0-alpha.0](https://github.com/documentationjs/documentation/compare/v13.2.5...v14.0.0-alpha.0) (2022-08-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* all Extensions should contains '.' so that mean if you have just 'ts' then need to convert to '.ts'
+* external parameter was removed
+Migration plan propose to move all external resources to input usages
+Motivation: packages has many inputs which describe in package.json
+so that mean need each time to parse all package.json of external resources to understand which entry point need to pick.
+But it is base on guesses because entry point may could not contains a documentation and the best way to handle it manually.
+* The serve parameter was removed, you can use any other tools which could be refresh and store your html site
+The private parameter has removed, use a access
+* documentation.js will now require node 14 or later.
+
+### Bug Fixes
+
+* add micromark dependencies fixed [#1381](https://github.com/documentationjs/documentation/issues/1381) ([3ba8165](https://github.com/documentationjs/documentation/commit/3ba81659d7db5d9393fa083287d91db93d6aab5e))
+* add TS and TSX as default extensions fixed [#1377](https://github.com/documentationjs/documentation/issues/1377) ([f0cb1c0](https://github.com/documentationjs/documentation/commit/f0cb1c0bb1d97228c7baab453e50e5dbe283ea46))
+* external was removed as prefer of input usages ([e3c59d7](https://github.com/documentationjs/documentation/commit/e3c59d77e4e3cf6e5fabab7c0d853a06a77f6288))
+* html report, it is return html if output is not defined ([0975871](https://github.com/documentationjs/documentation/commit/0975871b34b8cc0af74e0aebb43f2727e0ab9960))
+* remove private parameter, use access (BREAKING CHANGES) ([874069c](https://github.com/documentationjs/documentation/commit/874069c0b3647dad413667f61d05f6d39992995d))
+* The server parameter deprecated and will be remove in next Major version fixed [#1413](https://github.com/documentationjs/documentation/issues/1413) ([810e08b](https://github.com/documentationjs/documentation/commit/810e08b6fdb1076a1758bff831a9f42890f0f25f))
+* use process.cwd vs `.` which can fail ([4cc70a5](https://github.com/documentationjs/documentation/commit/4cc70a5aed0c233cdcc72077733f9da8450be386))
+
+
+* replace module-deps-sortable on own implementation to control how parse files ([abb781a](https://github.com/documentationjs/documentation/commit/abb781a69ac69423da11346f62d7064382bb7b74))
+* Update Node minimum version to 14 ([fc0bb3c](https://github.com/documentationjs/documentation/commit/fc0bb3cd885b9577e6f1f6935e15d4ec24f89114))
+
 ### [13.2.5](https://github.com/documentationjs/documentation/compare/v13.2.4...v13.2.5) (2021-04-24)
 
 

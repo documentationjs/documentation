@@ -38,8 +38,7 @@ before merge.
 Release process:
 
 * Confirm that `master` passes CI tests
-* Bump version in `package.json`
-* Run `npm run changelog`
-* Add updated CHANGELOG.md to master
+* Run `npm run release` or in case it's a prerelease you'd run i.e. `npm run release -- --prerelease alpha`
+  * It will automatically update teh version in package.json and make a git tag.
 * Push commits
 * npm publish

@@ -72,7 +72,7 @@ comments, given a root file as a path.
         generated documentation.
     *   `args.shallow` **[boolean][20]** whether to avoid dependency parsing
         even in JavaScript code. (optional, default `false`)
-    *   `args.order` **[Array][17]<([string][18] | [Object][19])>** optional array that
+    *   `args.sortOrder` **[Array][17]<([string][18] | [Object][19])>** optional array that
         defines sorting order of documentation (optional, default `[]`)
     *   `args.access` **[Array][17]<[string][18]>** an array of access levels
         to output in documentation (optional, default `[]`)
@@ -94,7 +94,8 @@ var documentation = require('documentation');
 
 documentation.build(['index.js'], {
   // only output comments with an explicit @public tag
-  access: ['public']
+  access: ['public'],
+  sortOrder: ['kind', 'alpha']
 }).then(res => {
   // res is an array of parsed comments with inferred properties
   // and more: everything you need to build documentation or

@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "13.2.5",
+  "version": "14.0.2",
   "author": "Tom MacWright",
   "homepage": "https://documentation.js.org",
   "type": "module",
@@ -9,62 +9,62 @@
     "documentation": "./bin/documentation.js"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/generator": "^7.16.0",
-    "@babel/parser": "^7.16.3",
-    "@babel/traverse": "^7.16.3",
-    "@babel/types": "^7.16.0",
-    "chalk": "^4.1.2",
-    "chokidar": "^3.4.0",
-    "diff": "^5.0.0",
+    "@babel/core": "^7.18.10",
+    "@babel/generator": "^7.18.10",
+    "@babel/parser": "^7.18.11",
+    "@babel/traverse": "^7.18.11",
+    "@babel/types": "^7.18.10",
+    "chalk": "^5.0.1",
+    "chokidar": "^3.5.3",
+    "diff": "^5.1.0",
     "doctrine-temporary-fork": "2.1.0",
-    "git-url-parse": "^11.1.2",
+    "git-url-parse": "^13.1.0",
     "github-slugger": "1.4.0",
-    "glob": "^7.1.2",
-    "globals-docs": "^2.4.0",
-    "highlight.js": "^11.3.1",
-    "ini": "^2.0.0",
+    "glob": "^8.0.3",
+    "globals-docs": "^2.4.1",
+    "highlight.js": "^11.6.0",
+    "ini": "^3.0.0",
     "js-yaml": "^4.1.0",
+    "konan": "^2.1.1",
     "lodash": "^4.17.21",
-    "mdast-util-find-and-replace": "^2.1.0",
+    "mdast-util-find-and-replace": "^2.2.1",
     "mdast-util-inject": "^1.1.0",
     "micromark-util-character": "^1.1.0",
     "parse-filepath": "^1.0.2",
-    "pify": "^5.0.0",
-    "read-pkg-up": "^9.0.0",
-    "remark": "^14.0.1",
+    "pify": "^6.0.0",
+    "read-pkg-up": "^9.1.0",
+    "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "remark-html": "^15.0.0",
-    "remark-reference-links": "^6.0.0",
+    "remark-html": "^15.0.1",
+    "remark-reference-links": "^6.0.1",
     "remark-toc": "^8.0.1",
-    "konan": "^2.1.1",
-    "resolve": "^1.20.0",
-    "strip-json-comments": "^4.0.0",
+    "resolve": "^1.22.1",
+    "strip-json-comments": "^5.0.0",
     "unist-builder": "^3.0.0",
     "unist-util-visit": "^4.1.0",
-    "vfile": "^5.2.0",
-    "vfile-reporter": "^7.0.2",
+    "vfile": "^5.3.4",
+    "vfile-reporter": "^7.0.4",
     "vfile-sort": "^3.0.0",
-    "yargs": "^17.2.1"
+    "yargs": "^17.5.1"
   },
   "optionalDependencies": {
-    "@vue/compiler-sfc": "^3.0.11",
-    "vue-template-compiler": "^2.6.12"
+    "@vue/compiler-sfc": "^3.2.37",
+    "vue-template-compiler": "^2.7.8"
   },
   "devDependencies": {
     "chdir": "0.0.0",
     "cz-conventional-changelog": "3.3.0",
     "documentation-schema": "0.0.1",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "fs-extra": "^10.0.0",
-    "husky": "^4.3.8",
-    "jest": "^27.3.1",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "fs-extra": "^10.1.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
     "json-schema": "^0.4.0",
-    "lint-staged": "^12.0.2",
-    "mock-fs": "^5.1.2",
-    "prettier": "^2.4.1",
-    "standard-version": "^9.3.2",
+    "lint-staged": "^13.0.3",
+    "mock-fs": "^5.1.4",
+    "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
     "tmp": "^0.2.1"
   },
   "keywords": [
@@ -88,7 +88,9 @@
     "doc": "node ./bin/documentation.js build src/index.js -f md --access=public > docs/NODE_API.md",
     "self-lint": "node ./bin/documentation.js lint src",
     "test": "eslint . && node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test-ci": "eslint . && node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+    "test-ci": "eslint . && node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -98,7 +100,10 @@
     ],
     "transform": {},
     "collectCoverage": true,
-    "testEnvironment": "jest-environment-node"
+    "testEnvironment": "jest-environment-node",
+    "moduleNameMapper": {
+      "#(.*)": "<rootDir>/node_modules/$1"
+    }
   },
   "config": {
     "commitizen": {
@@ -110,13 +115,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

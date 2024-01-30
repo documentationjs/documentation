@@ -9,7 +9,6 @@
 [![Circle CI](https://circleci.com/gh/documentationjs/documentation/tree/master.svg?style=shield)](https://circleci.com/gh/documentationjs/documentation/tree/master)
 [![npm version](https://badge.fury.io/js/documentation.svg)](http://badge.fury.io/js/documentation)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/documentationjs/documentation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![David](https://david-dm.org/documentationjs/documentation.svg)](https://david-dm.org/documentationjs/documentation)
 [![Inline docs](http://inch-ci.org/github/documentationjs/documentation.svg?branch=master&style=flat-square)](http://inch-ci.org/github/documentationjs/documentation)
 
 [:date: Current maintenance status](https://github.com/documentationjs/documentation/wiki/Current-maintenance-status)
@@ -46,7 +45,7 @@ $ npm install -g documentation
 ```
 
 This installs a command called `documentation` in your path, that you can
-point at [JSDoc](http://usejsdoc.org/)-annotated source code to generate
+point at [JSDoc](https://jsdoc.app/about-getting-started.html)-annotated source code to generate
 human-readable documentation. First, run `documentation` with the `--help`
 option for help:
 

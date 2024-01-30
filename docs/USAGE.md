@@ -31,6 +31,8 @@ Options:
                                                        [boolean] [default: true]
   --markdown-toc-max-depth   specifies the max depth of the table of contents in markdown output
                                                            [number] [default: 6]
+  --babel                    path to babelrc or babel.options.js to override
+                             default babel config      [string] [Standard: null]
   --shallow                  shallow mode turns off dependency resolution, only
                              processing the specified files (or the main script
                              specified in package.json)
@@ -40,6 +42,9 @@ Options:
   --no-package, --np         dont find and use package.json for project-
                              configuration option defaults
                                                       [boolean] [default: false]
+  --external                 a string / glob match pattern that defines which
+                             external modules will be whitelisted and included
+                             in the generated documentation.    [Standard: null]
   --require-extension, --re  additional extensions to include in require() and
                              import's search algorithm.For instance, adding .es5
                              would allow require("adder") to find "adder.es5"
@@ -59,7 +64,10 @@ Options:
   --sort-order               The order to sort the documentation, may be
                              specified multiple times
                                 [choices: "source", "alpha", "kind", "memberof"]
+
                                                              [default: "source"]
+  --resolve                  Dependency resolution algorithm.
+                                [choices: "browser", "node"] [Standard: "browser"]
   --output, -o               output location. omit for stdout, otherwise is a
                              filename for single-file outputs and a directory
                              name for multi-file outputs like html
