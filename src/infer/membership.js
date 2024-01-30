@@ -91,7 +91,10 @@ function extractThis(path, comment) {
         scope = scope.parent;
       }
 
-      if (n.isClassMethod(scope.block)) {
+      if (
+        n.isClassMethod(scope.block) &&
+        scope.path.parentPath.parentPath.node.id !== null
+      ) {
         identifiers.push(
           scope.path.parentPath.parentPath.node.id.name,
           'prototype'
