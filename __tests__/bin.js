@@ -368,6 +368,21 @@ test.skip('fatal error', async function () {
   }
 });
 
+test('build GFM (e.g. markdown tables) for -f md', async function () {
+  const data = await documentation(
+    ['build', 'fixture/html/nested.input.js', '--shallow', '-f', 'md'],
+    {},
+    false
+  );
+  expect(data).toMatchSnapshot();
+  expect(data).toMatch(
+    `| Col 1 | Col 2 | Col 3 |
+| ----- | ----- | ----- |
+| Dat 1 | Dat 2 | Dat 3 |
+| Dat 4 | Dat 5 | Dat 6 |`
+  );
+});
+
 test.skip('build --document-exported', async function () {
   const data = await documentation(
     ['build fixture/document-exported.input.js --document-exported -f md'],
