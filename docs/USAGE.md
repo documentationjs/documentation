@@ -63,7 +63,8 @@ Options:
                                                       [boolean] [default: false]
   --sort-order               The order to sort the documentation, may be
                              specified multiple times
-                                [choices: "source", "alpha"]
+                                [choices: "source", "alpha", "kind", "memberof"]
+
                                                              [default: "source"]
   --resolve                  Dependency resolution algorithm.
                                 [choices: "browser", "node"] [Standard: "browser"]
