@@ -1,7 +1,7 @@
 {
   "name": "documentation",
   "description": "a documentation generator",
-  "version": "14.0.2",
+  "version": "14.0.3",
   "author": "Tom MacWright",
   "homepage": "https://documentation.js.org",
   "type": "module",
