@@ -55,7 +55,7 @@ function buildMarkdownAST(comments, config) {
 
   /**
    * Generate an AST chunk for a comment at a given depth: this is
-   * split from the main function to handle hierarchially nested comments
+   * split from the main function to handle hierarchically nested comments
    *
    * @param {number} depth nesting of the comment, starting at 1
    * @param {Object} comment a single comment

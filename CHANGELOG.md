@@ -82,7 +82,7 @@ The private parameter has removed, use a access
 
 ### Bug Fixes
 
-* [@see](https://github.com/see) tags incorrectly formatted in markdown ouput fixed [#1337](https://github.com/documentationjs/documentation/issues/1337) ([5d8d450](https://github.com/documentationjs/documentation/commit/5d8d4504d52a5bb0a0432bf399bbd82d9e5ea7fc))
+* [@see](https://github.com/see) tags incorrectly formatted in markdown output fixed [#1337](https://github.com/documentationjs/documentation/issues/1337) ([5d8d450](https://github.com/documentationjs/documentation/commit/5d8d4504d52a5bb0a0432bf399bbd82d9e5ea7fc))
 
 ### [13.2.1](https://github.com/documentationjs/documentation/compare/v13.2.0...v13.2.1) (2021-04-06)
 
