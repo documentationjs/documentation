@@ -39,6 +39,6 @@ Release process:
 
 * Confirm that `master` passes CI tests
 * Run `npm run release` or in case it's a prerelease you'd run i.e. `npm run release -- --prerelease alpha`
-  * It will automatically update teh version in package.json and make a git tag.
+  * It will automatically update the version in package.json and make a git tag.
 * Push commits
 * npm publish
