@@ -18,10 +18,14 @@ import mergeConfig from '../merge_config.js';
  */
 export default async function html(comments, localConfig = {}) {
   const config = await mergeConfig(localConfig);
-  const themePath = config.theme && path.resolve(process.cwd(), config.theme);
+  let themePath = config.theme && path.resolve(process.cwd(), config.theme);
   if (themePath) {
+    if (process.platform === 'win32'){
+      // On Windows, absolute paths must be prefixed with 'file:///' to avoid the ERR_UNSUPPORTED_ESM_URL_SCHEME error from import().
+      themePath = 'file:///' + themePath;
+    }
+
     return (await import(themePath)).default(comments, config);
   }
-
   return (await import('../default_theme/index.js')).default(comments, config);
 }
